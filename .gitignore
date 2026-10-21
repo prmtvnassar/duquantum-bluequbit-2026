@@ -30,3 +30,8 @@ results/raw/
 Thumbs.db
 .vscode/
 .idea/
+
+# Saved challenge page snapshot (large, not source)
+Duke Quantum Hackathon.html
+Duke Quantum Hackathon_files/
+*.egg-info/
