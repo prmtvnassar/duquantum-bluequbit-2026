@@ -155,6 +155,8 @@ Goal: a tested local tool that computes exact answers for small circuits. It's o
 - [ ] **Verify:** run both on the 3-qubit example from the smoke test. Both should match the exact answer from 2.2 to about 3 decimal places.
 
 ### 2.5 Ordering check
+- [ ] Early evidence (smoke test): on `H` then `ry(0.3)` on q0, `rz(0.6)` on q1, `rx(0.7)` on q2, the string `"XII"` returned exactly `1.0` on both Pauli-path and MPS. That only works if the **leftmost character is qubit 2** (rx keeps X on q2 at 1.0, while X on q0 would give cos(0.3) ≈ 0.955), so BlueQubit uses Qiskit's ordering. Confirm on a second circuit before relying on it.
+- [ ] **Funding gate:** `pauli-path` with more than one Pauli-sum term returns `NOT_ENOUGH_FUNDS` unless the account balance is at least $25. Single-term runs work on a free account. Check whether the hackathon coupon covers this at kickoff.
 - [ ] Take a 3-qubit random circuit. Compute `⟨ZII⟩`, `⟨IZI⟩`, `⟨IIZ⟩` exactly.
 - [ ] Run the same via BlueQubit.
 - [ ] **Verify:** the values match in the same order. If they're reversed, fix the qubit mapping in one place (`bq_methods.py`) and note it in `docs\notes.md`.
