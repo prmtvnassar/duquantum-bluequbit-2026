@@ -83,6 +83,11 @@
 
 Goal: be able to draw the OTOC circuit on paper and say why it's hard to simulate.
 
+> **Offline study track:** `tutorials/study/` has interactive notebooks covering Phases 1-4 with
+> self-checking exercises (see `tutorials/README.md`). The highest-value pair is
+> `04_otoc_tutorial_offline` then `05_mock_challenge`. They also contain BlueQubit's `otoc_tools.py`,
+> which defines OTOC(1)/OTOC(2) precisely and includes a `score()` function that is likely close to the real one.
+
 ### 1.1 Read the BlueQubit OTOC tutorial
 - [ ] Open https://app.bluequbit.io/tutorial/otoc-tutorial
 - [ ] Read it from top to bottom. Don't skip the code cells.

@@ -35,3 +35,9 @@ Thumbs.db
 Duke Quantum Hackathon.html
 Duke Quantum Hackathon_files/
 *.egg-info/
+
+# Study-notebook outputs
+tutorials/study/submissions/
+tutorials/study/mock_truth_*.json
+scratch/
+.ipynb_checkpoints/
