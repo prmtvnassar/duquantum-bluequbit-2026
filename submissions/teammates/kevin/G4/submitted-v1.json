@@ -12,7 +12,7 @@
   "attempt": null,
   "score_evidence": "Reported by Kevin from the website; not browser-verified by this tool",
   "method_note_path": "submissions/teammates/kevin/G4/submitted-v1.txt",
-  "method_note_origin": "Prepared explanation written from the run records; exact website wording not confirmed",
+  "method_note_origin": "Most likely website text: the note drafted for Kevin before upload. Kevin does not remember whether he pasted it unchanged; not confirmed",
   "total_credits": 0.0,
   "row_provenance": [
     {
@@ -395,5 +395,6 @@
       },
       "credits": 0.0
     }
-  ]
+  ],
+  "result_note": "Scored 133/1000 (corr^2 about 0.13). Values not converged: Duke_G4_37 moved from 0.020 (epsilon 0.0003) to 0.099 (epsilon 0.0001); level 3 differs from the level 1 that worked on G3"
 }
