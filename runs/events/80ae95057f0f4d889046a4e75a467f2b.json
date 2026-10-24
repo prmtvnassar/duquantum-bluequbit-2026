@@ -1,0 +1,19 @@
+{
+  "event_id": "80ae95057f0f4d889046a4e75a467f2b",
+  "recorded_at": "2026-10-24T19:36:57.412909+00:00",
+  "kind": "cohort_allocation_authorized",
+  "problem": "G3",
+  "device": "pauli-path",
+  "options": {
+    "pauli_path_truncation_threshold": 0.0005,
+    "pauli_path_circuit_transpilation_level": 1
+  },
+  "configuration_path": "runs/configurations/g3-epsilon0005-window-01.json",
+  "configuration_sha256": "432823a12c2b192dce7af322957e92db7780db08b49d761eb53b0496a7175f37",
+  "new_job_limit": 33,
+  "reused_rows": 3,
+  "per_job_seconds": 300,
+  "allocation_window_seconds": 3600,
+  "review": "reports/next_allocation_review.md",
+  "status": "PREPARED_FOR_EXECUTION"
+}

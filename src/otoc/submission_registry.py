@@ -161,27 +161,136 @@ def archive_submission(value, repo=REPO, ledger_root=DEFAULT_ROOT):
                                       "note_evidence":note_metadata["note_evidence"],
                                       "time_penalty_hours":penalty,
                                       "receipt":relative(receipt)}, ledger_root)
-    submissions = []
-    for p in (repo / "submissions").rglob("attempt-*.json"):
-        recorded = json.loads(p.read_text(encoding="utf-8"))
-        submissions.append({**recorded, "owner":_owner(recorded), **_evidence(recorded), **_note_evidence(recorded),
-                            "time_penalty_hours":_time_penalty(recorded)})
-    for p in (repo / "submissions/teammates").glob("*/*/submitted-*.json"):
-        external = json.loads(p.read_text(encoding="utf-8"))
-        submissions.append({**external, "points":external["maximum_points"], "displayed_score":"",
-                            "method_note_path":relative(p.with_suffix(".txt")), "status":"REPORTED_BY_TEAMMATE",
-                            "source":external["source_commit"], "attempt":"", "evidence_source":"teammate_report"})
-    fields = ("owner","problem","attempt","status","displayed_score","reported_score_fraction","points",
-              "observed_at","sha256","csv_path","method_note_path","source","evidence_source","note_evidence",
-              "time_penalty_hours")
-    atomic_bytes(ledger_root / "submissions.csv", csv_bytes(fields, sorted(
-        submissions, key=lambda v:(v["problem"], str(v["attempt"]).zfill(2), v.get("owner", "")))))
+    rebuild_submission_index(repo=repo, ledger_root=ledger_root)
     return archived
 
 
-def sync_submissions(root="results/workflow"):
+SUBMISSION_FIELDS = ("owner","problem","attempt","status","displayed_score",
+                     "reported_score_fraction","points","observed_at","sha256","csv_path",
+                     "method_note_path","source","evidence_source","note_evidence",
+                     "time_penalty_hours","upload_bytes_verified","score_evidence_source",
+                     "score_evidence_path","score_evidence_commit","receipt_path")
+
+
+def rebuild_submission_index(repo=REPO, ledger_root=DEFAULT_ROOT):
+    """Rebuild the CSV from saved claims, including scores and unresolved uploads.
+
+    The source receipts remain authoritative. A hash here identifies the saved
+    candidate, not necessarily the exact bytes uploaded to the website. Missing
+    account, attempt, score, or upload identity stays blank rather than inferred.
+    This function only reads local files and writes the derived CSV index.
+    """
+    repo, ledger_root = Path(repo).resolve(), Path(ledger_root)
+    submissions = repo / "submissions"
+    rows = []
+
+    def source_path(path):
+        return path.relative_to(repo).as_posix()
+
+    def portable(path):
+        return str(path).replace("\\", "/") if path else ""
+
+    def explicit_upload_verification(value):
+        for key in ("exact_uploaded_bytes_verified", "uploaded_bytes_independently_verified",
+                    "uploaded_bytes_verified"):
+            if key in value:
+                return value[key]
+        return ""
+
+    for path in sorted(submissions.rglob("attempt-*.json")):
+        value = json.loads(path.read_text(encoding="utf-8"))
+        evidence, note = _evidence(value), _note_evidence(value)
+        rows.append({**value, "owner":_owner(value), "status":evidence["status"],
+                     "evidence_source":evidence["evidence_source"],
+                     "score_evidence_source":evidence["evidence_source"],
+                     "note_evidence":note["note_evidence"],
+                     "time_penalty_hours":_time_penalty(value),
+                     "csv_path":portable(value.get("csv_path")),
+                     "method_note_path":portable(value.get("method_note_path")),
+                     "upload_bytes_verified":explicit_upload_verification(value),
+                     "receipt_path":source_path(path)})
+
+    for path in sorted((submissions / "teammates").glob("*/*/submitted-*.json")):
+        value = json.loads(path.read_text(encoding="utf-8"))
+        score = value.get("reported_displayed_score")
+        if score is None:
+            score = value.get("observed_displayed_score")
+        note_path = value.get("method_note_path")
+        if not note_path and path.with_suffix(".txt").exists():
+            note_path = source_path(path.with_suffix(".txt"))
+        rows.append({"owner":value.get("owner", ""), "problem":value["problem"],
+                     "attempt":value.get("attempt"),
+                     "status":value.get("submission_status") or "REPORTED_BY_TEAMMATE",
+                     "displayed_score":score,
+                     "reported_score_fraction":value.get("reported_score_fraction"),
+                     "points":value.get("maximum_points"),
+                     "observed_at":value.get("observed_at"),
+                     "sha256":value.get("sha256"),
+                     "csv_path":portable(value.get("csv_path")),
+                     "method_note_path":portable(note_path),
+                     "source":value.get("source_commit"),
+                     "evidence_source":"teammate_report",
+                     "score_evidence_source":"teammate_report",
+                     "note_evidence":"prepared_explanation" if note_path else "",
+                     "time_penalty_hours":value.get("time_penalty_hours"),
+                     "upload_bytes_verified":explicit_upload_verification(value),
+                     "receipt_path":source_path(path)})
+
+    for path in sorted(submissions.glob("*/user-reported-submission.json")):
+        value = json.loads(path.read_text(encoding="utf-8"))
+        rows.append({"owner":value.get("owner", DEFAULT_OWNER),
+                     "problem":value["problem"], "attempt":value.get("attempt"),
+                     "status":value.get("status", "SUBMITTED_USER_REPORTED"),
+                     "displayed_score":value.get("score"), "points":POINTS[value["problem"]],
+                     "source":value.get("source"), "evidence_source":"user_report",
+                     "upload_bytes_verified":explicit_upload_verification(value),
+                     "receipt_path":source_path(path)})
+
+    for path in sorted((submissions / "candidates").glob("*/*.feedback.json")):
+        value = json.loads(path.read_text(encoding="utf-8"))
+        if not (value.get("submission_status") in {"USER_CONFIRMED_SUBMITTED", "REPORTED_SUBMITTED"}
+                or value.get("accepted_grading") is True):
+            continue
+        score = value.get("score")
+        if score is None:
+            score = value.get("reported_displayed_score")
+        candidate_path = portable(value.get("candidate_csv"))
+        note_path = Path(candidate_path).with_suffix(".txt") if candidate_path else None
+        note_path = note_path.as_posix() if note_path and (repo / note_path).exists() else ""
+        rows.append({"owner":value.get("account_owner") or value.get("owner") or "",
+                     "problem":value["problem"], "attempt":value.get("attempt"),
+                     "status":value.get("submission_status") or "USER_REPORTED_ACCEPTED",
+                     "displayed_score":score,
+                     "points":value.get("maximum_points", POINTS[value["problem"]]),
+                     "observed_at":value.get("recorded_at"),
+                     "sha256":value.get("candidate_sha256"), "csv_path":candidate_path,
+                     "method_note_path":note_path,
+                     "source":value.get("source_commit"),
+                     "evidence_source":value.get("submission_evidence_source") or
+                         value.get("evidence_source", "user_report"),
+                     "score_evidence_source":value.get("score_evidence_source") or
+                         value.get("evidence_source", "user_report"),
+                     "score_evidence_path":portable(value.get("score_report_path") or
+                                                     value.get("score_source_path") or
+                                                     value.get("source_path")),
+                     "score_evidence_commit":value.get("score_source_commit"),
+                     "note_evidence":"prepared_explanation" if note_path else "",
+                     "time_penalty_hours":value.get("time_penalty_hours"),
+                     "upload_bytes_verified":explicit_upload_verification(value),
+                     "receipt_path":source_path(path)})
+
+    order = {problem:i for i, problem in enumerate(POINTS)}
+    rows.sort(key=lambda row:(order[row["problem"]], str(row.get("owner") or ""),
+                              str(row.get("attempt") or "").zfill(2), row["receipt_path"]))
+    atomic_bytes(ledger_root / "submissions.csv", csv_bytes(SUBMISSION_FIELDS, rows))
+    return len(rows)
+
+
+def sync_submissions(root="results/workflow", *, repo=REPO, ledger_root=DEFAULT_ROOT):
     count = 0
     for path in sorted((Path(root)/"official_submissions").glob("*.json")):
-        archive_submission(json.loads(path.read_text(encoding="utf-8")))
+        archive_submission(json.loads(path.read_text(encoding="utf-8")), repo=repo,
+                           ledger_root=ledger_root)
         count += 1
+    rebuild_submission_index(repo=repo, ledger_root=ledger_root)
     return count

@@ -1,0 +1,242 @@
+{
+  "version": "workflow-final-3",
+  "deadline_utc": "2026-10-24T20:56:57.412909+00:00",
+  "submission_buffer_seconds": 1200,
+  "sample_budget_usd": 0.0,
+  "graded_budget_usd": 30.0,
+  "graded_reserve_fraction": 0.1,
+  "max_remote_jobs": 800,
+  "max_concurrent_jobs": 1,
+  "stop_on_unknown_cost": true,
+  "cpu_threads": 2,
+  "memory_limit_mb": 700,
+  "per_job_seconds": 90,
+  "max_paulis": 100000,
+  "failure_limit_per_problem_method": 2,
+  "excluded_record_keys": [
+    "515adcfffbfeebdc6517750bcf2a82e6529d44628ee41b76400abef2214d5648"
+  ],
+  "exclusion_reason": "Original S3 MPS run rejected a finite nonzero norm; rerun after explicit normalization repair",
+  "mps_chis": {
+    "S1": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "S2": [
+      8,
+      16,
+      32,
+      64,
+      128,
+      256
+    ],
+    "S3": [
+      8,
+      16,
+      32,
+      64,
+      128
+    ]
+  },
+  "pps_thresholds": [
+    0.01,
+    0.003,
+    0.001,
+    0.0003,
+    0.0001,
+    3e-05,
+    1e-05
+  ],
+  "local_pps_transpilation_level": 1,
+  "cloud_pps_transpilation_level": 2,
+  "stopping": {
+    "status": "LOCAL_DIAGNOSTICS_ONLY",
+    "absolute_tolerance": 0.001,
+    "scaled_tolerance": 0.03,
+    "shape_tolerance": 0.001,
+    "scale_floor": 0.02,
+    "signal_floor": 0.0001,
+    "consecutive_steps": 2,
+    "minimum_levels_per_method": 3,
+    "target_absolute_error": 0.01,
+    "target_score_fraction": 0.99,
+    "automatic_native_stop": false
+  },
+  "extrapolation": {
+    "enabled": false,
+    "reason": "Requires held-out precision and circuit validation"
+  },
+  "fusion": {
+    "enabled": false,
+    "weights": [
+      0,
+      0.25,
+      0.5,
+      0.75,
+      1
+    ],
+    "reason": "No demonstrated consistent LOCO gain over direct estimates"
+  },
+  "local_recommendations": {
+    "S1": {
+      "status": "VALIDATED_LOCAL",
+      "method": "mps",
+      "parameters": {
+        "chi": 8,
+        "svd_cutoff": 0.0
+      },
+      "local_score": 99.99999999999996,
+      "mae": 1.5785983631388945e-15,
+      "max_absolute_error": 2.6645352591003757e-15,
+      "wall_seconds": 10.447471100000257
+    },
+    "S2": {
+      "status": "VALIDATED_LOCAL",
+      "method": "mps",
+      "parameters": {
+        "chi": 128,
+        "svd_cutoff": 0.0
+      },
+      "local_score": 99.99933879722508,
+      "mae": 0.0007196096272730575,
+      "max_absolute_error": 0.0032933228815027887,
+      "wall_seconds": 186.85604539999986
+    },
+    "S3": {
+      "status": "VALIDATED_LOCAL",
+      "method": "pps_threshold",
+      "parameters": {
+        "epsilon": 0.001,
+        "level": 1
+      },
+      "local_score": 99.99875390001769,
+      "mae": 0.0006433521131298462,
+      "max_absolute_error": 0.006531271818768263,
+      "wall_seconds": 123.22932360000596
+    }
+  },
+  "cloud_transfer": {
+    "verified": false,
+    "reason": "Native MPS/PPS sample quotes were $0.20; sample spending is prohibited",
+    "required": "Native precision pilots on graded IDs within the authorized budget"
+  },
+  "release_status": "READY",
+  "remote_job_seconds": 300,
+  "mps_chi32_job_seconds": 900,
+  "exact_job_seconds": 600,
+  "baseline_quote_reserve_usd_per_row": 0.2,
+  "baseline_quote_reserve_by_problem": {
+    "G2": 0.3,
+    "G3": 0.2,
+    "G4": 0.27
+  },
+  "maximum_native_chi": 512,
+  "gpu_enabled": true,
+  "gpu_total_seconds": 27000,
+  "gpu_hour_seconds": 2700,
+  "account_parallel_job_limit": 5,
+  "scheduler_concurrency_reason": "Serial execution protects budget accounting; imported exact G1 avoids repeating its 30 jobs",
+  "pilot_qubits": {
+    "G1": [
+      0,
+      15,
+      29
+    ],
+    "G2": [
+      0,
+      18,
+      35
+    ],
+    "G3": [
+      0,
+      14,
+      35
+    ],
+    "G4": [
+      0,
+      19,
+      37
+    ]
+  },
+  "graded_policy": {
+    "G1": {
+      "primary": "cpu",
+      "fallback": "mps.cpu",
+      "chi": 128,
+      "reason": "Free exact CPU first; S2-calibrated MPS fallback if exact cannot complete"
+    },
+    "G2": {
+      "primary": "pauli-path",
+      "recovery_prior_primary": "mps.cpu",
+      "chi": 16,
+      "epsilon": 0.001,
+      "desired_mps_chi": 128,
+      "quality": "BUDGET_COMPROMISE",
+      "reason": "S2 high-accuracy MPS is preferred, but live native quotes determine feasibility. PPS .001 is the affordable fallback; its S2 error exceeds the 0.01 target"
+    },
+    "G3": {
+      "primary": "pauli-path",
+      "epsilon": 0.001,
+      "chi": 16,
+      "reason": "Mostly Clifford grid analogue S3; native transpilation differs; chi16 is an affordable independent pilot only"
+    },
+    "G4": {
+      "primary": "pauli-path",
+      "recovery_prior_primary": "mps.cpu",
+      "chi": 16,
+      "epsilon": 0.001,
+      "quality": "UNMATCHED_FAMILY",
+      "reason": "Native MPS chi64 CPU/GPU quotes exceed the runtime/budget allocation. Use cheap PPS pilots and independent MPS chi16; neither has a matched G4 sample"
+    }
+  },
+  "pilot_signal_gate": true,
+  "discovery": {
+    "enabled": false,
+    "pps_threshold": 0.001,
+    "pps_transpilation_level": 1,
+    "mps_chi": 32,
+    "mps_probe_qubits": {
+      "G2": 18,
+      "G3": 0,
+      "G4": 0
+    },
+    "pps_timeout_seconds": 180,
+    "mps_timeout_seconds": 900,
+    "reason": "Bounded representation and bond-sensitivity checks precede low-chi bulk coverage; sample transfer is unverified."
+  },
+  "completed_anchors": {
+    "G1": {
+      "status": "EXACT_REUSED",
+      "rows": 30,
+      "source_commit": "9714dab3422134c77b7fc36f99e86f5f2dada921"
+    }
+  },
+  "quote_evidence": {
+    "G2_desired_mps": {
+      "circuit_id": "Duke_G2_0",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 128
+      },
+      "quoted_at": "2026-10-24T16:35:54.542653+00:00",
+      "cost_usd": 3.02,
+      "runtime_seconds": 7230.1,
+      "error": null,
+      "warning": "This is just an estimate; the actual runtime may be less or more.",
+      "binding_cost_cap": false
+    },
+    "scope": "Representative ID only; every execution is freshly quoted"
+  },
+  "calibrated_at": "2026-10-24T16:53:12.211876+00:00",
+  "allocation_window": {
+    "started_at": "2026-10-24T19:36:57.412909+00:00",
+    "allocation_seconds": 3600,
+    "challenge_deadline_utc": "2026-10-25T15:30:00+00:00",
+    "base_config_sha256": "b4bafaec90c469cce425b6d5ea299ec645436a648493624d0844f6245ae8da7b",
+    "reason": "One coherent G3 epsilon0.0005 level1 CPU refinement after the three-row shape review; reuse completed rows. No further precision prerequisite before first-submission decision.",
+    "limit_interpretation": "Admission stops about55minutes into the window to leave the300second job cap. Service cancellation and reconciliation are not hard termination guarantees."
+  }
+}

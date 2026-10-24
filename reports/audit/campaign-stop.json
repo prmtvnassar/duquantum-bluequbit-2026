@@ -1,0 +1,32 @@
+{
+  "checked_at": "2026-10-24T19:50:27.502215+00:00",
+  "stop_instruction": "User changed direction: no further simulations. Stop new admissions and cancel owned active jobs; preserve receipts for branch/submission audit. 2026-10-24T19:41:58.917845+00:00",
+  "status": "STOPPED",
+  "reason": "stop_file",
+  "cohort": {
+    "problem": "G3",
+    "device": "pauli-path",
+    "options": {
+      "pauli_path_truncation_threshold": 0.0005,
+      "pauli_path_circuit_transpilation_level": 1
+    }
+  },
+  "completed_rows": 9,
+  "required_rows": 36,
+  "owned_status_counts": {
+    "COMPLETED": 9,
+    "CANCELED": 2,
+    "RUNNING": 0
+  },
+  "canceled_job_ids": [
+    "TxL8XgVqpcY7TbUi",
+    "YNNrEYaMyKh5tuUL"
+  ],
+  "all_owned_terminal_and_cost_known": true,
+  "api_usage_observed_at": "2026-10-24T19:42:09.301731+00:00",
+  "api_active_jobs": 0,
+  "api_unknown_terminal_costs": 0,
+  "api_known_charges_usd": 0.2,
+  "browser_balance_usd": null,
+  "meaning": "User requested no further runs. This is a terminal execution and cost snapshot, not evidence of a complete G3 vector or official submission."
+}

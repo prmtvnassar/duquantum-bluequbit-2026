@@ -21,11 +21,8 @@ venv/
 *.fls
 *.fdb_latexmk
 
-# Large / generated results (keep CSV summaries, drop raw dumps)
-results/raw/
+# Large local runtime outputs; tracked summaries live in runs/
 results/
-results/calibration/
-results/workflow/
 *.npy
 *.npz
 
@@ -56,4 +53,3 @@ submissions/*.csv
 tutorials/study/submissions/
 tutorials/study/mock_truth_*.json
 scratch/
-.ipynb_checkpoints/

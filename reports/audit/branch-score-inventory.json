@@ -1,0 +1,5598 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-24T20:03:46+00:00",
+  "audit_mode": "offline/read-only evidence audit; no simulation, upload, browser, credential or account API access",
+  "scope": {
+    "git_refs_at_observation": {
+      "origin/main": "580776259bf3752bc55e152e1d4a73214960ba1c",
+      "origin/kevin/experiment": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+      "codex/graded-main_at_audit_start": "681828c7d176b49b0eac85b6341d71a654d35d6a",
+      "main": "c37c361079ae7f7aa781da25fd611ba0fcb3f79a",
+      "origin/backup/main-before-practice-2026-10-24_at_audit_start": "9cf240bff643e1892b779cd3d7617b71053507b5"
+    },
+    "latest_remote_heads_observed": {
+      "main": "030518fc3d7a6256d9cdd276dfdf208eb655fe83",
+      "kevin/experiment": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa"
+    },
+    "post_audit_score_claim": {
+      "commit": "030518fc3d7a6256d9cdd276dfdf208eb655fe83",
+      "path": "submissions/candidates/G2_512_txt",
+      "blob": "d8a0598132f09ce46307e8d08209a68b14af127e",
+      "sha256": "0e4fdc3524c88a555809dd5f02ea0064067d035b890fe7394dc14f75f5a34165",
+      "evidence_source": "repo_text_claim",
+      "reported_score": 579,
+      "maximum_points": 600,
+      "note": "This later commit is outside the frozen 53-commit branch-wide scan. Its text claims a score for the mixed G2 CSV; no website receipt or account attribution accompanies it."
+    },
+    "backup_ref_note": "Backup ref was present at audit start and absent from later remote-head listing; immutable commit was still read.",
+    "all_reachable_reflog_and_fsck_commits_scanned": [
+      "580776259bf3752bc55e152e1d4a73214960ba1c",
+      "2a3eb2b5d9b01a0875c99aeae52e8e2c379af748",
+      "681828c7d176b49b0eac85b6341d71a654d35d6a",
+      "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+      "b236406e0600d4678d184f3aa8dbcf4625d79b5c",
+      "1c2cc4a84c2555d74a119e5dd19959a236674793",
+      "8d85f21b5f6ca55781a0c41f9b936cead42a6b16",
+      "e6707fad97a33fa8889d6bb59161cd043fa5cdc4",
+      "4cedd76a7d7ca60fcf255ee5cc097f0e321c3abc",
+      "ca7c5f7eb74ec2adf9d556ca7f4919f6c95a6bf3",
+      "30990c594a30863657f9be1623d73f6352539bd0",
+      "c37c361079ae7f7aa781da25fd611ba0fcb3f79a",
+      "dce1fa0cf82ecccc78c1d7893fa298ae4a1b75bf",
+      "e6789dc7cb149f3a94a1ef06ea13268ba5bc4a80",
+      "0766ecea80331fc9b2c830079e8268b3ced887ad",
+      "de9a473fabbd040ce4baf14c63f46dba83d37dc1",
+      "32292a4035b1b7bcf0986c4a600cfb25a80c42ee",
+      "dc2c30166ed1eea1be0a2c9f85467c81ebe4d936",
+      "9714dab3422134c77b7fc36f99e86f5f2dada921",
+      "67d82f857ab63f4adabef22df02bff4cd622858c",
+      "f66e477ba2c185f1069dd89517cae505bd8d0cb9",
+      "ba68d2a9d8e9441a8a7394861997acda02106230",
+      "cc5c38c71e7c7a5a733ac420cbbeefef1c03cf2c",
+      "e9a6ae84f94231b39302d57cf79af5e9ae7360d8",
+      "fde46a042609dfbbe3126f77bd87ec4afc47ab26",
+      "e94a691760a2a9579ff1ca3c0767b76dd6eae796",
+      "1b925243517e1dd9de4e80c5b3fc6e5826636663",
+      "7540f4585f24a8c30653791a78207fa31a8ce240",
+      "f6e8c337554fd2257f9bc71a323948dd2539fd1d",
+      "61b15696b6c76702110cd2644e29c16936bba41c",
+      "f78ab0e7f648faa38f8b7444c1c4dcef2f2eb8ec",
+      "f6159e481c279dc7060e23bc7e1644d14c7f36fd",
+      "64c694c55968742dafafdd7b573d01759dc1c0a0",
+      "1a00f1cb15c42c69a3d0a166fc797a3df35bd699",
+      "4382543fcf886d0c43fadc9ba74b688a81ef13a8",
+      "bdc01211dcfa3557c8647bf5a7b9132c42446e90",
+      "ee88ca4a7a9d20f9c9a3fecdd15c0bde33c9269e",
+      "b536919aed324fa3c5773ffcf4b9a22822e260e0",
+      "b3346b89fac08622091b8cf19645940253d566c5",
+      "8fac5d996cf33bd8107bf9aa175a9f16e21c5db1",
+      "5d09653d8ee166b301679b9fc154a4e6c5af088a",
+      "9cf240bff643e1892b779cd3d7617b71053507b5",
+      "6e86af51cf400b2be136cbaa9df0028cd12f9dbd",
+      "849213944a7241677ebd8efc9aa57009aa740cba",
+      "38f60912e55412540b8d6c7921194b6ebb7605ad",
+      "f2ca3aa1989655162ad701b4974c48d7815afbbd",
+      "a3433e2efb3e7d15f4999e09bdebf4c7039ce5cf",
+      "a4772a7cc336a2e895115eaf9ec5d924f623ec95",
+      "7ad2f34035a05f3fa801dbc6edc9fc205a0ee405",
+      "f66d21a1da8cac114245727df993b08e99874007",
+      "25310daa1a23a803197ef6e79fe851855fc7e982",
+      "109e27a3fba090d8d3c4120d0af5a0378f985182",
+      "1598f50a31552de649ef13b661e66f607bf45f0a"
+    ],
+    "commit_count": 53,
+    "fsck_unreachable_commits": [
+      "a3433e2efb3e7d15f4999e09bdebf4c7039ce5cf",
+      "6e86af51cf400b2be136cbaa9df0028cd12f9dbd",
+      "ba68d2a9d8e9441a8a7394861997acda02106230",
+      "5d09653d8ee166b301679b9fc154a4e6c5af088a",
+      "f2ca3aa1989655162ad701b4974c48d7815afbbd",
+      "849213944a7241677ebd8efc9aa57009aa740cba",
+      "9cf240bff643e1892b779cd3d7617b71053507b5",
+      "38f60912e55412540b8d6c7921194b6ebb7605ad"
+    ],
+    "historical_assistant_G3": {
+      "active_ref_found": false,
+      "reflog_resolved_commits": [
+        "c37c361079ae7f7aa781da25fd611ba0fcb3f79a",
+        "30990c594a30863657f9be1623d73f6352539bd0"
+      ],
+      "finding": "No distinct recoverable G3 scored submission. These commits are already in the audited main history."
+    },
+    "unreachable_scope_finding": "Unreachable practice/rebase commits contain only placeholder submissions, except ba68d2a which also contains blank problem templates; no graded score receipt."
+  },
+  "best_supported_scores_by_problem": [
+    {
+      "problem": "S1",
+      "score_record": "original_S1_1",
+      "owner": "original_submitter",
+      "score": 100.0,
+      "maximum_points": 100,
+      "percentage": 100.0
+    },
+    {
+      "problem": "S2",
+      "score_record": "original_S2_1",
+      "owner": "original_submitter",
+      "score": 100.0,
+      "maximum_points": 100,
+      "percentage": 100.0
+    },
+    {
+      "problem": "S3",
+      "score_record": "original_S3_1",
+      "owner": "original_submitter",
+      "score": 100.0,
+      "maximum_points": 100,
+      "percentage": 100.0
+    },
+    {
+      "problem": "G1",
+      "score_record": "kevin_G1_v1",
+      "owner": "kevin",
+      "score": 300,
+      "maximum_points": 300,
+      "percentage": 100.0
+    },
+    {
+      "problem": "G2",
+      "score_record": "unattributed_G2_mixed_user_confirmed",
+      "owner": null,
+      "score": 579,
+      "maximum_points": 600,
+      "percentage": 96.5,
+      "evidence_source": "repo_text_claim",
+      "higher_confidence_scored_receipt": "kevin_G2_v1",
+      "provenance_note": "579/600 is a repository text claim with unknown account and no website verification; Kevin's attributed chi128 498/600 has a scored receipt."
+    },
+    {
+      "problem": "G3",
+      "score_record": "kevin_G3_v3",
+      "owner": "kevin",
+      "score": 773,
+      "maximum_points": 800,
+      "percentage": 96.625
+    },
+    {
+      "problem": "G4",
+      "score_record": "unknown_owner_G4_zero",
+      "owner": null,
+      "score": 0,
+      "maximum_points": 1000,
+      "percentage": 0.0
+    }
+  ],
+  "best_by_account": {
+    "original_submitter": {
+      "S1": "original_S1_1",
+      "S2": "original_S2_1",
+      "S3": "original_S3_1",
+      "G1": "submitted but score/bytes unknown",
+      "G2": "original_submitter_G2_1",
+      "G3": "No submitted-score evidence",
+      "G4": "No account-attributed score evidence"
+    },
+    "kevin": {
+      "G1": "kevin_G1_v1",
+      "G2": "kevin_G2_v1",
+      "G3": "kevin_G3_v3",
+      "S1": "Export exists; official score unknown",
+      "S2": "Export exists; official score unknown",
+      "S3": "No account-attributed official score evidence",
+      "G4": "No score evidence"
+    },
+    "teammate_reported": {
+      "G2": "Historical 498 claim disputed; account identity unresolved"
+    },
+    "unattributed": {
+      "G4": "unknown_owner_G4_zero",
+      "G2_new_submission": "unattributed_G2_mixed_user_confirmed; 579/600 repo text claim, account unknown"
+    }
+  },
+  "official_total": null,
+  "total_policy": "Do not sum cross-account bests into an official result. No complete account total is established.",
+  "score_records": [
+    {
+      "id": "original_S1_1",
+      "problem": "S1",
+      "owner": "original_submitter",
+      "score": 100.0,
+      "maximum_points": 100,
+      "percentage": 100.0,
+      "attempt": 1,
+      "time_penalty_hours": null,
+      "recorded_at": "2026-10-24T16:13:30.523453+00:00",
+      "upload_timestamp": null,
+      "provenance_level": "browser_observed_in_saved_receipt_index",
+      "independently_rechecked_this_audit": false,
+      "csv_path": "submissions/S1/attempt-01.csv",
+      "sha256": "482778c0611ee0c9f4f0d11e63b9ff6d636da99be9e8cc91f124bab0471bc320",
+      "method": "Computed each of the four official S1 QASM programs locally with Qiskit Aer double-precision statevector simulation, starting from |0000>, and evaluated Pauli Z on the qubit specified by its circuit ID (q0 is the rightmost Pauli character). Cross-checked every value with Qiskit Statevector. No shot sampling, fitting, or score-derived labels. BlueQubit compute cost: $0.",
+      "method_note_origin": "submitted_text per index",
+      "sources": [
+        {
+          "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+          "path": "submissions/S1/attempt-01.json",
+          "line": 7
+        },
+        {
+          "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+          "path": "runs/submissions.csv",
+          "line": 5
+        }
+      ]
+    },
+    {
+      "id": "original_S2_1",
+      "problem": "S2",
+      "owner": "original_submitter",
+      "score": 100.0,
+      "maximum_points": 100,
+      "percentage": 100.0,
+      "attempt": 1,
+      "time_penalty_hours": null,
+      "recorded_at": "2026-10-24T16:13:30.524453+00:00",
+      "upload_timestamp": null,
+      "provenance_level": "browser_observed_in_saved_receipt_index",
+      "independently_rechecked_this_audit": false,
+      "csv_path": "submissions/S2/attempt-01.csv",
+      "sha256": "dcb2666e0b37da0b1240edcd35a34398c6b3baa9c0e087875baf1a43d77ce82b",
+      "method": "Computed each of the sixteen official S2 QASM programs locally using Qiskit Aer double-precision, noiseless statevector simulation. Each program starts in |0...0>; the reported value is the expectation of Pauli Z on q[q], with q0 the rightmost Pauli character. No shot sampling, extrapolation, fitting, or score-derived labels. BlueQubit compute cost: $0.",
+      "method_note_origin": "submitted_text per index",
+      "sources": [
+        {
+          "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+          "path": "submissions/S2/attempt-01.json",
+          "line": 7
+        },
+        {
+          "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+          "path": "runs/submissions.csv",
+          "line": 6
+        }
+      ]
+    },
+    {
+      "id": "original_S3_1",
+      "problem": "S3",
+      "owner": "original_submitter",
+      "score": 100.0,
+      "maximum_points": 100,
+      "percentage": 100.0,
+      "attempt": 1,
+      "time_penalty_hours": null,
+      "recorded_at": "2026-10-24T16:13:30.525961+00:00",
+      "upload_timestamp": null,
+      "provenance_level": "browser_observed_in_saved_receipt_index",
+      "independently_rechecked_this_audit": false,
+      "csv_path": "submissions/S3/attempt-01.csv",
+      "sha256": "92d1cae4a7ebf436a367aee1f7403d72c7fcda06a0020011d59dba402a9950a2",
+      "method": "Local coefficient-cutoff Pauli propagation for each of the 30 public S3 QASMs. Qiskit optimization level 1 (u3/CZ basis); propagated target Z backward, merged identical strings, and removed coefficients below 0.01 after each gate. Summed I/Z-only terms on |0...0>. All runs completed within 100,000 terms. Validated the untruncated engine against independent small-circuit statevectors. No fitting or fusion. Independent implementation, not BlueQubit's PPS kernel. BlueQubit cost: $0.",
+      "method_note_origin": "submitted_text per index",
+      "sources": [
+        {
+          "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+          "path": "submissions/S3/attempt-01.json",
+          "line": 7
+        },
+        {
+          "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+          "path": "runs/submissions.csv",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "id": "original_submitter_G2_1",
+      "problem": "G2",
+      "owner": "original_submitter",
+      "score": 342,
+      "maximum_points": 600,
+      "percentage": 57.0,
+      "attempt": 1,
+      "time_penalty_hours": 3.48,
+      "recorded_at": "2026-10-24T19:06:35.257171+00:00",
+      "upload_timestamp": null,
+      "provenance_level": "user_report",
+      "independently_rechecked_this_audit": false,
+      "csv_path": "submissions/G2/attempt-01.csv",
+      "sha256": "4cb0c3c141640461732583a3e719058f8b731699f55078631d55f3eb0a3c79ea",
+      "method": {
+        "device": "mps.cpu",
+        "mps_bond_dimension": 32
+      },
+      "method_note_origin": "prepared_explanation; website wording unconfirmed",
+      "disputed": false,
+      "dispute": null,
+      "sources": [
+        {
+          "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+          "path": "submissions/G2/attempt-01.json",
+          "line": 8
+        }
+      ]
+    },
+    {
+      "id": "teammate_reported_G2_1",
+      "problem": "G2",
+      "owner": "teammate_reported",
+      "score": 498.0,
+      "maximum_points": 600,
+      "percentage": 83.0,
+      "attempt": 1,
+      "time_penalty_hours": null,
+      "recorded_at": "2026-10-24T18:38:37.553984+00:00",
+      "upload_timestamp": null,
+      "provenance_level": "user_report",
+      "independently_rechecked_this_audit": false,
+      "csv_path": "submissions/teammates/teammate_reported/G2/attempt-01.csv",
+      "sha256": "4cb0c3c141640461732583a3e719058f8b731699f55078631d55f3eb0a3c79ea",
+      "method": {
+        "device": "mps.cpu",
+        "mps_bond_dimension": 32
+      },
+      "method_note_origin": "prepared_explanation; website wording unconfirmed",
+      "disputed": true,
+      "dispute": "Kevin explicitly attributes 498 to his different chi128 vector; historical unnamed-account report preserved without asserting the accounts are identical.",
+      "sources": [
+        {
+          "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+          "path": "submissions/teammates/teammate_reported/G2/attempt-01.json",
+          "line": 8
+        }
+      ]
+    },
+    {
+      "id": "kevin_G1_v1",
+      "problem": "G1",
+      "owner": "kevin",
+      "score": 300,
+      "maximum_points": 300,
+      "percentage": 100.0,
+      "score_interpretation": "300 points inferred from the reported 100% and 300 maximum; original receipt has no observed numeric display",
+      "attempt": null,
+      "version_is_attempt_number": false,
+      "time_penalty_hours": null,
+      "recorded_at": null,
+      "upload_timestamp": null,
+      "provenance_level": "teammate_branch_assertion",
+      "independently_rechecked_this_audit": false,
+      "csv_path": "submissions/teammates/kevin/G1/submitted-v1.csv",
+      "sha256": "d6bbdea66362f95c58a6b4b06290f7b449636c9d4967fe9231c1fcacd003c6e2",
+      "method": {
+        "device": "cpu",
+        "method": "exact_statevector"
+      },
+      "method_note_origin": "Reconstructed from reviewed runner code/config; original website wording unavailable",
+      "source_score_fraction": 1.0,
+      "sources": [
+        {
+          "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+          "path": "submissions/teammates/kevin/G1/submitted-v1.json",
+          "line": 8
+        },
+        {
+          "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+          "path": "problems/04_graded_G1/README.md",
+          "line": 13
+        }
+      ],
+      "row_verification_key": "submissions/teammates/kevin/G1/submitted-v1.json"
+    },
+    {
+      "id": "kevin_G2_v1",
+      "problem": "G2",
+      "owner": "kevin",
+      "score": 498,
+      "maximum_points": 600,
+      "percentage": 83.0,
+      "score_interpretation": "reported displayed points",
+      "attempt": null,
+      "version_is_attempt_number": false,
+      "time_penalty_hours": null,
+      "recorded_at": null,
+      "upload_timestamp": null,
+      "provenance_level": "teammate_branch_assertion",
+      "independently_rechecked_this_audit": false,
+      "csv_path": "submissions/teammates/kevin/G2/submitted-v1.csv",
+      "sha256": "a92e6e44ef9d12d1272d8082b2b0fb5685dbaaa69bf76f00ae802d33bb893c13",
+      "method": {
+        "device": "mps.cpu",
+        "mps_bond_dimension": 128
+      },
+      "method_note_origin": "Prepared explanation written from the run records; exact website wording not confirmed",
+      "source_score_fraction": 0.83,
+      "sources": [
+        {
+          "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+          "path": "submissions/teammates/kevin/G2/submitted-v1.json",
+          "line": 9
+        },
+        {
+          "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+          "path": "problems/05_graded_G2/README.md",
+          "line": 13
+        }
+      ],
+      "row_verification_key": "submissions/teammates/kevin/G2/submitted-v1.json"
+    },
+    {
+      "id": "kevin_G3_v2",
+      "problem": "G3",
+      "owner": "kevin",
+      "score": 534,
+      "maximum_points": 800,
+      "percentage": 66.75,
+      "score_interpretation": "reported displayed points",
+      "attempt": null,
+      "version_is_attempt_number": false,
+      "time_penalty_hours": null,
+      "recorded_at": null,
+      "upload_timestamp": null,
+      "provenance_level": "teammate_branch_assertion",
+      "independently_rechecked_this_audit": false,
+      "csv_path": "submissions/teammates/kevin/G3/submitted-v2.csv",
+      "sha256": "33c9a6ac4d0e1b06ce9a79607c20a7ea4dd707e571061aeea7f031715075f7ef",
+      "method": {
+        "device": "pauli-path",
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "method_note_origin": "Prepared explanation written from the run records; exact website wording not confirmed",
+      "source_score_fraction": 0.6675,
+      "sources": [
+        {
+          "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+          "path": "submissions/teammates/kevin/G3/submitted-v2.json",
+          "line": 9
+        },
+        {
+          "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+          "path": "problems/06_graded_G3/README.md",
+          "line": 13
+        }
+      ],
+      "row_verification_key": "submissions/teammates/kevin/G3/submitted-v2.json"
+    },
+    {
+      "id": "kevin_G3_v3",
+      "problem": "G3",
+      "owner": "kevin",
+      "score": 773,
+      "maximum_points": 800,
+      "percentage": 96.625,
+      "score_interpretation": "reported displayed points",
+      "attempt": null,
+      "version_is_attempt_number": false,
+      "time_penalty_hours": null,
+      "recorded_at": null,
+      "upload_timestamp": null,
+      "provenance_level": "teammate_branch_assertion",
+      "independently_rechecked_this_audit": false,
+      "csv_path": "submissions/teammates/kevin/G3/submitted-v3.csv",
+      "sha256": "44fdbe227f1fede6b7abe04934dd375420c86a9427c69b760bb70c00e338d691",
+      "method": {
+        "device": "pauli-path",
+        "pauli_path_truncation_threshold": 0.0003,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "method_note_origin": "Prepared explanation written from the run records; exact website wording not confirmed",
+      "source_score_fraction": 0.9663,
+      "sources": [
+        {
+          "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+          "path": "submissions/teammates/kevin/G3/submitted-v3.json",
+          "line": 9
+        },
+        {
+          "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+          "path": "problems/06_graded_G3/README.md",
+          "line": 22
+        }
+      ],
+      "row_verification_key": "submissions/teammates/kevin/G3/submitted-v3.json"
+    },
+    {
+      "id": "original_G1_report",
+      "problem": "G1",
+      "owner": "original_submitter",
+      "score": null,
+      "maximum_points": 300,
+      "percentage": null,
+      "attempt": null,
+      "time_penalty_hours": null,
+      "upload_timestamp": null,
+      "provenance_level": "user_report_of_submission_only",
+      "csv_path": null,
+      "sha256": null,
+      "expected_source_csv": "problems/04_graded_G1/exact_values.csv",
+      "expected_source_sha256": "d6bbdea66362f95c58a6b4b06290f7b449636c9d4967fe9231c1fcacd003c6e2",
+      "uploaded_bytes_verified": false,
+      "sources": [
+        {
+          "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+          "path": "submissions/G1/user-reported-submission.json",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "id": "unknown_owner_G4_zero",
+      "problem": "G4",
+      "owner": null,
+      "score": 0,
+      "maximum_points": 1000,
+      "percentage": 0.0,
+      "attempt": null,
+      "time_penalty_hours": null,
+      "upload_timestamp": null,
+      "recorded_at": "2026-10-24T18:58:39.397164+00:00",
+      "provenance_level": "user_report",
+      "accepted_grading": true,
+      "csv_path": "submissions/candidates/G4/direct-930f7e5b7d14.csv",
+      "sha256": "73a5887922c63eb2aafe840fae8e9b26402256fdfc13accf9f689ad4329cbb20",
+      "uploaded_bytes_verified": false,
+      "method": {
+        "device": "mps.cpu",
+        "mps_bond_dimension": 32
+      },
+      "sources": [
+        {
+          "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+          "path": "submissions/candidates/G4/direct-930f7e5b7d14.feedback.json",
+          "line": 6
+        }
+      ],
+      "recommendation": "Do not resubmit this known-zero candidate."
+    },
+    {
+      "problem": "G2",
+      "owner": null,
+      "git_author": "xubrandonTECH",
+      "csv_path": "submissions/candidates/G2/G2_23_512_and_13_64.csv",
+      "sha256": "ffb433747eb61b0710fec6e9e73eef6aab06eaaa9b8ed704f9895d43266e7dd0",
+      "submitted": true,
+      "score": 579,
+      "attempt": null,
+      "time_penalty_hours": null,
+      "method_claim": "Complete MPS chi64 baseline with 23 rows replaced by completed GPU MPS chi512 values; remaining 13 rows chi64. Claimed in the CSV commit and later score text.",
+      "per_row_configuration_mapping_verified": false,
+      "run_receipts_available_with_upload": false,
+      "matching_rows_in_examined_D_runtime_receipts": 0,
+      "source": {
+        "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "path": "submissions/candidates/G2/G2_23_512_and_13_64.csv",
+        "line": 1
+      },
+      "score_source": {
+        "commit": "030518fc3d7a6256d9cdd276dfdf208eb655fe83",
+        "path": "submissions/candidates/G2_512_txt",
+        "line": 1,
+        "sha256": "0e4fdc3524c88a555809dd5f02ea0064067d035b890fe7394dc14f75f5a34165"
+      },
+      "evidence_source": "repo_text_claim",
+      "score_interpretation": "Reported points in repository text; no website receipt saved or verified.",
+      "website_score_verified": false,
+      "independently_rechecked_this_audit": false,
+      "method_source": "Commit 580776259bf3752bc55e152e1d4a73214960ba1c message and submissions/candidates/G2_512_txt at 030518fc3d7a6256d9cdd276dfdf208eb655fe83.",
+      "id": "unattributed_G2_mixed_user_confirmed",
+      "submission_status": "submission_confirmed_user_report",
+      "provenance_level": "user_report_of_submission_plus_repo_text_claim_of_score",
+      "maximum_points": 600,
+      "percentage": 96.5,
+      "upload_timestamp": null,
+      "uploaded_bytes_independently_verified": false,
+      "submission_confirmation_source": "User confirmed during the 2026-10-24 audit that the newest main G2 mixed-precision CSV was submitted; uploading account remains unknown.",
+      "rank_status": "Highest numerically reported G2 score; weaker repository text claim than Kevin's account-attributed chi128 498/600 scored receipt."
+    }
+  ],
+  "kevin_row_verification": {
+    "submissions/teammates/kevin/G1/submitted-v1.json": {
+      "receipt": {
+        "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "path": "submissions/teammates/kevin/G1/submitted-v1.json"
+      },
+      "rows_verified": 30,
+      "rows": [
+        {
+          "circuit_id": "Duke_G1_0",
+          "job_id": "W6RnxKDgZZKi19cV",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 56
+          },
+          "value_equal": true,
+          "device": "cpu",
+          "setting": "0",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G1_1",
+          "job_id": "XwidDPx5kTlxGMZm",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 57
+          },
+          "value_equal": true,
+          "device": "cpu",
+          "setting": "0",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G1_2",
+          "job_id": "ojyXDgQxjkg497PW",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 58
+          },
+          "value_equal": true,
+          "device": "cpu",
+          "setting": "0",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G1_3",
+          "job_id": "GISWTrfrCQIgOrWq",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 59
+          },
+          "value_equal": true,
+          "device": "cpu",
+          "setting": "0",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G1_4",
+          "job_id": "1Q9k8h8XiQYn2QkK",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 60
+          },
+          "value_equal": true,
+          "device": "cpu",
+          "setting": "0",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G1_8",
+          "job_id": "OBHGogpwdgCQ5usD",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 68
+          },
+          "value_equal": true,
+          "device": "cpu",
+          "setting": "0",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G1_9",
+          "job_id": "V64qARnJGCrudOL7",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 69
+          },
+          "value_equal": true,
+          "device": "cpu",
+          "setting": "0",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G1_10",
+          "job_id": "oBn5grgusICRZNS5",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 70
+          },
+          "value_equal": true,
+          "device": "cpu",
+          "setting": "0",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G1_11",
+          "job_id": "jAFkvoA6IniilhXb",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 71
+          },
+          "value_equal": true,
+          "device": "cpu",
+          "setting": "0",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G1_13",
+          "job_id": "YiJe7ztq5vb6q0Mp",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 72
+          },
+          "value_equal": true,
+          "device": "cpu",
+          "setting": "0",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G1_15",
+          "job_id": "6HcBXi5YMIFHmnIj",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 82
+          },
+          "value_equal": true,
+          "device": "cpu",
+          "setting": "0",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G1_16",
+          "job_id": "jJYWbtlne4KKS1aI",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 83
+          },
+          "value_equal": true,
+          "device": "cpu",
+          "setting": "0",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G1_17",
+          "job_id": "x7V4njirlt7QWJ3V",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 84
+          },
+          "value_equal": true,
+          "device": "cpu",
+          "setting": "0",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G1_19",
+          "job_id": "Ofd8InoDWdzjMAMN",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 85
+          },
+          "value_equal": true,
+          "device": "cpu",
+          "setting": "0",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G1_20",
+          "job_id": "vgtq0xUxYCbYlZQG",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 86
+          },
+          "value_equal": true,
+          "device": "cpu",
+          "setting": "0",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G1_25",
+          "job_id": "ZvvpXGUQP7CiOkzm",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 87
+          },
+          "value_equal": true,
+          "device": "cpu",
+          "setting": "0",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G1_26",
+          "job_id": "OjcRynZujj9bi1JL",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 91
+          },
+          "value_equal": true,
+          "device": "cpu",
+          "setting": "0",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G1_27",
+          "job_id": "RI1QjtifW6witQm3",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 88
+          },
+          "value_equal": true,
+          "device": "cpu",
+          "setting": "0",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G1_28",
+          "job_id": "ciyPRzUyqLzY4ZJk",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 89
+          },
+          "value_equal": true,
+          "device": "cpu",
+          "setting": "0",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G1_29",
+          "job_id": "GpN8Ugmh47AblPIN",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 90
+          },
+          "value_equal": true,
+          "device": "cpu",
+          "setting": "0",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G1_5",
+          "job_id": "M9Yh3iot7G1983MX",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 97
+          },
+          "value_equal": true,
+          "device": "cpu",
+          "setting": "0",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G1_6",
+          "job_id": "9hP6o0yf8Qucz1G1",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 99
+          },
+          "value_equal": true,
+          "device": "cpu",
+          "setting": "0",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G1_7",
+          "job_id": "BNx3CEpqYiyAvymm",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 101
+          },
+          "value_equal": true,
+          "device": "cpu",
+          "setting": "0",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G1_12",
+          "job_id": "TWb5RbiHJyoju2pt",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 105
+          },
+          "value_equal": true,
+          "device": "cpu",
+          "setting": "0",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G1_14",
+          "job_id": "EjyJwrEMlULvSVcO",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 103
+          },
+          "value_equal": true,
+          "device": "cpu",
+          "setting": "0",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G1_18",
+          "job_id": "pUPV2rZIWoTpyOIX",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 106
+          },
+          "value_equal": true,
+          "device": "cpu",
+          "setting": "0",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G1_21",
+          "job_id": "d8pQMdSejoYOvKgr",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 108
+          },
+          "value_equal": true,
+          "device": "cpu",
+          "setting": "0",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G1_22",
+          "job_id": "NjeORq7QmY3Au5Nk",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 109
+          },
+          "value_equal": true,
+          "device": "cpu",
+          "setting": "0",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G1_23",
+          "job_id": "7v0hu2m2PN3gGsYQ",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 110
+          },
+          "value_equal": true,
+          "device": "cpu",
+          "setting": "0",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G1_24",
+          "job_id": "ER9Y1wOKkVu478uM",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 111
+          },
+          "value_equal": true,
+          "device": "cpu",
+          "setting": "0",
+          "transpilation_level": null,
+          "credits": 0.0
+        }
+      ],
+      "total_recorded_credits": 0.0,
+      "max_absolute_value_difference": 0.0
+    },
+    "submissions/teammates/kevin/G2/submitted-v1.json": {
+      "receipt": {
+        "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "path": "submissions/teammates/kevin/G2/submitted-v1.json"
+      },
+      "rows_verified": 36,
+      "rows": [
+        {
+          "circuit_id": "Duke_G2_0",
+          "job_id": "3vthFykOUg9STpyH",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 113
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "setting": "128",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_1",
+          "job_id": "amYn6eEGELs0f07u",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 121
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "setting": "128",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_2",
+          "job_id": "CcP073uy8VTfOm7Z",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 123
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "setting": "128",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_3",
+          "job_id": "Yxrh3L2PUkc3VhaY",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 119
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "setting": "128",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_4",
+          "job_id": "culHIrNwFvzVmhin",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 127
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "setting": "128",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_5",
+          "job_id": "naxElkaIO19i9Z0B",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 125
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "setting": "128",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_6",
+          "job_id": "B4ds8Aiw7rfVMwe3",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 129
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "setting": "128",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_7",
+          "job_id": "cMCDoXnvsIcrGYIL",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 131
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "setting": "128",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_8",
+          "job_id": "lmZaxYlDlkm8GvAK",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 137
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "setting": "128",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_9",
+          "job_id": "iqlVmKsTe1h6oCoX",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 132
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "setting": "128",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_10",
+          "job_id": "ddxYjwvqBs0JhZtJ",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 135
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "setting": "128",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_11",
+          "job_id": "TURANa5f21AmhiAL",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 139
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "setting": "128",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_12",
+          "job_id": "h5ruIRgO3xgx8u0e",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 143
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "setting": "128",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_13",
+          "job_id": "Lvfb3oPsBWLkd53U",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 141
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "setting": "128",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_14",
+          "job_id": "fWCNz2PXNHvUFWzb",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 145
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "setting": "128",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_15",
+          "job_id": "GqUmky5VKcbmgZSU",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 147
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "setting": "128",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_16",
+          "job_id": "uTbcKbXAp9Be7SC9",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 149
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "setting": "128",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_17",
+          "job_id": "dropIGgQmgDH1WRr",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 151
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "setting": "128",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_18",
+          "job_id": "uHuan3UDZEwjgWRu",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 153
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "setting": "128",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_19",
+          "job_id": "J39oxXYGLTa6MPT1",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 155
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "setting": "128",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_20",
+          "job_id": "DYdh0YzyFmb55Kqa",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 157
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "setting": "128",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_21",
+          "job_id": "tJKiGWUPHuIzDVo5",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 159
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "setting": "128",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_22",
+          "job_id": "rmB9Wk7PnVRh4Ksr",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 161
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "setting": "128",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_23",
+          "job_id": "yC1WtwWAmvioU2zI",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 163
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "setting": "128",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_24",
+          "job_id": "60NGWyMyT4P4BpBG",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 165
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "setting": "128",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_25",
+          "job_id": "jTnEzaXlM9lrFr9r",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 166
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "setting": "128",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_26",
+          "job_id": "X314hDD7f4Gk5fD3",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 169
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "setting": "128",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_27",
+          "job_id": "H25PAmPtNUI4jMSY",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 171
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "setting": "128",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_28",
+          "job_id": "v1nXgToXExYbkaYq",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 173
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "setting": "128",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_29",
+          "job_id": "wlqjcFqMohlSJpSZ",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 175
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "setting": "128",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_30",
+          "job_id": "HCw4rhIo6MdQG7IB",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 177
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "setting": "128",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_31",
+          "job_id": "xIu0agPgzLMMYLfT",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 178
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "setting": "128",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_32",
+          "job_id": "cH98ezz3SBhTP5mN",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 180
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "setting": "128",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_33",
+          "job_id": "OIOwNPNfE2loWT37",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 181
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "setting": "128",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_34",
+          "job_id": "8u8qRRzfTbTUBL0R",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 182
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "setting": "128",
+          "transpilation_level": null,
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_35",
+          "job_id": "Wsto0FWElr5r0r5i",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 183
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "setting": "128",
+          "transpilation_level": null,
+          "credits": 0.0
+        }
+      ],
+      "total_recorded_credits": 0.0,
+      "max_absolute_value_difference": 0.0
+    },
+    "submissions/teammates/kevin/G3/submitted-v2.json": {
+      "receipt": {
+        "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "path": "submissions/teammates/kevin/G3/submitted-v2.json"
+      },
+      "rows_verified": 36,
+      "rows": [
+        {
+          "circuit_id": "Duke_G3_0",
+          "job_id": "Y4w6ODhOvQaEMEBE",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 404
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.001",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_1",
+          "job_id": "nEUBAvmXYZJCPz6T",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 406
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.001",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_2",
+          "job_id": "Ad1g5x7Rz5rKutyM",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 408
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.001",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_3",
+          "job_id": "SPBvCC2VMTvlYFpr",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 409
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.001",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_4",
+          "job_id": "aBVZQHy2oOfRp25c",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 410
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.001",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_5",
+          "job_id": "ryM49NQEjsPWQxGt",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 414
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.001",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_6",
+          "job_id": "ERSm3Ge7UepkJty7",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 416
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.001",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_7",
+          "job_id": "qSvQCkye2uT5bioE",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 417
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.001",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_8",
+          "job_id": "AOBSFCYfBLwjRIUC",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 418
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.001",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_9",
+          "job_id": "X5npAZ6zkZNTh0GN",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 422
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.001",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_10",
+          "job_id": "VwZ1ihwSNXC5UROj",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 424
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.001",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_11",
+          "job_id": "uq9niTD7ua3Hd7HP",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 426
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.001",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_12",
+          "job_id": "0HOBApq09oRK27tw",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 427
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.001",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_13",
+          "job_id": "8MT0rFxHFwm6yP6C",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 430
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.001",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_14",
+          "job_id": "NcPzuUkOexQBB7F1",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 440
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.001",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_15",
+          "job_id": "8PSxvOeSy3Shxn0K",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 432
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.001",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_16",
+          "job_id": "wrb9mPZ5GHyZhS8I",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 434
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.001",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_17",
+          "job_id": "tGiKo8iq60FLkMvB",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 436
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.001",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_18",
+          "job_id": "86l9MYnYbru84AoB",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 444
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.001",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_19",
+          "job_id": "VFhkjBkMd3ySlz9R",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 438
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.001",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_20",
+          "job_id": "6VfhLjzsWWCMgZDK",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 442
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.001",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_21",
+          "job_id": "sJJUOvfbfm1Zp16y",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 446
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.001",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_22",
+          "job_id": "qEDGDFiIfE6yjGa4",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 448
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.001",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_23",
+          "job_id": "eiW2qPvO35DpISjc",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 449
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.001",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_24",
+          "job_id": "r38tyhYg2WmTnMW9",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 452
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.001",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_25",
+          "job_id": "BsMHkFTGLD9d9GAJ",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 454
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.001",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_26",
+          "job_id": "9Frr61ojnCphHFyJ",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 456
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.001",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_27",
+          "job_id": "pnFJSuOFmEU0LsYm",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 458
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.001",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_28",
+          "job_id": "skMT13Tu7LKivH1k",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 459
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.001",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_29",
+          "job_id": "jgcO3PBceBZssFOa",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 462
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.001",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_30",
+          "job_id": "fQHUiJVqzCKTvqLf",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 464
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.001",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_31",
+          "job_id": "MYqmvLBMVcrlG0Cb",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 466
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.001",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_32",
+          "job_id": "mFyyYycRDyDXNKpv",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 467
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.001",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_33",
+          "job_id": "XS6SEyUZjqKUZ8rU",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 468
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.001",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_34",
+          "job_id": "v9QKDiIrng4vCTBE",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 469
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.001",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_35",
+          "job_id": "6hJPFIOc3t9GSd2a",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 470
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.001",
+          "transpilation_level": "1",
+          "credits": 0.0
+        }
+      ],
+      "total_recorded_credits": 0.0,
+      "max_absolute_value_difference": 0.0
+    },
+    "submissions/teammates/kevin/G3/submitted-v3.json": {
+      "receipt": {
+        "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "path": "submissions/teammates/kevin/G3/submitted-v3.json"
+      },
+      "rows_verified": 36,
+      "rows": [
+        {
+          "circuit_id": "Duke_G3_0",
+          "job_id": "qshrSZgtvfgQIjXp",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 476
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.0003",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_1",
+          "job_id": "pq78lQeYluBKOPk6",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 478
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.0003",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_2",
+          "job_id": "1RgWVOPi9shaq3CA",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 484
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.0003",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_3",
+          "job_id": "ZCnWrUSVmlZ9TUu3",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 482
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.0003",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_4",
+          "job_id": "XmyDsExYueEA65tO",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 480
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.0003",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_5",
+          "job_id": "MkzeQNrsoHK0vBcS",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 486
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.0003",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_6",
+          "job_id": "CiEwvwAd8giNpvY6",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 492
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.0003",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_7",
+          "job_id": "7IlgoRTVfWIAJ5H7",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 488
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.0003",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_8",
+          "job_id": "rpaanZY5TI0tr6hG",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 490
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.0003",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_9",
+          "job_id": "6VfJ4RZfMeMAyHhV",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 494
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.0003",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_10",
+          "job_id": "6Tvq6iXx5fQDPtS7",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 496
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.0003",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_11",
+          "job_id": "h5XC7bKzcm1m9i1g",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 498
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.0003",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_12",
+          "job_id": "0Q134qy5kcWo64x3",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 500
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.0003",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_13",
+          "job_id": "xLQbFAzDRnimqWC7",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 501
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.0003",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_14",
+          "job_id": "kyZfkqc4EugHF1Qy",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 506
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.0003",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_15",
+          "job_id": "xDuIP0UybFYZQdex",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 510
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.0003",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_16",
+          "job_id": "Ni4hjUFjMoSBSv0F",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 504
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.0003",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_17",
+          "job_id": "46wvXnW5dUXKLMmM",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 514
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.0003",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_18",
+          "job_id": "0sfVew43WK3hExe8",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 508
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.0003",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_19",
+          "job_id": "sUiezSQ3TghGtO2M",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 512
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.0003",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_20",
+          "job_id": "hdAj4XHwOlwXiSTQ",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 518
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.0003",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_21",
+          "job_id": "UxGbZolmyPNVYGU2",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 522
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.0003",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_22",
+          "job_id": "rJIz44rVFk7Ycmay",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 516
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.0003",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_23",
+          "job_id": "MliZPMm25a5mgKRG",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 520
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.0003",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_24",
+          "job_id": "m1P3f92CrCN5yFep",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 524
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.0003",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_25",
+          "job_id": "zDHIlEUdQt3SQTes",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 526
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.0003",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_26",
+          "job_id": "ddGivPWkPbztXlju",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 532
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.0003",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_27",
+          "job_id": "RsdSZRM4UpFcV7Pl",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 530
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.0003",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_28",
+          "job_id": "o3Z0Wqig7SSQ1Suq",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 528
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.0003",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_29",
+          "job_id": "IkbRs6EGrxrrNCtN",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 534
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.0003",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_30",
+          "job_id": "bTrqg25xGagvpzC9",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 536
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.0003",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_31",
+          "job_id": "mNKoqrIXkpEiPmoO",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 538
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.0003",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_32",
+          "job_id": "k20flzKiZ6hbC8kF",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 540
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.0003",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_33",
+          "job_id": "2K3rN9Bjo3CYrimu",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 539
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.0003",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_34",
+          "job_id": "z6d18lbfRbuv8Xtl",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 542
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.0003",
+          "transpilation_level": "1",
+          "credits": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_35",
+          "job_id": "6ZWjpjGXIQ5XDJfn",
+          "source": {
+            "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+            "path": "runs/ledger.csv",
+            "line": 541
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "setting": "0.0003",
+          "transpilation_level": "1",
+          "credits": 0.0
+        }
+      ],
+      "total_recorded_credits": 0.0,
+      "max_absolute_value_difference": 0.0
+    }
+  },
+  "original_candidate_row_verification": {
+    "G2": {
+      "manifest": {
+        "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "path": "submissions/candidates/G2/direct-3643218316ac.json"
+      },
+      "rows_verified": 36,
+      "rows": [
+        {
+          "circuit_id": "Duke_G2_0",
+          "job_id": "e5W2dxQ1OLOkRRLi",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 478
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_1",
+          "job_id": "flbW0WUTUwh0ugVi",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 486
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_2",
+          "job_id": "4aUqOsbGqTnrNsyD",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 487
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_3",
+          "job_id": "lcjo3vKNnkBoDTKy",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 488
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_4",
+          "job_id": "5fKBwzfyJ2hZEkTF",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 489
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_5",
+          "job_id": "ocp4OGcIk8ksar0E",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 490
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_6",
+          "job_id": "kotELLnfFL3JCdfl",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 491
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_7",
+          "job_id": "0aFBj5foDjvl11Tj",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 492
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_8",
+          "job_id": "SucHwfnGVJ2CQKmM",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 493
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_9",
+          "job_id": "dAGHVu0ky3qVSoed",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 494
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_10",
+          "job_id": "NkJ4SdX1FirxzW8O",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 495
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_11",
+          "job_id": "aopgRc80n61KSttt",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 496
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_12",
+          "job_id": "7dMiLlvcVFNWVcT8",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 497
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_13",
+          "job_id": "LXbZKhuCycdPY3W7",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 498
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_14",
+          "job_id": "u2IvmvPL3fWl2Hni",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 499
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_15",
+          "job_id": "1ZjlPUanRpif4A7P",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 500
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_16",
+          "job_id": "GWgmRa61l1MJ7DVb",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 501
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_17",
+          "job_id": "hWyJR41mStSfV7q4",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 502
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_18",
+          "job_id": "bWm41clhLZ9NOIA8",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 475
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_19",
+          "job_id": "DAZAw6Grjb2i10cE",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 503
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_20",
+          "job_id": "WasQ83jYL2NNRRhZ",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 504
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_21",
+          "job_id": "mwxR2R8s7CM4DSUU",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 505
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_22",
+          "job_id": "vrlrwBmE4guDrfVp",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 506
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_23",
+          "job_id": "hLD1rix3fjQKUQYl",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 507
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_24",
+          "job_id": "eTryNkqxBGDSxWRT",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 508
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_25",
+          "job_id": "XrWVIrRjrcrKb4v0",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 509
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_26",
+          "job_id": "6pFmSE5T8twQZtbh",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 510
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_27",
+          "job_id": "e1Qbkkkyd4Q7JjVP",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 511
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_28",
+          "job_id": "gHj807bS4sWLgiIe",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 512
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_29",
+          "job_id": "YsLqtFxpIZUKhWBy",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 513
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_30",
+          "job_id": "DOWRlNQ3r4Cl6tWZ",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 514
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_31",
+          "job_id": "9RmQMucEi62iX3a2",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 515
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_32",
+          "job_id": "F20QBIPPGFelilzx",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 516
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_33",
+          "job_id": "7HoyY2c4BH2IV4nv",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 517
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_34",
+          "job_id": "Uq8gXbgv5d6dfJWl",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 518
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G2_35",
+          "job_id": "gIhxrjeFBKeCtnHd",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 479
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        }
+      ],
+      "total_recorded_cost_usd": 0.0,
+      "account_identity": "Run records do not independently prove uploading-account identity."
+    },
+    "G3": {
+      "manifest": {
+        "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "path": "submissions/candidates/G3/direct-fb792001c3e7.json"
+      },
+      "rows_verified": 36,
+      "rows": [
+        {
+          "circuit_id": "Duke_G3_0",
+          "job_id": "rOuJjcU3jjqtpb4e",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 472
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "options": {
+            "pauli_path_truncation_threshold": 0.001,
+            "pauli_path_circuit_transpilation_level": 1
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_1",
+          "job_id": "9Rua7hRGxRLdcQvO",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 554
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "options": {
+            "pauli_path_truncation_threshold": 0.001,
+            "pauli_path_circuit_transpilation_level": 1
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_2",
+          "job_id": "QNMc3MGZUTM8r4HC",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 555
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "options": {
+            "pauli_path_truncation_threshold": 0.001,
+            "pauli_path_circuit_transpilation_level": 1
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_3",
+          "job_id": "ea9vMuUYPfIvNK0E",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 556
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "options": {
+            "pauli_path_truncation_threshold": 0.001,
+            "pauli_path_circuit_transpilation_level": 1
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_4",
+          "job_id": "Iil6OpIHfHxgr7cF",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 557
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "options": {
+            "pauli_path_truncation_threshold": 0.001,
+            "pauli_path_circuit_transpilation_level": 1
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_5",
+          "job_id": "fzQzCyOoGGFWqTZJ",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 558
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "options": {
+            "pauli_path_truncation_threshold": 0.001,
+            "pauli_path_circuit_transpilation_level": 1
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_6",
+          "job_id": "P9NBeIMCjVhNJsPA",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 559
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "options": {
+            "pauli_path_truncation_threshold": 0.001,
+            "pauli_path_circuit_transpilation_level": 1
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_7",
+          "job_id": "z3Mhs4lrlW9djS2V",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 560
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "options": {
+            "pauli_path_truncation_threshold": 0.001,
+            "pauli_path_circuit_transpilation_level": 1
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_8",
+          "job_id": "tBw7CMHic0J5unGa",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 561
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "options": {
+            "pauli_path_truncation_threshold": 0.001,
+            "pauli_path_circuit_transpilation_level": 1
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_9",
+          "job_id": "7VaZbG7IPCv5RujL",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 562
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "options": {
+            "pauli_path_truncation_threshold": 0.001,
+            "pauli_path_circuit_transpilation_level": 1
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_10",
+          "job_id": "b9EKXtZFXxmZWNaq",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 563
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "options": {
+            "pauli_path_truncation_threshold": 0.001,
+            "pauli_path_circuit_transpilation_level": 1
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_11",
+          "job_id": "gGDeYTaBJsKKAWjS",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 564
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "options": {
+            "pauli_path_truncation_threshold": 0.001,
+            "pauli_path_circuit_transpilation_level": 1
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_12",
+          "job_id": "8F85YwJTJcFxZhHQ",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 565
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "options": {
+            "pauli_path_truncation_threshold": 0.001,
+            "pauli_path_circuit_transpilation_level": 1
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_13",
+          "job_id": "9IhF26U9EElF8uH7",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 566
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "options": {
+            "pauli_path_truncation_threshold": 0.001,
+            "pauli_path_circuit_transpilation_level": 1
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_14",
+          "job_id": "G1zxxs8zxn4vBAmI",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 473
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "options": {
+            "pauli_path_truncation_threshold": 0.001,
+            "pauli_path_circuit_transpilation_level": 1
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_15",
+          "job_id": "hRGDjWjYNaJtofQN",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 567
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "options": {
+            "pauli_path_truncation_threshold": 0.001,
+            "pauli_path_circuit_transpilation_level": 1
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_16",
+          "job_id": "BmBm2PRl6VfVb2hT",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 568
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "options": {
+            "pauli_path_truncation_threshold": 0.001,
+            "pauli_path_circuit_transpilation_level": 1
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_17",
+          "job_id": "yDXYV5Tg3CozTDb6",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 569
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "options": {
+            "pauli_path_truncation_threshold": 0.001,
+            "pauli_path_circuit_transpilation_level": 1
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_18",
+          "job_id": "Djm45r9NRU8omvzf",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 570
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "options": {
+            "pauli_path_truncation_threshold": 0.001,
+            "pauli_path_circuit_transpilation_level": 1
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_19",
+          "job_id": "Lb4IHZt50wl51B59",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 571
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "options": {
+            "pauli_path_truncation_threshold": 0.001,
+            "pauli_path_circuit_transpilation_level": 1
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_20",
+          "job_id": "d9gHwzmrhulGNvBt",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 572
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "options": {
+            "pauli_path_truncation_threshold": 0.001,
+            "pauli_path_circuit_transpilation_level": 1
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_21",
+          "job_id": "AtKZAeOJCElx0y82",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 573
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "options": {
+            "pauli_path_truncation_threshold": 0.001,
+            "pauli_path_circuit_transpilation_level": 1
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_22",
+          "job_id": "kiMkIGDzWaIGJUXl",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 574
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "options": {
+            "pauli_path_truncation_threshold": 0.001,
+            "pauli_path_circuit_transpilation_level": 1
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_23",
+          "job_id": "lNoBGJPl7omoylIs",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 575
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "options": {
+            "pauli_path_truncation_threshold": 0.001,
+            "pauli_path_circuit_transpilation_level": 1
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_24",
+          "job_id": "gBvNH1ZBb8Hbjijk",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 576
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "options": {
+            "pauli_path_truncation_threshold": 0.001,
+            "pauli_path_circuit_transpilation_level": 1
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_25",
+          "job_id": "6BPzFWNg9CgwQEUv",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 577
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "options": {
+            "pauli_path_truncation_threshold": 0.001,
+            "pauli_path_circuit_transpilation_level": 1
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_26",
+          "job_id": "HfWhHPvqKQYkEYAk",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 578
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "options": {
+            "pauli_path_truncation_threshold": 0.001,
+            "pauli_path_circuit_transpilation_level": 1
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_27",
+          "job_id": "8puZsd2Of2wo258B",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 579
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "options": {
+            "pauli_path_truncation_threshold": 0.001,
+            "pauli_path_circuit_transpilation_level": 1
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_28",
+          "job_id": "2NArvyN8NVAxwcXo",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 580
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "options": {
+            "pauli_path_truncation_threshold": 0.001,
+            "pauli_path_circuit_transpilation_level": 1
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_29",
+          "job_id": "ZB4TXCbJYWEFrszi",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 581
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "options": {
+            "pauli_path_truncation_threshold": 0.001,
+            "pauli_path_circuit_transpilation_level": 1
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_30",
+          "job_id": "QId66iwguY5qaNTW",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 582
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "options": {
+            "pauli_path_truncation_threshold": 0.001,
+            "pauli_path_circuit_transpilation_level": 1
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_31",
+          "job_id": "M8uTWPXHs1gJ9WT7",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 583
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "options": {
+            "pauli_path_truncation_threshold": 0.001,
+            "pauli_path_circuit_transpilation_level": 1
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_32",
+          "job_id": "5Ol9PPkxRCSqqzwc",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 584
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "options": {
+            "pauli_path_truncation_threshold": 0.001,
+            "pauli_path_circuit_transpilation_level": 1
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_33",
+          "job_id": "PQVfzMUjHWx6CG7d",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 585
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "options": {
+            "pauli_path_truncation_threshold": 0.001,
+            "pauli_path_circuit_transpilation_level": 1
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_34",
+          "job_id": "LQ4PdMwLpFieidxt",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 586
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "options": {
+            "pauli_path_truncation_threshold": 0.001,
+            "pauli_path_circuit_transpilation_level": 1
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G3_35",
+          "job_id": "3veLHAPbAcd7cuPm",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 474
+          },
+          "value_equal": true,
+          "device": "pauli-path",
+          "options": {
+            "pauli_path_truncation_threshold": 0.001,
+            "pauli_path_circuit_transpilation_level": 1
+          },
+          "cost_usd": 0.0
+        }
+      ],
+      "total_recorded_cost_usd": 0.0,
+      "account_identity": "Run records do not independently prove uploading-account identity."
+    },
+    "G4": {
+      "manifest": {
+        "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "path": "submissions/candidates/G4/direct-930f7e5b7d14.json"
+      },
+      "rows_verified": 38,
+      "rows": [
+        {
+          "circuit_id": "Duke_G4_0",
+          "job_id": "78aF6vkVPu0XZJaR",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 476
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G4_1",
+          "job_id": "JgcvRKxwUG2U9VHl",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 519
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G4_2",
+          "job_id": "0cfHjjUtbHO3z4Q2",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 520
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G4_3",
+          "job_id": "GTXBAMSNlgBI2eKc",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 521
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G4_4",
+          "job_id": "hvqh9jbt8GbqXSRP",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 522
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G4_5",
+          "job_id": "ykQWw7sUtvr6VfIa",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 523
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G4_6",
+          "job_id": "nPAI6JihLrXUGsPh",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 524
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G4_7",
+          "job_id": "T59bY4yuPjMrBUoZ",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 525
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G4_8",
+          "job_id": "SBg2xDmmkogRYNjP",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 526
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G4_9",
+          "job_id": "kDPVXSwNrvpJ4xbS",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 527
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G4_10",
+          "job_id": "HwQSH9aGuRNvRGx8",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 528
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G4_11",
+          "job_id": "SniEe9FznRnVBWfU",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 529
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G4_12",
+          "job_id": "ksdT8d4KwaMzksRD",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 530
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G4_13",
+          "job_id": "9nqoonDvTfuUWzAP",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 531
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G4_14",
+          "job_id": "s4oioJkxehZI9M8g",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 532
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G4_15",
+          "job_id": "rohx5YGiGgrBzm9s",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 533
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G4_16",
+          "job_id": "p9TJELv8W9jGKhXM",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 534
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G4_17",
+          "job_id": "NhbO7kWnsG0K4orY",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 535
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G4_18",
+          "job_id": "sIp7waZ3gpgCx5wL",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 536
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G4_19",
+          "job_id": "smDxT4giEnJIkVRP",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 480
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G4_20",
+          "job_id": "8ffB8rQvkWE4dRDq",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 537
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G4_21",
+          "job_id": "nWHb1bXSy2daQqeh",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 538
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G4_22",
+          "job_id": "1XPzZ7FCi9Cuad2w",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 539
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G4_23",
+          "job_id": "jveFh3KrKdtOVZIR",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 540
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G4_24",
+          "job_id": "eqy3xgGJ9SDp7vme",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 541
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G4_25",
+          "job_id": "zseZsb88I2JNydq4",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 542
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G4_26",
+          "job_id": "y7zGCDGBGqceEBH1",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 543
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G4_27",
+          "job_id": "Z7wAJkxcAi0PvDCB",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 544
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G4_28",
+          "job_id": "wQjb9D2ZFtNsg45U",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 545
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G4_29",
+          "job_id": "kxLjRoBQfI7ekOuo",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 546
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G4_30",
+          "job_id": "WrjS6BxTXfSKniPM",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 547
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G4_31",
+          "job_id": "9FWXbGIDqjfaOYY5",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 548
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G4_32",
+          "job_id": "VKMY01hftkklFVCb",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 549
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G4_33",
+          "job_id": "upJxVXhRnrbGePAE",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 550
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G4_34",
+          "job_id": "DXhdsLqoxavp8P3h",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 551
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G4_35",
+          "job_id": "XFonxtCv4CqRX9Rg",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 552
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G4_36",
+          "job_id": "y9S7J3rgBoQ2o2VY",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 553
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        },
+        {
+          "circuit_id": "Duke_G4_37",
+          "job_id": "vGhKebHhF7A0UAOm",
+          "source": {
+            "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+            "path": "runs/jobs.csv",
+            "line": 481
+          },
+          "value_equal": true,
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 32
+          },
+          "cost_usd": 0.0
+        }
+      ],
+      "total_recorded_cost_usd": 0.0,
+      "account_identity": "Run records do not independently prove uploading-account identity."
+    }
+  },
+  "candidate_only_records": [
+    {
+      "problem": "G3",
+      "owner": "original_submitter_campaign",
+      "csv_path": "submissions/candidates/G3/direct-fb792001c3e7.csv",
+      "sha256": "7ce7b051d0fa7f124e7329c93f15247f46f5b36b3ccfb407910dfebe80c71d7e",
+      "submitted": false,
+      "score": null,
+      "method": {
+        "device": "pauli-path",
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "source": {
+        "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "path": "submissions/candidates/G3/direct-fb792001c3e7.review.json",
+        "line": 4
+      }
+    },
+    {
+      "problem": "G3",
+      "owner": "kevin",
+      "label": "G3_v1",
+      "submitted": false,
+      "score": null,
+      "csv_path": null,
+      "method": {
+        "device": "pauli-path",
+        "pauli_path_truncation_threshold": 0.01,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "source": {
+        "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+        "path": "problems/06_graded_G3/README.md",
+        "line": 32
+      }
+    }
+  ],
+  "contradictions_and_limits": [
+    {
+      "issue": "G2 498 attribution",
+      "finding": "Original chi32 receipt reports342/600. Older unnamed-teammate receipt assigns498/600 to identical chi32 bytes. Kevin explicitly says his498/600 belongs to different chi128 bytes. Prefer Kevin chi128 as highest specifically attributed G2 result; retain older report as disputed. Neither penalty nor account effects are established as an explanation.",
+      "sources": [
+        {
+          "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+          "path": "submissions/teammates/kevin/G2/submitted-v1.json",
+          "line": 343
+        },
+        {
+          "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+          "path": "submissions/teammates/teammate_reported/G2/attempt-01.json",
+          "line": 8
+        },
+        {
+          "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+          "path": "submissions/G2/attempt-01.json",
+          "line": 8
+        }
+      ]
+    },
+    {
+      "issue": "Same numerical G3 vector, separate accounts",
+      "finding": "Original baseline and Kevin v2 have36 identical parsed values, but different SHA256 hashes/serialization and distinct job IDs. Only Kevin has a reported534/800 submission; do not transfer that score to the original account.",
+      "original_sha256": "7ce7b051d0fa7f124e7329c93f15247f46f5b36b3ccfb407910dfebe80c71d7e",
+      "kevin_sha256": "33c9a6ac4d0e1b06ce9a79607c20a7ea4dd707e571061aeea7f031715075f7ef",
+      "max_absolute_value_difference": 0.0
+    },
+    {
+      "issue": "New mixed-precision G2 file",
+      "finding": "36 valid rows with SHA256 ffb433747eb61b0710fec6e9e73eef6aab06eaaa9b8ed704f9895d43266e7dd0 exist. User confirms submission, and later repository text claims 579/600. This is the highest reported G2 score, but no website receipt verifies it. Account, attempt, penalty, exact uploaded bytes and per-row run receipts remain unknown.",
+      "score_source": {
+        "commit": "030518fc3d7a6256d9cdd276dfdf208eb655fe83",
+        "path": "submissions/candidates/G2_512_txt",
+        "line": 1,
+        "evidence_source": "repo_text_claim"
+      },
+      "higher_confidence_scored_receipt": "kevin_G2_v1"
+    },
+    {
+      "issue": "Score/index staleness",
+      "finding": "runs/submissions.csv at audited main does not index Kevin new G2/G3 receipt files; README and workflow descriptions may predate them. Individual immutable receipts and this ledger govern this audit."
+    },
+    {
+      "issue": "Score is not numerical error",
+      "finding": "Percentages are displayed/reported points divided by maximum points. UI rounding, exact hidden accuracy, and pointwise error cannot be recovered from them. G3v3 receipt fraction.9663 is rounded;773/800=96.625%."
+    },
+    {
+      "issue": "Account boundaries",
+      "finding": "The D:/BluQubit checkout and runtime may contain multiple account histories; file locations, authors and job IDs are not proof of uploading-account identity. No unlabelled runtime record is merged into an account score."
+    }
+  ],
+  "tracked_csv_artifacts": [
+    {
+      "path": "problems/04_graded_G1/exact_values.csv",
+      "git_blob": "5a037f6546585c25145c424322a1faa85e50c4b6",
+      "sha256": "d6bbdea66362f95c58a6b4b06290f7b449636c9d4967fe9231c1fcacd003c6e2",
+      "row_count": 30,
+      "ids_unique": true,
+      "finite_values": true,
+      "first_audited_source": {
+        "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "path": "problems/04_graded_G1/exact_values.csv"
+      },
+      "present_in_tips": [
+        "origin/main",
+        "origin/kevin/experiment",
+        "codex/graded-main_at_audit_start",
+        "main"
+      ],
+      "history_commits": [
+        "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "2a3eb2b5d9b01a0875c99aeae52e8e2c379af748",
+        "681828c7d176b49b0eac85b6341d71a654d35d6a",
+        "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+        "b236406e0600d4678d184f3aa8dbcf4625d79b5c",
+        "1c2cc4a84c2555d74a119e5dd19959a236674793",
+        "8d85f21b5f6ca55781a0c41f9b936cead42a6b16",
+        "e6707fad97a33fa8889d6bb59161cd043fa5cdc4",
+        "4cedd76a7d7ca60fcf255ee5cc097f0e321c3abc",
+        "ca7c5f7eb74ec2adf9d556ca7f4919f6c95a6bf3",
+        "30990c594a30863657f9be1623d73f6352539bd0",
+        "c37c361079ae7f7aa781da25fd611ba0fcb3f79a",
+        "dce1fa0cf82ecccc78c1d7893fa298ae4a1b75bf",
+        "e6789dc7cb149f3a94a1ef06ea13268ba5bc4a80",
+        "0766ecea80331fc9b2c830079e8268b3ced887ad",
+        "de9a473fabbd040ce4baf14c63f46dba83d37dc1",
+        "32292a4035b1b7bcf0986c4a600cfb25a80c42ee",
+        "dc2c30166ed1eea1be0a2c9f85467c81ebe4d936"
+      ]
+    },
+    {
+      "path": "submissions/G2/attempt-01.csv",
+      "git_blob": "95eb8223d02220360697dc188c2c6cc035c4c1e1",
+      "sha256": "4cb0c3c141640461732583a3e719058f8b731699f55078631d55f3eb0a3c79ea",
+      "row_count": 36,
+      "ids_unique": true,
+      "finite_values": true,
+      "first_audited_source": {
+        "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "path": "submissions/G2/attempt-01.csv"
+      },
+      "present_in_tips": [
+        "origin/main",
+        "codex/graded-main_at_audit_start"
+      ],
+      "history_commits": [
+        "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "2a3eb2b5d9b01a0875c99aeae52e8e2c379af748",
+        "681828c7d176b49b0eac85b6341d71a654d35d6a"
+      ]
+    },
+    {
+      "path": "submissions/S1/attempt-01.csv",
+      "git_blob": "8803c08af673528ad60befc1b23fa7b9ee11aafc",
+      "sha256": "482778c0611ee0c9f4f0d11e63b9ff6d636da99be9e8cc91f124bab0471bc320",
+      "row_count": 4,
+      "ids_unique": true,
+      "finite_values": true,
+      "first_audited_source": {
+        "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "path": "submissions/S1/attempt-01.csv"
+      },
+      "present_in_tips": [
+        "origin/main",
+        "origin/kevin/experiment",
+        "codex/graded-main_at_audit_start",
+        "main"
+      ],
+      "history_commits": [
+        "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "2a3eb2b5d9b01a0875c99aeae52e8e2c379af748",
+        "681828c7d176b49b0eac85b6341d71a654d35d6a",
+        "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+        "b236406e0600d4678d184f3aa8dbcf4625d79b5c",
+        "1c2cc4a84c2555d74a119e5dd19959a236674793",
+        "ca7c5f7eb74ec2adf9d556ca7f4919f6c95a6bf3",
+        "30990c594a30863657f9be1623d73f6352539bd0",
+        "c37c361079ae7f7aa781da25fd611ba0fcb3f79a",
+        "e6789dc7cb149f3a94a1ef06ea13268ba5bc4a80",
+        "0766ecea80331fc9b2c830079e8268b3ced887ad",
+        "de9a473fabbd040ce4baf14c63f46dba83d37dc1"
+      ]
+    },
+    {
+      "path": "submissions/S2/attempt-01.csv",
+      "git_blob": "8946cc283e92b15b5491c3a82ea5fc57117689b6",
+      "sha256": "dcb2666e0b37da0b1240edcd35a34398c6b3baa9c0e087875baf1a43d77ce82b",
+      "row_count": 16,
+      "ids_unique": true,
+      "finite_values": true,
+      "first_audited_source": {
+        "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "path": "submissions/S2/attempt-01.csv"
+      },
+      "present_in_tips": [
+        "origin/main",
+        "origin/kevin/experiment",
+        "codex/graded-main_at_audit_start",
+        "main"
+      ],
+      "history_commits": [
+        "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "2a3eb2b5d9b01a0875c99aeae52e8e2c379af748",
+        "681828c7d176b49b0eac85b6341d71a654d35d6a",
+        "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+        "b236406e0600d4678d184f3aa8dbcf4625d79b5c",
+        "1c2cc4a84c2555d74a119e5dd19959a236674793",
+        "ca7c5f7eb74ec2adf9d556ca7f4919f6c95a6bf3",
+        "30990c594a30863657f9be1623d73f6352539bd0",
+        "c37c361079ae7f7aa781da25fd611ba0fcb3f79a",
+        "e6789dc7cb149f3a94a1ef06ea13268ba5bc4a80",
+        "0766ecea80331fc9b2c830079e8268b3ced887ad",
+        "de9a473fabbd040ce4baf14c63f46dba83d37dc1"
+      ]
+    },
+    {
+      "path": "submissions/S3/attempt-01.csv",
+      "git_blob": "6eddc558eab993e7c151854ca7813aefaf898e83",
+      "sha256": "92d1cae4a7ebf436a367aee1f7403d72c7fcda06a0020011d59dba402a9950a2",
+      "row_count": 30,
+      "ids_unique": true,
+      "finite_values": true,
+      "first_audited_source": {
+        "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "path": "submissions/S3/attempt-01.csv"
+      },
+      "present_in_tips": [
+        "origin/main",
+        "origin/kevin/experiment",
+        "codex/graded-main_at_audit_start",
+        "main"
+      ],
+      "history_commits": [
+        "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "2a3eb2b5d9b01a0875c99aeae52e8e2c379af748",
+        "681828c7d176b49b0eac85b6341d71a654d35d6a",
+        "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+        "b236406e0600d4678d184f3aa8dbcf4625d79b5c",
+        "1c2cc4a84c2555d74a119e5dd19959a236674793",
+        "ca7c5f7eb74ec2adf9d556ca7f4919f6c95a6bf3",
+        "30990c594a30863657f9be1623d73f6352539bd0",
+        "c37c361079ae7f7aa781da25fd611ba0fcb3f79a",
+        "e6789dc7cb149f3a94a1ef06ea13268ba5bc4a80",
+        "0766ecea80331fc9b2c830079e8268b3ced887ad",
+        "de9a473fabbd040ce4baf14c63f46dba83d37dc1"
+      ]
+    },
+    {
+      "path": "submissions/candidates/G2/G2_23_512_and_13_64.csv",
+      "git_blob": "7c2f479952d6e8ddedc1277dcb5a18e3a4e53051",
+      "sha256": "ffb433747eb61b0710fec6e9e73eef6aab06eaaa9b8ed704f9895d43266e7dd0",
+      "row_count": 36,
+      "ids_unique": true,
+      "finite_values": true,
+      "first_audited_source": {
+        "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "path": "submissions/candidates/G2/G2_23_512_and_13_64.csv"
+      },
+      "present_in_tips": [
+        "origin/main"
+      ],
+      "history_commits": [
+        "580776259bf3752bc55e152e1d4a73214960ba1c"
+      ]
+    },
+    {
+      "path": "submissions/candidates/G2/direct-3643218316ac.csv",
+      "git_blob": "95eb8223d02220360697dc188c2c6cc035c4c1e1",
+      "sha256": "4cb0c3c141640461732583a3e719058f8b731699f55078631d55f3eb0a3c79ea",
+      "row_count": 36,
+      "ids_unique": true,
+      "finite_values": true,
+      "first_audited_source": {
+        "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "path": "submissions/candidates/G2/direct-3643218316ac.csv"
+      },
+      "present_in_tips": [
+        "origin/main",
+        "origin/kevin/experiment",
+        "codex/graded-main_at_audit_start",
+        "main"
+      ],
+      "history_commits": [
+        "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "2a3eb2b5d9b01a0875c99aeae52e8e2c379af748",
+        "681828c7d176b49b0eac85b6341d71a654d35d6a",
+        "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+        "b236406e0600d4678d184f3aa8dbcf4625d79b5c",
+        "1c2cc4a84c2555d74a119e5dd19959a236674793",
+        "ca7c5f7eb74ec2adf9d556ca7f4919f6c95a6bf3",
+        "30990c594a30863657f9be1623d73f6352539bd0",
+        "c37c361079ae7f7aa781da25fd611ba0fcb3f79a"
+      ]
+    },
+    {
+      "path": "submissions/candidates/G3/direct-fb792001c3e7.csv",
+      "git_blob": "eba48adcb8baf8e4830aac855b67782f7c921c79",
+      "sha256": "7ce7b051d0fa7f124e7329c93f15247f46f5b36b3ccfb407910dfebe80c71d7e",
+      "row_count": 36,
+      "ids_unique": true,
+      "finite_values": true,
+      "first_audited_source": {
+        "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "path": "submissions/candidates/G3/direct-fb792001c3e7.csv"
+      },
+      "present_in_tips": [
+        "origin/main",
+        "codex/graded-main_at_audit_start"
+      ],
+      "history_commits": [
+        "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "2a3eb2b5d9b01a0875c99aeae52e8e2c379af748",
+        "681828c7d176b49b0eac85b6341d71a654d35d6a"
+      ]
+    },
+    {
+      "path": "submissions/candidates/G4/direct-930f7e5b7d14.csv",
+      "git_blob": "f871561426f20f0f7ee900de7ec8eeb1e1e87364",
+      "sha256": "73a5887922c63eb2aafe840fae8e9b26402256fdfc13accf9f689ad4329cbb20",
+      "row_count": 38,
+      "ids_unique": true,
+      "finite_values": true,
+      "first_audited_source": {
+        "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "path": "submissions/candidates/G4/direct-930f7e5b7d14.csv"
+      },
+      "present_in_tips": [
+        "origin/main",
+        "origin/kevin/experiment",
+        "codex/graded-main_at_audit_start"
+      ],
+      "history_commits": [
+        "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "2a3eb2b5d9b01a0875c99aeae52e8e2c379af748",
+        "681828c7d176b49b0eac85b6341d71a654d35d6a",
+        "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+        "b236406e0600d4678d184f3aa8dbcf4625d79b5c",
+        "1c2cc4a84c2555d74a119e5dd19959a236674793",
+        "ca7c5f7eb74ec2adf9d556ca7f4919f6c95a6bf3"
+      ]
+    },
+    {
+      "path": "submissions/teammates/kevin/G1/submitted-v1.csv",
+      "git_blob": "5a037f6546585c25145c424322a1faa85e50c4b6",
+      "sha256": "d6bbdea66362f95c58a6b4b06290f7b449636c9d4967fe9231c1fcacd003c6e2",
+      "row_count": 30,
+      "ids_unique": true,
+      "finite_values": true,
+      "first_audited_source": {
+        "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "path": "submissions/teammates/kevin/G1/submitted-v1.csv"
+      },
+      "present_in_tips": [
+        "origin/main",
+        "origin/kevin/experiment",
+        "codex/graded-main_at_audit_start",
+        "main"
+      ],
+      "history_commits": [
+        "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "2a3eb2b5d9b01a0875c99aeae52e8e2c379af748",
+        "681828c7d176b49b0eac85b6341d71a654d35d6a",
+        "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+        "b236406e0600d4678d184f3aa8dbcf4625d79b5c",
+        "1c2cc4a84c2555d74a119e5dd19959a236674793",
+        "ca7c5f7eb74ec2adf9d556ca7f4919f6c95a6bf3",
+        "30990c594a30863657f9be1623d73f6352539bd0",
+        "c37c361079ae7f7aa781da25fd611ba0fcb3f79a",
+        "e6789dc7cb149f3a94a1ef06ea13268ba5bc4a80",
+        "0766ecea80331fc9b2c830079e8268b3ced887ad",
+        "de9a473fabbd040ce4baf14c63f46dba83d37dc1"
+      ]
+    },
+    {
+      "path": "submissions/teammates/kevin/G2/submitted-v1.csv",
+      "git_blob": "b460a74e3f15f92525a772f078beec1bad4d74e5",
+      "sha256": "a92e6e44ef9d12d1272d8082b2b0fb5685dbaaa69bf76f00ae802d33bb893c13",
+      "row_count": 36,
+      "ids_unique": true,
+      "finite_values": true,
+      "first_audited_source": {
+        "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "path": "submissions/teammates/kevin/G2/submitted-v1.csv"
+      },
+      "present_in_tips": [
+        "origin/main"
+      ],
+      "history_commits": [
+        "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "2a3eb2b5d9b01a0875c99aeae52e8e2c379af748"
+      ]
+    },
+    {
+      "path": "submissions/teammates/kevin/G3/submitted-v2.csv",
+      "git_blob": "a87936303fc65e990b0bf434f390bf7d8557a5e4",
+      "sha256": "33c9a6ac4d0e1b06ce9a79607c20a7ea4dd707e571061aeea7f031715075f7ef",
+      "row_count": 36,
+      "ids_unique": true,
+      "finite_values": true,
+      "first_audited_source": {
+        "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "path": "submissions/teammates/kevin/G3/submitted-v2.csv"
+      },
+      "present_in_tips": [
+        "origin/main"
+      ],
+      "history_commits": [
+        "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "2a3eb2b5d9b01a0875c99aeae52e8e2c379af748"
+      ]
+    },
+    {
+      "path": "submissions/teammates/kevin/G3/submitted-v3.csv",
+      "git_blob": "0ea344a52f5dba75da096c14effb9bc8ff830ae5",
+      "sha256": "44fdbe227f1fede6b7abe04934dd375420c86a9427c69b760bb70c00e338d691",
+      "row_count": 36,
+      "ids_unique": true,
+      "finite_values": true,
+      "first_audited_source": {
+        "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "path": "submissions/teammates/kevin/G3/submitted-v3.csv"
+      },
+      "present_in_tips": [
+        "origin/main"
+      ],
+      "history_commits": [
+        "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "2a3eb2b5d9b01a0875c99aeae52e8e2c379af748"
+      ]
+    },
+    {
+      "path": "submissions/teammates/teammate_reported/G2/attempt-01.csv",
+      "git_blob": "95eb8223d02220360697dc188c2c6cc035c4c1e1",
+      "sha256": "4cb0c3c141640461732583a3e719058f8b731699f55078631d55f3eb0a3c79ea",
+      "row_count": 36,
+      "ids_unique": true,
+      "finite_values": true,
+      "first_audited_source": {
+        "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "path": "submissions/teammates/teammate_reported/G2/attempt-01.csv"
+      },
+      "present_in_tips": [
+        "origin/main",
+        "origin/kevin/experiment",
+        "codex/graded-main_at_audit_start"
+      ],
+      "history_commits": [
+        "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "2a3eb2b5d9b01a0875c99aeae52e8e2c379af748",
+        "681828c7d176b49b0eac85b6341d71a654d35d6a",
+        "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+        "b236406e0600d4678d184f3aa8dbcf4625d79b5c",
+        "1c2cc4a84c2555d74a119e5dd19959a236674793",
+        "ca7c5f7eb74ec2adf9d556ca7f4919f6c95a6bf3",
+        "30990c594a30863657f9be1623d73f6352539bd0"
+      ]
+    },
+    {
+      "path": "problems/05_graded_G2/mps_chi128_values.csv",
+      "git_blob": "b460a74e3f15f92525a772f078beec1bad4d74e5",
+      "sha256": "a92e6e44ef9d12d1272d8082b2b0fb5685dbaaa69bf76f00ae802d33bb893c13",
+      "row_count": 36,
+      "ids_unique": true,
+      "finite_values": true,
+      "first_audited_source": {
+        "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+        "path": "problems/05_graded_G2/mps_chi128_values.csv"
+      },
+      "present_in_tips": [
+        "origin/kevin/experiment"
+      ],
+      "history_commits": [
+        "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+        "b236406e0600d4678d184f3aa8dbcf4625d79b5c",
+        "1c2cc4a84c2555d74a119e5dd19959a236674793",
+        "8d85f21b5f6ca55781a0c41f9b936cead42a6b16",
+        "e6707fad97a33fa8889d6bb59161cd043fa5cdc4",
+        "4cedd76a7d7ca60fcf255ee5cc097f0e321c3abc",
+        "dce1fa0cf82ecccc78c1d7893fa298ae4a1b75bf"
+      ]
+    },
+    {
+      "path": "problems/06_graded_G3/pps_eps0.0003_level1_values.csv",
+      "git_blob": "0ea344a52f5dba75da096c14effb9bc8ff830ae5",
+      "sha256": "44fdbe227f1fede6b7abe04934dd375420c86a9427c69b760bb70c00e338d691",
+      "row_count": 36,
+      "ids_unique": true,
+      "finite_values": true,
+      "first_audited_source": {
+        "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+        "path": "problems/06_graded_G3/pps_eps0.0003_level1_values.csv"
+      },
+      "present_in_tips": [
+        "origin/kevin/experiment"
+      ],
+      "history_commits": [
+        "ea163ebbd72db274f9dad56b48e3b45f48bf36fa"
+      ]
+    },
+    {
+      "path": "problems/06_graded_G3/pps_eps0.001_level1_values.csv",
+      "git_blob": "a87936303fc65e990b0bf434f390bf7d8557a5e4",
+      "sha256": "33c9a6ac4d0e1b06ce9a79607c20a7ea4dd707e571061aeea7f031715075f7ef",
+      "row_count": 36,
+      "ids_unique": true,
+      "finite_values": true,
+      "first_audited_source": {
+        "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+        "path": "problems/06_graded_G3/pps_eps0.001_level1_values.csv"
+      },
+      "present_in_tips": [
+        "origin/kevin/experiment"
+      ],
+      "history_commits": [
+        "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+        "b236406e0600d4678d184f3aa8dbcf4625d79b5c",
+        "1c2cc4a84c2555d74a119e5dd19959a236674793",
+        "8d85f21b5f6ca55781a0c41f9b936cead42a6b16",
+        "e6707fad97a33fa8889d6bb59161cd043fa5cdc4",
+        "4cedd76a7d7ca60fcf255ee5cc097f0e321c3abc"
+      ]
+    },
+    {
+      "path": "submissions/G1_v1.csv",
+      "git_blob": "5a037f6546585c25145c424322a1faa85e50c4b6",
+      "sha256": "d6bbdea66362f95c58a6b4b06290f7b449636c9d4967fe9231c1fcacd003c6e2",
+      "row_count": 30,
+      "ids_unique": true,
+      "finite_values": true,
+      "first_audited_source": {
+        "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+        "path": "submissions/G1_v1.csv"
+      },
+      "present_in_tips": [
+        "origin/kevin/experiment"
+      ],
+      "history_commits": [
+        "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+        "b236406e0600d4678d184f3aa8dbcf4625d79b5c",
+        "1c2cc4a84c2555d74a119e5dd19959a236674793",
+        "8d85f21b5f6ca55781a0c41f9b936cead42a6b16",
+        "e6707fad97a33fa8889d6bb59161cd043fa5cdc4",
+        "4cedd76a7d7ca60fcf255ee5cc097f0e321c3abc",
+        "dce1fa0cf82ecccc78c1d7893fa298ae4a1b75bf",
+        "32292a4035b1b7bcf0986c4a600cfb25a80c42ee",
+        "9714dab3422134c77b7fc36f99e86f5f2dada921"
+      ]
+    },
+    {
+      "path": "submissions/S1_v1.csv",
+      "git_blob": "ec391f75aef63ca1fda08db9096aaa5d81b0d393",
+      "sha256": "3651a7e92bbda0c9aeda1e8294e6c2b31be6c13e39406b7af9b49c9eebe53f02",
+      "row_count": 4,
+      "ids_unique": true,
+      "finite_values": true,
+      "first_audited_source": {
+        "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+        "path": "submissions/S1_v1.csv"
+      },
+      "present_in_tips": [
+        "origin/kevin/experiment"
+      ],
+      "history_commits": [
+        "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+        "b236406e0600d4678d184f3aa8dbcf4625d79b5c",
+        "1c2cc4a84c2555d74a119e5dd19959a236674793",
+        "8d85f21b5f6ca55781a0c41f9b936cead42a6b16",
+        "e6707fad97a33fa8889d6bb59161cd043fa5cdc4",
+        "4cedd76a7d7ca60fcf255ee5cc097f0e321c3abc",
+        "dce1fa0cf82ecccc78c1d7893fa298ae4a1b75bf",
+        "32292a4035b1b7bcf0986c4a600cfb25a80c42ee",
+        "9714dab3422134c77b7fc36f99e86f5f2dada921",
+        "cc5c38c71e7c7a5a733ac420cbbeefef1c03cf2c"
+      ]
+    },
+    {
+      "path": "submissions/S2_v1.csv",
+      "git_blob": "3f724f7fd3a611c252d246e45d59e1a5b5203950",
+      "sha256": "5eff5a497be195eeb831ba9930619c242ab24ee3afe08409dde11d0136a0b228",
+      "row_count": 16,
+      "ids_unique": true,
+      "finite_values": true,
+      "first_audited_source": {
+        "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+        "path": "submissions/S2_v1.csv"
+      },
+      "present_in_tips": [
+        "origin/kevin/experiment"
+      ],
+      "history_commits": [
+        "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+        "b236406e0600d4678d184f3aa8dbcf4625d79b5c",
+        "1c2cc4a84c2555d74a119e5dd19959a236674793",
+        "8d85f21b5f6ca55781a0c41f9b936cead42a6b16",
+        "e6707fad97a33fa8889d6bb59161cd043fa5cdc4",
+        "4cedd76a7d7ca60fcf255ee5cc097f0e321c3abc",
+        "dce1fa0cf82ecccc78c1d7893fa298ae4a1b75bf",
+        "32292a4035b1b7bcf0986c4a600cfb25a80c42ee",
+        "9714dab3422134c77b7fc36f99e86f5f2dada921",
+        "cc5c38c71e7c7a5a733ac420cbbeefef1c03cf2c"
+      ]
+    }
+  ],
+  "historical_receipt_versions": [
+    {
+      "source": {
+        "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "path": "submissions/G1/user-reported-submission.json"
+      },
+      "blob": "9bc3316049b7a49338604d6049309162dfece4b4",
+      "score_fields": {
+        "problem": "G1",
+        "status": "SUBMITTED_USER_REPORTED",
+        "attempt": null,
+        "score": null
+      }
+    },
+    {
+      "source": {
+        "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "path": "submissions/G2/attempt-01.json"
+      },
+      "blob": "e53799b5c8d4c96a64ad14bdfad78822f120967a",
+      "score_fields": {
+        "problem": "G2",
+        "attempt": 1,
+        "owner": "original_submitter",
+        "displayed_score": 342,
+        "points": 600,
+        "time_penalty_hours": 3.48,
+        "status": "USER_REPORTED"
+      }
+    },
+    {
+      "source": {
+        "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "path": "submissions/S1/attempt-01.json"
+      },
+      "blob": "18befc2065720dabaf139ad7fc35a36b955f7d7b",
+      "score_fields": {
+        "problem": "S1",
+        "attempt": 1,
+        "displayed_score": 100.0,
+        "points": 100
+      }
+    },
+    {
+      "source": {
+        "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "path": "submissions/S2/attempt-01.json"
+      },
+      "blob": "382ddc81c8d28feaccd1b9226514389b9e5f5d06",
+      "score_fields": {
+        "problem": "S2",
+        "attempt": 1,
+        "displayed_score": 100.0,
+        "points": 100
+      }
+    },
+    {
+      "source": {
+        "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "path": "submissions/S3/attempt-01.json"
+      },
+      "blob": "bde2412f317a1cd1883a664d9cee27412b83e4a5",
+      "score_fields": {
+        "problem": "S3",
+        "attempt": 1,
+        "displayed_score": 100.0,
+        "points": 100
+      }
+    },
+    {
+      "source": {
+        "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "path": "submissions/candidates/G2/direct-3643218316ac.json"
+      },
+      "blob": "9b6effe9b5a68a857fa9814e74fa68c22001dc16",
+      "score_fields": {
+        "submitted": false
+      }
+    },
+    {
+      "source": {
+        "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "path": "submissions/candidates/G3/direct-fb792001c3e7.json"
+      },
+      "blob": "9de5ac30c8d85d26e72c2b692916e14dcd573656",
+      "score_fields": {
+        "submitted": false
+      }
+    },
+    {
+      "source": {
+        "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "path": "submissions/candidates/G3/direct-fb792001c3e7.review.json"
+      },
+      "blob": "2861ce7f304dc2f39ddcaa2d08a5f0e01ea5f0f0",
+      "score_fields": {
+        "status": "HOLD_FOR_NUMERICAL_REVIEW",
+        "submitted": false
+      }
+    },
+    {
+      "source": {
+        "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "path": "submissions/candidates/G4/direct-930f7e5b7d14.feedback.json"
+      },
+      "blob": "341c7d6c1dcec93d6057a9b9ca5abdafe5295a1b",
+      "score_fields": {
+        "problem": "G4",
+        "reported_displayed_score": 0,
+        "maximum_points": 1000,
+        "accepted_grading": true,
+        "owner": null,
+        "attempt": null
+      }
+    },
+    {
+      "source": {
+        "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "path": "submissions/candidates/G4/direct-930f7e5b7d14.json"
+      },
+      "blob": "50d577fc474a864efb6f13600a161e59e643cfe1",
+      "score_fields": {
+        "submitted": false
+      }
+    },
+    {
+      "source": {
+        "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "path": "submissions/teammates/kevin/G1/submitted-v1.json"
+      },
+      "blob": "c9e2203dc671c8d2e56a261aff2fbfdfcd7718ea",
+      "score_fields": {
+        "problem": "G1",
+        "owner": "kevin",
+        "submission_status": "REPORTED_SUBMITTED",
+        "reported_score_fraction": 1.0,
+        "maximum_points": 300,
+        "attempt": null
+      }
+    },
+    {
+      "source": {
+        "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "path": "submissions/teammates/kevin/G2/submitted-v1.json"
+      },
+      "blob": "40463bd626f760fa2f801e4801f3106fdd359022",
+      "score_fields": {
+        "problem": "G2",
+        "owner": "kevin",
+        "submission_status": "REPORTED_SUBMITTED",
+        "reported_displayed_score": 498,
+        "maximum_points": 600,
+        "reported_score_fraction": 0.83,
+        "attempt": null
+      }
+    },
+    {
+      "source": {
+        "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "path": "submissions/teammates/kevin/G3/submitted-v2.json"
+      },
+      "blob": "dd29a0e25dc0b90584557c64958138398844a357",
+      "score_fields": {
+        "problem": "G3",
+        "owner": "kevin",
+        "submission_status": "REPORTED_SUBMITTED",
+        "reported_displayed_score": 534,
+        "maximum_points": 800,
+        "reported_score_fraction": 0.6675,
+        "attempt": null
+      }
+    },
+    {
+      "source": {
+        "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "path": "submissions/teammates/kevin/G3/submitted-v3.json"
+      },
+      "blob": "510a78126fb7cd3509afa6c0df86ec5af11400c8",
+      "score_fields": {
+        "problem": "G3",
+        "owner": "kevin",
+        "submission_status": "REPORTED_SUBMITTED",
+        "reported_displayed_score": 773,
+        "maximum_points": 800,
+        "reported_score_fraction": 0.9663,
+        "attempt": null
+      }
+    },
+    {
+      "source": {
+        "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "path": "submissions/teammates/teammate_reported/G2/attempt-01.json"
+      },
+      "blob": "228e72825c1e300f10a9830c58b11acd0f23f66d",
+      "score_fields": {
+        "problem": "G2",
+        "attempt": 1,
+        "owner": "teammate_reported",
+        "displayed_score": 498.0,
+        "points": 600,
+        "status": "USER_REPORTED"
+      }
+    }
+  ],
+  "g2_history_evidence": [
+    {
+      "source": {
+        "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "path": "problems/05_graded_G2/README.md"
+      },
+      "blob": "69aece35fb5900aa20707d9feef9882a717f2c22",
+      "score_related_lines": []
+    },
+    {
+      "source": {
+        "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "path": "runs/submissions.csv"
+      },
+      "blob": "064950bcedc3af9c5bbe6d4685f8d30e2ede967c",
+      "score_related_lines": [
+        {
+          "line": 1,
+          "text": "owner,problem,attempt,status,displayed_score,reported_score_fraction,points,observed_at,sha256,csv_path,method_note_path,source,evidence_source,note_evidence,time_penalty_hours"
+        },
+        {
+          "line": 3,
+          "text": "original_submitter,G2,1,USER_REPORTED,342,,600,2026-10-24T19:06:35.257171+00:00,4cb0c3c141640461732583a3e719058f8b731699f55078631d55f3eb0a3c79ea,submissions/G2/attempt-01.csv,submissions/G2/attempt-01.txt,https://app.bluequbit.io/hackathons/2GMaAenu3iSsIC6Z?tab=submissions,user_report,prepared_explanation,3.48"
+        },
+        {
+          "line": 4,
+          "text": "teammate_reported,G2,1,USER_REPORTED,498.0,,600,2026-10-24T18:38:37.553984+00:00,4cb0c3c141640461732583a3e719058f8b731699f55078631d55f3eb0a3c79ea,submissions/teammates/teammate_reported/G2/attempt-01.csv,submissions/teammates/teammate_reported/G2/attempt-01.txt,https://app.bluequbit.io/hackathons/2GMaAenu3iSsIC6Z?tab=submissions,user_report,prepared_explanation,"
+        }
+      ]
+    },
+    {
+      "source": {
+        "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "path": "submissions/G2/attempt-01.json"
+      },
+      "blob": "e53799b5c8d4c96a64ad14bdfad78822f120967a",
+      "score_related_lines": [
+        {
+          "line": 7,
+          "text": "  \"method_note\": \"Ran each published ID separately through BlueQubit from |0...0>, evaluating target Z with q0 rightmost. Selected a complete direct vector at one device and identical options for every ID, prioritizing exact CPU then the selected method's highest complete precision. Methods: mps.cpu {\\\"mps_bond_dimension\\\": 32}. Partial refinements do not replace individual rows. No hidden-circuit reconstruction, score-derived labels, extrapolation or fusion. Per-ID job IDs and precision are in the manifest. Budget-limited approximations have no certified error bounds. The starting method produced a flat pilot vector; a complete, fixed-precision independent pilot resolved signal and supplied the replacement baseline. This does not certify accuracy.\\n\","
+        },
+        {
+          "line": 8,
+          "text": "  \"displayed_score\": 342,"
+        },
+        {
+          "line": 12,
+          "text": "  \"precision_note\": \"UI display may round the official score; this is not a pointwise error bound\","
+        },
+        {
+          "line": 16,
+          "text": "  \"verification_note\": \"The user reported this owner's upload, attempt number and displayed score; browser verification is pending.\","
+        }
+      ]
+    },
+    {
+      "source": {
+        "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "path": "submissions/G2/attempt-01.txt"
+      },
+      "blob": "8888b8344c78d1a1c83f0c534935696ab670734b",
+      "score_related_lines": [
+        {
+          "line": 1,
+          "text": "Ran each published ID separately through BlueQubit from |0...0>, evaluating target Z with q0 rightmost. Selected a complete direct vector at one device and identical options for every ID, prioritizing exact CPU then the selected method's highest complete precision. Methods: mps.cpu {\"mps_bond_dimension\": 32}. Partial refinements do not replace individual rows. No hidden-circuit reconstruction, score-derived labels, extrapolation or fusion. Per-ID job IDs and precision are in the manifest. Budget-limited approximations have no certified error bounds. The starting method produced a flat pilot vector; a complete, fixed-precision independent pilot resolved signal and supplied the replacement baseline. This does not certify accuracy."
+        }
+      ]
+    },
+    {
+      "source": {
+        "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "path": "submissions/candidates/G2/direct-3643218316ac.json"
+      },
+      "blob": "9b6effe9b5a68a857fa9814e74fa68c22001dc16",
+      "score_related_lines": [
+        {
+          "line": 400,
+          "text": "  \"method_note\": \"Ran each published ID separately through BlueQubit from |0...0>, evaluating target Z with q0 rightmost. Selected a complete direct vector at one device and identical options for every ID, prioritizing exact CPU then the selected method's highest complete precision. Methods: mps.cpu {\\\"mps_bond_dimension\\\": 32}. Partial refinements do not replace individual rows. No hidden-circuit reconstruction, score-derived labels, extrapolation or fusion. Per-ID job IDs and precision are in the manifest. Budget-limited approximations have no certified error bounds. The starting method produced a flat pilot vector; a complete, fixed-precision independent pilot resolved signal and supplied the replacement baseline. This does not certify accuracy.\","
+        }
+      ]
+    },
+    {
+      "source": {
+        "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "path": "submissions/teammates/kevin/G2/submitted-v1.json"
+      },
+      "blob": "40463bd626f760fa2f801e4801f3106fdd359022",
+      "score_related_lines": [
+        {
+          "line": 9,
+          "text": "  \"reported_displayed_score\": 498,"
+        },
+        {
+          "line": 11,
+          "text": "  \"reported_score_fraction\": 0.83,"
+        },
+        {
+          "line": 13,
+          "text": "  \"score_evidence\": \"Reported by Kevin from the website; not browser-verified by this tool\","
+        },
+        {
+          "line": 343,
+          "text": "  \"attribution_note\": \"This chi=128 file (sha256 above) is the one that scored 498/600. submissions/teammates/teammate_reported/G2/attempt-01 records 498/600 against the chi=32 candidate (sha256 4cb0c3c1...), which is a different file; that chi=32 file scored 342/600 on the original account (submissions/G2/attempt-01).\""
+        }
+      ]
+    },
+    {
+      "source": {
+        "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "path": "submissions/teammates/kevin/G2/submitted-v1.txt"
+      },
+      "blob": "2756ba70653f7f8bd7fa11788d8c81f24b9a5cb6",
+      "score_related_lines": []
+    },
+    {
+      "source": {
+        "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
+        "path": "submissions/teammates/teammate_reported/G2/attempt-01.json"
+      },
+      "blob": "228e72825c1e300f10a9830c58b11acd0f23f66d",
+      "score_related_lines": [
+        {
+          "line": 7,
+          "text": "  \"method_note\": \"Ran each published ID separately through BlueQubit from |0...0>, evaluating target Z with q0 rightmost. Selected a complete direct vector at one device and identical options for every ID, prioritizing exact CPU then the selected method's highest complete precision. Methods: mps.cpu {\\\"mps_bond_dimension\\\": 32}. Partial refinements do not replace individual rows. No hidden-circuit reconstruction, score-derived labels, extrapolation or fusion. Per-ID job IDs and precision are in the manifest. Budget-limited approximations have no certified error bounds. The starting method produced a flat pilot vector; a complete, fixed-precision independent pilot resolved signal and supplied the replacement baseline. This does not certify accuracy.\\n\","
+        },
+        {
+          "line": 8,
+          "text": "  \"displayed_score\": 498.0,"
+        },
+        {
+          "line": 12,
+          "text": "  \"precision_note\": \"UI display may round the official score; this is not a pointwise error bound\","
+        },
+        {
+          "line": 15,
+          "text": "  \"verification_note\": \"The user reported this owner's upload, attempt number and displayed score; browser verification is pending.\","
+        }
+      ]
+    },
+    {
+      "source": {
+        "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+        "path": "problems/05_graded_G2/README.md"
+      },
+      "blob": "96882f7860428f65909e5fdcef2e1a2fc9f83087",
+      "score_related_lines": [
+        {
+          "line": 13,
+          "text": "## Result: MPS χ=128, scored 498/600 (corr² ≈ 0.83)"
+        }
+      ]
+    },
+    {
+      "source": {
+        "commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+        "path": "runs/submissions.csv"
+      },
+      "blob": "6e57cf9854e9e85203c5b96946b0765aa19f6ae7",
+      "score_related_lines": [
+        {
+          "line": 1,
+          "text": "owner,problem,attempt,status,displayed_score,reported_score_fraction,points,observed_at,sha256,csv_path,method_note_path,source,evidence_source,note_evidence"
+        },
+        {
+          "line": 3,
+          "text": "teammate_reported,G2,1,USER_REPORTED,498.0,,600,2026-10-24T18:38:37.553984+00:00,4cb0c3c141640461732583a3e719058f8b731699f55078631d55f3eb0a3c79ea,submissions/teammates/teammate_reported/G2/attempt-01.csv,submissions/teammates/teammate_reported/G2/attempt-01.txt,https://app.bluequbit.io/hackathons/2GMaAenu3iSsIC6Z?tab=submissions,user_report,prepared_explanation"
+        }
+      ]
+    },
+    {
+      "source": {
+        "commit": "c37c361079ae7f7aa781da25fd611ba0fcb3f79a",
+        "path": "runs/submissions.csv"
+      },
+      "blob": "9be9352cf21387afc17341f3cf38f716654ba94b",
+      "score_related_lines": [
+        {
+          "line": 1,
+          "text": "owner,problem,attempt,status,displayed_score,reported_score_fraction,points,observed_at,sha256,csv_path,method_note_path,source"
+        }
+      ]
+    }
+  ],
+  "local_export_inventory": [
+    {
+      "path": "D:/BluQubit/submissions/candidates/G2/direct-3643218316ac.csv",
+      "sha256": "4cb0c3c141640461732583a3e719058f8b731699f55078631d55f3eb0a3c79ea",
+      "row_count": 36,
+      "matches_tracked_sha256": true,
+      "score_inferred": false,
+      "account_identity_inferred": false
+    },
+    {
+      "path": "D:/BluQubit/submissions/S1/attempt-01.csv",
+      "sha256": "482778c0611ee0c9f4f0d11e63b9ff6d636da99be9e8cc91f124bab0471bc320",
+      "row_count": 4,
+      "matches_tracked_sha256": true,
+      "score_inferred": false,
+      "account_identity_inferred": false
+    },
+    {
+      "path": "D:/BluQubit/submissions/S2/attempt-01.csv",
+      "sha256": "dcb2666e0b37da0b1240edcd35a34398c6b3baa9c0e087875baf1a43d77ce82b",
+      "row_count": 16,
+      "matches_tracked_sha256": true,
+      "score_inferred": false,
+      "account_identity_inferred": false
+    },
+    {
+      "path": "D:/BluQubit/submissions/S3/attempt-01.csv",
+      "sha256": "92d1cae4a7ebf436a367aee1f7403d72c7fcda06a0020011d59dba402a9950a2",
+      "row_count": 30,
+      "matches_tracked_sha256": true,
+      "score_inferred": false,
+      "account_identity_inferred": false
+    },
+    {
+      "path": "D:/BluQubit/submissions/teammates/kevin/G1/submitted-v1.csv",
+      "sha256": "d6bbdea66362f95c58a6b4b06290f7b449636c9d4967fe9231c1fcacd003c6e2",
+      "row_count": 30,
+      "matches_tracked_sha256": true,
+      "score_inferred": false,
+      "account_identity_inferred": false
+    },
+    {
+      "path": "D:/BluQubit/submissions/teammates/teammate_reported/G2/attempt-01.csv",
+      "sha256": "4cb0c3c141640461732583a3e719058f8b731699f55078631d55f3eb0a3c79ea",
+      "row_count": 36,
+      "matches_tracked_sha256": true,
+      "score_inferred": false,
+      "account_identity_inferred": false
+    },
+    {
+      "path": "D:/BluQubit/results/workflow/submissions/G1/direct-ab10d5e54916.csv",
+      "sha256": "78658a294a7b8fa0bf986f28d3aba0907062dc73661ddba0f5efa9fdb1475d6c",
+      "row_count": 30,
+      "matches_tracked_sha256": false,
+      "score_inferred": false,
+      "account_identity_inferred": false
+    },
+    {
+      "path": "D:/BluQubit/results/workflow/submissions/G1/direct-edd45c0fc2e6.csv",
+      "sha256": "78658a294a7b8fa0bf986f28d3aba0907062dc73661ddba0f5efa9fdb1475d6c",
+      "row_count": 30,
+      "matches_tracked_sha256": false,
+      "score_inferred": false,
+      "account_identity_inferred": false
+    },
+    {
+      "path": "D:/BluQubit/results/workflow/submissions/G1/direct-f818a3c143b8.csv",
+      "sha256": "78658a294a7b8fa0bf986f28d3aba0907062dc73661ddba0f5efa9fdb1475d6c",
+      "row_count": 30,
+      "matches_tracked_sha256": false,
+      "score_inferred": false,
+      "account_identity_inferred": false
+    },
+    {
+      "path": "D:/BluQubit/results/workflow/submissions/G2/direct-3643218316ac.csv",
+      "sha256": "4cb0c3c141640461732583a3e719058f8b731699f55078631d55f3eb0a3c79ea",
+      "row_count": 36,
+      "matches_tracked_sha256": true,
+      "score_inferred": false,
+      "account_identity_inferred": false
+    },
+    {
+      "path": "D:/BluQubit/results/workflow/submissions/G3/direct-fb792001c3e7.csv",
+      "sha256": "7ce7b051d0fa7f124e7329c93f15247f46f5b36b3ccfb407910dfebe80c71d7e",
+      "row_count": 36,
+      "matches_tracked_sha256": true,
+      "score_inferred": false,
+      "account_identity_inferred": false
+    },
+    {
+      "path": "D:/BluQubit/results/workflow/submissions/G4/direct-930f7e5b7d14.csv",
+      "sha256": "73a5887922c63eb2aafe840fae8e9b26402256fdfc13accf9f689ad4329cbb20",
+      "row_count": 38,
+      "matches_tracked_sha256": true,
+      "score_inferred": false,
+      "account_identity_inferred": false
+    },
+    {
+      "path": "D:/BluQubit/results/workflow/submissions/S1/exact-87b49ed5412d.csv",
+      "sha256": "482778c0611ee0c9f4f0d11e63b9ff6d636da99be9e8cc91f124bab0471bc320",
+      "row_count": 4,
+      "matches_tracked_sha256": true,
+      "score_inferred": false,
+      "account_identity_inferred": false
+    },
+    {
+      "path": "D:/BluQubit/results/workflow/submissions/S1/mps-0b80d44bd3b9.csv",
+      "sha256": "85b1cedde9f75e15a712b035060d01c6626d966aaef3fd88f5c6bc46c6e868be",
+      "row_count": 4,
+      "matches_tracked_sha256": false,
+      "score_inferred": false,
+      "account_identity_inferred": false
+    },
+    {
+      "path": "D:/BluQubit/results/workflow/submissions/S1/mps-0c5b3e492f14.csv",
+      "sha256": "b7684de1a7e4d14d9f4ae97bf8a3d82f9a3c98c2dee5559ac45fbae076b391cd",
+      "row_count": 4,
+      "matches_tracked_sha256": false,
+      "score_inferred": false,
+      "account_identity_inferred": false
+    },
+    {
+      "path": "D:/BluQubit/results/workflow/submissions/S1/mps-6bd2ef24884a.csv",
+      "sha256": "4a24522d7b9fcfdc9c81b6c7d940871752fc106b32acea67924b887e19f41ea5",
+      "row_count": 4,
+      "matches_tracked_sha256": false,
+      "score_inferred": false,
+      "account_identity_inferred": false
+    },
+    {
+      "path": "D:/BluQubit/results/workflow/submissions/S1/mps-7cd69c8a3efc.csv",
+      "sha256": "4fdf57d06459286285b270c0d268e3c94c42535864b6b819d622b3d797d244e2",
+      "row_count": 4,
+      "matches_tracked_sha256": false,
+      "score_inferred": false,
+      "account_identity_inferred": false
+    },
+    {
+      "path": "D:/BluQubit/results/workflow/submissions/S1/mps-b80ba7928c3d.csv",
+      "sha256": "b7684de1a7e4d14d9f4ae97bf8a3d82f9a3c98c2dee5559ac45fbae076b391cd",
+      "row_count": 4,
+      "matches_tracked_sha256": false,
+      "score_inferred": false,
+      "account_identity_inferred": false
+    },
+    {
+      "path": "D:/BluQubit/results/workflow/submissions/S1/pps_threshold-137cf87c3afb.csv",
+      "sha256": "5961f71df21d9378bd5f59097baa5792860a78f9e9b2715118429024c8fc3e65",
+      "row_count": 4,
+      "matches_tracked_sha256": false,
+      "score_inferred": false,
+      "account_identity_inferred": false
+    },
+    {
+      "path": "D:/BluQubit/results/workflow/submissions/S1/pps_threshold-2f586ed9161a.csv",
+      "sha256": "88e30b26bd316212bcbd58b6b1f6b8105a3214599747bfda00af2a3e47d92f1f",
+      "row_count": 4,
+      "matches_tracked_sha256": false,
+      "score_inferred": false,
+      "account_identity_inferred": false
+    },
+    {
+      "path": "D:/BluQubit/results/workflow/submissions/S1/pps_threshold-4dbe36e99644.csv",
+      "sha256": "02bdd924ab2fcb3b4a1e663df116db131e885ed668175f9ed04c3d6e43980f52",
+      "row_count": 4,
+      "matches_tracked_sha256": false,
+      "score_inferred": false,
+      "account_identity_inferred": false
+    },
+    {
+      "path": "D:/BluQubit/results/workflow/submissions/S1/pps_threshold-53dbcbe50b06.csv",
+      "sha256": "999e29b25e894d9e6f9f407740521f1087bb620aa3f27295ed5b7463f48763a8",
+      "row_count": 4,
+      "matches_tracked_sha256": false,
+      "score_inferred": false,
+      "account_identity_inferred": false
+    },
+    {
+      "path": "D:/BluQubit/results/workflow/submissions/S1/pps_threshold-591154d33d01.csv",
+      "sha256": "adf7f947007ca852aa04b81e6b23bacb2ebc65d7beab016ca3a6f4e1c75a667f",
+      "row_count": 4,
+      "matches_tracked_sha256": false,
+      "score_inferred": false,
+      "account_identity_inferred": false
+    },
+    {
+      "path": "D:/BluQubit/results/workflow/submissions/S1/pps_threshold-75a6cc52bc7a.csv",
+      "sha256": "196ace4ccba231f6f25f63320cd60af001b73f9e2e301a99ea0f5302fa9d689e",
+      "row_count": 4,
+      "matches_tracked_sha256": false,
+      "score_inferred": false,
+      "account_identity_inferred": false
+    },
+    {
+      "path": "D:/BluQubit/results/workflow/submissions/S1/pps_threshold-7a2c665750d1.csv",
+      "sha256": "2703b09451fe5ea0c7036c24e6cfc0bfd531c82ad0de41d35d6aaa268684bc6d",
+      "row_count": 4,
+      "matches_tracked_sha256": false,
+      "score_inferred": false,
+      "account_identity_inferred": false
+    },
+    {
+      "path": "D:/BluQubit/results/workflow/submissions/S2/exact-da6980660286.csv",
+      "sha256": "dcb2666e0b37da0b1240edcd35a34398c6b3baa9c0e087875baf1a43d77ce82b",
+      "row_count": 16,
+      "matches_tracked_sha256": true,
+      "score_inferred": false,
+      "account_identity_inferred": false
+    },
+    {
+      "path": "D:/BluQubit/results/workflow/submissions/S2/mps-1f1a49182dc2.csv",
+      "sha256": "6ce18c050bbe4d9754185cbed56cf99e71d62f82d786d24213bf3b44155c42a2",
+      "row_count": 16,
+      "matches_tracked_sha256": false,
+      "score_inferred": false,
+      "account_identity_inferred": false
+    },
+    {
+      "path": "D:/BluQubit/results/workflow/submissions/S2/mps-510c231bec25.csv",
+      "sha256": "5c920f3e5f7f33623425d4c211f8c03ce7d4b63a5fd740a200cb970f7b5ae535",
+      "row_count": 16,
+      "matches_tracked_sha256": false,
+      "score_inferred": false,
+      "account_identity_inferred": false
+    },
+    {
+      "path": "D:/BluQubit/results/workflow/submissions/S2/mps-ecc46b0cb307.csv",
+      "sha256": "e9724325fe7e4dda7564cdfeebb24173dd9c23f5ef303c38f97b1c2b360043df",
+      "row_count": 16,
+      "matches_tracked_sha256": false,
+      "score_inferred": false,
+      "account_identity_inferred": false
+    },
+    {
+      "path": "D:/BluQubit/results/workflow/submissions/S2/mps-ed44f9743a73.csv",
+      "sha256": "4825d99ecaf9b57e1895f66679229862c5ec7178256ee1e4dbca2c3f08b3b5fa",
+      "row_count": 16,
+      "matches_tracked_sha256": false,
+      "score_inferred": false,
+      "account_identity_inferred": false
+    },
+    {
+      "path": "D:/BluQubit/results/workflow/submissions/S2/mps-f3f21cff49df.csv",
+      "sha256": "d6d38e231cfbb8494147cc6dfcc1e6ce94d147f623f85f4149a35b69a071e51f",
+      "row_count": 16,
+      "matches_tracked_sha256": false,
+      "score_inferred": false,
+      "account_identity_inferred": false
+    },
+    {
+      "path": "D:/BluQubit/results/workflow/submissions/S2/pps_threshold-80682007194e.csv",
+      "sha256": "f5b83e1366aadda1ad8fe36e62f8a7b3c2e3b0293523306ede12355bc47919cd",
+      "row_count": 16,
+      "matches_tracked_sha256": false,
+      "score_inferred": false,
+      "account_identity_inferred": false
+    },
+    {
+      "path": "D:/BluQubit/results/workflow/submissions/S2/pps_threshold-a519387af8dd.csv",
+      "sha256": "b09f4a8c5827596b598c9111a653b268a0cc0cd49c8afd0612793d660f5cd9a0",
+      "row_count": 16,
+      "matches_tracked_sha256": false,
+      "score_inferred": false,
+      "account_identity_inferred": false
+    },
+    {
+      "path": "D:/BluQubit/results/workflow/submissions/S2/pps_threshold-d4b24c1a9bc9.csv",
+      "sha256": "167bb2ec65bd1b5cfb603375a04d8090d3268068e04a0b2a2ebc6afdee14eacd",
+      "row_count": 16,
+      "matches_tracked_sha256": false,
+      "score_inferred": false,
+      "account_identity_inferred": false
+    },
+    {
+      "path": "D:/BluQubit/results/workflow/submissions/S3/exact-031418fb1829.csv",
+      "sha256": "7bc856992b05fae8c5c530e7807a85c05d09c515bbe5722fdf433acf5cf8aaee",
+      "row_count": 30,
+      "matches_tracked_sha256": false,
+      "score_inferred": false,
+      "account_identity_inferred": false
+    },
+    {
+      "path": "D:/BluQubit/results/workflow/submissions/S3/mps-1ff9ee560b69.csv",
+      "sha256": "09ba9bfc809704fcff19866d09c1eaaa5e6884941033bdb80214cce80168fdcf",
+      "row_count": 30,
+      "matches_tracked_sha256": false,
+      "score_inferred": false,
+      "account_identity_inferred": false
+    },
+    {
+      "path": "D:/BluQubit/results/workflow/submissions/S3/pps_threshold-6cfab2bd64c9.csv",
+      "sha256": "ed80e4976ff511857a6069f6bac028ef9aac6d15df0ef0dc2f4d11a7329cf12b",
+      "row_count": 30,
+      "matches_tracked_sha256": false,
+      "score_inferred": false,
+      "account_identity_inferred": false
+    },
+    {
+      "path": "D:/BluQubit/results/workflow/submissions/S3/pps_threshold-fbf4fe102150.csv",
+      "sha256": "cbcba8594515acee5739c8f087ce471863b601cfe01e6a24b4f815c96a50af90",
+      "row_count": 30,
+      "matches_tracked_sha256": false,
+      "score_inferred": false,
+      "account_identity_inferred": false
+    },
+    {
+      "path": "D:/BluQubit/results/workflow/submissions/S3/pps_threshold-fd5b4b41493e.csv",
+      "sha256": "92d1cae4a7ebf436a367aee1f7403d72c7fcda06a0020011d59dba402a9950a2",
+      "row_count": 30,
+      "matches_tracked_sha256": true,
+      "score_inferred": false,
+      "account_identity_inferred": false
+    }
+  ],
+  "score_note_archive": {
+    "source_commit": "030518fc3d7a6256d9cdd276dfdf208eb655fe83",
+    "source_path": "submissions/candidates/G2_512_txt",
+    "current_path": "submissions/candidates/G2/G2_23_512_and_13_64.score-report.txt",
+    "bytes_unchanged": true
+  }
+}

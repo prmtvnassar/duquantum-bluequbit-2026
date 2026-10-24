@@ -1,0 +1,17 @@
+{
+  "event_id": "14c9c51a12054b9cad972a719e7851bc",
+  "recorded_at": "2026-10-24T20:09:00.914521+00:00",
+  "kind": "submission_score_evidence_updated",
+  "problem": "G2",
+  "score": 579,
+  "maximum_points": 600,
+  "account_owner": null,
+  "attempt": null,
+  "score_evidence_source": "repo_text_claim",
+  "source_commit": "030518fc3d7a6256d9cdd276dfdf208eb655fe83",
+  "source_path": "submissions/candidates/G2_512_txt",
+  "archived_score_note": "submissions/candidates/G2/G2_23_512_and_13_64.score-report.txt",
+  "candidate_sha256": "ffb433747eb61b0710fec6e9e73eef6aab06eaaa9b8ed704f9895d43266e7dd0",
+  "website_score_verified": false,
+  "receipt": "submissions/candidates/G2/G2_23_512_and_13_64.feedback.json"
+}

@@ -1,0 +1,13 @@
+{
+  "event_id": "9bf0adaca9044c6f85900056d893d86b",
+  "recorded_at": "2026-10-24T19:49:17.578605+00:00",
+  "kind": "submission_claim_recorded",
+  "problem": "G2",
+  "candidate_csv": "submissions/candidates/G2/G2_23_512_and_13_64.csv",
+  "sha256": "ffb433747eb61b0710fec6e9e73eef6aab06eaaa9b8ed704f9895d43266e7dd0",
+  "evidence_status": "USER_CONFIRMED_SUBMITTED",
+  "score": null,
+  "account_owner": null,
+  "attempt": null,
+  "receipt": "submissions/candidates/G2/G2_23_512_and_13_64.feedback.json"
+}

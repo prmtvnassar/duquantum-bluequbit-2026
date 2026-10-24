@@ -1,27 +1,18 @@
-# Recorded official submissions
+﻿# Submission archive
 
-Each `S1/`, `S2/`, `S3/` or graded-problem directory contains immutable `attempt-NN.csv`, `.txt` explanation and `.json` receipt. These are **actually submitted** files, not all generated candidates. Receipts distinguish browser-observed submissions from user reports and include the score, upload checksum, source page and supporting run IDs for every row.
+The [results audit](../docs/results.md) is the current score and attribution register. A score receipt says whether its evidence came from the browser, a collaborator, or the user. File names such as v1 and v3 do not establish official attempt numbers.
 
-The CSV index is [../runs/submissions.csv](../runs/submissions.csv). All three sample attempt-01 files display 100/100 on the website and used one of the 20 allowed attempts. The score display may round and is not an absolute-error bound.
+## Original account
 
-Kevin's previously submitted G1 vector is imported under [teammates/kevin/G1/](teammates/kevin/G1/). Its 100% score is teammate-reported, its actual attempt number is unknown, and its explanation is reconstructed from reviewed code. The CSV matches every one of his 30 completed CPU results. These facts are explicit in its receipt; it is not relabelled as an upload made by the current account.
+- [S1](S1/attempt-01.json), [S2](S2/attempt-01.json), and [S3](S3/attempt-01.json) each have the submitted CSV, mandatory explanation, browser-observed 100/100 result, and attempt-1 receipt.
+- [G2 attempt 1](G2/attempt-01.json) records the MPS bond-dimension-32 CSV at **342/600**, with a user-reported **3.48-hour** time penalty.
+- [G1 confirmation](G1/user-reported-submission.json) records that the user submitted G1. The original account's score, attempt number, and exact uploaded bytes remain unknown.
 
-Complete candidate exports are shared separately under [candidates/](candidates/README.md), with `submitted: false`, their method explanations, job manifests and explicit numerical-review status. They are not official attempts. Runtime exports also remain under ignored `results/workflow/submissions/`. Use `scripts/record_submission.py` only after an actual upload and its displayed score have been observed or reported, selecting the matching evidence source.
+## Collaborator submissions and feedback
 
-The user separately confirmed submitting G1; that confirmation is retained in [G1/user-reported-submission.json](G1/user-reported-submission.json). The current account's attempt number and score remain unverified.
+- Kevin's [G1 exact vector](teammates/kevin/G1/submitted-v1.json) is reported at 100%; his [G2 bond-dimension-128 vector](teammates/kevin/G2/submitted-v1.json) at **498/600**; and his [G3 Pauli-path vectors](teammates/kevin/README.md) at **534/800** and **773/800**. His completed row jobs were checked against these files. His G2 result is the highest with an account-attributed scored submission receipt.
+- An older [unnamed-teammate G2 receipt](teammates/teammate_reported/G2/attempt-01.json) also reports **498/600**, but attaches that score to the bond-dimension-32 CSV. That attribution conflicts with Kevin's distinct bond-dimension-128 receipt and is retained as disputed evidence.
+- The user confirmed that the newer [mixed-precision G2 CSV](candidates/G2/G2_23_512_and_13_64.csv) was submitted. A later [repository note](candidates/G2/G2_23_512_and_13_64.score-report.txt), introduced by commit `030518f`, claims **579/600**, the highest repository-reported G2 score. This is a text claim, not website feedback. The note describes 23 GPU MPS bond-dimension-512 rows and 13 bond-dimension-64 rows, but no per-row source mapping or completion receipts accompany it. The submitting account, official attempt number, time penalty, and exact uploaded bytes remain unverified in the [feedback record](candidates/G2/G2_23_512_and_13_64.feedback.json).
+- The user reported that the [G4 bond-dimension-32 candidate](candidates/G4/direct-930f7e5b7d14.feedback.json) was accepted and scored **0/1000**. Its account and attempt number remain unknown.
 
-The user also reports a teammate's first G2 attempt scored **498/600** using the
-prepared chi32 vector. Its [receipt](teammates/teammate_reported/G2/attempt-01.json)
-uses owner `teammate_reported` and status `USER_REPORTED`; it does not consume or
-claim an attempt on the current account. The retained explanation is the prepared
-method note, with the actual website wording explicitly unconfirmed.
-
-The original account's first G2 attempt is separately recorded at
-[G2/attempt-01.json](G2/attempt-01.json): **342/600**, with a reported **3.48-hour
-time penalty**, using the same candidate file. The different account scores are
-not reconciled by assumption.
-
-The user confirmed that the G4 candidate received an accepted **0/1000**. Its
-[feedback record](candidates/G4/direct-930f7e5b7d14.feedback.json) preserves that
-result with account and attempt unknown, without inventing an official attempt
-identity. G3's archived baseline has not been submitted or scored.
+The [candidate directory](candidates/README.md) contains both prepared files and candidates that were later submitted. Location alone does not establish upload status. The [submission CSV index](../runs/submissions.csv) and the [run ledger](../runs/README.md) provide machine-readable records; unresolved claims are preserved in JSON feedback files. Keep repository-text claims distinct from website-observed scores and account-attributed receipts. A whole-problem score does not reveal any row's true expectation value.

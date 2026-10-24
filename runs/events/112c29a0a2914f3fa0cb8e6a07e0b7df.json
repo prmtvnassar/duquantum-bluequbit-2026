@@ -1,0 +1,8 @@
+{
+  "event_id": "112c29a0a2914f3fa0cb8e6a07e0b7df",
+  "recorded_at": "2026-10-24T19:41:58.920509+00:00",
+  "kind": "user_stopped_campaign",
+  "reason": "User changed direction: no further simulations. Stop new admissions and cancel owned active jobs; preserve receipts for branch/submission audit. 2026-10-24T19:41:58.917845+00:00",
+  "stop_path": "D:\\BluQubit\\results\\workflow\\STOP",
+  "next_task": "Audit all branches/submissions, consolidate best score evidence, create new workflow and LaTeX write-up; no new simulations."
+}

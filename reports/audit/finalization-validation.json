@@ -1,0 +1,22 @@
+{
+  "checked_at": "2026-10-24T20:10:10.910062+00:00",
+  "scope": "Offline documentation, submission index and retained data validation; no quantum jobs or account API calls",
+  "json_files_checked": 76,
+  "local_markdown_links_checked": 162,
+  "csv_rows": {
+    "decisions.csv": 1681,
+    "estimates.csv": 587,
+    "jobs.csv": 604,
+    "submissions.csv": 12
+  },
+  "g2_candidate_hash_matches": true,
+  "moved_score_report_bytes_unchanged": true,
+  "credential_scan": "passed",
+  "submission_registry_tests": "17 passed, 27 subtests passed",
+  "latex_compile": "desktop compiler success",
+  "figure": "regenerated from hash-checked source CSVs and visually inspected",
+  "errors": [],
+  "score_note_preservation": "Working-copy newline normalization was removed; archived bytes now exactly match source Git blob and its SHA256.",
+  "run_receipt_identity_status_precision_estimate_matches": 604,
+  "event_index_identity_matches": 1681
+}

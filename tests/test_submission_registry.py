@@ -8,7 +8,7 @@ from tempfile import TemporaryDirectory
 from unittest import TestCase
 from unittest.mock import patch
 
-from otoc.submission_registry import archive_submission, record_submission
+from otoc.submission_registry import archive_submission, rebuild_submission_index, record_submission
 
 
 class SubmissionRegistryTests(TestCase):
@@ -213,6 +213,65 @@ class SubmissionRegistryTests(TestCase):
         self.assertEqual(indexed["kevin"]["status"], "REPORTED_BY_TEAMMATE")
         self.assertEqual(indexed["kevin"]["displayed_score"], "")
         self.assertEqual(indexed["teammate_reported"]["status"], "USER_REPORTED")
+
+    def test_index_retains_scored_and_pending_submission_claims_without_inference(self):
+        def receipt(name, value):
+            path = self.repo / "submissions" / name
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(json.dumps(value), encoding="utf-8")
+
+        receipt("G1/user-reported-submission.json", {
+            "problem":"G1", "status":"SUBMITTED_USER_REPORTED", "attempt":None,
+            "score":None, "expected_source_csv":"problems/04_graded_G1/exact_values.csv",
+            "uploaded_bytes_verified":False})
+        receipt("teammates/kevin/G3/submitted-v3.json", {
+            "problem":"G3", "owner":"kevin", "submission_status":"REPORTED_SUBMITTED",
+            "reported_displayed_score":773, "reported_score_fraction":0.9663,
+            "maximum_points":800, "attempt":None, "source_commit":"abc123"})
+        receipt("candidates/G2/mixed.feedback.json", {
+            "problem":"G2", "submission_status":"USER_CONFIRMED_SUBMITTED",
+            "candidate_csv":"submissions/candidates/G2/mixed.csv",
+            "candidate_sha256":"a" * 64, "score":579, "account_owner":None,
+            "attempt":None, "exact_uploaded_bytes_verified":False})
+        mixed_path = self.repo / "submissions/candidates/G2/mixed.feedback.json"
+        mixed_value = json.loads(mixed_path.read_text(encoding="utf-8"))
+        mixed_path.write_text(json.dumps({**mixed_value,
+            "evidence_source":"repo_text_claim",
+            "submission_evidence_source":"user_report",
+            "score_evidence_source":"repo_text_claim",
+            "score_report_path":"submissions/candidates/G2/mixed.score-report.txt",
+            "score_source_commit":"030518f"}),
+            encoding="utf-8")
+        receipt("candidates/G4/direct.feedback.json", {
+            "problem":"G4", "accepted_grading":True, "reported_displayed_score":0,
+            "candidate_csv":"submissions/candidates/G4/direct.csv",
+            "candidate_sha256":"b" * 64, "owner":None, "attempt":None,
+            "uploaded_bytes_independently_verified":False})
+        receipt("candidates/G3/unsubmitted.feedback.json", {"problem":"G3", "score":700})
+
+        self.assertEqual(rebuild_submission_index(repo=self.repo, ledger_root=self.ledger), 4)
+        original = (self.ledger / "submissions.csv").read_bytes()
+        self.assertEqual(rebuild_submission_index(repo=self.repo, ledger_root=self.ledger), 4)
+        self.assertEqual((self.ledger / "submissions.csv").read_bytes(), original)
+        rows = {row["receipt_path"]:row for row in self.index()}
+        g1 = rows["submissions/G1/user-reported-submission.json"]
+        self.assertEqual((g1["owner"], g1["displayed_score"], g1["csv_path"],
+                          g1["sha256"], g1["upload_bytes_verified"]),
+                         ("original_submitter", "", "", "", "False"))
+        mixed = rows["submissions/candidates/G2/mixed.feedback.json"]
+        self.assertEqual((mixed["owner"], mixed["attempt"], mixed["displayed_score"],
+                          mixed["status"], mixed["upload_bytes_verified"],
+                          mixed["evidence_source"], mixed["score_evidence_source"],
+                          mixed["score_evidence_path"], mixed["score_evidence_commit"]),
+                         ("", "", "579", "USER_CONFIRMED_SUBMITTED", "False",
+                          "user_report", "repo_text_claim",
+                          "submissions/candidates/G2/mixed.score-report.txt", "030518f"))
+        g3 = rows["submissions/teammates/kevin/G3/submitted-v3.json"]
+        self.assertEqual((g3["displayed_score"], g3["attempt"], g3["status"]),
+                         ("773", "", "REPORTED_SUBMITTED"))
+        g4 = rows["submissions/candidates/G4/direct.feedback.json"]
+        self.assertEqual((g4["displayed_score"], g4["owner"], g4["attempt"]),
+                         ("0", "", ""))
 
     def test_cli_forwards_owner_and_user_report_without_recording(self):
         note = self.repo / "note.txt"

@@ -1,0 +1,94 @@
+{
+  "circuit_id": "Duke_G2_31",
+  "problem": "G2",
+  "qubit": 31,
+  "origin": "bluequbit",
+  "method": "mps.cpu",
+  "backend": "mps.cpu",
+  "parameters": {
+    "mps_bond_dimension": 64
+  },
+  "status": "COMPLETED",
+  "estimate": 0.41619656184255904,
+  "job_id": "qDNaA46x1O2kwXK9",
+  "cost_usd": 0.0,
+  "started_at": "2026-10-24T19:34:16.368724+00:00",
+  "finished_at": "2026-10-24T19:35:23.317816+00:00",
+  "wall_seconds": 64.068,
+  "reason": "Test both unsaturated G2 transition regions instead of saturated endpoints: chi32 q9=0.494442 and q31=0.551690. One two-row CPUchi64 window tests precision sensitivity and practical runtime before any full coherent refinement. Same-file scores are attributed separately; no label fitting or individual row replacement.",
+  "quote": {
+    "circuit_id": "Duke_G2_31",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 64
+    },
+    "quoted_at": "2026-10-24T19:34:16.054360+00:00",
+    "cost_usd": 0.91,
+    "runtime_seconds": 2161.2,
+    "error": null,
+    "warning": "This is just an estimate; the actual runtime may be less or more.",
+    "binding_cost_cap": false
+  },
+  "error": null,
+  "pauli": "IIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+  "remote_receipt": {
+    "action": {
+      "circuit_id": "Duke_G2_31",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 64
+      },
+      "pauli": "IIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
+    },
+    "status": "COMPLETED",
+    "requested_at": "2026-10-24T19:34:16.368724+00:00",
+    "quote": {
+      "circuit_id": "Duke_G2_31",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 64
+      },
+      "quoted_at": "2026-10-24T19:34:16.054360+00:00",
+      "cost_usd": 0.91,
+      "runtime_seconds": 2161.2,
+      "error": null,
+      "warning": "This is just an estimate; the actual runtime may be less or more.",
+      "binding_cost_cap": false
+    },
+    "timeout_seconds": 300.0,
+    "scheduler_justification": "Test both unsaturated G2 transition regions instead of saturated endpoints: chi32 q9=0.494442 and q31=0.551690. One two-row CPUchi64 window tests precision sensitivity and practical runtime before any full coherent refinement. Same-file scores are attributed separately; no label fitting or individual row replacement.",
+    "cohort_batch": {
+      "cohort_key": "488422eaaeac7d2298510a70c07c1fb84b51b04679d8b642837ac647a1c130dd",
+      "slots": 2,
+      "mode": "TARGETED_DIAGNOSTICS",
+      "target_ids": [
+        "Duke_G2_9",
+        "Duke_G2_31"
+      ],
+      "execution_timeout_seconds": 300.0,
+      "quote_runtime_limit_seconds": 3600.0,
+      "diagnostic_reason": "Test both unsaturated G2 transition regions instead of saturated endpoints: chi32 q9=0.494442 and q31=0.551690. One two-row CPUchi64 window tests precision sensitivity and practical runtime before any full coherent refinement. Same-file scores are attributed separately; no label fitting or individual row replacement.",
+      "gpu_quota_at_admission": null,
+      "reserved_quote_usd": 0.91,
+      "budget_at_admission": {
+        "actual_spent_usd": 0.2,
+        "outstanding_quote_usd": 0.91,
+        "new_quote_usd": 0.91,
+        "missing_cohort_reserve_usd": 0.0,
+        "planned_exposure_usd": 2.02,
+        "missing_unreserved_rows": {
+          "G2": 0,
+          "G3": 0,
+          "G4": 0
+        }
+      }
+    },
+    "job_id": "qDNaA46x1O2kwXK9",
+    "estimate": 0.41619656184255904,
+    "cost_usd": 0.0,
+    "compute_ms": 63642,
+    "queue_ms": 426,
+    "updated_at": "2026-10-24T19:35:23.317816+00:00"
+  },
+  "run_id": "remote-68f70db2f34a1d0897d52ab12624f77a7f50894ad5a4bd43341a364a9f5b906e"
+}
