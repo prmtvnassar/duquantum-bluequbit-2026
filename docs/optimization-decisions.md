@@ -96,7 +96,9 @@ to an independently verified result. [Hybrid CSV](../submissions/candidates/G2/G
 [feedback record](../submissions/candidates/G2/G2_23_512_and_13_64.feedback.json),
 [branch audit](results.md), upload commit `5807762`.
 
-Commit `e0ca909` later adds [G2_23_512_and_13_128.csv](../submissions/candidates/G2/G2_23_512_and_13_128.csv) with the message "G2 with 580/600". This is the highest repository-reported G2 score. Comparing saved vectors shows 23 values unchanged from the 579 file and 13 changed. The filename claims a chi512/chi128 mix; source jobs, submitting account, attempt, penalty and website verification remain unavailable. The [feedback record](../submissions/candidates/G2/G2_23_512_and_13_128.feedback.json) preserves these limits. The two reports do not establish a controlled one-point improvement.
+Commit `e0ca909` later adds [G2_23_512_and_13_128.csv](../submissions/candidates/G2/G2_23_512_and_13_128.csv) with the message "G2 with 580/600". This was later superseded by a repository report of 581/600. Comparing saved vectors shows 23 values unchanged from the 579 file and 13 changed. The filename claims a chi512/chi128 mix; source jobs, submitting account, attempt, penalty and website verification remain unavailable. The [feedback record](../submissions/candidates/G2/G2_23_512_and_13_128.feedback.json) preserves these limits. The two reports do not establish a controlled one-point improvement.
+
+Commit `cf7689f` adds a later [G2 mixed CSV](../submissions/candidates/G2/G2_1_mps2048_22_mps512_13_mps128.csv) with a **581/600** message. Only q30 changes from the 580 file. Its [feedback record](../submissions/candidates/G2/G2_1_mps2048_22_mps512_13_mps128.feedback.json) records the unknown account, attempt, website receipt and source job. This is the highest repository-reported G2 result; the score change is not a controlled gain estimate.
 
 Later original-account analysis found that q0/q18/q35 gave an impressive
 chi16/32 correlation of 0.99999965 because saturated endpoints dominated the

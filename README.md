@@ -1,6 +1,6 @@
 ﻿# BlueQubit Duke OTOC challenge
 
-**Campaign status: paused as of October 24, 2026.** The user requested no further quantum runs. The repository preserves the computations, submission files, scores, and reasoning collected so far.
+**This checkout's execution is paused as of October 24, 2026.** The user requested no further runs from this workflow while teammates continue their own G4 investigation. The repository preserves the computations, submission files, scores, and reasoning collected so far.
 
 ## Start here
 
@@ -8,12 +8,12 @@
 - [Results and score audit](docs/results.md): every attributed submission claim, exact CSV hashes, branch coverage, and unresolved score evidence.
 - [Optimization decisions](docs/optimization-decisions.md): what each experiment tested and how the measured outcome changed the next decision.
 - [LaTeX write-up](writeup/main.tex) and [G3 figure](writeup/figures/g3_precision.png): the scientific explanation for the campaign.
-- [Presentation guide](writeup/presentation.md): the seven-minute narrative, four-minute video outline, and rubric-to-evidence mapping.
+- [LaTeX presentation](writeup/slides/main.tex), [speaker notes](writeup/slides/speaker_notes.md), and [presentation guide](writeup/presentation.md): the seven-minute talk, four-minute video cut, and offline evidence check.
 - [Sample reproduction guide](docs/TEAMMATE_QUICKSTART.md): the three original sample CSVs, explanations, and offline reproduction steps.
 
-The highest repository-reported G2 score is **580/600**, recorded in commit `e0ca909` for the [chi512/chi128 CSV](submissions/candidates/G2/G2_23_512_and_13_128.csv). Its [feedback record](submissions/candidates/G2/G2_23_512_and_13_128.feedback.json) distinguishes this commit-message claim from a website receipt. The account, attempt, time penalty and source jobs remain unknown. The earlier 579/600 hybrid remains as an evolution milestone. Kevin's chi128 498/600 has account-attributed job provenance; the original account reported 342/600 with a 3.48-hour penalty.
+The highest repository-reported G2 score is **581/600**, recorded in commit `cf7689f` for the [q30 refinement CSV](submissions/candidates/G2/G2_1_mps2048_22_mps512_13_mps128.csv). Its [feedback record](submissions/candidates/G2/G2_1_mps2048_22_mps512_13_mps128.feedback.json) distinguishes this commit-message claim from a website receipt. The account, attempt, time penalty and source jobs remain unknown. The earlier 579/600 and 580/600 hybrids remain as evolution milestones. Kevin's chi128 498/600 has account-attributed job provenance; the original account reported 342/600 with a 3.48-hour penalty.
 
-Kevin's documented G3 refinement improved from **534/800** to **773/800** at a tighter Pauli-path threshold. G4's MPS bond-dimension-32 candidate received a user-reported accepted **0/1000**. The three sample attempts each displayed **100/100**. These results belong to different or unidentified accounts and cannot be added into one official total; see the [audit](docs/results.md) for attribution and evidence limits.
+Kevin's documented G3 refinement improved from **534/800** to **773/800** at a tighter Pauli-path threshold. G4's MPS bond-dimension-32 candidate received a user-reported accepted **0/1000**; Kevin later reported **133/1000** with PPS. The three sample attempts each displayed **100/100**. These results belong to different or unidentified accounts and cannot be added into one official total; see the [audit](docs/results.md) for attribution and evidence limits.
 
 ## Repository map
 

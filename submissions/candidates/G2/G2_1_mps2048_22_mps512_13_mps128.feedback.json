@@ -1,0 +1,33 @@
+{
+  "problem": "G2",
+  "candidate_csv": "submissions/candidates/G2/G2_1_mps2048_22_mps512_13_mps128.csv",
+  "candidate_sha256": "5706f503ee2ef9dd629531a0c1089a44a21099970f56cbe9785f5dfa583d66e4",
+  "source_commit": "cf7689f143b52876d310f355a0920508e803603d",
+  "submission_status": "REPORTED_SUBMITTED",
+  "submission_evidence_source": "repo_commit_message",
+  "score": 581,
+  "maximum_points": 600,
+  "evidence_source": "repo_commit_message",
+  "score_evidence_source": "repo_commit_message",
+  "score_source_commit": "cf7689f143b52876d310f355a0920508e803603d",
+  "score_source_message": "G2 with q30 MPS2048 refinement, 581/600",
+  "account_owner": null,
+  "attempt": null,
+  "time_penalty_hours": null,
+  "exact_uploaded_bytes_verified": false,
+  "website_score_verified": false,
+  "website_explanation_verified": false,
+  "method_claim": "The filename and commit message describe one MPS chi2048 row, 22 chi512 rows and 13 chi128 rows. Source jobs and hardware settings are not in the saved record.",
+  "comparison_to_previous": {
+    "csv": "submissions/candidates/G2/G2_23_512_and_13_128.csv",
+    "unchanged_values": 35,
+    "changed_ids": [
+      "Duke_G2_30"
+    ],
+    "previous_value": 0.08580503278601509,
+    "current_value": -0.022470609211353704,
+    "interpretation": "The saved files differ at q30 only; this does not verify job provenance or establish a controlled score improvement."
+  },
+  "recorded_at": "2026-10-24T23:27:04.402571+00:00",
+  "ranking_status": "HIGHEST_REPORTED_G2_COMMIT_CLAIM_ACCOUNT_UNKNOWN"
+}

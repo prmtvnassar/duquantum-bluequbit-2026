@@ -91,17 +91,37 @@
       "reported_score": 0,
       "maximum_points": 1000,
       "sha256": "73a5887922c63eb2aafe840fae8e9b26402256fdfc13accf9f689ad4329cbb20",
-      "why_retained": "Accepted failure motivated stricter diagnostics; not recommended for reuse."
+      "why_retained": "Accepted zero motivated further diagnostics; retain as the scored failure before the later PPS result."
     },
     {
       "problem": "G2",
       "csv_path": "submissions/candidates/G2/G2_23_512_and_13_128.csv",
-      "role": "best_reported",
+      "role": "framework_evolution",
       "reported_score": 580,
       "maximum_points": 600,
       "sha256": "bd0c968b03684723187653becaa2615f5b453f36c7baf9ca01d210fa24ab0459",
       "source_commit": "e0ca909c59f510cd75cbf4788ebc521e0d6618ed",
       "why_retained": "Latest higher reported result; chi512/chi128 filename claim. Score is a commit-message report with unknown account and no per-row receipts."
+    },
+    {
+      "problem": "G2",
+      "csv_path": "submissions/candidates/G2/G2_1_mps2048_22_mps512_13_mps128.csv",
+      "role": "best_reported",
+      "reported_score": 581,
+      "maximum_points": 600,
+      "sha256": "5706f503ee2ef9dd629531a0c1089a44a21099970f56cbe9785f5dfa583d66e4",
+      "source_commit": "cf7689f143b52876d310f355a0920508e803603d",
+      "why_retained": "Latest G2 score in a commit message. Only q30 changes from the prior 580 file; account and source job are unknown."
+    },
+    {
+      "problem": "G4",
+      "csv_path": "submissions/teammates/kevin/G4/submitted-v1.csv",
+      "role": "best_reported",
+      "reported_score": 133,
+      "maximum_points": 1000,
+      "sha256": "10972ca9856bf3af6fedc17a3db78c28344c106aa90ccec7adf2d9c92c0a5265",
+      "source_commit": "962f78be1b228983a65300d21523db9ff866c564",
+      "why_retained": "Kevin-reported complete PPS vector with 38 row job references; later than the zero-scoring MPS candidate."
     }
   ],
   "retired_files": {
@@ -175,13 +195,12 @@
   },
   "metadata_policy": "Distinct account receipts, candidate provenance/hold JSON, run records and dated research remain. Their historical paths resolve through this manifest; numeric equivalence never stands in for byte identity.",
   "validation": {
-    "checked_at": "2026-10-24T20:22:26.762530+00:00",
-    "retained_vectors": 11,
+    "checked_at": "2026-10-24T23:32:13.960344+00:00",
+    "retained_vectors": 13,
     "retired_paths_with_git_recovery": 8,
-    "indexed_claims": 13,
-    "previous_12_claims_preserved": true,
-    "existing_receipts_unchanged": true,
-    "retained_csv_bytes_unchanged": true,
-    "run_records_and_events_unchanged": true
+    "indexed_claims": 15,
+    "retained_csv_hashes_verified": true,
+    "retired_git_blobs_verified": true,
+    "new_g2_and_g4_results_are_later_updates": true
   }
 }

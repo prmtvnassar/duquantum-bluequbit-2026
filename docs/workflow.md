@@ -1,9 +1,10 @@
 # Evidence-driven OTOC workflow
 
-**Status: `PAUSED_NO_NEW_RUNS` — October 24, 2026.** The user has stopped quantum
-execution. Use saved records for analysis and writing; this document authorizes no
-simulation, quote, retry or submission. Any future execution requires the user to
-resume it. This is a new decision procedure synthesized from the campaign, not a
+**Status: `PAUSED_NO_NEW_RUNS` — October 24, 2026.** The user stopped execution in
+this workflow while a teammate continues a separate G4 investigation. Use saved
+records for analysis and writing; this document authorizes no simulation, quote,
+retry or submission. Any future execution here requires the user to resume it.
+This is a new decision procedure synthesized from the campaign, not a
 claim that every earlier experiment followed it. It develops the pre-challenge
 v0 framework, preserved in `8fac5d9:estimation_workflow_v0.md` on October 23,
 23:09 EDT (document dated October 22). That proposal already included precision
@@ -14,7 +15,9 @@ appeared after the results. The account-specific outcomes
 are maintained in [results.md](results.md); the supporting causal history is in
 [optimization-decisions.md](optimization-decisions.md).
 
-Commit `e0ca909` later adds [G2_23_512_and_13_128.csv](../submissions/candidates/G2/G2_23_512_and_13_128.csv) with the message "G2 with 580/600". This is the highest repository-reported G2 score. Comparing saved vectors shows 23 values unchanged from the 579 file and 13 changed. The filename claims a chi512/chi128 mix; source jobs, submitting account, attempt, penalty and website verification remain unavailable. The [feedback record](../submissions/candidates/G2/G2_23_512_and_13_128.feedback.json) preserves these limits. The two reports do not establish a controlled one-point improvement.
+Commit `e0ca909` later adds [G2_23_512_and_13_128.csv](../submissions/candidates/G2/G2_23_512_and_13_128.csv) with the message "G2 with 580/600". This was later superseded by a repository report of 581/600. Comparing saved vectors shows 23 values unchanged from the 579 file and 13 changed. The filename claims a chi512/chi128 mix; source jobs, submitting account, attempt, penalty and website verification remain unavailable. The [feedback record](../submissions/candidates/G2/G2_23_512_and_13_128.feedback.json) preserves these limits. The two reports do not establish a controlled one-point improvement.
+
+Commit `cf7689f` adds a later [G2 mixed CSV](../submissions/candidates/G2/G2_1_mps2048_22_mps512_13_mps128.csv) with a **581/600** message. Only q30 changes from the 580 file. Its [feedback record](../submissions/candidates/G2/G2_1_mps2048_22_mps512_13_mps128.feedback.json) records the unknown account, attempt, website receipt and source job. This is the highest repository-reported G2 result; the score change is not a controlled gain estimate.
 
 ## 1. Reuse evidence before proposing computation
 
@@ -39,9 +42,9 @@ defines the local evidence fields.
 | Problem | Starting point for any resumed decision |
 | --- | --- |
 | G1 | Reuse the verified 30-row exact vector. Do not repeat its simulations. |
-| G2 | Preserve the original chi32 vector, Kevin's distinct chi128 vector and the newer submitted hybrid. Confirm the hybrids' reported 579/600 and 580/600 with the account and website receipt, and obtain its row provenance before treating it as a verified improvement. |
+| G2 | Preserve the original chi32 vector, Kevin's distinct chi128 vector and the newer submitted hybrid. Confirm the hybrids' reported 579/600, 580/600 and 581/600 with the accounts and website receipts, and obtain their row provenance before treating it as a verified improvement. |
 | G3 | Reuse Kevin's complete level-1 PPS epsilon 0.0003 vector and its reported 773/800 outcome. The original-account epsilon 0.001 candidate and later 0.0005 work remain separate records; they do not justify duplicating an available finer vector. |
-| G4 | Preserve the zero-scoring chi32 artifact and the four chi64 diagnostics. Neither a full chi64 cohort nor another submission is presently justified by those diagnostics. |
+| G4 | Preserve the zero-scoring chi32 artifact, four chi64 diagnostics and Kevin's later PPS epsilon 0.0001 level-3 vector reported at 133/1000. Its row receipts are retained, but threshold sensitivity remains; review the teammate's forthcoming G4 data before recommending another run or submission. |
 
 Check the original account's runtime state and unresolved commitments before any
 future execution. A paused process or cancellation request is not proof of a
