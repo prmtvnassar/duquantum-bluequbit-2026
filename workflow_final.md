@@ -26,7 +26,9 @@ vectors take priority over another round of sparse probes.
 
 G2 now has a complete 36-row chi32 candidate at $0 recorded cohort cost, preserved
 with its explanation and job manifest in [submissions/candidates/](submissions/candidates/README.md).
-It has not been recorded as an official upload. The next-probe review in
+The user's teammate reported **498/600 on his first attempt** with this vector;
+[the receipt](submissions/teammates/teammate_reported/G2/attempt-01.json) is separate
+from the current account and explicitly user-reported. The next-probe review in
 [reports/REFINEMENT_REVIEW.md](reports/REFINEMENT_REVIEW.md) distinguishes G2's
 nearly affine three-pilot change from G4's stronger shape change; neither sparse
 comparison certifies the full vector. The first two-job CPU controller trial

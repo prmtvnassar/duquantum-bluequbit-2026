@@ -1,19 +1,27 @@
 from copy import deepcopy
+from contextlib import redirect_stderr, redirect_stdout
 from datetime import datetime, timedelta, timezone
+import importlib.util
+import io
 import json
 import os
 from pathlib import Path
 from tempfile import TemporaryDirectory
 from types import SimpleNamespace
 from unittest import TestCase
+from unittest.mock import patch
 
 from bluequbit_samples.provenance import atomic_json
 from otoc.bluequbit_adapter import BlueQubitAdapter, TERMINAL, validate_action
 from otoc.cohort_batch import CohortBatchController
+from otoc.coherent_selection import select_coherent_vector
 from otoc.experiment_store import digest
 
 
 OPTIONS = {"mps_bond_dimension": 32}
+DIAGNOSTIC = {"targeted_diagnostics": True, "target_ids": ["Duke_G2_0"],
+              "execution_timeout_seconds": 600, "quote_runtime_limit_seconds": 2000,
+              "diagnostic_reason": "Measure a bounded fixed-precision diagnostic"}
 
 
 def configuration():
@@ -92,6 +100,7 @@ class FakeAdapter:
         self.client = FakeClient(self)
         self.initial_spend, self.foreign_ids, self.unknown_costs = 0.0, [], 0
         self.quote_costs, self.quote_calls, self.saved = {}, [], []
+        self.quote_runtimes = {}
 
     def _save(self, path, saved):
         atomic_json(path, saved)
@@ -101,7 +110,7 @@ class FakeAdapter:
         self.quote_calls.append((cid, device, deepcopy(options)))
         cost = self.quote_costs.get(cid, 1.5 if options.get("mps_bond_dimension") == 64 else .2)
         quote = {"circuit_id": cid, "device": device, "options": deepcopy(options),
-                 "cost_usd": cost, "runtime_seconds": 1.0, "error": None}
+                 "cost_usd": cost, "runtime_seconds": self.quote_runtimes.get(cid, 1.0), "error": None}
         atomic_json(self.root / "quotes" / f"{digest([cid, device, options])}.json", quote)
         return quote
 
@@ -425,6 +434,263 @@ class CohortBatchTests(TestCase):
             result = controller(max_jobs=1).run()
             self.assertEqual(result["status"], "BOUNDED_STOP")
             self.assertEqual(len(observed_terminal), 1)
+
+    def test_ordinary_runtime_limit_is_unchanged(self):
+        with TemporaryDirectory() as folder:
+            adapter, _, _, _, controller = self.prepare(folder)
+            current = controller()
+            self.assertEqual(current.timeout, 900)
+            self.assertEqual(current.quote_runtime_limit, 900)
+            adapter.quote_runtimes["Duke_G2_0"] = 901
+            result = current.run()
+            self.assertEqual(result["reason"], "invalid_or_excessive_runtime")
+            self.assertEqual(adapter.client.run_calls, [])
+
+    def test_diagnostic_arguments_cannot_loosen_an_ordinary_cohort(self):
+        with TemporaryDirectory() as folder:
+            adapter, _, _, _, controller = self.prepare(folder)
+            for arguments in ({"target_ids": ["Duke_G2_0"]}, {"execution_timeout_seconds": 600},
+                              {"quote_runtime_limit_seconds": 2000}, {"diagnostic_reason": "probe"}):
+                with self.subTest(arguments=arguments), self.assertRaises(ValueError):
+                    controller(**arguments)
+            self.assertEqual(adapter.quote_calls, [])
+            self.assertEqual(adapter.client.run_calls, [])
+
+    def test_invalid_diagnostic_targets_and_caps_fail_before_api_calls(self):
+        with TemporaryDirectory() as folder:
+            adapter, _, _, _, controller = self.prepare(folder)
+            cases = [{"target_ids": ids} for ids in (None, [], "Duke_G2_0", ["Duke_G2_0", "Duke_G2_0"],
+                     ["Duke_G3_0"], ["Duke_G2_2"], ["Duke_G2_36"], [123])]
+            cases += [{name: value} for name in ("execution_timeout_seconds", "quote_runtime_limit_seconds")
+                      for value in (None, True, 0, .5, -1, 3601, float("nan"), float("inf"), "600")]
+            for overrides in cases:
+                with self.subTest(overrides=overrides), self.assertRaises(ValueError):
+                    controller(**{**DIAGNOSTIC, **overrides})
+            self.assertEqual(adapter.quote_calls, [])
+            self.assertEqual(adapter.client.run_calls, [])
+
+    def test_diagnostic_subset_keeps_full_cohort_reserve_and_cannot_form_export_vector(self):
+        with TemporaryDirectory() as folder:
+            adapter, _, manifests, _, controller = self.prepare(folder, count=3)
+            current = controller(**{**DIAGNOSTIC, "target_ids": ["Duke_G2_1"]})
+            result = current.run()
+            self.assertEqual(result["status"], "DIAGNOSTICS_COMPLETE")
+            self.assertEqual(adapter.client.run_calls, ["Duke_G2_1"])
+            self.assertEqual(result["completed_rows"], 1)
+            self.assertEqual(result["required_rows"], 3)
+            self.assertEqual(result["completed_target_rows"], 1)
+            self.assertEqual(result["required_target_rows"], 1)
+            self.assertEqual(result["budget"]["missing_unreserved_rows"]["G2"], 2)
+            self.assertAlmostEqual(result["budget"]["missing_cohort_reserve_usd"], .4)
+            self.assertEqual(select_coherent_vector(list(current.records.values()), manifests["G2"],
+                                                   "mps.cpu")["status"], "INCOMPLETE")
+
+    def test_diagnostic_quote_above_execution_cap_requires_and_records_explicit_limits(self):
+        with TemporaryDirectory() as folder:
+            adapter, _, _, _, controller = self.prepare(folder)
+            adapter.quote_runtimes["Duke_G2_0"] = 1878
+            adapter.quote_costs["Duke_G2_0"] = 2.0
+            result = controller(**DIAGNOSTIC).run()
+            self.assertEqual(result["status"], "DIAGNOSTICS_COMPLETE")
+            self.assertEqual(result["execution_timeout_seconds"], 600)
+            self.assertEqual(result["quote_runtime_limit_seconds"], 2000)
+            self.assertEqual(result["target_ids"], ["Duke_G2_0"])
+            self.assertEqual(result["diagnostic_reason"], DIAGNOSTIC["diagnostic_reason"])
+            intent = next(r for r in adapter.saved if r["status"] == "SUBMITTING")
+            self.assertEqual(intent["timeout_seconds"], 600)
+            self.assertEqual(intent["cohort_batch"]["quote_runtime_limit_seconds"], 2000)
+            self.assertEqual(intent["cohort_batch"]["target_ids"], ["Duke_G2_0"])
+            self.assertEqual(intent["cohort_batch"]["reserved_quote_usd"], 2.0)
+            self.assertEqual(intent["cohort_batch"]["budget_at_admission"]["new_quote_usd"], 2.0)
+            self.assertEqual(intent["scheduler_justification"], DIAGNOSTIC["diagnostic_reason"])
+
+    def test_diagnostic_quote_limit_and_conservative_deadline_still_block(self):
+        for remaining, quote_limit, expected in ((10000, 1800, "invalid_or_excessive_runtime"),
+                                                  (3000, 2000, "deadline_buffer")):
+            with self.subTest(reason=expected), TemporaryDirectory() as folder:
+                adapter, clock, manifests, cohorts, _ = self.prepare(folder)
+                adapter.quote_runtimes["Duke_G2_0"] = 1878
+                settings = configuration()
+                settings["deadline_utc"] = (clock() + timedelta(seconds=remaining)).isoformat()
+                current = CohortBatchController(adapter, settings, "G2", "mps.cpu", OPTIONS,
+                            manifests=manifests, reserve_cohorts=cohorts, sleep=clock.sleep, clock=clock,
+                            **{**DIAGNOSTIC, "quote_runtime_limit_seconds": quote_limit})
+                result = current.run()
+                self.assertEqual(result["reason"], expected)
+                self.assertEqual(adapter.client.run_calls, [])
+
+    def test_diagnostic_requests_cancellation_at_execution_cap_and_keeps_failed_receipt(self):
+        with TemporaryDirectory() as folder:
+            adapter, _, _, _, controller = self.prepare(folder)
+            adapter.client.polls_by_id["Duke_G2_0"] = 10000
+            adapter.quote_runtimes["Duke_G2_0"] = 1878
+            result = controller(**DIAGNOSTIC).run()
+            self.assertEqual(result["status"], "BLOCKED")
+            self.assertEqual(result["reason"], "failed_target_action_requires_review")
+            self.assertEqual(len(adapter.client.cancel_calls), 1)
+            canceled = next(r for r in adapter.saved if r["status"] == "CANCELED")
+            age = (datetime.fromisoformat(canceled["cancel_requested_at"])
+                   - datetime.fromisoformat(canceled["requested_at"])).total_seconds()
+            self.assertEqual(age, 600)
+            self.assertEqual(canceled["cancel_reason"], "job_timeout")
+            again = controller(**DIAGNOSTIC).run()
+            self.assertEqual(again["reason"], "failed_target_action_requires_review")
+            self.assertEqual(adapter.client.run_calls, ["Duke_G2_0"])
+
+    def test_diagnostic_resumes_known_target_and_reuses_completed_target_without_launches(self):
+        with TemporaryDirectory() as folder:
+            adapter, _, _, _, controller = self.prepare(folder)
+            job = adapter.client.add_job("Duke_G2_0")
+            seed(adapter, "Duke_G2_0", status="RUNNING", job_id=job.job_id, cost=None)
+            first = controller(**DIAGNOSTIC).run()
+            self.assertEqual(first["status"], "DIAGNOSTICS_COMPLETE")
+            second = controller(**DIAGNOSTIC).run()
+            self.assertEqual(second["status"], "DIAGNOSTICS_COMPLETE")
+            self.assertEqual(adapter.client.run_calls, [])
+
+    def test_diagnostic_resume_does_not_relax_saved_execution_cap(self):
+        with TemporaryDirectory() as folder:
+            adapter, clock, _, _, controller = self.prepare(folder)
+            adapter.client.polls_by_id["Duke_G2_0"] = 10000
+            job = adapter.client.add_job("Duke_G2_0")
+            saved = seed(adapter, "Duke_G2_0", status="RUNNING", job_id=job.job_id, cost=None)
+            saved["timeout_seconds"] = 30
+            atomic_json(adapter.root / "remote_actions" / f"{digest(saved['action'])}.json", saved)
+            clock.sleep(30)
+            result = controller(**DIAGNOSTIC).run()
+            self.assertEqual(result["reason"], "failed_target_action_requires_review")
+            self.assertEqual(adapter.client.cancel_calls, [job.job_id])
+            self.assertEqual(adapter.client.run_calls, [])
+
+    def test_diagnostic_full_reserve_blocks_unfunded_targeted_launch(self):
+        with TemporaryDirectory() as folder:
+            adapter, _, _, _, controller = self.prepare(folder, count=3)
+            adapter.initial_spend = 26.5
+            result = controller(**DIAGNOSTIC).run()
+            self.assertEqual(result["reason"], "budget_commitments_and_cohort_reserve")
+            self.assertEqual(result["budget"]["missing_unreserved_rows"]["G2"], 2)
+            self.assertAlmostEqual(result["budget"]["planned_exposure_usd"], 27.1)
+            self.assertEqual(adapter.client.run_calls, [])
+
+    def test_diagnostic_baseline_exemption_still_reserves_every_active_full_quote(self):
+        with TemporaryDirectory() as folder:
+            adapter, _, _, _, controller = self.prepare(folder, count=3)
+            for q in range(3):
+                saved = seed(adapter, f"Duke_G2_{q}", options={"mps_bond_dimension": 16})
+                saved["estimate"] = .1 * q
+                atomic_json(adapter.root / "remote_actions" / f"{digest(saved['action'])}.json", saved)
+            adapter.quote_costs.update({"Duke_G2_0": 1.5, "Duke_G2_1": 1.5})
+            result = controller(**{**DIAGNOSTIC, "target_ids": ["Duke_G2_0", "Duke_G2_1"]}).run()
+            self.assertEqual(result["status"], "DIAGNOSTICS_COMPLETE")
+            self.assertTrue(result["has_usable_baseline"]["G2"])
+            intents = [r for r in adapter.saved if r["status"] == "SUBMITTING"]
+            second = intents[1]["cohort_batch"]["budget_at_admission"]
+            self.assertEqual(second["missing_cohort_reserve_usd"], 0)
+            self.assertEqual(second["outstanding_quote_usd"], 1.5)
+            self.assertEqual(second["new_quote_usd"], 1.5)
+
+    def test_diagnostic_foreign_and_unknown_state_still_block(self):
+        for condition, expected in (("foreign", "foreign_active_jobs"), ("unknown", "unknown_terminal_cost"),
+                                     ("failed", "failed_target_action_requires_review"),
+                                     ("outside_target", "foreign_unresolved_receipt")):
+            with self.subTest(condition=condition), TemporaryDirectory() as folder:
+                adapter, _, _, _, controller = self.prepare(folder)
+                if condition == "foreign":
+                    adapter.foreign_ids = ["foreign-1"]
+                elif condition == "unknown":
+                    adapter.unknown_costs = 1
+                elif condition == "failed":
+                    seed(adapter, "Duke_G2_0", status="TERMINATED")
+                else:
+                    job = adapter.client.add_job("Duke_G2_1")
+                    seed(adapter, "Duke_G2_1", status="RUNNING", job_id=job.job_id, cost=None)
+                result = controller(**DIAGNOSTIC).run()
+                self.assertEqual(result["reason"], expected)
+                self.assertEqual(adapter.client.run_calls, [])
+                self.assertEqual(adapter.client.cancel_calls, [])
+
+    def test_g4_chi64_diagnostic_uses_existing_full_baseline_and_new_full_quote(self):
+        with TemporaryDirectory() as folder:
+            adapter, clock, manifests, cohorts, _ = self.prepare(folder)
+            baseline = seed(adapter, "Duke_G4_1")
+            baseline["estimate"] = .2
+            atomic_json(adapter.root / "remote_actions" / f"{digest(baseline['action'])}.json", baseline)
+            adapter.quote_runtimes["Duke_G4_0"] = 1878
+            current = CohortBatchController(adapter, configuration(), "G4", "mps.cpu", {"mps_bond_dimension": 64},
+                        manifests=manifests, reserve_cohorts=cohorts, sleep=clock.sleep, clock=clock,
+                        **{**DIAGNOSTIC, "target_ids": ["Duke_G4_0"]})
+            result = current.run()
+            self.assertEqual(result["status"], "DIAGNOSTICS_COMPLETE")
+            self.assertTrue(result["has_usable_baseline"]["G4"])
+            self.assertEqual(result["budget"]["missing_unreserved_rows"]["G4"], 0)
+            self.assertEqual(result["budget"]["new_quote_usd"], 1.5)
+            self.assertEqual(result["completed_rows"], 1)
+            self.assertEqual(result["required_rows"], 2)
+            self.assertEqual(adapter.client.run_calls, ["Duke_G4_0"])
+
+    def test_diagnostic_mode_cannot_bypass_ready_budget_cpu_or_slot_requirements(self):
+        with TemporaryDirectory() as folder:
+            adapter, clock, manifests, cohorts, _ = self.prepare(folder)
+            cases = [({"release_status": "NOT_READY"}, "mps.cpu", 2),
+                     ({"sample_budget_usd": .1}, "mps.cpu", 2),
+                     ({"graded_budget_usd": 31}, "mps.cpu", 2),
+                     ({"stop_on_unknown_cost": False}, "mps.cpu", 2),
+                     ({}, "mps.gpu", 2), ({}, "mps.cpu", 3)]
+            for changed, device, slots in cases:
+                with self.subTest(changed=changed, device=device, slots=slots), self.assertRaises(ValueError):
+                    CohortBatchController(adapter, {**configuration(), **changed}, "G2", device, OPTIONS,
+                            manifests=manifests, reserve_cohorts=cohorts, sleep=clock.sleep, clock=clock,
+                            slots=slots, **DIAGNOSTIC)
+            self.assertEqual(adapter.quote_calls, [])
+            self.assertEqual(adapter.client.run_calls, [])
+
+
+class DiagnosticCommandTests(TestCase):
+    @staticmethod
+    def command():
+        path = Path(__file__).resolve().parents[1] / "scripts" / "run_cohort_batch.py"
+        spec = importlib.util.spec_from_file_location("cohort_command_test", path)
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        return module
+
+    def test_diagnostic_cli_does_not_export_partial_or_complete_cohorts(self):
+        for status in ("DIAGNOSTICS_COMPLETE", "COMPLETE"):
+            with self.subTest(status=status), TemporaryDirectory() as folder:
+                options = Path(folder) / "options.json"
+                options.write_text(json.dumps(OPTIONS))
+                command = self.command()
+                arguments = ["run_cohort_batch.py", "--execute", "--problem", "G2", "--device", "mps.cpu",
+                             "--options-file", str(options), "--targeted-diagnostics", "--target-ids", "Duke_G2_0",
+                             "--execution-timeout", "600", "--quote-runtime-limit", "2000"]
+                with patch("sys.argv", arguments), patch.object(command, "BlueQubitAdapter"), \
+                        patch.object(command, "load_settings", return_value=configuration()), \
+                        patch.object(command, "run_cohort_batch", return_value={"status": status}) as runner, \
+                        patch.object(command, "export_complete") as exporter, \
+                        patch.object(command.logging, "disable"), redirect_stdout(io.StringIO()):
+                    self.assertEqual(command.main(), 0)
+                    exporter.assert_not_called()
+                    self.assertTrue(runner.call_args.kwargs["targeted_diagnostics"])
+                    self.assertEqual(runner.call_args.kwargs["target_ids"], ["Duke_G2_0"])
+                    self.assertEqual(runner.call_args.kwargs["execution_timeout_seconds"], 600)
+                    self.assertEqual(runner.call_args.kwargs["quote_runtime_limit_seconds"], 2000)
+
+    def test_diagnostic_cli_requires_mode_targets_and_both_caps_before_adapter_creation(self):
+        command = self.command()
+        base = ["run_cohort_batch.py", "--execute", "--problem", "G2", "--device", "mps.cpu",
+                "--options-file", "not-read.json"]
+        cases = [["--execution-timeout", "600"], ["--target-ids", "Duke_G2_0"],
+                 ["--targeted-diagnostics", "--target-ids", "Duke_G2_0", "--execution-timeout", "600"],
+                 ["--targeted-diagnostics", "--execution-timeout", "600", "--quote-runtime-limit", "2000"],
+                 ["--targeted-diagnostics", "--target-ids", "Duke_G2_0", "--execution-timeout", "600",
+                  "--quote-runtime-limit", "nan"]]
+        for arguments in cases:
+            with self.subTest(arguments=arguments), patch("sys.argv", base + arguments), \
+                    patch.object(command, "BlueQubitAdapter") as adapter, redirect_stderr(io.StringIO()):
+                with self.assertRaises(SystemExit) as error:
+                    command.main()
+                self.assertEqual(error.exception.code, 2)
+                adapter.assert_not_called()
 
 
 class AccountCostIdentityTests(TestCase):

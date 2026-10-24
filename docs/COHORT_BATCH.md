@@ -1,6 +1,6 @@
 # Bounded CPU cohort controller
 
-`scripts/run_cohort_batch.py` completes one explicitly selected G2, G3 or G4
+By default, `scripts/run_cohort_batch.py` completes one explicitly selected G2, G3 or G4
 cohort: every retained template ID on one CPU device with identical full native
 options. Supported devices are `mps.cpu` and `pauli-path`. It manages at most two
 owned jobs under the existing exclusive `remote_runner` lock. It cannot run
@@ -45,6 +45,54 @@ all required IDs; no shortened user-defined manifest is accepted by the CLI.
 Normal completion invokes the existing coherent exporter from saved receipts.
 It does not upload anything to the website, and exported candidates retain
 `submitted: false` until an actual official submission is verified separately.
+
+## Explicit targeted diagnostics
+
+An optional diagnostic mode runs only named IDs at one fixed CPU configuration.
+It requires `--targeted-diagnostics`, `--target-ids`, `--execution-timeout` and
+`--quote-runtime-limit` together. Both limits must be finite numbers within
+1–3600 seconds. Targets must be distinct IDs in the selected problem's full
+retained template. Diagnostic arguments without the explicit mode are rejected;
+ordinary cohort runtime limits remain unchanged.
+
+For example, after prior owned jobs and costs are reconciled, a reviewed G4 chi64
+options file containing `{"mps_bond_dimension":64}` can be used for one bounded
+diagnostic:
+
+```powershell
+.venv312\Scripts\python.exe scripts/run_cohort_batch.py --execute --problem G4 --device mps.cpu --options-file PATH_TO_REVIEWED_CHI64.json --reserve-cohorts-file configs/cohorts/baseline_reserves.json --slots 1 --max-jobs 1 --targeted-diagnostics --target-ids Duke_G4_0 --execution-timeout 600 --quote-runtime-limit 2000 --diagnostic-reason "Bounded G4 chi64 sensitivity diagnostic; accuracy unverified"
+```
+
+Here a fresh runtime quote of 1878 seconds can pass the 2000-second quote limit.
+The controller requests cancellation at the first poll reaching 600 seconds
+from the saved request time. Cancellation is a service request, not a guarantee
+of immediate termination or a billing cap. The full fresh dollar quote remains
+reserved; a shorter execution cap never discounts it. Deadline admission retains
+`max(quoted runtime, execution timeout) + submission buffer`, so this example
+still needs at least 1878 seconds plus the configured buffer.
+
+Targeting does **not** shorten any coverage or export manifest. Missing baseline
+coverage is reserved across every retained ID unless a valid complete nonconstant
+older vector already exists. Active and new diagnostics always reserve their full
+quotes. CPU-only execution, two slots at most, the `READY` requirement, the $27
+planned ceiling and all unknown-cost, ambiguity and foreign-job gates still apply.
+An unresolved same-configuration job outside the requested target set is foreign
+to this diagnostic invocation and blocks new launches.
+
+Successful completion and cost reconciliation of every requested target returns
+`DIAGNOSTICS_COMPLETE`, even when the full cohort remains incomplete. Diagnostic
+mode never invokes the exporter, including when a full vector happens to exist.
+It does not submit anything to the website. `--max-jobs` still bounds new launches;
+if that bound prevents finishing the requested set, the controller drains its jobs
+and reports `BOUNDED_STOP`. Known target job IDs are resumed and completed targets
+are reused. A saved stricter execution cap is preserved on resume. Canceled or
+failed targets remain recorded and block automatic retry; they do not count as
+successful diagnostic completion.
+
+The selected targets, both caps, mode and diagnostic reason are recorded in each
+new receipt, cohort checkpoint and monitor status. `--diagnostic-reason` supplies
+a specific rationale; if omitted, the controller records its bounded-diagnostic
+purpose explicitly. Full-cohort and target completion counts are reported separately.
 
 ## Admission and budget accounting
 
@@ -99,7 +147,7 @@ Partial or flat cohorts do not qualify. **Every active or newly launched
 refinement still reserves its quoted cost**, and incomplete refinements are never
 exported as a mixture with the older baseline.
 
-The target quote must fit the runtime cap: 900 seconds for CPU MPS chi32 and
+In ordinary cohort mode, the target quote must fit the runtime cap: 900 seconds for CPU MPS chi32 and
 600 seconds for ordinary remote jobs. Admission also leaves the full applicable
 timeout plus the 20-minute submission buffer before the configured deadline.
 Owned pending IDs, including jobs not yet indexed by the account, count toward
@@ -138,6 +186,9 @@ durable costs across restart, reserve-quote freshness, full-cohort reserve prici
 the older-baseline exemption, foreign/ambiguous state and cancellation during
 lookup failures. The independent review and offline test results
 are release evidence; successful documentation edits alone do not establish them.
+Targeted-diagnostic tests also cover explicit-mode validation, unchanged ordinary
+runtime limits, full-manifest reserves, separated runtime caps, deadline buffers,
+timeout cancellation, reuse/failure behavior and suppressed partial export.
 
 Each invocation writes `results/workflow/cohort_batches/<cohort-key>.json` with
 the selected cohort, reserve cohorts/rates, latest admission calculation, owned

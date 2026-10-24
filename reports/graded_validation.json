@@ -1,9 +1,9 @@
 {
-  "validated_at": "2026-10-24T18:31:12.786215+00:00",
+  "validated_at": "2026-10-24T18:39:09.886330+00:00",
   "command": ".venv312/Scripts/python.exe -m pytest -q",
-  "tests": 78,
-  "subtests": 9,
+  "tests": 107,
+  "subtests": 75,
   "result": "PASS",
-  "smoke_test": "PASS: imports and offline Bell-state check",
-  "scope": "Repository suite including concurrent cohort admission, durable cost identity, stale reserve refresh, cancellation/read failures and Windows ledger ownership. Not evidence of hidden-circuit accuracy."
+  "smoke_test": "PASS: imports and offline Bell-state check, retained from previous validation",
+  "scope": "Repository suite including targeted diagnostics, distinct quote/execution caps, complete manifests, budget/recovery gates, submission ownership and user-report evidence. Not evidence of hidden-circuit accuracy."
 }

@@ -1,6 +1,6 @@
 {
   "generated_at": "2026-10-24T18:31:06.112973+00:00",
-  "scope": "Offline analysis of retained receipts; no new API calls, simulations or submissions.",
+  "scope": "Offline retained-receipt analysis plus explicitly attributed human-reported teammate score; no new API calls, simulations or submissions.",
   "status": "PROPOSED_REFINEMENT_REVIEW",
   "known_billed_usd_in_retained_remote_receipts": 0.2,
   "pilot_shape": {
@@ -184,45 +184,79 @@
   ],
   "tentative_probes": [
     {
-      "circuit_id": "Duke_G4_0",
-      "device": "mps.cpu",
-      "options": {
-        "mps_bond_dimension": 64
-      },
-      "proposed_hard_timeout_seconds": 2100,
-      "rationale": "Third precision at a changing pilot; G4 pilot ordering changed.",
-      "status": "PROPOSED_NOT_EXECUTED"
-    },
-    {
+      "priority": 1,
       "circuit_id": "Duke_G2_9",
       "device": "mps.cpu",
       "options": {
         "mps_bond_dimension": 64
       },
-      "proposed_hard_timeout_seconds": 2400,
-      "rationale": "Unsaturated transition row beyond the weak endpoint/center panel.",
-      "status": "PROPOSED_NOT_EXECUTED"
+      "execution_timeout_seconds": 600,
+      "quote_runtime_limit_seconds": 2400,
+      "slots": 1,
+      "options_file": "configs/cohorts/mps_chi64.json",
+      "status": "PROPOSED_NOT_LIVE_EXECUTED",
+      "rationale": "First refinement after protected coverage: teammate83% feedback plus an unsaturated transition row."
     },
     {
+      "priority": 2,
+      "circuit_id": "Duke_G4_0",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 64
+      },
+      "execution_timeout_seconds": 600,
+      "quote_runtime_limit_seconds": 2400,
+      "options_file": "configs/cohorts/mps_chi64.json",
+      "status": "PROPOSED_NOT_LIVE_EXECUTED"
+    },
+    {
+      "priority": 3,
       "circuit_id": "Duke_G3_35",
       "device": "pauli-path",
       "options": {
         "pauli_path_truncation_threshold": 0.0005,
         "pauli_path_circuit_transpilation_level": 1
       },
-      "proposed_hard_timeout_seconds": 300,
-      "rationale": "New intermediate threshold after the .0003 job was canceled.",
-      "status": "PROPOSED_NOT_EXECUTED"
+      "execution_timeout_seconds": 300,
+      "quote_runtime_limit_seconds": 300,
+      "options_file": "configs/cohorts/pps_epsilon0005_level1.json",
+      "status": "PROPOSED_NOT_LIVE_EXECUTED"
     }
   ],
   "timeout_policy": {
-    "current_adapter": "per_job_seconds controls both quoted-runtime admission and actual elapsed cancellation.",
-    "raised_probe_caps": "PROPOSED: 2100/2400-second CPU chi64 caps, subject to fresh quotes and the configured $27 spending ceiling.",
-    "separate_quote_and_execution_caps": {
-      "status": "PROPOSED_NOT_IMPLEMENTED",
-      "example_quote_admission_seconds": 2400,
-      "example_execution_timeout_seconds": 600,
-      "warning": "A 2100-second current-adapter setting is not a 600-second execution cap."
+    "serial_adapter": "per_job_seconds still couples quoted-runtime admission and elapsed cancellation in adapter.run.",
+    "targeted_cpu_controller": {
+      "status": "RELEASED_AND_VALIDATED_NO_LIVE_DIAGNOSTIC_EXECUTION",
+      "source_files": [
+        {
+          "path": "src/otoc/cohort_batch.py",
+          "sha256": "dba40c9dc3a4b73ea9418ebcadcb5867d78f15720f3c235d93da8e2e83f8e577"
+        },
+        {
+          "path": "scripts/run_cohort_batch.py",
+          "sha256": "88b9341ca9b79367299f1824ca1def8d57416e906269ce4b31a9a695d1342702"
+        }
+      ],
+      "validation": {
+        "source": "root agent verification report",
+        "reported_at": "2026-10-24T18:38:00+00:00",
+        "tests_passed": 107,
+        "subtests_passed": 75
+      },
+      "quote_runtime_limit_seconds": 2400,
+      "execution_timeout_seconds": 600,
+      "limit": "CPU-only;600s requests cancellation, not guaranteed terminal settlement or a service-enforced charge cap."
+    },
+    "gpu_fallback": {
+      "trigger": "CPU G2 q9 chi64 reaches600s, or measured CPU elapsed time makes a full cohort impractical.",
+      "prerequisites": [
+        "Reconcile CPU cancellation to terminal status and known cost",
+        "Fresh matched G2 q9 chi64 GPU quote",
+        "Dollar and total/rolling GPU quota gates",
+        "Separate approved GPU runner with an explicit bounded quote-compatible timeout"
+      ],
+      "decision": "A successful faster GPU probe can justify a complete GPU chi64 cohort; do not splice CPU/GPU rows.",
+      "status": "CONDITIONAL_PROPOSAL_NOT_EXECUTED"
     }
   },
   "receipts": {
@@ -650,5 +684,70 @@
       "quoted_cost_usd": 0.2,
       "quoted_runtime_seconds": 0.1
     }
+  },
+  "last_updated_at": "2026-10-24T18:40:07.935371+00:00",
+  "reported_whole_problem_outcomes": [
+    {
+      "reported_on": "2026-10-24",
+      "recorded_at": "2026-10-24T18:40:07.935371+00:00",
+      "source": "user_report",
+      "verification": "USER_REPORTED_TEAMMATE_OUTCOME_NOT_BROWSER_VERIFIED",
+      "account_scope": "teammate_account",
+      "owner": "teammate_reported",
+      "attempt_number": 1,
+      "score": 498,
+      "maximum_points": 600,
+      "score_fraction": 0.83,
+      "score_percent": 83.0,
+      "candidate_name": "direct-3643218316ac",
+      "candidate_files": [
+        {
+          "path": "results/workflow/submissions/G2/direct-3643218316ac.csv",
+          "sha256": "4cb0c3c141640461732583a3e719058f8b731699f55078631d55f3eb0a3c79ea"
+        },
+        {
+          "path": "results/workflow/submissions/G2/direct-3643218316ac.json",
+          "sha256": "3c0f919928047b3735c200fd12c9ce10b064fc82e8676146a78bd9cde68068b4"
+        },
+        {
+          "path": "results/workflow/submissions/G2/direct-3643218316ac.txt",
+          "sha256": "f01485357e3342910494a44d35ef94b0cb07bf040598fabd71ee06480c897a74"
+        }
+      ],
+      "registry_receipt": {
+        "path": "submissions/teammates/teammate_reported/G2/attempt-01.json",
+        "sha256": "00ec984b9d979f7dd69507195eda01089ba4b9a43e68d14d20a85dbe6b8adab2"
+      },
+      "note_evidence": "prepared_explanation",
+      "method": {
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 32
+        },
+        "rows": 36
+      },
+      "browser_verified": false,
+      "uploaded_bytes_independently_verified": false,
+      "current_account_submission_established": false,
+      "current_account_score_established": false,
+      "allowed_use": "Documented whole-problem refinement allocation only; do not infer per-ID hidden labels, fit outputs, or probe the scorer."
+    }
+  ],
+  "allocation_update": {
+    "reason": "Teammate-reported 498/600 indicates substantial remaining score headroom for the associated G2 chi32 candidate.",
+    "coverage_priority": "Finish active G4 chi32 and protect/complete planned G3 PPS .001 level1 baseline. Do not interrupt active coverage.",
+    "first_refinement": "G2 q9 CPU chi64 tractability probe, then one complete coherent chi64 vector if feasible.",
+    "pilot_limit": "The approximately .99999965 correlation compares only three mutually approximate estimates with near-equal endpoints; it never validates the full36-row vector against truth.",
+    "current_account_score_progress": "Unchanged; teammate feedback stays separate from current-account scores.",
+    "no_label_inference": true,
+    "outputs_remain_direct": true
+  },
+  "superseded_probe_timeout_proposals": {
+    "reason": "Released targeted CPU diagnostics now separate quote admission from elapsed cancellation requests.",
+    "previous_hard_execution_caps_seconds": {
+      "G4_q0_chi64": 2100,
+      "G2_q9_chi64": 2400
+    },
+    "superseded_at": "2026-10-24T18:40:07.935371+00:00"
   }
 }

@@ -1,46 +1,49 @@
-# Proposed refinement review
+# Refinement review after teammate G2 feedback
 
-This review uses saved receipts only. No new simulation, API call, setting change or submission was made. Inputs, job IDs, source hashes and configurations are retained in [refinement_pilot_evidence.json](refinement_pilot_evidence.json). Recommendations apply after preserving coherent G2/G4 CPU MPS chi32 and G3 PPS epsilon .001, level1 baselines.
+Updated 2026-10-24T18:40:07.935371+00:00. This review edits only these two reports. It makes no simulator/API call, submission, configuration change or estimate adjustment. Receipt hashes, job IDs and attributed feedback are retained in [refinement_pilot_evidence.json](refinement_pilot_evidence.json).
 
-## Existing score-shape evidence
+## Dated whole-problem outcome
 
-| Comparison | Correlation on three pilots | Order reversals |
+On **October 24, 2026**, the user clarified that **a teammate's first attempt** using G2 candidate [direct-3643218316ac.csv](../results/workflow/submissions/G2/direct-3643218316ac.csv) received **498/600 = 83%**. This is a **user-reported teammate-account outcome**, not independently browser-verified. It does not establish any submission or score for the current account.
+
+The separate [teammate receipt](../submissions/teammates/teammate_reported/G2/attempt-01.json) records owner teammate_reported, attempt 1, source user_report and prepared explanation evidence. The retained candidate and its 36-row manifest were checked: every value is a direct CPU MPS chi32 result. Their local hashes are preserved. The human associates these bytes with the teammate outcome; actual uploaded bytes and website acceptance were not independently observed.
+
+This feedback elevates **G2's whole-problem refinement priority**. It supplies no per-qubit labels, error locations or fitted corrections. Current-account score_progress remains unchanged; teammate feedback stays separately attributed.
+
+## Why the three-pilot correlation was weak
+
+| Comparison | Correlation between approximate pilot vectors | Order reversals |
 | --- | ---: | --- |
 | G2 chi16 to chi32, q0/q18/q35 | 0.9999996504 | 0 of 3 pairs |
 | G4 chi16 to chi32, q0/q19/q37 | 0.9295947250 | 1 of 3 pairs: q0/q19 |
 
-These are correlations between approximations on **three pilot IDs**, not full-vector shape validation, official scores, or comparisons with hidden truth.
+The G2 correlation near 0.99999965 never measured hidden-truth accuracy, the full 36-row profile, or official score. Two nearly equal endpoint estimates near one dominate that three-point panel; the center can move almost affinely while unmeasured transition rows remain inaccurate. The teammate's 83% result illustrates why sparse approximation-to-approximation agreement could not establish high full-vector accuracy.
 
-G2 q18 changes from -0.06198394 to 0.00742392, yet this pilot panel barely changes direction after centering. Its two endpoint values are nearly equal and near one, making the panel insensitive to changes elsewhere. G2 q9 has a measured chi32 estimate of 0.49444184; this unsaturated transition row is a more useful next diagnostic than another endpoint. Its selection uses the observed approximate profile, not an assumed exact answer.
+**G2 q9 is an unsaturated transition row**, with retained chi32 estimate 0.49444184. It is more informative for the next tractability/sensitivity check than another nearly saturated endpoint. This choice follows the observed approximate profile and was identified before the score arrived; no hidden label is inferred.
 
-G4 has stronger observed pilot shape instability: q0/q19 reverse order and relative affine residual energy is 0.135854. This does not prove chi32 is more accurate.
+G4 still shows greater pilot shape change, including a q0/q19 order reversal. G2 now additionally has whole-problem feedback indicating substantial score headroom. Neither observation identifies which individual values are wrong.
 
-G3 q0 remains unresolved: MPS chi16/32 gives 0.02691361/0.64750278, while PPS level1 epsilon .001/.0003 gives -0.07229196/-0.14774957. Level0 at .001 gives -0.05771247. The q35 level1 .0003 job was canceled after 179.147 seconds of reported compute. Neither amplitude disagreement nor cancellation establishes convergence or a correct method.
+## Next allocation
 
-## Three bounded next diagnostics
+1. **Preserve baseline coverage priority.** Finish the active G4 chi32 cohort and protect/complete the planned G3 PPS epsilon .001, level 1 baseline. Do not interrupt active jobs or launch a competing runner.
+2. **Run G2 q9 CPU MPS chi64 as the first refinement diagnostic**, after protected coverage. Use explicit targeted diagnostics, one slot, a **2400-second quote-runtime ceiling** and **600-second elapsed cancellation-request threshold**, with fresh quote/budget checks. Use configs/cohorts/mps_chi64.json. The diagnostic is proposed; it has not been live-executed.
+3. **If tractable, complete one coherent G2 chi64 vector.** A successful q9 run establishes feasibility and pointwise sensitivity, not full-vector improvement. S2 supports trying the chi32-to-64 refinement, but cannot guarantee G2's score. Preserve the chi32 baseline if finer work stops; never replace isolated rows.
+4. Keep **G4 q0 chi64** as the next CPU diagnostic with the same 2400/600 quote/execution thresholds. Keep **G3 q35 PPS epsilon .0005, level 1** later, with a 300-second cancellation threshold and configs/cohorts/pps_epsilon0005_level1.json. Preserve its canceled .0003 receipt.
 
-1. **G4 q0, mps.cpu, chi64:** a third precision at a changing row; propose a **2100-second hard timeout**, conditional on a fresh quote fitting that limit and the dollar gates.
-2. **G2 q9, mps.cpu, chi64:** checks the transition region; propose a **2400-second hard timeout**, conditional on its own fresh quote. A quote for another ID is not execution authorization.
-3. **G3 q35, pauli-path, epsilon .0005, level1:** propose a **300-second hard timeout**. This is a distinct intermediate precision. Preserve the canceled .0003 receipt; do not silently retry or overwrite it.
+## Timecap and GPU decision
 
-These caps are **proposed, not applied**. Start with approximately $3 of quoted diagnostic allocation if fresh quotes permit. Known actual charges, outstanding quotes and protected completion of any still-incomplete baselines must fit the configured $27 spending ceiling. Retained receipts currently contain 0.20 USD in known charges. Earlier CPU jobs billed zero; future CPU runs must not be assumed free.
+The targeted CPU controller has now been **released and validated**, according to root verification: 107 tests and 75 subtests passed at 18:38 UTC on October 24. The split-cap source and hashes are recorded in the evidence file. No proposed diagnostic has run live. This supersedes the prior report's unimplemented-split wording and 2100/2400-second hard-execution proposals. The legacy serialized adapter still couples both limits through per_job_seconds.
 
-## Runtime and device policy
+At 600 seconds the controller requests cancellation; termination and cost settlement can occur later. **Reconcile the CPU job to a terminal status with known cost before GPU fallback.** Then obtain a fresh GPU quote for the same G2 q9, chi64 configuration. If CPU timing makes completion impractical, a single matched GPU feasibility probe is justified subject to dollar and total/rolling GPU quota gates.
 
-The current adapter uses per_job_seconds both as its quoted-runtime admission ceiling and its actual elapsed cancellation threshold. Setting 2100 seconds therefore permits up to 2100 seconds of execution; it is not a 600-second probe.
+The CPU-only controller cannot launch GPU work. Use the approved GPU path with an explicit bounded timeout compatible with its fresh quote. Do not silently retry or overwrite the canceled CPU action. If the GPU probe succeeds materially faster, complete a separate coherent GPU chi64 vector; do not splice CPU and GPU rows.
 
-Saved G4 chi64 quotes are CPU $0.79/1877.8 seconds and GPU $1.08/968.2 seconds. These dated estimates are nonbinding. A **proposed, unimplemented** improvement would separate quote admission, for example 2400 seconds, from an execution cap, for example 600 seconds. Until that split exists, the explicit raised caps above are the available bounded approach; the old 600/900-second quote gate does not establish physical infeasibility.
+The earlier G4 chi32 GPU comparison saved only 10.251 seconds elapsed for 0.20 USD extra. That supports CPU-first testing but does not rule out a larger GPU advantage at chi64. Earlier CPU runs billed zero; future CPU work must not be assumed free.
 
-Prefer CPU for the first chi64 diagnostic. Matched G4 q0 chi32 CPU/GPU estimates differ by 6.63e-12; GPU saved 24.404 seconds of compute but only **10.251 seconds elapsed**, billing 0.20 USD versus CPU 0.00 USD. This single comparison does not establish performance at larger bonds.
+## Budget and validation
 
-A matched chi64 GPU probe becomes useful if CPU chi64 takes several minutes or reaches its cap. Require fresh cost and GPU-quota checks. Preserve device-specific vectors; one matching value does not authorize mixing CPU and GPU rows into a fixed-device cohort.
+Keep actual charges, outstanding/new quotes and protected G4/G3 baseline completion within the configured **$27 spending ceiling**. Since a complete usable G2 baseline exists, its refinement need not reserve the entire chi64 cohort in advance. Preserve every active/new quote commitment and retain the old complete vector if the budget ends.
 
-## Decisions after the diagnostics
+After completing chi64, compare its full 36-row vector with chi32 using positive centered correlation and squared affine residuals normalized by centered signal energy. Inspect ordering changes and whether residuals contract at further precisions. These are sensitivity diagnostics, not hidden-truth error bars: small changes can share bias, while large changes need not improve accuracy.
 
-If tractable, G2 chi64 is the strongest first full-refinement candidate because S2 supports substantial chi32-to-64 improvement. For G4, add chi64 q19/q37 only if q0 and observed runtime justify expansion. For G3, a single .0005 result establishes feasibility and pointwise sensitivity; obtain matching q0/q14 values before interpreting its pilot profile. Two-point correlation cannot validate shape.
-
-Once a complete usable baseline exists, retain it and reserve outstanding/new quotes without requiring advance funding for every row of a higher-precision cohort. Partial refinements stay as evidence; export only complete coherent vectors.
-
-For complete successive vectors, compare positive centered correlation and squared residuals after affine alignment, normalized by centered signal energy. Inspect ordering changes and whether residuals decline across precision levels. Uniform offset or positive scaling may leave score unchanged. Single-row trends, sparse pilot stability and cross-method agreement do not certify accuracy.
-
-Keep raw direct outputs. Extrapolation and fusion remain disabled after the held-out candidate failed validation. An observed rounded 100 can justify shifting leaderboard effort elsewhere, but cannot establish exact values or numerical convergence. Never probe the scorer or reconstruct hidden labels.
+Outputs remain raw direct estimates. Extrapolation/fusion stay disabled after failed held-out validation. Submit only genuine complete coherent candidates; never probe the scorer or reconstruct labels. A rounded 100 may justify shifting leaderboard effort elsewhere but cannot establish exact values or numerical convergence. The only score added here is the **teammate-reported 498/600**, not a current-account result.
