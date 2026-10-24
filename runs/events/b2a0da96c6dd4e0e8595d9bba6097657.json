@@ -1,0 +1,8 @@
+{
+  "event_id": "b2a0da96c6dd4e0e8595d9bba6097657",
+  "recorded_at": "2026-10-24T18:02:21.566913+00:00",
+  "kind": "run_state",
+  "run_id": "remote-4bfb22a8b0fb80bf34249150f7dc17d6b42c2308cc2c13f5545dc047f3470a79",
+  "status": "RUNNING",
+  "previous_status": "SUBMITTING"
+}

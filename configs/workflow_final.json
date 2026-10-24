@@ -1,10 +1,10 @@
 {
-  "version": "workflow-final-2",
+  "version": "workflow-final-3",
   "deadline_utc": "2026-10-25T15:30:00+00:00",
   "submission_buffer_seconds": 1200,
   "sample_budget_usd": 0.0,
   "graded_budget_usd": 30.0,
-  "graded_reserve_fraction": 0.15,
+  "graded_reserve_fraction": 0.10,
   "max_remote_jobs": 800,
   "max_concurrent_jobs": 1,
   "stop_on_unknown_cost": true,
@@ -125,8 +125,10 @@
   },
   "release_status": "READY",
   "remote_job_seconds": 600,
+  "mps_chi32_job_seconds": 900,
   "exact_job_seconds": 600,
   "baseline_quote_reserve_usd_per_row": 0.2,
+  "baseline_quote_reserve_by_problem": {"G2": 0.30, "G3": 0.20, "G4": 0.27},
   "maximum_native_chi": 512,
   "gpu_enabled": true,
   "gpu_total_seconds": 27000,
@@ -164,6 +166,7 @@
     },
     "G2": {
       "primary": "pauli-path",
+      "recovery_prior_primary": "mps.cpu",
       "chi": 16,
       "epsilon": 0.001,
       "desired_mps_chi": 128,
@@ -178,6 +181,7 @@
     },
     "G4": {
       "primary": "pauli-path",
+      "recovery_prior_primary": "mps.cpu",
       "chi": 16,
       "epsilon": 0.001,
       "quality": "UNMATCHED_FAMILY",
@@ -185,6 +189,16 @@
     }
   },
   "pilot_signal_gate": true,
+  "discovery": {
+    "enabled": false,
+    "pps_threshold": 0.001,
+    "pps_transpilation_level": 1,
+    "mps_chi": 32,
+    "mps_probe_qubits": {"G2": 18, "G3": 0, "G4": 0},
+    "pps_timeout_seconds": 180,
+    "mps_timeout_seconds": 900,
+    "reason": "Bounded representation and bond-sensitivity probes precede low-chi bulk coverage; sample transfer is unverified."
+  },
   "completed_anchors": {
     "G1": {
       "status": "EXACT_REUSED",

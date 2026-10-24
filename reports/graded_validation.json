@@ -1,0 +1,7 @@
+{
+  "validated_at": "2026-10-24T18:11:41.712532+00:00",
+  "command": ".venv312/Scripts/python.exe -m unittest discover -s tests",
+  "tests": 49,
+  "result": "PASS",
+  "scope": "Current repository suite, including coherent cohort exports, recovery isolation, discovery retention, quote reserves and prior numerical/ledger checks. Not evidence of hidden-circuit accuracy."
+}

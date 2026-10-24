@@ -1,8 +1,95 @@
+from copy import deepcopy
 import unittest
 from otoc.campaign_reasoning import shape_influence, empirical_seconds, recover_flat_policy, complete_vector_trends
 
 
 class CampaignReasoningTests(unittest.TestCase):
+    @staticmethod
+    def recovery_settings(primary='pauli-path'):
+        return {'graded_policy':{'G3':{'primary':primary,'epsilon':.001}},
+                'pilot_qubits':{'G3':[0,1,2]},'cloud_pps_transpilation_level':2,
+                'stopping':{'signal_floor':.0001}}
+
+    @staticmethod
+    def pilot_rows(device,options,values):
+        return [{'action':{'circuit_id':f'Duke_G3_{q}','device':device,'options':deepcopy(options)},
+                 'status':'COMPLETED','estimate':value,'cost_usd':0.,'job_id':f'{device}-{q}'}
+                for q,value in enumerate(values)]
+
+    def test_recovery_never_combines_cpu_and_gpu_pilots(self):
+        s=self.recovery_settings()
+        flat=self.pilot_rows('pauli-path',{'pauli_path_truncation_threshold':.001},[0,0,0])
+        cpu=self.pilot_rows('mps.cpu',{'mps_bond_dimension':16},[.1,.2,.3])
+        gpu=self.pilot_rows('mps.gpu',{'mps_bond_dimension':16},[.1,.2,.3])
+        _,evidence=recover_flat_policy(s,flat+cpu[:2]+gpu[2:])
+        self.assertFalse(evidence)
+        selected,evidence=recover_flat_policy(s,flat+gpu)
+        self.assertEqual(selected['graded_policy']['G3']['primary'],'mps.gpu')
+        self.assertEqual(evidence['G3']['configuration'],{'device':'mps.gpu','options':{'mps_bond_dimension':16}})
+
+    def test_recovery_preserves_all_options_and_does_not_combine_variants(self):
+        s=self.recovery_settings()
+        flat=self.pilot_rows('pauli-path',{'pauli_path_truncation_threshold':.001},[0,0,0])
+        options={'mps_bond_dimension':16,'cutoff':0.0,'backend_options':{'mode':'preserved'}}
+        rows=self.pilot_rows('mps.cpu',options,[.1,.2,.3])
+        other=deepcopy(rows[-1])
+        other['action']['options']['cutoff']=.001
+        self.assertFalse(recover_flat_policy(s,flat+rows[:2]+[other])[1])
+        selected,evidence=recover_flat_policy(s,flat+rows)
+        self.assertEqual(selected['graded_policy']['G3']['baseline_options'],options)
+        selected['graded_policy']['G3']['baseline_options']['backend_options']['mode']='changed'
+        self.assertEqual(rows[0]['action']['options'],options)
+        self.assertEqual(evidence['G3']['options'],options)
+
+    def test_finer_resolved_original_configuration_replaces_flat_coarse(self):
+        s=self.recovery_settings()
+        coarse={'pauli_path_truncation_threshold':.001,'pauli_path_circuit_transpilation_level':2}
+        fine={'pauli_path_truncation_threshold':.0001,'pauli_path_circuit_transpilation_level':2}
+        rows=self.pilot_rows('pauli-path',coarse,[0,0,0])
+        rows+=self.pilot_rows('pauli-path',fine,[-.02,0,-.01])
+        selected,evidence=recover_flat_policy(s,rows)
+        self.assertEqual(selected['graded_policy']['G3']['epsilon'],.0001)
+        self.assertEqual(selected['graded_policy']['G3']['baseline_options'],fine)
+        self.assertEqual(evidence['G3']['options'],fine)
+        self.assertEqual(s['graded_policy']['G3']['epsilon'],.001)
+
+    def test_resolved_pilots_are_ranked_by_precision_not_amplitude(self):
+        s=self.recovery_settings()
+        coarse={'pauli_path_truncation_threshold':.001,'pauli_path_circuit_transpilation_level':2}
+        fine={'pauli_path_truncation_threshold':.0001,'pauli_path_circuit_transpilation_level':1}
+        rows=self.pilot_rows('pauli-path',coarse,[-.9,0,.9])
+        rows+=self.pilot_rows('pauli-path',fine,[-.002,0,.001])
+        rows+=self.pilot_rows('mps.cpu',{'mps_bond_dimension':512},[-1,0,1])
+        selected,evidence=recover_flat_policy(s,list(reversed(rows)))
+        self.assertEqual(selected['graded_policy']['G3']['primary'],'pauli-path')
+        self.assertEqual(selected['graded_policy']['G3']['baseline_options'],fine)
+        self.assertAlmostEqual(evidence['G3']['pilot_spread'],.003)
+
+    def test_original_family_preference_survives_repeated_recovery(self):
+        s=self.recovery_settings()
+        coarse={'pauli_path_truncation_threshold':.001,'pauli_path_circuit_transpilation_level':2}
+        level1={'pauli_path_truncation_threshold':.001,'pauli_path_circuit_transpilation_level':1}
+        rows=self.pilot_rows('pauli-path',coarse,[0,0,0])
+        rows+=self.pilot_rows('mps.cpu',{'mps_bond_dimension':16},[.1,.2,.3])
+        switched,_=recover_flat_policy(s,rows)
+        self.assertEqual(switched['graded_policy']['G3']['primary'],'mps.cpu')
+        selected,_=recover_flat_policy(switched,rows+self.pilot_rows('pauli-path',level1,[-.02,0,-.01]))
+        self.assertEqual(selected['graded_policy']['G3']['primary'],'pauli-path')
+        self.assertEqual(selected['graded_policy']['G3']['baseline_options'],level1)
+
+    def test_resolved_same_family_representation_precedes_cross_family_recovery(self):
+        s={'graded_policy':{'G3':{'primary':'pauli-path'}},'pilot_qubits':{'G3':[0,1,2]},
+           'cloud_pps_transpilation_level':2,'stopping':{'signal_floor':.0001}}
+        rows=[]
+        for level,vals in [(2,[0,0,0]),(1,[-.07,0,-.03])]:
+            for q,v in enumerate(vals):
+                rows.append({'action':{'circuit_id':f'Duke_G3_{q}','device':'pauli-path',
+                             'options':{'pauli_path_truncation_threshold':.001,'pauli_path_circuit_transpilation_level':level}},
+                             'status':'COMPLETED','estimate':v,'cost_usd':0.,'job_id':str(q)})
+        selected,evidence=recover_flat_policy(s,rows)
+        self.assertEqual(selected['graded_policy']['G3']['transpilation_level'],1)
+        self.assertIn('G3',evidence)
+
     def test_vector_trends_require_complete_vectors_and_fixed_transpilation(self):
         rows=[]
         for eps,level,values in [(.01,2,[0.,.2,.8]),(.001,1,[0.,.3,.7])]:

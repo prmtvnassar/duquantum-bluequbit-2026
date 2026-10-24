@@ -2,6 +2,28 @@
 
 The executable policy is [configs/workflow_final.json](configs/workflow_final.json). The measured evidence is in [reports/calibration_evidence.json](reports/calibration_evidence.json), [reports/sample_benchmarks.json](reports/sample_benchmarks.json), and [runs/](runs/README.md). This supersedes the proposals retained in [docs/history/](docs/history/).
 
+**Version 3 supersedes the initial allocation below.** Two GPT-6 Astra Ultra
+reviews challenged the native transfer and scheduler. Their evidence and
+resolved objections are in [reports/GRADED_DEBATE_REVIEW.md](reports/GRADED_DEBATE_REVIEW.md).
+The active family priors are MPS for G2, PPS for G3, and incumbent MPS for G4;
+G2/G4's initial PPS choices reflected affordability rather than demonstrated
+accuracy. The completed native chi32 pilots now guide G2/G4 cohort selection.
+G3's native PPS level 1 resolves signal where level 2 returned zeros. These are
+provisional baseline choices, not certified convergence.
+
+Exports require one complete device/full-options cohort. Partial precision
+upgrades stay in the evidence ledger and cannot replace selected baseline
+rows. Coverage and missing-row reserves use that same cohort definition.
+Bounded discovery probes can be enabled explicitly, but are disabled after
+the initial debate tranche to avoid indefinite exploration before coverage.
+The chi32 runtime cap is 900 seconds for both probes and cohort completion.
+
+The graded hard budget remains $30. Version 3 holds $3 in reserve (10%), so planned
+spending is limited to $27. Per-missing-row reserves are at least $0.30 for G2,
+$0.20 for G3 and $0.27 for G4, matching the selected configurations' observed
+quotes. Future jobs are freshly quoted and unknown charges block execution.
+Earlier 15%/$25.50 and uniform $0.20 figures below describe the initial policy.
+
 ## What the sample work establishes
 
 **G1 is already solved by Kevin.** The 30 values in [problems/04_graded_G1/exact_values.csv](problems/04_graded_G1/exact_values.csv) match his submitted file and all 30 completed exact CPU jobs in `kevin/experiment` at commit `9714dab3422134c77b7fc36f99e86f5f2dada921`. The ledger reports $0 for each successful job, and Kevin reports a 100% score. The workflow imports this exact anchor and schedules no duplicate G1 work. Its reported score is distinguished from our independently observed sample scores; his historical job costs are not charges against our current API account.

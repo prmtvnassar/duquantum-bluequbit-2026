@@ -8,13 +8,13 @@
   "parameters": {
     "mps_bond_dimension": 16
   },
-  "status": "RUNNING",
-  "estimate": null,
+  "status": "COMPLETED",
+  "estimate": -0.2114925301226884,
   "job_id": "h88XrE4ylXWWeswj",
-  "cost_usd": null,
+  "cost_usd": 0.0,
   "started_at": "2026-10-24T17:51:03.842558+00:00",
-  "finished_at": null,
-  "wall_seconds": 0.0,
+  "finished_at": "2026-10-24T17:51:21.326051+00:00",
+  "wall_seconds": 13.401,
   "reason": "Missing baseline row; use an unattempted direct method. Flat primary pilot replaced by a complete nonconstant independent-method pilot; signal recovery only, accuracy uncertified",
   "quote": {
     "circuit_id": "Duke_G4_2",
@@ -40,7 +40,7 @@
       },
       "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZII"
     },
-    "status": "RUNNING",
+    "status": "COMPLETED",
     "requested_at": "2026-10-24T17:51:03.842558+00:00",
     "quote": {
       "circuit_id": "Duke_G4_2",
@@ -56,7 +56,12 @@
       "binding_cost_cap": false
     },
     "scheduler_justification": "Missing baseline row; use an unattempted direct method. Flat primary pilot replaced by a complete nonconstant independent-method pilot; signal recovery only, accuracy uncertified",
-    "job_id": "h88XrE4ylXWWeswj"
+    "job_id": "h88XrE4ylXWWeswj",
+    "estimate": -0.2114925301226884,
+    "cost_usd": 0.0,
+    "compute_ms": 13030,
+    "queue_ms": 371,
+    "updated_at": "2026-10-24T17:51:21.326051+00:00"
   },
   "run_id": "remote-2c7240c48cccd67bba6558798ef0f937e5e38f6d649e39a0500f4d1a5ca340ef"
 }

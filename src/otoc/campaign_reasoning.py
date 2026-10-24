@@ -17,44 +17,64 @@ def completed(record):
 
 
 def recover_flat_policy(settings, records):
-    """Switch a flat primary only after a complete, nonflat independent pilot.
+    """Select a resolved complete pilot at one actual device and full options.
 
-    Each pilot vector must use one identical configuration. This recovers signal,
-    not accuracy; selection remains direct and explicitly uncertified.
+    Prefer the originally configured method family, including a finer precision
+    or alternate PPS representation.  Switch families only after a complete
+    original-family pilot exists and none of its complete configurations resolve
+    signal.  Precision orders eligible configurations; amplitude never ranks
+    them.  ``baseline_options`` preserves the exact selected action options.
+    This recovers signal, not accuracy or a convergence certificate.
     """
     result = deepcopy(settings)
     evidence = {}
     for problem, policy in result["graded_policy"].items():
-        if policy["primary"] == "cpu":
+        if method(policy["primary"]) == "exact":
             continue
+        previous_device = policy["primary"]
+        prior_device = policy.get("recovery_prior_primary", previous_device)
+        primary = method(prior_device)
         ids = [f"Duke_{problem}_{q}" for q in settings["pilot_qubits"][problem]]
         groups = {}
         for r in records:
             a = r["action"]
             if completed(r) and a["circuit_id"] in ids and method(a["device"]) != "exact":
-                key = (method(a["device"]), json.dumps(a["options"], sort_keys=True))
+                key = (a["device"], json.dumps(a["options"], sort_keys=True))
                 groups.setdefault(key, {})[a["circuit_id"]] = r
         vectors = []
-        for (family, options), rows in groups.items():
+        for (device, encoded_options), rows in groups.items():
             if all(cid in rows for cid in ids):
+                family = method(device)
+                options = json.loads(encoded_options)
+                parameter = options.get("mps_bond_dimension") if family == "mps" else options.get("pauli_path_truncation_threshold")
+                if not isinstance(parameter, (int, float)) or isinstance(parameter, bool) or not np.isfinite(parameter) or parameter <= 0:
+                    continue
                 vals = [rows[cid]["estimate"] for cid in ids]
-                vectors.append((family, json.loads(options), float(np.ptp(vals)), rows))
-        primary = method(policy["primary"])
-        own = [v for v in vectors if v[0] == primary]
-        alternate = [v for v in vectors if v[0] != primary and v[2] > settings["stopping"]["signal_floor"]]
-        if own and all(v[2] <= settings["stopping"]["signal_floor"] for v in own) and alternate:
-            # Deterministic highest completed precision, never largest amplitude.
-            alternate.sort(key=lambda v: v[1].get("mps_bond_dimension", 0)
-                           if v[0] == "mps" else -v[1]["pauli_path_truncation_threshold"])
-            family, options, spread, rows = alternate[-1]
-            policy["primary"] = "mps.cpu" if family == "mps" else "pauli-path"
+                vectors.append({"family": family, "device": device, "options": options,
+                                "spread": float(np.ptp(vals)), "rows": rows,
+                                "precision_order": -parameter if family == "mps" else parameter})
+        own = [v for v in vectors if v["family"] == primary]
+        resolved = [v for v in vectors if v["spread"] > settings["stopping"]["signal_floor"]]
+        if own and resolved:
+            selected = min(resolved, key=lambda v: (
+                v["family"] != primary, v["precision_order"],
+                v["device"] != prior_device, v["device"], json.dumps(v["options"], sort_keys=True)))
+            family, device, options = selected["family"], selected["device"], selected["options"]
+            spread, rows = selected["spread"], selected["rows"]
+            policy["primary"] = device
+            policy["recovery_prior_primary"] = prior_device
+            policy["baseline_options"] = deepcopy(options)
             if family == "mps":
                 policy["chi"] = options["mps_bond_dimension"]
             else:
                 policy["epsilon"] = options["pauli_path_truncation_threshold"]
-            policy["reason"] = "Flat primary pilot replaced by a complete nonconstant independent-method pilot; signal recovery only, accuracy uncertified"
-            evidence[problem] = {"previous_primary": primary, "selected_primary": family,
-                                 "pilot_spread": spread, "options": options,
+                policy["transpilation_level"] = options.get("pauli_path_circuit_transpilation_level",2)
+            policy["reason"] = "Selected a complete nonconstant pilot at one device and identical full options, preferring the original method family then precision; signal recovery only, accuracy uncertified"
+            evidence[problem] = {"previous_primary": method(previous_device), "selected_primary": family,
+                                 "previous_device": previous_device, "preferred_original_device": prior_device,
+                                 "device": device, "pilot_spread": spread, "options": deepcopy(options),
+                                 "configuration": {"device": device, "options": deepcopy(options)},
+                                 "pilot_ids": ids,
                                  "job_ids": [rows[cid]["job_id"] for cid in ids],
                                  "interpretation": policy["reason"]}
     return result, evidence

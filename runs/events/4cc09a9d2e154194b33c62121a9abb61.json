@@ -1,0 +1,16 @@
+{
+  "event_id": "4cc09a9d2e154194b33c62121a9abb61",
+  "recorded_at": "2026-10-24T17:51:26.108064+00:00",
+  "kind": "quote",
+  "circuit_id": "Duke_G4_3",
+  "device": "mps.gpu",
+  "options": {
+    "mps_bond_dimension": 16
+  },
+  "quoted_at": "2026-10-24T17:51:26.108064+00:00",
+  "cost_usd": 0.2,
+  "runtime_seconds": 147.4,
+  "error": null,
+  "warning": "This is just an estimate; the actual runtime may be less or more.",
+  "binding_cost_cap": false
+}

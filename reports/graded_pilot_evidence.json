@@ -1,237 +1,162 @@
 {
-  "scope": "Native graded pilots, not submission scores",
+  "scope": "Native graded diagnostic and early coverage evidence; no verified new graded scores",
+  "recorded_at": "2026-10-24T18:11:41.711530+00:00",
+  "policy_recovery": {
+    "G2": {
+      "previous_primary": "pps",
+      "selected_primary": "mps",
+      "previous_device": "pauli-path",
+      "preferred_original_device": "mps.cpu",
+      "device": "mps.cpu",
+      "pilot_spread": 0.9922142890724998,
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "configuration": {
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 32
+        }
+      },
+      "pilot_ids": [
+        "Duke_G2_0",
+        "Duke_G2_18",
+        "Duke_G2_35"
+      ],
+      "job_ids": [
+        "e5W2dxQ1OLOkRRLi",
+        "bWm41clhLZ9NOIA8",
+        "gIhxrjeFBKeCtnHd"
+      ],
+      "interpretation": "Selected a complete nonconstant pilot at one device and identical full options, preferring the original method family then precision; signal recovery only, accuracy uncertified"
+    },
+    "G3": {
+      "previous_primary": "pps",
+      "selected_primary": "pps",
+      "previous_device": "pauli-path",
+      "preferred_original_device": "pauli-path",
+      "device": "pauli-path",
+      "pilot_spread": 0.07229195955602603,
+      "options": {
+        "pauli_path_circuit_transpilation_level": 1,
+        "pauli_path_truncation_threshold": 0.001
+      },
+      "configuration": {
+        "device": "pauli-path",
+        "options": {
+          "pauli_path_circuit_transpilation_level": 1,
+          "pauli_path_truncation_threshold": 0.001
+        }
+      },
+      "pilot_ids": [
+        "Duke_G3_0",
+        "Duke_G3_14",
+        "Duke_G3_35"
+      ],
+      "job_ids": [
+        "rOuJjcU3jjqtpb4e",
+        "G1zxxs8zxn4vBAmI",
+        "3veLHAPbAcd7cuPm"
+      ],
+      "interpretation": "Selected a complete nonconstant pilot at one device and identical full options, preferring the original method family then precision; signal recovery only, accuracy uncertified"
+    },
+    "G4": {
+      "previous_primary": "pps",
+      "selected_primary": "mps",
+      "previous_device": "pauli-path",
+      "preferred_original_device": "mps.cpu",
+      "device": "mps.cpu",
+      "pilot_spread": 0.6867895511482593,
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "configuration": {
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 32
+        }
+      },
+      "pilot_ids": [
+        "Duke_G4_0",
+        "Duke_G4_19",
+        "Duke_G4_37"
+      ],
+      "job_ids": [
+        "78aF6vkVPu0XZJaR",
+        "smDxT4giEnJIkVRP",
+        "vGhKebHhF7A0UAOm"
+      ],
+      "interpretation": "Selected a complete nonconstant pilot at one device and identical full options, preferring the original method family then precision; signal recovery only, accuracy uncertified"
+    }
+  },
   "records": [
     {
       "action": {
-        "circuit_id": "Duke_G3_14",
+        "circuit_id": "Duke_G4_0",
         "device": "pauli-path",
         "options": {
           "pauli_path_truncation_threshold": 0.001,
           "pauli_path_circuit_transpilation_level": 2
         },
-        "pauli": "IIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIII"
+        "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZ"
       },
       "status": "COMPLETED",
-      "requested_at": "2026-10-24T17:38:05.514205+00:00",
+      "requested_at": "2026-10-24T17:36:42.849050+00:00",
       "quote": {
-        "circuit_id": "Duke_G3_14",
+        "circuit_id": "Duke_G4_0",
         "device": "pauli-path",
         "options": {
           "pauli_path_truncation_threshold": 0.001,
           "pauli_path_circuit_transpilation_level": 2
         },
-        "quoted_at": "2026-10-24T17:38:05.492472+00:00",
+        "quoted_at": "2026-10-24T17:36:42.830971+00:00",
         "cost_usd": 0.2,
         "runtime_seconds": 0.1,
         "error": null,
         "warning": "This is just an estimate; the actual runtime may be less or more.",
         "binding_cost_cap": false
       },
-      "scheduler_justification": "Missing baseline row; use an unattempted direct method. Mostly Clifford grid analogue S3; native transpilation differs; chi16 is an affordable independent pilot only",
-      "job_id": "1RfihpudlXIhIRqc",
+      "scheduler_justification": "Missing baseline row; use an unattempted direct method. Native MPS chi64 CPU/GPU quotes exceed the runtime/budget allocation. Use cheap PPS pilots and independent MPS chi16; neither has a matched G4 sample",
+      "job_id": "O32peB3tJOGvTWOX",
       "estimate": 0.0,
       "cost_usd": 0.0,
-      "compute_ms": 3948,
-      "queue_ms": 316,
-      "updated_at": "2026-10-24T17:38:12.947078+00:00"
+      "compute_ms": 5351,
+      "queue_ms": 431,
+      "updated_at": "2026-10-24T17:36:50.721435+00:00"
     },
     {
       "action": {
-        "circuit_id": "Duke_G2_35",
-        "device": "mps.cpu",
-        "options": {
-          "mps_bond_dimension": 16
-        },
-        "pauli": "ZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
-      },
-      "status": "COMPLETED",
-      "requested_at": "2026-10-24T17:47:22.557824+00:00",
-      "quote": {
-        "circuit_id": "Duke_G2_35",
-        "device": "mps.cpu",
-        "options": {
-          "mps_bond_dimension": 16
-        },
-        "quoted_at": "2026-10-24T17:47:22.523704+00:00",
-        "cost_usd": 0.2,
-        "runtime_seconds": 131.6,
-        "error": null,
-        "warning": "This is just an estimate; the actual runtime may be less or more.",
-        "binding_cost_cap": false
-      },
-      "scheduler_justification": "Complete independent fixed-precision pilot vector to assess signal recovery before full baseline coverage; low-chi MPS is not an accuracy certificate.",
-      "job_id": "JmVGz8yxU6PTAw9c",
-      "updated_at": "2026-10-24T17:47:35.103171+00:00",
-      "estimate": 0.9995225392390705,
-      "cost_usd": 0.0,
-      "compute_ms": 5744,
-      "queue_ms": 3506
-    },
-    {
-      "action": {
-        "circuit_id": "Duke_G2_18",
-        "device": "mps.cpu",
-        "options": {
-          "mps_bond_dimension": 16
-        },
-        "pauli": "IIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIII"
-      },
-      "status": "COMPLETED",
-      "requested_at": "2026-10-24T17:46:54.089128+00:00",
-      "quote": {
-        "circuit_id": "Duke_G2_18",
-        "device": "mps.cpu",
-        "options": {
-          "mps_bond_dimension": 16
-        },
-        "quoted_at": "2026-10-24T17:46:54.074605+00:00",
-        "cost_usd": 0.2,
-        "runtime_seconds": 131.6,
-        "error": null,
-        "warning": "This is just an estimate; the actual runtime may be less or more.",
-        "binding_cost_cap": false
-      },
-      "scheduler_justification": "Complete independent fixed-precision pilot vector to assess signal recovery before full baseline coverage; low-chi MPS is not an accuracy certificate.",
-      "job_id": "eV35YkTqQE4xkAN9",
-      "updated_at": "2026-10-24T17:47:21.293536+00:00",
-      "estimate": -0.06198394204852958,
-      "cost_usd": 0.0,
-      "compute_ms": 11271,
-      "queue_ms": 12026
-    },
-    {
-      "action": {
-        "circuit_id": "Duke_G3_0",
+        "circuit_id": "Duke_G4_19",
         "device": "pauli-path",
         "options": {
           "pauli_path_truncation_threshold": 0.001,
           "pauli_path_circuit_transpilation_level": 2
         },
-        "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZ"
+        "pauli": "IIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIII"
       },
       "status": "COMPLETED",
-      "requested_at": "2026-10-24T17:37:54.442979+00:00",
+      "requested_at": "2026-10-24T17:36:54.130320+00:00",
       "quote": {
-        "circuit_id": "Duke_G3_0",
+        "circuit_id": "Duke_G4_19",
         "device": "pauli-path",
         "options": {
           "pauli_path_truncation_threshold": 0.001,
           "pauli_path_circuit_transpilation_level": 2
         },
-        "quoted_at": "2026-10-24T17:37:54.418804+00:00",
+        "quoted_at": "2026-10-24T17:36:54.121392+00:00",
         "cost_usd": 0.2,
         "runtime_seconds": 0.1,
         "error": null,
         "warning": "This is just an estimate; the actual runtime may be less or more.",
         "binding_cost_cap": false
       },
-      "scheduler_justification": "Missing baseline row; use an unattempted direct method. Mostly Clifford grid analogue S3; native transpilation differs; chi16 is an affordable independent pilot only",
-      "job_id": "Xwd38DivQbLSLfMw",
+      "scheduler_justification": "Missing baseline row; use an unattempted direct method. Native MPS chi64 CPU/GPU quotes exceed the runtime/budget allocation. Use cheap PPS pilots and independent MPS chi16; neither has a matched G4 sample",
+      "job_id": "8bYxcNGVrN6Zz9I3",
       "estimate": 0.0,
       "cost_usd": 0.0,
-      "compute_ms": 4359,
-      "queue_ms": 321,
-      "updated_at": "2026-10-24T17:38:01.832926+00:00"
-    },
-    {
-      "action": {
-        "circuit_id": "Duke_G2_0",
-        "device": "pauli-path",
-        "options": {
-          "pauli_path_truncation_threshold": 0.0001,
-          "pauli_path_circuit_transpilation_level": 2
-        },
-        "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZ"
-      },
-      "status": "COMPLETED",
-      "requested_at": "2026-10-24T17:40:20.512851+00:00",
-      "quote": {
-        "circuit_id": "Duke_G2_0",
-        "device": "pauli-path",
-        "options": {
-          "pauli_path_truncation_threshold": 0.0001,
-          "pauli_path_circuit_transpilation_level": 2
-        },
-        "quoted_at": "2026-10-24T17:40:20.503884+00:00",
-        "cost_usd": 0.2,
-        "runtime_seconds": 0.1,
-        "error": null,
-        "warning": "This is just an estimate; the actual runtime may be less or more.",
-        "binding_cost_cap": false
-      },
-      "scheduler_justification": "Investigate all-zero native PPS pilots using independent MPS and decade-spaced tighter PPS thresholds; no bulk rollout or convergence claim from a flat vector.",
-      "job_id": "I0uYXEfRPI4pemdw",
-      "estimate": 0.045095738448185416,
-      "cost_usd": 0.0,
-      "compute_ms": 196694,
-      "queue_ms": 860,
-      "updated_at": "2026-10-24T17:44:23.855105+00:00"
-    },
-    {
-      "action": {
-        "circuit_id": "Duke_G2_35",
-        "device": "pauli-path",
-        "options": {
-          "pauli_path_truncation_threshold": 0.001,
-          "pauli_path_circuit_transpilation_level": 2
-        },
-        "pauli": "ZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
-      },
-      "status": "COMPLETED",
-      "requested_at": "2026-10-24T17:39:15.958856+00:00",
-      "quote": {
-        "circuit_id": "Duke_G2_35",
-        "device": "pauli-path",
-        "options": {
-          "pauli_path_truncation_threshold": 0.001,
-          "pauli_path_circuit_transpilation_level": 2
-        },
-        "quoted_at": "2026-10-24T17:39:15.946067+00:00",
-        "cost_usd": 0.2,
-        "runtime_seconds": 0.1,
-        "error": null,
-        "warning": "This is just an estimate; the actual runtime may be less or more.",
-        "binding_cost_cap": false
-      },
-      "scheduler_justification": "Missing baseline row; use an unattempted direct method. S2 high-accuracy MPS is preferred, but live native quotes determine feasibility. PPS .001 is the affordable fallback; its S2 error exceeds the 0.01 target",
-      "job_id": "5QQZfExUqmAJBPnO",
-      "estimate": 0.0,
-      "cost_usd": 0.0,
-      "compute_ms": 6546,
-      "queue_ms": 560,
-      "updated_at": "2026-10-24T17:39:40.128765+00:00"
-    },
-    {
-      "action": {
-        "circuit_id": "Duke_G3_35",
-        "device": "mps.cpu",
-        "options": {
-          "mps_bond_dimension": 16
-        },
-        "pauli": "ZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
-      },
-      "status": "COMPLETED",
-      "requested_at": "2026-10-24T17:49:13.049241+00:00",
-      "quote": {
-        "circuit_id": "Duke_G3_35",
-        "device": "mps.cpu",
-        "options": {
-          "mps_bond_dimension": 16
-        },
-        "quoted_at": "2026-10-24T17:49:13.026110+00:00",
-        "cost_usd": 0.2,
-        "runtime_seconds": 104.6,
-        "error": null,
-        "warning": "This is just an estimate; the actual runtime may be less or more.",
-        "binding_cost_cap": false
-      },
-      "scheduler_justification": "Complete independent fixed-precision pilot vector to assess signal recovery before full baseline coverage; low-chi MPS is not an accuracy certificate.",
-      "job_id": "zTYGrn2XLOYS8SXF",
-      "estimate": -3.702593787124897e-14,
-      "cost_usd": 0.0,
-      "compute_ms": 8839,
-      "queue_ms": 314,
-      "updated_at": "2026-10-24T17:49:24.947274+00:00"
+      "compute_ms": 13766,
+      "queue_ms": 375,
+      "updated_at": "2026-10-24T17:37:11.146443+00:00"
     },
     {
       "action": {
@@ -269,6 +194,106 @@
     },
     {
       "action": {
+        "circuit_id": "Duke_G4_0",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 16
+        },
+        "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZ"
+      },
+      "status": "COMPLETED",
+      "requested_at": "2026-10-24T17:37:39.839724+00:00",
+      "quote": {
+        "circuit_id": "Duke_G4_0",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 16
+        },
+        "quoted_at": "2026-10-24T17:37:39.813848+00:00",
+        "cost_usd": 0.2,
+        "runtime_seconds": 114.1,
+        "error": null,
+        "warning": "This is just an estimate; the actual runtime may be less or more.",
+        "binding_cost_cap": false
+      },
+      "scheduler_justification": "Independent native-method pilot; local/cloud transfer unvalidated",
+      "job_id": "BsLvSnV91rVxH6Ts",
+      "estimate": 0.5589102913779098,
+      "cost_usd": 0.0,
+      "compute_ms": 4518,
+      "queue_ms": 430,
+      "updated_at": "2026-10-24T17:37:47.968571+00:00"
+    },
+    {
+      "action": {
+        "circuit_id": "Duke_G3_0",
+        "device": "pauli-path",
+        "options": {
+          "pauli_path_truncation_threshold": 0.001,
+          "pauli_path_circuit_transpilation_level": 2
+        },
+        "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZ"
+      },
+      "status": "COMPLETED",
+      "requested_at": "2026-10-24T17:37:54.442979+00:00",
+      "quote": {
+        "circuit_id": "Duke_G3_0",
+        "device": "pauli-path",
+        "options": {
+          "pauli_path_truncation_threshold": 0.001,
+          "pauli_path_circuit_transpilation_level": 2
+        },
+        "quoted_at": "2026-10-24T17:37:54.418804+00:00",
+        "cost_usd": 0.2,
+        "runtime_seconds": 0.1,
+        "error": null,
+        "warning": "This is just an estimate; the actual runtime may be less or more.",
+        "binding_cost_cap": false
+      },
+      "scheduler_justification": "Missing baseline row; use an unattempted direct method. Mostly Clifford grid analogue S3; native transpilation differs; chi16 is an affordable independent pilot only",
+      "job_id": "Xwd38DivQbLSLfMw",
+      "estimate": 0.0,
+      "cost_usd": 0.0,
+      "compute_ms": 4359,
+      "queue_ms": 321,
+      "updated_at": "2026-10-24T17:38:01.832926+00:00"
+    },
+    {
+      "action": {
+        "circuit_id": "Duke_G3_14",
+        "device": "pauli-path",
+        "options": {
+          "pauli_path_truncation_threshold": 0.001,
+          "pauli_path_circuit_transpilation_level": 2
+        },
+        "pauli": "IIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIII"
+      },
+      "status": "COMPLETED",
+      "requested_at": "2026-10-24T17:38:05.514205+00:00",
+      "quote": {
+        "circuit_id": "Duke_G3_14",
+        "device": "pauli-path",
+        "options": {
+          "pauli_path_truncation_threshold": 0.001,
+          "pauli_path_circuit_transpilation_level": 2
+        },
+        "quoted_at": "2026-10-24T17:38:05.492472+00:00",
+        "cost_usd": 0.2,
+        "runtime_seconds": 0.1,
+        "error": null,
+        "warning": "This is just an estimate; the actual runtime may be less or more.",
+        "binding_cost_cap": false
+      },
+      "scheduler_justification": "Missing baseline row; use an unattempted direct method. Mostly Clifford grid analogue S3; native transpilation differs; chi16 is an affordable independent pilot only",
+      "job_id": "1RfihpudlXIhIRqc",
+      "estimate": 0.0,
+      "cost_usd": 0.0,
+      "compute_ms": 3948,
+      "queue_ms": 316,
+      "updated_at": "2026-10-24T17:38:12.947078+00:00"
+    },
+    {
+      "action": {
         "circuit_id": "Duke_G3_35",
         "device": "pauli-path",
         "options": {
@@ -303,37 +328,105 @@
     },
     {
       "action": {
-        "circuit_id": "Duke_G4_19",
+        "circuit_id": "Duke_G2_0",
         "device": "pauli-path",
         "options": {
           "pauli_path_truncation_threshold": 0.001,
           "pauli_path_circuit_transpilation_level": 2
         },
-        "pauli": "IIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIII"
+        "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZ"
       },
       "status": "COMPLETED",
-      "requested_at": "2026-10-24T17:36:54.130320+00:00",
+      "requested_at": "2026-10-24T17:38:28.114242+00:00",
       "quote": {
-        "circuit_id": "Duke_G4_19",
+        "circuit_id": "Duke_G2_0",
         "device": "pauli-path",
         "options": {
           "pauli_path_truncation_threshold": 0.001,
           "pauli_path_circuit_transpilation_level": 2
         },
-        "quoted_at": "2026-10-24T17:36:54.121392+00:00",
+        "quoted_at": "2026-10-24T17:38:28.096057+00:00",
         "cost_usd": 0.2,
         "runtime_seconds": 0.1,
         "error": null,
         "warning": "This is just an estimate; the actual runtime may be less or more.",
         "binding_cost_cap": false
       },
-      "scheduler_justification": "Missing baseline row; use an unattempted direct method. Native MPS chi64 CPU/GPU quotes exceed the runtime/budget allocation. Use cheap PPS pilots and independent MPS chi16; neither has a matched G4 sample",
-      "job_id": "8bYxcNGVrN6Zz9I3",
+      "scheduler_justification": "Missing baseline row; use an unattempted direct method. S2 high-accuracy MPS is preferred, but live native quotes determine feasibility. PPS .001 is the affordable fallback; its S2 error exceeds the 0.01 target",
+      "job_id": "fEBXLMRyLVOIRlqV",
       "estimate": 0.0,
       "cost_usd": 0.0,
-      "compute_ms": 13766,
-      "queue_ms": 375,
-      "updated_at": "2026-10-24T17:37:11.146443+00:00"
+      "compute_ms": 6864,
+      "queue_ms": 447,
+      "updated_at": "2026-10-24T17:38:39.128657+00:00"
+    },
+    {
+      "action": {
+        "circuit_id": "Duke_G2_18",
+        "device": "pauli-path",
+        "options": {
+          "pauli_path_truncation_threshold": 0.001,
+          "pauli_path_circuit_transpilation_level": 2
+        },
+        "pauli": "IIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIII"
+      },
+      "status": "COMPLETED",
+      "requested_at": "2026-10-24T17:38:45.577842+00:00",
+      "quote": {
+        "circuit_id": "Duke_G2_18",
+        "device": "pauli-path",
+        "options": {
+          "pauli_path_truncation_threshold": 0.001,
+          "pauli_path_circuit_transpilation_level": 2
+        },
+        "quoted_at": "2026-10-24T17:38:45.549909+00:00",
+        "cost_usd": 0.2,
+        "runtime_seconds": 0.1,
+        "error": null,
+        "warning": "This is just an estimate; the actual runtime may be less or more.",
+        "binding_cost_cap": false
+      },
+      "scheduler_justification": "Missing baseline row; use an unattempted direct method. S2 high-accuracy MPS is preferred, but live native quotes determine feasibility. PPS .001 is the affordable fallback; its S2 error exceeds the 0.01 target",
+      "job_id": "ZCeX62pXKdboveCj",
+      "estimate": 0.0,
+      "cost_usd": 0.0,
+      "compute_ms": 17263,
+      "queue_ms": 473,
+      "updated_at": "2026-10-24T17:39:07.671957+00:00"
+    },
+    {
+      "action": {
+        "circuit_id": "Duke_G2_35",
+        "device": "pauli-path",
+        "options": {
+          "pauli_path_truncation_threshold": 0.001,
+          "pauli_path_circuit_transpilation_level": 2
+        },
+        "pauli": "ZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
+      },
+      "status": "COMPLETED",
+      "requested_at": "2026-10-24T17:39:15.958856+00:00",
+      "quote": {
+        "circuit_id": "Duke_G2_35",
+        "device": "pauli-path",
+        "options": {
+          "pauli_path_truncation_threshold": 0.001,
+          "pauli_path_circuit_transpilation_level": 2
+        },
+        "quoted_at": "2026-10-24T17:39:15.946067+00:00",
+        "cost_usd": 0.2,
+        "runtime_seconds": 0.1,
+        "error": null,
+        "warning": "This is just an estimate; the actual runtime may be less or more.",
+        "binding_cost_cap": false
+      },
+      "scheduler_justification": "Missing baseline row; use an unattempted direct method. S2 high-accuracy MPS is preferred, but live native quotes determine feasibility. PPS .001 is the affordable fallback; its S2 error exceeds the 0.01 target",
+      "job_id": "5QQZfExUqmAJBPnO",
+      "estimate": 0.0,
+      "cost_usd": 0.0,
+      "compute_ms": 6546,
+      "queue_ms": 560,
+      "updated_at": "2026-10-24T17:39:40.128765+00:00"
     },
     {
       "action": {
@@ -372,66 +465,34 @@
         "circuit_id": "Duke_G2_0",
         "device": "pauli-path",
         "options": {
-          "pauli_path_truncation_threshold": 0.001,
+          "pauli_path_truncation_threshold": 0.0001,
           "pauli_path_circuit_transpilation_level": 2
         },
         "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZ"
       },
       "status": "COMPLETED",
-      "requested_at": "2026-10-24T17:38:28.114242+00:00",
+      "requested_at": "2026-10-24T17:40:20.512851+00:00",
       "quote": {
         "circuit_id": "Duke_G2_0",
         "device": "pauli-path",
         "options": {
-          "pauli_path_truncation_threshold": 0.001,
+          "pauli_path_truncation_threshold": 0.0001,
           "pauli_path_circuit_transpilation_level": 2
         },
-        "quoted_at": "2026-10-24T17:38:28.096057+00:00",
+        "quoted_at": "2026-10-24T17:40:20.503884+00:00",
         "cost_usd": 0.2,
         "runtime_seconds": 0.1,
         "error": null,
         "warning": "This is just an estimate; the actual runtime may be less or more.",
         "binding_cost_cap": false
       },
-      "scheduler_justification": "Missing baseline row; use an unattempted direct method. S2 high-accuracy MPS is preferred, but live native quotes determine feasibility. PPS .001 is the affordable fallback; its S2 error exceeds the 0.01 target",
-      "job_id": "fEBXLMRyLVOIRlqV",
-      "estimate": 0.0,
+      "scheduler_justification": "Investigate all-zero native PPS pilots using independent MPS and decade-spaced tighter PPS thresholds; no bulk rollout or convergence claim from a flat vector.",
+      "job_id": "I0uYXEfRPI4pemdw",
+      "estimate": 0.045095738448185416,
       "cost_usd": 0.0,
-      "compute_ms": 6864,
-      "queue_ms": 447,
-      "updated_at": "2026-10-24T17:38:39.128657+00:00"
-    },
-    {
-      "action": {
-        "circuit_id": "Duke_G4_37",
-        "device": "mps.cpu",
-        "options": {
-          "mps_bond_dimension": 16
-        },
-        "pauli": "ZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
-      },
-      "status": "COMPLETED",
-      "requested_at": "2026-10-24T17:49:50.709994+00:00",
-      "quote": {
-        "circuit_id": "Duke_G4_37",
-        "device": "mps.cpu",
-        "options": {
-          "mps_bond_dimension": 16
-        },
-        "quoted_at": "2026-10-24T17:49:50.692837+00:00",
-        "cost_usd": 0.2,
-        "runtime_seconds": 114.1,
-        "error": null,
-        "warning": "This is just an estimate; the actual runtime may be less or more.",
-        "binding_cost_cap": false
-      },
-      "scheduler_justification": "Complete independent fixed-precision pilot vector to assess signal recovery before full baseline coverage; low-chi MPS is not an accuracy certificate.",
-      "job_id": "y4FHoDVz8SMmcAE4",
-      "estimate": 0.9204563892683192,
-      "cost_usd": 0.0,
-      "compute_ms": 12515,
-      "queue_ms": 366,
-      "updated_at": "2026-10-24T17:50:08.306600+00:00"
+      "compute_ms": 196694,
+      "queue_ms": 860,
+      "updated_at": "2026-10-24T17:44:23.855105+00:00"
     },
     {
       "action": {
@@ -469,135 +530,67 @@
     },
     {
       "action": {
-        "circuit_id": "Duke_G3_14",
+        "circuit_id": "Duke_G2_18",
         "device": "mps.cpu",
         "options": {
           "mps_bond_dimension": 16
         },
-        "pauli": "IIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIII"
+        "pauli": "IIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIII"
       },
       "status": "COMPLETED",
-      "requested_at": "2026-10-24T17:48:56.257380+00:00",
+      "requested_at": "2026-10-24T17:46:54.089128+00:00",
       "quote": {
-        "circuit_id": "Duke_G3_14",
+        "circuit_id": "Duke_G2_18",
         "device": "mps.cpu",
         "options": {
           "mps_bond_dimension": 16
         },
-        "quoted_at": "2026-10-24T17:48:56.229299+00:00",
+        "quoted_at": "2026-10-24T17:46:54.074605+00:00",
         "cost_usd": 0.2,
-        "runtime_seconds": 104.6,
+        "runtime_seconds": 131.6,
         "error": null,
         "warning": "This is just an estimate; the actual runtime may be less or more.",
         "binding_cost_cap": false
       },
       "scheduler_justification": "Complete independent fixed-precision pilot vector to assess signal recovery before full baseline coverage; low-chi MPS is not an accuracy certificate.",
-      "job_id": "KJ1mxvnKtDlT3dXb",
-      "estimate": 5.677607201937286e-17,
+      "job_id": "eV35YkTqQE4xkAN9",
+      "updated_at": "2026-10-24T17:47:21.293536+00:00",
+      "estimate": -0.06198394204852958,
       "cost_usd": 0.0,
-      "compute_ms": 8715,
-      "queue_ms": 317,
-      "updated_at": "2026-10-24T17:49:10.428105+00:00"
+      "compute_ms": 11271,
+      "queue_ms": 12026
     },
     {
       "action": {
-        "circuit_id": "Duke_G2_18",
-        "device": "pauli-path",
-        "options": {
-          "pauli_path_truncation_threshold": 0.001,
-          "pauli_path_circuit_transpilation_level": 2
-        },
-        "pauli": "IIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIII"
-      },
-      "status": "COMPLETED",
-      "requested_at": "2026-10-24T17:38:45.577842+00:00",
-      "quote": {
-        "circuit_id": "Duke_G2_18",
-        "device": "pauli-path",
-        "options": {
-          "pauli_path_truncation_threshold": 0.001,
-          "pauli_path_circuit_transpilation_level": 2
-        },
-        "quoted_at": "2026-10-24T17:38:45.549909+00:00",
-        "cost_usd": 0.2,
-        "runtime_seconds": 0.1,
-        "error": null,
-        "warning": "This is just an estimate; the actual runtime may be less or more.",
-        "binding_cost_cap": false
-      },
-      "scheduler_justification": "Missing baseline row; use an unattempted direct method. S2 high-accuracy MPS is preferred, but live native quotes determine feasibility. PPS .001 is the affordable fallback; its S2 error exceeds the 0.01 target",
-      "job_id": "ZCeX62pXKdboveCj",
-      "estimate": 0.0,
-      "cost_usd": 0.0,
-      "compute_ms": 17263,
-      "queue_ms": 473,
-      "updated_at": "2026-10-24T17:39:07.671957+00:00"
-    },
-    {
-      "action": {
-        "circuit_id": "Duke_G4_0",
-        "device": "pauli-path",
-        "options": {
-          "pauli_path_truncation_threshold": 0.001,
-          "pauli_path_circuit_transpilation_level": 2
-        },
-        "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZ"
-      },
-      "status": "COMPLETED",
-      "requested_at": "2026-10-24T17:36:42.849050+00:00",
-      "quote": {
-        "circuit_id": "Duke_G4_0",
-        "device": "pauli-path",
-        "options": {
-          "pauli_path_truncation_threshold": 0.001,
-          "pauli_path_circuit_transpilation_level": 2
-        },
-        "quoted_at": "2026-10-24T17:36:42.830971+00:00",
-        "cost_usd": 0.2,
-        "runtime_seconds": 0.1,
-        "error": null,
-        "warning": "This is just an estimate; the actual runtime may be less or more.",
-        "binding_cost_cap": false
-      },
-      "scheduler_justification": "Missing baseline row; use an unattempted direct method. Native MPS chi64 CPU/GPU quotes exceed the runtime/budget allocation. Use cheap PPS pilots and independent MPS chi16; neither has a matched G4 sample",
-      "job_id": "O32peB3tJOGvTWOX",
-      "estimate": 0.0,
-      "cost_usd": 0.0,
-      "compute_ms": 5351,
-      "queue_ms": 431,
-      "updated_at": "2026-10-24T17:36:50.721435+00:00"
-    },
-    {
-      "action": {
-        "circuit_id": "Duke_G4_0",
+        "circuit_id": "Duke_G2_35",
         "device": "mps.cpu",
         "options": {
           "mps_bond_dimension": 16
         },
-        "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZ"
+        "pauli": "ZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
       },
       "status": "COMPLETED",
-      "requested_at": "2026-10-24T17:37:39.839724+00:00",
+      "requested_at": "2026-10-24T17:47:22.557824+00:00",
       "quote": {
-        "circuit_id": "Duke_G4_0",
+        "circuit_id": "Duke_G2_35",
         "device": "mps.cpu",
         "options": {
           "mps_bond_dimension": 16
         },
-        "quoted_at": "2026-10-24T17:37:39.813848+00:00",
+        "quoted_at": "2026-10-24T17:47:22.523704+00:00",
         "cost_usd": 0.2,
-        "runtime_seconds": 114.1,
+        "runtime_seconds": 131.6,
         "error": null,
         "warning": "This is just an estimate; the actual runtime may be less or more.",
         "binding_cost_cap": false
       },
-      "scheduler_justification": "Independent native-method pilot; local/cloud transfer unvalidated",
-      "job_id": "BsLvSnV91rVxH6Ts",
-      "estimate": 0.5589102913779098,
+      "scheduler_justification": "Complete independent fixed-precision pilot vector to assess signal recovery before full baseline coverage; low-chi MPS is not an accuracy certificate.",
+      "job_id": "JmVGz8yxU6PTAw9c",
+      "updated_at": "2026-10-24T17:47:35.103171+00:00",
+      "estimate": 0.9995225392390705,
       "cost_usd": 0.0,
-      "compute_ms": 4518,
-      "queue_ms": 430,
-      "updated_at": "2026-10-24T17:37:47.968571+00:00"
+      "compute_ms": 5744,
+      "queue_ms": 3506
     },
     {
       "action": {
@@ -633,6 +626,70 @@
     },
     {
       "action": {
+        "circuit_id": "Duke_G3_14",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 16
+        },
+        "pauli": "IIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIII"
+      },
+      "status": "COMPLETED",
+      "requested_at": "2026-10-24T17:48:56.257380+00:00",
+      "quote": {
+        "circuit_id": "Duke_G3_14",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 16
+        },
+        "quoted_at": "2026-10-24T17:48:56.229299+00:00",
+        "cost_usd": 0.2,
+        "runtime_seconds": 104.6,
+        "error": null,
+        "warning": "This is just an estimate; the actual runtime may be less or more.",
+        "binding_cost_cap": false
+      },
+      "scheduler_justification": "Complete independent fixed-precision pilot vector to assess signal recovery before full baseline coverage; low-chi MPS is not an accuracy certificate.",
+      "job_id": "KJ1mxvnKtDlT3dXb",
+      "estimate": 5.677607201937286e-17,
+      "cost_usd": 0.0,
+      "compute_ms": 8715,
+      "queue_ms": 317,
+      "updated_at": "2026-10-24T17:49:10.428105+00:00"
+    },
+    {
+      "action": {
+        "circuit_id": "Duke_G3_35",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 16
+        },
+        "pauli": "ZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
+      },
+      "status": "COMPLETED",
+      "requested_at": "2026-10-24T17:49:13.049241+00:00",
+      "quote": {
+        "circuit_id": "Duke_G3_35",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 16
+        },
+        "quoted_at": "2026-10-24T17:49:13.026110+00:00",
+        "cost_usd": 0.2,
+        "runtime_seconds": 104.6,
+        "error": null,
+        "warning": "This is just an estimate; the actual runtime may be less or more.",
+        "binding_cost_cap": false
+      },
+      "scheduler_justification": "Complete independent fixed-precision pilot vector to assess signal recovery before full baseline coverage; low-chi MPS is not an accuracy certificate.",
+      "job_id": "zTYGrn2XLOYS8SXF",
+      "estimate": -3.702593787124897e-14,
+      "cost_usd": 0.0,
+      "compute_ms": 8839,
+      "queue_ms": 314,
+      "updated_at": "2026-10-24T17:49:24.947274+00:00"
+    },
+    {
+      "action": {
         "circuit_id": "Duke_G4_19",
         "device": "mps.cpu",
         "options": {
@@ -662,50 +719,750 @@
       "compute_ms": 13509,
       "queue_ms": 363,
       "updated_at": "2026-10-24T17:49:48.819131+00:00"
-    }
-  ],
-  "policy_recovery": {
-    "G2": {
-      "previous_primary": "pps",
-      "selected_primary": "mps",
-      "pilot_spread": 1.061674992271691,
-      "options": {
-        "mps_bond_dimension": 16
-      },
-      "job_ids": [
-        "EGRvEgYDOUFR8SgB",
-        "eV35YkTqQE4xkAN9",
-        "JmVGz8yxU6PTAw9c"
-      ],
-      "interpretation": "Flat primary pilot replaced by a complete nonconstant independent-method pilot; signal recovery only, accuracy uncertified"
     },
-    "G3": {
-      "previous_primary": "pps",
-      "selected_primary": "mps",
-      "pilot_spread": 0.026913611554988823,
-      "options": {
-        "mps_bond_dimension": 16
+    {
+      "action": {
+        "circuit_id": "Duke_G4_37",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 16
+        },
+        "pauli": "ZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
       },
-      "job_ids": [
-        "tUmLbvbMpdqPY6SV",
-        "KJ1mxvnKtDlT3dXb",
-        "zTYGrn2XLOYS8SXF"
-      ],
-      "interpretation": "Flat primary pilot replaced by a complete nonconstant independent-method pilot; signal recovery only, accuracy uncertified"
+      "status": "COMPLETED",
+      "requested_at": "2026-10-24T17:49:50.709994+00:00",
+      "quote": {
+        "circuit_id": "Duke_G4_37",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 16
+        },
+        "quoted_at": "2026-10-24T17:49:50.692837+00:00",
+        "cost_usd": 0.2,
+        "runtime_seconds": 114.1,
+        "error": null,
+        "warning": "This is just an estimate; the actual runtime may be less or more.",
+        "binding_cost_cap": false
+      },
+      "scheduler_justification": "Complete independent fixed-precision pilot vector to assess signal recovery before full baseline coverage; low-chi MPS is not an accuracy certificate.",
+      "job_id": "y4FHoDVz8SMmcAE4",
+      "estimate": 0.9204563892683192,
+      "cost_usd": 0.0,
+      "compute_ms": 12515,
+      "queue_ms": 366,
+      "updated_at": "2026-10-24T17:50:08.306600+00:00"
     },
-    "G4": {
-      "previous_primary": "pps",
-      "selected_primary": "mps",
-      "pilot_spread": 0.5582279479473952,
-      "options": {
-        "mps_bond_dimension": 16
+    {
+      "action": {
+        "circuit_id": "Duke_G4_1",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 16
+        },
+        "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZI"
       },
-      "job_ids": [
-        "BsLvSnV91rVxH6Ts",
-        "cN47ifNQlQ7RsODe",
-        "y4FHoDVz8SMmcAE4"
-      ],
-      "interpretation": "Flat primary pilot replaced by a complete nonconstant independent-method pilot; signal recovery only, accuracy uncertified"
+      "status": "COMPLETED",
+      "requested_at": "2026-10-24T17:50:35.208447+00:00",
+      "quote": {
+        "circuit_id": "Duke_G4_1",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 16
+        },
+        "quoted_at": "2026-10-24T17:50:35.192462+00:00",
+        "cost_usd": 0.2,
+        "runtime_seconds": 114.1,
+        "error": null,
+        "warning": "This is just an estimate; the actual runtime may be less or more.",
+        "binding_cost_cap": false
+      },
+      "scheduler_justification": "Missing baseline row; use an unattempted direct method. Flat primary pilot replaced by a complete nonconstant independent-method pilot; signal recovery only, accuracy uncertified",
+      "job_id": "aK8G5RrRHKcKRPp3",
+      "estimate": 0.13555549718265472,
+      "cost_usd": 0.0,
+      "compute_ms": 9605,
+      "queue_ms": 9241,
+      "updated_at": "2026-10-24T17:50:58.809490+00:00"
+    },
+    {
+      "action": {
+        "circuit_id": "Duke_G4_2",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 16
+        },
+        "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZII"
+      },
+      "status": "COMPLETED",
+      "requested_at": "2026-10-24T17:51:03.842558+00:00",
+      "quote": {
+        "circuit_id": "Duke_G4_2",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 16
+        },
+        "quoted_at": "2026-10-24T17:51:03.822866+00:00",
+        "cost_usd": 0.2,
+        "runtime_seconds": 114.1,
+        "error": null,
+        "warning": "This is just an estimate; the actual runtime may be less or more.",
+        "binding_cost_cap": false
+      },
+      "scheduler_justification": "Missing baseline row; use an unattempted direct method. Flat primary pilot replaced by a complete nonconstant independent-method pilot; signal recovery only, accuracy uncertified",
+      "job_id": "h88XrE4ylXWWeswj",
+      "estimate": -0.2114925301226884,
+      "cost_usd": 0.0,
+      "compute_ms": 13030,
+      "queue_ms": 371,
+      "updated_at": "2026-10-24T17:51:21.326051+00:00"
+    },
+    {
+      "action": {
+        "circuit_id": "Duke_G4_3",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 16
+        },
+        "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIII"
+      },
+      "status": "COMPLETED",
+      "requested_at": "2026-10-24T17:51:26.975888+00:00",
+      "quote": {
+        "circuit_id": "Duke_G4_3",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 16
+        },
+        "quoted_at": "2026-10-24T17:51:26.954517+00:00",
+        "cost_usd": 0.2,
+        "runtime_seconds": 114.1,
+        "error": null,
+        "warning": "This is just an estimate; the actual runtime may be less or more.",
+        "binding_cost_cap": false
+      },
+      "scheduler_justification": "Missing baseline row; use an unattempted direct method. Flat primary pilot replaced by a complete nonconstant independent-method pilot; signal recovery only, accuracy uncertified",
+      "job_id": "2bRJ4CbAhzDF1Uyp",
+      "estimate": -0.07490403967364595,
+      "cost_usd": 0.0,
+      "compute_ms": 17236,
+      "queue_ms": 9142,
+      "updated_at": "2026-10-24T17:51:57.229356+00:00"
+    },
+    {
+      "action": {
+        "circuit_id": "Duke_G4_4",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 16
+        },
+        "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIII"
+      },
+      "status": "COMPLETED",
+      "requested_at": "2026-10-24T17:52:03.002212+00:00",
+      "quote": {
+        "circuit_id": "Duke_G4_4",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 16
+        },
+        "quoted_at": "2026-10-24T17:52:02.984472+00:00",
+        "cost_usd": 0.2,
+        "runtime_seconds": 114.1,
+        "error": null,
+        "warning": "This is just an estimate; the actual runtime may be less or more.",
+        "binding_cost_cap": false
+      },
+      "scheduler_justification": "Missing baseline row; use an unattempted direct method. Flat primary pilot replaced by a complete nonconstant independent-method pilot; signal recovery only, accuracy uncertified",
+      "job_id": "MS0yy70CXbc5UdNl",
+      "estimate": -0.005732456237543289,
+      "cost_usd": 0.0,
+      "compute_ms": 12091,
+      "queue_ms": 392,
+      "updated_at": "2026-10-24T17:52:20.952759+00:00"
+    },
+    {
+      "action": {
+        "circuit_id": "Duke_G4_5",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 16
+        },
+        "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIII"
+      },
+      "status": "COMPLETED",
+      "requested_at": "2026-10-24T17:52:25.359537+00:00",
+      "quote": {
+        "circuit_id": "Duke_G4_5",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 16
+        },
+        "quoted_at": "2026-10-24T17:52:25.342515+00:00",
+        "cost_usd": 0.2,
+        "runtime_seconds": 114.1,
+        "error": null,
+        "warning": "This is just an estimate; the actual runtime may be less or more.",
+        "binding_cost_cap": false
+      },
+      "scheduler_justification": "Missing baseline row; use an unattempted direct method. Flat primary pilot replaced by a complete nonconstant independent-method pilot; signal recovery only, accuracy uncertified",
+      "job_id": "KahKJiOxwuN1dDLT",
+      "estimate": 0.3403205152433342,
+      "cost_usd": 0.0,
+      "compute_ms": 17686,
+      "queue_ms": 9133,
+      "updated_at": "2026-10-24T17:52:55.138174+00:00"
+    },
+    {
+      "action": {
+        "circuit_id": "Duke_G4_6",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 16
+        },
+        "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIII"
+      },
+      "status": "COMPLETED",
+      "requested_at": "2026-10-24T17:53:00.586419+00:00",
+      "quote": {
+        "circuit_id": "Duke_G4_6",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 16
+        },
+        "quoted_at": "2026-10-24T17:53:00.559174+00:00",
+        "cost_usd": 0.2,
+        "runtime_seconds": 114.1,
+        "error": null,
+        "warning": "This is just an estimate; the actual runtime may be less or more.",
+        "binding_cost_cap": false
+      },
+      "scheduler_justification": "Missing baseline row; use an unattempted direct method. Flat primary pilot replaced by a complete nonconstant independent-method pilot; signal recovery only, accuracy uncertified",
+      "job_id": "Zbe59lAEJQNfPrDN",
+      "estimate": 0.14331207187457062,
+      "cost_usd": 0.0,
+      "compute_ms": 13086,
+      "queue_ms": 371,
+      "updated_at": "2026-10-24T17:53:17.894046+00:00"
+    },
+    {
+      "action": {
+        "circuit_id": "Duke_G4_7",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 16
+        },
+        "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIII"
+      },
+      "status": "COMPLETED",
+      "requested_at": "2026-10-24T17:53:22.159139+00:00",
+      "quote": {
+        "circuit_id": "Duke_G4_7",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 16
+        },
+        "quoted_at": "2026-10-24T17:53:22.146165+00:00",
+        "cost_usd": 0.2,
+        "runtime_seconds": 114.1,
+        "error": null,
+        "warning": "This is just an estimate; the actual runtime may be less or more.",
+        "binding_cost_cap": false
+      },
+      "scheduler_justification": "Missing baseline row; use an unattempted direct method. Flat primary pilot replaced by a complete nonconstant independent-method pilot; signal recovery only, accuracy uncertified",
+      "job_id": "73H8STxMznAoXSZL",
+      "estimate": 0.07658694821709029,
+      "cost_usd": 0.0,
+      "compute_ms": 13462,
+      "queue_ms": 394,
+      "updated_at": "2026-10-24T17:53:41.126102+00:00"
+    },
+    {
+      "action": {
+        "circuit_id": "Duke_G3_0",
+        "device": "pauli-path",
+        "options": {
+          "pauli_path_truncation_threshold": 0.001,
+          "pauli_path_circuit_transpilation_level": 1
+        },
+        "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZ"
+      },
+      "status": "COMPLETED",
+      "requested_at": "2026-10-24T17:55:03.815330+00:00",
+      "quote": {
+        "circuit_id": "Duke_G3_0",
+        "device": "pauli-path",
+        "options": {
+          "pauli_path_truncation_threshold": 0.001,
+          "pauli_path_circuit_transpilation_level": 1
+        },
+        "quoted_at": "2026-10-24T17:55:03.792749+00:00",
+        "cost_usd": 0.2,
+        "runtime_seconds": 0.1,
+        "error": null,
+        "warning": "This is just an estimate; the actual runtime may be less or more.",
+        "binding_cost_cap": false
+      },
+      "scheduler_justification": "Discriminate native representation-induced all-zero PPS plateau at fixed threshold; compare level1 with completed level2 on identical G3 pilot IDs before low-chi MPS rollout. No equivalence to local Qiskit level1 is assumed.",
+      "job_id": "rOuJjcU3jjqtpb4e",
+      "estimate": -0.07229195955602603,
+      "cost_usd": 0.0,
+      "compute_ms": 26715,
+      "queue_ms": 297,
+      "updated_at": "2026-10-24T17:55:55.973771+00:00"
+    },
+    {
+      "action": {
+        "circuit_id": "Duke_G3_14",
+        "device": "pauli-path",
+        "options": {
+          "pauli_path_truncation_threshold": 0.001,
+          "pauli_path_circuit_transpilation_level": 1
+        },
+        "pauli": "IIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIII"
+      },
+      "status": "COMPLETED",
+      "requested_at": "2026-10-24T17:55:57.400028+00:00",
+      "quote": {
+        "circuit_id": "Duke_G3_14",
+        "device": "pauli-path",
+        "options": {
+          "pauli_path_truncation_threshold": 0.001,
+          "pauli_path_circuit_transpilation_level": 1
+        },
+        "quoted_at": "2026-10-24T17:55:57.364630+00:00",
+        "cost_usd": 0.2,
+        "runtime_seconds": 0.1,
+        "error": null,
+        "warning": "This is just an estimate; the actual runtime may be less or more.",
+        "binding_cost_cap": false
+      },
+      "scheduler_justification": "Discriminate native representation-induced all-zero PPS plateau at fixed threshold; compare level1 with completed level2 on identical G3 pilot IDs before low-chi MPS rollout. No equivalence to local Qiskit level1 is assumed.",
+      "job_id": "G1zxxs8zxn4vBAmI",
+      "estimate": 0.0,
+      "cost_usd": 0.0,
+      "compute_ms": 40455,
+      "queue_ms": 461,
+      "updated_at": "2026-10-24T17:56:41.824973+00:00"
+    },
+    {
+      "action": {
+        "circuit_id": "Duke_G3_35",
+        "device": "pauli-path",
+        "options": {
+          "pauli_path_truncation_threshold": 0.001,
+          "pauli_path_circuit_transpilation_level": 1
+        },
+        "pauli": "ZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
+      },
+      "status": "COMPLETED",
+      "requested_at": "2026-10-24T17:56:43.780101+00:00",
+      "quote": {
+        "circuit_id": "Duke_G3_35",
+        "device": "pauli-path",
+        "options": {
+          "pauli_path_truncation_threshold": 0.001,
+          "pauli_path_circuit_transpilation_level": 1
+        },
+        "quoted_at": "2026-10-24T17:56:43.764091+00:00",
+        "cost_usd": 0.2,
+        "runtime_seconds": 0.1,
+        "error": null,
+        "warning": "This is just an estimate; the actual runtime may be less or more.",
+        "binding_cost_cap": false
+      },
+      "scheduler_justification": "Discriminate native representation-induced all-zero PPS plateau at fixed threshold; compare level1 with completed level2 on identical G3 pilot IDs before low-chi MPS rollout. No equivalence to local Qiskit level1 is assumed.",
+      "job_id": "3veLHAPbAcd7cuPm",
+      "estimate": -0.03219780603650362,
+      "cost_usd": 0.0,
+      "compute_ms": 39553,
+      "queue_ms": 311,
+      "updated_at": "2026-10-24T17:57:25.259409+00:00"
+    },
+    {
+      "action": {
+        "circuit_id": "Duke_G2_18",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 32
+        },
+        "pauli": "IIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIII"
+      },
+      "status": "COMPLETED",
+      "requested_at": "2026-10-24T17:58:34.616935+00:00",
+      "quote": {
+        "circuit_id": "Duke_G2_18",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 32
+        },
+        "quoted_at": "2026-10-24T17:58:34.604377+00:00",
+        "cost_usd": 0.3,
+        "runtime_seconds": 717.1,
+        "error": null,
+        "warning": "This is just an estimate; the actual runtime may be less or more.",
+        "binding_cost_cap": false
+      },
+      "scheduler_justification": "Astra debate-selected bond sensitivity probe at an informative existing chi16 pilot. Deliberate 900-second cap admits conservative chi32 quotes; fresh quote and budget reserve remain mandatory. No assumption that a small step certifies accuracy.",
+      "job_id": "bWm41clhLZ9NOIA8",
+      "estimate": 0.007423917457881662,
+      "cost_usd": 0.0,
+      "compute_ms": 37777,
+      "queue_ms": 461,
+      "updated_at": "2026-10-24T17:59:17.192556+00:00"
+    },
+    {
+      "action": {
+        "circuit_id": "Duke_G4_0",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 32
+        },
+        "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZ"
+      },
+      "status": "COMPLETED",
+      "requested_at": "2026-10-24T17:59:19.142439+00:00",
+      "quote": {
+        "circuit_id": "Duke_G4_0",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 32
+        },
+        "quoted_at": "2026-10-24T17:59:19.117390+00:00",
+        "cost_usd": 0.27,
+        "runtime_seconds": 632.0,
+        "error": null,
+        "warning": "This is just an estimate; the actual runtime may be less or more.",
+        "binding_cost_cap": false
+      },
+      "scheduler_justification": "Astra debate-selected bond sensitivity probe at an informative existing chi16 pilot. Deliberate 900-second cap admits conservative chi32 quotes; fresh quote and budget reserve remain mandatory. No assumption that a small step certifies accuracy.",
+      "job_id": "78aF6vkVPu0XZJaR",
+      "updated_at": "2026-10-24T18:00:14.197833+00:00",
+      "estimate": 0.27027187138182995,
+      "cost_usd": 0.0,
+      "compute_ms": 48593,
+      "queue_ms": 1421
+    },
+    {
+      "action": {
+        "circuit_id": "Duke_G3_0",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 32
+        },
+        "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZ"
+      },
+      "status": "COMPLETED",
+      "requested_at": "2026-10-24T18:00:16.694429+00:00",
+      "quote": {
+        "circuit_id": "Duke_G3_0",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 32
+        },
+        "quoted_at": "2026-10-24T18:00:16.678606+00:00",
+        "cost_usd": 0.25,
+        "runtime_seconds": 584.5,
+        "error": null,
+        "warning": "This is just an estimate; the actual runtime may be less or more.",
+        "binding_cost_cap": false
+      },
+      "scheduler_justification": "Astra debate-selected bond sensitivity probe at an informative existing chi16 pilot. Deliberate 900-second cap admits conservative chi32 quotes; fresh quote and budget reserve remain mandatory. No assumption that a small step certifies accuracy.",
+      "job_id": "BCPD1q8nKVQWiYqL",
+      "estimate": 0.6475027770914542,
+      "cost_usd": 0.0,
+      "compute_ms": 17960,
+      "queue_ms": 32009,
+      "updated_at": "2026-10-24T18:01:11.976070+00:00"
+    },
+    {
+      "action": {
+        "circuit_id": "Duke_G2_0",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 32
+        },
+        "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZ"
+      },
+      "status": "COMPLETED",
+      "requested_at": "2026-10-24T18:01:38.070313+00:00",
+      "quote": {
+        "circuit_id": "Duke_G2_0",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 32
+        },
+        "quoted_at": "2026-10-24T18:01:38.052869+00:00",
+        "cost_usd": 0.3,
+        "runtime_seconds": 717.1,
+        "error": null,
+        "warning": "This is just an estimate; the actual runtime may be less or more.",
+        "binding_cost_cap": false
+      },
+      "scheduler_justification": "Second Astra debate round: complete chi32 pilot cohorts for G2/G4; diagnose G3 representation and within-level threshold sensitivity after contradictory low-fidelity estimates. All values remain direct and uncertified.",
+      "job_id": "e5W2dxQ1OLOkRRLi",
+      "estimate": 0.9996382065303814,
+      "cost_usd": 0.0,
+      "compute_ms": 13087,
+      "queue_ms": 456,
+      "updated_at": "2026-10-24T18:01:55.733656+00:00"
+    },
+    {
+      "action": {
+        "circuit_id": "Duke_G2_35",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 32
+        },
+        "pauli": "ZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
+      },
+      "status": "COMPLETED",
+      "requested_at": "2026-10-24T18:01:57.448094+00:00",
+      "quote": {
+        "circuit_id": "Duke_G2_35",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 32
+        },
+        "quoted_at": "2026-10-24T18:01:57.435084+00:00",
+        "cost_usd": 0.3,
+        "runtime_seconds": 717.1,
+        "error": null,
+        "warning": "This is just an estimate; the actual runtime may be less or more.",
+        "binding_cost_cap": false
+      },
+      "scheduler_justification": "Second Astra debate round: complete chi32 pilot cohorts for G2/G4; diagnose G3 representation and within-level threshold sensitivity after contradictory low-fidelity estimates. All values remain direct and uncertified.",
+      "job_id": "gIhxrjeFBKeCtnHd",
+      "estimate": 0.9985233505072324,
+      "cost_usd": 0.0,
+      "compute_ms": 17359,
+      "queue_ms": 439,
+      "updated_at": "2026-10-24T18:02:17.981181+00:00"
+    },
+    {
+      "action": {
+        "circuit_id": "Duke_G4_19",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 32
+        },
+        "pauli": "IIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIII"
+      },
+      "status": "COMPLETED",
+      "requested_at": "2026-10-24T18:02:19.452635+00:00",
+      "quote": {
+        "circuit_id": "Duke_G4_19",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 32
+        },
+        "quoted_at": "2026-10-24T18:02:19.414456+00:00",
+        "cost_usd": 0.27,
+        "runtime_seconds": 632.0,
+        "error": null,
+        "warning": "This is just an estimate; the actual runtime may be less or more.",
+        "binding_cost_cap": false
+      },
+      "scheduler_justification": "Second Astra debate round: complete chi32 pilot cohorts for G2/G4; diagnose G3 representation and within-level threshold sensitivity after contradictory low-fidelity estimates. All values remain direct and uncertified.",
+      "job_id": "smDxT4giEnJIkVRP",
+      "estimate": 0.2881005630511742,
+      "cost_usd": 0.0,
+      "compute_ms": 14169,
+      "queue_ms": 348,
+      "updated_at": "2026-10-24T18:02:37.232658+00:00"
+    },
+    {
+      "action": {
+        "circuit_id": "Duke_G4_37",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 32
+        },
+        "pauli": "ZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
+      },
+      "status": "COMPLETED",
+      "requested_at": "2026-10-24T18:02:38.787236+00:00",
+      "quote": {
+        "circuit_id": "Duke_G4_37",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 32
+        },
+        "quoted_at": "2026-10-24T18:02:38.773625+00:00",
+        "cost_usd": 0.27,
+        "runtime_seconds": 632.0,
+        "error": null,
+        "warning": "This is just an estimate; the actual runtime may be less or more.",
+        "binding_cost_cap": false
+      },
+      "scheduler_justification": "Second Astra debate round: complete chi32 pilot cohorts for G2/G4; diagnose G3 representation and within-level threshold sensitivity after contradictory low-fidelity estimates. All values remain direct and uncertified.",
+      "job_id": "vGhKebHhF7A0UAOm",
+      "estimate": 0.9570614225300893,
+      "cost_usd": 0.0,
+      "compute_ms": 39375,
+      "queue_ms": 429,
+      "updated_at": "2026-10-24T18:03:21.538442+00:00"
+    },
+    {
+      "action": {
+        "circuit_id": "Duke_G3_0",
+        "device": "pauli-path",
+        "options": {
+          "pauli_path_truncation_threshold": 0.001,
+          "pauli_path_circuit_transpilation_level": 0
+        },
+        "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZ"
+      },
+      "status": "COMPLETED",
+      "requested_at": "2026-10-24T18:03:23.247293+00:00",
+      "quote": {
+        "circuit_id": "Duke_G3_0",
+        "device": "pauli-path",
+        "options": {
+          "pauli_path_truncation_threshold": 0.001,
+          "pauli_path_circuit_transpilation_level": 0
+        },
+        "quoted_at": "2026-10-24T18:03:23.228968+00:00",
+        "cost_usd": 0.2,
+        "runtime_seconds": 0.1,
+        "error": null,
+        "warning": "This is just an estimate; the actual runtime may be less or more.",
+        "binding_cost_cap": false
+      },
+      "scheduler_justification": "Second Astra debate round: complete chi32 pilot cohorts for G2/G4; diagnose G3 representation and within-level threshold sensitivity after contradictory low-fidelity estimates. All values remain direct and uncertified.",
+      "job_id": "4lzC9yZzqod0XIss",
+      "estimate": -0.05771247164299849,
+      "cost_usd": 0.0,
+      "compute_ms": 79556,
+      "queue_ms": 305,
+      "updated_at": "2026-10-24T18:04:45.244852+00:00"
+    },
+    {
+      "action": {
+        "circuit_id": "Duke_G3_0",
+        "device": "pauli-path",
+        "options": {
+          "pauli_path_truncation_threshold": 0.0003,
+          "pauli_path_circuit_transpilation_level": 1
+        },
+        "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZ"
+      },
+      "status": "COMPLETED",
+      "requested_at": "2026-10-24T18:04:46.838069+00:00",
+      "quote": {
+        "circuit_id": "Duke_G3_0",
+        "device": "pauli-path",
+        "options": {
+          "pauli_path_truncation_threshold": 0.0003,
+          "pauli_path_circuit_transpilation_level": 1
+        },
+        "quoted_at": "2026-10-24T18:04:46.813137+00:00",
+        "cost_usd": 0.2,
+        "runtime_seconds": 0.1,
+        "error": null,
+        "warning": "This is just an estimate; the actual runtime may be less or more.",
+        "binding_cost_cap": false
+      },
+      "scheduler_justification": "Second Astra debate round: complete chi32 pilot cohorts for G2/G4; diagnose G3 representation and within-level threshold sensitivity after contradictory low-fidelity estimates. All values remain direct and uncertified.",
+      "job_id": "pUSAULIblgut0K0b",
+      "estimate": -0.1477495661062709,
+      "cost_usd": 0.0,
+      "compute_ms": 106031,
+      "queue_ms": 323,
+      "updated_at": "2026-10-24T18:06:35.972339+00:00"
+    },
+    {
+      "action": {
+        "circuit_id": "Duke_G3_35",
+        "device": "pauli-path",
+        "options": {
+          "pauli_path_truncation_threshold": 0.0003,
+          "pauli_path_circuit_transpilation_level": 1
+        },
+        "pauli": "ZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
+      },
+      "status": "CANCELED",
+      "requested_at": "2026-10-24T18:06:37.401894+00:00",
+      "quote": {
+        "circuit_id": "Duke_G3_35",
+        "device": "pauli-path",
+        "options": {
+          "pauli_path_truncation_threshold": 0.0003,
+          "pauli_path_circuit_transpilation_level": 1
+        },
+        "quoted_at": "2026-10-24T18:06:37.376042+00:00",
+        "cost_usd": 0.2,
+        "runtime_seconds": 0.1,
+        "error": null,
+        "warning": "This is just an estimate; the actual runtime may be less or more.",
+        "binding_cost_cap": false
+      },
+      "scheduler_justification": "Second Astra debate round: complete chi32 pilot cohorts for G2/G4; diagnose G3 representation and within-level threshold sensitivity after contradictory low-fidelity estimates. All values remain direct and uncertified.",
+      "job_id": "c59UMw17igr8TFNN",
+      "updated_at": "2026-10-24T18:09:50.532200+00:00",
+      "estimate": null,
+      "cost_usd": 0.0,
+      "compute_ms": 179147,
+      "queue_ms": 340
+    },
+    {
+      "action": {
+        "circuit_id": "Duke_G4_0",
+        "device": "mps.gpu",
+        "options": {
+          "mps_bond_dimension": 32
+        },
+        "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZ"
+      },
+      "status": "COMPLETED",
+      "requested_at": "2026-10-24T18:09:53.778938+00:00",
+      "quote": {
+        "circuit_id": "Duke_G4_0",
+        "device": "mps.gpu",
+        "options": {
+          "mps_bond_dimension": 32
+        },
+        "quoted_at": "2026-10-24T18:09:53.759771+00:00",
+        "cost_usd": 0.52,
+        "runtime_seconds": 461.6,
+        "error": null,
+        "warning": "This is just an estimate; the actual runtime may be less or more.",
+        "binding_cost_cap": false
+      },
+      "scheduler_justification": "User-authorized GPU trial: same G4 q0 chi32 as completed CPU pilot, compare measured runtime and output before selecting any GPU cohort. Keep full CPU/GPU vectors separate and preserve quoted baseline costs.",
+      "job_id": "iuWprHrY7TQlwHYx",
+      "estimate": 0.2702718713884605,
+      "cost_usd": 0.2,
+      "compute_ms": 24189,
+      "queue_ms": 19149,
+      "updated_at": "2026-10-24T18:10:38.582844+00:00"
+    },
+    {
+      "action": {
+        "circuit_id": "Duke_G2_1",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 32
+        },
+        "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZI"
+      },
+      "status": "RUNNING",
+      "requested_at": "2026-10-24T18:11:05.886357+00:00",
+      "quote": {
+        "circuit_id": "Duke_G2_1",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 32
+        },
+        "quoted_at": "2026-10-24T18:11:05.865027+00:00",
+        "cost_usd": 0.3,
+        "runtime_seconds": 717.1,
+        "error": null,
+        "warning": "This is just an estimate; the actual runtime may be less or more.",
+        "binding_cost_cap": false
+      },
+      "scheduler_justification": "Missing row in selected single-device, fixed-options baseline cohort. Selected a complete nonconstant pilot at one device and identical full options, preferring the original method family then precision; signal recovery only, accuracy uncertified",
+      "job_id": "flbW0WUTUwh0ugVi",
+      "updated_at": "2026-10-24T18:11:22.577225+00:00"
     }
-  }
+  ]
 }

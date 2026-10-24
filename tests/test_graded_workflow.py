@@ -26,6 +26,37 @@ def record(cid,device,options,value=.4,status="COMPLETED"):
 
 
 class GradedTests(TestCase):
+    def test_selected_cohort_quotes_raise_future_coverage_reserve(self):
+        with TemporaryDirectory() as folder, patch('otoc.graded.event'):
+            r=record('Duke_G2_0','mps.cpu',{'mps_bond_dimension':256})
+            r['quote']={'cost_usd':3.02}
+            class Adapter:
+                root=Path(folder)
+                def usage(self):
+                    return {'known_cost_usd':0.,'active_jobs':0,'unknown_terminal_costs':0,'job_count':0}
+                def quote(self,cid,device,options):
+                    return {'cost_usd':.2,'runtime_seconds':30.,'error':None}
+            with patch('otoc.graded.action_history',return_value=[r]):
+                plan=plan_next(Adapter(),settings(),['G2'],1)
+            self.assertEqual(plan['baseline_quote_rates']['G2'],3.02)
+            self.assertIsNone(plan['next'])
+            self.assertEqual(plan['actions'][0]['gate'],'protect_remaining_baseline_budget')
+
+    def test_fallback_rows_do_not_satisfy_selected_cohort_coverage(self):
+        s=settings()
+        rows=[record('Duke_G3_0','mps.cpu',{'mps_bond_dimension':16})]
+        actions=candidates_for('G3',rows,s)
+        self.assertTrue(any(a['circuit_id']=='Duke_G3_0' and a['device']=='pauli-path' and a['stage']=='coverage' for a in actions))
+
+    def test_discovery_survives_recovery_to_mps(self):
+        s=settings();s['discovery']={'enabled':True,'pps_transpilation_level':1,'mps_chi':32}
+        s['pilot_qubits']['G2']=[0,18,35]
+        rows=[record('Duke_G2_0','pauli-path',{'pauli_path_truncation_threshold':.001,'pauli_path_circuit_transpilation_level':2},0.),
+              record('Duke_G2_0','mps.cpu',{'mps_bond_dimension':256},.4)]
+        actions=candidates_for('G2',rows,s)
+        self.assertTrue(any(a['stage']=='discovery' and a['device']=='pauli-path' and
+                            a['options']['pauli_path_circuit_transpilation_level']==1 for a in actions))
+
     def test_selection_uses_precision_and_exactness_not_file_order(self):
         rows=[record("Duke_G2_0","mps.cpu",{"mps_bond_dimension":256},.8),
               record("Duke_G2_0","mps.cpu",{"mps_bond_dimension":8},.1)]
