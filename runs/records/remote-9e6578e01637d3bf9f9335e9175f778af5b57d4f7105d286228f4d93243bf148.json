@@ -1,0 +1,85 @@
+{
+  "circuit_id": "Duke_G4_34",
+  "problem": "G4",
+  "qubit": 34,
+  "origin": "bluequbit",
+  "method": "mps.cpu",
+  "backend": "mps.cpu",
+  "parameters": {
+    "mps_bond_dimension": 32
+  },
+  "status": "COMPLETED",
+  "estimate": 0.8315774270045845,
+  "job_id": "DXhdsLqoxavp8P3h",
+  "cost_usd": 0.0,
+  "started_at": "2026-10-24T18:42:46.816226+00:00",
+  "finished_at": "2026-10-24T18:43:03.159358+00:00",
+  "wall_seconds": 14.618,
+  "reason": "Complete one explicitly selected CPU cohort with at most two reserved asynchronous jobs; no extrapolation or mixed-configuration rows",
+  "quote": {
+    "circuit_id": "Duke_G4_34",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 32
+    },
+    "quoted_at": "2026-10-24T18:42:46.559433+00:00",
+    "cost_usd": 0.27,
+    "runtime_seconds": 632.0,
+    "error": null,
+    "warning": "This is just an estimate; the actual runtime may be less or more.",
+    "binding_cost_cap": false
+  },
+  "error": null,
+  "pauli": "IIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+  "remote_receipt": {
+    "action": {
+      "circuit_id": "Duke_G4_34",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "pauli": "IIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
+    },
+    "status": "COMPLETED",
+    "requested_at": "2026-10-24T18:42:46.816226+00:00",
+    "quote": {
+      "circuit_id": "Duke_G4_34",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "quoted_at": "2026-10-24T18:42:46.559433+00:00",
+      "cost_usd": 0.27,
+      "runtime_seconds": 632.0,
+      "error": null,
+      "warning": "This is just an estimate; the actual runtime may be less or more.",
+      "binding_cost_cap": false
+    },
+    "timeout_seconds": 900,
+    "scheduler_justification": "Complete one explicitly selected CPU cohort with at most two reserved asynchronous jobs; no extrapolation or mixed-configuration rows",
+    "cohort_batch": {
+      "cohort_key": "071aa6087f91d903f85379f827305a692a7a57c4d84de1c6c5fe1f800858bd10",
+      "slots": 2,
+      "reserved_quote_usd": 0.27,
+      "budget_at_admission": {
+        "actual_spent_usd": 0.2,
+        "outstanding_quote_usd": 0.27,
+        "new_quote_usd": 0.27,
+        "missing_cohort_reserve_usd": 7.140000000000001,
+        "planned_exposure_usd": 7.880000000000001,
+        "missing_unreserved_rows": {
+          "G2": 0,
+          "G3": 33,
+          "G4": 2
+        }
+      }
+    },
+    "job_id": "DXhdsLqoxavp8P3h",
+    "estimate": 0.8315774270045845,
+    "cost_usd": 0.0,
+    "compute_ms": 14219,
+    "queue_ms": 399,
+    "updated_at": "2026-10-24T18:43:03.159358+00:00"
+  },
+  "run_id": "remote-9e6578e01637d3bf9f9335e9175f778af5b57d4f7105d286228f4d93243bf148"
+}

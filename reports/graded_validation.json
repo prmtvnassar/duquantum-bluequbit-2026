@@ -1,9 +1,9 @@
 {
-  "validated_at": "2026-10-24T18:39:09.886330+00:00",
-  "command": ".venv312/Scripts/python.exe -m pytest -q",
-  "tests": 107,
-  "subtests": 75,
+  "validated_at": "2026-10-24T18:48:28.319069+00:00",
+  "command": "D:/BluQubit/.venv312/Scripts/python.exe -m pytest -q (PYTHONPATH=isolated worktree/src)",
+  "tests": 108,
+  "subtests": 77,
   "result": "PASS",
   "smoke_test": "PASS: imports and offline Bell-state check, retained from previous validation",
-  "scope": "Repository suite including targeted diagnostics, distinct quote/execution caps, complete manifests, budget/recovery gates, submission ownership and user-report evidence. Not evidence of hidden-circuit accuracy."
+  "scope": "Full repository suite including explicit account-state routing, CPU cohorts, targeted diagnostics, budgets, ledger ownership and submission provenance. Not hidden-circuit accuracy evidence."
 }

@@ -15,6 +15,8 @@ from otoc.graded import export_complete
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--config", default="configs/workflow_final.json")
+    parser.add_argument("--state-root", type=Path, default=Path("results/workflow"),
+                        help="Shared account receipts, checkpoints and remote_runner lock directory")
     parser.add_argument("--problem", choices=["G2", "G3", "G4"], required=True)
     parser.add_argument("--device", choices=["mps.cpu", "pauli-path"], required=True)
     parser.add_argument("--options-file", type=Path, required=True, help="JSON object with every selected native option")
@@ -44,7 +46,7 @@ def main():
     reserves = (json.loads(args.reserve_cohorts_file.read_text(encoding="utf-8-sig"))
                 if args.reserve_cohorts_file else None)
     logging.disable(logging.CRITICAL)
-    result = run_cohort_batch(BlueQubitAdapter(), settings, args.problem, args.device, options,
+    result = run_cohort_batch(BlueQubitAdapter(root=args.state_root), settings, args.problem, args.device, options,
                               slots=args.slots, max_jobs=args.max_jobs, reserve_cohorts=reserves,
                               targeted_diagnostics=args.targeted_diagnostics, target_ids=args.target_ids,
                               execution_timeout_seconds=args.execution_timeout,
@@ -53,7 +55,7 @@ def main():
     print(json.dumps(result, indent=2), flush=True)
     if result["status"] == "COMPLETE" and not args.targeted_diagnostics:
         # Export reads saved receipts only. It never submits to the website.
-        print(json.dumps({"complete_exports": export_complete(settings)}), flush=True)
+        print(json.dumps({"complete_exports": export_complete(settings, root=args.state_root)}), flush=True)
     return 0 if result["status"] in {"COMPLETE", "DIAGNOSTICS_COMPLETE", "BOUNDED_STOP", "STOPPED"} else 1
 
 

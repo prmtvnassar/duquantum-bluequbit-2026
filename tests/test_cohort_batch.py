@@ -654,6 +654,29 @@ class DiagnosticCommandTests(TestCase):
         spec.loader.exec_module(module)
         return module
 
+    def test_cli_routes_adapter_and_export_to_the_same_explicit_or_default_state_root(self):
+        with TemporaryDirectory() as folder:
+            options = Path(folder) / "options.json"
+            options.write_text(json.dumps(OPTIONS))
+            for selected in (None, Path(folder) / "shared account state"):
+                with self.subTest(selected=selected):
+                    command = self.command()
+                    settings = configuration()
+                    arguments = ["run_cohort_batch.py", "--execute", "--problem", "G2", "--device", "mps.cpu",
+                                 "--options-file", str(options)]
+                    if selected is not None:
+                        arguments.extend(["--state-root", str(selected)])
+                    expected = selected if selected is not None else Path("results/workflow")
+                    with patch("sys.argv", arguments), patch.object(command, "BlueQubitAdapter") as adapter, \
+                            patch.object(command, "load_settings", return_value=settings), \
+                            patch.object(command, "run_cohort_batch", return_value={"status": "COMPLETE"}) as runner, \
+                            patch.object(command, "export_complete", return_value=[]) as exporter, \
+                            patch.object(command.logging, "disable"), redirect_stdout(io.StringIO()):
+                        self.assertEqual(command.main(), 0)
+                        adapter.assert_called_once_with(root=expected)
+                        self.assertIs(runner.call_args.args[0], adapter.return_value)
+                        exporter.assert_called_once_with(settings, root=expected)
+
     def test_diagnostic_cli_does_not_export_partial_or_complete_cohorts(self):
         for status in ("DIAGNOSTICS_COMPLETE", "COMPLETE"):
             with self.subTest(status=status), TemporaryDirectory() as folder:

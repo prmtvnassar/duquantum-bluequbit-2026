@@ -25,6 +25,14 @@ reconciled, a bounded two-launch G4 command is:
 .venv312\Scripts\python.exe scripts/run_cohort_batch.py --execute --problem G4 --device mps.cpu --options-file configs/cohorts/mps_chi32.json --reserve-cohorts-file configs/cohorts/baseline_reserves.json --slots 2 --max-jobs 2
 ```
 
+`--state-root` selects the shared account-state directory and defaults to
+`results/workflow`. When running code from another worktree against this existing
+account, pass `--state-root D:\BluQubit\results\workflow` to retain its receipts,
+cost journal, STOP file, checkpoints and exclusive `remote_runner` lock. Both the
+adapter and completed-cohort export read that same state root. Keep every runner
+for the same account on the same state directory; this option does not change the
+working directory or the code, config and options files being used.
+
 The selected options files are:
 
 | Cohort | Options file | Native options |
