@@ -1,0 +1,344 @@
+{
+  "problem": "G2",
+  "owner": "kevin",
+  "source_commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+  "source_branch": "kevin/experiment",
+  "csv_path": "submissions/teammates/kevin/G2/submitted-v1.csv",
+  "sha256": "a92e6e44ef9d12d1272d8082b2b0fb5685dbaaa69bf76f00ae802d33bb893c13",
+  "submission_status": "REPORTED_SUBMITTED",
+  "reported_displayed_score": 498,
+  "maximum_points": 600,
+  "reported_score_fraction": 0.83,
+  "attempt": null,
+  "score_evidence": "Reported by Kevin from the website; not browser-verified by this tool",
+  "method_note_path": "submissions/teammates/kevin/G2/submitted-v1.txt",
+  "method_note_origin": "Prepared explanation written from the run records; exact website wording not confirmed",
+  "total_credits": 0.0,
+  "row_provenance": [
+    {
+      "circuit_id": "Duke_G2_0",
+      "run_id": "kevin-3vthFykOUg9STpyH",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 128
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G2_1",
+      "run_id": "kevin-amYn6eEGELs0f07u",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 128
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G2_2",
+      "run_id": "kevin-CcP073uy8VTfOm7Z",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 128
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G2_3",
+      "run_id": "kevin-Yxrh3L2PUkc3VhaY",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 128
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G2_4",
+      "run_id": "kevin-culHIrNwFvzVmhin",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 128
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G2_5",
+      "run_id": "kevin-naxElkaIO19i9Z0B",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 128
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G2_6",
+      "run_id": "kevin-B4ds8Aiw7rfVMwe3",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 128
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G2_7",
+      "run_id": "kevin-cMCDoXnvsIcrGYIL",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 128
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G2_8",
+      "run_id": "kevin-lmZaxYlDlkm8GvAK",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 128
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G2_9",
+      "run_id": "kevin-iqlVmKsTe1h6oCoX",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 128
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G2_10",
+      "run_id": "kevin-ddxYjwvqBs0JhZtJ",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 128
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G2_11",
+      "run_id": "kevin-TURANa5f21AmhiAL",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 128
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G2_12",
+      "run_id": "kevin-h5ruIRgO3xgx8u0e",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 128
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G2_13",
+      "run_id": "kevin-Lvfb3oPsBWLkd53U",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 128
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G2_14",
+      "run_id": "kevin-fWCNz2PXNHvUFWzb",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 128
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G2_15",
+      "run_id": "kevin-GqUmky5VKcbmgZSU",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 128
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G2_16",
+      "run_id": "kevin-uTbcKbXAp9Be7SC9",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 128
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G2_17",
+      "run_id": "kevin-dropIGgQmgDH1WRr",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 128
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G2_18",
+      "run_id": "kevin-uHuan3UDZEwjgWRu",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 128
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G2_19",
+      "run_id": "kevin-J39oxXYGLTa6MPT1",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 128
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G2_20",
+      "run_id": "kevin-DYdh0YzyFmb55Kqa",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 128
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G2_21",
+      "run_id": "kevin-tJKiGWUPHuIzDVo5",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 128
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G2_22",
+      "run_id": "kevin-rmB9Wk7PnVRh4Ksr",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 128
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G2_23",
+      "run_id": "kevin-yC1WtwWAmvioU2zI",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 128
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G2_24",
+      "run_id": "kevin-60NGWyMyT4P4BpBG",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 128
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G2_25",
+      "run_id": "kevin-jTnEzaXlM9lrFr9r",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 128
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G2_26",
+      "run_id": "kevin-X314hDD7f4Gk5fD3",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 128
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G2_27",
+      "run_id": "kevin-H25PAmPtNUI4jMSY",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 128
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G2_28",
+      "run_id": "kevin-v1nXgToXExYbkaYq",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 128
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G2_29",
+      "run_id": "kevin-wlqjcFqMohlSJpSZ",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 128
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G2_30",
+      "run_id": "kevin-HCw4rhIo6MdQG7IB",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 128
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G2_31",
+      "run_id": "kevin-xIu0agPgzLMMYLfT",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 128
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G2_32",
+      "run_id": "kevin-cH98ezz3SBhTP5mN",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 128
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G2_33",
+      "run_id": "kevin-OIOwNPNfE2loWT37",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 128
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G2_34",
+      "run_id": "kevin-8u8qRRzfTbTUBL0R",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 128
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G2_35",
+      "run_id": "kevin-Wsto0FWElr5r0r5i",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 128
+      },
+      "credits": 0.0
+    }
+  ],
+  "attribution_note": "This chi=128 file (sha256 above) is the one that scored 498/600. submissions/teammates/teammate_reported/G2/attempt-01 records 498/600 against the chi=32 candidate (sha256 4cb0c3c1...), which is a different file; that chi=32 file scored 342/600 on the original account (submissions/G2/attempt-01)."
+}

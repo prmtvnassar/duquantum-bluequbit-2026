@@ -1,0 +1,9 @@
+MPS simulation on BlueQubit (mps.cpu, bond dimension chi = 128). Each of the 36 stored programs Duke_G2_q was run separately by ID from |0...0>, and we report <Z> on qubit q (Pauli string with q0 rightmost). Raw expectation values, no fitting, extrapolation or fusion. Cost: 0 credits.
+
+Why this method: G2 is a 1D Haar-random chain. Matrix product states represent 1D circuits efficiently, so MPS is the natural choice. We chose chi by testing on circuits with known answers before spending anything:
+- Sample S2 is also a 1D Haar-random chain (16 qubits, exact values computed on BlueQubit's exact CPU device). Locally, MPS reached corr^2 = 1.00 at chi = 32, while Pauli-path plateaued near 0.98.
+- We built a 24-qubit test chain with G2's depth (18 two-qubit layers, butterfly at one end, so it spans the same 0-18 qubit distances as half of G2) and computed its exact values locally. MPS reached corr^2 = 0.997 at chi = 64 and 1.000 at chi = 128; Pauli-path reached 0.974 at epsilon = 0.001.
+
+Result: 498/600 (corr^2 about 0.83). The value profile is physically sensible: about 1 at both chain ends (far from the butterfly, unscrambled) and about 0 around the butterfly at q18 (scrambled).
+
+Known limitation: chi = 128 is not fully converged on the real 36-qubit chain. A partial chi = 256 run moved values by up to 0.06 (q2: 0.916 -> 0.854). Completing chi = 256 was estimated by BlueQubit at about $10.88 and 7 hours per interior job (about $360 total), which we judged not worth the expected gain.

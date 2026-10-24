@@ -1,0 +1,7 @@
+Pauli-path propagation on BlueQubit (pauli-path, truncation threshold epsilon = 0.001, circuit transpilation level 1). Each of the 36 stored programs Duke_G3_q was run separately by ID from |0...0>, reporting <Z> on qubit q (q0 rightmost). Raw values, no fitting. Cost: 0 credits (about 40 s per job).
+
+Why this method: G3 is a mostly-Clifford 6x6 grid, like sample S3 (about 10% non-Clifford single-qubit gates). Pauli-path propagation is efficient when most gates are Clifford, because Clifford gates map each Pauli string to a single Pauli string without branching. Locally, Pauli-path at epsilon = 0.01 scored 100% on S3, while MPS on S3 reached at most corr^2 = 0.51 (chi = 16-64).
+
+Key finding (transpilation level): with BlueQubit's default transpilation level 2, pauli-path returned exactly 0 for all 36 G3 qubits (at epsilon 0.01 and 0.001) and also for S3, whose true values are about +-0.1 to 0.6. A diagnostic on Duke_S3_1 (exact value about -0.538) gave: level 2 -> 0.0, level 3 -> 0.0, level 0 -> -0.595, level 1 -> -0.580 (all at epsilon = 0.01). Heavier transpilation rewrites the Clifford structure into generic rotations, so Pauli coefficients spread out and fall below the truncation threshold. Levels 0 and 1 preserve the structure.
+
+Result: 534/800 (corr^2 about 0.67). At epsilon = 0.01 (level 1) 33 of 36 values were exactly 0; at epsilon = 0.001 only 9 of 36.

@@ -1,0 +1,10 @@
+Pauli-path propagation on BlueQubit (pauli-path, truncation threshold epsilon = 0.0003, circuit transpilation level 1). Each of the 36 stored programs Duke_G3_q was run separately by ID from |0...0>, reporting <Z> on qubit q (q0 rightmost). Raw values, no fitting. Cost: 0 credits (at most about 5 minutes per job).
+
+Why this method: same reasoning as our previous G3 attempt. G3 is a mostly-Clifford grid like sample S3, where Pauli-path is efficient and accurate (100% on S3 locally; MPS at most 0.51). BlueQubit's default transpilation level 2 returns exactly 0 on these circuits; level 1 preserves the Clifford structure and gives correct sample values (Duke_S3_1: level 1 -> -0.580 vs exact -0.538; level 2 -> 0.0).
+
+Why a finer epsilon: G3's values are small (mostly within +-0.15), so ranking them correctly needs a fine truncation threshold. We tightened epsilon until consecutive runs agreed:
+- epsilon 0.01: 33/36 values exactly 0; agreement with epsilon 0.001: corr^2 = 0.00
+- epsilon 0.001: 9/36 zeros; scored 534/800; agreement with epsilon 0.0003: corr^2 = 0.80
+- epsilon 0.0003: 3/36 zeros; scored 773/800
+
+Result: 773/800 (corr^2 about 0.97). The rising agreement between consecutive thresholds and the rising score both indicate convergence.

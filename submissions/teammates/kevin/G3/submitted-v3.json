@@ -1,0 +1,379 @@
+{
+  "problem": "G3",
+  "owner": "kevin",
+  "source_commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+  "source_branch": "kevin/experiment",
+  "csv_path": "submissions/teammates/kevin/G3/submitted-v3.csv",
+  "sha256": "44fdbe227f1fede6b7abe04934dd375420c86a9427c69b760bb70c00e338d691",
+  "submission_status": "REPORTED_SUBMITTED",
+  "reported_displayed_score": 773,
+  "maximum_points": 800,
+  "reported_score_fraction": 0.9663,
+  "attempt": null,
+  "score_evidence": "Reported by Kevin from the website; not browser-verified by this tool",
+  "method_note_path": "submissions/teammates/kevin/G3/submitted-v3.txt",
+  "method_note_origin": "Prepared explanation written from the run records; exact website wording not confirmed",
+  "total_credits": 0.0,
+  "row_provenance": [
+    {
+      "circuit_id": "Duke_G3_0",
+      "run_id": "kevin-qshrSZgtvfgQIjXp",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0003,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_1",
+      "run_id": "kevin-pq78lQeYluBKOPk6",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0003,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_2",
+      "run_id": "kevin-1RgWVOPi9shaq3CA",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0003,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_3",
+      "run_id": "kevin-ZCnWrUSVmlZ9TUu3",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0003,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_4",
+      "run_id": "kevin-XmyDsExYueEA65tO",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0003,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_5",
+      "run_id": "kevin-MkzeQNrsoHK0vBcS",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0003,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_6",
+      "run_id": "kevin-CiEwvwAd8giNpvY6",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0003,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_7",
+      "run_id": "kevin-7IlgoRTVfWIAJ5H7",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0003,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_8",
+      "run_id": "kevin-rpaanZY5TI0tr6hG",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0003,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_9",
+      "run_id": "kevin-6VfJ4RZfMeMAyHhV",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0003,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_10",
+      "run_id": "kevin-6Tvq6iXx5fQDPtS7",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0003,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_11",
+      "run_id": "kevin-h5XC7bKzcm1m9i1g",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0003,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_12",
+      "run_id": "kevin-0Q134qy5kcWo64x3",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0003,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_13",
+      "run_id": "kevin-xLQbFAzDRnimqWC7",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0003,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_14",
+      "run_id": "kevin-kyZfkqc4EugHF1Qy",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0003,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_15",
+      "run_id": "kevin-xDuIP0UybFYZQdex",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0003,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_16",
+      "run_id": "kevin-Ni4hjUFjMoSBSv0F",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0003,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_17",
+      "run_id": "kevin-46wvXnW5dUXKLMmM",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0003,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_18",
+      "run_id": "kevin-0sfVew43WK3hExe8",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0003,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_19",
+      "run_id": "kevin-sUiezSQ3TghGtO2M",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0003,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_20",
+      "run_id": "kevin-hdAj4XHwOlwXiSTQ",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0003,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_21",
+      "run_id": "kevin-UxGbZolmyPNVYGU2",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0003,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_22",
+      "run_id": "kevin-rJIz44rVFk7Ycmay",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0003,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_23",
+      "run_id": "kevin-MliZPMm25a5mgKRG",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0003,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_24",
+      "run_id": "kevin-m1P3f92CrCN5yFep",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0003,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_25",
+      "run_id": "kevin-zDHIlEUdQt3SQTes",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0003,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_26",
+      "run_id": "kevin-ddGivPWkPbztXlju",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0003,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_27",
+      "run_id": "kevin-RsdSZRM4UpFcV7Pl",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0003,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_28",
+      "run_id": "kevin-o3Z0Wqig7SSQ1Suq",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0003,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_29",
+      "run_id": "kevin-IkbRs6EGrxrrNCtN",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0003,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_30",
+      "run_id": "kevin-bTrqg25xGagvpzC9",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0003,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_31",
+      "run_id": "kevin-mNKoqrIXkpEiPmoO",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0003,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_32",
+      "run_id": "kevin-k20flzKiZ6hbC8kF",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0003,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_33",
+      "run_id": "kevin-2K3rN9Bjo3CYrimu",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0003,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_34",
+      "run_id": "kevin-z6d18lbfRbuv8Xtl",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0003,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "credits": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_35",
+      "run_id": "kevin-6ZWjpjGXIQ5XDJfn",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0003,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "credits": 0.0
+    }
+  ]
+}
