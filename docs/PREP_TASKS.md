@@ -1,5 +1,7 @@
 # Pre-hackathon prep — summary
 
+> Pre-release notes. The [released problems](../problems/README.md) have three samples, four graded problems, and one `circuit_id,value` CSV per problem. Use the released instructions over this page.
+
 The detailed, step-by-step plan lives in [`../tasks.md`](../tasks.md). This file is the short version.
 
 > `docs/duquantum_bluequbit_48h_practice.tex` was written from older public info

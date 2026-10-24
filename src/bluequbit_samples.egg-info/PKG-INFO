@@ -1,0 +1,24 @@
+Metadata-Version: 2.4
+Name: bluequbit-samples
+Version: 0.1.0
+Summary: Reproducible S1-S3 exact, MPS, and Pauli-backpropagation experiments
+Requires-Python: <3.13,>=3.11
+Requires-Dist: qiskit==2.6.1
+Requires-Dist: qiskit-aer==0.18.0
+Requires-Dist: quimb==1.15.0
+Requires-Dist: qiskit-addon-obp==0.3.0
+Requires-Dist: qiskit-addon-utils==0.4.0
+Requires-Dist: numpy<2.4,>=1.26
+Requires-Dist: scipy<2,>=1.13
+Requires-Dist: pandas<3,>=2.2
+Requires-Dist: matplotlib<4,>=3.9
+Requires-Dist: psutil<8,>=6
+Provides-Extra: notebook
+Requires-Dist: nbformat>=5.10; extra == "notebook"
+Requires-Dist: nbclient>=0.10; extra == "notebook"
+Requires-Dist: nbconvert>=7.16; extra == "notebook"
+Requires-Dist: ipykernel>=6.29; extra == "notebook"
+Requires-Dist: jupyterlab>=4.3; extra == "notebook"
+Provides-Extra: dev
+Requires-Dist: pytest<10,>=8; extra == "dev"
+Requires-Dist: pyyaml>=6; extra == "dev"

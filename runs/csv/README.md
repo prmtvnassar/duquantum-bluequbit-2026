@@ -1,5 +1,7 @@
 # Agent-readable run records
 
+> Pre-release record schema. The released Duke upload is one `circuit_id,value` CSV per problem; use [the problem folders](../../problems/README.md) for target IDs and final selected values. These CSV records remain useful as a job log but their `circuit,qubit,estimate` selection file is not an upload file.
+
 These CSVs are the machine-readable path for the OTOC workflow. Keep the original challenge kit in `kit/` unchanged. Use the kit's template to create target and selected-prediction files:
 
 ```powershell

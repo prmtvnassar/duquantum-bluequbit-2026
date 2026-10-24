@@ -1,4 +1,7 @@
-"""Build a template-ordered CSV from accepted MPS/PPS estimates.
+"""Legacy pre-release combined CSV exporter from accepted MPS/PPS estimates.
+
+The released Duke challenge requires one circuit_id,value CSV per problem.
+Use export_problem_submission.py for uploads instead.
 
 Usage:
     python scripts/export_submission.py --template path/to/official_template.csv \

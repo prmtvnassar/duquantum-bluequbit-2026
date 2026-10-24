@@ -1,0 +1,2 @@
+[console_scripts]
+bluequbit-samples = bluequbit_samples.cli:main

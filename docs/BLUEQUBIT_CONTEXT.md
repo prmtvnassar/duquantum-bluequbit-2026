@@ -1,5 +1,7 @@
 # BlueQubit / DuQuantum context
 
+> Pre-release context. The [released problems](../problems/README.md) supersede the sample count, SDK minimum, and submission format below. The live challenge uses three samples, `bluequbit>=0.19.0b1`, and one `circuit_id,value` CSV per problem.
+
 Checked 2026-10-23. Keep replies brief, plain, and intuitive. Work on the current personal branch; do not switch or merge until asked. On first review the branch was `prmtvnassar/practice`, with pre-existing edits to study notebooks, `.env.example` deleted, and `papers/` untracked. Recheck `git status` before editing and preserve those changes. Never read or print `.env` or API tokens.
 
 ## Challenge
