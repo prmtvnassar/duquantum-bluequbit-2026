@@ -1,0 +1,898 @@
+{
+  "generated_at": "2026-10-24T16:53:12.211876+00:00",
+  "reference_problems": [
+    "S1",
+    "S2",
+    "S3"
+  ],
+  "recommendations": {
+    "S1": {
+      "status": "VALIDATED_LOCAL",
+      "method": "mps",
+      "parameters": {
+        "chi": 8,
+        "svd_cutoff": 0.0
+      },
+      "local_score": 99.99999999999996,
+      "mae": 1.5785983631388945e-15,
+      "max_absolute_error": 2.6645352591003757e-15,
+      "wall_seconds": 10.447471100000257
+    },
+    "S2": {
+      "status": "VALIDATED_LOCAL",
+      "method": "mps",
+      "parameters": {
+        "chi": 128,
+        "svd_cutoff": 0.0
+      },
+      "local_score": 99.99933879722508,
+      "mae": 0.0007196096272730575,
+      "max_absolute_error": 0.0032933228815027887,
+      "wall_seconds": 186.85604539999986
+    },
+    "S3": {
+      "status": "VALIDATED_LOCAL",
+      "method": "pps_threshold",
+      "parameters": {
+        "epsilon": 0.001,
+        "level": 1
+      },
+      "local_score": 99.99875390001769,
+      "mae": 0.0006433521131298462,
+      "max_absolute_error": 0.006531271818768263,
+      "wall_seconds": 123.22932360000596
+    }
+  },
+  "stopping_checks": [
+    {
+      "problem": "S1",
+      "status": "EVALUATED",
+      "prefixes": [
+        {
+          "mps_levels": 3,
+          "pps_levels": 3,
+          "checks": [
+            {
+              "circuit_id": "Duke_S1_0",
+              "would_stop": false,
+              "actual_max_branch_error": 0.001606018380503338,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S1_1",
+              "would_stop": false,
+              "actual_max_branch_error": 0.0007490588707276813,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S1_2",
+              "would_stop": false,
+              "actual_max_branch_error": 0.0033526993538157412,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S1_3",
+              "would_stop": false,
+              "actual_max_branch_error": 0.0021107939098291423,
+              "false_stop": false
+            }
+          ],
+          "stopped_count": 0,
+          "false_stops": 0
+        },
+        {
+          "mps_levels": 3,
+          "pps_levels": 4,
+          "checks": [
+            {
+              "circuit_id": "Duke_S1_0",
+              "would_stop": false,
+              "actual_max_branch_error": 9.341317077199429e-05,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S1_1",
+              "would_stop": false,
+              "actual_max_branch_error": 6.864099879083652e-05,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S1_2",
+              "would_stop": false,
+              "actual_max_branch_error": 0.001803778784460558,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S1_3",
+              "would_stop": false,
+              "actual_max_branch_error": 0.0004168328118525494,
+              "false_stop": false
+            }
+          ],
+          "stopped_count": 0,
+          "false_stops": 0
+        },
+        {
+          "mps_levels": 3,
+          "pps_levels": 5,
+          "checks": [
+            {
+              "circuit_id": "Duke_S1_0",
+              "would_stop": false,
+              "actual_max_branch_error": 1.0575140001189975e-05,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S1_1",
+              "would_stop": false,
+              "actual_max_branch_error": 3.4196421470455984e-05,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S1_2",
+              "would_stop": false,
+              "actual_max_branch_error": 7.910402415840789e-05,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S1_3",
+              "would_stop": false,
+              "actual_max_branch_error": 9.088581288117792e-05,
+              "false_stop": false
+            }
+          ],
+          "stopped_count": 0,
+          "false_stops": 0
+        },
+        {
+          "mps_levels": 3,
+          "pps_levels": 6,
+          "checks": [
+            {
+              "circuit_id": "Duke_S1_0",
+              "would_stop": false,
+              "actual_max_branch_error": 1.3411051814349317e-05,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S1_1",
+              "would_stop": false,
+              "actual_max_branch_error": 3.713251977122134e-06,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S1_2",
+              "would_stop": false,
+              "actual_max_branch_error": 2.5700741753897915e-05,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S1_3",
+              "would_stop": false,
+              "actual_max_branch_error": 1.3112666343975676e-05,
+              "false_stop": false
+            }
+          ],
+          "stopped_count": 0,
+          "false_stops": 0
+        },
+        {
+          "mps_levels": 3,
+          "pps_levels": 7,
+          "checks": [
+            {
+              "circuit_id": "Duke_S1_0",
+              "would_stop": false,
+              "actual_max_branch_error": 2.437344561290189e-06,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S1_1",
+              "would_stop": false,
+              "actual_max_branch_error": 2.609024107869118e-15,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S1_2",
+              "would_stop": false,
+              "actual_max_branch_error": 2.926945738987441e-06,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S1_3",
+              "would_stop": false,
+              "actual_max_branch_error": 4.5710190174630405e-08,
+              "false_stop": false
+            }
+          ],
+          "stopped_count": 0,
+          "false_stops": 0
+        },
+        {
+          "mps_levels": 4,
+          "pps_levels": 3,
+          "checks": [
+            {
+              "circuit_id": "Duke_S1_0",
+              "would_stop": false,
+              "actual_max_branch_error": 0.001606018380503338,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S1_1",
+              "would_stop": false,
+              "actual_max_branch_error": 0.0007490588707276813,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S1_2",
+              "would_stop": false,
+              "actual_max_branch_error": 0.0033526993538157412,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S1_3",
+              "would_stop": false,
+              "actual_max_branch_error": 0.0021107939098291423,
+              "false_stop": false
+            }
+          ],
+          "stopped_count": 0,
+          "false_stops": 0
+        },
+        {
+          "mps_levels": 4,
+          "pps_levels": 4,
+          "checks": [
+            {
+              "circuit_id": "Duke_S1_0",
+              "would_stop": false,
+              "actual_max_branch_error": 9.341317077199429e-05,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S1_1",
+              "would_stop": false,
+              "actual_max_branch_error": 6.864099879083652e-05,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S1_2",
+              "would_stop": false,
+              "actual_max_branch_error": 0.001803778784460558,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S1_3",
+              "would_stop": false,
+              "actual_max_branch_error": 0.0004168328118525494,
+              "false_stop": false
+            }
+          ],
+          "stopped_count": 0,
+          "false_stops": 0
+        },
+        {
+          "mps_levels": 4,
+          "pps_levels": 5,
+          "checks": [
+            {
+              "circuit_id": "Duke_S1_0",
+              "would_stop": false,
+              "actual_max_branch_error": 1.0575140001189975e-05,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S1_1",
+              "would_stop": false,
+              "actual_max_branch_error": 3.4196421470455984e-05,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S1_2",
+              "would_stop": false,
+              "actual_max_branch_error": 7.910402415840789e-05,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S1_3",
+              "would_stop": false,
+              "actual_max_branch_error": 9.088581288117792e-05,
+              "false_stop": false
+            }
+          ],
+          "stopped_count": 0,
+          "false_stops": 0
+        },
+        {
+          "mps_levels": 4,
+          "pps_levels": 6,
+          "checks": [
+            {
+              "circuit_id": "Duke_S1_0",
+              "would_stop": false,
+              "actual_max_branch_error": 1.3411051814349317e-05,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S1_1",
+              "would_stop": false,
+              "actual_max_branch_error": 3.713251977122134e-06,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S1_2",
+              "would_stop": false,
+              "actual_max_branch_error": 2.5700741753897915e-05,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S1_3",
+              "would_stop": false,
+              "actual_max_branch_error": 1.3112666343975676e-05,
+              "false_stop": false
+            }
+          ],
+          "stopped_count": 0,
+          "false_stops": 0
+        },
+        {
+          "mps_levels": 4,
+          "pps_levels": 7,
+          "checks": [
+            {
+              "circuit_id": "Duke_S1_0",
+              "would_stop": false,
+              "actual_max_branch_error": 2.437344561290189e-06,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S1_1",
+              "would_stop": false,
+              "actual_max_branch_error": 2.609024107869118e-15,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S1_2",
+              "would_stop": false,
+              "actual_max_branch_error": 2.926945738987441e-06,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S1_3",
+              "would_stop": false,
+              "actual_max_branch_error": 4.5710190174630405e-08,
+              "false_stop": false
+            }
+          ],
+          "stopped_count": 0,
+          "false_stops": 0
+        },
+        {
+          "mps_levels": 5,
+          "pps_levels": 3,
+          "checks": [
+            {
+              "circuit_id": "Duke_S1_0",
+              "would_stop": false,
+              "actual_max_branch_error": 0.001606018380503338,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S1_1",
+              "would_stop": false,
+              "actual_max_branch_error": 0.0007490588707276813,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S1_2",
+              "would_stop": false,
+              "actual_max_branch_error": 0.0033526993538157412,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S1_3",
+              "would_stop": false,
+              "actual_max_branch_error": 0.0021107939098291423,
+              "false_stop": false
+            }
+          ],
+          "stopped_count": 0,
+          "false_stops": 0
+        },
+        {
+          "mps_levels": 5,
+          "pps_levels": 4,
+          "checks": [
+            {
+              "circuit_id": "Duke_S1_0",
+              "would_stop": false,
+              "actual_max_branch_error": 9.341317077199429e-05,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S1_1",
+              "would_stop": false,
+              "actual_max_branch_error": 6.864099879083652e-05,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S1_2",
+              "would_stop": false,
+              "actual_max_branch_error": 0.001803778784460558,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S1_3",
+              "would_stop": false,
+              "actual_max_branch_error": 0.0004168328118525494,
+              "false_stop": false
+            }
+          ],
+          "stopped_count": 0,
+          "false_stops": 0
+        },
+        {
+          "mps_levels": 5,
+          "pps_levels": 5,
+          "checks": [
+            {
+              "circuit_id": "Duke_S1_0",
+              "would_stop": false,
+              "actual_max_branch_error": 1.0575140001189975e-05,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S1_1",
+              "would_stop": true,
+              "actual_max_branch_error": 3.4196421470455984e-05,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S1_2",
+              "would_stop": false,
+              "actual_max_branch_error": 7.910402415840789e-05,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S1_3",
+              "would_stop": false,
+              "actual_max_branch_error": 9.088581288117792e-05,
+              "false_stop": false
+            }
+          ],
+          "stopped_count": 1,
+          "false_stops": 0
+        },
+        {
+          "mps_levels": 5,
+          "pps_levels": 6,
+          "checks": [
+            {
+              "circuit_id": "Duke_S1_0",
+              "would_stop": true,
+              "actual_max_branch_error": 1.3411051814349317e-05,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S1_1",
+              "would_stop": true,
+              "actual_max_branch_error": 3.713251977122134e-06,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S1_2",
+              "would_stop": false,
+              "actual_max_branch_error": 2.5700741753897915e-05,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S1_3",
+              "would_stop": true,
+              "actual_max_branch_error": 1.3112666343975676e-05,
+              "false_stop": false
+            }
+          ],
+          "stopped_count": 3,
+          "false_stops": 0
+        },
+        {
+          "mps_levels": 5,
+          "pps_levels": 7,
+          "checks": [
+            {
+              "circuit_id": "Duke_S1_0",
+              "would_stop": true,
+              "actual_max_branch_error": 2.437344561290189e-06,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S1_1",
+              "would_stop": true,
+              "actual_max_branch_error": 2.609024107869118e-15,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S1_2",
+              "would_stop": true,
+              "actual_max_branch_error": 2.926945738987441e-06,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S1_3",
+              "would_stop": true,
+              "actual_max_branch_error": 4.5710190174630405e-08,
+              "false_stop": false
+            }
+          ],
+          "stopped_count": 4,
+          "false_stops": 0
+        }
+      ],
+      "stopped_count": 8,
+      "false_stops": 0
+    },
+    {
+      "problem": "S2",
+      "status": "EVALUATED",
+      "prefixes": [
+        {
+          "mps_levels": 3,
+          "pps_levels": 3,
+          "checks": [
+            {
+              "circuit_id": "Duke_S2_0",
+              "would_stop": false,
+              "actual_max_branch_error": 0.012835085765754355,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S2_1",
+              "would_stop": false,
+              "actual_max_branch_error": 0.018703901721702415,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S2_2",
+              "would_stop": false,
+              "actual_max_branch_error": 0.010768966062496617,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S2_3",
+              "would_stop": false,
+              "actual_max_branch_error": 0.0047276384476673955,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S2_4",
+              "would_stop": false,
+              "actual_max_branch_error": 0.0830515044567818,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S2_5",
+              "would_stop": false,
+              "actual_max_branch_error": 0.04625512294075466,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S2_6",
+              "would_stop": false,
+              "actual_max_branch_error": 0.04431702743378352,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S2_7",
+              "would_stop": false,
+              "actual_max_branch_error": 0.11127638074666837,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S2_8",
+              "would_stop": false,
+              "actual_max_branch_error": 0.18755143470968597,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S2_9",
+              "would_stop": false,
+              "actual_max_branch_error": 0.2807713195479647,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S2_10",
+              "would_stop": false,
+              "actual_max_branch_error": 0.14249001833548014,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S2_11",
+              "would_stop": false,
+              "actual_max_branch_error": 0.14199236606985322,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S2_12",
+              "would_stop": false,
+              "actual_max_branch_error": 0.024332804401885344,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S2_13",
+              "would_stop": false,
+              "actual_max_branch_error": 0.023355211621057026,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S2_14",
+              "would_stop": false,
+              "actual_max_branch_error": 0.011349514850275133,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S2_15",
+              "would_stop": false,
+              "actual_max_branch_error": 0.01148479685163184,
+              "false_stop": false
+            }
+          ],
+          "stopped_count": 0,
+          "false_stops": 0
+        },
+        {
+          "mps_levels": 4,
+          "pps_levels": 3,
+          "checks": [
+            {
+              "circuit_id": "Duke_S2_0",
+              "would_stop": false,
+              "actual_max_branch_error": 0.012835085765754355,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S2_1",
+              "would_stop": false,
+              "actual_max_branch_error": 0.018703901721702415,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S2_2",
+              "would_stop": false,
+              "actual_max_branch_error": 0.010768966062496617,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S2_3",
+              "would_stop": false,
+              "actual_max_branch_error": 0.0047276384476673955,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S2_4",
+              "would_stop": false,
+              "actual_max_branch_error": 0.0830515044567818,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S2_5",
+              "would_stop": false,
+              "actual_max_branch_error": 0.04625512294075466,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S2_6",
+              "would_stop": false,
+              "actual_max_branch_error": 0.04431702743378352,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S2_7",
+              "would_stop": false,
+              "actual_max_branch_error": 0.11127638074666837,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S2_8",
+              "would_stop": false,
+              "actual_max_branch_error": 0.031418298795544,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S2_9",
+              "would_stop": false,
+              "actual_max_branch_error": 0.10862744171842344,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S2_10",
+              "would_stop": false,
+              "actual_max_branch_error": 0.09330006552313941,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S2_11",
+              "would_stop": false,
+              "actual_max_branch_error": 0.08418817221819785,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S2_12",
+              "would_stop": false,
+              "actual_max_branch_error": 0.00478416516106972,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S2_13",
+              "would_stop": false,
+              "actual_max_branch_error": 0.004857205008070964,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S2_14",
+              "would_stop": false,
+              "actual_max_branch_error": 0.002691388386450555,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S2_15",
+              "would_stop": false,
+              "actual_max_branch_error": 0.002893856827482555,
+              "false_stop": false
+            }
+          ],
+          "stopped_count": 0,
+          "false_stops": 0
+        },
+        {
+          "mps_levels": 5,
+          "pps_levels": 3,
+          "checks": [
+            {
+              "circuit_id": "Duke_S2_0",
+              "would_stop": false,
+              "actual_max_branch_error": 0.012835085765754355,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S2_1",
+              "would_stop": false,
+              "actual_max_branch_error": 0.018703901721702415,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S2_2",
+              "would_stop": false,
+              "actual_max_branch_error": 0.010768966062496617,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S2_3",
+              "would_stop": false,
+              "actual_max_branch_error": 0.0047276384476673955,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S2_4",
+              "would_stop": false,
+              "actual_max_branch_error": 0.0830515044567818,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S2_5",
+              "would_stop": false,
+              "actual_max_branch_error": 0.04625512294075466,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S2_6",
+              "would_stop": false,
+              "actual_max_branch_error": 0.04431702743378352,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S2_7",
+              "would_stop": false,
+              "actual_max_branch_error": 0.11127638074666837,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S2_8",
+              "would_stop": false,
+              "actual_max_branch_error": 0.010706154842681517,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S2_9",
+              "would_stop": false,
+              "actual_max_branch_error": 0.10862744171842344,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S2_10",
+              "would_stop": false,
+              "actual_max_branch_error": 0.09330006552313941,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S2_11",
+              "would_stop": false,
+              "actual_max_branch_error": 0.08418817221819785,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S2_12",
+              "would_stop": false,
+              "actual_max_branch_error": 0.0002950546369228091,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S2_13",
+              "would_stop": false,
+              "actual_max_branch_error": 0.00031157470605636117,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S2_14",
+              "would_stop": false,
+              "actual_max_branch_error": 0.00025929045356787306,
+              "false_stop": false
+            },
+            {
+              "circuit_id": "Duke_S2_15",
+              "would_stop": false,
+              "actual_max_branch_error": 0.0002714510032311157,
+              "false_stop": false
+            }
+          ],
+          "stopped_count": 0,
+          "false_stops": 0
+        }
+      ],
+      "stopped_count": 0,
+      "false_stops": 0
+    },
+    {
+      "problem": "S3",
+      "status": "INSUFFICIENT_COMPLETE_HISTORIES",
+      "prefixes": [],
+      "stopped_count": 0,
+      "false_stops": 0
+    }
+  ],
+  "fusion_loco": [
+    {
+      "held_out": "S1",
+      "trained_weight_mps": 0.0,
+      "anchor_weight_mps": 0.0,
+      "held_out_score": 99.99999999423801,
+      "anchor_score": 99.99999999423801,
+      "gain": 0.0
+    },
+    {
+      "held_out": "S2",
+      "trained_weight_mps": 0.0,
+      "anchor_weight_mps": 0.0,
+      "held_out_score": 98.79050523336403,
+      "anchor_score": 98.79050523336403,
+      "gain": 0.0
+    },
+    {
+      "held_out": "S3",
+      "trained_weight_mps": 1.0,
+      "anchor_weight_mps": 1.0,
+      "held_out_score": 0.0,
+      "anchor_score": 0.0,
+      "gain": 0.0
+    }
+  ],
+  "fusion_enabled": false,
+  "cross_method_stop_supported": false,
+  "fusion_local_gate_passed": false,
+  "limitations": [
+    "Samples are circuits, not independent qubit training examples",
+    "Local implementations and cloud kernels have distinct numerical behavior",
+    "A displayed 100 score is rounded and does not bound pointwise error",
+    "G4 has no matched Haar-grid calibration sample"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "event_id": "77041f157f26470493e36fe6a98023f3",
+  "recorded_at": "2026-10-24T16:27:26.332942+00:00",
+  "kind": "calibration_decision",
+  "circuit_id": "Duke_S2_10",
+  "method": "mps",
+  "parameters": {
+    "chi": 64
+  },
+  "reason": "Complete the next precision vector to test pointwise error and method allocation"
+}

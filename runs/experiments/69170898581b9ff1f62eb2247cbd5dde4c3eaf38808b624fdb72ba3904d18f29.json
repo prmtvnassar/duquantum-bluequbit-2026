@@ -1,0 +1,65 @@
+{
+  "key": "69170898581b9ff1f62eb2247cbd5dde4c3eaf38808b624fdb72ba3904d18f29",
+  "action": {
+    "circuit_id": "Duke_S2_7",
+    "method": "mps",
+    "parameters": {
+      "chi": 64
+    },
+    "input_sha256": "402d8c7452697f62b597c2ef2167f0f4c87e27959cf3bd21f304ff1b954606cc",
+    "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+    "origin": "local"
+  },
+  "record": {
+    "circuit_id": "Duke_S2_7",
+    "sample": "S2",
+    "qubit": 7,
+    "num_qubits": 16,
+    "qasm_sha256": "402d8c7452697f62b597c2ef2167f0f4c87e27959cf3bd21f304ff1b954606cc",
+    "dataset_kind": "official",
+    "method": "mps",
+    "parameters": {
+      "chi": 64,
+      "svd_cutoff": 0.0
+    },
+    "status": "SUCCEEDED",
+    "estimate": -0.14095250420042332,
+    "dtype": "complex128",
+    "backend": "quimb.CircuitMPS.numpy",
+    "wall_seconds": 5.30952790000083,
+    "compute_seconds": 4.72443850000127,
+    "peak_rss": 200634368,
+    "package_versions": {
+      "python": "3.12.14",
+      "qiskit": "2.6.1",
+      "qiskit-aer": "0.18.0",
+      "quimb": "1.15.0",
+      "qiskit-addon-obp": "0.3.0",
+      "qiskit-addon-utils": "0.4.0",
+      "numpy": "2.3.5",
+      "scipy": "1.18.1",
+      "pandas": "2.3.3",
+      "matplotlib": "3.11.2",
+      "psutil": "7.2.2"
+    },
+    "diagnostics": {
+      "max_bond_actual": 64,
+      "state_norm_squared": 0.8928375046802703,
+      "expectation_normalized": true,
+      "svd_cutoff": 0.0,
+      "target_site": 7,
+      "routing": "Explicit swap+split; original site order restored",
+      "worker_peak_rss": 196415488,
+      "memory_limit_bytes": 734003200,
+      "profile": "local",
+      "attempt_directory": "results\\workflow\\local\\attempts\\3b384e06786b84e8-ddcfa917c852",
+      "source_sha256": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "recorded_at_utc": "2026-10-24T16:27:14.410567+00:00"
+    },
+    "error": null,
+    "cache_key": "3b384e06786b84e8eba6b2431b6abd8bcb9d14396b2640785b3f0cc53dae40be",
+    "cache_hit": false,
+    "cost_usd": 0.0
+  },
+  "saved_at": "2026-10-24T16:27:14.504774+00:00"
+}

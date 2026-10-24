@@ -1,0 +1,71 @@
+{
+  "key": "220e762f6a20c65b226a2f64d3a5b5eb484654b21c106465f64a0404f0b8ee50",
+  "action": {
+    "circuit_id": "Duke_S2_0",
+    "method": "pps_threshold",
+    "parameters": {
+      "epsilon": 0.01,
+      "level": 1
+    },
+    "input_sha256": "469424807083c26dc45b097af082086086cff13530fb405517071fdb9c65608d",
+    "engine_source": "5ff8f31181561a23dacab17c7c18eaa9bcac2d8e0aecb2af686a5107fe6efe83",
+    "origin": "local"
+  },
+  "record": {
+    "circuit_id": "Duke_S2_0",
+    "sample": "S2",
+    "qubit": 0,
+    "num_qubits": 16,
+    "qasm_sha256": "469424807083c26dc45b097af082086086cff13530fb405517071fdb9c65608d",
+    "dataset_kind": "official",
+    "method": "pps_threshold",
+    "parameters": {
+      "epsilon": 0.01,
+      "level": 1
+    },
+    "status": "SUCCEEDED",
+    "estimate": 0.0,
+    "dtype": "complex128",
+    "backend": "local.numpy.coefficient_pauli",
+    "wall_seconds": 3.1003552000001946,
+    "compute_seconds": 2.5353303000010783,
+    "peak_rss": 165576704,
+    "package_versions": {
+      "python": "3.12.14",
+      "qiskit": "2.6.1",
+      "qiskit-aer": "0.18.0",
+      "quimb": "1.15.0",
+      "qiskit-addon-obp": "0.3.0",
+      "qiskit-addon-utils": "0.4.0",
+      "numpy": "2.3.5",
+      "scipy": "1.18.1",
+      "pandas": "2.3.3",
+      "matplotlib": "3.11.2",
+      "psutil": "7.2.2"
+    },
+    "diagnostics": {
+      "epsilon_semantics": "coefficient magnitude cutoff after gate and duplicate merging",
+      "transpilation_semantics": "Qiskit u3/CZ optimization, not BlueQubit rotation transpilation",
+      "transpilation_level": 1,
+      "numerical_atol": 1e-12,
+      "total_gates": 1015,
+      "propagated_gates": 1015,
+      "peak_num_paulis": 1100,
+      "final_num_paulis": 0,
+      "discarded_l1_sum": 152.33419618519272,
+      "max_paulis": 100000,
+      "complete": true,
+      "worker_peak_rss": 161214464,
+      "memory_limit_bytes": 734003200,
+      "profile": "local",
+      "attempt_directory": "results\\workflow\\local\\attempts\\c252d662029abc8b-0f369b49c0cd",
+      "source_sha256": "5ff8f31181561a23dacab17c7c18eaa9bcac2d8e0aecb2af686a5107fe6efe83",
+      "recorded_at_utc": "2026-10-24T16:10:30.858277+00:00"
+    },
+    "error": null,
+    "cache_key": "c252d662029abc8b775f014087d61feb6fb6b1e8bd96c8fb4bf3533d30b9297c",
+    "cache_hit": false,
+    "cost_usd": 0.0
+  },
+  "saved_at": "2026-10-24T16:10:30.858277+00:00"
+}

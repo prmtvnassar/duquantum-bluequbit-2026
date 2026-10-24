@@ -1,0 +1,45 @@
+{
+  "circuit_id": "Duke_S3_0",
+  "problem": "S3",
+  "qubit": 0,
+  "origin": "local",
+  "method": "mps",
+  "backend": "quimb.CircuitMPS.numpy",
+  "parameters": {
+    "chi": 8,
+    "svd_cutoff": 0.0
+  },
+  "status": "FAILED",
+  "estimate": null,
+  "cost_usd": 0.0,
+  "wall_seconds": 9.391477600000144,
+  "finished_at": "2026-10-24T16:07:49.521995+00:00",
+  "input_sha256": "7227e4b4d0cde48f55d0b1141b9a0458dd799a4f24d798e526521de59b636b42",
+  "source_sha256": "c51fe73b7c3ba6ba6069507531305046b4080f2ead56060e3d4beb875dbbe799",
+  "error": "ValueError: Degenerate MPS norm: 9.479957207784532e-50",
+  "reason": "Sample calibration from public QASM",
+  "raw_record": "results/workflow/local/attempts/99f6133211a9d88c-1ee67c61fbbc/record.json",
+  "diagnostics": {
+    "worker_peak_rss": 258285568,
+    "memory_limit_bytes": 734003200,
+    "profile": "local",
+    "attempt_directory": "results\\workflow\\local\\attempts\\99f6133211a9d88c-1ee67c61fbbc",
+    "source_sha256": "c51fe73b7c3ba6ba6069507531305046b4080f2ead56060e3d4beb875dbbe799",
+    "recorded_at_utc": "2026-10-24T16:07:49.521995+00:00"
+  },
+  "package_versions": {
+    "python": "3.12.14",
+    "qiskit": "2.6.1",
+    "qiskit-aer": "0.18.0",
+    "quimb": "1.15.0",
+    "qiskit-addon-obp": "0.3.0",
+    "qiskit-addon-utils": "0.4.0",
+    "numpy": "2.3.5",
+    "scipy": "1.18.1",
+    "pandas": "2.3.3",
+    "matplotlib": "3.11.2",
+    "psutil": "7.2.2"
+  },
+  "started_at": "2026-10-24T16:07:40.125837+00:00",
+  "run_id": "local-99f6133211a9d88c-1ee67c61fbbc"
+}

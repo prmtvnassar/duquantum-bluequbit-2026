@@ -1,0 +1,1 @@
+Ran all 30 stored Duke_G1_q programs separately on BlueQubit's exact CPU statevector backend, starting in |0...0>. Evaluated Z on each ID's target q; q0 is rightmost in the Pauli string. Used completed direct expectation values with no MPS/PPS truncation, fitting or fusion. The source ledger reports $0 cost for every successful G1 job.

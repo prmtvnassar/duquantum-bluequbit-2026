@@ -1,0 +1,59 @@
+{
+  "circuit_id": "Duke_S3_23",
+  "problem": "S3",
+  "qubit": 23,
+  "origin": "bluequbit",
+  "method": "exact",
+  "backend": "cpu",
+  "parameters": {},
+  "status": "COMPLETED",
+  "estimate": -0.4194764648534235,
+  "job_id": "onX4aUfH3IFddv9b",
+  "cost_usd": 0.0,
+  "started_at": "2026-10-24T16:35:51.431556+00:00",
+  "finished_at": "2026-10-24T16:36:45.950714+00:00",
+  "wall_seconds": 51.428,
+  "reason": "",
+  "quote": {
+    "circuit_id": "Duke_S3_23",
+    "device": "cpu",
+    "options": {},
+    "quoted_at": "2026-10-24T16:35:51.429549+00:00",
+    "cost_usd": 0.0,
+    "runtime_seconds": 93.656,
+    "error": null,
+    "warning": "This is just an estimate; the actual runtime may be less or more.",
+    "binding_cost_cap": false
+  },
+  "error": null,
+  "pauli": "IIIIIIZIIIIIIIIIIIIIIIIIIIIIII",
+  "remote_receipt": {
+    "action": {
+      "circuit_id": "Duke_S3_23",
+      "device": "cpu",
+      "options": {},
+      "pauli": "IIIIIIZIIIIIIIIIIIIIIIIIIIIIII"
+    },
+    "status": "COMPLETED",
+    "requested_at": "2026-10-24T16:35:51.431556+00:00",
+    "quote": {
+      "circuit_id": "Duke_S3_23",
+      "device": "cpu",
+      "options": {},
+      "quoted_at": "2026-10-24T16:35:51.429549+00:00",
+      "cost_usd": 0.0,
+      "runtime_seconds": 93.656,
+      "error": null,
+      "warning": "This is just an estimate; the actual runtime may be less or more.",
+      "binding_cost_cap": false
+    },
+    "scheduler_justification": "",
+    "job_id": "onX4aUfH3IFddv9b",
+    "estimate": -0.4194764648534235,
+    "cost_usd": 0.0,
+    "compute_ms": 51241,
+    "queue_ms": 187,
+    "updated_at": "2026-10-24T16:36:45.950714+00:00"
+  },
+  "run_id": "remote-2709e34fc4ca1e6f63a709dd4bbda44ab01434fb4354121f682af8a6fb1eaeec"
+}

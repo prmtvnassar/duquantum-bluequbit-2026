@@ -1,0 +1,175 @@
+[
+  {
+    "path": "scripts/export_submission.py",
+    "git_blob": "311cd2d71bdb71cdd3b63a33592ba6ae83a386b9",
+    "unchanged_from_HEAD": true,
+    "recovery_commit": "67d82f857ab63f4adabef22df02bff4cd622858c",
+    "reason": "Superseded pre-release schema, placeholder or stale preparation note; its only code consumers are the old exporters and associated tests"
+  },
+  {
+    "path": "scripts/checkpoint_submission.py",
+    "git_blob": "cf707743523b2c83a5bf47aeab3b23eb07aab58e",
+    "unchanged_from_HEAD": true,
+    "recovery_commit": "67d82f857ab63f4adabef22df02bff4cd622858c",
+    "reason": "Superseded pre-release schema, placeholder or stale preparation note; its only code consumers are the old exporters and associated tests"
+  },
+  {
+    "path": "scripts/run_csv.py",
+    "git_blob": "a0d816c77237bafb74ab3faf6bd1a38e160c5533",
+    "unchanged_from_HEAD": true,
+    "recovery_commit": "67d82f857ab63f4adabef22df02bff4cd622858c",
+    "reason": "Superseded pre-release schema, placeholder or stale preparation note; its only code consumers are the old exporters and associated tests"
+  },
+  {
+    "path": "src/otoc/submission.py",
+    "git_blob": "956cccc597850cbf80c23c7469594f2a7e1f1887",
+    "unchanged_from_HEAD": true,
+    "recovery_commit": "67d82f857ab63f4adabef22df02bff4cd622858c",
+    "reason": "Superseded pre-release schema, placeholder or stale preparation note; its only code consumers are the old exporters and associated tests"
+  },
+  {
+    "path": "src/otoc/run_csv.py",
+    "git_blob": "2d63d7e0f00edf61e652a717d88f4dd0ba438c07",
+    "unchanged_from_HEAD": true,
+    "recovery_commit": "67d82f857ab63f4adabef22df02bff4cd622858c",
+    "reason": "Superseded pre-release schema, placeholder or stale preparation note; its only code consumers are the old exporters and associated tests"
+  },
+  {
+    "path": "tests/test_submission.py",
+    "git_blob": "face41504709697f42da8450e763f80d01b5429d",
+    "unchanged_from_HEAD": true,
+    "recovery_commit": "67d82f857ab63f4adabef22df02bff4cd622858c",
+    "reason": "Superseded pre-release schema, placeholder or stale preparation note; its only code consumers are the old exporters and associated tests"
+  },
+  {
+    "path": "tests/test_run_csv.py",
+    "git_blob": "4fcb33ead910010c1c1a69b4192eb01c4a4b39dd",
+    "unchanged_from_HEAD": true,
+    "recovery_commit": "67d82f857ab63f4adabef22df02bff4cd622858c",
+    "reason": "Superseded pre-release schema, placeholder or stale preparation note; its only code consumers are the old exporters and associated tests"
+  },
+  {
+    "path": "docs/PREP_TASKS.md",
+    "git_blob": "365e9cb0307cb809eefc668c23112aefbbab981f",
+    "unchanged_from_HEAD": true,
+    "recovery_commit": "67d82f857ab63f4adabef22df02bff4cd622858c",
+    "reason": "Superseded pre-release schema, placeholder or stale preparation note; its only code consumers are the old exporters and associated tests"
+  },
+  {
+    "path": "tasks.md",
+    "git_blob": "dcbd146bb2865dd60562600fdafac946056d5a4b",
+    "unchanged_from_HEAD": true,
+    "recovery_commit": "67d82f857ab63f4adabef22df02bff4cd622858c",
+    "reason": "Superseded pre-release schema, placeholder or stale preparation note; its only code consumers are the old exporters and associated tests"
+  },
+  {
+    "path": "kit/.gitkeep",
+    "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "unchanged_from_HEAD": true,
+    "recovery_commit": "67d82f857ab63f4adabef22df02bff4cd622858c",
+    "reason": "Superseded pre-release schema, placeholder or stale preparation note; its only code consumers are the old exporters and associated tests"
+  },
+  {
+    "path": "submissions/.gitkeep",
+    "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "unchanged_from_HEAD": true,
+    "recovery_commit": "67d82f857ab63f4adabef22df02bff4cd622858c",
+    "reason": "Superseded pre-release schema, placeholder or stale preparation note; its only code consumers are the old exporters and associated tests"
+  },
+  {
+    "path": "duke-otoc-problem-1-sample-qasms.zip",
+    "git_blob": "fbee70af6ff7a459f39a2b93da95d5994a01fb4a",
+    "unchanged_from_HEAD": true,
+    "recovery_commit": "67d82f857ab63f4adabef22df02bff4cd622858c",
+    "reason": "Byte-identical duplicate of retained problem archive",
+    "retained_copy": "problems\\01_sample_S1\\duke-otoc-problem-1-sample-qasms.zip",
+    "identical": true
+  },
+  {
+    "path": "duke-otoc-problem-2-sample-qasms.zip",
+    "git_blob": "acce9e9ca3ca924560ff24ea12b3c93c745f752c",
+    "unchanged_from_HEAD": true,
+    "recovery_commit": "67d82f857ab63f4adabef22df02bff4cd622858c",
+    "reason": "Byte-identical duplicate of retained problem archive",
+    "retained_copy": "problems\\02_sample_S2\\duke-otoc-problem-2-sample-qasms.zip",
+    "identical": true
+  },
+  {
+    "path": "duke-otoc-problem-3-sample-qasms.zip",
+    "git_blob": "3293a2cc7bcec11d27631e59e14660ec7c35ee38",
+    "unchanged_from_HEAD": true,
+    "recovery_commit": "67d82f857ab63f4adabef22df02bff4cd622858c",
+    "reason": "Byte-identical duplicate of retained problem archive",
+    "retained_copy": "problems\\03_sample_S3\\duke-otoc-problem-3-sample-qasms.zip",
+    "identical": true
+  },
+  {
+    "path": "runs/csv/README.md",
+    "git_blob": "945561236d99f27c284d091b9df9254f7dc10a19",
+    "unchanged_from_HEAD": true,
+    "recovery_commit": "67d82f857ab63f4adabef22df02bff4cd622858c",
+    "reason": "Superseded pre-release schema, placeholder or stale preparation note; its only code consumers are the old exporters and associated tests"
+  },
+  {
+    "path": "runs/csv/estimates.example.csv",
+    "git_blob": "a90b24352cb82d6741ff362bef1eecd0e8eb08c5",
+    "unchanged_from_HEAD": true,
+    "recovery_commit": "67d82f857ab63f4adabef22df02bff4cd622858c",
+    "reason": "Superseded pre-release schema, placeholder or stale preparation note; its only code consumers are the old exporters and associated tests"
+  },
+  {
+    "path": "runs/csv/jobs.example.csv",
+    "git_blob": "e9432a5c91748c5fcaed2be60010b8a47d2a5d0f",
+    "unchanged_from_HEAD": true,
+    "recovery_commit": "67d82f857ab63f4adabef22df02bff4cd622858c",
+    "reason": "Superseded pre-release schema, placeholder or stale preparation note; its only code consumers are the old exporters and associated tests"
+  },
+  {
+    "path": "runs/hidden_1.xlsx",
+    "git_blob": "661af6c53c25abd71c5764de5cc8fdacade80b8e",
+    "unchanged_from_HEAD": true,
+    "recovery_commit": "67d82f857ab63f4adabef22df02bff4cd622858c",
+    "reason": "Blank pre-release Estimates/Jobs tables",
+    "data_cells_after_headers": []
+  },
+  {
+    "path": "runs/hidden_2.xlsx",
+    "git_blob": "e04f5f7664e32865b66af0b338652db6293535cb",
+    "unchanged_from_HEAD": true,
+    "recovery_commit": "67d82f857ab63f4adabef22df02bff4cd622858c",
+    "reason": "Blank pre-release Estimates/Jobs tables",
+    "data_cells_after_headers": []
+  },
+  {
+    "path": "runs/hidden_3.xlsx",
+    "git_blob": "ba0ddecdbbf5da2b0bfc328be8f38fee1aaf0a34",
+    "unchanged_from_HEAD": true,
+    "recovery_commit": "67d82f857ab63f4adabef22df02bff4cd622858c",
+    "reason": "Blank pre-release Estimates/Jobs tables",
+    "data_cells_after_headers": []
+  },
+  {
+    "path": "runs/hidden_4.xlsx",
+    "git_blob": "56f938b31f5b4db6a271b79545cd669e47e42884",
+    "unchanged_from_HEAD": true,
+    "recovery_commit": "67d82f857ab63f4adabef22df02bff4cd622858c",
+    "reason": "Blank pre-release Estimates/Jobs tables",
+    "data_cells_after_headers": []
+  },
+  {
+    "path": "runs/sample_1.xlsx",
+    "git_blob": "587cd28c29844692c44f4084d93b50fa62a76e01",
+    "unchanged_from_HEAD": true,
+    "recovery_commit": "67d82f857ab63f4adabef22df02bff4cd622858c",
+    "reason": "Blank pre-release Estimates/Jobs tables",
+    "data_cells_after_headers": []
+  },
+  {
+    "path": "runs/sample_2.xlsx",
+    "git_blob": "ea71ccac6f339495d421bcf1ece2181dcd99d49a",
+    "unchanged_from_HEAD": true,
+    "recovery_commit": "67d82f857ab63f4adabef22df02bff4cd622858c",
+    "reason": "Blank pre-release Estimates/Jobs tables",
+    "data_cells_after_headers": []
+  }
+]

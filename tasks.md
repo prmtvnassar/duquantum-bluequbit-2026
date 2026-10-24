@@ -1,1 +1,0 @@
-- Research and incorporate the trend (of both MPS and PPS) based algorithm that will be used to extrapolate an actual estimate because both MPS and PPS **underestimate** anyway, so converging based on their differences is misleading. It would make 

@@ -1,0 +1,8 @@
+{
+  "event_id": "c0d2773df9214e0fa1fc65e054b25646",
+  "recorded_at": "2026-10-24T16:47:55.961501+00:00",
+  "kind": "run_state",
+  "run_id": "kevin-rejected-3409f5de6c918987b0e2",
+  "status": "FAILED",
+  "previous_status": null
+}

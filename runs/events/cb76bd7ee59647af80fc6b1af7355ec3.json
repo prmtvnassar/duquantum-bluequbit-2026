@@ -1,0 +1,8 @@
+{
+  "event_id": "cb76bd7ee59647af80fc6b1af7355ec3",
+  "recorded_at": "2026-10-24T16:27:20.836155+00:00",
+  "kind": "run_state",
+  "run_id": "local-76e440121295b898-98d8ba936308",
+  "status": "SUCCEEDED",
+  "previous_status": "RUNNING"
+}

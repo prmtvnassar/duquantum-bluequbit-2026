@@ -1,0 +1,13 @@
+{
+  "observed_at": "2026-10-24T16:51:55.064017+00:00",
+  "source": "BlueQubit job API",
+  "job_count": 30,
+  "known_cost_usd": 0.0,
+  "active_jobs": 0,
+  "gpu_time_known": true,
+  "gpu_seconds": 0.0,
+  "gpu_seconds_last_hour": 0.0,
+  "unknown_terminal_costs": 0,
+  "initial_user_reported_balance_usd": 30.0,
+  "visible_balance_refresh": "Not refreshed; latest accounting is from current API job receipts"
+}

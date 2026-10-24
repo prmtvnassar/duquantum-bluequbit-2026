@@ -1,0 +1,52 @@
+{
+  "circuit_id": "Duke_S2_5",
+  "problem": "S2",
+  "qubit": 5,
+  "origin": "local",
+  "method": "exact",
+  "backend": "qiskit_aer.statevector.cpu",
+  "parameters": {
+    "precision": "double",
+    "shots": null,
+    "result_zero_threshold": 0.0
+  },
+  "status": "SUCCEEDED",
+  "estimate": 0.04745186216197257,
+  "cost_usd": 0.0,
+  "wall_seconds": 4.437126999999236,
+  "finished_at": "2026-10-24T15:57:58.463358+00:00",
+  "input_sha256": "28eb68a4a5f80a62f1cd95ff4cf39228bf8399634c3a1601d99019fd0a4d55c4",
+  "source_sha256": "480ca0188fdfe459c874c3658a4fe658af55924f027319253b926aff994a3c0a",
+  "error": null,
+  "reason": "Sample calibration from public QASM",
+  "raw_record": "results/calibration/references/attempts/aa8a0538d4da7b69-05b670143f2c/record.json",
+  "diagnostics": {
+    "statevector_bytes": 1048576,
+    "estimated_memory_bytes": 204472320,
+    "reference_status": "EXACT_COMPUTED",
+    "shots_used": false,
+    "observable": "IIIIIIIIIIZIIIII",
+    "device": "CPU",
+    "worker_peak_rss": 162201600,
+    "memory_limit_bytes": 629145600,
+    "profile": "local",
+    "attempt_directory": "results\\calibration\\references\\attempts\\aa8a0538d4da7b69-05b670143f2c",
+    "source_sha256": "480ca0188fdfe459c874c3658a4fe658af55924f027319253b926aff994a3c0a",
+    "recorded_at_utc": "2026-10-24T15:57:58.463358+00:00"
+  },
+  "package_versions": {
+    "python": "3.12.14",
+    "qiskit": "2.6.1",
+    "qiskit-aer": "0.18.0",
+    "quimb": "1.15.0",
+    "qiskit-addon-obp": "0.3.0",
+    "qiskit-addon-utils": "0.4.0",
+    "numpy": "2.3.5",
+    "scipy": "1.18.1",
+    "pandas": "2.3.3",
+    "matplotlib": "3.11.2",
+    "psutil": "7.2.2"
+  },
+  "started_at": "2026-10-24T15:57:54.014925+00:00",
+  "run_id": "local-aa8a0538d4da7b69-05b670143f2c"
+}

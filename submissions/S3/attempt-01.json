@@ -1,0 +1,225 @@
+{
+  "problem": "S3",
+  "attempt": 1,
+  "csv_path": "submissions/S3/attempt-01.csv",
+  "sha256": "92d1cae4a7ebf436a367aee1f7403d72c7fcda06a0020011d59dba402a9950a2",
+  "method_note": "Local coefficient-cutoff Pauli propagation for each of the 30 public S3 QASMs. Qiskit optimization level 1 (u3/CZ basis); propagated target Z backward, merged identical strings, and removed coefficients below 0.01 after each gate. Summed I/Z-only terms on |0...0>. All runs completed within 100,000 terms. Validated the untruncated engine against independent small-circuit statevectors. No fitting or fusion. Independent implementation, not BlueQubit's PPS kernel. BlueQubit cost: $0.",
+  "displayed_score": 100.0,
+  "points": 100,
+  "observed_at": "2026-10-24T16:13:30.525961+00:00",
+  "source": "https://app.bluequbit.io/hackathons/2GMaAenu3iSsIC6Z?tab=submissions",
+  "precision_note": "UI display may round the official score; this is not a pointwise error bound",
+  "method_note_path": "submissions/S3/attempt-01.txt",
+  "row_provenance": [
+    {
+      "circuit_id": "Duke_S3_0",
+      "value": 0.14853362176710244,
+      "supporting_run_ids": [
+        "local-e924d05a12d6d059-1c54d79f55c7"
+      ]
+    },
+    {
+      "circuit_id": "Duke_S3_1",
+      "value": -0.5388738689738665,
+      "supporting_run_ids": [
+        "local-ae2c707e615868dd-c79c4c6e864b"
+      ]
+    },
+    {
+      "circuit_id": "Duke_S3_2",
+      "value": 0.2074959989526936,
+      "supporting_run_ids": [
+        "local-f8bfb290338172cc-95f281315519"
+      ]
+    },
+    {
+      "circuit_id": "Duke_S3_3",
+      "value": -0.21249339506804987,
+      "supporting_run_ids": [
+        "local-f492ba734478ba8e-7691b9faae59"
+      ]
+    },
+    {
+      "circuit_id": "Duke_S3_4",
+      "value": 0.0910071980642641,
+      "supporting_run_ids": [
+        "local-b2c26c9ca557321a-d50eda5228bb"
+      ]
+    },
+    {
+      "circuit_id": "Duke_S3_5",
+      "value": -0.1384254445886748,
+      "supporting_run_ids": [
+        "local-1c4685f43ebda668-0d83e7e26bbe"
+      ]
+    },
+    {
+      "circuit_id": "Duke_S3_6",
+      "value": -0.1501134490197187,
+      "supporting_run_ids": [
+        "local-f927175ad653ede8-8751a5c6fc4b"
+      ]
+    },
+    {
+      "circuit_id": "Duke_S3_7",
+      "value": -0.5801963047274771,
+      "supporting_run_ids": [
+        "local-e15354c2d89c8f00-2f083efa9f38"
+      ]
+    },
+    {
+      "circuit_id": "Duke_S3_8",
+      "value": 0.28613572252408276,
+      "supporting_run_ids": [
+        "local-137b07b942e59023-599ffbf6a02e"
+      ]
+    },
+    {
+      "circuit_id": "Duke_S3_9",
+      "value": 0.44368012940358775,
+      "supporting_run_ids": [
+        "local-b232d6ce73ece78d-67e385e1449d"
+      ]
+    },
+    {
+      "circuit_id": "Duke_S3_10",
+      "value": -0.10981769017823335,
+      "supporting_run_ids": [
+        "local-82eaf96204a1205b-1dda3236ca44"
+      ]
+    },
+    {
+      "circuit_id": "Duke_S3_11",
+      "value": -0.30194785796486434,
+      "supporting_run_ids": [
+        "local-a58d25e9dabce2a1-6bb34120d7bc"
+      ]
+    },
+    {
+      "circuit_id": "Duke_S3_12",
+      "value": -0.6488408561104724,
+      "supporting_run_ids": [
+        "local-9378a3a6a1927aa1-12ce0fc02ccc"
+      ]
+    },
+    {
+      "circuit_id": "Duke_S3_13",
+      "value": -0.027418704370928196,
+      "supporting_run_ids": [
+        "local-908589944dd3284c-15f3317eaf63"
+      ]
+    },
+    {
+      "circuit_id": "Duke_S3_14",
+      "value": 0.0,
+      "supporting_run_ids": [
+        "local-837db316f2edcde9-aa2f5fa296d9"
+      ]
+    },
+    {
+      "circuit_id": "Duke_S3_15",
+      "value": 0.05531218950936196,
+      "supporting_run_ids": [
+        "local-93611a1644050db2-d02307ed0290"
+      ]
+    },
+    {
+      "circuit_id": "Duke_S3_16",
+      "value": -0.6790123238912483,
+      "supporting_run_ids": [
+        "local-a907fb465e7dabc7-9c19fc9b80f8"
+      ]
+    },
+    {
+      "circuit_id": "Duke_S3_17",
+      "value": -0.8083574468927468,
+      "supporting_run_ids": [
+        "local-aa5f0e379c7dbfdb-3b8ae82bb272"
+      ]
+    },
+    {
+      "circuit_id": "Duke_S3_18",
+      "value": 0.0,
+      "supporting_run_ids": [
+        "local-559813749f7b9889-c106d8d3fa38"
+      ]
+    },
+    {
+      "circuit_id": "Duke_S3_19",
+      "value": 0.06084299986287232,
+      "supporting_run_ids": [
+        "local-51ada51f8c067bad-d01324fd9cb3"
+      ]
+    },
+    {
+      "circuit_id": "Duke_S3_20",
+      "value": 0.014087593975563344,
+      "supporting_run_ids": [
+        "local-6230399fe9768f37-198811f5321c"
+      ]
+    },
+    {
+      "circuit_id": "Duke_S3_21",
+      "value": 0.030205811667953757,
+      "supporting_run_ids": [
+        "local-dfa1f3c058391c53-99315e5a0d6b"
+      ]
+    },
+    {
+      "circuit_id": "Duke_S3_22",
+      "value": -0.6788104534993384,
+      "supporting_run_ids": [
+        "local-e8aba751529af347-9b018ec10dfa"
+      ]
+    },
+    {
+      "circuit_id": "Duke_S3_23",
+      "value": -0.4183887301793147,
+      "supporting_run_ids": [
+        "local-3db773d451903bfe-d94a23414b81"
+      ]
+    },
+    {
+      "circuit_id": "Duke_S3_24",
+      "value": 0.065624397324183,
+      "supporting_run_ids": [
+        "local-a379c7d7e88b6022-7ac97721196c"
+      ]
+    },
+    {
+      "circuit_id": "Duke_S3_25",
+      "value": 0.3580028310551687,
+      "supporting_run_ids": [
+        "local-b32ae83c7c11e009-b86b6005c08d"
+      ]
+    },
+    {
+      "circuit_id": "Duke_S3_26",
+      "value": -0.16914394308103087,
+      "supporting_run_ids": [
+        "local-24ed29eeffd92ffb-665ab947ba59"
+      ]
+    },
+    {
+      "circuit_id": "Duke_S3_27",
+      "value": 0.9590011077457086,
+      "supporting_run_ids": [
+        "local-cc85f3fb2aaea460-2aa78e20f9c8"
+      ]
+    },
+    {
+      "circuit_id": "Duke_S3_28",
+      "value": 1.0,
+      "supporting_run_ids": [
+        "local-20cc94ca3349b92b-bfe622b1bd51"
+      ]
+    },
+    {
+      "circuit_id": "Duke_S3_29",
+      "value": 0.16551017240703392,
+      "supporting_run_ids": [
+        "local-5fb2a84c927b2644-4a0a70992e49"
+      ]
+    }
+  ]
+}

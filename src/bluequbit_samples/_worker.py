@@ -12,12 +12,14 @@ def main():
     request = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
     sample = SampleCircuit(**request["sample"])
     config = RunConfig(**request["config"])
-    from .engines import run_exact, run_mps, run_pps
+    from .engines import run_exact, run_mps, run_pps, run_coefficient_pps
     method, parameters = request["method"], request["parameters"]
     if method == "exact":
         result = run_exact(sample, config)
     elif method == "mps":
         result = run_mps(sample, parameters.get("chi", 32), config)
+    elif method == "pps_threshold":
+        result = run_coefficient_pps(sample, parameters.get("epsilon", 1e-2), parameters.get("level", 1), config)
     else:
         result = run_pps(sample, parameters.get("eta", 1e-3), config)
     import psutil

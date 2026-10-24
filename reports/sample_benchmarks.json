@@ -1,0 +1,1018 @@
+{
+  "updated_at": "2026-10-24T16:53:10.690530+00:00",
+  "benchmarks": [
+    {
+      "problem": "S1",
+      "method": "exact",
+      "parameters": {
+        "precision": "double",
+        "result_zero_threshold": 0.0,
+        "shots": null
+      },
+      "completed": 4,
+      "required": 4,
+      "complete": true,
+      "wall_seconds": 20.364796900003057,
+      "cost_usd": 0.0,
+      "local_score": 99.99999999999997,
+      "mae": 0.0,
+      "max_absolute_error": 0.0,
+      "csv_path": "D:\\BluQubit\\results\\workflow\\submissions\\S1\\exact-87b49ed5412d.csv",
+      "sha256": "482778c0611ee0c9f4f0d11e63b9ff6d636da99be9e8cc91f124bab0471bc320",
+      "submission_eligible": true
+    },
+    {
+      "problem": "S1",
+      "method": "mps",
+      "parameters": {
+        "chi": 1,
+        "svd_cutoff": 0.0
+      },
+      "completed": 4,
+      "required": 4,
+      "complete": true,
+      "wall_seconds": 28.9190923999995,
+      "cost_usd": 0.0,
+      "local_score": 0.0,
+      "mae": 0.47833244826764815,
+      "max_absolute_error": 0.8103473384795632,
+      "csv_path": "D:\\BluQubit\\results\\workflow\\submissions\\S1\\mps-7cd69c8a3efc.csv",
+      "sha256": "4fdf57d06459286285b270c0d268e3c94c42535864b6b819d622b3d797d244e2",
+      "submission_eligible": true
+    },
+    {
+      "problem": "S1",
+      "method": "mps",
+      "parameters": {
+        "chi": 16,
+        "svd_cutoff": 0.0
+      },
+      "completed": 4,
+      "required": 4,
+      "complete": true,
+      "wall_seconds": 15.277807699998448,
+      "cost_usd": 0.0,
+      "local_score": 99.99999999999996,
+      "mae": 1.5508427875232655e-15,
+      "max_absolute_error": 2.6645352591003757e-15,
+      "csv_path": "D:\\BluQubit\\results\\workflow\\submissions\\S1\\mps-0b80d44bd3b9.csv",
+      "sha256": "85b1cedde9f75e15a712b035060d01c6626d966aaef3fd88f5c6bc46c6e868be",
+      "submission_eligible": true
+    },
+    {
+      "problem": "S1",
+      "method": "mps",
+      "parameters": {
+        "chi": 2,
+        "svd_cutoff": 0.0
+      },
+      "completed": 4,
+      "required": 4,
+      "complete": true,
+      "wall_seconds": 10.502881399996113,
+      "cost_usd": 0.0,
+      "local_score": 70.22360168039101,
+      "mae": 0.321104461182136,
+      "max_absolute_error": 0.6321087298251322,
+      "csv_path": "D:\\BluQubit\\results\\workflow\\submissions\\S1\\mps-6bd2ef24884a.csv",
+      "sha256": "4a24522d7b9fcfdc9c81b6c7d940871752fc106b32acea67924b887e19f41ea5",
+      "submission_eligible": true
+    },
+    {
+      "problem": "S1",
+      "method": "mps",
+      "parameters": {
+        "chi": 4,
+        "svd_cutoff": 0.0
+      },
+      "completed": 4,
+      "required": 4,
+      "complete": true,
+      "wall_seconds": 10.483640899999955,
+      "cost_usd": 0.0,
+      "local_score": 99.99999999999996,
+      "mae": 1.5785983631388945e-15,
+      "max_absolute_error": 2.6645352591003757e-15,
+      "csv_path": "D:\\BluQubit\\results\\workflow\\submissions\\S1\\mps-0c5b3e492f14.csv",
+      "sha256": "b7684de1a7e4d14d9f4ae97bf8a3d82f9a3c98c2dee5559ac45fbae076b391cd",
+      "submission_eligible": true
+    },
+    {
+      "problem": "S1",
+      "method": "mps",
+      "parameters": {
+        "chi": 8,
+        "svd_cutoff": 0.0
+      },
+      "completed": 4,
+      "required": 4,
+      "complete": true,
+      "wall_seconds": 10.447471100000257,
+      "cost_usd": 0.0,
+      "local_score": 99.99999999999996,
+      "mae": 1.5785983631388945e-15,
+      "max_absolute_error": 2.6645352591003757e-15,
+      "csv_path": "D:\\BluQubit\\results\\workflow\\submissions\\S1\\mps-b80ba7928c3d.csv",
+      "sha256": "b7684de1a7e4d14d9f4ae97bf8a3d82f9a3c98c2dee5559ac45fbae076b391cd",
+      "submission_eligible": true
+    },
+    {
+      "problem": "S1",
+      "method": "pps_threshold",
+      "parameters": {
+        "epsilon": 0.0001,
+        "level": 1
+      },
+      "completed": 4,
+      "required": 4,
+      "complete": true,
+      "wall_seconds": 11.059043799999927,
+      "cost_usd": 0.0,
+      "local_score": 99.99999539514367,
+      "mae": 5.369034962780794e-05,
+      "max_absolute_error": 9.088581288117792e-05,
+      "csv_path": "D:\\BluQubit\\results\\workflow\\submissions\\S1\\pps_threshold-591154d33d01.csv",
+      "sha256": "adf7f947007ca852aa04b81e6b23bacb2ebc65d7beab016ca3a6f4e1c75a667f",
+      "submission_eligible": true
+    },
+    {
+      "problem": "S1",
+      "method": "pps_threshold",
+      "parameters": {
+        "epsilon": 0.0003,
+        "level": 1
+      },
+      "completed": 4,
+      "required": 4,
+      "complete": true,
+      "wall_seconds": 10.92082660000051,
+      "cost_usd": 0.0,
+      "local_score": 99.99883020472153,
+      "mae": 0.0005956664414689845,
+      "max_absolute_error": 0.001803778784460558,
+      "csv_path": "D:\\BluQubit\\results\\workflow\\submissions\\S1\\pps_threshold-4dbe36e99644.csv",
+      "sha256": "02bdd924ab2fcb3b4a1e663df116db131e885ed668175f9ed04c3d6e43980f52",
+      "submission_eligible": true
+    },
+    {
+      "problem": "S1",
+      "method": "pps_threshold",
+      "parameters": {
+        "epsilon": 0.001,
+        "level": 1
+      },
+      "completed": 4,
+      "required": 4,
+      "complete": true,
+      "wall_seconds": 10.583995499999219,
+      "cost_usd": 0.0,
+      "local_score": 99.994154553409,
+      "mae": 0.0019546426287189757,
+      "max_absolute_error": 0.0033526993538157412,
+      "csv_path": "D:\\BluQubit\\results\\workflow\\submissions\\S1\\pps_threshold-137cf87c3afb.csv",
+      "sha256": "5961f71df21d9378bd5f59097baa5792860a78f9e9b2715118429024c8fc3e65",
+      "submission_eligible": true
+    },
+    {
+      "problem": "S1",
+      "method": "pps_threshold",
+      "parameters": {
+        "epsilon": 0.003,
+        "level": 1
+      },
+      "completed": 4,
+      "required": 4,
+      "complete": true,
+      "wall_seconds": 10.812591500001872,
+      "cost_usd": 0.0,
+      "local_score": 99.93075211223362,
+      "mae": 0.01029433955676039,
+      "max_absolute_error": 0.0179842998257692,
+      "csv_path": "D:\\BluQubit\\results\\workflow\\submissions\\S1\\pps_threshold-53dbcbe50b06.csv",
+      "sha256": "999e29b25e894d9e6f9f407740521f1087bb620aa3f27295ed5b7463f48763a8",
+      "submission_eligible": true
+    },
+    {
+      "problem": "S1",
+      "method": "pps_threshold",
+      "parameters": {
+        "epsilon": 0.01,
+        "level": 1
+      },
+      "completed": 4,
+      "required": 4,
+      "complete": true,
+      "wall_seconds": 10.773420100000294,
+      "cost_usd": 0.0,
+      "local_score": 99.67522827109975,
+      "mae": 0.03431146792263622,
+      "max_absolute_error": 0.0737480037639323,
+      "csv_path": "D:\\BluQubit\\results\\workflow\\submissions\\S1\\pps_threshold-7a2c665750d1.csv",
+      "sha256": "2703b09451fe5ea0c7036c24e6cfc0bfd531c82ad0de41d35d6aaa268684bc6d",
+      "submission_eligible": true
+    },
+    {
+      "problem": "S1",
+      "method": "pps_threshold",
+      "parameters": {
+        "epsilon": 1e-05,
+        "level": 1
+      },
+      "completed": 4,
+      "required": 4,
+      "complete": true,
+      "wall_seconds": 13.59019740000258,
+      "cost_usd": 0.0,
+      "local_score": 99.99999999423801,
+      "mae": 1.3525001226546984e-06,
+      "max_absolute_error": 2.926945738987441e-06,
+      "csv_path": "D:\\BluQubit\\results\\workflow\\submissions\\S1\\pps_threshold-2f586ed9161a.csv",
+      "sha256": "88e30b26bd316212bcbd58b6b1f6b8105a3214599747bfda00af2a3e47d92f1f",
+      "submission_eligible": true
+    },
+    {
+      "problem": "S1",
+      "method": "pps_threshold",
+      "parameters": {
+        "epsilon": 3e-05,
+        "level": 1
+      },
+      "completed": 4,
+      "required": 4,
+      "complete": true,
+      "wall_seconds": 13.055617800000618,
+      "cost_usd": 0.0,
+      "local_score": 99.99999973258353,
+      "mae": 1.398442797233626e-05,
+      "max_absolute_error": 2.5700741753897915e-05,
+      "csv_path": "D:\\BluQubit\\results\\workflow\\submissions\\S1\\pps_threshold-75a6cc52bc7a.csv",
+      "sha256": "196ace4ccba231f6f25f63320cd60af001b73f9e2e301a99ea0f5302fa9d689e",
+      "submission_eligible": true
+    },
+    {
+      "problem": "S2",
+      "method": "exact",
+      "parameters": {
+        "precision": "double",
+        "result_zero_threshold": 0.0,
+        "shots": null
+      },
+      "completed": 16,
+      "required": 16,
+      "complete": true,
+      "wall_seconds": 52.30975259999832,
+      "cost_usd": 0.0,
+      "local_score": 100.0,
+      "mae": 0.0,
+      "max_absolute_error": 0.0,
+      "csv_path": "D:\\BluQubit\\results\\workflow\\submissions\\S2\\exact-da6980660286.csv",
+      "sha256": "dcb2666e0b37da0b1240edcd35a34398c6b3baa9c0e087875baf1a43d77ce82b",
+      "submission_eligible": true
+    },
+    {
+      "problem": "S2",
+      "method": "mps",
+      "parameters": {
+        "chi": 128,
+        "svd_cutoff": 0.0
+      },
+      "completed": 16,
+      "required": 16,
+      "complete": true,
+      "wall_seconds": 186.85604539999986,
+      "cost_usd": 0.0,
+      "local_score": 99.99933879722508,
+      "mae": 0.0007196096272730575,
+      "max_absolute_error": 0.0032933228815027887,
+      "csv_path": "D:\\BluQubit\\results\\workflow\\submissions\\S2\\mps-f3f21cff49df.csv",
+      "sha256": "d6d38e231cfbb8494147cc6dfcc1e6ce94d147f623f85f4149a35b69a071e51f",
+      "submission_eligible": true
+    },
+    {
+      "problem": "S2",
+      "method": "mps",
+      "parameters": {
+        "chi": 16,
+        "svd_cutoff": 0.0
+      },
+      "completed": 16,
+      "required": 16,
+      "complete": true,
+      "wall_seconds": 53.549500300001455,
+      "cost_usd": 0.0,
+      "local_score": 84.41172861664892,
+      "mae": 0.12056386955905728,
+      "max_absolute_error": 0.5416676247572424,
+      "csv_path": "D:\\BluQubit\\results\\workflow\\submissions\\S2\\mps-510c231bec25.csv",
+      "sha256": "5c920f3e5f7f33623425d4c211f8c03ce7d4b63a5fd740a200cb970f7b5ae535",
+      "submission_eligible": true
+    },
+    {
+      "problem": "S2",
+      "method": "mps",
+      "parameters": {
+        "chi": 32,
+        "svd_cutoff": 0.0
+      },
+      "completed": 16,
+      "required": 16,
+      "complete": true,
+      "wall_seconds": 65.68887560000258,
+      "cost_usd": 0.0,
+      "local_score": 95.79620366023775,
+      "mae": 0.05456439362114347,
+      "max_absolute_error": 0.2807713195479647,
+      "csv_path": "D:\\BluQubit\\results\\workflow\\submissions\\S2\\mps-1f1a49182dc2.csv",
+      "sha256": "6ce18c050bbe4d9754185cbed56cf99e71d62f82d786d24213bf3b44155c42a2",
+      "submission_eligible": true
+    },
+    {
+      "problem": "S2",
+      "method": "mps",
+      "parameters": {
+        "chi": 64,
+        "svd_cutoff": 0.0
+      },
+      "completed": 16,
+      "required": 16,
+      "complete": true,
+      "wall_seconds": 93.08422180000525,
+      "cost_usd": 0.0,
+      "local_score": 99.86264179670987,
+      "mae": 0.010266643571873815,
+      "max_absolute_error": 0.04436420656689065,
+      "csv_path": "D:\\BluQubit\\results\\workflow\\submissions\\S2\\mps-ecc46b0cb307.csv",
+      "sha256": "e9724325fe7e4dda7564cdfeebb24173dd9c23f5ef303c38f97b1c2b360043df",
+      "submission_eligible": true
+    },
+    {
+      "problem": "S2",
+      "method": "mps",
+      "parameters": {
+        "chi": 8,
+        "svd_cutoff": 0.0
+      },
+      "completed": 16,
+      "required": 16,
+      "complete": true,
+      "wall_seconds": 66.9656533999987,
+      "cost_usd": 0.0,
+      "local_score": 81.43580556834961,
+      "mae": 0.15757380927181996,
+      "max_absolute_error": 0.44570255162467043,
+      "csv_path": "D:\\BluQubit\\results\\workflow\\submissions\\S2\\mps-ed44f9743a73.csv",
+      "sha256": "4825d99ecaf9b57e1895f66679229862c5ec7178256ee1e4dbca2c3f08b3b5fa",
+      "submission_eligible": true
+    },
+    {
+      "problem": "S2",
+      "method": "pps_threshold",
+      "parameters": {
+        "epsilon": 0.001,
+        "level": 1
+      },
+      "completed": 16,
+      "required": 16,
+      "complete": true,
+      "wall_seconds": 88.41954170000099,
+      "cost_usd": 0.0,
+      "local_score": 98.79050523336403,
+      "mae": 0.03929734136740566,
+      "max_absolute_error": 0.11127638074666837,
+      "csv_path": "D:\\BluQubit\\results\\workflow\\submissions\\S2\\pps_threshold-a519387af8dd.csv",
+      "sha256": "b09f4a8c5827596b598c9111a653b268a0cc0cd49c8afd0612793d660f5cd9a0",
+      "submission_eligible": true
+    },
+    {
+      "problem": "S2",
+      "method": "pps_threshold",
+      "parameters": {
+        "epsilon": 0.003,
+        "level": 1
+      },
+      "completed": 16,
+      "required": 16,
+      "complete": true,
+      "wall_seconds": 45.74927529999877,
+      "cost_usd": 0.0,
+      "local_score": 98.24729959673479,
+      "mae": 0.04427945411039771,
+      "max_absolute_error": 0.13670932682616133,
+      "csv_path": "D:\\BluQubit\\results\\workflow\\submissions\\S2\\pps_threshold-d4b24c1a9bc9.csv",
+      "sha256": "167bb2ec65bd1b5cfb603375a04d8090d3268068e04a0b2a2ebc6afdee14eacd",
+      "submission_eligible": true
+    },
+    {
+      "problem": "S2",
+      "method": "pps_threshold",
+      "parameters": {
+        "epsilon": 0.01,
+        "level": 1
+      },
+      "completed": 16,
+      "required": 16,
+      "complete": true,
+      "wall_seconds": 56.31514280000374,
+      "cost_usd": 0.0,
+      "local_score": 97.34571501402063,
+      "mae": 0.051785718329595234,
+      "max_absolute_error": 0.17521949116535995,
+      "csv_path": "D:\\BluQubit\\results\\workflow\\submissions\\S2\\pps_threshold-80682007194e.csv",
+      "sha256": "f5b83e1366aadda1ad8fe36e62f8a7b3c2e3b0293523306ede12355bc47919cd",
+      "submission_eligible": true
+    },
+    {
+      "problem": "S3",
+      "method": "exact",
+      "parameters": {
+        "precision": "cloud_cpu",
+        "shots": null
+      },
+      "completed": 30,
+      "required": 30,
+      "complete": true,
+      "wall_seconds": 1644.68,
+      "cost_usd": 0.0,
+      "local_score": 100.0,
+      "mae": 0.0,
+      "max_absolute_error": 0.0,
+      "csv_path": "D:\\BluQubit\\results\\workflow\\submissions\\S3\\exact-031418fb1829.csv",
+      "sha256": "7bc856992b05fae8c5c530e7807a85c05d09c515bbe5722fdf433acf5cf8aaee",
+      "submission_eligible": true
+    },
+    {
+      "problem": "S3",
+      "method": "mps",
+      "parameters": {
+        "chi": 16,
+        "svd_cutoff": 0.0
+      },
+      "completed": 13,
+      "required": 30,
+      "complete": false,
+      "wall_seconds": 85.94721250000111,
+      "cost_usd": 0.0,
+      "local_score": null,
+      "mae": null,
+      "max_absolute_error": null
+    },
+    {
+      "problem": "S3",
+      "method": "mps",
+      "parameters": {
+        "chi": 8,
+        "svd_cutoff": 0.0
+      },
+      "completed": 30,
+      "required": 30,
+      "complete": true,
+      "wall_seconds": 151.64076379999824,
+      "cost_usd": 0.0,
+      "local_score": 0.0,
+      "mae": 0.36186498591776706,
+      "max_absolute_error": 1.9999999999995426,
+      "csv_path": "D:\\BluQubit\\results\\workflow\\submissions\\S3\\mps-1ff9ee560b69.csv",
+      "sha256": "09ba9bfc809704fcff19866d09c1eaaa5e6884941033bdb80214cce80168fdcf",
+      "submission_eligible": true
+    },
+    {
+      "problem": "S3",
+      "method": "pps_threshold",
+      "parameters": {
+        "epsilon": 0.0001,
+        "level": 1
+      },
+      "completed": 17,
+      "required": 30,
+      "complete": false,
+      "wall_seconds": 50.8433272000002,
+      "cost_usd": 0.0,
+      "local_score": null,
+      "mae": null,
+      "max_absolute_error": null
+    },
+    {
+      "problem": "S3",
+      "method": "pps_threshold",
+      "parameters": {
+        "epsilon": 0.001,
+        "level": 1
+      },
+      "completed": 30,
+      "required": 30,
+      "complete": true,
+      "wall_seconds": 123.22932360000596,
+      "cost_usd": 0.0,
+      "local_score": 99.99875390001769,
+      "mae": 0.0006433521131298462,
+      "max_absolute_error": 0.006531271818768263,
+      "csv_path": "D:\\BluQubit\\results\\workflow\\submissions\\S3\\pps_threshold-fbf4fe102150.csv",
+      "sha256": "cbcba8594515acee5739c8f087ce471863b601cfe01e6a24b4f815c96a50af90",
+      "submission_eligible": true
+    },
+    {
+      "problem": "S3",
+      "method": "pps_threshold",
+      "parameters": {
+        "epsilon": 0.003,
+        "level": 1
+      },
+      "completed": 30,
+      "required": 30,
+      "complete": true,
+      "wall_seconds": 94.93349379999381,
+      "cost_usd": 0.0,
+      "local_score": 99.97112533971328,
+      "mae": 0.00349785531725024,
+      "max_absolute_error": 0.024332115591960496,
+      "csv_path": "D:\\BluQubit\\results\\workflow\\submissions\\S3\\pps_threshold-6cfab2bd64c9.csv",
+      "sha256": "ed80e4976ff511857a6069f6bac028ef9aac6d15df0ef0dc2f4d11a7329cf12b",
+      "submission_eligible": true
+    },
+    {
+      "problem": "S3",
+      "method": "pps_threshold",
+      "parameters": {
+        "epsilon": 0.01,
+        "level": 1
+      },
+      "completed": 30,
+      "required": 30,
+      "complete": true,
+      "wall_seconds": 109.94193489999634,
+      "cost_usd": 0.0,
+      "local_score": 99.79705723328912,
+      "mae": 0.011040425610085568,
+      "max_absolute_error": 0.06871443268690114,
+      "csv_path": "D:\\BluQubit\\results\\workflow\\submissions\\S3\\pps_threshold-fd5b4b41493e.csv",
+      "sha256": "92d1cae4a7ebf436a367aee1f7403d72c7fcda06a0020011d59dba402a9950a2",
+      "submission_eligible": true
+    }
+  ],
+  "diagnostics": {
+    "Duke_S1_0": {
+      "stop": true,
+      "quality": "HIGH",
+      "reason": "stable_both_methods_and_shape",
+      "uncertainty": 2.3986191815539293e-05,
+      "scaled_uncertainty": 0.00018974823869949875,
+      "cross_disagreement": 2.437344563954724e-06,
+      "mps_step": 0.0,
+      "pps_step": 2.3986191815539293e-05,
+      "effective_tolerance": 0.001,
+      "shape_change": 1.6260929269762414e-09,
+      "signal_resolved": true,
+      "interpretation": "Engineering diagnostic, not a confidence interval or accuracy guarantee"
+    },
+    "Duke_S1_1": {
+      "stop": true,
+      "quality": "HIGH",
+      "reason": "stable_both_methods_and_shape",
+      "uncertainty": 3.048316949333385e-05,
+      "scaled_uncertainty": 0.00024114406179271783,
+      "cross_disagreement": 2.7755575615628914e-15,
+      "mps_step": 0.0,
+      "pps_step": 3.048316949333385e-05,
+      "effective_tolerance": 0.001,
+      "shape_change": 1.6260929269762414e-09,
+      "signal_resolved": true,
+      "interpretation": "Engineering diagnostic, not a confidence interval or accuracy guarantee"
+    },
+    "Duke_S1_2": {
+      "stop": true,
+      "quality": "HIGH",
+      "reason": "stable_both_methods_and_shape",
+      "uncertainty": 5.340328240450998e-05,
+      "scaled_uncertainty": 0.0004224588402758869,
+      "cross_disagreement": 2.9269457385433517e-06,
+      "mps_step": 0.0,
+      "pps_step": 5.340328240450998e-05,
+      "effective_tolerance": 0.001,
+      "shape_change": 1.6260929269762414e-09,
+      "signal_resolved": true,
+      "interpretation": "Engineering diagnostic, not a confidence interval or accuracy guarantee"
+    },
+    "Duke_S1_3": {
+      "stop": true,
+      "quality": "HIGH",
+      "reason": "stable_both_methods_and_shape",
+      "uncertainty": 0.0001039984792251536,
+      "scaled_uncertainty": 0.0008227036793566818,
+      "cross_disagreement": 4.571018968890783e-08,
+      "mps_step": 1.1102230246251565e-16,
+      "pps_step": 0.0001039984792251536,
+      "effective_tolerance": 0.001,
+      "shape_change": 1.6260929269762414e-09,
+      "signal_resolved": true,
+      "interpretation": "Engineering diagnostic, not a confidence interval or accuracy guarantee"
+    },
+    "Duke_S2_0": {
+      "stop": false,
+      "quality": "UNSTABLE",
+      "reason": "refinement_or_independent_check_needed",
+      "uncertainty": 0.03079696946429954,
+      "scaled_uncertainty": 0.22993724936837565,
+      "cross_disagreement": 0.012890525540972263,
+      "mps_step": 0.0042439776068670665,
+      "pps_step": 0.03079696946429954,
+      "effective_tolerance": 0.001,
+      "shape_change": 0.00593105968210017,
+      "signal_resolved": true,
+      "interpretation": "Engineering diagnostic, not a confidence interval or accuracy guarantee"
+    },
+    "Duke_S2_1": {
+      "stop": false,
+      "quality": "UNSTABLE",
+      "reason": "refinement_or_independent_check_needed",
+      "uncertainty": 0.05647225125357623,
+      "scaled_uncertainty": 0.4216348018898313,
+      "cross_disagreement": 0.018570403449532494,
+      "mps_step": 0.007727265565799946,
+      "pps_step": 0.05647225125357623,
+      "effective_tolerance": 0.001,
+      "shape_change": 0.00593105968210017,
+      "signal_resolved": true,
+      "interpretation": "Engineering diagnostic, not a confidence interval or accuracy guarantee"
+    },
+    "Duke_S2_2": {
+      "stop": false,
+      "quality": "UNSTABLE",
+      "reason": "refinement_or_independent_check_needed",
+      "uncertainty": 0.010832684129125154,
+      "scaled_uncertainty": 0.08087930842724392,
+      "cross_disagreement": 0.010832684129125154,
+      "mps_step": 0.008026902560959781,
+      "pps_step": 0.0017097639804597824,
+      "effective_tolerance": 0.001,
+      "shape_change": 0.00593105968210017,
+      "signal_resolved": true,
+      "interpretation": "Engineering diagnostic, not a confidence interval or accuracy guarantee"
+    },
+    "Duke_S2_3": {
+      "stop": false,
+      "quality": "MEDIUM",
+      "reason": "refinement_or_independent_check_needed",
+      "uncertainty": 0.0487222884336495,
+      "scaled_uncertainty": 0.3637717989866766,
+      "cross_disagreement": 0.004852900034286782,
+      "mps_step": 0.005273015710146045,
+      "pps_step": 0.0487222884336495,
+      "effective_tolerance": 0.001,
+      "shape_change": 0.00593105968210017,
+      "signal_resolved": true,
+      "interpretation": "Engineering diagnostic, not a confidence interval or accuracy guarantee"
+    },
+    "Duke_S2_4": {
+      "stop": false,
+      "quality": "UNSTABLE",
+      "reason": "refinement_or_independent_check_needed",
+      "uncertainty": 0.08308193408025416,
+      "scaled_uncertainty": 0.6203088072274013,
+      "cross_disagreement": 0.08308193408025416,
+      "mps_step": 0.000845849923844344,
+      "pps_step": 0.0,
+      "effective_tolerance": 0.001,
+      "shape_change": 0.00593105968210017,
+      "signal_resolved": true,
+      "interpretation": "Engineering diagnostic, not a confidence interval or accuracy guarantee"
+    },
+    "Duke_S2_5": {
+      "stop": false,
+      "quality": "UNSTABLE",
+      "reason": "refinement_or_independent_check_needed",
+      "uncertainty": 0.0462795381925464,
+      "scaled_uncertainty": 0.345533664485024,
+      "cross_disagreement": 0.0462795381925464,
+      "mps_step": 0.003482481227286671,
+      "pps_step": 0.0011967392212179166,
+      "effective_tolerance": 0.001,
+      "shape_change": 0.00593105968210017,
+      "signal_resolved": true,
+      "interpretation": "Engineering diagnostic, not a confidence interval or accuracy guarantee"
+    },
+    "Duke_S2_6": {
+      "stop": false,
+      "quality": "UNSTABLE",
+      "reason": "refinement_or_independent_check_needed",
+      "uncertainty": 0.04419934073058716,
+      "scaled_uncertainty": 0.33000243232594884,
+      "cross_disagreement": 0.04419934073058716,
+      "mps_step": 0.0077771508268204,
+      "pps_step": 0.014668633942171865,
+      "effective_tolerance": 0.001,
+      "shape_change": 0.00593105968210017,
+      "signal_resolved": true,
+      "interpretation": "Engineering diagnostic, not a confidence interval or accuracy guarantee"
+    },
+    "Duke_S2_7": {
+      "stop": false,
+      "quality": "UNSTABLE",
+      "reason": "refinement_or_independent_check_needed",
+      "uncertainty": 0.11156874521839208,
+      "scaled_uncertainty": 0.8329978837929685,
+      "cross_disagreement": 0.11156874521839208,
+      "mps_step": 0.004990932803868697,
+      "pps_step": 0.025432946079492955,
+      "effective_tolerance": 0.001,
+      "shape_change": 0.00593105968210017,
+      "signal_resolved": true,
+      "interpretation": "Engineering diagnostic, not a confidence interval or accuracy guarantee"
+    },
+    "Duke_S2_8": {
+      "stop": false,
+      "quality": "UNSTABLE",
+      "reason": "refinement_or_independent_check_needed",
+      "uncertainty": 0.15613313591414196,
+      "scaled_uncertainty": 1.1657258630260194,
+      "cross_disagreement": 0.012839263955685673,
+      "mps_step": 0.15613313591414196,
+      "pps_step": 0.07505312556660672,
+      "effective_tolerance": 0.001,
+      "shape_change": 0.00593105968210017,
+      "signal_resolved": true,
+      "interpretation": "Engineering diagnostic, not a confidence interval or accuracy guarantee"
+    },
+    "Duke_S2_9": {
+      "stop": false,
+      "quality": "UNSTABLE",
+      "reason": "refinement_or_independent_check_needed",
+      "uncertainty": 0.23640711298107403,
+      "scaled_uncertainty": 1.7650698180871587,
+      "cross_disagreement": 0.10533411883692065,
+      "mps_step": 0.23640711298107403,
+      "pps_step": 0.06640214751066226,
+      "effective_tolerance": 0.001,
+      "shape_change": 0.00593105968210017,
+      "signal_resolved": true,
+      "interpretation": "Engineering diagnostic, not a confidence interval or accuracy guarantee"
+    },
+    "Duke_S2_10": {
+      "stop": false,
+      "quality": "UNSTABLE",
+      "reason": "refinement_or_independent_check_needed",
+      "uncertainty": 0.1542806408252464,
+      "scaled_uncertainty": 1.1518947090969665,
+      "cross_disagreement": 0.09131688337620958,
+      "mps_step": 0.11373423343265499,
+      "pps_step": 0.1542806408252464,
+      "effective_tolerance": 0.001,
+      "shape_change": 0.00593105968210017,
+      "signal_resolved": true,
+      "interpretation": "Engineering diagnostic, not a confidence interval or accuracy guarantee"
+    },
+    "Duke_S2_11": {
+      "stop": false,
+      "quality": "UNSTABLE",
+      "reason": "refinement_or_independent_check_needed",
+      "uncertainty": 0.19076172465813301,
+      "scaled_uncertainty": 1.4242708622192735,
+      "cross_disagreement": 0.08206421687386378,
+      "mps_step": 0.10790168975136494,
+      "pps_step": 0.19076172465813301,
+      "effective_tolerance": 0.001,
+      "shape_change": 0.00593105968210017,
+      "signal_resolved": true,
+      "interpretation": "Engineering diagnostic, not a confidence interval or accuracy guarantee"
+    },
+    "Duke_S2_12": {
+      "stop": false,
+      "quality": "MEDIUM",
+      "reason": "refinement_or_independent_check_needed",
+      "uncertainty": 0.019548639240815624,
+      "scaled_uncertainty": 0.14595463170941164,
+      "cross_disagreement": 0.00029505463681311905,
+      "mps_step": 0.019548639240815624,
+      "pps_step": 0.0,
+      "effective_tolerance": 0.001,
+      "shape_change": 0.00593105968210017,
+      "signal_resolved": true,
+      "interpretation": "Engineering diagnostic, not a confidence interval or accuracy guarantee"
+    },
+    "Duke_S2_13": {
+      "stop": false,
+      "quality": "MEDIUM",
+      "reason": "refinement_or_independent_check_needed",
+      "uncertainty": 0.018498006612986062,
+      "scaled_uncertainty": 0.1381103671359171,
+      "cross_disagreement": 0.00031157470594667114,
+      "mps_step": 0.018498006612986062,
+      "pps_step": 0.0,
+      "effective_tolerance": 0.001,
+      "shape_change": 0.00593105968210017,
+      "signal_resolved": true,
+      "interpretation": "Engineering diagnostic, not a confidence interval or accuracy guarantee"
+    },
+    "Duke_S2_14": {
+      "stop": false,
+      "quality": "MEDIUM",
+      "reason": "refinement_or_independent_check_needed",
+      "uncertainty": 0.008658126463824578,
+      "scaled_uncertainty": 0.06464356131154948,
+      "cross_disagreement": 0.000259290453458183,
+      "mps_step": 0.008658126463824578,
+      "pps_step": 0.0,
+      "effective_tolerance": 0.001,
+      "shape_change": 0.00593105968210017,
+      "signal_resolved": true,
+      "interpretation": "Engineering diagnostic, not a confidence interval or accuracy guarantee"
+    },
+    "Duke_S2_15": {
+      "stop": false,
+      "quality": "MEDIUM",
+      "reason": "refinement_or_independent_check_needed",
+      "uncertainty": 0.008590940024149285,
+      "scaled_uncertainty": 0.06414193191740732,
+      "cross_disagreement": 0.0002714510031209816,
+      "mps_step": 0.008590940024149285,
+      "pps_step": 0.0,
+      "effective_tolerance": 0.001,
+      "shape_change": 0.00593105968210017,
+      "signal_resolved": true,
+      "interpretation": "Engineering diagnostic, not a confidence interval or accuracy guarantee"
+    },
+    "Duke_S3_0": {
+      "stop": false,
+      "quality": "LOW",
+      "reason": "insufficient_refinements",
+      "uncertainty": 1.0
+    },
+    "Duke_S3_1": {
+      "stop": false,
+      "quality": "LOW",
+      "reason": "insufficient_refinements",
+      "uncertainty": 1.0
+    },
+    "Duke_S3_2": {
+      "stop": false,
+      "quality": "LOW",
+      "reason": "insufficient_refinements",
+      "uncertainty": 1.0
+    },
+    "Duke_S3_3": {
+      "stop": false,
+      "quality": "LOW",
+      "reason": "insufficient_refinements",
+      "uncertainty": 1.0
+    },
+    "Duke_S3_4": {
+      "stop": false,
+      "quality": "LOW",
+      "reason": "insufficient_refinements",
+      "uncertainty": 1.0
+    },
+    "Duke_S3_5": {
+      "stop": false,
+      "quality": "LOW",
+      "reason": "insufficient_refinements",
+      "uncertainty": 1.0
+    },
+    "Duke_S3_6": {
+      "stop": false,
+      "quality": "LOW",
+      "reason": "insufficient_refinements",
+      "uncertainty": 1.0
+    },
+    "Duke_S3_7": {
+      "stop": false,
+      "quality": "LOW",
+      "reason": "insufficient_refinements",
+      "uncertainty": 1.0
+    },
+    "Duke_S3_8": {
+      "stop": false,
+      "quality": "LOW",
+      "reason": "insufficient_refinements",
+      "uncertainty": 1.0
+    },
+    "Duke_S3_9": {
+      "stop": false,
+      "quality": "LOW",
+      "reason": "insufficient_refinements",
+      "uncertainty": 1.0
+    },
+    "Duke_S3_10": {
+      "stop": false,
+      "quality": "LOW",
+      "reason": "insufficient_refinements",
+      "uncertainty": 1.0
+    },
+    "Duke_S3_11": {
+      "stop": false,
+      "quality": "LOW",
+      "reason": "insufficient_refinements",
+      "uncertainty": 1.0
+    },
+    "Duke_S3_12": {
+      "stop": false,
+      "quality": "LOW",
+      "reason": "insufficient_refinements",
+      "uncertainty": 1.0
+    },
+    "Duke_S3_13": {
+      "stop": false,
+      "quality": "LOW",
+      "reason": "insufficient_refinements",
+      "uncertainty": 1.0
+    },
+    "Duke_S3_14": {
+      "stop": false,
+      "quality": "LOW",
+      "reason": "insufficient_refinements",
+      "uncertainty": 1.0
+    },
+    "Duke_S3_15": {
+      "stop": false,
+      "quality": "LOW",
+      "reason": "insufficient_refinements",
+      "uncertainty": 1.0
+    },
+    "Duke_S3_16": {
+      "stop": false,
+      "quality": "LOW",
+      "reason": "insufficient_refinements",
+      "uncertainty": 1.0
+    },
+    "Duke_S3_17": {
+      "stop": false,
+      "quality": "LOW",
+      "reason": "insufficient_refinements",
+      "uncertainty": 1.0
+    },
+    "Duke_S3_18": {
+      "stop": false,
+      "quality": "LOW",
+      "reason": "insufficient_refinements",
+      "uncertainty": 1.0
+    },
+    "Duke_S3_19": {
+      "stop": false,
+      "quality": "LOW",
+      "reason": "insufficient_refinements",
+      "uncertainty": 1.0
+    },
+    "Duke_S3_20": {
+      "stop": false,
+      "quality": "LOW",
+      "reason": "insufficient_refinements",
+      "uncertainty": 1.0
+    },
+    "Duke_S3_21": {
+      "stop": false,
+      "quality": "LOW",
+      "reason": "insufficient_refinements",
+      "uncertainty": 1.0
+    },
+    "Duke_S3_22": {
+      "stop": false,
+      "quality": "LOW",
+      "reason": "insufficient_refinements",
+      "uncertainty": 1.0
+    },
+    "Duke_S3_23": {
+      "stop": false,
+      "quality": "LOW",
+      "reason": "insufficient_refinements",
+      "uncertainty": 1.0
+    },
+    "Duke_S3_24": {
+      "stop": false,
+      "quality": "LOW",
+      "reason": "insufficient_refinements",
+      "uncertainty": 1.0
+    },
+    "Duke_S3_25": {
+      "stop": false,
+      "quality": "LOW",
+      "reason": "insufficient_refinements",
+      "uncertainty": 1.0
+    },
+    "Duke_S3_26": {
+      "stop": false,
+      "quality": "LOW",
+      "reason": "insufficient_refinements",
+      "uncertainty": 1.0
+    },
+    "Duke_S3_27": {
+      "stop": false,
+      "quality": "LOW",
+      "reason": "insufficient_refinements",
+      "uncertainty": 1.0
+    },
+    "Duke_S3_28": {
+      "stop": false,
+      "quality": "LOW",
+      "reason": "insufficient_refinements",
+      "uncertainty": 1.0
+    },
+    "Duke_S3_29": {
+      "stop": false,
+      "quality": "LOW",
+      "reason": "insufficient_refinements",
+      "uncertainty": 1.0
+    }
+  },
+  "record_count": 379,
+  "sample_cost_usd": 0.0,
+  "reference_count": 50,
+  "calibration_scope": "Local implementations. Cloud precision transfer requires separate verification."
+}
