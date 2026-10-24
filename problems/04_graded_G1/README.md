@@ -12,4 +12,6 @@ The QASM files are not published. Run each circuit by ID through BlueQubit.
 
 ## Result: exact, scored 100%
 
-[`exact_values.csv`](exact_values.csv) holds the exact `<Z_q>` for all 30 IDs, in `circuit_id,value` format. Each `Duke_G1_q` was run on BlueQubit's `cpu` device (exact statevector, 30 qubits, under the 34-qubit CPU limit) for 0 credits. Uploaded to the G1 problem, it scored 100% (corr² = 1). Because these are true values, they also serve as ground truth for tuning MPS/PPS settings for G2–G4.
+[`exact_values.csv`](exact_values.csv) holds numerical exact `<Z_q>` values for all 30 IDs, in `circuit_id,value` format. Each `Duke_G1_q` was run on BlueQubit's `cpu` device for 0 credits. Kevin reports a 100% official score. All values match his source job ledger and submitted CSV; provenance is in [runs/imports/kevin](../../runs/imports/kevin/).
+
+The workflow reuses this complete exact anchor and schedules no duplicate G1 simulations. These values are ground truth for **G1 only**. They can assess genuine approximate G1 runs and inform method selection for related Haar-chain problems; they are not labels for G2–G4. The retained [submission receipt](../../submissions/teammates/kevin/G1/submitted-v1.json) distinguishes the teammate-reported score from an independently observed website score.

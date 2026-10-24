@@ -1,0 +1,23 @@
+{
+  "event_id": "5c68dac5f05f476cb7e29a20ceb0ba19",
+  "recorded_at": "2026-10-24T16:48:05.681947+00:00",
+  "kind": "collaborator_job_event",
+  "source_commit": "9714dab3422134c77b7fc36f99e86f5f2dada921",
+  "original_event": {
+    "recorded_utc": "2026-10-24T15:56:34+00:00",
+    "mode": "cloud",
+    "circuit": "G1",
+    "qubit": "23",
+    "method": "exact",
+    "setting": "0",
+    "transpile": "",
+    "device": "cpu",
+    "job_key": "054ffd14aef8c18c24ca",
+    "job_id": "rejected-054ffd14aef8c18c24ca",
+    "status": "failed",
+    "estimate": "",
+    "wall_s": "",
+    "credits": "",
+    "error": "Job GVcBDaO3DfnS4zUQ finished with status: HACKATHON_PARALLEL_JOBS_LIMIT. Hackathon limit: you can run at most 5 SMALL2 job(s) at the same time, and you already have 5 pending or running. Wait for one to finish, then resubmit."
+  }
+}

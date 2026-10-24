@@ -1,0 +1,38 @@
+{
+  "key": "289c02069c38060d69c864214c57abde0b43ce0657c2dfccca276ab8d34a9323",
+  "action": {
+    "circuit_id": "Duke_S3_17",
+    "method": "exact",
+    "parameters": {
+      "precision": "cloud_cpu",
+      "shots": null
+    },
+    "input_sha256": "6e6106210cf08c6ffabdef1e0b5fea722c6e7b898bf192204ceec35f4ce25ab6",
+    "origin": "bluequbit.cpu",
+    "job_id": "vxOch2OB75cLEnpq"
+  },
+  "record": {
+    "circuit_id": "Duke_S3_17",
+    "sample": "S3",
+    "qubit": 17,
+    "num_qubits": 30,
+    "qasm_sha256": "6e6106210cf08c6ffabdef1e0b5fea722c6e7b898bf192204ceec35f4ce25ab6",
+    "dataset_kind": "official",
+    "method": "exact",
+    "parameters": {
+      "precision": "cloud_cpu",
+      "shots": null
+    },
+    "status": "SUCCEEDED",
+    "estimate": -0.8116625525951878,
+    "backend": "bluequbit.cpu",
+    "cost_usd": 0.0,
+    "wall_seconds": 52.697,
+    "diagnostics": {
+      "job_id": "vxOch2OB75cLEnpq",
+      "reference_status": "EXACT_CLOUD_CPU_BY_ID",
+      "source_identity": "Public sample ID; server QASM hash is not exposed"
+    }
+  },
+  "saved_at": "2026-10-24T16:30:06.481556+00:00"
+}

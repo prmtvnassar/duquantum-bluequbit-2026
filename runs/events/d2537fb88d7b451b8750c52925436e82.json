@@ -1,0 +1,10 @@
+{
+  "event_id": "d2537fb88d7b451b8750c52925436e82",
+  "recorded_at": "2026-10-24T16:21:46.433895+00:00",
+  "kind": "official_submission",
+  "problem": "S2",
+  "attempt": 1,
+  "sha256": "dcb2666e0b37da0b1240edcd35a34398c6b3baa9c0e087875baf1a43d77ce82b",
+  "displayed_score": 100.0,
+  "receipt": "submissions/S2/attempt-01.json"
+}

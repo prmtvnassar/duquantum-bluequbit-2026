@@ -23,6 +23,9 @@ venv/
 
 # Large / generated results (keep CSV summaries, drop raw dumps)
 results/raw/
+results/
+results/calibration/
+results/workflow/
 *.npy
 *.npz
 
@@ -39,14 +42,14 @@ Duke Quantum Hackathon_files/
 build/
 
 # Generated challenge records and checkpoints
-runs/csv/*.csv
-!runs/csv/*.example.csv
-runs/csv/*.lock
-runs/csv/.records.lock
+runs/.ledger.lock
+runs/csv/
+runs/**/*.tmp
 data/checkpoints/*.csv
 problems/**/selected.csv
 problems/**/submission.csv
 submissions/*.csv
+.obsidian/
 
 # Study-notebook outputs
 tutorials/study/submissions/

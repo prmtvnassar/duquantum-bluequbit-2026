@@ -1,0 +1,71 @@
+{
+  "key": "cd0ecbb21770988d260843d44abdbd2f67027c438c43baa251cacda5ad61679e",
+  "action": {
+    "circuit_id": "Duke_S2_1",
+    "method": "pps_threshold",
+    "parameters": {
+      "epsilon": 0.003,
+      "level": 1
+    },
+    "input_sha256": "b866373b88f9e87739617aa38f7f104f11b8d57553d803f4879b6638632e799e",
+    "engine_source": "5ff8f31181561a23dacab17c7c18eaa9bcac2d8e0aecb2af686a5107fe6efe83",
+    "origin": "local"
+  },
+  "record": {
+    "circuit_id": "Duke_S2_1",
+    "sample": "S2",
+    "qubit": 1,
+    "num_qubits": 16,
+    "qasm_sha256": "b866373b88f9e87739617aa38f7f104f11b8d57553d803f4879b6638632e799e",
+    "dataset_kind": "official",
+    "method": "pps_threshold",
+    "parameters": {
+      "epsilon": 0.003,
+      "level": 1
+    },
+    "status": "SUCCEEDED",
+    "estimate": 0.0,
+    "dtype": "complex128",
+    "backend": "local.numpy.coefficient_pauli",
+    "wall_seconds": 2.761775300001318,
+    "compute_seconds": 2.201932800000577,
+    "peak_rss": 166137856,
+    "package_versions": {
+      "python": "3.12.14",
+      "qiskit": "2.6.1",
+      "qiskit-aer": "0.18.0",
+      "quimb": "1.15.0",
+      "qiskit-addon-obp": "0.3.0",
+      "qiskit-addon-utils": "0.4.0",
+      "numpy": "2.3.5",
+      "scipy": "1.18.1",
+      "pandas": "2.3.3",
+      "matplotlib": "3.11.2",
+      "psutil": "7.2.2"
+    },
+    "diagnostics": {
+      "epsilon_semantics": "coefficient magnitude cutoff after gate and duplicate merging",
+      "transpilation_semantics": "Qiskit u3/CZ optimization, not BlueQubit rotation transpilation",
+      "transpilation_level": 1,
+      "numerical_atol": 1e-12,
+      "total_gates": 1015,
+      "propagated_gates": 1015,
+      "peak_num_paulis": 6211,
+      "final_num_paulis": 0,
+      "discarded_l1_sum": 500.79598141058614,
+      "max_paulis": 100000,
+      "complete": true,
+      "worker_peak_rss": 161763328,
+      "memory_limit_bytes": 734003200,
+      "profile": "local",
+      "attempt_directory": "results\\workflow\\local\\attempts\\e1ac4da37a7f39fa-d0bf3b4e8ec4",
+      "source_sha256": "5ff8f31181561a23dacab17c7c18eaa9bcac2d8e0aecb2af686a5107fe6efe83",
+      "recorded_at_utc": "2026-10-24T16:14:08.409161+00:00"
+    },
+    "error": null,
+    "cache_key": "e1ac4da37a7f39fa10e23065e561f2eecef1c0c4c1d675e5b887418b54f1b323",
+    "cache_hit": false,
+    "cost_usd": 0.0
+  },
+  "saved_at": "2026-10-24T16:14:08.409161+00:00"
+}

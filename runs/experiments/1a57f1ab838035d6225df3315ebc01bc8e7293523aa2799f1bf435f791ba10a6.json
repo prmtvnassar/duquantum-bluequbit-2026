@@ -1,0 +1,71 @@
+{
+  "key": "1a57f1ab838035d6225df3315ebc01bc8e7293523aa2799f1bf435f791ba10a6",
+  "action": {
+    "circuit_id": "Duke_S2_10",
+    "method": "pps_threshold",
+    "parameters": {
+      "epsilon": 0.001,
+      "level": 1
+    },
+    "input_sha256": "6e72ade3c36ad836330580bd61f7c656dd48be3b200a2cf65ad5ba2899b9a576",
+    "engine_source": "5ff8f31181561a23dacab17c7c18eaa9bcac2d8e0aecb2af686a5107fe6efe83",
+    "origin": "local"
+  },
+  "record": {
+    "circuit_id": "Duke_S2_10",
+    "sample": "S2",
+    "qubit": 10,
+    "num_qubits": 16,
+    "qasm_sha256": "6e72ade3c36ad836330580bd61f7c656dd48be3b200a2cf65ad5ba2899b9a576",
+    "dataset_kind": "official",
+    "method": "pps_threshold",
+    "parameters": {
+      "epsilon": 0.001,
+      "level": 1
+    },
+    "status": "SUCCEEDED",
+    "estimate": 0.6757810510093509,
+    "dtype": "complex128",
+    "backend": "local.numpy.coefficient_pauli",
+    "wall_seconds": 5.371689699999479,
+    "compute_seconds": 4.616839899999832,
+    "peak_rss": 171388928,
+    "package_versions": {
+      "python": "3.12.14",
+      "qiskit": "2.6.1",
+      "qiskit-aer": "0.18.0",
+      "quimb": "1.15.0",
+      "qiskit-addon-obp": "0.3.0",
+      "qiskit-addon-utils": "0.4.0",
+      "numpy": "2.3.5",
+      "scipy": "1.18.1",
+      "pandas": "2.3.3",
+      "matplotlib": "3.11.2",
+      "psutil": "7.2.2"
+    },
+    "diagnostics": {
+      "epsilon_semantics": "coefficient magnitude cutoff after gate and duplicate merging",
+      "transpilation_semantics": "Qiskit u3/CZ optimization, not BlueQubit rotation transpilation",
+      "transpilation_level": 1,
+      "numerical_atol": 1e-12,
+      "total_gates": 825,
+      "propagated_gates": 825,
+      "peak_num_paulis": 20685,
+      "final_num_paulis": 1087,
+      "discarded_l1_sum": 631.1658768524278,
+      "max_paulis": 100000,
+      "complete": true,
+      "worker_peak_rss": 167981056,
+      "memory_limit_bytes": 734003200,
+      "profile": "local",
+      "attempt_directory": "results\\workflow\\local\\attempts\\e30fb42e94a5f68d-700807f51a28",
+      "source_sha256": "5ff8f31181561a23dacab17c7c18eaa9bcac2d8e0aecb2af686a5107fe6efe83",
+      "recorded_at_utc": "2026-10-24T16:19:30.189044+00:00"
+    },
+    "error": null,
+    "cache_key": "e30fb42e94a5f68db9d3247cd6587951d8d76a035b3e1e5e087e72762dffd017",
+    "cache_hit": false,
+    "cost_usd": 0.0
+  },
+  "saved_at": "2026-10-24T16:19:30.194498+00:00"
+}

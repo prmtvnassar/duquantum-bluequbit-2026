@@ -1,0 +1,1 @@
+Computed each of the four official S1 QASM programs locally with Qiskit Aer double-precision statevector simulation, starting from |0000>, and evaluated Pauli Z on the qubit specified by its circuit ID (q0 is the rightmost Pauli character). Cross-checked every value with Qiskit Statevector. No shot sampling, fitting, or score-derived labels. BlueQubit compute cost: $0.

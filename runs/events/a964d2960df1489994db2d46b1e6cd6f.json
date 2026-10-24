@@ -1,0 +1,14 @@
+{
+  "event_id": "a964d2960df1489994db2d46b1e6cd6f",
+  "recorded_at": "2026-10-24T16:45:44.035487+00:00",
+  "kind": "quote",
+  "circuit_id": "Duke_G3_0",
+  "device": "gpu",
+  "options": {},
+  "quoted_at": "2026-10-24T16:45:44.033485+00:00",
+  "cost_usd": null,
+  "runtime_seconds": null,
+  "error": "Circuit num qubits (36) is too high for GPU backend",
+  "warning": null,
+  "binding_cost_cap": false
+}

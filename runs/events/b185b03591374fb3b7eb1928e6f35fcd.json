@@ -1,0 +1,12 @@
+{
+  "event_id": "b185b03591374fb3b7eb1928e6f35fcd",
+  "recorded_at": "2026-10-24T16:24:19.487581+00:00",
+  "kind": "calibration_decision",
+  "circuit_id": "Duke_S3_2",
+  "method": "pps_threshold",
+  "parameters": {
+    "epsilon": 0.0001,
+    "level": 1
+  },
+  "reason": "Complete the next precision vector to test pointwise error and method allocation"
+}

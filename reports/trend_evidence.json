@@ -1,0 +1,1618 @@
+{
+  "Duke_S1_0/mps": {
+    "classification": "FLAT_UNVERIFIED",
+    "levels": 5,
+    "signed_steps": [
+      -0.9305931602364037,
+      0.12024582175684317,
+      0.0,
+      0.0
+    ],
+    "slopes_per_log_precision": [
+      -1.3425621373582481,
+      0.1734780507362159,
+      0.0,
+      0.0
+    ],
+    "last_contraction_ratio": null,
+    "sign_flips": 0,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.12024582175684317,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S1_1/pps_threshold": {
+    "classification": "FLAT_UNVERIFIED",
+    "levels": 7,
+    "signed_steps": [
+      -0.014749993189844435,
+      0.0021566793044060506,
+      0.0008176998695185178,
+      -0.0001028374202612925,
+      3.048316949333385e-05,
+      3.7132519769556005e-06
+    ],
+    "slopes_per_log_precision": [
+      -0.012251101633564266,
+      0.00196309410212467,
+      0.0006791680564382189,
+      -9.360665388693799e-05,
+      2.5318818983125048e-05,
+      3.3799476077746426e-06
+    ],
+    "last_contraction_ratio": 0.13349546872732776,
+    "sign_flips": 0,
+    "geometric_tail_proxy": 5.720712301853808e-07,
+    "priority_uncertainty": 0.0001028374202612925,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S1_2/pps_threshold": {
+    "classification": "FLAT_UNVERIFIED",
+    "levels": 7,
+    "signed_steps": [
+      0.05665739365385582,
+      0.020443309463892223,
+      -0.0015489205693551833,
+      -0.00172467476030215,
+      -5.340328240450998e-05,
+      -2.8627687492885356e-05
+    ],
+    "slopes_per_log_precision": [
+      0.047058698876156387,
+      0.01860830219610637,
+      -0.0012865079375462905,
+      -0.001569866620000256,
+      -4.435588761858173e-05,
+      -2.6058044123638767e-05
+    ],
+    "last_contraction_ratio": 0.5874765566121246,
+    "sign_flips": 0,
+    "geometric_tail_proxy": 4.076882306122673e-05,
+    "priority_uncertainty": 0.00172467476030215,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S1_3/pps_threshold": {
+    "classification": "OSCILLATING",
+    "levels": 7,
+    "signed_steps": [
+      0.013962535563925405,
+      0.015873505915940056,
+      0.0016939610979765929,
+      0.0005077186247337273,
+      -0.0001039984792251536,
+      1.3066956153801046e-05
+    ],
+    "slopes_per_log_precision": [
+      0.01159705228702616,
+      0.014448687748781813,
+      0.001406976213989306,
+      0.0004621454083216697,
+      -8.637942555802057e-05,
+      1.1894056063802663e-05
+    ],
+    "last_contraction_ratio": 0.13769547536309434,
+    "sign_flips": 1,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.000761577937100591,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S1_0/pps_threshold": {
+    "classification": "FLAT_UNVERIFIED",
+    "levels": 7,
+    "signed_steps": [
+      -0.016510067406145135,
+      -0.004802728496565489,
+      0.0016994315512753322,
+      -8.283803077080432e-05,
+      -2.3986191815539293e-05,
+      1.0973707253059128e-05
+    ],
+    "slopes_per_log_precision": [
+      -0.013712990315747669,
+      -0.004371631872412447,
+      0.0014115198824833815,
+      -7.540242506410712e-05,
+      -1.9922536231180343e-05,
+      9.988698803253862e-06
+    ],
+    "last_contraction_ratio": 0.5013768672495,
+    "sign_flips": 0,
+    "geometric_tail_proxy": 1.103431149353627e-05,
+    "priority_uncertainty": 8.283803077080432e-05,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S1_1/mps": {
+    "classification": "FLAT_UNVERIFIED",
+    "levels": 5,
+    "signed_steps": [
+      -0.3741582057565113,
+      0.1292577840609176,
+      0.0,
+      0.0
+    ],
+    "slopes_per_log_precision": [
+      -0.5397961879528314,
+      0.18647956406098232,
+      0.0,
+      0.0
+    ],
+    "last_contraction_ratio": null,
+    "sign_flips": 0,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.1292577840609176,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S1_2/mps": {
+    "classification": "FLAT_UNVERIFIED",
+    "levels": 5,
+    "signed_steps": [
+      1.0528938429968684,
+      -0.6321087298251327,
+      0.0,
+      0.0
+    ],
+    "slopes_per_log_precision": [
+      1.5190047258741048,
+      -0.9119401298213405,
+      0.0,
+      0.0
+    ],
+    "last_contraction_ratio": null,
+    "sign_flips": 0,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.6321087298251327,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S1_3/mps": {
+    "classification": "FLAT_UNVERIFIED",
+    "levels": 5,
+    "signed_steps": [
+      -0.840102428809353,
+      0.4028055090856556,
+      0.0,
+      1.1102230246251565e-16
+    ],
+    "slopes_per_log_precision": [
+      -1.212011607882027,
+      0.5811255104006297,
+      0.0,
+      1.6017132519074586e-16
+    ],
+    "last_contraction_ratio": null,
+    "sign_flips": 0,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.4028055090856556,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S2_0/mps": {
+    "classification": "CONTRACTING",
+    "levels": 5,
+    "signed_steps": [
+      -0.15333747898143507,
+      0.019078676712805276,
+      0.0042439776068670665,
+      0.0005735900239956515
+    ],
+    "slopes_per_log_precision": [
+      -0.221219220508932,
+      0.027524712280287918,
+      0.006122765447070931,
+      0.0008275154831219078
+    ],
+    "last_contraction_ratio": 0.13515387618151906,
+    "sign_flips": 0,
+    "geometric_tail_proxy": 8.963781295542212e-05,
+    "priority_uncertainty": 0.019078676712805276,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S2_1/mps": {
+    "classification": "CONTRACTING",
+    "levels": 5,
+    "signed_steps": [
+      0.135465280463744,
+      0.05448643728318259,
+      0.007727265565799946,
+      0.0015747635722961895
+    ],
+    "slopes_per_log_precision": [
+      0.19543508833767603,
+      0.07860731286415504,
+      0.011148087711411637,
+      0.0022719035963243007
+    ],
+    "last_contraction_ratio": 0.20379312175654013,
+    "sign_flips": 0,
+    "geometric_tail_proxy": 0.00040306859083499445,
+    "priority_uncertainty": 0.05448643728318259,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S2_2/mps": {
+    "classification": "CONTRACTING",
+    "levels": 5,
+    "signed_steps": [
+      0.008795189382202362,
+      0.04609773815669338,
+      0.008026902560959781,
+      0.0014795856657924822
+    ],
+    "slopes_per_log_precision": [
+      0.012688776105382611,
+      0.06650497823485947,
+      0.011580372518395603,
+      0.002134590902609209
+    ],
+    "last_contraction_ratio": 0.18432834515628735,
+    "sign_flips": 0,
+    "geometric_tail_proxy": 0.0003343619649805637,
+    "priority_uncertainty": 0.04609773815669338,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S2_3/mps": {
+    "classification": "OSCILLATING",
+    "levels": 5,
+    "signed_steps": [
+      0.0578328136912053,
+      0.03677185616431289,
+      -0.005273015710146045,
+      0.00044429744372287416
+    ],
+    "slopes_per_log_precision": [
+      0.08343511351295722,
+      0.053050574532536456,
+      -0.007607353615557299,
+      0.0006409857187386338
+    ],
+    "last_contraction_ratio": 0.08425869903402361,
+    "sign_flips": 2,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.05515778424646933,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S2_4/mps": {
+    "classification": "OSCILLATING",
+    "levels": 5,
+    "signed_steps": [
+      -0.10906361324037506,
+      -0.04020975227853929,
+      0.0005917158365140729,
+      0.000845849923844344
+    ],
+    "slopes_per_log_precision": [
+      -0.15734553396332096,
+      -0.05801041020762232,
+      0.000853665502954318,
+      0.0012203034904665422
+    ],
+    "last_contraction_ratio": 1.4294867090720942,
+    "sign_flips": 1,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.060314628417808935,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S2_5/mps": {
+    "classification": "OSCILLATING",
+    "levels": 5,
+    "signed_steps": [
+      0.007472874486688763,
+      0.05223614262709941,
+      -0.003482481227286671,
+      0.00030650386309838407
+    ],
+    "slopes_per_log_precision": [
+      0.010781078963131536,
+      0.0753608239232849,
+      -0.0050241583965953945,
+      0.00044219160330534837
+    ],
+    "last_contraction_ratio": 0.08801306973223579,
+    "sign_flips": 2,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.07835421394064912,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S2_6/mps": {
+    "classification": "OSCILLATING",
+    "levels": 5,
+    "signed_steps": [
+      -0.16192573954210232,
+      -0.02494360910314858,
+      0.0077771508268204,
+      -0.0004413285406345002
+    ],
+    "slopes_per_log_precision": [
+      -0.23360946142966893,
+      -0.035986021154985254,
+      0.011220056930099299,
+      -0.0006367024969761568
+    ],
+    "last_contraction_ratio": 0.0567468151848782,
+    "sign_flips": 2,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.03741541365472287,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S2_7/mps": {
+    "classification": "CONTRACTING",
+    "levels": 5,
+    "signed_steps": [
+      -0.10659916779314305,
+      0.08705155133936698,
+      0.004990932803868697,
+      0.003950812902538292
+    ],
+    "slopes_per_log_precision": [
+      -0.15379009073805797,
+      0.12558884141899573,
+      0.007200394005551423,
+      0.005699818181972125
+    ],
+    "last_contraction_ratio": 0.7915980955455534,
+    "sign_flips": 0,
+    "geometric_tail_proxy": 0.015006849278528186,
+    "priority_uncertainty": 0.08705155133936698,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S2_8/mps": {
+    "classification": "CONTRACTING",
+    "levels": 5,
+    "signed_steps": [
+      -0.042249905358056394,
+      -0.2159012115569281,
+      -0.15613313591414196,
+      -0.029285189682539847
+    ],
+    "slopes_per_log_precision": [
+      -0.060953728938095995,
+      -0.3114796072350991,
+      -0.22525250090177523,
+      -0.04224959792649287
+    ],
+    "last_contraction_ratio": 0.18756549986060508,
+    "sign_flips": 0,
+    "geometric_tail_proxy": 0.006761026569373616,
+    "priority_uncertainty": 0.2159012115569281,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S2_9/mps": {
+    "classification": "CONTRACTING",
+    "levels": 5,
+    "signed_steps": [
+      0.2701739445939857,
+      -0.2608963052092777,
+      -0.23640711298107403,
+      -0.04107088368538786
+    ],
+    "slopes_per_log_precision": [
+      0.3897786100431527,
+      -0.3763938057116783,
+      -0.34106336952867256,
+      -0.05925276021783649
+    ],
+    "last_contraction_ratio": 0.17372947525769175,
+    "sign_flips": 0,
+    "geometric_tail_proxy": 0.008635456375812766,
+    "priority_uncertainty": 0.2608963052092777,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S2_10/mps": {
+    "classification": "CONTRACTING",
+    "levels": 5,
+    "signed_steps": [
+      0.3522636790919014,
+      -0.10750071227311087,
+      -0.11373423343265499,
+      -0.026772602755895325
+    ],
+    "slopes_per_log_precision": [
+      0.5082090629111874,
+      -0.15509074448844834,
+      -0.16408381455259918,
+      -0.03862470122762038
+    ],
+    "last_contraction_ratio": 0.23539616831152307,
+    "sign_flips": 0,
+    "geometric_tail_proxy": 0.008242396706994243,
+    "priority_uncertainty": 0.11373423343265499,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S2_11/mps": {
+    "classification": "CONTRACTING",
+    "levels": 5,
+    "signed_steps": [
+      0.4986375969719704,
+      -0.0762361158947571,
+      -0.10790168975136494,
+      -0.031966720974154206
+    ],
+    "slopes_per_log_precision": [
+      0.7193819883522512,
+      -0.10998546633800232,
+      -0.15566923270783375,
+      -0.04611822982289348
+    ],
+    "last_contraction_ratio": 0.2962578347736191,
+    "sign_flips": 0,
+    "geometric_tail_proxy": 0.013457189306781001,
+    "priority_uncertainty": 0.10790168975136494,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S2_12/mps": {
+    "classification": "CONTRACTING",
+    "levels": 5,
+    "signed_steps": [
+      0.13220847476725883,
+      0.025637837237109884,
+      0.019548639240815624,
+      0.004489110524146911
+    ],
+    "slopes_per_log_precision": [
+      0.19073651091021795,
+      0.03698758064109683,
+      0.028202724888852105,
+      0.006476417491189203
+    ],
+    "last_contraction_ratio": 0.2296380054307867,
+    "sign_flips": 0,
+    "geometric_tail_proxy": 0.0013381636090444896,
+    "priority_uncertainty": 0.025637837237109884,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S2_13/mps": {
+    "classification": "CONTRACTING",
+    "levels": 5,
+    "signed_steps": [
+      0.1665951694843698,
+      0.02445627209773049,
+      0.018498006612986062,
+      0.004545630302014603
+    ],
+    "slopes_per_log_precision": [
+      0.24034602485115666,
+      0.0352829424740269,
+      0.026686982406886255,
+      0.006557958294431067
+    ],
+    "last_contraction_ratio": 0.24573622429259237,
+    "sign_flips": 0,
+    "geometric_tail_proxy": 0.0014809487919520332,
+    "priority_uncertainty": 0.02445627209773049,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S2_14/mps": {
+    "classification": "CONTRACTING",
+    "levels": 5,
+    "signed_steps": [
+      0.033381480405068165,
+      0.008667262122494246,
+      0.008658126463824578,
+      0.002432097932882682
+    ],
+    "slopes_per_log_precision": [
+      0.04815929623792394,
+      0.012504216082207198,
+      0.012491036112749222,
+      0.0035087756267261436
+    ],
+    "last_contraction_ratio": 0.28090348911447327,
+    "sign_flips": 0,
+    "geometric_tail_proxy": 0.0009500599500525178,
+    "priority_uncertainty": 0.008667262122494246,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S2_15/mps": {
+    "classification": "CONTRACTING",
+    "levels": 5,
+    "signed_steps": [
+      0.07341763275783775,
+      0.00900009547527203,
+      0.008590940024149285,
+      0.002622405824251439
+    ],
+    "slopes_per_log_precision": [
+      0.10591925469353962,
+      0.012984393109702154,
+      0.012394106569414691,
+      0.0037833318778458854
+    ],
+    "last_contraction_ratio": 0.3052524888871076,
+    "sign_flips": 0,
+    "geometric_tail_proxy": 0.0011522112593717845,
+    "priority_uncertainty": 0.00900009547527203,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S3_0/pps_threshold": {
+    "classification": "OSCILLATING",
+    "levels": 4,
+    "signed_steps": [
+      -0.005831481505018471,
+      0.0013834608572746432,
+      4.2025438110576685e-05
+    ],
+    "slopes_per_log_precision": [
+      -0.004843532581521489,
+      0.0012592803407941733,
+      1.8251415870990082e-05
+    ],
+    "last_contraction_ratio": 0.014493528787624612,
+    "sign_flips": 1,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.008747222257527706,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S3_1/pps_threshold": {
+    "classification": "OSCILLATING",
+    "levels": 4,
+    "signed_steps": [
+      0.001341440293350038,
+      -0.00040359330720984854,
+      -0.00030678359495461827
+    ],
+    "slopes_per_log_precision": [
+      0.0011141782343672326,
+      -0.0003673664598264603,
+      -0.00013323442242723304
+    ],
+    "last_contraction_ratio": 0.36267443274536126,
+    "sign_flips": 1,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.002012160440025057,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S3_2/pps_threshold": {
+    "classification": "OSCILLATING",
+    "levels": 4,
+    "signed_steps": [
+      0.00233352574783513,
+      0.0030857262321549173,
+      -0.00014230755268337947
+    ],
+    "slopes_per_log_precision": [
+      0.0019381880881782802,
+      0.002808749059138838,
+      -6.180338486354802e-05
+    ],
+    "last_contraction_ratio": 0.0220038827115787,
+    "sign_flips": 1,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.004628589348232376,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S3_3/pps_threshold": {
+    "classification": "OSCILLATING",
+    "levels": 4,
+    "signed_steps": [
+      -0.02897567289612113,
+      0.023675072675688913,
+      0.0006538125338844958
+    ],
+    "slopes_per_log_precision": [
+      -0.024066717115212265,
+      0.021549979842653257,
+      0.00028394717566521946
+    ],
+    "last_contraction_ratio": 0.013176215371821879,
+    "sign_flips": 1,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.043463509344181694,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S3_4/pps_threshold": {
+    "classification": "OSCILLATING",
+    "levels": 4,
+    "signed_steps": [
+      0.017242352262216085,
+      0.001691115669902571,
+      -0.00020904088492043615
+    ],
+    "slopes_per_log_precision": [
+      0.014321214067513334,
+      0.001539319819508643,
+      -9.078530281311813e-05
+    ],
+    "last_contraction_ratio": 0.0589775442780287,
+    "sign_flips": 1,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.025863528393324127,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S3_5/pps_threshold": {
+    "classification": "CONTRACTING",
+    "levels": 4,
+    "signed_steps": [
+      -0.000564628367611647,
+      -0.0016677425245709143,
+      -5.623737213439339e-06
+    ],
+    "slopes_per_log_precision": [
+      -0.0004689710312250476,
+      -0.0015180446657781191,
+      -2.4423580394706755e-06
+    ],
+    "last_contraction_ratio": 0.0016088841748399887,
+    "sign_flips": 0,
+    "geometric_tail_proxy": 9.06252235496232e-09,
+    "priority_uncertainty": 0.0016677425245709143,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S3_6/pps_threshold": {
+    "classification": "FLAT_UNVERIFIED",
+    "levels": 4,
+    "signed_steps": [
+      0.000962119450577309,
+      0.0005762463591236777,
+      -7.720163264929303e-05
+    ],
+    "slopes_per_log_precision": [
+      0.0007991205840533639,
+      0.0005245220402752675,
+      -3.3528243053509897e-05
+    ],
+    "last_contraction_ratio": 0.06392151421494963,
+    "sign_flips": 0,
+    "geometric_tail_proxy": 5.271828520522457e-06,
+    "priority_uncertainty": 0.000962119450577309,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S3_7/pps_threshold": {
+    "classification": "OSCILLATING",
+    "levels": 4,
+    "signed_steps": [
+      0.06632420453957866,
+      0.004324889283110811,
+      -0.001957331015047803
+    ],
+    "slopes_per_log_precision": [
+      0.05508779293126252,
+      0.003936683876305484,
+      -0.0008500580590933518
+    ],
+    "last_contraction_ratio": 0.21593251726656754,
+    "sign_flips": 1,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.09948630680936799,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S3_8/pps_threshold": {
+    "classification": "OSCILLATING",
+    "levels": 4,
+    "signed_steps": [
+      -0.02598559204384565,
+      0.0006715822626954249,
+      0.0001831721650241147
+    ],
+    "slopes_per_log_precision": [
+      -0.021583205160845883,
+      0.0006113005194121854,
+      7.955066050824487e-05
+    ],
+    "last_contraction_ratio": 0.13013347442390402,
+    "sign_flips": 1,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.03897838806576848,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S3_9/pps_threshold": {
+    "classification": "OSCILLATING",
+    "levels": 4,
+    "signed_steps": [
+      -0.00026150848876310695,
+      0.0004270961327850209,
+      5.11918127210631e-06
+    ],
+    "slopes_per_log_precision": [
+      -0.00021720464766603813,
+      0.00038875965360155067,
+      2.2232321783382404e-06
+    ],
+    "last_contraction_ratio": 0.005718783206389225,
+    "sign_flips": 1,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.0006406441991775313,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S3_10/pps_threshold": {
+    "classification": "FLAT_UNVERIFIED",
+    "levels": 4,
+    "signed_steps": [
+      0.0018536016914327685,
+      0.00026328887552842795,
+      3.37991347018618e-05
+    ],
+    "slopes_per_log_precision": [
+      0.0015395710640412155,
+      0.00023965586244044604,
+      1.4678777694123295e-05
+    ],
+    "last_contraction_ratio": 0.061249399637661434,
+    "sign_flips": 0,
+    "geometric_tail_proxy": 2.2052467481378316e-06,
+    "priority_uncertainty": 0.0018536016914327685,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S3_11/pps_threshold": {
+    "classification": "CONTRACTING",
+    "levels": 4,
+    "signed_steps": [
+      -0.0026070660373173626,
+      -0.0018404800694283296,
+      2.5842816832155613e-05
+    ],
+    "slopes_per_log_precision": [
+      -0.0021653861515393362,
+      -0.0016752771550185516,
+      1.1223392747041661e-05
+    ],
+    "last_contraction_ratio": 0.006699424458466621,
+    "sign_flips": 0,
+    "geometric_tail_proxy": 1.7429970688039428e-07,
+    "priority_uncertainty": 0.0026070660373173626,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S3_12/pps_threshold": {
+    "classification": "OSCILLATING",
+    "levels": 4,
+    "signed_steps": [
+      -0.012375144370970759,
+      0.005583530230184874,
+      0.0004923826822905708
+    ],
+    "slopes_per_log_precision": [
+      -0.010278591282549094,
+      0.0050823482385710505,
+      0.00021383908190351697
+    ],
+    "last_contraction_ratio": 0.04207485828708971,
+    "sign_flips": 1,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.018562716556456138,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S3_13/pps_threshold": {
+    "classification": "OSCILLATING",
+    "levels": 4,
+    "signed_steps": [
+      0.008112562009152984,
+      -0.0015897097720387748,
+      0.001543736321038429
+    ],
+    "slopes_per_log_precision": [
+      0.006738160513264193,
+      -0.001447016193461701,
+      0.0006704361657406167
+    ],
+    "last_contraction_ratio": 0.4633231948405016,
+    "sign_flips": 2,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.012168843013729476,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S3_14/pps_threshold": {
+    "classification": "OSCILLATING",
+    "levels": 3,
+    "signed_steps": [
+      0.03892545308429471,
+      -0.007864090869038415
+    ],
+    "slopes_per_log_precision": [
+      0.032330840816697466,
+      -0.007158203990756704
+    ],
+    "last_contraction_ratio": 0.22140481997795136,
+    "sign_flips": 1,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.05838817962644206,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S3_15/pps_threshold": {
+    "classification": "CONTRACTING",
+    "levels": 4,
+    "signed_steps": [
+      -0.024390933874143088,
+      -0.0027717065521578807,
+      -5.5841659300087665e-06
+    ],
+    "slopes_per_log_precision": [
+      -0.0202587083250595,
+      -0.0025229160284727286,
+      -2.4251724494349484e-06
+    ],
+    "last_contraction_ratio": 0.0009612576962789561,
+    "sign_flips": 0,
+    "geometric_tail_proxy": 5.372987302916599e-09,
+    "priority_uncertainty": 0.024390933874143088,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S3_16/pps_threshold": {
+    "classification": "FLAT_UNVERIFIED",
+    "levels": 4,
+    "signed_steps": [
+      -0.0057344170082817,
+      -0.0006613020245146428,
+      -0.00021862125337068772
+    ],
+    "slopes_per_log_precision": [
+      -0.004762912407720209,
+      -0.0006019430433609707,
+      -9.49460039656624e-05
+    ],
+    "last_contraction_ratio": 0.15773253800812775,
+    "sign_flips": 0,
+    "geometric_tail_proxy": 4.094149033743546e-05,
+    "priority_uncertainty": 0.0057344170082817,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S3_17/pps_threshold": {
+    "classification": "FLAT_UNVERIFIED",
+    "levels": 4,
+    "signed_steps": [
+      -0.002791576757576464,
+      -0.0005359812893075411,
+      2.1624781951001815e-05
+    ],
+    "slopes_per_log_precision": [
+      -0.002318637719677873,
+      -0.0004878711942657516,
+      9.391523473681127e-06
+    ],
+    "last_contraction_ratio": 0.019250006116502558,
+    "sign_flips": 0,
+    "geometric_tail_proxy": 4.244478077195566e-07,
+    "priority_uncertainty": 0.002791576757576464,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S3_18/pps_threshold": {
+    "classification": "UNRESOLVED",
+    "levels": 3,
+    "signed_steps": [
+      0.0,
+      -0.0012542010211573167
+    ],
+    "slopes_per_log_precision": [
+      0.0,
+      -0.0011416229675328263
+    ],
+    "last_contraction_ratio": null,
+    "sign_flips": 0,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.0012542010211573167,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S3_19/pps_threshold": {
+    "classification": "UNRESOLVED",
+    "levels": 3,
+    "signed_steps": [
+      -0.019654111447708372,
+      -0.01981095913347885
+    ],
+    "slopes_per_log_precision": [
+      -0.01632438156168489,
+      -0.018032712120393677
+    ],
+    "last_contraction_ratio": 1.1046490216032703,
+    "sign_flips": 0,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.01981095913347885,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S3_20/pps_threshold": {
+    "classification": "UNRESOLVED",
+    "levels": 3,
+    "signed_steps": [
+      0.025088166047341178,
+      0.010062018978269263
+    ],
+    "slopes_per_log_precision": [
+      0.020837817895219973,
+      0.009158844373084379
+    ],
+    "last_contraction_ratio": 0.4395299171505546,
+    "sign_flips": 0,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.025088166047341178,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S3_21/pps_threshold": {
+    "classification": "UNRESOLVED",
+    "levels": 3,
+    "signed_steps": [
+      0.01896302106671738,
+      0.004458429392357577
+    ],
+    "slopes_per_log_precision": [
+      0.015750373263068954,
+      0.004058237322069924
+    ],
+    "last_contraction_ratio": 0.257659755377707,
+    "sign_flips": 0,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.01896302106671738,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S3_22/pps_threshold": {
+    "classification": "UNRESOLVED",
+    "levels": 3,
+    "signed_steps": [
+      -0.005876909599999536,
+      -0.0007048432115136505
+    ],
+    "slopes_per_log_precision": [
+      -0.004881264409697208,
+      -0.0006415759397413619
+    ],
+    "last_contraction_ratio": 0.13143642423196653,
+    "sign_flips": 0,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.005876909599999536,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S3_23/pps_threshold": {
+    "classification": "FLAT_UNVERIFIED",
+    "levels": 3,
+    "signed_steps": [
+      -0.0008338219229749311,
+      -0.00028229982964822486
+    ],
+    "slopes_per_log_precision": [
+      -0.0006925587687520562,
+      -0.0002569603786158883
+    ],
+    "last_contraction_ratio": 0.37103043122089613,
+    "sign_flips": 0,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.0008338219229749311,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S3_24/pps_threshold": {
+    "classification": "FLAT_UNVERIFIED",
+    "levels": 3,
+    "signed_steps": [
+      -2.566282711219392e-05,
+      0.0
+    ],
+    "slopes_per_log_precision": [
+      -2.1315121919686266e-05,
+      0.0
+    ],
+    "last_contraction_ratio": 0.0,
+    "sign_flips": 0,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 2.566282711219392e-05,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S3_25/pps_threshold": {
+    "classification": "FLAT_UNVERIFIED",
+    "levels": 3,
+    "signed_steps": [
+      0.00039542692880678576,
+      0.0005534845154935852
+    ],
+    "slopes_per_log_precision": [
+      0.00032843510034944004,
+      0.0005038033173328111
+    ],
+    "last_contraction_ratio": 1.5339508986609143,
+    "sign_flips": 0,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.0005534845154935852,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S3_26/pps_threshold": {
+    "classification": "UNRESOLVED",
+    "levels": 3,
+    "signed_steps": [
+      -0.003558630350696368,
+      8.318872216916962e-07
+    ],
+    "slopes_per_log_precision": [
+      -0.0029557398123197004,
+      7.572163813133983e-07
+    ],
+    "last_contraction_ratio": 0.0002561850600507105,
+    "sign_flips": 0,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.003558630350696368,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S3_27/pps_threshold": {
+    "classification": "UNRESOLVED",
+    "levels": 3,
+    "signed_steps": [
+      -0.001295125900373506,
+      7.75712145106855e-05
+    ],
+    "slopes_per_log_precision": [
+      -0.001075710261660439,
+      7.06083623047109e-05
+    ],
+    "last_contraction_ratio": 0.06563882935886622,
+    "sign_flips": 0,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.001295125900373506,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S3_28/pps_threshold": {
+    "classification": "FLAT_UNVERIFIED",
+    "levels": 3,
+    "signed_steps": [
+      0.0,
+      0.0
+    ],
+    "slopes_per_log_precision": [
+      0.0,
+      0.0
+    ],
+    "last_contraction_ratio": null,
+    "sign_flips": 0,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.0,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S3_29/pps_threshold": {
+    "classification": "FLAT_UNVERIFIED",
+    "levels": 3,
+    "signed_steps": [
+      0.00029218152848523027,
+      0.0
+    ],
+    "slopes_per_log_precision": [
+      0.00024268116973689678,
+      0.0
+    ],
+    "last_contraction_ratio": 0.0,
+    "sign_flips": 0,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.00029218152848523027,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S2_0/pps_threshold": {
+    "classification": "UNRESOLVED",
+    "levels": 3,
+    "signed_steps": [
+      0.0,
+      -0.03079696946429954
+    ],
+    "slopes_per_log_precision": [
+      0.0,
+      -0.028032609667634354
+    ],
+    "last_contraction_ratio": null,
+    "sign_flips": 0,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.03079696946429954,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S2_1/pps_threshold": {
+    "classification": "UNRESOLVED",
+    "levels": 3,
+    "signed_steps": [
+      0.0,
+      0.05647225125357623
+    ],
+    "slopes_per_log_precision": [
+      0.0,
+      0.0514032583069317
+    ],
+    "last_contraction_ratio": null,
+    "sign_flips": 0,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.05647225125357623,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S2_2/pps_threshold": {
+    "classification": "UNRESOLVED",
+    "levels": 3,
+    "signed_steps": [
+      0.0,
+      -0.0017097639804597824
+    ],
+    "slopes_per_log_precision": [
+      0.0,
+      -0.0015562942432881363
+    ],
+    "last_contraction_ratio": null,
+    "sign_flips": 0,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.0017097639804597824,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S2_3/pps_threshold": {
+    "classification": "UNRESOLVED",
+    "levels": 3,
+    "signed_steps": [
+      0.0,
+      0.0487222884336495
+    ],
+    "slopes_per_log_precision": [
+      0.0,
+      0.04434893814333485
+    ],
+    "last_contraction_ratio": null,
+    "sign_flips": 0,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.0487222884336495,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S2_4/pps_threshold": {
+    "classification": "FLAT_UNVERIFIED",
+    "levels": 3,
+    "signed_steps": [
+      0.0,
+      0.0
+    ],
+    "slopes_per_log_precision": [
+      0.0,
+      0.0
+    ],
+    "last_contraction_ratio": null,
+    "sign_flips": 0,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.0,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S2_5/pps_threshold": {
+    "classification": "UNRESOLVED",
+    "levels": 3,
+    "signed_steps": [
+      0.0,
+      0.0011967392212179166
+    ],
+    "slopes_per_log_precision": [
+      0.0,
+      0.0010893189831954007
+    ],
+    "last_contraction_ratio": null,
+    "sign_flips": 0,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.0011967392212179166,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S2_6/pps_threshold": {
+    "classification": "OSCILLATING",
+    "levels": 3,
+    "signed_steps": [
+      -0.009550815268938145,
+      0.014668633942171865
+    ],
+    "slopes_per_log_precision": [
+      -0.007932750004503067,
+      0.013351966015194703
+    ],
+    "last_contraction_ratio": 1.6831446859683452,
+    "sign_flips": 1,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.022002950913257796,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S2_7/pps_threshold": {
+    "classification": "UNRESOLVED",
+    "levels": 3,
+    "signed_steps": [
+      0.0,
+      -0.025432946079492955
+    ],
+    "slopes_per_log_precision": [
+      0.0,
+      -0.023150065170239736
+    ],
+    "last_contraction_ratio": null,
+    "sign_flips": 0,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.025432946079492955,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S2_8/pps_threshold": {
+    "classification": "GROWING",
+    "levels": 3,
+    "signed_steps": [
+      0.01943594230890977,
+      0.07505312556660672
+    ],
+    "slopes_per_log_precision": [
+      0.016143173864953942,
+      0.06831629897167506
+    ],
+    "last_contraction_ratio": 4.231900092458675,
+    "sign_flips": 0,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.11257968834991008,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S2_9/pps_threshold": {
+    "classification": "GROWING",
+    "levels": 3,
+    "signed_steps": [
+      0.04720972481760808,
+      0.06640214751066226
+    ],
+    "slopes_per_log_precision": [
+      0.03921162060137994,
+      0.06044183939646642
+    ],
+    "last_contraction_ratio": 1.5414267115075406,
+    "sign_flips": 0,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.09960322126599339,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S2_10/pps_threshold": {
+    "classification": "UNRESOLVED",
+    "levels": 3,
+    "signed_steps": [
+      0.1542806408252464,
+      0.0004982830378361669
+    ],
+    "slopes_per_log_precision": [
+      0.1281429615942387,
+      0.00045355676700126397
+    ],
+    "last_contraction_ratio": 0.003539459064770482,
+    "sign_flips": 0,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.1542806408252464,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S2_11/pps_threshold": {
+    "classification": "UNRESOLVED",
+    "levels": 3,
+    "signed_steps": [
+      0.19076172465813301,
+      0.0686459387254248
+    ],
+    "slopes_per_log_precision": [
+      0.1584435495326109,
+      0.06248422617650396
+    ],
+    "last_contraction_ratio": 0.3943627011691217,
+    "sign_flips": 0,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.19076172465813301,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S2_12/pps_threshold": {
+    "classification": "FLAT_UNVERIFIED",
+    "levels": 3,
+    "signed_steps": [
+      0.0,
+      0.0
+    ],
+    "slopes_per_log_precision": [
+      0.0,
+      0.0
+    ],
+    "last_contraction_ratio": null,
+    "sign_flips": 0,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.0,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S2_13/pps_threshold": {
+    "classification": "FLAT_UNVERIFIED",
+    "levels": 3,
+    "signed_steps": [
+      0.0,
+      0.0
+    ],
+    "slopes_per_log_precision": [
+      0.0,
+      0.0
+    ],
+    "last_contraction_ratio": null,
+    "sign_flips": 0,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.0,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S2_14/pps_threshold": {
+    "classification": "FLAT_UNVERIFIED",
+    "levels": 3,
+    "signed_steps": [
+      0.0,
+      0.0
+    ],
+    "slopes_per_log_precision": [
+      0.0,
+      0.0
+    ],
+    "last_contraction_ratio": null,
+    "sign_flips": 0,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.0,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S2_15/pps_threshold": {
+    "classification": "FLAT_UNVERIFIED",
+    "levels": 3,
+    "signed_steps": [
+      0.0,
+      0.0
+    ],
+    "slopes_per_log_precision": [
+      0.0,
+      0.0
+    ],
+    "last_contraction_ratio": null,
+    "sign_flips": 0,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.0,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S3_0/mps": {
+    "classification": "UNRESOLVED",
+    "levels": 2,
+    "signed_steps": [
+      -0.001265786344048947
+    ],
+    "slopes_per_log_precision": [
+      -0.0018261436813843868
+    ],
+    "last_contraction_ratio": null,
+    "sign_flips": 0,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.001265786344048947,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S3_1/mps": {
+    "classification": "UNRESOLVED",
+    "levels": 2,
+    "signed_steps": [
+      -1.6653345369377348e-16
+    ],
+    "slopes_per_log_precision": [
+      -2.402569877861188e-16
+    ],
+    "last_contraction_ratio": null,
+    "sign_flips": 0,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 1.6653345369377348e-16,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S3_2/mps": {
+    "classification": "UNRESOLVED",
+    "levels": 2,
+    "signed_steps": [
+      9.601668349290549e-09
+    ],
+    "slopes_per_log_precision": [
+      1.3852279311781992e-08
+    ],
+    "last_contraction_ratio": null,
+    "sign_flips": 0,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 9.601668349290549e-09,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S3_3/mps": {
+    "classification": "UNRESOLVED",
+    "levels": 2,
+    "signed_steps": [
+      5.551115123125783e-16
+    ],
+    "slopes_per_log_precision": [
+      8.008566259537294e-16
+    ],
+    "last_contraction_ratio": null,
+    "sign_flips": 0,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 5.551115123125783e-16,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S3_4/mps": {
+    "classification": "UNRESOLVED",
+    "levels": 2,
+    "signed_steps": [
+      -1.2079522715424673e-07
+    ],
+    "slopes_per_log_precision": [
+      -1.742706751784876e-07
+    ],
+    "last_contraction_ratio": null,
+    "sign_flips": 0,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 1.2079522715424673e-07,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S3_5/mps": {
+    "classification": "UNRESOLVED",
+    "levels": 2,
+    "signed_steps": [
+      5.032918526381991e-12
+    ],
+    "slopes_per_log_precision": [
+      7.260966599209487e-12
+    ],
+    "last_contraction_ratio": null,
+    "sign_flips": 0,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 5.032918526381991e-12,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S3_6/mps": {
+    "classification": "UNRESOLVED",
+    "levels": 2,
+    "signed_steps": [
+      0.013777315580382532
+    ],
+    "slopes_per_log_precision": [
+      0.019876464864580126
+    ],
+    "last_contraction_ratio": null,
+    "sign_flips": 0,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.013777315580382532,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S3_7/mps": {
+    "classification": "UNRESOLVED",
+    "levels": 2,
+    "signed_steps": [
+      0.0
+    ],
+    "slopes_per_log_precision": [
+      0.0
+    ],
+    "last_contraction_ratio": null,
+    "sign_flips": 0,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.0,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S3_8/mps": {
+    "classification": "UNRESOLVED",
+    "levels": 2,
+    "signed_steps": [
+      1.9984014443252818e-15
+    ],
+    "slopes_per_log_precision": [
+      2.8830838534334256e-15
+    ],
+    "last_contraction_ratio": null,
+    "sign_flips": 0,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 1.9984014443252818e-15,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S3_9/mps": {
+    "classification": "UNRESOLVED",
+    "levels": 2,
+    "signed_steps": [
+      3.5911769381336e-05
+    ],
+    "slopes_per_log_precision": [
+      5.180973159600156e-05
+    ],
+    "last_contraction_ratio": null,
+    "sign_flips": 0,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 3.5911769381336e-05,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S3_10/mps": {
+    "classification": "UNRESOLVED",
+    "levels": 2,
+    "signed_steps": [
+      9.44272991784123e-05
+    ],
+    "slopes_per_log_precision": [
+      0.0001362297962492339
+    ],
+    "last_contraction_ratio": null,
+    "sign_flips": 0,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 9.44272991784123e-05,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S3_11/mps": {
+    "classification": "UNRESOLVED",
+    "levels": 2,
+    "signed_steps": [
+      -6.297554303036357e-07
+    ],
+    "slopes_per_log_precision": [
+      -9.085450362719503e-07
+    ],
+    "last_contraction_ratio": null,
+    "sign_flips": 0,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 6.297554303036357e-07,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S3_12/mps": {
+    "classification": "UNRESOLVED",
+    "levels": 2,
+    "signed_steps": [
+      -0.0016527161295284976
+    ],
+    "slopes_per_log_precision": [
+      -0.002384365364067965
+    ],
+    "last_contraction_ratio": null,
+    "sign_flips": 0,
+    "geometric_tail_proxy": null,
+    "priority_uncertainty": 0.0016527161295284976,
+    "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+  },
+  "Duke_S3_13/mps": {
+    "classification": "INSUFFICIENT_HISTORY",
+    "levels": 1,
+    "priority_uncertainty": 1.0
+  },
+  "Duke_S3_14/mps": {
+    "classification": "INSUFFICIENT_HISTORY",
+    "levels": 1,
+    "priority_uncertainty": 1.0
+  },
+  "Duke_S3_15/mps": {
+    "classification": "INSUFFICIENT_HISTORY",
+    "levels": 1,
+    "priority_uncertainty": 1.0
+  },
+  "Duke_S3_16/mps": {
+    "classification": "INSUFFICIENT_HISTORY",
+    "levels": 1,
+    "priority_uncertainty": 1.0
+  },
+  "Duke_S3_17/mps": {
+    "classification": "INSUFFICIENT_HISTORY",
+    "levels": 1,
+    "priority_uncertainty": 1.0
+  },
+  "Duke_S3_18/mps": {
+    "classification": "INSUFFICIENT_HISTORY",
+    "levels": 1,
+    "priority_uncertainty": 1.0
+  },
+  "Duke_S3_19/mps": {
+    "classification": "INSUFFICIENT_HISTORY",
+    "levels": 1,
+    "priority_uncertainty": 1.0
+  },
+  "Duke_S3_20/mps": {
+    "classification": "INSUFFICIENT_HISTORY",
+    "levels": 1,
+    "priority_uncertainty": 1.0
+  },
+  "Duke_S3_21/mps": {
+    "classification": "INSUFFICIENT_HISTORY",
+    "levels": 1,
+    "priority_uncertainty": 1.0
+  },
+  "Duke_S3_22/mps": {
+    "classification": "INSUFFICIENT_HISTORY",
+    "levels": 1,
+    "priority_uncertainty": 1.0
+  },
+  "Duke_S3_23/mps": {
+    "classification": "INSUFFICIENT_HISTORY",
+    "levels": 1,
+    "priority_uncertainty": 1.0
+  },
+  "Duke_S3_24/mps": {
+    "classification": "INSUFFICIENT_HISTORY",
+    "levels": 1,
+    "priority_uncertainty": 1.0
+  },
+  "Duke_S3_25/mps": {
+    "classification": "INSUFFICIENT_HISTORY",
+    "levels": 1,
+    "priority_uncertainty": 1.0
+  },
+  "Duke_S3_26/mps": {
+    "classification": "INSUFFICIENT_HISTORY",
+    "levels": 1,
+    "priority_uncertainty": 1.0
+  },
+  "Duke_S3_27/mps": {
+    "classification": "INSUFFICIENT_HISTORY",
+    "levels": 1,
+    "priority_uncertainty": 1.0
+  },
+  "Duke_S3_28/mps": {
+    "classification": "INSUFFICIENT_HISTORY",
+    "levels": 1,
+    "priority_uncertainty": 1.0
+  },
+  "Duke_S3_29/mps": {
+    "classification": "INSUFFICIENT_HISTORY",
+    "levels": 1,
+    "priority_uncertainty": 1.0
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "problem": "S1",
+  "attempt": 1,
+  "csv_path": "submissions/S1/attempt-01.csv",
+  "sha256": "482778c0611ee0c9f4f0d11e63b9ff6d636da99be9e8cc91f124bab0471bc320",
+  "method_note": "Computed each of the four official S1 QASM programs locally with Qiskit Aer double-precision statevector simulation, starting from |0000>, and evaluated Pauli Z on the qubit specified by its circuit ID (q0 is the rightmost Pauli character). Cross-checked every value with Qiskit Statevector. No shot sampling, fitting, or score-derived labels. BlueQubit compute cost: $0.",
+  "displayed_score": 100.0,
+  "points": 100,
+  "observed_at": "2026-10-24T16:13:30.523453+00:00",
+  "source": "https://app.bluequbit.io/hackathons/2GMaAenu3iSsIC6Z?tab=submissions",
+  "precision_note": "UI display may round the official score; this is not a pointwise error bound",
+  "method_note_path": "submissions/S1/attempt-01.txt",
+  "row_provenance": [
+    {
+      "circuit_id": "Duke_S1_0",
+      "value": -0.3621922315870977,
+      "supporting_run_ids": [
+        "local-a83668aab4394493-e9ab851249ad"
+      ]
+    },
+    {
+      "circuit_id": "Duke_S1_1",
+      "value": -0.23266741155521803,
+      "supporting_run_ids": [
+        "local-47bd4c6f42eb36e4-afdb4f9f1941"
+      ]
+    },
+    {
+      "circuit_id": "Duke_S1_2",
+      "value": 0.1025039169877569,
+      "supporting_run_ids": [
+        "local-e58c21ef7f15e24c-d4c961de83bd"
+      ]
+    },
+    {
+      "circuit_id": "Duke_S1_3",
+      "value": -0.1093709987794916,
+      "supporting_run_ids": [
+        "local-cc4150579f5eec4d-333312959c08"
+      ]
+    }
+  ]
+}

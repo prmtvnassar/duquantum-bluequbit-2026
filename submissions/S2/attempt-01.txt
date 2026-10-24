@@ -1,0 +1,1 @@
+Computed each of the sixteen official S2 QASM programs locally using Qiskit Aer double-precision, noiseless statevector simulation. Each program starts in |0...0>; the reported value is the expectation of Pauli Z on q[q], with q0 the rightmost Pauli character. No shot sampling, extrapolation, fitting, or score-derived labels. BlueQubit compute cost: $0.

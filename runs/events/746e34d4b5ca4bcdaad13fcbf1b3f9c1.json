@@ -1,0 +1,14 @@
+{
+  "event_id": "746e34d4b5ca4bcdaad13fcbf1b3f9c1",
+  "recorded_at": "2026-10-24T16:35:37.409188+00:00",
+  "kind": "quote",
+  "circuit_id": "Duke_G1_0",
+  "device": "cpu",
+  "options": {},
+  "quoted_at": "2026-10-24T16:35:37.409188+00:00",
+  "cost_usd": 0.0,
+  "runtime_seconds": 219.031,
+  "error": null,
+  "warning": "This is just an estimate; the actual runtime may be less or more.",
+  "binding_cost_cap": false
+}

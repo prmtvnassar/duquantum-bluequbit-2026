@@ -1,0 +1,51 @@
+{
+  "circuit_id": "Duke_S3_9",
+  "problem": "S3",
+  "qubit": 9,
+  "origin": "local",
+  "method": "mps",
+  "backend": "quimb.CircuitMPS.numpy",
+  "parameters": {
+    "chi": 8,
+    "svd_cutoff": 0.0
+  },
+  "status": "SUCCEEDED",
+  "estimate": -3.5911769355578826e-05,
+  "cost_usd": 0.0,
+  "wall_seconds": 4.841664999999921,
+  "finished_at": "2026-10-24T16:12:24.212642+00:00",
+  "input_sha256": "99ba802579900dec72cbac242b44bd719ac055f52adf18e6a5bcfa7c262defd2",
+  "source_sha256": "5ff8f31181561a23dacab17c7c18eaa9bcac2d8e0aecb2af686a5107fe6efe83",
+  "error": null,
+  "reason": "Sample calibration from public QASM",
+  "raw_record": "results/workflow/local/attempts/56635954dced9ae2-62747a1b439f/record.json",
+  "diagnostics": {
+    "max_bond_actual": 8,
+    "state_norm_squared": 3.635939437255981e-49,
+    "expectation_normalized": true,
+    "svd_cutoff": 0.0,
+    "target_site": 9,
+    "routing": "Explicit swap+split; original site order restored",
+    "worker_peak_rss": 196395008,
+    "memory_limit_bytes": 734003200,
+    "profile": "local",
+    "attempt_directory": "results\\workflow\\local\\attempts\\56635954dced9ae2-62747a1b439f",
+    "source_sha256": "5ff8f31181561a23dacab17c7c18eaa9bcac2d8e0aecb2af686a5107fe6efe83",
+    "recorded_at_utc": "2026-10-24T16:12:24.212642+00:00"
+  },
+  "package_versions": {
+    "python": "3.12.14",
+    "qiskit": "2.6.1",
+    "qiskit-aer": "0.18.0",
+    "quimb": "1.15.0",
+    "qiskit-addon-obp": "0.3.0",
+    "qiskit-addon-utils": "0.4.0",
+    "numpy": "2.3.5",
+    "scipy": "1.18.1",
+    "pandas": "2.3.3",
+    "matplotlib": "3.11.2",
+    "psutil": "7.2.2"
+  },
+  "started_at": "2026-10-24T16:12:19.368770+00:00",
+  "run_id": "local-56635954dced9ae2-62747a1b439f"
+}

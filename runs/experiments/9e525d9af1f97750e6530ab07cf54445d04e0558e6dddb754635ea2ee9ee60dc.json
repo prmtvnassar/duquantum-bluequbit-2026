@@ -1,0 +1,71 @@
+{
+  "key": "9e525d9af1f97750e6530ab07cf54445d04e0558e6dddb754635ea2ee9ee60dc",
+  "action": {
+    "circuit_id": "Duke_S2_14",
+    "method": "pps_threshold",
+    "parameters": {
+      "epsilon": 0.01,
+      "level": 1
+    },
+    "input_sha256": "c8a4b41e0d219d5e4d0277e3f95a208c22ce826b994e283627dc585b6fe63a6b",
+    "engine_source": "5ff8f31181561a23dacab17c7c18eaa9bcac2d8e0aecb2af686a5107fe6efe83",
+    "origin": "local"
+  },
+  "record": {
+    "circuit_id": "Duke_S2_14",
+    "sample": "S2",
+    "qubit": 14,
+    "num_qubits": 16,
+    "qasm_sha256": "c8a4b41e0d219d5e4d0277e3f95a208c22ce826b994e283627dc585b6fe63a6b",
+    "dataset_kind": "official",
+    "method": "pps_threshold",
+    "parameters": {
+      "epsilon": 0.01,
+      "level": 1
+    },
+    "status": "SUCCEEDED",
+    "estimate": 1.0,
+    "dtype": "complex128",
+    "backend": "local.numpy.coefficient_pauli",
+    "wall_seconds": 4.807642900001156,
+    "compute_seconds": 4.132514899998569,
+    "peak_rss": 163168256,
+    "package_versions": {
+      "python": "3.12.14",
+      "qiskit": "2.6.1",
+      "qiskit-aer": "0.18.0",
+      "quimb": "1.15.0",
+      "qiskit-addon-obp": "0.3.0",
+      "qiskit-addon-utils": "0.4.0",
+      "numpy": "2.3.5",
+      "scipy": "1.18.1",
+      "pandas": "2.3.3",
+      "matplotlib": "3.11.2",
+      "psutil": "7.2.2"
+    },
+    "diagnostics": {
+      "epsilon_semantics": "coefficient magnitude cutoff after gate and duplicate merging",
+      "transpilation_semantics": "Qiskit u3/CZ optimization, not BlueQubit rotation transpilation",
+      "transpilation_level": 1,
+      "numerical_atol": 1e-12,
+      "total_gates": 1,
+      "propagated_gates": 1,
+      "peak_num_paulis": 1,
+      "final_num_paulis": 1,
+      "discarded_l1_sum": 0.0,
+      "max_paulis": 100000,
+      "complete": true,
+      "worker_peak_rss": 158695424,
+      "memory_limit_bytes": 734003200,
+      "profile": "local",
+      "attempt_directory": "results\\workflow\\local\\attempts\\68bb0ced7bab008f-aa5b19beb49c",
+      "source_sha256": "5ff8f31181561a23dacab17c7c18eaa9bcac2d8e0aecb2af686a5107fe6efe83",
+      "recorded_at_utc": "2026-10-24T16:11:21.333105+00:00"
+    },
+    "error": null,
+    "cache_key": "68bb0ced7bab008f4a894199087d72d6d8fa574c0908b0f723410102af8a02d6",
+    "cache_hit": false,
+    "cost_usd": 0.0
+  },
+  "saved_at": "2026-10-24T16:11:21.335887+00:00"
+}
