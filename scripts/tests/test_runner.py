@@ -15,7 +15,10 @@ import pytest
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-import export_submission  # noqa: E402
+try:  # the workbook exporter was retired on main; its compatibility tests skip without it
+    import export_submission  # noqa: E402
+except ModuleNotFoundError:
+    export_submission = None
 from runner.backends import CloudBackend, OfflineBackend  # noqa: E402
 from runner.config import load_config  # noqa: E402
 from runner.core import Job, execute, job_key, setup_workbook  # noqa: E402
@@ -26,8 +29,11 @@ from runner.workbook import ESTIMATES, JOBS, Workbook  # noqa: E402
 
 @pytest.fixture
 def book(tmp_path):
+    template = ROOT / "runs" / "sample_1.xlsx"
+    if not template.exists():
+        pytest.skip("run workbooks were retired on main")
     path = tmp_path / "sample_1.xlsx"
-    shutil.copy(ROOT / "runs" / "sample_1.xlsx", path)
+    shutil.copy(template, path)
     return path
 
 
@@ -60,6 +66,8 @@ def test_cells_round_trip_and_rest_of_file_unchanged(book):
 
 
 def test_offline_ladder_feeds_team_exporter(book, cfg, tmp_path):
+    if export_submission is None:
+        pytest.skip("export_submission.py was retired on main")
     targets = demo_targets(cfg)
     wb = Workbook(book)
     setup_workbook(wb, "sample_1", [t.qubit for t in targets], force=True)  # copy may hold real data
@@ -80,6 +88,8 @@ def test_offline_ladder_feeds_team_exporter(book, cfg, tmp_path):
 
 
 def test_rerun_marks_old_estimate_unaccepted(book, cfg, tmp_path):
+    if export_submission is None:
+        pytest.skip("export_submission.py was retired on main")
     targets = demo_targets(cfg, n=2)
     wb = Workbook(book)
     setup_workbook(wb, "sample_1", [t.qubit for t in targets], force=True)  # copy may hold real data
@@ -112,7 +122,7 @@ class FakeClient:
         return [SimpleNamespace(job_id=i, **self.final) for i in ids]
 
 
-def test_cloud_backend_options_and_results(book, cfg, tmp_path):
+def test_cloud_backend_options_and_results(cfg, tmp_path):
     targets = demo_targets(cfg, n=2)
     client = FakeClient(dict(run_status="COMPLETED", cost=0.5, run_time_ms=1500, error_message=None,
                              expectation_value=[0.42]))
