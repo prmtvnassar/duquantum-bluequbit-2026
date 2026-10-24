@@ -1,5 +1,7 @@
 # Run records: quick start
 
+> Pre-release workbook workflow. The released Duke challenge uses one `circuit_id,value` CSV per problem. Use [the problem folders](../problems/README.md) and `scripts/export_problem_submission.py` for uploads. The workbook exporter below produces the earlier combined format.
+
 For scripts and agents, use the normalized [CSV records](csv/README.md). The six `.xlsx` files are optional human dashboards and remain unchanged; CSV and XLSX do not synchronize automatically. All six workbooks are blank templates, so no historical estimates need migration. Import the released template before recording target values.
 
 The workbook route below remains available if you prefer manual analysis and `scripts/export_submission.py`.

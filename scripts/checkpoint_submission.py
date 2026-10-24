@@ -1,4 +1,7 @@
-"""Validate a selected estimate CSV and save a complete atomic checkpoint.
+"""Legacy pre-release combined-CSV checkpoint validator.
+
+The released Duke challenge requires one circuit_id,value CSV per problem.
+Use export_problem_submission.py for uploads instead.
 
 Example:
     python scripts/checkpoint_submission.py --template kit/submission_template.csv \

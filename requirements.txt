@@ -1,11 +1,1 @@
-bluequbit
-qiskit
-qiskit-aer
-numpy
-scipy
-pandas
-matplotlib
-python-dotenv
-jupyterlab
-pytest
--e .
+-e .[dev]

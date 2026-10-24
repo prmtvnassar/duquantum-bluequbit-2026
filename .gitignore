@@ -7,6 +7,7 @@ secrets/
 __pycache__/
 *.py[cod]
 .venv/
+.venv312/
 venv/
 .ipynb_checkpoints/
 .pytest_cache/
@@ -43,6 +44,9 @@ runs/csv/*.csv
 runs/csv/*.lock
 runs/csv/.records.lock
 data/checkpoints/*.csv
+problems/**/selected.csv
+problems/**/submission.csv
+submissions/*.csv
 
 # Study-notebook outputs
 tutorials/study/submissions/
