@@ -45,12 +45,18 @@ def main() -> int:
     ap.add_argument("--yes", action="store_true", help="skip the confirmation prompt")
     ap.add_argument("--force", action="store_true", help="rerun cached jobs / overwrite --setup")
     ap.add_argument("--max-jobs", type=int, help="override limits.max_jobs_per_command")
+    ap.add_argument("--max-cost", type=float, help="override limits.max_cost_per_job (USD, estimated)")
+    ap.add_argument("--max-runtime", type=float, help="override limits.max_runtime_s (cancel jobs running longer)")
     ap.add_argument("--no-workbook", action="store_true", help="ledger only, leave workbooks untouched")
     ap.add_argument("--setup", action="store_true", help="write circuit ID and qubit IDs into the workbook")
     ap.add_argument("--resume", action="store_true", help="collect jobs left running by an earlier command")
     args = ap.parse_args()
 
     cfg = load_config()
+    if args.max_cost is not None:
+        cfg["limits"]["max_cost_per_job"] = args.max_cost
+    if args.max_runtime is not None:
+        cfg["limits"]["max_runtime_s"] = args.max_runtime
     ledger = ledger_for(args.offline)
     client = None
 
@@ -74,7 +80,8 @@ def main() -> int:
             return 0
         print(f"Resuming {len(rows)} jobs")
         backend = OfflineBackend(cfg) if args.offline else CloudBackend(cfg, client_factory())
-        books = {} if args.no_workbook else {n: workbook(n) for n in {r["circuit"] for r in rows}}
+        books = {} if args.no_workbook else {n: workbook(n) for n in {r["circuit"] for r in rows}
+                                             if workbook_path(cfg, n, args.offline).exists()}
         return report(execute(rows, backend, ledger, books, cfg))
 
     if not args.circuits:
@@ -102,14 +109,20 @@ def main() -> int:
     cached = {} if args.force else ledger.succeeded(mode)
     jobs, skipped, warnings, backfilled = [], [], [], 0
     for name in args.circuits:
-        wb = workbook(name)
-        settings, warn = resolve_settings(wb, args.method, args.slots, args.settings)
+        # Without a workbook (--no-workbook, or none exists, e.g. S3) plan from the command line alone.
+        has_book = not args.no_workbook and workbook_path(cfg, name, args.offline).exists()
+        wb = workbook(name) if has_book else None
+        if wb is None and args.slots:
+            ap.error(f"{name}: --slots reads the workbook's Status sheet; use --settings without a workbook")
+        settings, warn = resolve_settings(wb, args.method, args.slots, args.settings) if wb else (
+            [0.0] if args.method == "exact" else [float(x) for x in args.settings], [])
         warnings += warn
         transpile = None
         if args.method == "pps":
-            transpile = args.transpile if args.transpile is not None else wb.transpile()
+            default = wb.transpile() if wb else cfg.get("defaults", {}).get("pps_transpile", 2)
+            transpile = args.transpile if args.transpile is not None else default
             transpile = None if transpile is None else int(transpile)
-        in_workbook = set() if args.force else accepted_keys(wb)
+        in_workbook = set() if args.force or wb is None else accepted_keys(wb)
         targets = build_targets(name, circuit_config(cfg, name), ctx)
         if args.qubits:
             unknown = set(args.qubits) - {t.qubit for t in targets}
@@ -125,14 +138,15 @@ def main() -> int:
                     skipped.append(key)
                     continue
                 if key in cached:  # ledger has it but the workbook doesn't: copy it over, free
-                    if not args.no_workbook and not args.dry_run:
+                    if wb is not None and not args.dry_run:
                         backfill(wb, cached[key])
                         backfilled += 1
                     skipped.append(key)
                     continue
                 device, _ = job_options(cfg, args.method, setting, transpile)
                 jobs.append(Job(name, t, args.method, setting, transpile, device, key))
-        wb.save()
+        if wb is not None:
+            wb.save()
 
     for w in warnings:
         print("WARNING:", w)
@@ -159,7 +173,8 @@ def main() -> int:
             return 1
 
     backend = OfflineBackend(cfg) if args.offline else CloudBackend(cfg, client_factory())
-    books = {} if args.no_workbook else {n: workbook(n) for n in args.circuits}
+    books = {} if args.no_workbook else {n: workbook(n) for n in args.circuits
+                                         if workbook_path(cfg, n, args.offline).exists()}
     return report(execute(jobs, backend, ledger, books, cfg))
 
 

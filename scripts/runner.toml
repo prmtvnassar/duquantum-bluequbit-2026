@@ -27,6 +27,8 @@ max_in_flight = 5           # hackathon limit: 5 jobs running at once per accoun
 max_jobs_per_command = 40   # bigger batches need --max-jobs
 poll_interval_s = 5
 job_timeout_s = 7200        # stop waiting (jobs keep running; use --resume)
+max_cost_per_job = 1.0      # USD; jobs with a higher estimated cost are canceled at once (--max-cost)
+max_runtime_s = 1200        # cancel any job still running after this many seconds (--max-runtime)
 
 [observable]
 # Pauli measured for each target qubit. OTOC(2) echoes measure Z on the probe qubit.

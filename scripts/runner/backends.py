@@ -58,7 +58,28 @@ class CloudBackend:
         device, options = job_options(self.cfg, method, setting, transpile)
         result = self.client.run(target.circuit, device=device, asynchronous=True, job_name=name[:200],
                                  pauli_sum=list(target.pauli_sum), options=options, tags=tags)
+        cap = self.cfg["limits"].get("max_cost_per_job")
+        estimate = getattr(result, "estimated_cost", None)
+        if cap is not None and estimate is not None and float(estimate) > float(cap):
+            try:  # over budget: cancel before it runs up a bill
+                self.client.cancel(result.job_id)
+            except Exception:
+                pass
+            return Outcome(result.job_id, "canceled",
+                           error=f"estimated cost ${float(estimate):.2f} > cap ${float(cap):.2f}; canceled")
         return self._outcome(result)
+
+    def cancel(self, job_id: str) -> Outcome:
+        try:
+            result = self.client.cancel(job_id)
+            out = self._outcome(result[0] if isinstance(result, list) else result)
+        except Exception as exc:  # e.g. it finished just before the cancel landed
+            out = self.poll([job_id])[0]
+            if out.status == "running":
+                out = Outcome(job_id, "canceled", error=f"cancel failed: {exc}")
+        if out.status == "running":
+            out.status = "canceled"
+        return out
 
     def poll(self, job_ids: list[str]) -> list[Outcome]:
         if not job_ids:
@@ -112,6 +133,9 @@ class OfflineBackend:
         job_id = f"offline-{seed:08x}"
         self.done[job_id] = Outcome(job_id, "succeeded", float(estimate), wall_s=0.0, credits=0.0)
         return Outcome(job_id, "running")
+
+    def cancel(self, job_id: str) -> Outcome:
+        return Outcome(job_id, "canceled")
 
     def poll(self, job_ids: list[str]) -> list[Outcome]:
         return [self.done.get(j, Outcome(j, "failed", error="offline job lost (process restarted)")) for j in job_ids]

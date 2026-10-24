@@ -179,6 +179,7 @@ def execute(jobs: list[Job], backend, ledger: Ledger, workbooks: dict[str, Workb
     deadline = time.time() + float(limits.get("job_timeout_s", 7200))
 
     def finish(row: dict, out: Outcome):
+        row = {k: v for k, v in row.items() if not k.startswith("_")}
         ledger.append(**{**row, "status": out.status, "estimate": out.estimate, "wall_s": out.wall_s,
                          "credits": out.credits, "error": out.error, "recorded_utc": None})
         wb = workbooks.get(row["circuit"])
@@ -217,6 +218,7 @@ def execute(jobs: list[Job], backend, ledger: Ledger, workbooks: dict[str, Workb
                 row["job_id"] = out.job_id
                 ledger.append(**row, status="running")
                 if out.status == "running":
+                    row["_submitted"] = time.time()
                     in_flight[out.job_id] = row
                 else:
                     finish(row, out)
@@ -226,6 +228,13 @@ def execute(jobs: list[Job], backend, ledger: Ledger, workbooks: dict[str, Workb
                 for out in backend.poll(list(in_flight)):
                     if out.status != "running":
                         finish(in_flight.pop(out.job_id), out)
+                limit = limits.get("max_runtime_s")
+                for job_id, row in list(in_flight.items()):
+                    if limit and time.time() - row.get("_submitted", time.time()) > float(limit):
+                        log(f"  {job_id} passed max_runtime_s={limit}; canceling")
+                        out = backend.cancel(job_id)
+                        out.error = f"canceled after {limit}s runtime limit" + (f"; {out.error}" if out.error else "")
+                        finish(in_flight.pop(job_id), out)
             for wb in workbooks.values():
                 wb.save()
             if in_flight and time.time() > deadline:
