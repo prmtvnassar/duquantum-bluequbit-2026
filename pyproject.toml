@@ -6,8 +6,24 @@ build-backend = "setuptools.build_meta"
 name = "bluequbit-otoc-workflow"
 version = "0.1.0"
 description = "Local workflow helpers for the BlueQubit OTOC challenge"
-requires-python = ">=3.10"
-dependencies = ["bluequbit", "python-dotenv"]
+requires-python = ">=3.11,<3.13"
+dependencies = [
+  "bluequbit>=0.19.0b1",
+  "python-dotenv>=1,<2",
+  "qiskit==2.6.1",
+  "qiskit-aer==0.18.0",
+  "quimb==1.15.0",
+  "qiskit-addon-obp==0.3.0",
+  "qiskit-addon-utils==0.4.0",
+  "numpy>=1.26,<2.4",
+  "scipy>=1.13,<2",
+  "pandas>=2.2,<3",
+  "matplotlib>=3.9,<4",
+  "psutil>=6,<8",
+]
+
+[project.optional-dependencies]
+dev = ["jupyterlab", "pytest"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
