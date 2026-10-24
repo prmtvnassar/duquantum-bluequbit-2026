@@ -1,0 +1,71 @@
+{
+  "circuit_id": "Duke_G3_0",
+  "problem": "G3",
+  "qubit": 0,
+  "origin": "bluequbit",
+  "method": "pauli-path",
+  "backend": "pauli-path",
+  "parameters": {
+    "pauli_path_truncation_threshold": 0.001,
+    "pauli_path_circuit_transpilation_level": 0
+  },
+  "status": "COMPLETED",
+  "estimate": -0.05771247164299849,
+  "job_id": "4lzC9yZzqod0XIss",
+  "cost_usd": 0.0,
+  "started_at": "2026-10-24T18:03:23.247293+00:00",
+  "finished_at": "2026-10-24T18:04:45.244852+00:00",
+  "wall_seconds": 79.861,
+  "reason": "Second Astra debate round: complete chi32 pilot cohorts for G2/G4; diagnose G3 representation and within-level threshold sensitivity after contradictory low-fidelity estimates. All values remain direct and uncertified.",
+  "quote": {
+    "circuit_id": "Duke_G3_0",
+    "device": "pauli-path",
+    "options": {
+      "pauli_path_truncation_threshold": 0.001,
+      "pauli_path_circuit_transpilation_level": 0
+    },
+    "quoted_at": "2026-10-24T18:03:23.228968+00:00",
+    "cost_usd": 0.2,
+    "runtime_seconds": 0.1,
+    "error": null,
+    "warning": "This is just an estimate; the actual runtime may be less or more.",
+    "binding_cost_cap": false
+  },
+  "error": null,
+  "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZ",
+  "remote_receipt": {
+    "action": {
+      "circuit_id": "Duke_G3_0",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 0
+      },
+      "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZ"
+    },
+    "status": "COMPLETED",
+    "requested_at": "2026-10-24T18:03:23.247293+00:00",
+    "quote": {
+      "circuit_id": "Duke_G3_0",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 0
+      },
+      "quoted_at": "2026-10-24T18:03:23.228968+00:00",
+      "cost_usd": 0.2,
+      "runtime_seconds": 0.1,
+      "error": null,
+      "warning": "This is just an estimate; the actual runtime may be less or more.",
+      "binding_cost_cap": false
+    },
+    "scheduler_justification": "Second Astra debate round: complete chi32 pilot cohorts for G2/G4; diagnose G3 representation and within-level threshold sensitivity after contradictory low-fidelity estimates. All values remain direct and uncertified.",
+    "job_id": "4lzC9yZzqod0XIss",
+    "estimate": -0.05771247164299849,
+    "cost_usd": 0.0,
+    "compute_ms": 79556,
+    "queue_ms": 305,
+    "updated_at": "2026-10-24T18:04:45.244852+00:00"
+  },
+  "run_id": "remote-10ee83ed5327a2d387319fdada2805392acfc424f25f8ab7844611d34fa50e16"
+}

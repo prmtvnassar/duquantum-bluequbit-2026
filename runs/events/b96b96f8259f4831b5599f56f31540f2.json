@@ -1,0 +1,356 @@
+{
+  "event_id": "b96b96f8259f4831b5599f56f31540f2",
+  "recorded_at": "2026-10-24T17:51:26.138887+00:00",
+  "kind": "graded_decision",
+  "generated_at": "2026-10-24T17:51:26.138887+00:00",
+  "usage": {
+    "observed_at": "2026-10-24T17:51:21.775751+00:00",
+    "source": "BlueQubit job API",
+    "job_count": 52,
+    "known_cost_usd": 0.0,
+    "active_jobs": 0,
+    "gpu_time_known": true,
+    "gpu_seconds": 0.0,
+    "gpu_seconds_last_hour": 0.0,
+    "unknown_terminal_costs": 0
+  },
+  "missing_rows": {
+    "G1": 0,
+    "G2": 33,
+    "G3": 33,
+    "G4": 33
+  },
+  "actions": [
+    {
+      "circuit_id": "Duke_G4_3",
+      "problem": "G4",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 16
+      },
+      "reason": "Missing baseline row; use an unattempted direct method. Flat primary pilot replaced by a complete nonconstant independent-method pilot; signal recovery only, accuracy uncertified",
+      "stage": "coverage",
+      "uncertainty": 1.0,
+      "quote": {
+        "circuit_id": "Duke_G4_3",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 16
+        },
+        "quoted_at": "2026-10-24T17:51:24.658081+00:00",
+        "cost_usd": 0.2,
+        "runtime_seconds": 114.1,
+        "error": null,
+        "warning": "This is just an estimate; the actual runtime may be less or more.",
+        "binding_cost_cap": false
+      },
+      "allowed": true,
+      "gate": "within_graded_budget",
+      "priority": 113579717.1865042,
+      "protected_baseline_usd": 19.6,
+      "timeout_seconds": 600,
+      "route_quotes": [
+        {
+          "circuit_id": "Duke_G4_3",
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 16
+          },
+          "quoted_at": "2026-10-24T17:51:24.658081+00:00",
+          "cost_usd": 0.2,
+          "runtime_seconds": 114.1,
+          "error": null,
+          "warning": "This is just an estimate; the actual runtime may be less or more.",
+          "binding_cost_cap": false
+        },
+        {
+          "circuit_id": "Duke_G4_3",
+          "device": "mps.gpu",
+          "options": {
+            "mps_bond_dimension": 16
+          },
+          "quoted_at": "2026-10-24T17:51:26.108064+00:00",
+          "cost_usd": 0.2,
+          "runtime_seconds": 147.4,
+          "error": null,
+          "warning": "This is just an estimate; the actual runtime may be less or more.",
+          "binding_cost_cap": false
+        }
+      ],
+      "score_progress": {
+        "observed_submissions": 0,
+        "best_displayed_score": null,
+        "recent_score_change": null,
+        "priority_room": 1.0,
+        "interpretation": "Whole-problem effort allocation only; never infer or fit individual hidden labels"
+      },
+      "runtime_model": {
+        "seconds": 114.1,
+        "observed_upper_quartile_seconds": 21.444651,
+        "observations": 5,
+        "interpretation": "Empirical wall-time floor, not a runtime guarantee or a cost discount"
+      },
+      "shape_priority_multiplier": 1.0
+    },
+    {
+      "circuit_id": "Duke_G3_1",
+      "problem": "G3",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 16
+      },
+      "reason": "Missing baseline row; use an unattempted direct method. Flat primary pilot replaced by a complete nonconstant independent-method pilot; signal recovery only, accuracy uncertified",
+      "stage": "coverage",
+      "uncertainty": 1.0,
+      "quote": {
+        "circuit_id": "Duke_G3_1",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 16
+        },
+        "quoted_at": "2026-10-24T17:50:20.973823+00:00",
+        "cost_usd": 0.2,
+        "runtime_seconds": 104.6,
+        "error": null,
+        "warning": "This is just an estimate; the actual runtime may be less or more.",
+        "binding_cost_cap": false
+      },
+      "allowed": true,
+      "gate": "within_graded_budget",
+      "priority": 97016735.38685423,
+      "protected_baseline_usd": 19.6,
+      "timeout_seconds": 600,
+      "route_quotes": [
+        {
+          "circuit_id": "Duke_G3_1",
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 16
+          },
+          "quoted_at": "2026-10-24T17:50:20.973823+00:00",
+          "cost_usd": 0.2,
+          "runtime_seconds": 104.6,
+          "error": null,
+          "warning": "This is just an estimate; the actual runtime may be less or more.",
+          "binding_cost_cap": false
+        },
+        {
+          "circuit_id": "Duke_G3_1",
+          "device": "mps.gpu",
+          "options": {
+            "mps_bond_dimension": 16
+          },
+          "quoted_at": "2026-10-24T17:50:23.107347+00:00",
+          "cost_usd": 0.2,
+          "runtime_seconds": 141.3,
+          "error": null,
+          "warning": "This is just an estimate; the actual runtime may be less or more.",
+          "binding_cost_cap": false
+        }
+      ],
+      "score_progress": {
+        "observed_submissions": 0,
+        "best_displayed_score": null,
+        "recent_score_change": null,
+        "priority_room": 1.0,
+        "interpretation": "Whole-problem effort allocation only; never infer or fit individual hidden labels"
+      },
+      "runtime_model": {
+        "seconds": 104.6,
+        "observed_upper_quartile_seconds": 42.910439,
+        "observations": 3,
+        "interpretation": "Empirical wall-time floor, not a runtime guarantee or a cost discount"
+      },
+      "shape_priority_multiplier": 1.0
+    },
+    {
+      "circuit_id": "Duke_G2_1",
+      "problem": "G2",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 16
+      },
+      "reason": "Missing baseline row; use an unattempted direct method. Flat primary pilot replaced by a complete nonconstant independent-method pilot; signal recovery only, accuracy uncertified",
+      "stage": "coverage",
+      "uncertainty": 1.0,
+      "quote": {
+        "circuit_id": "Duke_G2_1",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 16
+        },
+        "quoted_at": "2026-10-24T17:50:18.203699+00:00",
+        "cost_usd": 0.2,
+        "runtime_seconds": 131.6,
+        "error": null,
+        "warning": "This is just an estimate; the actual runtime may be less or more.",
+        "binding_cost_cap": false
+      },
+      "allowed": true,
+      "gate": "within_graded_budget",
+      "priority": 70455612.96383278,
+      "protected_baseline_usd": 19.6,
+      "timeout_seconds": 600,
+      "route_quotes": [
+        {
+          "circuit_id": "Duke_G2_1",
+          "device": "mps.cpu",
+          "options": {
+            "mps_bond_dimension": 16
+          },
+          "quoted_at": "2026-10-24T17:50:18.203699+00:00",
+          "cost_usd": 0.2,
+          "runtime_seconds": 131.6,
+          "error": null,
+          "warning": "This is just an estimate; the actual runtime may be less or more.",
+          "binding_cost_cap": false
+        },
+        {
+          "circuit_id": "Duke_G2_1",
+          "device": "mps.gpu",
+          "options": {
+            "mps_bond_dimension": 16
+          },
+          "quoted_at": "2026-10-24T17:50:19.704750+00:00",
+          "cost_usd": 0.2,
+          "runtime_seconds": 158.3,
+          "error": null,
+          "warning": "This is just an estimate; the actual runtime may be less or more.",
+          "binding_cost_cap": false
+        }
+      ],
+      "score_progress": {
+        "observed_submissions": 0,
+        "best_displayed_score": null,
+        "recent_score_change": null,
+        "priority_room": 1.0,
+        "interpretation": "Whole-problem effort allocation only; never infer or fit individual hidden labels"
+      },
+      "runtime_model": {
+        "seconds": 131.6,
+        "observed_upper_quartile_seconds": 24.377392999999998,
+        "observations": 3,
+        "interpretation": "Empirical wall-time floor, not a runtime guarantee or a cost discount"
+      },
+      "shape_priority_multiplier": 1.0
+    }
+  ],
+  "next": {
+    "circuit_id": "Duke_G4_3",
+    "problem": "G4",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 16
+    },
+    "reason": "Missing baseline row; use an unattempted direct method. Flat primary pilot replaced by a complete nonconstant independent-method pilot; signal recovery only, accuracy uncertified",
+    "stage": "coverage",
+    "uncertainty": 1.0,
+    "quote": {
+      "circuit_id": "Duke_G4_3",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 16
+      },
+      "quoted_at": "2026-10-24T17:51:24.658081+00:00",
+      "cost_usd": 0.2,
+      "runtime_seconds": 114.1,
+      "error": null,
+      "warning": "This is just an estimate; the actual runtime may be less or more.",
+      "binding_cost_cap": false
+    },
+    "allowed": true,
+    "gate": "within_graded_budget",
+    "priority": 113579717.1865042,
+    "protected_baseline_usd": 19.6,
+    "timeout_seconds": 600,
+    "route_quotes": [
+      {
+        "circuit_id": "Duke_G4_3",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 16
+        },
+        "quoted_at": "2026-10-24T17:51:24.658081+00:00",
+        "cost_usd": 0.2,
+        "runtime_seconds": 114.1,
+        "error": null,
+        "warning": "This is just an estimate; the actual runtime may be less or more.",
+        "binding_cost_cap": false
+      },
+      {
+        "circuit_id": "Duke_G4_3",
+        "device": "mps.gpu",
+        "options": {
+          "mps_bond_dimension": 16
+        },
+        "quoted_at": "2026-10-24T17:51:26.108064+00:00",
+        "cost_usd": 0.2,
+        "runtime_seconds": 147.4,
+        "error": null,
+        "warning": "This is just an estimate; the actual runtime may be less or more.",
+        "binding_cost_cap": false
+      }
+    ],
+    "score_progress": {
+      "observed_submissions": 0,
+      "best_displayed_score": null,
+      "recent_score_change": null,
+      "priority_room": 1.0,
+      "interpretation": "Whole-problem effort allocation only; never infer or fit individual hidden labels"
+    },
+    "runtime_model": {
+      "seconds": 114.1,
+      "observed_upper_quartile_seconds": 21.444651,
+      "observations": 5,
+      "interpretation": "Empirical wall-time floor, not a runtime guarantee or a cost discount"
+    },
+    "shape_priority_multiplier": 1.0
+  },
+  "status": "PLAN_ONLY",
+  "policy_recovery": {
+    "G2": {
+      "previous_primary": "pps",
+      "selected_primary": "mps",
+      "pilot_spread": 1.061674992271691,
+      "options": {
+        "mps_bond_dimension": 16
+      },
+      "job_ids": [
+        "EGRvEgYDOUFR8SgB",
+        "eV35YkTqQE4xkAN9",
+        "JmVGz8yxU6PTAw9c"
+      ],
+      "interpretation": "Flat primary pilot replaced by a complete nonconstant independent-method pilot; signal recovery only, accuracy uncertified"
+    },
+    "G3": {
+      "previous_primary": "pps",
+      "selected_primary": "mps",
+      "pilot_spread": 0.026913611554988823,
+      "options": {
+        "mps_bond_dimension": 16
+      },
+      "job_ids": [
+        "tUmLbvbMpdqPY6SV",
+        "KJ1mxvnKtDlT3dXb",
+        "zTYGrn2XLOYS8SXF"
+      ],
+      "interpretation": "Flat primary pilot replaced by a complete nonconstant independent-method pilot; signal recovery only, accuracy uncertified"
+    },
+    "G4": {
+      "previous_primary": "pps",
+      "selected_primary": "mps",
+      "pilot_spread": 0.5582279479473952,
+      "options": {
+        "mps_bond_dimension": 16
+      },
+      "job_ids": [
+        "BsLvSnV91rVxH6Ts",
+        "cN47ifNQlQ7RsODe",
+        "y4FHoDVz8SMmcAE4"
+      ],
+      "interpretation": "Flat primary pilot replaced by a complete nonconstant independent-method pilot; signal recovery only, accuracy uncertified"
+    }
+  },
+  "vector_trends": {},
+  "warning": "Sample allocation is a prior. Budget/deadline stops do not certify numerical convergence. Flat pilot vectors block bulk coverage and require refinement/review."
+}

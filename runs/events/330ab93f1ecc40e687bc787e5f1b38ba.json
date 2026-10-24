@@ -1,0 +1,6 @@
+{
+  "event_id": "330ab93f1ecc40e687bc787e5f1b38ba",
+  "recorded_at": "2026-10-24T17:54:33.346696+00:00",
+  "kind": "campaign_review_resume",
+  "reason": "Prior batch terminated cleanly; no unresolved active jobs. Proceed only with bounded discriminating checks."
+}
