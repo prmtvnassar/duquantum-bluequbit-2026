@@ -35,6 +35,12 @@ comparison certifies the full vector. The first two-job CPU controller trial
 completed successfully; [reports/cpu_concurrency_trial.json](reports/cpu_concurrency_trial.json)
 records timing, costs and its limitations.
 
+G4's complete 38-row chi32 candidate is also preserved in the candidate directory,
+with $0 recorded cohort cost and an unobserved official score. G3's level 1 PPS
+baseline is being completed. The original account's runtime state remains at
+`D:/BluQubit/results/workflow` for the existing usage monitor; an isolated Git
+worktree keeps this campaign's code and audit commits separate from other work.
+
 A **cohort** means one device and identical full native options for every ID in a
 problem's retained template. CPU and GPU are separate cohorts; different PPS
 transpilation levels are separate cohorts. Coverage counts rows in the selected

@@ -8,13 +8,13 @@
   "parameters": {
     "mps_bond_dimension": 32
   },
-  "status": "SUBMITTING",
-  "estimate": null,
-  "job_id": null,
-  "cost_usd": null,
+  "status": "COMPLETED",
+  "estimate": 0.7452674932698848,
+  "job_id": "WrjS6BxTXfSKniPM",
+  "cost_usd": 0.0,
   "started_at": "2026-10-24T18:41:38.408609+00:00",
-  "finished_at": null,
-  "wall_seconds": 0.0,
+  "finished_at": "2026-10-24T18:42:22.056747+00:00",
+  "wall_seconds": 37.735,
   "reason": "Complete one explicitly selected CPU cohort with at most two reserved asynchronous jobs; no extrapolation or mixed-configuration rows",
   "quote": {
     "circuit_id": "Duke_G4_30",
@@ -40,7 +40,7 @@
       },
       "pauli": "IIIIIIIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
     },
-    "status": "SUBMITTING",
+    "status": "COMPLETED",
     "requested_at": "2026-10-24T18:41:38.408609+00:00",
     "quote": {
       "circuit_id": "Duke_G4_30",
@@ -73,7 +73,13 @@
           "G4": 6
         }
       }
-    }
+    },
+    "job_id": "WrjS6BxTXfSKniPM",
+    "estimate": 0.7452674932698848,
+    "cost_usd": 0.0,
+    "compute_ms": 37345,
+    "queue_ms": 390,
+    "updated_at": "2026-10-24T18:42:22.056747+00:00"
   },
   "run_id": "remote-8c92c73d1b04e2b2abd90aa76d583564cce5033317fe3e4dfa86c803bcb6fff9"
 }

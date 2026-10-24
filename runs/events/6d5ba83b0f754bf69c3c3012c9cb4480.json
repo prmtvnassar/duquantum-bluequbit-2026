@@ -1,0 +1,10 @@
+{
+  "event_id": "6d5ba83b0f754bf69c3c3012c9cb4480",
+  "recorded_at": "2026-10-24T18:46:29.782441+00:00",
+  "kind": "candidate_archived",
+  "problem": "G4",
+  "csv_path": "submissions/candidates/G4/direct-930f7e5b7d14.csv",
+  "sha256": "73a5887922c63eb2aafe840fae8e9b26402256fdfc13accf9f689ad4329cbb20",
+  "submitted": false,
+  "rows": 38
+}

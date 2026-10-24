@@ -9,6 +9,7 @@ not a convergence certificate.
 | Problem | CSV | Method explanation | Configuration |
 | --- | --- | --- | --- |
 | G2 | [direct-3643218316ac.csv](G2/direct-3643218316ac.csv) | [Explanation](G2/direct-3643218316ac.txt) | CPU MPS, bond dimension 32; all 36 rows; $0 recorded cohort cost |
+| G4 | [direct-930f7e5b7d14.csv](G4/direct-930f7e5b7d14.csv) | [Explanation](G4/direct-930f7e5b7d14.txt) | CPU MPS, bond dimension 32; all 38 rows; $0 recorded cohort cost; score unknown |
 
 The user reports that a teammate's first G2 attempt using this candidate scored
 **498/600**. Its [separate receipt](../teammates/teammate_reported/G2/attempt-01.json)
