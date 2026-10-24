@@ -1,0 +1,16 @@
+{
+  "checked_at": "2026-10-24T19:25:11.803340+00:00",
+  "scope": "Every saved original-account remote action, including canceled/failed/unfinished intents; collaborator imports checked separately by existing provenance.",
+  "state_source": "D:/BluQubit/results/workflow/remote_actions",
+  "current_account_status_counts": {
+    "COMPLETED": 174,
+    "RUNNING": 2,
+    "CANCELED": 2
+  },
+  "collaborator_receipts_excluded": 0,
+  "tracked_job_rows": 591,
+  "missing": [],
+  "mismatches": [],
+  "result": "PASS",
+  "limits": "Active-job status can change after this snapshot. This is accounting coverage, not a numerical accuracy check."
+}

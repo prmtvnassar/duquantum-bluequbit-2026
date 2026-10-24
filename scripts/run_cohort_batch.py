@@ -18,7 +18,7 @@ def main():
     parser.add_argument("--state-root", type=Path, default=Path("results/workflow"),
                         help="Shared account receipts, checkpoints and remote_runner lock directory")
     parser.add_argument("--problem", choices=["G2", "G3", "G4"], required=True)
-    parser.add_argument("--device", choices=["mps.cpu", "pauli-path"], required=True)
+    parser.add_argument("--device", choices=["mps.cpu", "pauli-path", "mps.gpu", "pauli-path.gpu"], required=True)
     parser.add_argument("--options-file", type=Path, required=True, help="JSON object with every selected native option")
     parser.add_argument("--slots", type=int, choices=[1, 2], default=2)
     parser.add_argument("--max-jobs", type=int)
@@ -32,6 +32,9 @@ def main():
     args = parser.parse_args()
     if not args.execute:
         parser.error("Execution requires --execute; review the explicit cohort/options first")
+    gpu = args.device in {"mps.gpu", "pauli-path.gpu"}
+    if gpu and (not args.targeted_diagnostics or args.slots != 1):
+        parser.error("GPU devices require --targeted-diagnostics and --slots 1")
     diagnostic_values = (args.target_ids, args.execution_timeout, args.quote_runtime_limit, args.diagnostic_reason)
     if not args.targeted_diagnostics and any(value is not None for value in diagnostic_values):
         parser.error("Diagnostic targets, caps and reason require --targeted-diagnostics")
@@ -42,6 +45,8 @@ def main():
                for value in (args.execution_timeout, args.quote_runtime_limit)):
             parser.error("Both diagnostic runtime limits must be within 1..3600 seconds")
     settings = load_settings(args.config)  # Existing serial configuration remains unchanged.
+    if gpu and settings.get("gpu_enabled") is not True:
+        parser.error("GPU diagnostics require gpu_enabled in the selected configuration")
     options = json.loads(args.options_file.read_text(encoding="utf-8-sig"))
     reserves = (json.loads(args.reserve_cohorts_file.read_text(encoding="utf-8-sig"))
                 if args.reserve_cohorts_file else None)

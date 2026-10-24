@@ -1,0 +1,427 @@
+{
+  "event_id": "eaa3f297340c4855ae074ffdf9c4d6e6",
+  "recorded_at": "2026-10-24T19:01:01.445035+00:00",
+  "kind": "candidate_export",
+  "problem": "G4",
+  "csv_path": "D:\\BluQubit\\results\\workflow\\submissions\\G4\\direct-930f7e5b7d14.csv",
+  "selection": [
+    {
+      "circuit_id": "Duke_G4_0",
+      "value": 0.27027187138182995,
+      "job_id": "78aF6vkVPu0XZJaR",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G4_1",
+      "value": -0.05391704083745798,
+      "job_id": "JgcvRKxwUG2U9VHl",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G4_2",
+      "value": -0.1275057744901126,
+      "job_id": "0cfHjjUtbHO3z4Q2",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G4_3",
+      "value": 0.0216647488567619,
+      "job_id": "GTXBAMSNlgBI2eKc",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G4_4",
+      "value": 0.33199024264916044,
+      "job_id": "hvqh9jbt8GbqXSRP",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G4_5",
+      "value": 0.30370749539212655,
+      "job_id": "ykQWw7sUtvr6VfIa",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G4_6",
+      "value": 0.040328284912787005,
+      "job_id": "nPAI6JihLrXUGsPh",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G4_7",
+      "value": 0.05143093578009976,
+      "job_id": "T59bY4yuPjMrBUoZ",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G4_8",
+      "value": 0.23425449494993247,
+      "job_id": "SBg2xDmmkogRYNjP",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G4_9",
+      "value": 0.37011431256877864,
+      "job_id": "kDPVXSwNrvpJ4xbS",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G4_10",
+      "value": 0.5326641194550001,
+      "job_id": "HwQSH9aGuRNvRGx8",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G4_11",
+      "value": 0.7258613376846651,
+      "job_id": "SniEe9FznRnVBWfU",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G4_12",
+      "value": 0.47656869319503414,
+      "job_id": "ksdT8d4KwaMzksRD",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G4_13",
+      "value": 0.3729717469779542,
+      "job_id": "9nqoonDvTfuUWzAP",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G4_14",
+      "value": 0.47702245455598935,
+      "job_id": "s4oioJkxehZI9M8g",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G4_15",
+      "value": 0.6219784869230912,
+      "job_id": "rohx5YGiGgrBzm9s",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G4_16",
+      "value": 0.2683655372042551,
+      "job_id": "p9TJELv8W9jGKhXM",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G4_17",
+      "value": 0.6717038489894638,
+      "job_id": "NhbO7kWnsG0K4orY",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G4_18",
+      "value": 0.18750767972073615,
+      "job_id": "sIp7waZ3gpgCx5wL",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G4_19",
+      "value": 0.2881005630511742,
+      "job_id": "smDxT4giEnJIkVRP",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G4_20",
+      "value": -0.09415574797673788,
+      "job_id": "8ffB8rQvkWE4dRDq",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G4_21",
+      "value": -0.07355656603153052,
+      "job_id": "nWHb1bXSy2daQqeh",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G4_22",
+      "value": 0.8243148746166992,
+      "job_id": "1XPzZ7FCi9Cuad2w",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G4_23",
+      "value": 0.8562761774261549,
+      "job_id": "jveFh3KrKdtOVZIR",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G4_24",
+      "value": 0.46501541914949224,
+      "job_id": "eqy3xgGJ9SDp7vme",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G4_25",
+      "value": 0.49289503655313616,
+      "job_id": "zseZsb88I2JNydq4",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G4_26",
+      "value": 0.7714546225058098,
+      "job_id": "y7zGCDGBGqceEBH1",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G4_27",
+      "value": 0.769013337172865,
+      "job_id": "Z7wAJkxcAi0PvDCB",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G4_28",
+      "value": 0.8859976935808123,
+      "job_id": "wQjb9D2ZFtNsg45U",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G4_29",
+      "value": 0.9246452485083224,
+      "job_id": "kxLjRoBQfI7ekOuo",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G4_30",
+      "value": 0.7452674932698848,
+      "job_id": "WrjS6BxTXfSKniPM",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G4_31",
+      "value": 0.797099095586538,
+      "job_id": "9FWXbGIDqjfaOYY5",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G4_32",
+      "value": 0.6679260767663375,
+      "job_id": "VKMY01hftkklFVCb",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G4_33",
+      "value": 0.6424700885397696,
+      "job_id": "upJxVXhRnrbGePAE",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G4_34",
+      "value": 0.8315774270045845,
+      "job_id": "DXhdsLqoxavp8P3h",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G4_35",
+      "value": 0.7887005084821238,
+      "job_id": "XFonxtCv4CqRX9Rg",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G4_36",
+      "value": 0.9599477501512003,
+      "job_id": "y9S7J3rgBoQ2o2VY",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G4_37",
+      "value": 0.9570614225300893,
+      "job_id": "vGhKebHhF7A0UAOm",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    }
+  ]
+}

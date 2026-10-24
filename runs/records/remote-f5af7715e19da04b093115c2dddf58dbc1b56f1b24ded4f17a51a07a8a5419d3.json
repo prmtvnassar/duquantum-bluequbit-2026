@@ -1,0 +1,94 @@
+{
+  "circuit_id": "Duke_G4_1",
+  "problem": "G4",
+  "qubit": 1,
+  "origin": "bluequbit",
+  "method": "mps.cpu",
+  "backend": "mps.cpu",
+  "parameters": {
+    "mps_bond_dimension": 64
+  },
+  "status": "COMPLETED",
+  "estimate": 0.007231963674696249,
+  "job_id": "9fLbu6CIjhHbZtkr",
+  "cost_usd": 0.0,
+  "started_at": "2026-10-24T19:24:32.462628+00:00",
+  "finished_at": "2026-10-24T19:27:49.358068+00:00",
+  "wall_seconds": 193.057,
+  "reason": "Broaden the G4 matched precision panel beyond q0 and q4: q1 tests a prior sign change and q19 tests a separated interior row. Current MPS increments still large; two PPS thresholds returned zero with 33x compute growth. Defer duplicate same-precision GPU work and further PPS escalation; diagnose shape before any full vector commitment.",
+  "quote": {
+    "circuit_id": "Duke_G4_1",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 64
+    },
+    "quoted_at": "2026-10-24T19:24:32.176317+00:00",
+    "cost_usd": 0.79,
+    "runtime_seconds": 1877.8,
+    "error": null,
+    "warning": "This is just an estimate; the actual runtime may be less or more.",
+    "binding_cost_cap": false
+  },
+  "error": null,
+  "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZI",
+  "remote_receipt": {
+    "action": {
+      "circuit_id": "Duke_G4_1",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 64
+      },
+      "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZI"
+    },
+    "status": "COMPLETED",
+    "requested_at": "2026-10-24T19:24:32.462628+00:00",
+    "quote": {
+      "circuit_id": "Duke_G4_1",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 64
+      },
+      "quoted_at": "2026-10-24T19:24:32.176317+00:00",
+      "cost_usd": 0.79,
+      "runtime_seconds": 1877.8,
+      "error": null,
+      "warning": "This is just an estimate; the actual runtime may be less or more.",
+      "binding_cost_cap": false
+    },
+    "timeout_seconds": 600.0,
+    "scheduler_justification": "Broaden the G4 matched precision panel beyond q0 and q4: q1 tests a prior sign change and q19 tests a separated interior row. Current MPS increments still large; two PPS thresholds returned zero with 33x compute growth. Defer duplicate same-precision GPU work and further PPS escalation; diagnose shape before any full vector commitment.",
+    "cohort_batch": {
+      "cohort_key": "ae1f5683d7ab6468d6f7b44f350f760d6cd35326bc1c81d41633c1e2f60c5d73",
+      "slots": 2,
+      "mode": "TARGETED_DIAGNOSTICS",
+      "target_ids": [
+        "Duke_G4_1",
+        "Duke_G4_19"
+      ],
+      "execution_timeout_seconds": 600.0,
+      "quote_runtime_limit_seconds": 2400.0,
+      "diagnostic_reason": "Broaden the G4 matched precision panel beyond q0 and q4: q1 tests a prior sign change and q19 tests a separated interior row. Current MPS increments still large; two PPS thresholds returned zero with 33x compute growth. Defer duplicate same-precision GPU work and further PPS escalation; diagnose shape before any full vector commitment.",
+      "gpu_quota_at_admission": null,
+      "reserved_quote_usd": 0.79,
+      "budget_at_admission": {
+        "actual_spent_usd": 0.2,
+        "outstanding_quote_usd": 0.0,
+        "new_quote_usd": 0.79,
+        "missing_cohort_reserve_usd": 0.0,
+        "planned_exposure_usd": 0.99,
+        "missing_unreserved_rows": {
+          "G2": 0,
+          "G3": 0,
+          "G4": 0
+        }
+      }
+    },
+    "job_id": "9fLbu6CIjhHbZtkr",
+    "estimate": 0.007231963674696249,
+    "cost_usd": 0.0,
+    "compute_ms": 192702,
+    "queue_ms": 355,
+    "updated_at": "2026-10-24T19:27:49.358068+00:00"
+  },
+  "run_id": "remote-f5af7715e19da04b093115c2dddf58dbc1b56f1b24ded4f17a51a07a8a5419d3"
+}

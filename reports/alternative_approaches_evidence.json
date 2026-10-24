@@ -1,0 +1,432 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-10-24T19:09:59.343543+00:00",
+  "review_type": "read_only_paper_evidence_and_proposed_experiments",
+  "execution": {
+    "live_api_calls": 0,
+    "simulations": 0,
+    "submissions": 0,
+    "workflow_mutations": 0,
+    "note": "Coordinator separately reports starting G4 CPU chi64 q0/q4 checks. Their status and results are outside this review."
+  },
+  "paper": {
+    "path": "D:\\BluQubit\\papers\\alternative approaches.pdf",
+    "title": "Benchmarking Zero-Setup Quantum Circuit Simulators",
+    "authors": [
+      "Arul Rhik Mazumder",
+      "Hovnatan Karapetyan",
+      "Mohammed Zuhair Mullath",
+      "Rudy H. Tanin",
+      "Hrant Gharibyan",
+      "Hayk Tepanyan"
+    ],
+    "printed_identifier": "arXiv:2607.09882v4",
+    "printed_date": "2026-09-02",
+    "identifier_independently_verified": false,
+    "sha256": "97f009b8783e1695ba8db8ac2268f56c1aca647f25fa1253b12d6ce014dd8405",
+    "bytes": 2369310,
+    "pages": 14,
+    "all_text_read": true,
+    "visual_pages_reviewed": [
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "visual_figures_reviewed": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "render_engine": "bundled Poppler pdftoppm",
+    "render_dpi": 110,
+    "source_treated_as_instructions": false,
+    "external_repository_or_citations_fetched": false
+  },
+  "facts": [
+    {
+      "id": "mps_scaling",
+      "source": "supplied_pdf",
+      "pages": [
+        6,
+        7
+      ],
+      "figures": [
+        3,
+        4
+      ],
+      "claim": "Quantum-volume MPS effective runtime scaling favors GPU increasingly as chi grows.",
+      "quantities": {
+        "qubits": 40,
+        "depth": 10,
+        "reported_chi_min": 32,
+        "reported_chi_max": 1536,
+        "cpu_total_exponent": 2.03,
+        "cpu_total_exponent_standard_error": 0.11,
+        "gpu_total_exponent": 1.49,
+        "gpu_total_exponent_standard_error": 0.06,
+        "reported_speedup_exponent": 0.55,
+        "cpu_build_exponent": 2.1,
+        "gpu_build_exponent": 1.48
+      },
+      "caveat": "Fits are workload-specific. Extrapolated chi5000 times are not measured and are not predictions for Duke circuits."
+    },
+    {
+      "id": "mps_qft_slowdown",
+      "source": "supplied_pdf",
+      "pages": [
+        8
+      ],
+      "figures": [
+        7
+      ],
+      "claim": "Low-entanglement QFT favors CPU despite large qubit count.",
+      "quantities": {
+        "qubits": 96,
+        "chi_max": 64,
+        "cpu_seconds_approx": 12,
+        "gpu_seconds_approx": 90,
+        "gpu_slowdown_approx": 7.5
+      },
+      "caveat": "This does not make chi128 a universal hardware threshold."
+    },
+    {
+      "id": "mps_build_sampling",
+      "source": "supplied_pdf",
+      "pages": [
+        7
+      ],
+      "figures": [
+        4,
+        5
+      ],
+      "claim": "Build time and sampling respond differently to hardware.",
+      "quantities": {
+        "qubits": 40,
+        "depth": 10,
+        "chi": 256,
+        "cpu_build_seconds_approx": 715,
+        "gpu_build_seconds_approx": 360,
+        "one_shot_speedup_approx": 2.0,
+        "ten_thousand_shot_speedup_approx": 1.3
+      },
+      "caveat": "Do not change the campaign observable or SDK shot semantics from this example; additional shots do not repair truncation."
+    },
+    {
+      "id": "peaked_quality",
+      "source": "supplied_pdf",
+      "pages": [
+        5,
+        9
+      ],
+      "figures": [
+        9
+      ],
+      "claim": "Peaked-circuit target-bit overlap improves overall with chi but is not monotonic at intermediate chi.",
+      "quantities": {
+        "qubits": 46,
+        "rzz_gates": 1320,
+        "decomposed_two_qubit_gates_approx": 6646,
+        "overlap_percent_chi4": 50,
+        "overlap_percent_chi1536": 100,
+        "crossover_chi_approx": 128,
+        "cpu_max_completed_chi": 256,
+        "gpu_chi1536_seconds_approx": 80000
+      },
+      "caveat": "Overlap means marginal-sign bit reconstruction, not state fidelity, OTOC accuracy, or Pearson score. About 22 hours per run is outside campaign limits."
+    },
+    {
+      "id": "pps_runtime",
+      "source": "supplied_pdf",
+      "pages": [
+        9,
+        10
+      ],
+      "figures": [
+        10
+      ],
+      "claim": "On the kicked Ising example, fine-threshold PPS strongly favors GPU.",
+      "quantities": {
+        "qubits": 127,
+        "trotter_steps": 20,
+        "theta_h": "pi/4",
+        "observable": "Z62",
+        "crossover_threshold_approx": 0.001,
+        "threshold": 2.5e-05,
+        "max_pauli_terms_approx": 27600000,
+        "gpu_seconds_h200": 3.17,
+        "gpu_seconds_mi300x": 3.23,
+        "gpu_seconds_h100": 3.52,
+        "bluequbit_cpu_seconds": 5714,
+        "qiskit_cpu_seconds": 5645,
+        "julia_cpu_seconds": 55430
+      },
+      "caveat": "Not a runtime or term-count prediction for hidden Duke circuits; GPU PPS access is not established by this paper for our SDK."
+    },
+    {
+      "id": "pps_nonmonotonic",
+      "source": "supplied_pdf",
+      "pages": [
+        10,
+        11
+      ],
+      "figures": [
+        11,
+        12
+      ],
+      "claim": "PPS error can initially worsen as the coefficient threshold decreases, then recover.",
+      "quantities": {
+        "reference_observable": 0.2955,
+        "threshold_error_points_approx": [
+          {
+            "threshold": 0.005,
+            "absolute_error": 0.015
+          },
+          {
+            "threshold": 5e-05,
+            "absolute_error": 0.14
+          },
+          {
+            "threshold": 2.89e-06,
+            "absolute_error": 0.016
+          }
+        ]
+      },
+      "caveat": "The finest error is similar to the favorable coarse result; this does not identify a best setting for other circuits. The reference is adopted from converged tensor-network work with reported error below .01."
+    },
+    {
+      "id": "pps_access_limits",
+      "source": "supplied_pdf",
+      "pages": [
+        10,
+        11
+      ],
+      "figures": [
+        10,
+        11,
+        12
+      ],
+      "claim": "CPU and research GPU threshold reach differs for API and hardware reasons.",
+      "quantities": {
+        "bluequbit_cpu_threshold_floor": 1e-05,
+        "local_cpu_physical_memory_gb": 16,
+        "research_gpu_finest_threshold": 2.89e-06,
+        "research_gpu_max_pauli_terms_approx": 1530000000,
+        "research_gpu_finest_seconds_approx": 322,
+        "research_gpu_finest_sku": "MI300X"
+      },
+      "caveat": "The research GPU sweep does not establish account API access below 1e-5. Local CPU failure is not a fundamental CPU limitation."
+    },
+    {
+      "id": "benchmark_controls",
+      "source": "supplied_pdf",
+      "pages": [
+        3,
+        4,
+        5
+      ],
+      "figures": [],
+      "claim": "The paper reports five repetitions per configuration and distinguishes same-implementation hardware comparisons from cross-platform comparisons.",
+      "quantities": {
+        "repetitions_per_configuration": 5,
+        "native_mps_pps_cpu_cores": 2,
+        "native_mps_gpu_sku": "A100",
+        "local_pps_memory_gb": 16,
+        "pps_gpu_skus": [
+          "H100",
+          "H200",
+          "MI300X"
+        ]
+      },
+      "caveat": "Hardware and implementation differences limit transfer. Reproducing five repetitions is not required or affordable for every campaign pilot."
+    },
+    {
+      "id": "limitations",
+      "source": "supplied_pdf",
+      "pages": [
+        10,
+        11,
+        12,
+        13
+      ],
+      "figures": [],
+      "claim": "The study is vendor-affiliated and omits symmetric cost-to-solution and compilation/transpilation timing.",
+      "quantities": {},
+      "caveat": "cuPauliProp points are inferred from published ratios rather than measured directly. Paper prose uses differing approximately 2x/2-3x/>3x chi256 summaries; retain specific experiment values."
+    }
+  ],
+  "local_evidence_sources": [
+    {
+      "path": "reports/G4_PARTIAL_TREND_REVIEW.md",
+      "sha256": "bbca518ab0dc0ae2306f7963b73ac588b4d7ebbbb2397463f52a173ba3db5da0"
+    },
+    {
+      "path": "reports/g4_partial_trend_review.json",
+      "sha256": "4c83589443061bdce1f81b086630b81aeafdec0aaa8338d2f87309bc78dcefad"
+    },
+    {
+      "path": "reports/gpu_matched_pilot.json",
+      "sha256": "aa3c664073d0e78f2ce508bd0159cc382e5682ddba4e48caad3d654d05cae5d3"
+    },
+    {
+      "path": "reports/REFINEMENT_REVIEW.md",
+      "sha256": "cfecaead408c26e8b9582a9c4be6ece06560343c858599cb4f3d0de70be32d88"
+    },
+    {
+      "path": "reports/refinement_pilot_evidence.json",
+      "sha256": "d70c1981839b882cfb4ad00d5060f3d5326c709080d7ca2842d47dcedd2ae86b"
+    },
+    {
+      "path": "results/pdf_review/alternative_approaches.txt",
+      "sha256": "26d561d1d5a235c541668b934607bd648dce56b02aee524d235e87672123239d"
+    }
+  ],
+  "campaign_context": {
+    "attribution": "Current session facts supplied by coordinator, plus local sources explicitly identified above; no service/website verification by this subtask.",
+    "g2_current_account": {
+      "score": 342,
+      "max_score": 600,
+      "reported_hours": 3.48,
+      "headroom_points": 258,
+      "not_transferred_from_teammate": true
+    },
+    "g2_teammate": {
+      "score": 498,
+      "max_score": 600,
+      "headroom_points": 102,
+      "same_candidate_reported": true,
+      "must_remain_separately_attributed": true
+    },
+    "g4_feedback": {
+      "score": 0,
+      "max_score": 1000,
+      "accepted": "user_reported",
+      "account": null,
+      "attempt": null,
+      "artifact_audit": "supplied_as_passed"
+    },
+    "g4_partial_precision": {
+      "matched_rows": 10,
+      "full_rows": 38,
+      "correlation": 0.8591218413,
+      "relative_affine_residual_energy": 0.26190966,
+      "order_reversals": 12,
+      "pair_count": 45,
+      "q4_q0_residual_energy_share_percent": 60.49
+    },
+    "g4_matched_chi32": {
+      "cpu_compute_seconds": 48.593,
+      "gpu_compute_seconds": 24.189,
+      "cpu_elapsed_seconds": 55.055394,
+      "gpu_elapsed_seconds": 44.803906,
+      "elapsed_seconds_saved": 10.251488,
+      "absolute_value_difference": 6.630529458817591e-12,
+      "cpu_cost_usd": 0,
+      "gpu_cost_usd": 0.2,
+      "scope": "one matched pilot; consistency rather than accuracy"
+    },
+    "g3_baseline": {
+      "method": "PPS",
+      "threshold": 0.001,
+      "native_transpilation_level": 1,
+      "completed_rows": 36,
+      "submission_recommendation": "requires separate numerical review"
+    },
+    "constraints": {
+      "named_ids_without_qasm": true,
+      "sample_spend_usd": 0,
+      "total_budget_usd": 30,
+      "working_exposure_ceiling_usd": 27,
+      "gpu_rolling_hour_limit_minutes": 45,
+      "gpu_total_limit_hours": 7.5,
+      "pps_threshold_floor_evidenced": 1e-05,
+      "native_transpilation_levels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "exact_gpu_36_38_rejected_in_saved_evidence": true,
+      "cpu_controller_concurrency": 2,
+      "gpu_serial_runner_has_split_quote_and_cancel_caps": false
+    }
+  },
+  "ranked_experiment_proposal": [
+    {
+      "rank": 0,
+      "action": "Offline readiness review of completed G3 vector",
+      "status": "proposal; review performed elsewhere",
+      "rationale": "Completion alone does not establish numerical quality."
+    },
+    {
+      "rank": 1,
+      "action": "G4 CPU MPS chi64 q4 and q0, plus G4 q4 PPS .001 native level1",
+      "status": "Coordinator reports MPS checks starting; do not relaunch",
+      "mps_quote_runtime_ceiling_seconds": 2400,
+      "mps_cancel_request_seconds": 600,
+      "pps_cancel_request_seconds": 300,
+      "rationale": "Local shape sensitivity plus an independent-family/representation check. Not a paper-validated recipe."
+    },
+    {
+      "rank": 2,
+      "action": "Conditional matched GPU MPS chi64 feasibility pilot",
+      "status": "conditional proposal",
+      "conditions": [
+        "CPU completion or terminal cancellation with known cost",
+        "fresh quote and supported bounded timeout",
+        "budget and GPU quotas pass",
+        "compare full elapsed time and actual cost"
+      ],
+      "rationale": "Determine whether GPU enables higher precision; fixed-chi device switch is not an accuracy improvement."
+    },
+    {
+      "rank": 3,
+      "action": "Broaden G4 matching panel to q4/q0/q1/q19/q37, then seek another precision step or informative independent method",
+      "status": "conditional proposal",
+      "rationale": "Two-point correlation is uninformative and sparse agreement does not validate a full vector. Optional bounded PPS level3 or .005 coarse threshold tests sensitivity, not presumed accuracy."
+    },
+    {
+      "rank": 4,
+      "action": "G2 q9 CPU MPS chi64, then a broader transition/endpoint panel",
+      "status": "proposal",
+      "rationale": "Current-account headroom is 258; q9 is an unsaturated transition row. Teammate score is not transferable."
+    },
+    {
+      "rank": 5,
+      "action": "G3 PPS .001 versus .0005 at fixed native level1 on a bounded panel including q35",
+      "status": "proposal",
+      "rationale": "Inspect signed non-monotonic changes. Optional .005 coarse reference does not prove which threshold is best."
+    }
+  ],
+  "nontransferable_or_unverified_techniques": [
+    "Sub-1e-5 PPS research GPU sweep through the presently evidenced API",
+    "Local Qiskit/Julia/Quantum Rings/cuPauliProp/custom tensor-network simulation of hidden named IDs without QASM",
+    "Peaked-circuit marginal-sign target-bit attack for OTOC Pearson scoring",
+    "Custom tensor ordering/contraction tree/Pauli-weight cutoffs not exposed in evidenced SDK controls",
+    "Combining different Duke circuit IDs into one pauli_sum calculation",
+    "Using chi5000 extrapolated runtimes to budget this campaign",
+    "Assuming CPU quote is free because previous actual charges were zero"
+  ],
+  "candidate_rules": [
+    "Complete identical-options single-device cohort only",
+    "Preserve raw direct estimates",
+    "Do not splice pilots or transform estimates using affine fits",
+    "Compare full-vector centered shape when available; never treat approximation agreement as hidden-truth error",
+    "No score-derived row labels or corrections",
+    "No submission recommendation solely from nonconstant output or finest precision"
+  ],
+  "outputs": [
+    "reports/ALTERNATIVE_APPROACHES_REVIEW.md",
+    "reports/alternative_approaches_evidence.json",
+    "research_notes/GPU precision recovery/paper_methods.md"
+  ]
+}

@@ -8,7 +8,7 @@ Teammates: [sample files, explanations and local reproduction instructions](docs
 
 The three official sample submissions each display **100/100**, using one attempt per problem and $0 BlueQubit compute cost. Their exact uploaded CSVs, method explanations, score receipts, checksums and supporting run IDs are preserved under [submissions/](submissions/README.md).
 
-Every local/cloud execution attempt is recorded in [runs/jobs.csv](runs/jobs.csv), successful estimates in [runs/estimates.csv](runs/estimates.csv), and scheduling/quotation events in [runs/decisions.csv](runs/decisions.csv). See [runs/README.md](runs/README.md) for recovery and the schema. No graded submission has been made during sample calibration.
+Every local/cloud execution attempt is recorded in [runs/jobs.csv](runs/jobs.csv), successful estimates in [runs/estimates.csv](runs/estimates.csv), and scheduling/quotation events in [runs/decisions.csv](runs/decisions.csv). See [runs/README.md](runs/README.md) for recovery and the schema. Graded results are account-specific: the user reports G2 at 342/600 with a 3.48-hour penalty on the original account's first attempt, and 498/600 on a teammate's first attempt using the same file. The reason for the difference is unverified. G4's chi32 candidate received an accepted 0/1000 and must not be resubmitted; G3's baseline is held for numerical review. See [candidate status](submissions/candidates/README.md).
 
 Kevin's [exact G1 vector](problems/04_graded_G1/exact_values.csv), reported to score 100%, is also retained with verified job-ledger provenance. The scheduler reuses it and avoids duplicate G1 runs. Teammate receipts are namespaced under submissions/teammates/.
 
@@ -38,7 +38,9 @@ python scripts/run_workflow.py tune
 python scripts/graded_workflow.py
 ~~~
 
-The graded command is plan-only: it obtains quotes and records a decision. Add --execute --max-jobs 1 to execute one safe action. Every subsequent action gets a fresh quote and account check. Sample spend is restricted to $0; the $30 graded balance has a protected $4.50 reserve. Unknown costs, duplicate/ambiguous submissions, missing references, and deadline violations block execution.
+The graded command is plan-only: it obtains quotes and records a decision. Add --execute --max-jobs 1 to execute one reviewed action. Every subsequent action gets a fresh quote and account check. Sample spend is restricted to $0; the original $30 graded allowance has a $3 planning reserve, giving a $27 planned exposure ceiling. Recorded SDK job charges are not a fresh wallet balance. Unknown costs, duplicate/ambiguous submissions, missing references, and deadline violations block execution.
+
+The [bounded cohort controller](docs/COHORT_BATCH.md) supports two CPU jobs or one explicitly targeted GPU diagnostic, with full quote reservations and restart reconciliation. Approximate exports require numerical review before upload. The [GPU precision recovery report](reports/GPU%20precision%20recovery.md) explains how the supplied simulator benchmark changes the refinement strategy.
 
 See the final workflow for the decision tree, numerical stopping limitations, method selection, mandatory submission explanations, actual score recording and recovery.
 

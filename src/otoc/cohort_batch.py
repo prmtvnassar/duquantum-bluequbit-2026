@@ -1,4 +1,4 @@
-"""A single owner of at most two asynchronous CPU jobs in a fixed cohort.
+"""A single owner of bounded CPU cohorts or one targeted approximate GPU job.
 
 Per-action SUBMITTING receipts are the reservation journal.  This controller
 never calls the serial adapter.run(), weakens its gates, or starts worker threads.
@@ -23,6 +23,7 @@ from .ledger import REPO, atomic_bytes
 
 
 CPU_DEVICES = {"mps.cpu", "pauli-path"}
+GPU_DEVICES = {"mps.gpu", "pauli-path.gpu"}
 CLOSED = TERMINAL | {"INVALID_RESULT"}
 PROBLEMS = ("G2", "G3", "G4")
 RESERVE_QUOTE_SECONDS = 300
@@ -86,10 +87,17 @@ class CohortBatchController:
         fraction = settings.get("graded_reserve_fraction")
         if not _money(fraction) or fraction >= 1:
             raise ValueError("Invalid graded reserve")
-        if problem not in PROBLEMS or device not in CPU_DEVICES:
-            raise ValueError("This controller only supports G2-G4 on mps.cpu or pauli-path")
+        if problem not in PROBLEMS or device not in CPU_DEVICES | GPU_DEVICES:
+            raise ValueError("This controller only supports approximate G2-G4 CPU devices or targeted GPU diagnostics")
         if type(slots) is not int or not 1 <= slots <= 2:
             raise ValueError("Use one or two CPU slots")
+        self.gpu = device in GPU_DEVICES
+        if self.gpu:
+            if targeted_diagnostics is not True or slots != 1 or settings.get("gpu_enabled") is not True:
+                raise ValueError("GPU requires explicitly enabled targeted diagnostics and exactly one slot")
+            for name, ceiling in (("gpu_total_seconds", 27000), ("gpu_hour_seconds", 2700)):
+                if not _money(settings.get(name)) or not 0 < settings[name] <= ceiling:
+                    raise ValueError("GPU quota limits must be finite, positive and within the account ceilings")
         if max_jobs is not None and (type(max_jobs) is not int or not 1 <= max_jobs <= 800):
             raise ValueError("max_jobs must be within 1..800")
         if not 0 < poll_seconds <= 60 or not 0 < reconcile_seconds <= 300:
@@ -127,7 +135,7 @@ class CohortBatchController:
         self.targeted_diagnostics = targeted_diagnostics
         self.target_ids = ([cid for cid in self.ids if cid in target_ids] if targeted_diagnostics else list(self.ids))
         self.diagnostic_reason = (diagnostic_reason or
-                "Explicit targeted CPU diagnostic at fixed options; reserve the full quote and request cancellation at the execution cap"
+                "Explicit targeted diagnostic at fixed options; reserve the full quote and request cancellation at the execution cap"
                 ) if targeted_diagnostics else None
         self.cohort_key = digest({"problem": problem, "device": device, "options": options})
         self.slots, self.max_jobs = slots, max_jobs or len(self.target_ids)
@@ -148,6 +156,7 @@ class CohortBatchController:
         self.has_usable_baseline = {}
         self.launched, self.spent_floor = [], 0.0
         self.last_budget, self.blockage, self.wait_started = None, None, None
+        self.last_gpu_quota = None
         self.stop_requested = False
 
     def _path(self, action):
@@ -245,6 +254,7 @@ class CohortBatchController:
                  "required_target_rows": len(self.target_ids),
                  "budget_limit_usd": self.limit, "budget": self.last_budget,
                  "actual_spent_floor_usd": self.spent_floor,
+                 "gpu_quota_admission": self.last_gpu_quota,
                  "reserve_cohorts": self.cohorts, "reserve_rates": self.rates,
                  "has_usable_baseline": self.has_usable_baseline,
                  "warning": "Quotes are nonbinding estimates; unresolved charges block new launches."}
@@ -256,6 +266,7 @@ class CohortBatchController:
             "cohort": state["cohort"], "cohort_key": self.cohort_key,
             "completed_rows": state["completed_rows"], "required_rows": len(self.ids),
             "completed_target_rows": state["completed_target_rows"], "required_target_rows": len(self.target_ids),
+            "gpu_quota_admission": self.last_gpu_quota,
             "last_progress_at": max((r.get("updated_at") or r.get("requested_at") or "" for r in owned), default=None),
             "owned_jobs": [{"job_id": r["job_id"], "circuit_id": r["action"]["circuit_id"],
                             "status": r.get("status"), "cost_usd": r.get("cost_usd")}
@@ -275,8 +286,9 @@ class CohortBatchController:
             self.cohorts = deepcopy(self.reserve_override)
         self.cohorts[self.problem] = {"device": self.device, "options": deepcopy(self.options)}
         for problem, cohort in self.cohorts.items():
-            if cohort["device"] not in CPU_DEVICES:
-                raise ValueError("Reservation cohorts must use supported CPU devices")
+            if cohort["device"] not in CPU_DEVICES and not (self.gpu and problem == self.problem
+                                                            and cohort["device"] == self.device):
+                raise ValueError("Other reservation cohorts must use supported CPU devices")
             validate_action(self.manifests[problem][0], cohort["device"], cohort["options"])
             candidates = select_coherent_vector(list(self.records.values()), self.manifests[problem],
                                                   cohort["device"])["complete_candidates"]
@@ -382,6 +394,10 @@ class CohortBatchController:
         inflight = {r["job_id"] for r in self._pending()} | set(usage["active_job_ids"])
         if len(inflight) >= min(self.slots, self.settings.get("account_parallel_job_limit", 5)):
             return None, "slots_full"
+        if self.gpu:
+            reason = self._gpu_admission(usage, runtime)
+            if reason:
+                return None, reason
         unindexed = len({r["job_id"] for r in self._pending()} - set(usage["active_job_ids"]))
         if usage.get("job_count", 0) + unindexed >= self.settings["max_remote_jobs"]:
             return None, "account_job_limit"
@@ -410,12 +426,41 @@ class CohortBatchController:
             return None, "stop_file"
         return quote, None
 
+    def _gpu_admission(self, usage, runtime):
+        self.last_gpu_quota = None
+        total, hour = usage.get("gpu_seconds"), usage.get("gpu_seconds_last_hour")
+        if usage.get("gpu_time_known") is not True or not _money(total) or not _money(hour):
+            return "unknown_gpu_time"
+        if hour > total + 1e-9:
+            return "inconsistent_gpu_time"
+        # A terminal receipt missing from the account index may still be absent
+        # from its GPU-time aggregate. Wait for indexing before another GPU launch.
+        indexed = usage["known_job_costs_usd"]
+        if any(_current_account(record) and "gpu" in record["action"]["device"]
+               and record.get("status") in CLOSED and record.get("job_id") not in indexed
+               for record in self.records.values()):
+            return "gpu_job_accounting_pending"
+        self.last_gpu_quota = {
+            "actual_gpu_seconds": total, "actual_gpu_seconds_last_hour": hour,
+            "reserved_quote_seconds": runtime,
+            "planned_gpu_seconds": total + runtime,
+            "planned_gpu_seconds_last_hour": hour + runtime,
+            "gpu_total_limit_seconds": self.settings["gpu_total_seconds"],
+            "gpu_hour_limit_seconds": self.settings["gpu_hour_seconds"],
+            "reservation_basis": "Full fresh runtime quote; no cancellation-cap or speedup discount"}
+        if total + runtime > self.settings["gpu_total_seconds"] + 1e-9:
+            return "gpu_total_quota_reserve"
+        if hour + runtime > self.settings["gpu_hour_seconds"] + 1e-9:
+            return "gpu_rolling_hour_quota"
+        return None
+
     def _launch(self, action, quote):
         saved = {"action": action, "status": "SUBMITTING", "requested_at": self.clock().isoformat(),
                  "quote": deepcopy(quote), "timeout_seconds": self.timeout,
                  "scheduler_justification": "Complete one explicitly selected CPU cohort with at most two reserved asynchronous jobs; no extrapolation or mixed-configuration rows",
                  "cohort_batch": {"cohort_key": self.cohort_key, "slots": self.slots,
                                   **self._scope(),
+                                  "gpu_quota_at_admission": deepcopy(self.last_gpu_quota),
                                   "reserved_quote_usd": quote["cost_usd"], "budget_at_admission": deepcopy(self.last_budget)}}
         if self.targeted_diagnostics:
             saved["scheduler_justification"] = self.diagnostic_reason

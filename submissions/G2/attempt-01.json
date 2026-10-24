@@ -1,0 +1,275 @@
+{
+  "problem": "G2",
+  "attempt": 1,
+  "owner": "original_submitter",
+  "csv_path": "submissions/G2/attempt-01.csv",
+  "sha256": "4cb0c3c141640461732583a3e719058f8b731699f55078631d55f3eb0a3c79ea",
+  "method_note": "Ran each published ID separately through BlueQubit from |0...0>, evaluating target Z with q0 rightmost. Selected a complete direct vector at one device and identical options for every ID, prioritizing exact CPU then the selected method's highest complete precision. Methods: mps.cpu {\"mps_bond_dimension\": 32}. Partial refinements do not replace individual rows. No hidden-circuit reconstruction, score-derived labels, extrapolation or fusion. Per-ID job IDs and precision are in the manifest. Budget-limited approximations have no certified error bounds. The starting method produced a flat pilot vector; a complete, fixed-precision independent pilot resolved signal and supplied the replacement baseline. This does not certify accuracy.\n",
+  "displayed_score": 342,
+  "points": 600,
+  "observed_at": "2026-10-24T19:06:35.257171+00:00",
+  "source": "https://app.bluequbit.io/hackathons/2GMaAenu3iSsIC6Z?tab=submissions",
+  "precision_note": "UI display may round the official score; this is not a pointwise error bound",
+  "time_penalty_hours": 3.48,
+  "evidence_source": "user_report",
+  "status": "USER_REPORTED",
+  "verification_note": "The user reported this owner's upload, attempt number and displayed score; browser verification is pending.",
+  "timestamp_note": "observed_at records when the evidence was recorded, not the actual upload time",
+  "note_evidence": "prepared_explanation",
+  "method_note_verification": "Prepared method explanation; the exact text entered on the website has not been confirmed.",
+  "method_note_path": "submissions/G2/attempt-01.txt",
+  "row_provenance": [
+    {
+      "circuit_id": "Duke_G2_0",
+      "value": 0.9996382065303814,
+      "supporting_run_ids": [
+        "remote-15c1ce707ae86b69dc0a25c1983ca77e6efc85b24393272d721fe0f1b5850eb7"
+      ]
+    },
+    {
+      "circuit_id": "Duke_G2_1",
+      "value": 0.9994376796673349,
+      "supporting_run_ids": [
+        "remote-00ecd316aaa229f8f78b41130d866bf7cc047fcbabae462458304afa8a6cff69"
+      ]
+    },
+    {
+      "circuit_id": "Duke_G2_2",
+      "value": 0.9787172857555239,
+      "supporting_run_ids": [
+        "remote-c8a3a93fada22c45f80baf34c42fa61433bb8f0929a320ec58ca0cd51542cd64"
+      ]
+    },
+    {
+      "circuit_id": "Duke_G2_3",
+      "value": 0.9868143232123594,
+      "supporting_run_ids": [
+        "remote-0c1ed1beed63072f2af5765d4ebf4df56a1046dcd5b84e0f57467ef653e89552"
+      ]
+    },
+    {
+      "circuit_id": "Duke_G2_4",
+      "value": 0.9100428617647965,
+      "supporting_run_ids": [
+        "remote-6bf829d4cb37eb08048aca5902a4e6ed84d2ee93075665796c3fce133b007150"
+      ]
+    },
+    {
+      "circuit_id": "Duke_G2_5",
+      "value": 0.8707559363469968,
+      "supporting_run_ids": [
+        "remote-a1bfc3716dd79bc0c35162e68b1e69431cc7ac476df3d5484cc64ad7a7188c63"
+      ]
+    },
+    {
+      "circuit_id": "Duke_G2_6",
+      "value": 0.7663452259274915,
+      "supporting_run_ids": [
+        "remote-ebb8cc620a3affa5c99e4fc810ef4fa8c38e5c78e73ebfd715b13b1f5120c34f"
+      ]
+    },
+    {
+      "circuit_id": "Duke_G2_7",
+      "value": 0.7715227627200077,
+      "supporting_run_ids": [
+        "remote-f86f6647bcaa65590fc5410984ecdd4e747317196c4878b9a9625a9b92a9bb4e"
+      ]
+    },
+    {
+      "circuit_id": "Duke_G2_8",
+      "value": 0.564695893797655,
+      "supporting_run_ids": [
+        "remote-d11e99a13314ff796b36d73ec7abe99cfe8fc8e00188de195a149453903ba593"
+      ]
+    },
+    {
+      "circuit_id": "Duke_G2_9",
+      "value": 0.4944418435390271,
+      "supporting_run_ids": [
+        "remote-9fa5620c0cae96e310e94806a5c8b00551b80b5dd04904f14952dcc3efadd504"
+      ]
+    },
+    {
+      "circuit_id": "Duke_G2_10",
+      "value": 0.4182099782807492,
+      "supporting_run_ids": [
+        "remote-2a375f8cbd96535881cab1311c0eccaca16185f093162dd4348b13e2621aedb9"
+      ]
+    },
+    {
+      "circuit_id": "Duke_G2_11",
+      "value": 0.38846642884307553,
+      "supporting_run_ids": [
+        "remote-55fb7bf4896ddba7cdf524dcb5801bdace1dad5ce5f4de3811391644c5d67370"
+      ]
+    },
+    {
+      "circuit_id": "Duke_G2_12",
+      "value": 0.004067330235712802,
+      "supporting_run_ids": [
+        "remote-f454ef04b487dcce12685653755f3d7684fd522409ca52f18c3a360fffc34b4e"
+      ]
+    },
+    {
+      "circuit_id": "Duke_G2_13",
+      "value": 0.07121732666976434,
+      "supporting_run_ids": [
+        "remote-2b5f25bfebbe99bc0252b202ae6e5a0f5cc5c5ebd1c0aa970a24e56dc272dd0c"
+      ]
+    },
+    {
+      "circuit_id": "Duke_G2_14",
+      "value": -0.023876847046272895,
+      "supporting_run_ids": [
+        "remote-64a234a020b627f6b750ca9812b30e0b2e6c05c450e2aab86d7f81cdb5e0bdab"
+      ]
+    },
+    {
+      "circuit_id": "Duke_G2_15",
+      "value": -0.0682280943574228,
+      "supporting_run_ids": [
+        "remote-ca3fef22ade538acb2cf289508219787966f51796fcdb3b39f06a8178bceae21"
+      ]
+    },
+    {
+      "circuit_id": "Duke_G2_16",
+      "value": 0.015116590045655626,
+      "supporting_run_ids": [
+        "remote-975dfdae9347f7006fac004a67e2e7ae9f9f173ac6521ff1a394cade4dcd40ac"
+      ]
+    },
+    {
+      "circuit_id": "Duke_G2_17",
+      "value": -0.0054012449392301515,
+      "supporting_run_ids": [
+        "remote-b2bee7356a616ac12a9cbe2d56f1ff3dc8ce89b910e21efb7cc244bc1ce38f31"
+      ]
+    },
+    {
+      "circuit_id": "Duke_G2_18",
+      "value": 0.007423917457881662,
+      "supporting_run_ids": [
+        "remote-6b9e0e7400b133648637a7240ef897c71b7cdfbb4c1b4c058edfb3584d23bc0b"
+      ]
+    },
+    {
+      "circuit_id": "Duke_G2_19",
+      "value": -0.012164708888750233,
+      "supporting_run_ids": [
+        "remote-1f855d092f1ab915b4fa4e3935a7343220150b88b8793bc5b41c2c1f62dc0eb1"
+      ]
+    },
+    {
+      "circuit_id": "Duke_G2_20",
+      "value": -0.03950798218900682,
+      "supporting_run_ids": [
+        "remote-27cabdddd8496a5151d6b8a80e9570e7ec092a7b7b750be059dced34de3c85f1"
+      ]
+    },
+    {
+      "circuit_id": "Duke_G2_21",
+      "value": 0.0030478505270550697,
+      "supporting_run_ids": [
+        "remote-35a526cdea8e15cadda197ba900114e048858ec14ac7e0221b7627ef896f7896"
+      ]
+    },
+    {
+      "circuit_id": "Duke_G2_22",
+      "value": 0.03262354618015334,
+      "supporting_run_ids": [
+        "remote-d47ce1d1a372d1686f5e89af6f45e3718b0ba7ed28f9fc5f62e8ea00479b4230"
+      ]
+    },
+    {
+      "circuit_id": "Duke_G2_23",
+      "value": 0.004467925075443279,
+      "supporting_run_ids": [
+        "remote-a20aad4d09a44a1413910cfacda2c5aa0bdfd44a98f9b86ba691aa61d13e1ce1"
+      ]
+    },
+    {
+      "circuit_id": "Duke_G2_24",
+      "value": 0.03601703515100496,
+      "supporting_run_ids": [
+        "remote-ccd440304f7ef89d553a1baf96da9e60c62aa970471963c52d83b81543a96121"
+      ]
+    },
+    {
+      "circuit_id": "Duke_G2_25",
+      "value": 0.12941046144949536,
+      "supporting_run_ids": [
+        "remote-7fcd002ef09d73fad9646cddb5ee8eb4b79deac004624986602d456a8de3c747"
+      ]
+    },
+    {
+      "circuit_id": "Duke_G2_26",
+      "value": 0.13976607493564908,
+      "supporting_run_ids": [
+        "remote-22d24e3ea23b7ce90069ff63b1977eed1c168d5136331c99aefb255057ba5d4a"
+      ]
+    },
+    {
+      "circuit_id": "Duke_G2_27",
+      "value": 0.2418098624942106,
+      "supporting_run_ids": [
+        "remote-2b2ea13ad745b929347661df263f5bf11e3b70cb7af8e4f6341029a04eaa8796"
+      ]
+    },
+    {
+      "circuit_id": "Duke_G2_28",
+      "value": 0.08820085454109418,
+      "supporting_run_ids": [
+        "remote-929bfeecb656543e07e5910cb14301fe73adaa5609f9ee2241d5ebd74c0820b8"
+      ]
+    },
+    {
+      "circuit_id": "Duke_G2_29",
+      "value": 0.20383741440005226,
+      "supporting_run_ids": [
+        "remote-38be2845808ca3607a6c40d4ff6e08048ffe813737e33ef580ae2189ae7d318d"
+      ]
+    },
+    {
+      "circuit_id": "Duke_G2_30",
+      "value": 0.5519245131257827,
+      "supporting_run_ids": [
+        "remote-6fbb013f7951b7bd18a2add7fd4f6e4df06b3ac2412597f5f1f880499a870bf7"
+      ]
+    },
+    {
+      "circuit_id": "Duke_G2_31",
+      "value": 0.5516904172143046,
+      "supporting_run_ids": [
+        "remote-8387e6f6d9b115cd1d2036c22024fb802ce4cec71d38b2b743f8563eb67643d4"
+      ]
+    },
+    {
+      "circuit_id": "Duke_G2_32",
+      "value": 0.9186650896339661,
+      "supporting_run_ids": [
+        "remote-500dd59415d61bd24c0ef276f7e176b89d02d03cf9ffa95317b0daacacd8c2ea"
+      ]
+    },
+    {
+      "circuit_id": "Duke_G2_33",
+      "value": 0.8807248201523906,
+      "supporting_run_ids": [
+        "remote-76e14ff0332621b8e19baa837b84cc0f07ccc5a8d7e5f382afe469fc969bf574"
+      ]
+    },
+    {
+      "circuit_id": "Duke_G2_34",
+      "value": 0.9987419264991232,
+      "supporting_run_ids": [
+        "remote-d2c615d5fcc5f00be9014fb5d3255f9fb5593f4b5f74f59e6fe5384c7d3a024c"
+      ]
+    },
+    {
+      "circuit_id": "Duke_G2_35",
+      "value": 0.9985233505072324,
+      "supporting_run_ids": [
+        "remote-59ffc8b77b66091068ca7f8c3e91ba4f45def6f67ab5e78e09a109f148fb7de5"
+      ]
+    }
+  ]
+}

@@ -75,13 +75,46 @@ class SubmissionRegistryTests(TestCase):
         self.assertTrue(self.archive_path("teammate_reported").exists())
         self.assertEqual({row["owner"] for row in self.index()}, {"original_submitter", "teammate_reported"})
 
+    def test_original_score_and_time_penalty_leave_teammate_receipt_unchanged(self):
+        self.record(owner="teammate_reported", evidence_source="user_report")
+        teammate_path = self.archive_path("teammate_reported")
+        teammate_bytes = teammate_path.read_bytes()
+        receipt = self.record(score=342, time_penalty_hours=3.48, evidence_source="user_report")
+        self.assertEqual(receipt["displayed_score"], 342)
+        self.assertEqual(receipt["time_penalty_hours"], 3.48)
+        self.assertEqual(json.loads(self.archive_path().read_text())["time_penalty_hours"], 3.48)
+        self.assertEqual(teammate_path.read_bytes(), teammate_bytes)
+        indexed = {row["owner"]:row for row in self.index()}
+        self.assertEqual(indexed["original_submitter"]["time_penalty_hours"], "3.48")
+        self.assertEqual(indexed["teammate_reported"]["displayed_score"], "498")
+        self.assertEqual(indexed["teammate_reported"]["time_penalty_hours"], "")
+
+    def test_recorded_time_penalty_is_immutable_and_omitted_retry_preserves_it(self):
+        receipt = self.record(time_penalty_hours=3.48)
+        self.assertEqual(self.record(), receipt)
+        self.assertEqual(self.record(time_penalty_hours=3.48), receipt)
+        for changed in (0, 3.49):
+            with self.subTest(changed=changed), self.assertRaisesRegex(ValueError, "Cannot replace"):
+                self.record(time_penalty_hours=changed)
+        for changed in (None, 3.49):
+            with self.subTest(archive_changed=changed), self.assertRaisesRegex(ValueError, "Cannot replace"):
+                archive_submission({**receipt, "time_penalty_hours":changed}, repo=self.repo, ledger_root=self.ledger)
+
+    def test_invalid_time_penalties_fail_before_writing(self):
+        for hours in (-1, float("nan"), float("inf"), float("-inf"), True, "3.48"):
+            with self.subTest(hours=hours), self.assertRaisesRegex(ValueError, "Time penalty"):
+                self.record(time_penalty_hours=hours)
+        self.assertFalse((self.repo / "submissions").exists())
+        self.assertFalse((self.workflow / "official_submissions").exists())
+        self.assertEqual(self.record(time_penalty_hours=0)["time_penalty_hours"], 0.0)
+
     def test_legacy_browser_receipts_keep_default_identity_and_remain_immutable(self):
         original = self.record()
         workflow_path = self.workflow / "official_submissions/G2-01.json"
         for path in (workflow_path, self.archive_path()):
             value = json.loads(path.read_text())
             for key in ("owner", "evidence_source", "status", "verification_note", "timestamp_note",
-                        "note_evidence", "method_note_verification"):
+                        "note_evidence", "method_note_verification", "time_penalty_hours"):
                 value.pop(key)
             path.write_text(json.dumps(value), encoding="utf-8")
         old_archive = self.archive_path().read_bytes()
@@ -92,6 +125,8 @@ class SubmissionRegistryTests(TestCase):
         self.assertEqual(self.index()[0]["status"], "VERIFIED_BROWSER")
         self.assertEqual(self.index()[0]["evidence_source"], "browser_observed")
         self.assertEqual(self.index()[0]["note_evidence"], "submitted_text")
+        self.assertEqual(self.index()[0]["time_penalty_hours"], "")
+        self.assertNotIn("time_penalty_hours", repeated)
 
     def test_prepared_explanation_does_not_claim_verified_website_wording(self):
         receipt = self.record(owner="teammate_reported", evidence_source="user_report",
@@ -185,13 +220,14 @@ class SubmissionRegistryTests(TestCase):
         script = Path(__file__).resolve().parents[1] / "scripts/record_submission.py"
         argv = [str(script), "--problem", "G2", "--attempt", "1", "--csv", str(self.source),
                 "--note-file", str(note), "--score", "498", "--owner", "teammate_reported",
-                "--evidence-source", "user_report", "--note-evidence", "prepared_explanation"]
+                "--evidence-source", "user_report", "--note-evidence", "prepared_explanation",
+                "--time-penalty-hours", "3.48"]
         result = {"problem":"G2", "attempt":1, "displayed_score":498, "owner":"teammate_reported",
                   "status":"USER_REPORTED"}
         with patch("sys.argv", argv), patch("otoc.submission_registry.record_submission", return_value=result) as mocked:
             with redirect_stdout(io.StringIO()) as output:
                 runpy.run_path(str(script), run_name="__main__")
         self.assertEqual(mocked.call_args.kwargs, {"owner":"teammate_reported", "evidence_source":"user_report",
-                                                 "note_evidence":"prepared_explanation"})
+                                                 "note_evidence":"prepared_explanation", "time_penalty_hours":3.48})
         self.assertIn("USER_REPORTED", output.getvalue())
         self.assertFalse((self.repo / "submissions").exists())

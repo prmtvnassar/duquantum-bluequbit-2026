@@ -1,0 +1,175 @@
+{
+  "generated_at": "2026-10-24T19:09:29.856935+00:00",
+  "scope": "Original-account estimate-only requests; no simulations, submissions or cancellations.",
+  "sdk_version": "0.19.0b1",
+  "source_state_root": "D:/BluQubit/results/workflow",
+  "account_identity": "New worktree .env matched original-account .env; credentials not persisted.",
+  "canonical_quote_audit": "D:/BluQubit/results/workflow/quotes and D:/BluQubit/runs/events",
+  "quotes": [
+    {
+      "circuit_id": "Duke_G4_4",
+      "device": "mps.gpu",
+      "options": {
+        "mps_bond_dimension": 64
+      },
+      "quoted_at": "2026-10-24T19:09:25.107115+00:00",
+      "cost_usd": 1.08,
+      "runtime_seconds": 968.2,
+      "error": null,
+      "warning": "This is just an estimate; the actual runtime may be less or more.",
+      "binding_cost_cap": false
+    },
+    {
+      "circuit_id": "Duke_G4_4",
+      "device": "mps.gpu",
+      "options": {
+        "mps_bond_dimension": 128
+      },
+      "quoted_at": "2026-10-24T19:09:27.656149+00:00",
+      "cost_usd": 2.73,
+      "runtime_seconds": 2448.2,
+      "error": null,
+      "warning": "This is just an estimate; the actual runtime may be less or more.",
+      "binding_cost_cap": false
+    },
+    {
+      "circuit_id": "Duke_G4_4",
+      "device": "pauli-path.gpu",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "quoted_at": "2026-10-24T19:09:28.364240+00:00",
+      "cost_usd": 0.67,
+      "runtime_seconds": 0.1,
+      "error": null,
+      "warning": "This is just an estimate; the actual runtime may be less or more.",
+      "binding_cost_cap": false
+    },
+    {
+      "circuit_id": "Duke_G4_4",
+      "device": "pauli-path.gpu",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "quoted_at": "2026-10-24T19:09:29.155060+00:00",
+      "cost_usd": 0.67,
+      "runtime_seconds": 0.1,
+      "error": null,
+      "warning": "This is just an estimate; the actual runtime may be less or more.",
+      "binding_cost_cap": false
+    },
+    {
+      "circuit_id": "Duke_G3_35",
+      "device": "pauli-path.gpu",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "quoted_at": "2026-10-24T19:09:29.819014+00:00",
+      "cost_usd": 0.67,
+      "runtime_seconds": 0.1,
+      "error": null,
+      "warning": "This is just an estimate; the actual runtime may be less or more.",
+      "binding_cost_cap": false
+    }
+  ],
+  "usage_snapshot": {
+    "observed_at": "2026-10-24T19:09:29.270136+00:00",
+    "known_cost_usd": 0.2,
+    "gpu_time_known": true,
+    "gpu_seconds": 24.189,
+    "gpu_seconds_last_hour": 24.189,
+    "unknown_terminal_costs": 0
+  },
+  "limits": {
+    "graded_budget_usd": 30,
+    "planned_exposure_cap_usd": 27,
+    "gpu_total_seconds": 27000,
+    "gpu_rolling_hour_seconds": 2700
+  },
+  "warning": "Quotes are nonbinding. Snapshot usage is not an execution approval; current commitments, exact-ID fresh quotes, runtime/deadline and account GPU quotas must be rechecked.",
+  "related_saved_receipts": [
+    {
+      "receipt": "D:\\BluQubit\\results\\workflow\\remote_actions\\380cd5f409701afc9e1b8857222bba258410dcc8ca1013305c4cd917cf0405f5.json",
+      "circuit_id": "Duke_G4_0",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "job_id": "78aF6vkVPu0XZJaR",
+      "status": "COMPLETED",
+      "estimate": 0.27027187138182995,
+      "compute_ms": 48593,
+      "cost_usd": 0.0
+    },
+    {
+      "receipt": "D:\\BluQubit\\results\\workflow\\remote_actions\\3b34b971b18705c3505af59c0e34a8bc9006d6943aa29a52d204ca8e29a57795.json",
+      "circuit_id": "Duke_G3_35",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "job_id": "3veLHAPbAcd7cuPm",
+      "status": "COMPLETED",
+      "estimate": -0.03219780603650362,
+      "compute_ms": 39553,
+      "cost_usd": 0.0
+    },
+    {
+      "receipt": "D:\\BluQubit\\results\\workflow\\remote_actions\\5a1e0d1c6ddc034ba8737014abb061c5448eac00cecb0b3fe672268856a63230.json",
+      "circuit_id": "Duke_G3_35",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 2
+      },
+      "job_id": "KzTYb7rpqmEwgLh2",
+      "status": "COMPLETED",
+      "estimate": 0.0,
+      "compute_ms": 4202,
+      "cost_usd": 0.0
+    },
+    {
+      "receipt": "D:\\BluQubit\\results\\workflow\\remote_actions\\9d93039eefbb89181511c2f8ada3abff1cb3be9981e7c9f2275ef8e57c8f18e6.json",
+      "circuit_id": "Duke_G3_35",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0003,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "job_id": "c59UMw17igr8TFNN",
+      "status": "CANCELED",
+      "estimate": null,
+      "compute_ms": 179147,
+      "cost_usd": 0.0
+    },
+    {
+      "receipt": "D:\\BluQubit\\results\\workflow\\remote_actions\\de5367b4b2ce7a87e72e7089b522ae0e67b7f538c68ae6f1b5319b7e521a0fb2.json",
+      "circuit_id": "Duke_G4_0",
+      "device": "mps.gpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "job_id": "iuWprHrY7TQlwHYx",
+      "status": "COMPLETED",
+      "estimate": 0.2702718713884605,
+      "compute_ms": 24189,
+      "cost_usd": 0.2
+    }
+  ],
+  "quota_arithmetic_from_saved_snapshot": {
+    "remaining_total_gpu_seconds": 26975.811,
+    "remaining_rolling_hour_gpu_seconds": 2675.811,
+    "interpretation": "Snapshot subtraction only; actual admission must freshly reconcile account usage and commitments."
+  },
+  "representative_full_cohort_quote_arithmetic": {
+    "G4_mps_gpu_chi64_38_times_q4_usd": 41.040000000000006,
+    "G4_mps_gpu_chi128_38_times_q4_usd": 103.74,
+    "G4_pps_gpu_38_times_q4_usd": 25.46,
+    "G3_pps_gpu_36_times_q35_usd": 24.12,
+    "interpretation": "Illustrative arithmetic, not all-ID quotes or a completion commitment."
+  }
+}

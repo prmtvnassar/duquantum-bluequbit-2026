@@ -1,0 +1,93 @@
+{
+  "circuit_id": "Duke_G4_0",
+  "problem": "G4",
+  "qubit": 0,
+  "origin": "bluequbit",
+  "method": "mps.cpu",
+  "backend": "mps.cpu",
+  "parameters": {
+    "mps_bond_dimension": 64
+  },
+  "status": "COMPLETED",
+  "estimate": 0.09778715370060109,
+  "job_id": "6m5pZ6dArY3Zxfvp",
+  "cost_usd": 0.0,
+  "started_at": "2026-10-24T19:07:55.001075+00:00",
+  "finished_at": "2026-10-24T19:11:18.845255+00:00",
+  "wall_seconds": 202.394,
+  "reason": "Investigate failed chi32 G4 candidate using a higher bond at q0 and the strongest observed shape-change row q4. Preserve full quotes and direct outputs; no new submission before numerical review.",
+  "quote": {
+    "circuit_id": "Duke_G4_0",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 64
+    },
+    "quoted_at": "2026-10-24T19:07:54.703913+00:00",
+    "cost_usd": 0.79,
+    "runtime_seconds": 1877.8,
+    "error": null,
+    "warning": "This is just an estimate; the actual runtime may be less or more.",
+    "binding_cost_cap": false
+  },
+  "error": null,
+  "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZ",
+  "remote_receipt": {
+    "action": {
+      "circuit_id": "Duke_G4_0",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 64
+      },
+      "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZ"
+    },
+    "status": "COMPLETED",
+    "requested_at": "2026-10-24T19:07:55.001075+00:00",
+    "quote": {
+      "circuit_id": "Duke_G4_0",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 64
+      },
+      "quoted_at": "2026-10-24T19:07:54.703913+00:00",
+      "cost_usd": 0.79,
+      "runtime_seconds": 1877.8,
+      "error": null,
+      "warning": "This is just an estimate; the actual runtime may be less or more.",
+      "binding_cost_cap": false
+    },
+    "timeout_seconds": 600.0,
+    "scheduler_justification": "Investigate failed chi32 G4 candidate using a higher bond at q0 and the strongest observed shape-change row q4. Preserve full quotes and direct outputs; no new submission before numerical review.",
+    "cohort_batch": {
+      "cohort_key": "ae1f5683d7ab6468d6f7b44f350f760d6cd35326bc1c81d41633c1e2f60c5d73",
+      "slots": 2,
+      "mode": "TARGETED_DIAGNOSTICS",
+      "target_ids": [
+        "Duke_G4_0",
+        "Duke_G4_4"
+      ],
+      "execution_timeout_seconds": 600.0,
+      "quote_runtime_limit_seconds": 2400.0,
+      "diagnostic_reason": "Investigate failed chi32 G4 candidate using a higher bond at q0 and the strongest observed shape-change row q4. Preserve full quotes and direct outputs; no new submission before numerical review.",
+      "reserved_quote_usd": 0.79,
+      "budget_at_admission": {
+        "actual_spent_usd": 0.2,
+        "outstanding_quote_usd": 0.0,
+        "new_quote_usd": 0.79,
+        "missing_cohort_reserve_usd": 0.0,
+        "planned_exposure_usd": 0.99,
+        "missing_unreserved_rows": {
+          "G2": 0,
+          "G3": 0,
+          "G4": 0
+        }
+      }
+    },
+    "job_id": "6m5pZ6dArY3Zxfvp",
+    "estimate": 0.09778715370060109,
+    "cost_usd": 0.0,
+    "compute_ms": 202018,
+    "queue_ms": 376,
+    "updated_at": "2026-10-24T19:11:18.845255+00:00"
+  },
+  "run_id": "remote-225a79bfa8bb77ab409bb6eb552ea41c5b9d63aebdb7b0713f531ebc25858568"
+}

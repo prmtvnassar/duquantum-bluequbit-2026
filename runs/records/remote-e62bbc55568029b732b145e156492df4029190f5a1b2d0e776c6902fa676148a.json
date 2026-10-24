@@ -1,0 +1,97 @@
+{
+  "circuit_id": "Duke_G4_4",
+  "problem": "G4",
+  "qubit": 4,
+  "origin": "bluequbit",
+  "method": "pauli-path",
+  "backend": "pauli-path",
+  "parameters": {
+    "pauli_path_truncation_threshold": 0.0001,
+    "pauli_path_circuit_transpilation_level": 1
+  },
+  "status": "COMPLETED",
+  "estimate": 0.0,
+  "job_id": "onNMNzb84Wz82A0D",
+  "cost_usd": 0.0,
+  "started_at": "2026-10-24T19:19:56.885975+00:00",
+  "finished_at": "2026-10-24T19:23:12.342797+00:00",
+  "wall_seconds": 179.281,
+  "reason": "Reduce PPS threshold tenfold at fixed transpilation level1 after q4 epsilon0.001 returned zero in5.35s. Test truncation sensitivity independently of drifting MPS; zero agreement does not certify accuracy. No submission or row replacement.",
+  "quote": {
+    "circuit_id": "Duke_G4_4",
+    "device": "pauli-path",
+    "options": {
+      "pauli_path_truncation_threshold": 0.0001,
+      "pauli_path_circuit_transpilation_level": 1
+    },
+    "quoted_at": "2026-10-24T19:19:56.649179+00:00",
+    "cost_usd": 0.2,
+    "runtime_seconds": 0.1,
+    "error": null,
+    "warning": "This is just an estimate; the actual runtime may be less or more.",
+    "binding_cost_cap": false
+  },
+  "error": null,
+  "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIII",
+  "remote_receipt": {
+    "action": {
+      "circuit_id": "Duke_G4_4",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIII"
+    },
+    "status": "COMPLETED",
+    "requested_at": "2026-10-24T19:19:56.885975+00:00",
+    "quote": {
+      "circuit_id": "Duke_G4_4",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "quoted_at": "2026-10-24T19:19:56.649179+00:00",
+      "cost_usd": 0.2,
+      "runtime_seconds": 0.1,
+      "error": null,
+      "warning": "This is just an estimate; the actual runtime may be less or more.",
+      "binding_cost_cap": false
+    },
+    "timeout_seconds": 300.0,
+    "scheduler_justification": "Reduce PPS threshold tenfold at fixed transpilation level1 after q4 epsilon0.001 returned zero in5.35s. Test truncation sensitivity independently of drifting MPS; zero agreement does not certify accuracy. No submission or row replacement.",
+    "cohort_batch": {
+      "cohort_key": "011f6eb8cced21ba9319098128f0a1509c3f3f1c6abce58f3d6740db968b0607",
+      "slots": 1,
+      "mode": "TARGETED_DIAGNOSTICS",
+      "target_ids": [
+        "Duke_G4_4"
+      ],
+      "execution_timeout_seconds": 300.0,
+      "quote_runtime_limit_seconds": 600.0,
+      "diagnostic_reason": "Reduce PPS threshold tenfold at fixed transpilation level1 after q4 epsilon0.001 returned zero in5.35s. Test truncation sensitivity independently of drifting MPS; zero agreement does not certify accuracy. No submission or row replacement.",
+      "gpu_quota_at_admission": null,
+      "reserved_quote_usd": 0.2,
+      "budget_at_admission": {
+        "actual_spent_usd": 0.2,
+        "outstanding_quote_usd": 0.0,
+        "new_quote_usd": 0.2,
+        "missing_cohort_reserve_usd": 0.0,
+        "planned_exposure_usd": 0.4,
+        "missing_unreserved_rows": {
+          "G2": 0,
+          "G3": 0,
+          "G4": 0
+        }
+      }
+    },
+    "job_id": "onNMNzb84Wz82A0D",
+    "estimate": 0.0,
+    "cost_usd": 0.0,
+    "compute_ms": 178913,
+    "queue_ms": 368,
+    "updated_at": "2026-10-24T19:23:12.342797+00:00"
+  },
+  "run_id": "remote-e62bbc55568029b732b145e156492df4029190f5a1b2d0e776c6902fa676148a"
+}

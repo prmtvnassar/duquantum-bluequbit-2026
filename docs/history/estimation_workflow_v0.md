@@ -9,6 +9,70 @@ The implementation and measured evidence now live in
 [the adversarial review](../../reports/GRADED_DEBATE_REVIEW.md), and
 [the CPU cohort controller guide](../COHORT_BATCH.md).
 
+## GPU precision and submission-quality addendum, October 24, 2026
+
+This later addendum supersedes the status statements in the earlier October 24
+implementation addendum below. The original October 22 proposal remains unchanged.
+Use the [current workflow](../../workflow_final.md) and
+[GPU precision recovery report](<../../reports/GPU precision recovery.md>) for
+current decisions and the distinction between measured evidence and proposals.
+
+G2 original-account attempt 1 is user-reported at 342/600 with a 3.48-hour penalty;
+the same retained CSV is separately associated with teammate attempt 1 at 498/600.
+The cross-account difference is unexplained. Preserve both attributed records;
+no account transfer or row-level correction follows. G4's accepted 0/1000 is
+user-reported with owner and attempt unknown. Its CSV and job provenance passed
+local audit, but the candidate is not recommended for resubmission. G3's complete
+36-row native PPS 0.001 level 1 baseline has $0 recorded cost and is archived,
+held for numerical review, with no upload. See
+[current G2 receipt](../../submissions/G2/attempt-01.json),
+[teammate receipt](../../submissions/teammates/teammate_reported/G2/attempt-01.json),
+[G3 hold review](../../submissions/candidates/G3/direct-fb792001c3e7.review.json), and
+[G4 feedback](../../submissions/candidates/G4/direct-930f7e5b7d14.feedback.json).
+
+G4 CPU chi64 diagnostics completed at q0 = 0.0977871537006 and
+q4 = 0.4930423131044, with 202.018 and 336.895 compute seconds and $0 actual cost.
+Independent q4 CPU PPS at native level 1 returned zero at both 0.001 and 0.0001.
+The finer run took 178.913 compute seconds and 0.368 queue seconds at $0, finishing
+at 19:23:12 UTC, compared with 5.35 compute seconds for the coarse run: 33.4 times
+more compute with no resolved signal. Stop blind threshold escalation. CPU chi64
+q1/q19 diagnostics are now running with a 600-second cancellation-request limit
+and 2400-second quote ceiling. q1's prior sign change and q19's separated interior
+location broaden the panel to q0/q1/q4/q19; four rows still do not establish
+full-vector accuracy. Defer a matched same-chi64 GPU repeat because CPU64 fitted
+its cap and the repeat adds no precision. These are sensitivity measurements,
+not evidence of improved graded accuracy. Before
+another G4 bulk commitment or submission, review a broader varied-ID panel,
+further precision and an informative independent method/representation check.
+Approximate exports explicitly retain `submission_recommended: false` and
+`NUMERICAL_REVIEW_REQUIRED`; format-valid complete output is not a recommendation.
+
+The supplied paper supports precision-dependent hardware tests and nonmonotonic
+PPS threshold checks. Installed SDK evidence and fresh quotes support hidden-ID
+GPU MPS chi64/128 and GPU PPS at thresholds >=1e-5, native levels 0-3. G4 q4 GPU
+chi64/128 quote $1.08/968.2 seconds and $2.73/2448.2 seconds. GPU PPS level 1 at
+0.001/0.0001 quotes $0.67 with an unmeasured 0.1-second estimate. No new high-chi
+GPU pilot has completed in this review. The explicit targeted GPU controller is
+implemented and tested, allows one GPU slot, reserves full quoted runtime against
+known total/rolling usage, retains full dollar commitments and never exports
+automatically. CPU full-cohort execution remains limited to two owned jobs.
+The earlier same-chi32 CPU/GPU agreement tests implementation consistency only.
+A lightweight visualization is being prepared from saved records for critique,
+without new quantum calls.
+Local Quantum Rings/Qiskit/Julia alternatives require unavailable gates or QASM.
+The paper does not justify hidden-circuit extraction, sub-1e-5 requests, sign
+changes, row permutations, extrapolation or fitting values to scores.
+[Paper, receipt and route evidence](<../../reports/GPU precision recovery.md>).
+
+The $30 total budget, $27 planned-exposure ceiling, full quote commitments,
+terminal-cost reconciliation, sole execution ownership, submission buffer and
+27000-total/2700-hour GPU-second limits remain. The serial configuration stays at
+one job. A complete older vector can exempt future coverage reserves without
+establishing accuracy. An early weak submission gives fallback insurance, not a
+lower time penalty for a later best score. Conserve attempts by resolving
+numerical questions through simulator evidence before submitting a genuine
+reviewed complete candidate. [Execution contract](../COHORT_BATCH.md).
+
 ## Implementation addendum, October 24, 2026
 
 The released campaign has three sample problems and four graded problems. Every

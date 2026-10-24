@@ -1,0 +1,521 @@
+{
+  "schema_version": 1,
+  "snapshot_at": "2026-10-24T19:28:29.903125+00:00",
+  "source": "Saved local BlueQubit receipts",
+  "ground_truth_available": false,
+  "wallet_balance": null,
+  "case_ids": [
+    "Duke_G4_4",
+    "Duke_G4_0",
+    "Duke_G4_19",
+    "Duke_G3_0",
+    "Duke_G2_9"
+  ],
+  "api_usage": {
+    "observed_at": "2026-10-24T19:27:49.960506+00:00",
+    "known_cost_usd": 0.2,
+    "active_jobs": 0,
+    "job_count": 178,
+    "unknown_terminal_costs": 0
+  },
+  "batch_status": {
+    "updated_at": "2026-10-24T19:27:49.963623+00:00",
+    "status": "DIAGNOSTICS_COMPLETE",
+    "execution_timeout_seconds": 600.0,
+    "completed_target_rows": 2,
+    "required_target_rows": 2
+  },
+  "receipts": [
+    {
+      "estimate": -0.05771247164299849,
+      "status": "COMPLETED",
+      "cost_usd": 0.0,
+      "compute_ms": 79556,
+      "queue_ms": 305,
+      "requested_at": "2026-10-24T18:03:23.247293+00:00",
+      "updated_at": "2026-10-24T18:04:45.244852+00:00",
+      "source_file": "10ee83ed5327a2d387319fdada2805392acfc424f25f8ab7844611d34fa50e16.json",
+      "action": {
+        "circuit_id": "Duke_G3_0",
+        "device": "pauli-path",
+        "options": {
+          "pauli_path_truncation_threshold": 0.001,
+          "pauli_path_circuit_transpilation_level": 0
+        }
+      },
+      "quote": {
+        "cost_usd": 0.2,
+        "runtime_seconds": 0.1,
+        "quoted_at": "2026-10-24T18:03:23.228968+00:00",
+        "binding_cost_cap": false
+      }
+    },
+    {
+      "estimate": 0.09778715370060109,
+      "status": "COMPLETED",
+      "cost_usd": 0.0,
+      "compute_ms": 202018,
+      "queue_ms": 376,
+      "requested_at": "2026-10-24T19:07:55.001075+00:00",
+      "updated_at": "2026-10-24T19:11:18.845255+00:00",
+      "source_file": "225a79bfa8bb77ab409bb6eb552ea41c5b9d63aebdb7b0713f531ebc25858568.json",
+      "action": {
+        "circuit_id": "Duke_G4_0",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 64
+        }
+      },
+      "quote": {
+        "cost_usd": 0.79,
+        "runtime_seconds": 1877.8,
+        "quoted_at": "2026-10-24T19:07:54.703913+00:00",
+        "binding_cost_cap": false
+      }
+    },
+    {
+      "estimate": 0.27027187138182995,
+      "status": "COMPLETED",
+      "cost_usd": 0.0,
+      "compute_ms": 48593,
+      "queue_ms": 1421,
+      "requested_at": "2026-10-24T17:59:19.142439+00:00",
+      "updated_at": "2026-10-24T18:00:14.197833+00:00",
+      "source_file": "380cd5f409701afc9e1b8857222bba258410dcc8ca1013305c4cd917cf0405f5.json",
+      "action": {
+        "circuit_id": "Duke_G4_0",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 32
+        }
+      },
+      "quote": {
+        "cost_usd": 0.27,
+        "runtime_seconds": 632.0,
+        "quoted_at": "2026-10-24T17:59:19.117390+00:00",
+        "binding_cost_cap": false
+      }
+    },
+    {
+      "estimate": 0.0,
+      "status": "COMPLETED",
+      "cost_usd": 0.0,
+      "compute_ms": 4359,
+      "queue_ms": 321,
+      "requested_at": "2026-10-24T17:37:54.442979+00:00",
+      "updated_at": "2026-10-24T17:38:01.832926+00:00",
+      "source_file": "4162c376486fdb60aacd6c13aa1c8a06dbe069d5956b6f6388c04b7163b89cc2.json",
+      "action": {
+        "circuit_id": "Duke_G3_0",
+        "device": "pauli-path",
+        "options": {
+          "pauli_path_truncation_threshold": 0.001,
+          "pauli_path_circuit_transpilation_level": 2
+        }
+      },
+      "quote": {
+        "cost_usd": 0.2,
+        "runtime_seconds": 0.1,
+        "quoted_at": "2026-10-24T17:37:54.418804+00:00",
+        "binding_cost_cap": false
+      }
+    },
+    {
+      "estimate": 0.2881005630511742,
+      "status": "COMPLETED",
+      "cost_usd": 0.0,
+      "compute_ms": 14169,
+      "queue_ms": 348,
+      "requested_at": "2026-10-24T18:02:19.452635+00:00",
+      "updated_at": "2026-10-24T18:02:37.232658+00:00",
+      "source_file": "4bfb22a8b0fb80bf34249150f7dc17d6b42c2308cc2c13f5545dc047f3470a79.json",
+      "action": {
+        "circuit_id": "Duke_G4_19",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 32
+        }
+      },
+      "quote": {
+        "cost_usd": 0.27,
+        "runtime_seconds": 632.0,
+        "quoted_at": "2026-10-24T18:02:19.414456+00:00",
+        "binding_cost_cap": false
+      }
+    },
+    {
+      "estimate": 0.0,
+      "status": "COMPLETED",
+      "cost_usd": 0.0,
+      "compute_ms": 13766,
+      "queue_ms": 375,
+      "requested_at": "2026-10-24T17:36:54.130320+00:00",
+      "updated_at": "2026-10-24T17:37:11.146443+00:00",
+      "source_file": "5c2ee28862be03710510df79efc26a3399652e18e6b1b8c255d040a5d0c84727.json",
+      "action": {
+        "circuit_id": "Duke_G4_19",
+        "device": "pauli-path",
+        "options": {
+          "pauli_path_truncation_threshold": 0.001,
+          "pauli_path_circuit_transpilation_level": 2
+        }
+      },
+      "quote": {
+        "cost_usd": 0.2,
+        "runtime_seconds": 0.1,
+        "quoted_at": "2026-10-24T17:36:54.121392+00:00",
+        "binding_cost_cap": false
+      }
+    },
+    {
+      "estimate": 0.6475027770914542,
+      "status": "COMPLETED",
+      "cost_usd": 0.0,
+      "compute_ms": 17960,
+      "queue_ms": 32009,
+      "requested_at": "2026-10-24T18:00:16.694429+00:00",
+      "updated_at": "2026-10-24T18:01:11.976070+00:00",
+      "source_file": "66e5c871879940f3ca455e18312ee982480734d6843bcc62f394a36a8c3a3335.json",
+      "action": {
+        "circuit_id": "Duke_G3_0",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 32
+        }
+      },
+      "quote": {
+        "cost_usd": 0.25,
+        "runtime_seconds": 584.5,
+        "quoted_at": "2026-10-24T18:00:16.678606+00:00",
+        "binding_cost_cap": false
+      }
+    },
+    {
+      "estimate": 0.0844009611776522,
+      "status": "COMPLETED",
+      "cost_usd": 0.0,
+      "compute_ms": 58214,
+      "queue_ms": 393,
+      "requested_at": "2026-10-24T19:24:36.640285+00:00",
+      "updated_at": "2026-10-24T19:25:39.863046+00:00",
+      "source_file": "84fa71b407af83bc1049821831179a6607e2e7ff19106f145e22191eb096c348.json",
+      "action": {
+        "circuit_id": "Duke_G4_19",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 64
+        }
+      },
+      "quote": {
+        "cost_usd": 0.79,
+        "runtime_seconds": 1877.8,
+        "quoted_at": "2026-10-24T19:24:36.329254+00:00",
+        "binding_cost_cap": false
+      }
+    },
+    {
+      "estimate": 0.4930423131044318,
+      "status": "COMPLETED",
+      "cost_usd": 0.0,
+      "compute_ms": 336895,
+      "queue_ms": 378,
+      "requested_at": "2026-10-24T19:07:57.379088+00:00",
+      "updated_at": "2026-10-24T19:13:38.493784+00:00",
+      "source_file": "87add220aab23167d1965176a5d518d441a407a780638d3d61c535badb4a7ff9.json",
+      "action": {
+        "circuit_id": "Duke_G4_4",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 64
+        }
+      },
+      "quote": {
+        "cost_usd": 0.79,
+        "runtime_seconds": 1877.8,
+        "quoted_at": "2026-10-24T19:07:57.113142+00:00",
+        "binding_cost_cap": false
+      }
+    },
+    {
+      "estimate": 0.4944418435390271,
+      "status": "COMPLETED",
+      "cost_usd": 0.0,
+      "compute_ms": 5895,
+      "queue_ms": 453,
+      "requested_at": "2026-10-24T18:16:56.443836+00:00",
+      "updated_at": "2026-10-24T18:17:08.018766+00:00",
+      "source_file": "9fa5620c0cae96e310e94806a5c8b00551b80b5dd04904f14952dcc3efadd504.json",
+      "action": {
+        "circuit_id": "Duke_G2_9",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 32
+        }
+      },
+      "quote": {
+        "cost_usd": 0.3,
+        "runtime_seconds": 717.1,
+        "quoted_at": "2026-10-24T18:16:56.406339+00:00",
+        "binding_cost_cap": false
+      }
+    },
+    {
+      "estimate": 0.0,
+      "status": "COMPLETED",
+      "cost_usd": 0.0,
+      "compute_ms": 5350,
+      "queue_ms": 372,
+      "requested_at": "2026-10-24T19:18:49.970975+00:00",
+      "updated_at": "2026-10-24T19:18:57.865104+00:00",
+      "source_file": "a0c1a8ca3db38b92021d125dbb11727c2006a8de9f731f48e7922bd6a8f7fe19.json",
+      "action": {
+        "circuit_id": "Duke_G4_4",
+        "device": "pauli-path",
+        "options": {
+          "pauli_path_truncation_threshold": 0.001,
+          "pauli_path_circuit_transpilation_level": 1
+        }
+      },
+      "quote": {
+        "cost_usd": 0.2,
+        "runtime_seconds": 0.1,
+        "quoted_at": "2026-10-24T19:18:49.683685+00:00",
+        "binding_cost_cap": false
+      }
+    },
+    {
+      "estimate": -0.005732456237543289,
+      "status": "COMPLETED",
+      "cost_usd": 0.0,
+      "compute_ms": 12091,
+      "queue_ms": 392,
+      "requested_at": "2026-10-24T17:52:03.002212+00:00",
+      "updated_at": "2026-10-24T17:52:20.952759+00:00",
+      "source_file": "ada04a2f61bbab355e77dd946e1b06ef6cba62c9ee05b0bc2b3e8717b0e85348.json",
+      "action": {
+        "circuit_id": "Duke_G4_4",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 16
+        }
+      },
+      "quote": {
+        "cost_usd": 0.2,
+        "runtime_seconds": 114.1,
+        "quoted_at": "2026-10-24T17:52:02.984472+00:00",
+        "binding_cost_cap": false
+      }
+    },
+    {
+      "estimate": 0.0,
+      "status": "COMPLETED",
+      "cost_usd": 0.0,
+      "compute_ms": 5351,
+      "queue_ms": 431,
+      "requested_at": "2026-10-24T17:36:42.849050+00:00",
+      "updated_at": "2026-10-24T17:36:50.721435+00:00",
+      "source_file": "dd5e4d7568969ae80708751c8b59c9e70bd4234830ab96ba892e0026d91c1f0f.json",
+      "action": {
+        "circuit_id": "Duke_G4_0",
+        "device": "pauli-path",
+        "options": {
+          "pauli_path_truncation_threshold": 0.001,
+          "pauli_path_circuit_transpilation_level": 2
+        }
+      },
+      "quote": {
+        "cost_usd": 0.2,
+        "runtime_seconds": 0.1,
+        "quoted_at": "2026-10-24T17:36:42.830971+00:00",
+        "binding_cost_cap": false
+      }
+    },
+    {
+      "estimate": 0.2702718713884605,
+      "status": "COMPLETED",
+      "cost_usd": 0.2,
+      "compute_ms": 24189,
+      "queue_ms": 19149,
+      "requested_at": "2026-10-24T18:09:53.778938+00:00",
+      "updated_at": "2026-10-24T18:10:38.582844+00:00",
+      "source_file": "de5367b4b2ce7a87e72e7089b522ae0e67b7f538c68ae6f1b5319b7e521a0fb2.json",
+      "action": {
+        "circuit_id": "Duke_G4_0",
+        "device": "mps.gpu",
+        "options": {
+          "mps_bond_dimension": 32
+        }
+      },
+      "quote": {
+        "cost_usd": 0.52,
+        "runtime_seconds": 461.6,
+        "quoted_at": "2026-10-24T18:09:53.759771+00:00",
+        "binding_cost_cap": false
+      }
+    },
+    {
+      "estimate": 0.0,
+      "status": "COMPLETED",
+      "cost_usd": 0.0,
+      "compute_ms": 178913,
+      "queue_ms": 368,
+      "requested_at": "2026-10-24T19:19:56.885975+00:00",
+      "updated_at": "2026-10-24T19:23:12.342797+00:00",
+      "source_file": "e62bbc55568029b732b145e156492df4029190f5a1b2d0e776c6902fa676148a.json",
+      "action": {
+        "circuit_id": "Duke_G4_4",
+        "device": "pauli-path",
+        "options": {
+          "pauli_path_truncation_threshold": 0.0001,
+          "pauli_path_circuit_transpilation_level": 1
+        }
+      },
+      "quote": {
+        "cost_usd": 0.2,
+        "runtime_seconds": 0.1,
+        "quoted_at": "2026-10-24T19:19:56.649179+00:00",
+        "binding_cost_cap": false
+      }
+    },
+    {
+      "estimate": 0.33199024264916044,
+      "status": "COMPLETED",
+      "cost_usd": 0.0,
+      "compute_ms": 43429,
+      "queue_ms": 431,
+      "requested_at": "2026-10-24T18:32:21.488746+00:00",
+      "updated_at": "2026-10-24T18:33:08.018812+00:00",
+      "source_file": "ea0d5e91de32843cfe85ff3106f6549f64898176eb8f6748c0cae786f998bfd5.json",
+      "action": {
+        "circuit_id": "Duke_G4_4",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 32
+        }
+      },
+      "quote": {
+        "cost_usd": 0.27,
+        "runtime_seconds": 632.0,
+        "quoted_at": "2026-10-24T18:32:21.251404+00:00",
+        "binding_cost_cap": false
+      }
+    },
+    {
+      "estimate": -0.07229195955602603,
+      "status": "COMPLETED",
+      "cost_usd": 0.0,
+      "compute_ms": 26715,
+      "queue_ms": 297,
+      "requested_at": "2026-10-24T17:55:03.815330+00:00",
+      "updated_at": "2026-10-24T17:55:55.973771+00:00",
+      "source_file": "edf8d8aafeeffd0e32f4ea5b32e53152dcbd845a4ef207c9ad54d539568ba124.json",
+      "action": {
+        "circuit_id": "Duke_G3_0",
+        "device": "pauli-path",
+        "options": {
+          "pauli_path_truncation_threshold": 0.001,
+          "pauli_path_circuit_transpilation_level": 1
+        }
+      },
+      "quote": {
+        "cost_usd": 0.2,
+        "runtime_seconds": 0.1,
+        "quoted_at": "2026-10-24T17:55:03.792749+00:00",
+        "binding_cost_cap": false
+      }
+    },
+    {
+      "estimate": 0.5589102913779098,
+      "status": "COMPLETED",
+      "cost_usd": 0.0,
+      "compute_ms": 4518,
+      "queue_ms": 430,
+      "requested_at": "2026-10-24T17:37:39.839724+00:00",
+      "updated_at": "2026-10-24T17:37:47.968571+00:00",
+      "source_file": "ee3eb0b1a8c23f3a09d558f9f5001b2585d1fa3a8f7837ebd8529b3e3a65341d.json",
+      "action": {
+        "circuit_id": "Duke_G4_0",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 16
+        }
+      },
+      "quote": {
+        "cost_usd": 0.2,
+        "runtime_seconds": 114.1,
+        "quoted_at": "2026-10-24T17:37:39.813848+00:00",
+        "binding_cost_cap": false
+      }
+    },
+    {
+      "estimate": 0.026913611554951797,
+      "status": "COMPLETED",
+      "cost_usd": 0.0,
+      "compute_ms": 13915,
+      "queue_ms": 55132,
+      "requested_at": "2026-10-24T17:47:43.309138+00:00",
+      "updated_at": "2026-10-24T17:48:54.959291+00:00",
+      "source_file": "f73bfe3acc6bdf44651ca5cde70a0c8e35226c6541ffe18a99cea292f8f02184.json",
+      "action": {
+        "circuit_id": "Duke_G3_0",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 16
+        }
+      },
+      "quote": {
+        "cost_usd": 0.2,
+        "runtime_seconds": 104.6,
+        "quoted_at": "2026-10-24T17:47:43.292468+00:00",
+        "binding_cost_cap": false
+      }
+    },
+    {
+      "estimate": -0.1477495661062709,
+      "status": "COMPLETED",
+      "cost_usd": 0.0,
+      "compute_ms": 106031,
+      "queue_ms": 323,
+      "requested_at": "2026-10-24T18:04:46.838069+00:00",
+      "updated_at": "2026-10-24T18:06:35.972339+00:00",
+      "source_file": "fcb279233928a2e7148480b1c62e81bb73b356753f9a5aae6a35c77a5bd7ecab.json",
+      "action": {
+        "circuit_id": "Duke_G3_0",
+        "device": "pauli-path",
+        "options": {
+          "pauli_path_truncation_threshold": 0.0003,
+          "pauli_path_circuit_transpilation_level": 1
+        }
+      },
+      "quote": {
+        "cost_usd": 0.2,
+        "runtime_seconds": 0.1,
+        "quoted_at": "2026-10-24T18:04:46.813137+00:00",
+        "binding_cost_cap": false
+      }
+    },
+    {
+      "estimate": 0.362228441320924,
+      "status": "COMPLETED",
+      "cost_usd": 0.0,
+      "compute_ms": 13509,
+      "queue_ms": 363,
+      "requested_at": "2026-10-24T17:49:27.374480+00:00",
+      "updated_at": "2026-10-24T17:49:48.819131+00:00",
+      "source_file": "fd00ce91d8d9fde40ed486de99522824634906cf67a6ad615cbe02c417bbff68.json",
+      "action": {
+        "circuit_id": "Duke_G4_19",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 16
+        }
+      },
+      "quote": {
+        "cost_usd": 0.2,
+        "runtime_seconds": 114.1,
+        "quoted_at": "2026-10-24T17:49:27.359320+00:00",
+        "binding_cost_cap": false
+      }
+    }
+  ]
+}

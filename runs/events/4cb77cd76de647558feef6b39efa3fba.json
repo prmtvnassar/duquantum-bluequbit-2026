@@ -1,0 +1,19 @@
+{
+  "event_id": "4cb77cd76de647558feef6b39efa3fba",
+  "recorded_at": "2026-10-24T18:58:39.397164+00:00",
+  "kind": "candidate_feedback",
+  "problem": "G4",
+  "candidate_csv": "submissions/candidates/G4/direct-930f7e5b7d14.csv",
+  "candidate_sha256": "73a5887922c63eb2aafe840fae8e9b26402256fdfc13accf9f689ad4329cbb20",
+  "reported_displayed_score": 0,
+  "maximum_points": 1000,
+  "accepted_grading": true,
+  "evidence_source": "user_report",
+  "owner": null,
+  "attempt": null,
+  "uploaded_bytes_independently_verified": false,
+  "method_note_website_text_confirmed": false,
+  "recommendation": "DO_NOT_RESUBMIT_THIS_CANDIDATE",
+  "interpretation": "User confirmed the G4 candidate received zero. CSV and recorded job provenance pass local audit; numerical accuracy is not established. Account and attempt remain unknown, so this is candidate feedback rather than an invented attempt receipt.",
+  "next_step": "After current G3 baseline completes, test G4 q4/q0 at CPU chi64 and q4 PPS threshold0.001 level1; review before another full refinement or submission."
+}

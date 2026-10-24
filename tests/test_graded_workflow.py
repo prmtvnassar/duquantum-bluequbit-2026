@@ -1,11 +1,12 @@
 from copy import deepcopy
+import csv
 import json
 from pathlib import Path
 from tempfile import TemporaryDirectory
 from unittest import TestCase
 from unittest.mock import patch
-from otoc.graded import candidates_for, select_record, plan_next
-from otoc.bluequbit_adapter import BlueQubitAdapter
+from otoc.graded import candidates_for, export_complete, select_record, plan_next
+from otoc.bluequbit_adapter import BlueQubitAdapter, SIZES
 from otoc.experiment_store import digest
 
 
@@ -105,3 +106,68 @@ class GradedTests(TestCase):
                     raise AssertionError("Duplicate submission")
             with self.assertRaisesRegex(RuntimeError,"uncertain status"):
                 BlueQubitAdapter(root,Client()).run("Duke_S1_0","cpu",{},settings())
+
+
+class ExportReviewTests(TestCase):
+    def exported(self, root, problem, device, options, *, resolved=True):
+        values=[((-1)**q)*(q+1)/97 if resolved else .12345678901234566 for q in range(SIZES[problem])]
+        rows=[record(f"Duke_{problem}_{q}",device,deepcopy(options),value) for q,value in enumerate(values)]
+        for q,row in enumerate(rows):
+            row["job_id"]=f"synthetic-{problem}-{q}"
+        original=deepcopy(rows)
+        with patch("otoc.graded.action_history",return_value=rows), patch("otoc.graded.event"):
+            exports=export_complete(settings(),root=root)
+            self.assertEqual(len(exports),1)
+            target=Path(exports[0])
+            payload=target.read_bytes()
+            baseline=(root/"baselines"/f"{problem}.csv").read_bytes()
+            with target.open(newline="",encoding="utf-8") as stream:
+                exported=list(csv.DictReader(stream))
+            self.assertEqual([r["circuit_id"] for r in exported],[r["action"]["circuit_id"] for r in rows])
+            self.assertEqual([float(r["value"]) for r in exported],values)
+            manifest=json.loads(target.with_suffix(".json").read_text())
+            self.assertEqual([r["value"] for r in manifest["selection"]],values)
+            self.assertEqual(rows,original)
+            # A metadata review does not change archived direct coefficients or
+            # the immutable baseline on an otherwise identical repeated export.
+            self.assertEqual(export_complete(settings(),root=root),exports)
+            self.assertEqual(target.read_bytes(),payload)
+            self.assertEqual((root/"baselines"/f"{problem}.csv").read_bytes(),baseline)
+            return manifest
+
+    def test_resolved_approximate_exports_are_format_eligible_but_not_recommended(self):
+        variants=(("G4","mps.cpu",{"mps_bond_dimension":32}),
+                  ("G3","pauli-path",{"pauli_path_truncation_threshold":.001,
+                                        "pauli_path_circuit_transpilation_level":settings()["cloud_pps_transpilation_level"]}))
+        for problem,device,options in variants:
+            with self.subTest(device=device), TemporaryDirectory() as folder:
+                manifest=self.exported(Path(folder),problem,device,options)
+                self.assertTrue(manifest["submission_eligible"])
+                self.assertTrue(manifest["format_valid"])
+                self.assertTrue(manifest["signal_resolved"])
+                self.assertEqual(manifest["eligibility_scope"],"format_and_resolved_signal_only")
+                self.assertFalse(manifest["submission_recommended"])
+                self.assertEqual(manifest["review_status"],"NUMERICAL_REVIEW_REQUIRED")
+                self.assertIn("not accuracy",manifest["recommendation_reason"])
+                self.assertFalse(manifest["submitted"])
+
+    def test_resolved_exact_export_is_distinguished_by_its_recommendation_reason(self):
+        with TemporaryDirectory() as folder:
+            manifest=self.exported(Path(folder),"G1","cpu",{})
+            self.assertTrue(manifest["submission_eligible"])
+            self.assertTrue(manifest["format_valid"])
+            self.assertTrue(manifest["signal_resolved"])
+            self.assertTrue(manifest["submission_recommended"])
+            self.assertEqual(manifest["review_status"],"EXACT_COMPLETE_RESOLVED")
+            self.assertIn("exact simulation",manifest["recommendation_reason"])
+            self.assertFalse(manifest["submitted"])
+
+    def test_unresolved_signal_is_neither_eligible_nor_recommended_even_when_exact(self):
+        for problem,device,options in (("G1","cpu",{}),("G4","mps.cpu",{"mps_bond_dimension":32})):
+            with self.subTest(device=device), TemporaryDirectory() as folder:
+                manifest=self.exported(Path(folder),problem,device,options,resolved=False)
+                self.assertTrue(manifest["format_valid"])
+                self.assertFalse(manifest["signal_resolved"])
+                self.assertFalse(manifest["submission_eligible"])
+                self.assertFalse(manifest["submission_recommended"])
+                self.assertEqual(manifest["review_status"],"NUMERICAL_REVIEW_REQUIRED")

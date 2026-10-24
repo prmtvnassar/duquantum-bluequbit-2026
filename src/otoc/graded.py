@@ -356,8 +356,21 @@ def export_complete(settings,root="results/workflow"):
             note += " The starting method produced a flat pilot vector; a complete, fixed-precision independent pilot resolved signal and supplied the replacement baseline. This does not certify accuracy."
         target.with_suffix(".txt").write_text(note+"\n",encoding="utf-8")
         resolved=max(r["value"] for r in chosen)-min(r["value"] for r in chosen)>settings["stopping"]["signal_floor"]
+        exact=cohort["selected"]["family"]=="exact"
+        recommended=bool(exact and resolved)
+        if recommended:
+            recommendation_reason="Complete resolved direct vector from exact simulation; no approximation truncation. This does not establish an official score."
+        elif exact:
+            recommendation_reason="The exact vector has unresolved signal and requires numerical review."
+        else:
+            recommendation_reason=("An approximate export establishes file validity and signal status only, not accuracy or a recommendation to upload. "
+                                   "Further precision, independent evidence and known actual scores guide agent numerical review.")
         atomic_json(target.with_suffix(".json"),{"selection":chosen,"method_note":note,"submitted":False,
                     "policy_recovery":recovery.get(problem),
+                    "eligibility_scope":"format_and_resolved_signal_only","format_valid":True,"signal_resolved":resolved,
+                    "submission_recommended":recommended,
+                    "review_status":"EXACT_COMPLETE_RESOLVED" if recommended else "NUMERICAL_REVIEW_REQUIRED",
+                    "recommendation_reason":recommendation_reason,
                     "submission_eligible":resolved,"quality":"DIRECT_UNCERTIFIED" if resolved else "UNRESOLVED_SIGNAL_REVIEW_REQUIRED"})
         event("candidate_export",{"problem":problem,"csv_path":str(target),"selection":chosen})
         exports.append(str(target.resolve()))

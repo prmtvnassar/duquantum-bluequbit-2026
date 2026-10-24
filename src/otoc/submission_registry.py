@@ -52,18 +52,29 @@ def _note_evidence(value):
                 "This explanation is recorded as the text submitted on the website.")}
 
 
+def _time_penalty(value):
+    hours = value.get("time_penalty_hours")
+    if hours is None:
+        return None
+    if (isinstance(hours, bool) or not isinstance(hours, (int, float))
+            or not math.isfinite(hours) or hours < 0):
+        raise ValueError("Time penalty hours must be a finite nonnegative number")
+    return float(hours)
+
+
 def _same_attempt(previous, proposed):
     immutable = ("problem", "attempt", "sha256", "method_note", "displayed_score", "points", "source")
     if (any(previous.get(key) != proposed.get(key) for key in immutable)
             or _owner(previous) != _owner(proposed)
             or _evidence(previous)["evidence_source"] != _evidence(proposed)["evidence_source"]
-            or _note_evidence(previous)["note_evidence"] != _note_evidence(proposed)["note_evidence"]):
-        raise ValueError("Cannot replace a recorded attempt's file, score, explanation, owner or evidence identity")
+            or _note_evidence(previous)["note_evidence"] != _note_evidence(proposed)["note_evidence"]
+            or _time_penalty(previous) != _time_penalty(proposed)):
+        raise ValueError("Cannot replace a recorded attempt's file, score, time penalty, explanation, owner or evidence identity")
 
 
 def record_submission(problem, attempt, csv_path, note, score, root="results/workflow", *,
                       evidence_source="browser_observed", owner=DEFAULT_OWNER,
-                      note_evidence="submitted_text",
+                      note_evidence="submitted_text", time_penalty_hours=None,
                       repo=REPO, ledger_root=DEFAULT_ROOT):
     if problem not in POINTS or type(attempt) is not int or not 1 <= attempt <= 20:
         raise ValueError("Invalid submission identity")
@@ -74,6 +85,7 @@ def record_submission(problem, attempt, csv_path, note, score, root="results/wor
     owner = _owner({"owner":owner})
     evidence = _evidence({"evidence_source":evidence_source})
     note_metadata = _note_evidence({"note_evidence":note_evidence})
+    penalty = _time_penalty({"time_penalty_hours":time_penalty_hours})
     prefix = "" if owner == DEFAULT_OWNER else owner + "-"
     path = Path(root) / "official_submissions" / f"{prefix}{problem}-{attempt:02d}.json"
     content = Path(csv_path).read_bytes()
@@ -82,9 +94,13 @@ def record_submission(problem, attempt, csv_path, note, score, root="results/wor
              "method_note":note, "displayed_score":score, "points":POINTS[problem], "observed_at":utc_now(),
              "source":"https://app.bluequbit.io/hackathons/2GMaAenu3iSsIC6Z?tab=submissions",
              "precision_note":"UI display may round the official score; this is not a pointwise error bound",
+             "time_penalty_hours":penalty,
              **evidence, **note_metadata}
     if path.exists():
         previous = json.loads(path.read_text(encoding="utf-8"))
+        if time_penalty_hours is None:
+            # Omission on an idempotent retry must not clear previously supplied evidence.
+            value["time_penalty_hours"] = _time_penalty(previous)
         _same_attempt(previous, value)
         archive_submission(previous, repo=repo, ledger_root=ledger_root)
         return previous
@@ -98,6 +114,7 @@ def archive_submission(value, repo=REPO, ledger_root=DEFAULT_ROOT):
     """Preserve submitted bytes with explicit owner, evidence and row provenance."""
     repo, ledger_root = Path(repo), Path(ledger_root)
     owner, evidence, note_metadata = _owner(value), _evidence(value), _note_evidence(value)
+    penalty = _time_penalty(value)
     problem, attempt = value["problem"], value["attempt"]
     source = Path(value["csv_path"])
     payload = source.read_bytes()
@@ -127,7 +144,8 @@ def archive_submission(value, repo=REPO, ledger_root=DEFAULT_ROOT):
             raise ValueError(f"No recorded simulation supports submitted row {row['circuit_id']}")
         provenance.append({"circuit_id":row["circuit_id"], "value":float(row["value"]),
                            "supporting_run_ids":matches})
-    archived = {**value, "owner":owner, **evidence, **note_metadata, "csv_path":relative(target),
+    archived = {**value, "owner":owner, **evidence, **note_metadata, "time_penalty_hours":penalty,
+                "csv_path":relative(target),
                 "method_note_path":relative(note_path), "row_provenance":provenance}
     receipt = target.with_suffix(".json")
     if receipt.exists():
@@ -141,18 +159,21 @@ def archive_submission(value, repo=REPO, ledger_root=DEFAULT_ROOT):
                                       "sha256":value["sha256"], "displayed_score":value["displayed_score"],
                                       "evidence_source":evidence["evidence_source"], "status":evidence["status"],
                                       "note_evidence":note_metadata["note_evidence"],
+                                      "time_penalty_hours":penalty,
                                       "receipt":relative(receipt)}, ledger_root)
     submissions = []
     for p in (repo / "submissions").rglob("attempt-*.json"):
         recorded = json.loads(p.read_text(encoding="utf-8"))
-        submissions.append({**recorded, "owner":_owner(recorded), **_evidence(recorded), **_note_evidence(recorded)})
+        submissions.append({**recorded, "owner":_owner(recorded), **_evidence(recorded), **_note_evidence(recorded),
+                            "time_penalty_hours":_time_penalty(recorded)})
     for p in (repo / "submissions/teammates").glob("*/*/submitted-*.json"):
         external = json.loads(p.read_text(encoding="utf-8"))
         submissions.append({**external, "points":external["maximum_points"], "displayed_score":"",
                             "method_note_path":relative(p.with_suffix(".txt")), "status":"REPORTED_BY_TEAMMATE",
                             "source":external["source_commit"], "attempt":"", "evidence_source":"teammate_report"})
     fields = ("owner","problem","attempt","status","displayed_score","reported_score_fraction","points",
-              "observed_at","sha256","csv_path","method_note_path","source","evidence_source","note_evidence")
+              "observed_at","sha256","csv_path","method_note_path","source","evidence_source","note_evidence",
+              "time_penalty_hours")
     atomic_bytes(ledger_root / "submissions.csv", csv_bytes(fields, sorted(
         submissions, key=lambda v:(v["problem"], str(v["attempt"]).zfill(2), v.get("owner", "")))))
     return archived

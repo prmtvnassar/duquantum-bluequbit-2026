@@ -9,13 +9,13 @@
     "pauli_path_truncation_threshold": 0.001,
     "pauli_path_circuit_transpilation_level": 1
   },
-  "status": "RUNNING",
-  "estimate": null,
+  "status": "COMPLETED",
+  "estimate": 0.009595883983312898,
   "job_id": "9Rua7hRGxRLdcQvO",
-  "cost_usd": null,
+  "cost_usd": 0.0,
   "started_at": "2026-10-24T18:47:48.975126+00:00",
-  "finished_at": null,
-  "wall_seconds": 0.0,
+  "finished_at": "2026-10-24T18:48:31.119275+00:00",
+  "wall_seconds": 39.642,
   "reason": "Complete one explicitly selected CPU cohort with at most two reserved asynchronous jobs; no extrapolation or mixed-configuration rows",
   "quote": {
     "circuit_id": "Duke_G3_1",
@@ -43,7 +43,7 @@
       },
       "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZI"
     },
-    "status": "RUNNING",
+    "status": "COMPLETED",
     "requested_at": "2026-10-24T18:47:48.975126+00:00",
     "quote": {
       "circuit_id": "Duke_G3_1",
@@ -120,7 +120,12 @@
         }
       }
     },
-    "job_id": "9Rua7hRGxRLdcQvO"
+    "job_id": "9Rua7hRGxRLdcQvO",
+    "estimate": 0.009595883983312898,
+    "cost_usd": 0.0,
+    "compute_ms": 39317,
+    "queue_ms": 325,
+    "updated_at": "2026-10-24T18:48:31.119275+00:00"
   },
   "run_id": "remote-602cdf624280ff9b979bede6716ffdb9943b9a9f73d204964ca3d49eb91a611f"
 }

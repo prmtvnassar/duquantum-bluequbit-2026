@@ -1,0 +1,97 @@
+{
+  "circuit_id": "Duke_G4_4",
+  "problem": "G4",
+  "qubit": 4,
+  "origin": "bluequbit",
+  "method": "pauli-path",
+  "backend": "pauli-path",
+  "parameters": {
+    "pauli_path_truncation_threshold": 0.001,
+    "pauli_path_circuit_transpilation_level": 1
+  },
+  "status": "COMPLETED",
+  "estimate": 0.0,
+  "job_id": "Px3Hpygl0S6DT469",
+  "cost_usd": 0.0,
+  "started_at": "2026-10-24T19:18:49.970975+00:00",
+  "finished_at": "2026-10-24T19:18:57.865104+00:00",
+  "wall_seconds": 5.722,
+  "reason": "Independent PPS level1 representation check on the G4 q4 precision-sensitive row after chi16, chi32 and chi64 MPS changed substantially. Diagnostic only; do not submit or replace a single vector row.",
+  "quote": {
+    "circuit_id": "Duke_G4_4",
+    "device": "pauli-path",
+    "options": {
+      "pauli_path_truncation_threshold": 0.001,
+      "pauli_path_circuit_transpilation_level": 1
+    },
+    "quoted_at": "2026-10-24T19:18:49.683685+00:00",
+    "cost_usd": 0.2,
+    "runtime_seconds": 0.1,
+    "error": null,
+    "warning": "This is just an estimate; the actual runtime may be less or more.",
+    "binding_cost_cap": false
+  },
+  "error": null,
+  "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIII",
+  "remote_receipt": {
+    "action": {
+      "circuit_id": "Duke_G4_4",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIII"
+    },
+    "status": "COMPLETED",
+    "requested_at": "2026-10-24T19:18:49.970975+00:00",
+    "quote": {
+      "circuit_id": "Duke_G4_4",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "quoted_at": "2026-10-24T19:18:49.683685+00:00",
+      "cost_usd": 0.2,
+      "runtime_seconds": 0.1,
+      "error": null,
+      "warning": "This is just an estimate; the actual runtime may be less or more.",
+      "binding_cost_cap": false
+    },
+    "timeout_seconds": 300.0,
+    "scheduler_justification": "Independent PPS level1 representation check on the G4 q4 precision-sensitive row after chi16, chi32 and chi64 MPS changed substantially. Diagnostic only; do not submit or replace a single vector row.",
+    "cohort_batch": {
+      "cohort_key": "ef40377ec3d8174a8f0e8fb1e99ddab7724d42b64a7e5c883d81fbc7d27ad422",
+      "slots": 1,
+      "mode": "TARGETED_DIAGNOSTICS",
+      "target_ids": [
+        "Duke_G4_4"
+      ],
+      "execution_timeout_seconds": 300.0,
+      "quote_runtime_limit_seconds": 600.0,
+      "diagnostic_reason": "Independent PPS level1 representation check on the G4 q4 precision-sensitive row after chi16, chi32 and chi64 MPS changed substantially. Diagnostic only; do not submit or replace a single vector row.",
+      "gpu_quota_at_admission": null,
+      "reserved_quote_usd": 0.2,
+      "budget_at_admission": {
+        "actual_spent_usd": 0.2,
+        "outstanding_quote_usd": 0.0,
+        "new_quote_usd": 0.2,
+        "missing_cohort_reserve_usd": 0.0,
+        "planned_exposure_usd": 0.4,
+        "missing_unreserved_rows": {
+          "G2": 0,
+          "G3": 0,
+          "G4": 0
+        }
+      }
+    },
+    "job_id": "Px3Hpygl0S6DT469",
+    "estimate": 0.0,
+    "cost_usd": 0.0,
+    "compute_ms": 5350,
+    "queue_ms": 372,
+    "updated_at": "2026-10-24T19:18:57.865104+00:00"
+  },
+  "run_id": "remote-a0c1a8ca3db38b92021d125dbb11727c2006a8de9f731f48e7922bd6a8f7fe19"
+}

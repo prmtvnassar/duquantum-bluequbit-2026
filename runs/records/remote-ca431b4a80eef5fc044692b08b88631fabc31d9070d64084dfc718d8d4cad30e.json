@@ -1,0 +1,131 @@
+{
+  "circuit_id": "Duke_G3_24",
+  "problem": "G3",
+  "qubit": 24,
+  "origin": "bluequbit",
+  "method": "pauli-path",
+  "backend": "pauli-path",
+  "parameters": {
+    "pauli_path_truncation_threshold": 0.001,
+    "pauli_path_circuit_transpilation_level": 1
+  },
+  "status": "COMPLETED",
+  "estimate": -0.04062759029013222,
+  "job_id": "gBvNH1ZBb8Hbjijk",
+  "cost_usd": 0.0,
+  "started_at": "2026-10-24T18:56:25.015427+00:00",
+  "finished_at": "2026-10-24T18:57:11.568708+00:00",
+  "wall_seconds": 42.966,
+  "reason": "Complete one explicitly selected CPU cohort with at most two reserved asynchronous jobs; no extrapolation or mixed-configuration rows",
+  "quote": {
+    "circuit_id": "Duke_G3_24",
+    "device": "pauli-path",
+    "options": {
+      "pauli_path_truncation_threshold": 0.001,
+      "pauli_path_circuit_transpilation_level": 1
+    },
+    "quoted_at": "2026-10-24T18:56:24.748836+00:00",
+    "cost_usd": 0.2,
+    "runtime_seconds": 0.1,
+    "error": null,
+    "warning": "This is just an estimate; the actual runtime may be less or more.",
+    "binding_cost_cap": false
+  },
+  "error": null,
+  "pauli": "IIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIII",
+  "remote_receipt": {
+    "action": {
+      "circuit_id": "Duke_G3_24",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "pauli": "IIIIIIIIIIIZIIIIIIIIIIIIIIIIIIIIIIII"
+    },
+    "status": "COMPLETED",
+    "requested_at": "2026-10-24T18:56:25.015427+00:00",
+    "quote": {
+      "circuit_id": "Duke_G3_24",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "quoted_at": "2026-10-24T18:56:24.748836+00:00",
+      "cost_usd": 0.2,
+      "runtime_seconds": 0.1,
+      "error": null,
+      "warning": "This is just an estimate; the actual runtime may be less or more.",
+      "binding_cost_cap": false
+    },
+    "timeout_seconds": 600,
+    "scheduler_justification": "Complete one explicitly selected CPU cohort with at most two reserved asynchronous jobs; no extrapolation or mixed-configuration rows",
+    "cohort_batch": {
+      "cohort_key": "39344984e513d59a060fe4712eb9397d057893bcebe845a43fe2edc920938b22",
+      "slots": 2,
+      "mode": "FULL_COHORT",
+      "target_ids": [
+        "Duke_G3_0",
+        "Duke_G3_1",
+        "Duke_G3_2",
+        "Duke_G3_3",
+        "Duke_G3_4",
+        "Duke_G3_5",
+        "Duke_G3_6",
+        "Duke_G3_7",
+        "Duke_G3_8",
+        "Duke_G3_9",
+        "Duke_G3_10",
+        "Duke_G3_11",
+        "Duke_G3_12",
+        "Duke_G3_13",
+        "Duke_G3_14",
+        "Duke_G3_15",
+        "Duke_G3_16",
+        "Duke_G3_17",
+        "Duke_G3_18",
+        "Duke_G3_19",
+        "Duke_G3_20",
+        "Duke_G3_21",
+        "Duke_G3_22",
+        "Duke_G3_23",
+        "Duke_G3_24",
+        "Duke_G3_25",
+        "Duke_G3_26",
+        "Duke_G3_27",
+        "Duke_G3_28",
+        "Duke_G3_29",
+        "Duke_G3_30",
+        "Duke_G3_31",
+        "Duke_G3_32",
+        "Duke_G3_33",
+        "Duke_G3_34",
+        "Duke_G3_35"
+      ],
+      "execution_timeout_seconds": 600,
+      "quote_runtime_limit_seconds": 600,
+      "diagnostic_reason": null,
+      "reserved_quote_usd": 0.2,
+      "budget_at_admission": {
+        "actual_spent_usd": 0.2,
+        "outstanding_quote_usd": 0.2,
+        "new_quote_usd": 0.2,
+        "missing_cohort_reserve_usd": 2.0,
+        "planned_exposure_usd": 2.6,
+        "missing_unreserved_rows": {
+          "G2": 0,
+          "G3": 10,
+          "G4": 0
+        }
+      }
+    },
+    "job_id": "gBvNH1ZBb8Hbjijk",
+    "estimate": -0.04062759029013222,
+    "cost_usd": 0.0,
+    "compute_ms": 42649,
+    "queue_ms": 317,
+    "updated_at": "2026-10-24T18:57:11.568708+00:00"
+  },
+  "run_id": "remote-ca431b4a80eef5fc044692b08b88631fabc31d9070d64084dfc718d8d4cad30e"
+}

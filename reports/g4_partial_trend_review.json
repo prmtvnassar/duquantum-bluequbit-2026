@@ -1,0 +1,761 @@
+{
+  "generated_at": "2026-10-24T18:54:17.833159+00:00",
+  "scope": "Offline review in isolated graded-main worktree; source receipts read from original-account D:/BluQubit live-state directory. No service calls or simulations.",
+  "workspace": "C:/Users/youss/.codex/worktrees/graded-main/BluQubit",
+  "source_state_root": "D:/BluQubit/results/workflow",
+  "candidate": {
+    "name": "direct-930f7e5b7d14",
+    "problem": "G4",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 32
+    },
+    "rows": 38,
+    "recorded_cohort_cost_usd": 0.0,
+    "files": [
+      {
+        "path": "submissions/candidates/G4/direct-930f7e5b7d14.csv",
+        "sha256": "73a5887922c63eb2aafe840fae8e9b26402256fdfc13accf9f689ad4329cbb20"
+      },
+      {
+        "path": "submissions/candidates/G4/direct-930f7e5b7d14.json",
+        "sha256": "1961cd3c5b04d378ab7a24cd8165ed3572baa8152e95c961784fd8ecec5bad45"
+      },
+      {
+        "path": "submissions/candidates/G4/direct-930f7e5b7d14.txt",
+        "sha256": "f01485357e3342910494a44d35ef94b0cb07bf040598fabd71ee06480c897a74"
+      }
+    ],
+    "all38_values_job_ids_and_costs_checked_against_native_receipts": true,
+    "official_score": null,
+    "official_score_verified": false,
+    "user_reported_score": 0,
+    "user_reported_score_source": "user_report_relayed_by_parent"
+  },
+  "matched_subset": {
+    "qubits": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      19,
+      37
+    ],
+    "rows": 10,
+    "full_problem_rows": 38,
+    "coverage_fraction": 0.2631578947368421,
+    "selection": "All10 completed CPUchi16 rows present in retained native receipts.",
+    "limitation": "Concentrated on q0..7 plus q19/q37. It is not a representative random sample, full-vector shape comparison or accuracy validation."
+  },
+  "statistics": {
+    "centered_pearson_correlation": 0.8591218413312426,
+    "correlation_squared_between_approximations": 0.7380903382523848,
+    "spearman_rank_correlation": 0.6242424242424243,
+    "affine_slope": 0.7996918977118628,
+    "affine_intercept": 0.028763161039481427,
+    "affine_residual_energy": 0.22640324650428947,
+    "chi32_centered_signal_energy": 0.8644325871508286,
+    "relative_affine_residual_energy": 0.26190966174761526,
+    "formula": "r=b_centered-beta*a_centered; beta=(a_centered dot b_centered)/(a_centered dot a_centered); influence_i=r_i^2/||b_centered||^2",
+    "raw_sign_change_qubits": [
+      1,
+      3,
+      4
+    ],
+    "raw_sign_change_count": 3,
+    "pairwise_comparisons": 45,
+    "order_reversal_count": 12,
+    "tie_tolerance": 1e-08,
+    "tie_pairs": [],
+    "order_reversals": [
+      {
+        "qubits": [
+          0,
+          4
+        ],
+        "difference_chi16": 0.5646427476154531,
+        "difference_chi32": -0.061718371267330485
+      },
+      {
+        "qubits": [
+          0,
+          5
+        ],
+        "difference_chi16": 0.21858977613457564,
+        "difference_chi32": -0.033435624010296594
+      },
+      {
+        "qubits": [
+          0,
+          19
+        ],
+        "difference_chi16": 0.1966818500569858,
+        "difference_chi32": -0.017828691669344254
+      },
+      {
+        "qubits": [
+          1,
+          3
+        ],
+        "difference_chi16": 0.21045953685630067,
+        "difference_chi32": -0.07558178969421987
+      },
+      {
+        "qubits": [
+          1,
+          4
+        ],
+        "difference_chi16": 0.141287953420198,
+        "difference_chi32": -0.3859072834866184
+      },
+      {
+        "qubits": [
+          1,
+          7
+        ],
+        "difference_chi16": 0.05896854896556443,
+        "difference_chi32": -0.10534797661755774
+      },
+      {
+        "qubits": [
+          4,
+          5
+        ],
+        "difference_chi16": -0.3460529714808775,
+        "difference_chi32": 0.02828274725703389
+      },
+      {
+        "qubits": [
+          4,
+          6
+        ],
+        "difference_chi16": -0.1490445281121139,
+        "difference_chi32": 0.29166195773637343
+      },
+      {
+        "qubits": [
+          4,
+          7
+        ],
+        "difference_chi16": -0.08231940445463358,
+        "difference_chi32": 0.28055930686906067
+      },
+      {
+        "qubits": [
+          4,
+          19
+        ],
+        "difference_chi16": -0.36796089755846734,
+        "difference_chi32": 0.04388967959798623
+      },
+      {
+        "qubits": [
+          5,
+          19
+        ],
+        "difference_chi16": -0.021907926077589845,
+        "difference_chi32": 0.01560693234095234
+      },
+      {
+        "qubits": [
+          6,
+          7
+        ],
+        "difference_chi16": 0.06672512365748033,
+        "difference_chi32": -0.011102650867312755
+      }
+    ],
+    "caution": "Positive affine changes can flip raw signs; raw sign flips alone are not evidence of correlation-shape change. Ordering reversals and residuals address that distinction. None of these statistics is an official score or hidden-truth error."
+  },
+  "matched_rows": [
+    {
+      "qubit": 0,
+      "circuit_id": "Duke_G4_0",
+      "chi16": 0.5589102913779098,
+      "chi32": 0.27027187138182995,
+      "job_id_chi16": "BsLvSnV91rVxH6Ts",
+      "job_id_chi32": "78aF6vkVPu0XZJaR",
+      "signed_change": -0.28863841999607986,
+      "raw_sign_changed": false,
+      "rank_chi16": 9,
+      "rank_chi32": 6,
+      "affine_fitted_chi32": 0.4757191926021723,
+      "affine_residual": -0.20544732122034234,
+      "normalized_shape_influence": 0.04882810114289439,
+      "fraction_of_total_affine_residual": 0.18643108015597665
+    },
+    {
+      "qubit": 1,
+      "circuit_id": "Duke_G4_1",
+      "chi16": 0.13555549718265472,
+      "chi32": -0.05391704083745798,
+      "job_id_chi16": "aK8G5RrRHKcKRPp3",
+      "job_id_chi32": "JgcvRKxwUG2U9VHl",
+      "signed_change": -0.1894725380201127,
+      "raw_sign_changed": true,
+      "rank_chi16": 5,
+      "rank_chi32": 2,
+      "affine_fitted_chi32": 0.13716579382675365,
+      "affine_residual": -0.19108283466421164,
+      "normalized_shape_influence": 0.04223886309475699,
+      "fraction_of_total_affine_residual": 0.1612726419213192
+    },
+    {
+      "qubit": 2,
+      "circuit_id": "Duke_G4_2",
+      "chi16": -0.2114925301226884,
+      "chi32": -0.1275057744901126,
+      "job_id_chi16": "h88XrE4ylXWWeswj",
+      "job_id_chi32": "0cfHjjUtbHO3z4Q2",
+      "signed_change": 0.0839867556325758,
+      "raw_sign_changed": false,
+      "rank_chi16": 1,
+      "rank_chi32": 1,
+      "affine_fitted_chi32": -0.14036570172621457,
+      "affine_residual": 0.012859927236101909,
+      "normalized_shape_influence": 0.00019131362118464433,
+      "fraction_of_total_affine_residual": 0.0007304565242385003
+    },
+    {
+      "qubit": 3,
+      "circuit_id": "Duke_G4_3",
+      "chi16": -0.07490403967364595,
+      "chi32": 0.0216647488567619,
+      "job_id_chi16": "2bRJ4CbAhzDF1Uyp",
+      "job_id_chi32": "GTXBAMSNlgBI2eKc",
+      "signed_change": 0.09656878853040785,
+      "raw_sign_changed": true,
+      "rank_chi16": 2,
+      "rank_chi32": 3,
+      "affine_fitted_chi32": -0.03113699259342116,
+      "affine_residual": 0.05280174145018304,
+      "normalized_shape_influence": 0.003225264689941074,
+      "fraction_of_total_affine_residual": 0.012314416613805737
+    },
+    {
+      "qubit": 4,
+      "circuit_id": "Duke_G4_4",
+      "chi16": -0.005732456237543289,
+      "chi32": 0.33199024264916044,
+      "job_id_chi16": "MS0yy70CXbc5UdNl",
+      "job_id_chi32": "hvqh9jbt8GbqXSRP",
+      "signed_change": 0.33772269888670375,
+      "raw_sign_changed": true,
+      "rank_chi16": 3,
+      "rank_chi32": 9,
+      "affine_fitted_chi32": 0.02417896223233023,
+      "affine_residual": 0.3078112804168302,
+      "normalized_shape_influence": 0.10960690950365182,
+      "fraction_of_total_affine_residual": 0.418491279673648
+    },
+    {
+      "qubit": 5,
+      "circuit_id": "Duke_G4_5",
+      "chi16": 0.3403205152433342,
+      "chi32": 0.30370749539212655,
+      "job_id_chi16": "KahKJiOxwuN1dDLT",
+      "job_id_chi32": "ykQWw7sUtvr6VfIa",
+      "signed_change": -0.03661301985120763,
+      "raw_sign_changed": false,
+      "rank_chi16": 7,
+      "rank_chi32": 8,
+      "affine_fitted_chi32": 0.3009147197047023,
+      "affine_residual": 0.0027927756874242954,
+      "normalized_shape_influence": 9.022792703796289e-06,
+      "fraction_of_total_affine_residual": 3.445001854300032e-05
+    },
+    {
+      "qubit": 6,
+      "circuit_id": "Duke_G4_6",
+      "chi16": 0.14331207187457062,
+      "chi32": 0.040328284912787005,
+      "job_id_chi16": "Zbe59lAEJQNfPrDN",
+      "job_id_chi32": "nPAI6JihLrXUGsPh",
+      "signed_change": -0.10298378696178362,
+      "raw_sign_changed": false,
+      "rank_chi16": 6,
+      "rank_chi32": 4,
+      "affine_fitted_chi32": 0.14336866376187568,
+      "affine_residual": -0.10304037884908868,
+      "normalized_shape_influence": 0.012282414882528233,
+      "fraction_of_total_affine_residual": 0.0468956158416331
+    },
+    {
+      "qubit": 7,
+      "circuit_id": "Duke_G4_7",
+      "chi16": 0.07658694821709029,
+      "chi32": 0.05143093578009976,
+      "job_id_chi16": "73H8STxMznAoXSZL",
+      "job_id_chi32": "T59bY4yuPjMrBUoZ",
+      "signed_change": -0.025156012436990532,
+      "raw_sign_changed": false,
+      "rank_chi16": 4,
+      "rank_chi32": 5,
+      "affine_fitted_chi32": 0.09000912299916652,
+      "affine_residual": -0.038578187219066765,
+      "normalized_shape_influence": 0.001721680268920366,
+      "fraction_of_total_affine_residual": 0.006573565318027227
+    },
+    {
+      "qubit": 19,
+      "circuit_id": "Duke_G4_19",
+      "chi16": 0.362228441320924,
+      "chi32": 0.2881005630511742,
+      "job_id_chi16": "cN47ifNQlQ7RsODe",
+      "job_id_chi32": "smDxT4giEnJIkVRP",
+      "signed_change": -0.07412787826974981,
+      "raw_sign_changed": false,
+      "rank_chi16": 8,
+      "rank_chi32": 7,
+      "affine_fitted_chi32": 0.31843431068462125,
+      "affine_residual": -0.03033374763344708,
+      "normalized_shape_influence": 0.0010644395632080775,
+      "fraction_of_total_affine_residual": 0.0040641477527232515
+    },
+    {
+      "qubit": 37,
+      "circuit_id": "Duke_G4_37",
+      "chi16": 0.9204563892683192,
+      "chi32": 0.9570614225300893,
+      "job_id_chi16": "y4FHoDVz8SMmcAE4",
+      "job_id_chi32": "vGhKebHhF7A0UAOm",
+      "signed_change": 0.036605033261770115,
+      "raw_sign_changed": false,
+      "rank_chi16": 10,
+      "rank_chi32": 10,
+      "affine_fitted_chi32": 0.7648446777344726,
+      "affine_residual": 0.19221674479561657,
+      "normalized_shape_influence": 0.04274165218782587,
+      "fraction_of_total_affine_residual": 0.16319234618008527
+    }
+  ],
+  "shape_influence_ranking": [
+    4,
+    0,
+    37,
+    1,
+    6,
+    3,
+    7,
+    19,
+    2,
+    5
+  ],
+  "proposed_diagnostics": {
+    "condition": "After active G3 baseline completion, prioritize G4 investigation before G2 refinement based on user-reported accepted G4 zero. Account owner and attempt remain unknown. No new submission is needed for these diagnostics.",
+    "primary_pair": [
+      4,
+      0
+    ],
+    "retain_previously_planned_q0": true,
+    "one_job_priority": 4,
+    "optional_third": null,
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 64
+    },
+    "quote_runtime_limit_seconds": 2400,
+    "execution_cancellation_request_seconds": 600,
+    "status": "PROPOSED_NOT_EXECUTED",
+    "rationale": "q4 has the largest affine-residual influence; q0 is second and retains continuity with earlier pilots. Add one independent PPS level1 representation check on q4 instead of a third MPS point. Their direct raw values guide further resource allocation, not hidden-label inference.",
+    "pair_fraction_of_total_affine_residual": 0.6049223598296247,
+    "limits": "Heuristic sensitivity ranking only. Preserve the complete chi32 candidate for audit, but do not label it accurate. Require a complete single-device, identical-options 38-row cohort before exporting a new coherent candidate. Never splice pilot values, fit an affine correction, flip signs, reorder rows, or check the scorer with artificial outputs.",
+    "third_job": {
+      "circuit_id": "Duke_G4_4",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "execution_cancellation_request_seconds": 300,
+      "status": "PROPOSED_NOT_EXECUTED"
+    },
+    "initial_new_job_limit": 3,
+    "conditional_next_window": "If the first PPS level1 point is informative and tractable, extend the same configuration to q0 and q19 for a small nonconstant panel before a full cohort. A single zero cannot reject a representation. If a completed small level1 panel remains flat or is impractical, consider one bounded level3 check in a later decision window; do not automatically escalate thresholds or levels.",
+    "one_job_priority_configuration": "mps.cpu chi64; an independent level1 PPS check can be scheduled first if a fresh quote makes it substantially quicker, without changing the three-job limit.",
+    "shape_validation_limit": "Two MPS chi64 points have no meaningful correlation validation: correlation is +/-1 whenever both two-point vectors are nonconstant. Contraction of successive changes is a sensitivity observation, not an error bound. Three-point panels are still weak evidence.",
+    "budget_and_timing": "Use fresh quotes, preserve remaining baseline reservations, include all actual and outstanding quote commitments within the 27 USD working budget, and reconcile cancellation outcomes before rerouting. CPU zero billing so far is not a promise of future free runs.",
+    "bulk_gate": "Do not trigger all 38 chi64 jobs merely because two checks finish. Reassess chi32-to-chi64 changes and independent-representation tractability first. The user-reported graded zero justifies reconsidering method family as well as bond dimension.",
+    "submission_recommendation_gate": "Completeness and nonconstant output are insufficient. Require direct numerical corroboration on a broader identical-ID panel spanning q4,q0,q1,q19,q37, using a further precision step within the chosen family and/or an independently informative representation; inspect centered shape, affine residual, signs and order rather than amplitude alone. Material unresolved crossings or large unexplained shape changes preclude a confident recommendation. A complete coherent candidate and full-vector comparison to chi32 remain necessary for audit, but agreement with this zero-scoring baseline is not a success criterion. Panel corroboration is still not an accuracy guarantee.",
+    "priority_rationale": "Conditional on the user-reported whole-problem scores, G4 has 1000 points of headroom versus 102 for G2; this informs allocation after the active G3 baseline without inventing account scope or row labels."
+  },
+  "g2_feedback_context": {
+    "problem": "G2",
+    "score": 498,
+    "points": 600,
+    "attempt": 1,
+    "account_scope": "teammate_reported",
+    "evidence_source": "user_report",
+    "use": "Whole-problem allocation context only; no G4 labels or per-ID fitting.",
+    "receipt": {
+      "path": "submissions/teammates/teammate_reported/G2/attempt-01.json",
+      "sha256": "00ec984b9d979f7dd69507195eda01089ba4b9a43e68d14d20a85dbe6b8adab2"
+    }
+  },
+  "receipts": {
+    "BsLvSnV91rVxH6Ts": {
+      "job_id": "BsLvSnV91rVxH6Ts",
+      "source_path": "D:/BluQubit/results/workflow/remote_actions/ee3eb0b1a8c23f3a09d558f9f5001b2585d1fa3a8f7837ebd8529b3e3a65341d.json",
+      "source_sha256": "b0805271d838c3643d51cee26a1c3645848f6349c8791020814ba8da28cb9933",
+      "circuit_id": "Duke_G4_0",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 16
+      },
+      "status": "COMPLETED",
+      "estimate": 0.5589102913779098,
+      "cost_usd": 0.0
+    },
+    "aK8G5RrRHKcKRPp3": {
+      "job_id": "aK8G5RrRHKcKRPp3",
+      "source_path": "D:/BluQubit/results/workflow/remote_actions/a6636f5a078766723b2f4e5149249270d85c2cdc9a9b92739eb47fbfeb3b587c.json",
+      "source_sha256": "9c7d3bb91dc97efe2199c432d7cccdb73d8ac66bda56f1ffad6e184126f2a215",
+      "circuit_id": "Duke_G4_1",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 16
+      },
+      "status": "COMPLETED",
+      "estimate": 0.13555549718265472,
+      "cost_usd": 0.0
+    },
+    "h88XrE4ylXWWeswj": {
+      "job_id": "h88XrE4ylXWWeswj",
+      "source_path": "D:/BluQubit/results/workflow/remote_actions/2c7240c48cccd67bba6558798ef0f937e5e38f6d649e39a0500f4d1a5ca340ef.json",
+      "source_sha256": "a791874cdb253fe1c93ee0eeb6a66a297acfb1708c8c37b87d3287de284b71ad",
+      "circuit_id": "Duke_G4_2",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 16
+      },
+      "status": "COMPLETED",
+      "estimate": -0.2114925301226884,
+      "cost_usd": 0.0
+    },
+    "2bRJ4CbAhzDF1Uyp": {
+      "job_id": "2bRJ4CbAhzDF1Uyp",
+      "source_path": "D:/BluQubit/results/workflow/remote_actions/392a45d0e03bda7119a1024159d45604aa52d4e40b0930b16813dfbdc1ce1870.json",
+      "source_sha256": "083651718eccda28a424776cf9e9686eae2210b8e805e0014e538fc4b4310f3d",
+      "circuit_id": "Duke_G4_3",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 16
+      },
+      "status": "COMPLETED",
+      "estimate": -0.07490403967364595,
+      "cost_usd": 0.0
+    },
+    "MS0yy70CXbc5UdNl": {
+      "job_id": "MS0yy70CXbc5UdNl",
+      "source_path": "D:/BluQubit/results/workflow/remote_actions/ada04a2f61bbab355e77dd946e1b06ef6cba62c9ee05b0bc2b3e8717b0e85348.json",
+      "source_sha256": "514af427d18d5920efe454dc86d3612776c74fbbaef0d93c5c00709814b525bc",
+      "circuit_id": "Duke_G4_4",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 16
+      },
+      "status": "COMPLETED",
+      "estimate": -0.005732456237543289,
+      "cost_usd": 0.0
+    },
+    "KahKJiOxwuN1dDLT": {
+      "job_id": "KahKJiOxwuN1dDLT",
+      "source_path": "D:/BluQubit/results/workflow/remote_actions/e6f627bba029566222103faba75fdf149a1e09011813e397ff93cd7323e0cf65.json",
+      "source_sha256": "fe45ed2dcadb7021a48c6842269316b31072ee2ef876957cf113d2b5e6af2e9e",
+      "circuit_id": "Duke_G4_5",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 16
+      },
+      "status": "COMPLETED",
+      "estimate": 0.3403205152433342,
+      "cost_usd": 0.0
+    },
+    "Zbe59lAEJQNfPrDN": {
+      "job_id": "Zbe59lAEJQNfPrDN",
+      "source_path": "D:/BluQubit/results/workflow/remote_actions/d131cea37b2005704b6aa01ccdf6a1df561c7b4012d4a17c66f3729336279240.json",
+      "source_sha256": "61ef4d136a2bb7ce6eb4d638e80cb428af4e184febe7e810bb0051dce03bd205",
+      "circuit_id": "Duke_G4_6",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 16
+      },
+      "status": "COMPLETED",
+      "estimate": 0.14331207187457062,
+      "cost_usd": 0.0
+    },
+    "73H8STxMznAoXSZL": {
+      "job_id": "73H8STxMznAoXSZL",
+      "source_path": "D:/BluQubit/results/workflow/remote_actions/9d4fda912465218be6822b0eb209e064e81305835082ab34bf65ceaa19477c47.json",
+      "source_sha256": "398e04e99126bb2d91a1b9b561fd53d820e247ed4920e5616da98552b20f33ec",
+      "circuit_id": "Duke_G4_7",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 16
+      },
+      "status": "COMPLETED",
+      "estimate": 0.07658694821709029,
+      "cost_usd": 0.0
+    },
+    "cN47ifNQlQ7RsODe": {
+      "job_id": "cN47ifNQlQ7RsODe",
+      "source_path": "D:/BluQubit/results/workflow/remote_actions/fd00ce91d8d9fde40ed486de99522824634906cf67a6ad615cbe02c417bbff68.json",
+      "source_sha256": "82cb59feba0655a415aade78b144e5a90ae025fc0013bb320739031343901ef1",
+      "circuit_id": "Duke_G4_19",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 16
+      },
+      "status": "COMPLETED",
+      "estimate": 0.362228441320924,
+      "cost_usd": 0.0
+    },
+    "y4FHoDVz8SMmcAE4": {
+      "job_id": "y4FHoDVz8SMmcAE4",
+      "source_path": "D:/BluQubit/results/workflow/remote_actions/aeced96a182d73e7826beddd56db65fc102886ab18f08d7ec8bf55fd23ee3b0a.json",
+      "source_sha256": "0e92ac49a6916a810a298f6c8e5adf37ec66d63197a671ba445f050eecd6e8bb",
+      "circuit_id": "Duke_G4_37",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 16
+      },
+      "status": "COMPLETED",
+      "estimate": 0.9204563892683192,
+      "cost_usd": 0.0
+    },
+    "78aF6vkVPu0XZJaR": {
+      "job_id": "78aF6vkVPu0XZJaR",
+      "source_path": "D:/BluQubit/results/workflow/remote_actions/380cd5f409701afc9e1b8857222bba258410dcc8ca1013305c4cd917cf0405f5.json",
+      "source_sha256": "dc99ef8c1a3184b91a7d459972c75206d13089ef2edf8f1fb9caf5486fdfeafa",
+      "circuit_id": "Duke_G4_0",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "status": "COMPLETED",
+      "estimate": 0.27027187138182995,
+      "cost_usd": 0.0
+    },
+    "JgcvRKxwUG2U9VHl": {
+      "job_id": "JgcvRKxwUG2U9VHl",
+      "source_path": "D:/BluQubit/results/workflow/remote_actions/24e2a786c3a09255bb3251b20dd88b5b6edb0112ff2a815de3638186fa567378.json",
+      "source_sha256": "153150c5be019f54cbfbf81300f6b5f8d1ff8a99951524e9a5c464d0341adbb8",
+      "circuit_id": "Duke_G4_1",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "status": "COMPLETED",
+      "estimate": -0.05391704083745798,
+      "cost_usd": 0.0
+    },
+    "0cfHjjUtbHO3z4Q2": {
+      "job_id": "0cfHjjUtbHO3z4Q2",
+      "source_path": "D:/BluQubit/results/workflow/remote_actions/d028d253b76c8a8700c86ffab7ae1b9f161d742b7fa402c8a3fb5ebc20aaaf35.json",
+      "source_sha256": "243206152bc24173f3209a98653213804c8f4b53bc05086029cd62d224c0c752",
+      "circuit_id": "Duke_G4_2",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "status": "COMPLETED",
+      "estimate": -0.1275057744901126,
+      "cost_usd": 0.0
+    },
+    "GTXBAMSNlgBI2eKc": {
+      "job_id": "GTXBAMSNlgBI2eKc",
+      "source_path": "D:/BluQubit/results/workflow/remote_actions/e3d133dd799ffbacb792a02c9ab8ebb0695e9c6701f299097328a07665b76630.json",
+      "source_sha256": "1cee76318ea2b04afc29fa646f261d50a9b6d6e24a1e2848cfe570acd7a1986e",
+      "circuit_id": "Duke_G4_3",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "status": "COMPLETED",
+      "estimate": 0.0216647488567619,
+      "cost_usd": 0.0
+    },
+    "hvqh9jbt8GbqXSRP": {
+      "job_id": "hvqh9jbt8GbqXSRP",
+      "source_path": "D:/BluQubit/results/workflow/remote_actions/ea0d5e91de32843cfe85ff3106f6549f64898176eb8f6748c0cae786f998bfd5.json",
+      "source_sha256": "1061a3002637402f0419035b0e4491ceb7aeaa0826e951471b029533fe59202d",
+      "circuit_id": "Duke_G4_4",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "status": "COMPLETED",
+      "estimate": 0.33199024264916044,
+      "cost_usd": 0.0
+    },
+    "ykQWw7sUtvr6VfIa": {
+      "job_id": "ykQWw7sUtvr6VfIa",
+      "source_path": "D:/BluQubit/results/workflow/remote_actions/6a9b08ad1981e687940eeb3fbeb703ef4d1dda97ffaf408f1a8e99bb7515e7c1.json",
+      "source_sha256": "48a3f6e47dd7dca4795ed92fe54db075201cbe2fdd2ec034e77d28bef4e0eed6",
+      "circuit_id": "Duke_G4_5",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "status": "COMPLETED",
+      "estimate": 0.30370749539212655,
+      "cost_usd": 0.0
+    },
+    "nPAI6JihLrXUGsPh": {
+      "job_id": "nPAI6JihLrXUGsPh",
+      "source_path": "D:/BluQubit/results/workflow/remote_actions/8a6ce7cad7adedd68bb33e17a398a9e5d6fe9cd82bbb180576812c68ac42d18b.json",
+      "source_sha256": "b4db0d8643ffaf13e4f282dbb4660929a3e65705cfbec30e5a1670d781d9ebbe",
+      "circuit_id": "Duke_G4_6",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "status": "COMPLETED",
+      "estimate": 0.040328284912787005,
+      "cost_usd": 0.0
+    },
+    "T59bY4yuPjMrBUoZ": {
+      "job_id": "T59bY4yuPjMrBUoZ",
+      "source_path": "D:/BluQubit/results/workflow/remote_actions/cb1e6e50b18fb13543193163d7687db4c0665bf18da07b2c0dc9d15ebb45b58c.json",
+      "source_sha256": "a2bbcf3301245c3d5cb1b4acab1140fa80e7f7fec89f174c6e9f42aaf366c926",
+      "circuit_id": "Duke_G4_7",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "status": "COMPLETED",
+      "estimate": 0.05143093578009976,
+      "cost_usd": 0.0
+    },
+    "smDxT4giEnJIkVRP": {
+      "job_id": "smDxT4giEnJIkVRP",
+      "source_path": "D:/BluQubit/results/workflow/remote_actions/4bfb22a8b0fb80bf34249150f7dc17d6b42c2308cc2c13f5545dc047f3470a79.json",
+      "source_sha256": "cfea526886b081003890581c8e4b93f1e6bc64b91335a05b5a41490c68038138",
+      "circuit_id": "Duke_G4_19",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "status": "COMPLETED",
+      "estimate": 0.2881005630511742,
+      "cost_usd": 0.0
+    },
+    "vGhKebHhF7A0UAOm": {
+      "job_id": "vGhKebHhF7A0UAOm",
+      "source_path": "D:/BluQubit/results/workflow/remote_actions/52b77390c1d36c2753cfa36a53ecdc1f5df89e7d97af2ade58cf4a740efc912e.json",
+      "source_sha256": "d1af5a98da9beb0c786c25bb6ef492b104766208bcdee059f7edb78314a93f11",
+      "circuit_id": "Duke_G4_37",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "status": "COMPLETED",
+      "estimate": 0.9570614225300893,
+      "cost_usd": 0.0
+    }
+  },
+  "updated_at": "2026-10-24T18:57:34.547743+00:00",
+  "reported_zero_alert": {
+    "reported_on": "2026-10-24",
+    "recorded_at": "2026-10-24T18:57:34.547743+00:00",
+    "source": "user_report_relayed_by_parent",
+    "reported_text": "yes G4 in candidates got 0",
+    "candidate": "direct-930f7e5b7d14",
+    "exact_scoring_status": "ACCEPTED_GRADED_ZERO_USER_REPORTED",
+    "account_owner": null,
+    "attempt_number": null,
+    "browser_verified": false,
+    "interpretation": "User confirmed the G4 candidate received graded zero. This is user-reported whole-problem feedback; account owner and attempt are unknown, and no browser verification was performed. It supplies no row-level truth.",
+    "priority_implication": "After the active G3 baseline finishes, prioritize G4 investigation ahead of G2 refinement because reported G4 headroom is 1000 points versus 102 for G2. Do not interrupt or drain the active baseline.",
+    "reported_text_initial": "it's 0!!",
+    "accepted_graded_score_confirmed_by_user": true,
+    "accepted_graded_score_independently_verified": false,
+    "reported_score": 0
+  },
+  "independent_representation_evidence": {
+    "g4_saved_pps_receipts": [
+      {
+        "job_id": "EHFbywYKK8gP6ajQ",
+        "source_path": "D:/BluQubit/results/workflow/remote_actions/5736d3eed92d02b9206d24fa5880984f9a92ff4136053d59d1c319e6da3d5b55.json",
+        "source_sha256": "33425ea5e5043e50aa030c747bad839ee3651acc84096e90f801b69ca0c4f311",
+        "circuit_id": "Duke_G4_37",
+        "device": "pauli-path",
+        "options": {
+          "pauli_path_truncation_threshold": 0.001,
+          "pauli_path_circuit_transpilation_level": 2
+        },
+        "status": "COMPLETED",
+        "estimate": 0.0,
+        "cost_usd": 0.0
+      },
+      {
+        "job_id": "8bYxcNGVrN6Zz9I3",
+        "source_path": "D:/BluQubit/results/workflow/remote_actions/5c2ee28862be03710510df79efc26a3399652e18e6b1b8c255d040a5d0c84727.json",
+        "source_sha256": "738731a5b1d5c4d03d64e7a9de1f830a17e401ce2f4882f2beb361803487684a",
+        "circuit_id": "Duke_G4_19",
+        "device": "pauli-path",
+        "options": {
+          "pauli_path_truncation_threshold": 0.001,
+          "pauli_path_circuit_transpilation_level": 2
+        },
+        "status": "COMPLETED",
+        "estimate": 0.0,
+        "cost_usd": 0.0
+      },
+      {
+        "job_id": "O32peB3tJOGvTWOX",
+        "source_path": "D:/BluQubit/results/workflow/remote_actions/dd5e4d7568969ae80708751c8b59c9e70bd4234830ab96ba892e0026d91c1f0f.json",
+        "source_sha256": "ce4921f584ede5ca03e300ef5ffeced1fb91331e3f177d113f9b1dc8e0ab66cc",
+        "circuit_id": "Duke_G4_0",
+        "device": "pauli-path",
+        "options": {
+          "pauli_path_truncation_threshold": 0.001,
+          "pauli_path_circuit_transpilation_level": 2
+        },
+        "status": "COMPLETED",
+        "estimate": 0.0,
+        "cost_usd": 0.0
+      }
+    ],
+    "g4_levels_observed": [
+      2
+    ],
+    "g3_representation_sensitivity_example": [
+      {
+        "job_id": "Xwd38DivQbLSLfMw",
+        "source_path": "D:/BluQubit/results/workflow/remote_actions/4162c376486fdb60aacd6c13aa1c8a06dbe069d5956b6f6388c04b7163b89cc2.json",
+        "source_sha256": "474dfe7db1668d2ce0c52d95773119607372bec991be52190645626fa90ee38e",
+        "circuit_id": "Duke_G3_0",
+        "device": "pauli-path",
+        "options": {
+          "pauli_path_truncation_threshold": 0.001,
+          "pauli_path_circuit_transpilation_level": 2
+        },
+        "status": "COMPLETED",
+        "estimate": 0.0,
+        "cost_usd": 0.0
+      },
+      {
+        "job_id": "rOuJjcU3jjqtpb4e",
+        "source_path": "D:/BluQubit/results/workflow/remote_actions/edf8d8aafeeffd0e32f4ea5b32e53152dcbd845a4ef207c9ad54d539568ba124.json",
+        "source_sha256": "e114e4d3a784150d0231e3ce56f37c720e42720bc8f87231723baa81aafdbdf8",
+        "circuit_id": "Duke_G3_0",
+        "device": "pauli-path",
+        "options": {
+          "pauli_path_truncation_threshold": 0.001,
+          "pauli_path_circuit_transpilation_level": 1
+        },
+        "status": "COMPLETED",
+        "estimate": -0.07229195955602603,
+        "cost_usd": 0.0
+      }
+    ],
+    "interpretation": "G4 level2 pilots were all zero. G3 q0 changed from zero at level2 to a nonzero value at level1 at the same threshold. This motivates testing a different G4 representation but does not establish accuracy or transferability.",
+    "receipt_scan_completed_at": "2026-10-24T18:57:34.547743+00:00",
+    "receipt_scan_path": "D:/BluQubit/results/workflow/remote_actions"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "event_id": "e9225fa67a6b4a0b9fd3c88f1579147b",
+  "recorded_at": "2026-10-24T19:06:35.311528+00:00",
+  "kind": "official_submission",
+  "problem": "G2",
+  "attempt": 1,
+  "owner": "original_submitter",
+  "sha256": "4cb0c3c141640461732583a3e719058f8b731699f55078631d55f3eb0a3c79ea",
+  "displayed_score": 342,
+  "evidence_source": "user_report",
+  "status": "USER_REPORTED",
+  "note_evidence": "prepared_explanation",
+  "time_penalty_hours": 3.48,
+  "receipt": "submissions/G2/attempt-01.json"
+}

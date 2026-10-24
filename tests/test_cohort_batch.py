@@ -101,6 +101,7 @@ class FakeAdapter:
         self.initial_spend, self.foreign_ids, self.unknown_costs = 0.0, [], 0
         self.quote_costs, self.quote_calls, self.saved = {}, [], []
         self.quote_runtimes = {}
+        self.gpu_usage = {}
 
     def _save(self, path, saved):
         atomic_json(path, saved)
@@ -124,17 +125,17 @@ class FakeAdapter:
                 "known_job_costs_usd": known,
                 "active_jobs": len(active), "active_job_ids": active,
                 "unknown_terminal_costs": self.unknown_costs + sum(j.run_status in TERMINAL and j.cost is None for j in jobs),
-                "job_count": len(jobs) + len(self.foreign_ids)}
+                "job_count": len(jobs) + len(self.foreign_ids), **self.gpu_usage}
 
 
-def seed(adapter, cid, *, status="COMPLETED", job_id=None, options=None, cost=0.0):
+def seed(adapter, cid, *, status="COMPLETED", job_id=None, options=None, cost=0.0, device="mps.cpu"):
     options = options or OPTIONS
-    _, z = validate_action(cid, "mps.cpu", options)
-    action = {"circuit_id": cid, "device": "mps.cpu", "options": deepcopy(options), "pauli": z}
+    _, z = validate_action(cid, device, options)
+    action = {"circuit_id": cid, "device": device, "options": deepcopy(options), "pauli": z}
     receipt = {"action": action, "status": status, "job_id": job_id or "seed-" + cid,
                "requested_at": "2030-01-01T00:00:00+00:00", "cost_usd": cost,
                "estimate": .1 if status == "COMPLETED" else None,
-               "quote": {"circuit_id": cid, "device": "mps.cpu", "options": deepcopy(options),
+               "quote": {"circuit_id": cid, "device": device, "options": deepcopy(options),
                          "cost_usd": .2, "runtime_seconds": 1.0}}
     atomic_json(adapter.root / "remote_actions" / f"{digest(action)}.json", receipt)
     return receipt
@@ -645,6 +646,148 @@ class CohortBatchTests(TestCase):
             self.assertEqual(adapter.client.run_calls, [])
 
 
+class GpuDiagnosticTests(TestCase):
+    def prepare(self, folder):
+        adapter, clock, manifests, cohorts, _ = CohortBatchTests().prepare(folder)
+        for problem, ids in manifests.items():
+            for q,cid in enumerate(ids):
+                saved=seed(adapter,cid)
+                saved["estimate"] = .1 * q
+                atomic_json(adapter.root / "remote_actions" / f"{digest(saved['action'])}.json", saved)
+        settings={**configuration(), "gpu_enabled": True, "gpu_total_seconds": 27000, "gpu_hour_seconds": 2700}
+        adapter.gpu_usage={"gpu_time_known": True, "gpu_seconds": 24.0, "gpu_seconds_last_hour": 24.0}
+        adapter.quote_costs["Duke_G4_0"] = 1.08
+        adapter.quote_runtimes["Duke_G4_0"] = 968.2
+        def controller(*, device="mps.gpu", options=None, settings_override=None, **kwargs):
+            selected={**DIAGNOSTIC, "target_ids": ["Duke_G4_0"], "quote_runtime_limit_seconds": 2700, "slots": 1, **kwargs}
+            return CohortBatchController(adapter, {**settings, **(settings_override or {})}, "G4", device,
+                        options or {"mps_bond_dimension":64}, manifests=manifests, reserve_cohorts=cohorts,
+                        sleep=clock.sleep, clock=clock, **selected)
+        return adapter, clock, manifests, cohorts, controller
+
+    def test_gpu_requires_enabled_explicit_diagnostics_one_slot_and_bounded_quotas(self):
+        with TemporaryDirectory() as folder:
+            adapter, _, _, _, controller = self.prepare(folder)
+            cases=[{"targeted_diagnostics":False}, {"slots":2}, {"device":"gpu"},
+                   {"settings_override":{"gpu_enabled":False}}, {"settings_override":{"gpu_enabled":1}}]
+            cases += [{"settings_override":{name:value}} for name, ceiling in (("gpu_total_seconds",27000),("gpu_hour_seconds",2700))
+                      for value in (None,False,0,-1,float("nan"),float("inf"),ceiling+1)]
+            for overrides in cases:
+                with self.subTest(overrides=overrides), self.assertRaises(ValueError):
+                    controller(**overrides)
+            self.assertEqual(adapter.quote_calls, [])
+            self.assertEqual(adapter.client.run_calls, [])
+
+    def test_mps_and_pps_gpu_reserve_full_quote_and_usage_without_mixing_cpu_rows(self):
+        for device, options in (("mps.gpu",{"mps_bond_dimension":64}),
+                                ("pauli-path.gpu",{"pauli_path_truncation_threshold":.001,
+                                                   "pauli_path_circuit_transpilation_level":1})):
+            with self.subTest(device=device), TemporaryDirectory() as folder:
+                adapter, _, manifests, _, controller = self.prepare(folder)
+                adapter.initial_spend=5.5
+                current=controller(device=device,options=options)
+                result=current.run()
+                self.assertEqual(result["status"],"DIAGNOSTICS_COMPLETE")
+                self.assertEqual(adapter.client.max_active,1)
+                self.assertEqual(result["gpu_quota_admission"]["reserved_quote_seconds"],968.2)
+                self.assertAlmostEqual(result["gpu_quota_admission"]["planned_gpu_seconds_last_hour"],992.2)
+                self.assertAlmostEqual(result["budget"]["planned_exposure_usd"],6.58)
+                self.assertEqual(result["budget"]["new_quote_usd"],1.08)
+                intent=next(r for r in adapter.saved if r["status"]=="SUBMITTING")
+                self.assertEqual(intent["cohort_batch"]["gpu_quota_at_admission"],result["gpu_quota_admission"])
+                self.assertTrue(result["has_usable_baseline"]["G4"])
+                self.assertEqual(result["reserve_cohorts"]["G3"]["device"],"mps.cpu")
+                self.assertEqual(result["completed_rows"],1)
+                selected=select_coherent_vector(list(current.records.values()),manifests["G4"],device)["selected"]
+                self.assertEqual(selected["device"],"mps.cpu")
+
+    def test_unknown_or_inconsistent_gpu_time_blocks_launches(self):
+        cases=[({"gpu_time_known":value},"unknown_gpu_time") for value in (False,None,1)]
+        cases += [({name:value},"unknown_gpu_time") for name in ("gpu_seconds","gpu_seconds_last_hour")
+                  for value in (None,True,-1,float("nan"),float("inf"))]
+        cases.append(({"gpu_seconds":20,"gpu_seconds_last_hour":24},"inconsistent_gpu_time"))
+        for changes, reason in cases:
+            with self.subTest(changes=changes), TemporaryDirectory() as folder:
+                adapter, _, _, _, controller = self.prepare(folder)
+                adapter.gpu_usage.update(changes)
+                result=controller().run()
+                self.assertEqual(result["reason"],reason)
+                self.assertEqual(adapter.client.run_calls,[])
+
+    def test_full_runtime_quote_protects_total_and_hourly_quotas_despite_short_cancel_cap(self):
+        cases=((26700,24,968.2,"gpu_total_quota_reserve"),(1000,1000,2448.2,"gpu_rolling_hour_quota"))
+        for total, hour, quoted, reason in cases:
+            with self.subTest(reason=reason), TemporaryDirectory() as folder:
+                adapter, _, _, _, controller = self.prepare(folder)
+                adapter.gpu_usage.update(gpu_seconds=total,gpu_seconds_last_hour=hour)
+                adapter.quote_runtimes["Duke_G4_0"]=quoted
+                result=controller(execution_timeout_seconds=1).run()
+                self.assertEqual(result["reason"],reason)
+                self.assertEqual(result["gpu_quota_admission"]["reserved_quote_seconds"],quoted)
+                self.assertEqual(adapter.client.run_calls,[])
+
+    def test_gpu_full_dollar_quote_and_deadline_remain_independent_gates(self):
+        for gate in ("budget","deadline"):
+            with self.subTest(gate=gate), TemporaryDirectory() as folder:
+                adapter, clock, _, _, controller = self.prepare(folder)
+                adapter.quote_costs["Duke_G4_0"]=2.73
+                adapter.quote_runtimes["Duke_G4_0"]=2448.2
+                overrides={}
+                if gate=="budget":
+                    adapter.initial_spend=24.28
+                else:
+                    overrides["deadline_utc"]=(clock()+timedelta(seconds=3000)).isoformat()
+                result=controller(execution_timeout_seconds=60,settings_override=overrides).run()
+                self.assertEqual(result["reason"],"budget_commitments_and_cohort_reserve" if gate=="budget" else "deadline_buffer")
+                self.assertEqual(adapter.client.run_calls,[])
+                if gate=="budget":
+                    self.assertAlmostEqual(result["budget"]["planned_exposure_usd"],27.01)
+
+    def test_gpu_waits_for_cpu_jobs_and_prior_gpu_account_indexing(self):
+        for kind, reason in (("cpu","foreign_unresolved_receipt"),("gpu","gpu_job_accounting_pending")):
+            with self.subTest(kind=kind), TemporaryDirectory() as folder:
+                adapter, _, _, _, controller = self.prepare(folder)
+                if kind=="cpu":
+                    job=adapter.client.add_job("Duke_G4_0")
+                    seed(adapter,"Duke_G4_0",status="RUNNING",job_id=job.job_id,cost=None,options={"mps_bond_dimension":64})
+                else:
+                    seed(adapter,"Duke_G4_1",job_id="unindexed-gpu",device="mps.gpu",options={"mps_bond_dimension":64})
+                result=controller().run()
+                self.assertEqual(result["reason"],reason)
+                self.assertEqual(adapter.client.run_calls,[])
+                self.assertEqual(adapter.client.cancel_calls,[])
+
+    def test_gpu_resume_and_cancellation_do_not_duplicate_or_relax_execution_cap(self):
+        for cancel in (False,True):
+            with self.subTest(cancel=cancel), TemporaryDirectory() as folder:
+                adapter, _, _, _, controller = self.prepare(folder)
+                adapter.client.polls_by_id["Duke_G4_0"]=10000 if cancel else 2
+                job=adapter.client.add_job("Duke_G4_0")
+                saved=seed(adapter,"Duke_G4_0",device="mps.gpu",options={"mps_bond_dimension":64},
+                           status="RUNNING",job_id=job.job_id,cost=None)
+                saved["timeout_seconds"]=6
+                atomic_json(adapter.root/"remote_actions"/f"{digest(saved['action'])}.json",saved)
+                result=controller().run()
+                again=controller().run()
+                self.assertEqual(result["status"],"BLOCKED" if cancel else "DIAGNOSTICS_COMPLETE")
+                self.assertEqual(again["status"],result["status"])
+                self.assertEqual(adapter.client.run_calls,[])
+                self.assertEqual(adapter.client.cancel_calls,[job.job_id] if cancel else [])
+                if cancel:
+                    terminal=next(r for r in adapter.saved if r["status"]=="CANCELED")
+                    age=(datetime.fromisoformat(terminal["cancel_requested_at"])-datetime.fromisoformat(terminal["requested_at"])).total_seconds()
+                    self.assertEqual(age,6)
+
+    def test_gpu_diagnostic_cannot_set_another_reserve_cohort_to_gpu(self):
+        with TemporaryDirectory() as folder:
+            adapter, _, _, cohorts, controller = self.prepare(folder)
+            cohorts["G3"]["device"]="mps.gpu"
+            result=controller().run()
+            self.assertEqual(result["reason"],"controller_exception:ValueError")
+            self.assertEqual(adapter.quote_calls,[])
+            self.assertEqual(adapter.client.run_calls,[])
+
+
 class DiagnosticCommandTests(TestCase):
     @staticmethod
     def command():
@@ -714,6 +857,35 @@ class DiagnosticCommandTests(TestCase):
                     command.main()
                 self.assertEqual(error.exception.code, 2)
                 adapter.assert_not_called()
+
+    def test_gpu_cli_requires_explicit_one_slot_mode_and_enabled_config_before_adapter(self):
+        command=self.command()
+        base=["run_cohort_batch.py","--execute","--problem","G4","--device","mps.gpu","--options-file","not-read.json"]
+        diagnostic=["--targeted-diagnostics","--target-ids","Duke_G4_0","--execution-timeout","600","--quote-runtime-limit","2700"]
+        for extra in ([],diagnostic,diagnostic+["--slots","1"]):
+            with self.subTest(extra=extra), patch("sys.argv",base+extra), \
+                    patch.object(command,"load_settings",return_value=configuration()), \
+                    patch.object(command,"BlueQubitAdapter") as adapter, redirect_stderr(io.StringIO()):
+                with self.assertRaises(SystemExit) as error:
+                    command.main()
+                self.assertEqual(error.exception.code,2)
+                adapter.assert_not_called()
+
+    def test_gpu_diagnostic_cli_never_exports(self):
+        with TemporaryDirectory() as folder:
+            options=Path(folder)/"options.json"
+            options.write_text(json.dumps({"mps_bond_dimension":64}))
+            command=self.command()
+            args=["run_cohort_batch.py","--execute","--problem","G4","--device","mps.gpu","--options-file",str(options),
+                  "--targeted-diagnostics","--target-ids","Duke_G4_0","--slots","1","--execution-timeout","600","--quote-runtime-limit","2700"]
+            with patch("sys.argv",args), patch.object(command,"BlueQubitAdapter"), \
+                    patch.object(command,"load_settings",return_value={**configuration(),"gpu_enabled":True}), \
+                    patch.object(command,"run_cohort_batch",return_value={"status":"DIAGNOSTICS_COMPLETE"}) as runner, \
+                    patch.object(command,"export_complete") as exporter, patch.object(command.logging,"disable"), redirect_stdout(io.StringIO()):
+                self.assertEqual(command.main(),0)
+                self.assertEqual(runner.call_args.args[3],"mps.gpu")
+                self.assertEqual(runner.call_args.kwargs["slots"],1)
+                exporter.assert_not_called()
 
 
 class AccountCostIdentityTests(TestCase):

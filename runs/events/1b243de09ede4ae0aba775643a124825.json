@@ -1,0 +1,81 @@
+{
+  "event_id": "1b243de09ede4ae0aba775643a124825",
+  "recorded_at": "2026-10-24T19:26:21.310089+00:00",
+  "kind": "resource_allocation_review",
+  "reviewed_at": "2026-10-24T19:26:21.307096+00:00",
+  "problem": "G4",
+  "question": "Which next experiment can change method or precision allocation?",
+  "evidence": {
+    "pps_q4_level1": [
+      {
+        "job_id": "Px3Hpygl0S6DT469",
+        "action": {
+          "circuit_id": "Duke_G4_4",
+          "device": "pauli-path",
+          "options": {
+            "pauli_path_truncation_threshold": 0.001,
+            "pauli_path_circuit_transpilation_level": 1
+          },
+          "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIII"
+        },
+        "status": "COMPLETED",
+        "estimate": 0.0,
+        "compute_ms": 5350,
+        "queue_ms": 372,
+        "cost_usd": 0.0
+      },
+      {
+        "job_id": "onNMNzb84Wz82A0D",
+        "action": {
+          "circuit_id": "Duke_G4_4",
+          "device": "pauli-path",
+          "options": {
+            "pauli_path_truncation_threshold": 0.0001,
+            "pauli_path_circuit_transpilation_level": 1
+          },
+          "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIII"
+        },
+        "status": "COMPLETED",
+        "estimate": 0.0,
+        "compute_ms": 178913,
+        "queue_ms": 368,
+        "cost_usd": 0.0
+      }
+    ],
+    "compute_ratio_for_tenfold_smaller_epsilon": 33.44168224299065,
+    "mps_q0_chi64_job": "6m5pZ6dArY3Zxfvp",
+    "mps_q4_chi64_job": "bwUOEcirkZMkDU3b",
+    "prior_shape_review": "reports/g4_partial_trend_review.json"
+  },
+  "decisions": [
+    {
+      "action": "Further CPU PPS threshold reduction at q4",
+      "status": "DEFERRED",
+      "reason": "Two thresholds returned zero while compute grew 33.4 times; another blind reduction may be costly and uninformative. This does not prove the exact value is zero."
+    },
+    {
+      "action": "Repeat q4 MPS chi64 on GPU",
+      "status": "DEFERRED",
+      "reason": "Same precision tests speed and implementation consistency, not approximation improvement. CPU chi64 already completed inside its execution cap."
+    },
+    {
+      "action": "CPU MPS chi64 q1 and q19",
+      "status": "RUNNING_BOUNDED_DIAGNOSTICS",
+      "reason": "q1 tests a prior sign change; q19 is a separated interior row. Broaden the matched panel beyond the two highest-influence rows before committing to a complete higher-precision vector.",
+      "execution_cap_seconds": 600,
+      "quote_ceiling_seconds": 2400,
+      "maximum_new_jobs": 2
+    },
+    {
+      "action": "Full G4 chi64 vector or chi128 sweep",
+      "status": "NOT_SCHEDULED",
+      "reason": "Existing observations show sensitivity rather than convergence; review the broader panel first."
+    }
+  ],
+  "limits": [
+    "No expected score gain is asserted.",
+    "Partial-panel shape diagnostics do not validate the full vector.",
+    "GPU remains available for a justified precision or throughput bottleneck; availability alone is not a reason to spend.",
+    "All values remain direct outputs; no fitting to hidden scores."
+  ]
+}

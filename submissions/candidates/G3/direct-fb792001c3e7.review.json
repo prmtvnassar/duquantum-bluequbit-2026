@@ -1,0 +1,8 @@
+{
+  "candidate_csv": "submissions/candidates/G3/direct-fb792001c3e7.csv",
+  "csv_sha256": "7ce7b051d0fa7f124e7329c93f15247f46f5b36b3ccfb407910dfebe80c71d7e",
+  "status": "HOLD_FOR_NUMERICAL_REVIEW",
+  "submitted": false,
+  "reason": "Complete native PPS level1 epsilon0.001 baseline, but fixed-level threshold sensitivity has not been established across the vector. Prior q0 refinement changed materially and the q35 epsilon0.0003 check timed out. No accuracy or score is certified.",
+  "next_evidence": "Use bounded fixed-level threshold checks on both sensitive and spatially spread IDs, and independent MPS values, before deciding whether to recommend this vector."
+}

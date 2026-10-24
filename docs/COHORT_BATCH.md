@@ -1,10 +1,13 @@
-# Bounded CPU cohort controller
+# Bounded cohort controller
 
 By default, `scripts/run_cohort_batch.py` completes one explicitly selected G2, G3 or G4
 cohort: every retained template ID on one CPU device with identical full native
 options. Supported devices are `mps.cpu` and `pauli-path`. It manages at most two
 owned jobs under the existing exclusive `remote_runner` lock. It cannot run
 alongside the serial executor or another cohort controller.
+GPU support is limited to explicit targeted diagnostics on `mps.gpu` or
+`pauli-path.gpu`, with exactly one slot. Full GPU cohorts and exact `gpu`
+execution are unsupported.
 
 The serial configuration remains `max_concurrent_jobs: 1`. This separate entry
 point requires `--execute`; without it the CLI rejects the request before any
@@ -53,10 +56,23 @@ all required IDs; no shortened user-defined manifest is accepted by the CLI.
 Normal completion invokes the existing coherent exporter from saved receipts.
 It does not upload anything to the website, and exported candidates retain
 `submitted: false` until an actual official submission is verified separately.
+The compatibility field `submission_eligible` means only that the complete CSV
+passes format checks and resolves nonconstant signal. New manifests make that
+scope explicit with `eligibility_scope: format_and_resolved_signal_only`,
+`format_valid` and `signal_resolved`. These checks do not establish numerical
+accuracy. Approximate cohorts always carry `submission_recommended: false` and
+`review_status: NUMERICAL_REVIEW_REQUIRED`; exporting one is not a recommendation
+to upload it. Further precision, independent evidence and known actual scores
+guide agent numerical review. A complete resolved exact vector is distinguished
+by an exact-simulation recommendation reason, without claiming an official score.
+
+An early poor score does not reduce the time penalty applied to a later best
+score. An early submission provides only fallback insurance; weigh that insurance
+against the limited number of attempts and the available numerical evidence.
 
 ## Explicit targeted diagnostics
 
-An optional diagnostic mode runs only named IDs at one fixed CPU configuration.
+An optional diagnostic mode runs only named IDs at one fixed device/configuration.
 It requires `--targeted-diagnostics`, `--target-ids`, `--execution-timeout` and
 `--quote-runtime-limit` together. Both limits must be finite numbers within
 1–3600 seconds. Targets must be distinct IDs in the selected problem's full
@@ -82,7 +98,7 @@ still needs at least 1878 seconds plus the configured buffer.
 Targeting does **not** shorten any coverage or export manifest. Missing baseline
 coverage is reserved across every retained ID unless a valid complete nonconstant
 older vector already exists. Active and new diagnostics always reserve their full
-quotes. CPU-only execution, two slots at most, the `READY` requirement, the $27
+quotes. Two CPU slots or one GPU slot at most, the `READY` requirement, the $27
 planned ceiling and all unknown-cost, ambiguity and foreign-job gates still apply.
 An unresolved same-configuration job outside the requested target set is foreign
 to this diagnostic invocation and blocks new launches.
@@ -101,6 +117,39 @@ The selected targets, both caps, mode and diagnostic reason are recorded in each
 new receipt, cohort checkpoint and monitor status. `--diagnostic-reason` supplies
 a specific rationale; if omitted, the controller records its bounded-diagnostic
 purpose explicitly. Full-cohort and target completion counts are reported separately.
+
+### Targeted GPU admission
+
+GPU devices require `--targeted-diagnostics --slots 1` and `gpu_enabled: true`
+in the selected configuration. Before every GPU launch, account usage must report
+`gpu_time_known: true` and finite nonnegative total and rolling-hour GPU seconds.
+The full fresh quoted runtime is added independently to each actual usage total:
+
+```text
+actual total GPU seconds + full quoted runtime <= configured total limit (at most 27000)
+actual rolling-hour GPU seconds + full quoted runtime <= configured hourly limit (at most 2700)
+```
+
+The execution cancellation cap, paper timings and estimated speedups never
+discount either reservation. The separate quote-runtime ceiling, full fresh dollar
+quote, durable cost accounting and conservative deadline buffer still apply.
+Unknown or inconsistent GPU usage blocks launching. A locally terminal GPU job
+absent from the account cost index also blocks the next GPU launch until indexed,
+so its runtime is not silently omitted from the account usage aggregate.
+
+For a matched diagnostic, choose `--device mps.gpu` or `--device pauli-path.gpu`,
+retain reviewed full native options, and supply the target IDs and both caps as
+above. CPU jobs must first be terminal with known costs; active CPU jobs and
+foreign GPU jobs block a new GPU launch. All other reserved cohorts remain on
+CPU. The selected GPU target is its own device/options cohort; CPU and GPU rows
+are never combined. A complete older baseline can still exempt future refinement
+coverage, while the new GPU job reserves its entire dollar and runtime quote.
+
+Each admitted GPU receipt records `gpu_quota_at_admission`; checkpoints and
+monitor status expose `gpu_quota_admission`. These contain actual total/hourly
+usage, the full quoted runtime, both planned totals and configured limits.
+Cancellation, known-ID resume, failed-action review and diagnostic no-export
+behavior are the same as for CPU diagnostics.
 
 ## Admission and budget accounting
 
@@ -134,6 +183,8 @@ selected policies. The explicitly requested target cohort overrides its own
 entry. `--reserve-cohorts-file` can supply the complete three-problem mapping;
 [../configs/cohorts/baseline_reserves.json](../configs/cohorts/baseline_reserves.json)
 records the current choices. Partial mappings and unsupported devices fail.
+Only the explicitly selected current GPU diagnostic may override its own entry
+to a GPU device; all other reserve cohorts must remain supported CPU devices.
 
 Rates use quote evidence matching the problem, device and **every option**.
 Current selected-cohort evidence supports $0.30 per G2 row, $0.20 per G3 row and
@@ -160,7 +211,7 @@ In ordinary cohort mode, the target quote must fit the runtime cap: 900 seconds 
 timeout plus the 20-minute submission buffer before the configured deadline.
 Owned pending IDs, including jobs not yet indexed by the account, count toward
 the two-slot ceiling and the account's five-job limit. The account-wide 800-job
-policy also applies. GPU is unsupported by this controller.
+policy also applies. GPU diagnostics use the additional one-slot and quota gates above.
 
 ## Failure, cancellation and restart
 
