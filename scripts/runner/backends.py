@@ -29,6 +29,8 @@ def job_options(cfg: dict, method: str, setting: float, transpile: int | None) -
     backend = cfg["backend"]
     names = backend["option_names"]
     extra = backend.get("extra_options", {}).get(method, {})
+    if method == "exact":
+        return backend.get("exact_device", "cpu"), dict(extra)
     if method == "mps":
         return backend["mps_device"], {names["mps_setting"]: int(setting), **extra}
     options = {names["pps_setting"]: float(setting), **extra}
@@ -101,7 +103,9 @@ class OfflineBackend:
             SparsePauliOp.from_list(list(target.pauli_sum)))))
         seed = int(hashlib.sha256(f"{name}".encode()).hexdigest()[:8], 16)
         noise = np.random.default_rng(seed).normal()
-        if method == "mps":
+        if method == "exact":
+            estimate = exact
+        elif method == "mps":
             estimate = exact * (1 - 4 / setting) + noise * 0.5 / setting
         else:
             estimate = exact * (1 - 5 * setting) + noise * setting

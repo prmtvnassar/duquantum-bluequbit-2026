@@ -13,7 +13,7 @@ from .backends import Outcome, job_options
 from .config import OFFLINE_DIR, ROOT, circuit_config
 from .ledger import Ledger
 from .targets import Target
-from .workbook import ESTIMATES, JOBS, STATUS_COUNT, STATUS_ID, Workbook, qubit_cell
+from .workbook import ESTIMATES, JOBS, QUBIT_IDS, STATUS_COUNT, STATUS_ID, Workbook, qubit_cell
 
 
 @dataclass
@@ -64,6 +64,8 @@ def ledger_for(offline: bool) -> Ledger:
 
 def resolve_settings(wb: Workbook, method: str, slots: list[int], explicit: list[float]) -> tuple[list[float], list[str]]:
     """Settings to run, plus warnings. Slots read Status so values match the formulas exactly."""
+    if method == "exact":
+        return [0.0], []
     ladder = wb.settings(method)
     warnings = []
     chosen = []
@@ -87,6 +89,10 @@ def accepted_keys(wb: Workbook) -> set[tuple]:
         qubit, method, chi, eps, transpile, _, _, accepted = values
         if accepted == 1 and qubit not in (None, ""):
             keys.add(_estimate_key(qubit, method, chi, eps, transpile))
+    sheet, _, first, last = QUBIT_IDS
+    for qubit, exact in wb.table(sheet, first, last, ["A", "B"]).values():
+        if qubit not in (None, "") and isinstance(exact, float):
+            keys.add(_estimate_key(qubit, "exact", None, 0.0, None))
     return keys
 
 
@@ -100,6 +106,9 @@ def record(wb: Workbook, job_row: dict, outcome: Outcome, jobs_row: bool = True)
     """Jobs row for every finished job; Estimates row (Accepted = 1) for successes.
     An earlier accepted estimate for the same qubit and setting is set to 0, not deleted."""
     method = job_row["method"]
+    if method == "exact":
+        record_exact(wb, job_row, outcome, jobs_row)
+        return
     setting = float(job_row["setting"])
     transpile = float(job_row["transpile"]) if job_row.get("transpile") not in (None, "") else None
     chi, eps = (setting, None) if method == "mps" else (None, setting)
@@ -116,6 +125,21 @@ def record(wb: Workbook, job_row: dict, outcome: Outcome, jobs_row: bool = True)
             wb.set(ESTIMATES["sheet"], f"H{row}", 0)
     wb.append_row(ESTIMATES, [qubit_cell(job_row["qubit"]), method.upper(), chi, eps,
                               transpile if method == "pps" else None, outcome.estimate, outcome.job_id, 1])
+
+
+def record_exact(wb: Workbook, job_row: dict, outcome: Outcome, jobs_row: bool = True) -> None:
+    """Exact results: a Jobs row, and the value in Qubits!B ("Exact sample") on the qubit's row."""
+    if jobs_row:
+        wb.append_row(JOBS, [outcome.job_id, "Exact", None, None, None, outcome.status, qubit_cell(job_row["qubit"]),
+                             outcome.wall_s, outcome.credits, outcome.error or f"runner {job_row['job_key']}"])
+    if outcome.status != "succeeded":
+        return
+    sheet, col, first, last = QUBIT_IDS
+    for row, value in zip(range(first, last + 1), wb.column(sheet, col, first, last)):
+        if value is not None and _estimate_key(value, "exact", None, None, None)[0] == str(job_row["qubit"]):
+            wb.set(sheet, f"B{row}", outcome.estimate)
+            return
+    raise ValueError(f"{wb.path.name}: qubit {job_row['qubit']} is not in Qubits!A; run --setup first")
 
 
 def backfill(wb: Workbook, ledger_row: dict) -> None:

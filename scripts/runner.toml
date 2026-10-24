@@ -9,6 +9,7 @@
 # "pauli-path"; confirm the names the challenge accepts at kickoff.
 mps_device = "mps.cpu"
 pps_device = "pauli-path"
+exact_device = "cpu"        # exact statevector; only fits small circuits (S1, S2)
 
 # SDK option keys. Rename here if the challenge wrapper uses different ones.
 [backend.option_names]
@@ -41,59 +42,73 @@ order = "little"
 #   qubits       "all" (0..n-1), "workbook" (Qubits!A6:A165), or a list like [0, 3, 5]
 # ---------------------------------------------------------------------------
 
-# Demo circuits: random 8-qubit circuits for testing with --offline. Replace at kickoff,
-# e.g. provider = "qasm", path = "kit/samples/sample_1.qasm", butterfly = <from kit>.
-[circuits.sample_1]
+# Official circuits (from the challenge page). Each qubit q of circuit C is its own
+# stored circuit "Duke_<C>_<q>"; the value is <Z> on qubit q. n comes from
+# get_circuit_info (free). Submission IDs are Duke_<C>_<q>.
+[circuits.S1]
 workbook = "runs/sample_1.xlsx"
-official_id = "sample_1"
+official_id = "S1"
+provider = "stored"
+circuit_id = "Duke_S1_{qubit}"
+n_qubits = 0
+qubits = "all"
+
+[circuits.S2]
+workbook = "runs/sample_2.xlsx"
+official_id = "S2"
+provider = "stored"
+circuit_id = "Duke_S2_{qubit}"
+n_qubits = 0
+qubits = "all"
+
+# No workbook exists for S3 yet; run it with --no-workbook (ledger only) until one is added.
+[circuits.S3]
+workbook = "runs/sample_3.xlsx"
+official_id = "S3"
+provider = "stored"
+circuit_id = "Duke_S3_{qubit}"
+n_qubits = 0
+qubits = "all"
+
+[circuits.G1]
+workbook = "runs/hidden_1.xlsx"
+official_id = "G1"
+provider = "stored"
+circuit_id = "Duke_G1_{qubit}"
+n_qubits = 0
+qubits = "all"
+
+[circuits.G2]
+workbook = "runs/hidden_2.xlsx"
+official_id = "G2"
+provider = "stored"
+circuit_id = "Duke_G2_{qubit}"
+n_qubits = 0
+qubits = "all"
+
+[circuits.G3]
+workbook = "runs/hidden_3.xlsx"
+official_id = "G3"
+provider = "stored"
+circuit_id = "Duke_G3_{qubit}"
+n_qubits = 0
+qubits = "all"
+
+[circuits.G4]
+workbook = "runs/hidden_4.xlsx"
+official_id = "G4"
+provider = "stored"
+circuit_id = "Duke_G4_{qubit}"
+n_qubits = 0
+qubits = "all"
+
+# Random 8-qubit circuit for free offline tests (--offline). Writes to scratch/ copies only.
+[circuits.demo]
+workbook = "runs/sample_1.xlsx"
+official_id = "demo"
 provider = "demo"
 n_qubits = 8
 depth = 4
 butterfly = 0
 seed = 1
 qubits = "all"
-
-[circuits.sample_2]
-workbook = "runs/sample_2.xlsx"
-official_id = "sample_2"
-provider = "demo"
-n_qubits = 8
-depth = 6
-butterfly = 0
-seed = 2
-qubits = "all"
-
-# Hidden circuits run by stored ID only. `circuit_id` is formatted per qubit with
-# {qubit} and {official_id}; if one stored circuit serves every qubit, drop {qubit}.
-# Fill these in from the kit README.
-[circuits.hidden_1]
-workbook = "runs/hidden_1.xlsx"
-official_id = "TODO"
-provider = "stored"
-circuit_id = "TODO-{qubit}"
-n_qubits = 0                # 0 = ask BlueQubit (get_circuit_info)
-qubits = "workbook"
-
-[circuits.hidden_2]
-workbook = "runs/hidden_2.xlsx"
-official_id = "TODO"
-provider = "stored"
-circuit_id = "TODO-{qubit}"
-n_qubits = 0
-qubits = "workbook"
-
-[circuits.hidden_3]
-workbook = "runs/hidden_3.xlsx"
-official_id = "TODO"
-provider = "stored"
-circuit_id = "TODO-{qubit}"
-n_qubits = 0
-qubits = "workbook"
-
-[circuits.hidden_4]
-workbook = "runs/hidden_4.xlsx"
-official_id = "TODO"
-provider = "stored"
-circuit_id = "TODO-{qubit}"
-n_qubits = 0
-qubits = "workbook"

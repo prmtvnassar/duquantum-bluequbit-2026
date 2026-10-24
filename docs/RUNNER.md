@@ -10,8 +10,8 @@ result in the circuit's workbook (`runs/*.xlsx`): one **Jobs** row per job, one
 ```bash
 # Free rehearsal: exact local simulation with fake approximation error.
 # Writes to scratch/offline/ copies only; runs/ is never touched.
-python scripts/run_jobs.py sample_1 --setup --offline
-python scripts/run_jobs.py sample_1 --method mps --slots 1 2 3 --offline
+python scripts/run_jobs.py demo --setup --offline
+python scripts/run_jobs.py demo --method mps --slots 1 2 3 --offline
 
 # Real jobs (credits). Always look at the --dry-run plan first.
 python scripts/run_jobs.py sample_1 --method pps --slots 1 --dry-run

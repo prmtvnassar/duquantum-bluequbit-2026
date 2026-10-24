@@ -2,8 +2,8 @@
 
 Examples:
     # Free test run: offline exact simulation, writes to scratch/offline/ copies only
-    python scripts/run_jobs.py sample_1 --setup --offline
-    python scripts/run_jobs.py sample_1 --method mps --slots 1 2 3 --offline
+    python scripts/run_jobs.py demo --setup --offline
+    python scripts/run_jobs.py demo --method mps --slots 1 2 3 --offline
 
     # Real jobs (spends credits). --dry-run shows the plan without submitting anything.
     python scripts/run_jobs.py sample_1 --method pps --slots 1 --dry-run
@@ -35,7 +35,7 @@ from runner.workbook import Workbook  # noqa: E402
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("circuits", nargs="*", help="circuit names from scripts/runner.toml")
-    ap.add_argument("--method", choices=("mps", "pps"))
+    ap.add_argument("--method", choices=("exact", "mps", "pps"), help="exact = cpu statevector (small circuits)")
     ap.add_argument("--slots", type=int, nargs="+", choices=(1, 2, 3), default=[], help="Status precision slots")
     ap.add_argument("--settings", type=float, nargs="+", default=[], help="explicit χ or ε values")
     ap.add_argument("--transpile", type=int, help="PPS transpilation level (default: Status!E7)")
@@ -94,8 +94,8 @@ def main() -> int:
         if not args.method:
             return 0
 
-    if not args.method or not (args.slots or args.settings):
-        ap.error("give --method and --slots or --settings")
+    if not args.method or (args.method != "exact" and not (args.slots or args.settings)):
+        ap.error("give --method, plus --slots or --settings for mps/pps")
 
     # ---------------------------------------------------------------- plan
     mode = "offline" if args.offline else "cloud"
@@ -174,3 +174,7 @@ if __name__ == "__main__":
         sys.exit(main())
     except (ValueError, RuntimeError, NotImplementedError, FileNotFoundError) as exc:
         sys.exit(f"Error: {exc}")
+    except Exception as exc:
+        if type(exc).__module__.startswith("bluequbit"):  # API refusals: show the server's message
+            sys.exit(f"BlueQubit error: {exc}")
+        raise
