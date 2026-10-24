@@ -141,17 +141,17 @@ flowchart TD
 
 ### 2.2 Functional modules
 
-| Module | Input | Output | Responsibility |
-|---|---|---|---|
-| `ChallengeAdapter` | `(c, q, method, options)` | job/result | Encapsulate the kit / SDK without exposing implementation details |
-| `ExperimentStore` | job metadata/result | normalized records | Cache, deduplicate, and track computation and costs |
-| `SampleEvaluator` | samples + exact labels | score/error/cost report | Model selection and calibration |
-| `MPSAnalyzer` | $F(\chi)$ series | direct + optional extrapolation | Evaluate MPS convergence |
-| `PPSAnalyzer` | $F(\epsilon,\ell)$ series | direct + optional extrapolation | Evaluate PPS convergence and transpilation sensitivity |
-| `UncertaintyEngine` | Results from each branch | diagnostics / proxy uncertainty | Identify jobs requiring refinement |
-| `BudgetScheduler` | uncertainty, weights, costs | next actions | Schedule online under both budget constraints |
-| `EstimatorSelector` | candidate predictions + sample evaluations | best prediction per circuit | Select/fuse outputs |
-| `SubmissionValidator` | template + predictions | valid CSV | Check counts, order, IDs, and numerical values |
+| Module                | Input                                      | Output                          | Responsibility                                                    |
+| --------------------- | ------------------------------------------ | ------------------------------- | ----------------------------------------------------------------- |
+| `ChallengeAdapter`    | `(c, q, method, options)`                  | job/result                      | Encapsulate the kit / SDK without exposing implementation details |
+| `ExperimentStore`     | job metadata/result                        | normalized records              | Cache, deduplicate, and track computation and costs               |
+| `SampleEvaluator`     | samples + exact labels                     | score/error/cost report         | Model selection and calibration                                   |
+| `MPSAnalyzer`         | $F(\chi)$ series                           | direct + optional extrapolation | Evaluate MPS convergence                                          |
+| `PPSAnalyzer`         | $F(\epsilon,\ell)$ series                  | direct + optional extrapolation | Evaluate PPS convergence and transpilation sensitivity            |
+| `UncertaintyEngine`   | Results from each branch                   | diagnostics / proxy uncertainty | Identify jobs requiring refinement                                |
+| `BudgetScheduler`     | uncertainty, weights, costs                | next actions                    | Schedule online under both budget constraints                     |
+| `EstimatorSelector`   | candidate predictions + sample evaluations | best prediction per circuit     | Select/fuse outputs                                               |
+| `SubmissionValidator` | template + predictions                     | valid CSV                       | Check counts, order, IDs, and numerical values                    |
 
 ### 2.3 Data flow and invariants
 
