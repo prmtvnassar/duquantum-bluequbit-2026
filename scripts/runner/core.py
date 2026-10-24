@@ -204,6 +204,12 @@ def execute(jobs: list[Job], backend, ledger: Ledger, workbooks: dict[str, Workb
                 try:
                     out = backend.submit(job.target, job.method, job.setting, job.transpile, job.name, job.tags)
                 except Exception as exc:  # rejected before a job ID existed
+                    if "PARALLEL_JOBS_LIMIT" in str(exc):  # platform is busy: retry later, don't fail
+                        pending.insert(0, job)
+                        if not in_flight:
+                            log("  platform parallel-job limit reached (other jobs on this account?); waiting")
+                            time.sleep(float(limits.get("poll_interval_s", 5)) * 6)
+                        break
                     log(f"  rejected  {job.name}: {exc}")
                     ledger.append(**row, job_id=f"rejected-{job.key}", status="failed", error=str(exc))
                     summary["failed"] += 1

@@ -62,7 +62,7 @@ def test_cells_round_trip_and_rest_of_file_unchanged(book):
 def test_offline_ladder_feeds_team_exporter(book, cfg, tmp_path):
     targets = demo_targets(cfg)
     wb = Workbook(book)
-    setup_workbook(wb, "sample_1", [t.qubit for t in targets], force=False)
+    setup_workbook(wb, "sample_1", [t.qubit for t in targets], force=True)  # copy may hold real data
     wb.save(backup_dir=None)
     settings = [float(s) for s in wb.settings("mps")]
     jobs = [Job("sample_1", t, "mps", s, None, "mps.cpu", job_key(cfg, t, "mps", s, None))
@@ -82,7 +82,7 @@ def test_offline_ladder_feeds_team_exporter(book, cfg, tmp_path):
 def test_rerun_marks_old_estimate_unaccepted(book, cfg, tmp_path):
     targets = demo_targets(cfg, n=2)
     wb = Workbook(book)
-    setup_workbook(wb, "sample_1", [t.qubit for t in targets], force=False)
+    setup_workbook(wb, "sample_1", [t.qubit for t in targets], force=True)  # copy may hold real data
     wb.save(backup_dir=None)
     jobs = [Job("sample_1", t, "mps", 32.0, None, "mps.cpu", job_key(cfg, t, "mps", 32.0, None)) for t in targets]
     for _ in range(2):

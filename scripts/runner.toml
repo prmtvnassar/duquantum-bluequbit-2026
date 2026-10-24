@@ -23,7 +23,7 @@ mps = {}
 pps = {}
 
 [limits]
-max_in_flight = 10          # the SDK allows 10 queued CPU jobs per user
+max_in_flight = 5           # hackathon limit: 5 jobs running at once per account
 max_jobs_per_command = 40   # bigger batches need --max-jobs
 poll_interval_s = 5
 job_timeout_s = 7200        # stop waiting (jobs keep running; use --resume)
