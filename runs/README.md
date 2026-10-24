@@ -1,4 +1,8 @@
-# Run sheets: quick start
+# Run records: quick start
+
+For scripts and agents, use the normalized [CSV records](csv/README.md). The six `.xlsx` files are optional human dashboards and remain unchanged; CSV and XLSX do not synchronize automatically. All six workbooks are blank templates, so no historical estimates need migration. Import the released template before recording target values.
+
+The workbook route below remains available if you prefer manual analysis and `scripts/export_submission.py`.
 
 Use `sample_1.xlsx` and `sample_2.xlsx` to test choices before running the four hidden circuits. Each workbook covers one circuit. Yellow cells are inputs; the initial precision settings are editable. Results are blank until you run jobs.
 

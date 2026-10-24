@@ -35,6 +35,14 @@ Thumbs.db
 Duke Quantum Hackathon.html
 Duke Quantum Hackathon_files/
 *.egg-info/
+build/
+
+# Generated challenge records and checkpoints
+runs/csv/*.csv
+!runs/csv/*.example.csv
+runs/csv/*.lock
+runs/csv/.records.lock
+data/checkpoints/*.csv
 
 # Study-notebook outputs
 tutorials/study/submissions/
