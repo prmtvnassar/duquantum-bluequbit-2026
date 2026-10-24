@@ -9,3 +9,9 @@ Kevin's previously submitted G1 vector is imported under [teammates/kevin/G1/](t
 Reviewed complete candidate exports are shared separately under [candidates/](candidates/README.md), with `submitted: false`, their method explanations and job manifests. They are not official attempts. Runtime exports also remain under ignored `results/workflow/submissions/`. Use `scripts/record_submission.py` only after an actual upload and its displayed score have been observed.
 
 The user separately confirmed submitting G1; that confirmation is retained in [G1/user-reported-submission.json](G1/user-reported-submission.json). The current account's attempt number and score remain unverified.
+
+The user also reports a teammate's first G2 attempt scored **498/600** using the
+prepared chi32 vector. Its [receipt](teammates/teammate_reported/G2/attempt-01.json)
+uses owner `teammate_reported` and status `USER_REPORTED`; it does not consume or
+claim an attempt on the current account. The retained explanation is the prepared
+method note, with the actual website wording explicitly unconfirmed.

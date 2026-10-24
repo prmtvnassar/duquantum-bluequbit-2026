@@ -74,7 +74,9 @@ class CohortBatchController:
 
     def __init__(self, adapter, settings, problem, device, options, *, slots=2,
                  max_jobs=None, reserve_cohorts=None, manifests=None, poll_seconds=3,
-                 reconcile_seconds=60, sleep=time.sleep, clock=None):
+                 reconcile_seconds=60, sleep=time.sleep, clock=None,
+                 targeted_diagnostics=False, target_ids=None, execution_timeout_seconds=None,
+                 quote_runtime_limit_seconds=None, diagnostic_reason=None):
         if settings.get("release_status") != "READY":
             raise ValueError("Only a READY campaign may launch a cohort")
         if settings.get("sample_budget_usd") != 0 or not settings.get("stop_on_unknown_cost"):
@@ -92,6 +94,21 @@ class CohortBatchController:
             raise ValueError("max_jobs must be within 1..800")
         if not 0 < poll_seconds <= 60 or not 0 < reconcile_seconds <= 300:
             raise ValueError("Polling and reconciliation must be bounded")
+        if type(targeted_diagnostics) is not bool:
+            raise ValueError("Targeted diagnostics must be explicitly enabled")
+        diagnostic_arguments = (target_ids, execution_timeout_seconds, quote_runtime_limit_seconds, diagnostic_reason)
+        if not targeted_diagnostics and any(value is not None for value in diagnostic_arguments):
+            raise ValueError("Targets and runtime overrides require explicit targeted diagnostics")
+        if targeted_diagnostics:
+            if (not isinstance(target_ids, (list, tuple)) or not target_ids
+                    or any(not isinstance(cid, str) for cid in target_ids)
+                    or len(target_ids) != len(set(target_ids))):
+                raise ValueError("Targeted diagnostics require distinct explicit target IDs")
+            for value in (execution_timeout_seconds, quote_runtime_limit_seconds):
+                if not _money(value) or not 1 <= value <= 3600:
+                    raise ValueError("Both diagnostic runtime limits must be finite and within 1..3600 seconds")
+            if diagnostic_reason is not None and (not isinstance(diagnostic_reason, str) or not diagnostic_reason.strip()):
+                raise ValueError("A supplied diagnostic reason must be nonempty text")
         self.adapter, self.settings = adapter, deepcopy(settings)
         self.root = Path(adapter.root)
         self.problem, self.device, self.options = problem, device, deepcopy(options)
@@ -105,8 +122,15 @@ class CohortBatchController:
                     raise ValueError("Manifest problem mismatch")
                 validate_action(cid, device, options)
         self.ids = self.manifests[problem]
+        if targeted_diagnostics and not set(target_ids).issubset(self.ids):
+            raise ValueError("Diagnostic target IDs must belong to the selected full retained manifest")
+        self.targeted_diagnostics = targeted_diagnostics
+        self.target_ids = ([cid for cid in self.ids if cid in target_ids] if targeted_diagnostics else list(self.ids))
+        self.diagnostic_reason = (diagnostic_reason or
+                "Explicit targeted CPU diagnostic at fixed options; reserve the full quote and request cancellation at the execution cap"
+                ) if targeted_diagnostics else None
         self.cohort_key = digest({"problem": problem, "device": device, "options": options})
-        self.slots, self.max_jobs = slots, max_jobs or len(self.ids)
+        self.slots, self.max_jobs = slots, max_jobs or len(self.target_ids)
         self.poll_seconds, self.reconcile_seconds = poll_seconds, reconcile_seconds
         self.sleep = sleep
         self.clock = clock or (lambda: datetime.now(timezone.utc))
@@ -115,6 +139,10 @@ class CohortBatchController:
         self.timeout = settings["remote_job_seconds"]
         if device == "mps.cpu" and options.get("mps_bond_dimension") == 32:
             self.timeout = max(self.timeout, settings.get("mps_chi32_job_seconds", self.timeout))
+        self.quote_runtime_limit = self.timeout
+        if targeted_diagnostics:
+            self.timeout = execution_timeout_seconds
+            self.quote_runtime_limit = quote_runtime_limit_seconds
         self.records, self.cohorts, self.rates = {}, {}, {}
         self.reserve_quoted_at, self.observed_job_costs = {}, {}
         self.has_usable_baseline = {}
@@ -186,7 +214,8 @@ class CohortBatchController:
 
     def _owned(self):
         return [r for r in self.records.values() if _current_account(r) and self._matches(r, self.problem,
-                {"device": self.device, "options": self.options}) and r.get("job_id")]
+                {"device": self.device, "options": self.options})
+                and r["action"]["circuit_id"] in self.target_ids and r.get("job_id")]
 
     def _pending(self):
         return [r for r in self._owned() if r.get("status") not in CLOSED or not _money(r.get("cost_usd"))]
@@ -196,15 +225,24 @@ class CohortBatchController:
         self.adapter._save(self._path(record["action"]), record)
         self.records[digest(record["action"])] = deepcopy(record)
 
+    def _scope(self):
+        return {"mode": "TARGETED_DIAGNOSTICS" if self.targeted_diagnostics else "FULL_COHORT",
+                "target_ids": list(self.target_ids), "execution_timeout_seconds": self.timeout,
+                "quote_runtime_limit_seconds": self.quote_runtime_limit,
+                "diagnostic_reason": self.diagnostic_reason}
+
     def _checkpoint(self, status, reason=None):
         selected = {"device": self.device, "options": self.options}
         complete_ids = [r["action"]["circuit_id"] for r in self.records.values()
                         if self._matches(r, self.problem, selected) and _complete(r)]
         state = {"updated_at": utc_now(), "status": status, "reason": reason,
+                 **self._scope(),
                  "cohort": {"problem": self.problem, **selected}, "cohort_key": self.cohort_key,
                  "slots": self.slots, "launched_job_ids": list(self.launched),
                  "pending_job_ids": [r["job_id"] for r in self._pending()],
                  "completed_rows": len(set(complete_ids)), "required_rows": len(self.ids),
+                 "completed_target_rows": len(set(complete_ids) & set(self.target_ids)),
+                 "required_target_rows": len(self.target_ids),
                  "budget_limit_usd": self.limit, "budget": self.last_budget,
                  "actual_spent_floor_usd": self.spent_floor,
                  "reserve_cohorts": self.cohorts, "reserve_rates": self.rates,
@@ -214,8 +252,10 @@ class CohortBatchController:
         owned = self._owned()
         atomic_json(self.root / "batch_status.json", {
             "updated_at": state["updated_at"], "status": status, "reason": reason,
+            **self._scope(),
             "cohort": state["cohort"], "cohort_key": self.cohort_key,
             "completed_rows": state["completed_rows"], "required_rows": len(self.ids),
+            "completed_target_rows": state["completed_target_rows"], "required_target_rows": len(self.target_ids),
             "last_progress_at": max((r.get("updated_at") or r.get("requested_at") or "" for r in owned), default=None),
             "owned_jobs": [{"job_id": r["job_id"], "circuit_id": r["action"]["circuit_id"],
                             "status": r.get("status"), "cost_usd": r.get("cost_usd")}
@@ -316,7 +356,7 @@ class CohortBatchController:
         return None
 
     def _next_action(self):
-        for cid in self.ids:
+        for cid in self.target_ids:
             _, pauli = validate_action(cid, self.device, self.options)
             action = {"circuit_id": cid, "device": self.device, "options": deepcopy(self.options), "pauli": pauli}
             saved = self.records.get(digest(action))
@@ -331,7 +371,7 @@ class CohortBatchController:
         if quote.get("error") or not _money(quote.get("cost_usd")):
             return None, "unknown_or_invalid_quote"
         runtime = quote.get("runtime_seconds")
-        if not _money(runtime) or runtime > self.timeout:
+        if not _money(runtime) or runtime > self.quote_runtime_limit:
             return None, "invalid_or_excessive_runtime"
         remaining = (datetime.fromisoformat(self.settings["deadline_utc"]) - self.clock()).total_seconds()
         if remaining < self.settings["submission_buffer_seconds"] + max(runtime, self.timeout):
@@ -375,7 +415,10 @@ class CohortBatchController:
                  "quote": deepcopy(quote), "timeout_seconds": self.timeout,
                  "scheduler_justification": "Complete one explicitly selected CPU cohort with at most two reserved asynchronous jobs; no extrapolation or mixed-configuration rows",
                  "cohort_batch": {"cohort_key": self.cohort_key, "slots": self.slots,
+                                  **self._scope(),
                                   "reserved_quote_usd": quote["cost_usd"], "budget_at_admission": deepcopy(self.last_budget)}}
+        if self.targeted_diagnostics:
+            saved["scheduler_justification"] = self.diagnostic_reason
         self._save(saved)
         try:
             job = self.adapter.client.run(action["circuit_id"], device=self.device, asynchronous=True,
@@ -393,7 +436,12 @@ class CohortBatchController:
 
     def _cancel_if_due(self, saved):
         age = (self.clock() - datetime.fromisoformat(saved["requested_at"])).total_seconds()
-        cancel = self.stop_requested or age > saved.get("timeout_seconds", self.timeout)
+        timeout = saved.get("timeout_seconds", self.timeout)
+        if self.targeted_diagnostics:
+            # Resuming cannot relax a stricter cap recorded by the original run.
+            timeout = min(timeout, self.timeout)
+        expired = age >= timeout if self.targeted_diagnostics else age > timeout
+        cancel = self.stop_requested or expired
         if cancel and not saved.get("cancel_requested_at"):
             saved.update(status="CANCEL_REQUESTED", cancel_requested_at=self.clock().isoformat(),
                          cancel_reason="stop_file" if self.stop_requested else "job_timeout")
@@ -463,7 +511,7 @@ class CohortBatchController:
                 return self._checkpoint("STOPPED" if self.stop_requested else "BLOCKED", reason)
             if self.spent_floor > self.limit + 1e-9:
                 reason = "actual_cost_budget_limit"
-            if not reason:
+            if not reason and (not self.targeted_diagnostics or self._next_action()[0] is not None):
                 reason = self._reserve_rates()
             # Sequential admissions see the receipt reservation from every prior launch.
             while not reason and len(self._pending()) < self.slots and len(self.launched) < self.max_jobs:
@@ -481,9 +529,10 @@ class CohortBatchController:
                     return self._checkpoint("BLOCKED", reason)
                 _, incomplete_reason = self._next_action()
                 count = sum(_complete(r) and self._matches(r, self.problem, self.cohorts[self.problem])
+                            and r["action"]["circuit_id"] in self.target_ids
                             for r in self.records.values())
-                if count == len(self.ids):
-                    return self._checkpoint("COMPLETE")
+                if count == len(self.target_ids):
+                    return self._checkpoint("DIAGNOSTICS_COMPLETE" if self.targeted_diagnostics else "COMPLETE")
                 if len(self.launched) >= self.max_jobs:
                     return self._checkpoint("BOUNDED_STOP", "max_jobs_reached")
                 return self._checkpoint("BLOCKED", incomplete_reason or "no_admissible_action")
