@@ -1,0 +1,7 @@
+Pauli-path propagation on BlueQubit (pauli-path, truncation threshold epsilon = 0.0001, circuit transpilation level 3). Each of the 38 stored programs Duke_G4_q was run separately by ID from |0...0>, reporting <Z> on qubit q (q0 rightmost). Every ID used identical settings. Raw values, no fitting, extrapolation or fusion. Cost: 0 credits (150-220 s per job).
+
+Why this method: Pauli-path gave our best G3 result (773/800), and on a 24-qubit Haar-grid test circuit with G4's depth and butterfly position (exact values computed locally), local Pauli-path reached corr^2 0.93 at epsilon 0.001, against 0.77 for MPS at chi = 128.
+
+Precision: we tightened epsilon on test qubits (0.01 -> 0.001 -> 0.0003 -> 0.0001). At coarser epsilon most values were exactly 0; at 0.0001, 4 of 38 values are 0.
+
+Result: 133/1000 (corr^2 about 0.13). The values were not converged: Duke_G4_37 moved from 0.020 (epsilon 0.0003) to 0.099 (epsilon 0.0001). Transpilation level 3 also differs from the level 1 that worked on G3 and S3, where levels 2 and 3 erased signal. Approximate methods carry no certified error bounds.

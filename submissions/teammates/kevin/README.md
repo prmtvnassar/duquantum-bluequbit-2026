@@ -8,6 +8,7 @@ All runs used BlueQubit, with each published ID `Duke_<problem>_<q>` run separat
 | G2 | [G2/submitted-v1](G2/submitted-v1.txt) | MPS, χ = 128 (`mps.cpu`) | 498/600 (corr² ≈ 0.83) |
 | G3 | [G3/submitted-v2](G3/submitted-v2.txt) | Pauli-path, ε = 0.001, transpilation level 1 | 534/800 (corr² ≈ 0.67) |
 | G3 | [G3/submitted-v3](G3/submitted-v3.txt) | Pauli-path, ε = 0.0003, transpilation level 1 | **773/800 (corr² ≈ 0.97)** |
+| G4 | [G4/submitted-v1](G4/submitted-v1.txt) | Pauli-path, ε = 0.0001, transpilation level 3 | 133/1000 (corr² ≈ 0.13) |
 
 ## Approach
 
