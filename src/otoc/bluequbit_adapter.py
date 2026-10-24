@@ -86,6 +86,16 @@ class BlueQubitAdapter:
     def _save(self, path, saved):
         atomic_json(path, saved)
         record_remote(saved)
+        atomic_json(self.root / "remote_status.json", {
+            "updated_at": utc_now(),
+            "status": saved["status"],
+            "circuit_id": saved["action"]["circuit_id"],
+            "device": saved["action"]["device"],
+            "job_id": saved.get("job_id"),
+            "requested_at": saved.get("requested_at"),
+            "cost_usd": saved.get("cost_usd"),
+            "source": "BlueQubit SDK job receipt",
+        })
 
     def usage(self):
         # SDK 0.19's search raises TypeError on a valid empty data:null response.
@@ -205,6 +215,9 @@ class BlueQubitAdapter:
                 return saved
             time.sleep(3)
             job = self.client.get(job.job_id)
+            if job.run_status != saved["status"] and job.run_status not in TERMINAL:
+                saved.update(status=job.run_status, updated_at=utc_now())
+                self._save(path, saved)
         saved.update(status=job.run_status,estimate=job.expectation_value,cost_usd=job.cost,
                      compute_ms=job.run_time_ms,queue_ms=job.queue_time_ms,updated_at=utc_now())
         self._save(path,saved)

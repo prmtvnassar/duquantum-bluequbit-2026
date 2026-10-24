@@ -23,6 +23,23 @@ Local Quimb MPS and our coefficient-cutoff Pauli implementation are **different 
 
 ## Decision loop
 
+**Native campaign update (October 24):** The starting PPS 0.001 pilot vectors
+were zero for G2, G3 and G4. G2 q0 changed to 0.045096 at 0.0001, so a zero
+plateau is not evidence of convergence. The active planner now implements the
+original proposal's independent-pilot recovery, measured-runtime scheduling,
+and complete-vector shape sensitivity. See
+[reports/GRADED_CAMPAIGN.md](reports/GRADED_CAMPAIGN.md) for evidence and limits.
+It switches away from a flat primary only when every independent pilot is
+available at one identical configuration and that vector resolves a signal.
+This selects an uncertified direct baseline, not an exact answer.
+
+Scheduling time is at least the observed upper-quartile wall time for the
+problem/device, even when the quote is unrealistically short. For complete
+successive vectors at a fixed device and transpilation setting, squared
+residuals after affine alignment boost refinement priorities for rows that
+change vector shape. Neither diagnostic changes raw submission values or
+certifies error. Extrapolation and fusion still require held-out validation.
+
 1. **Reconcile before spending.** Read account jobs, known costs, unresolved jobs, the stop flag and the deadline. Unknown charges, active jobs or ambiguous submissions block a new cloud launch. Read each ID's existing receipts before proposing another action.
 2. **Pilot, then complete baseline coverage.** For approximate methods, first obtain the three configured pilot IDs. A nearly constant pilot vector blocks bulk coverage and directs effort to refinement/review; it does not prove that the method is wrong. G4 additionally requires one completed independent-method pilot before bulk coverage. Then obtain one genuine direct result for each required ID. Each ID is a separate program; no result is reused as another ID's answer. G1 tries free exact CPU first. Failed actions are retained and not blindly repeated; an unattempted method can supply a fallback.
 3. **Quote the exact proposed precision.** The SDK's estimate-only route receives the same device, Pauli and precision options as execution. The quote is recorded. A new quote and budget check occur immediately before submission. Quotes are estimates, not service-enforced dollar caps.

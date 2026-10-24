@@ -1,0 +1,67 @@
+{
+  "circuit_id": "Duke_G2_0",
+  "problem": "G2",
+  "qubit": 0,
+  "origin": "bluequbit",
+  "method": "mps.cpu",
+  "backend": "mps.cpu",
+  "parameters": {
+    "mps_bond_dimension": 16
+  },
+  "status": "COMPLETED",
+  "estimate": 0.9996910502231614,
+  "job_id": "EGRvEgYDOUFR8SgB",
+  "cost_usd": 0.0,
+  "started_at": "2026-10-24T17:39:48.948287+00:00",
+  "finished_at": "2026-10-24T17:40:10.498665+00:00",
+  "wall_seconds": 17.772,
+  "reason": "Investigate all-zero native PPS pilots using independent MPS and decade-spaced tighter PPS thresholds; no bulk rollout or convergence claim from a flat vector.",
+  "quote": {
+    "circuit_id": "Duke_G2_0",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 16
+    },
+    "quoted_at": "2026-10-24T17:39:48.940812+00:00",
+    "cost_usd": 0.2,
+    "runtime_seconds": 131.6,
+    "error": null,
+    "warning": "This is just an estimate; the actual runtime may be less or more.",
+    "binding_cost_cap": false
+  },
+  "error": null,
+  "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZ",
+  "remote_receipt": {
+    "action": {
+      "circuit_id": "Duke_G2_0",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 16
+      },
+      "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZ"
+    },
+    "status": "COMPLETED",
+    "requested_at": "2026-10-24T17:39:48.948287+00:00",
+    "quote": {
+      "circuit_id": "Duke_G2_0",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 16
+      },
+      "quoted_at": "2026-10-24T17:39:48.940812+00:00",
+      "cost_usd": 0.2,
+      "runtime_seconds": 131.6,
+      "error": null,
+      "warning": "This is just an estimate; the actual runtime may be less or more.",
+      "binding_cost_cap": false
+    },
+    "scheduler_justification": "Investigate all-zero native PPS pilots using independent MPS and decade-spaced tighter PPS thresholds; no bulk rollout or convergence claim from a flat vector.",
+    "job_id": "EGRvEgYDOUFR8SgB",
+    "estimate": 0.9996910502231614,
+    "cost_usd": 0.0,
+    "compute_ms": 9129,
+    "queue_ms": 8643,
+    "updated_at": "2026-10-24T17:40:10.498665+00:00"
+  },
+  "run_id": "remote-8303e4cdb79f91b3a5755433c7ff7c4d3839dd92ed213c6ca509fcbf02941b2c"
+}
