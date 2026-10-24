@@ -114,6 +114,22 @@ class BlueQubitAdapter:
                 break
             offset += len(data)
         costs = [float(j["cost"])/100 for j in jobs if j.get("cost") is not None]
+        # Preserve job identities for consumers that reconcile local receipts with
+        # a temporarily lagging account index. A partial/ambiguous map is unusable.
+        known_job_costs = {}
+        seen_ids = set()
+        for job in jobs:
+            jid = job.get("job_id")
+            if not isinstance(jid, str) or not jid or jid in seen_ids:
+                known_job_costs = None
+                break
+            seen_ids.add(jid)
+            if job.get("cost") is not None:
+                cost = float(job["cost"])/100
+                if not math.isfinite(cost) or cost < 0:
+                    known_job_costs = None
+                    break
+                known_job_costs[jid] = cost
         gpu_seconds,gpu_hour,gpu_known=0.,0.,True
         hour=datetime.now(timezone.utc)-timedelta(hours=1)
         from dateutil.parser import isoparse
@@ -128,6 +144,8 @@ class BlueQubitAdapter:
                 gpu_known=False
         value = {"observed_at":utc_now(),"source":"BlueQubit job API","job_count":len(jobs),
                  "known_cost_usd":sum(costs),"active_jobs":sum(j.get("run_status") not in TERMINAL for j in jobs),
+                 "known_job_costs_usd":known_job_costs,
+                 "active_job_ids":[j.get("job_id") for j in jobs if j.get("run_status") not in TERMINAL],
                  "gpu_time_known":gpu_known,"gpu_seconds":gpu_seconds,"gpu_seconds_last_hour":gpu_hour,
                  "unknown_terminal_costs":sum(j.get("run_status") in TERMINAL and j.get("cost") is None for j in jobs)}
         atomic_json(self.root / "api_usage.json",value)

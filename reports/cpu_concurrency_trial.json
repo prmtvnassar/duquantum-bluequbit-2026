@@ -1,0 +1,39 @@
+{
+  "observed_at": "2026-10-24T18:31:32.822517+00:00",
+  "problem": "G4",
+  "device": "mps.cpu",
+  "options": {
+    "mps_bond_dimension": 32
+  },
+  "slots": 2,
+  "status": "BOUNDED_STOP",
+  "jobs": [
+    {
+      "circuit_id": "Duke_G4_1",
+      "job_id": "JgcvRKxwUG2U9VHl",
+      "requested_at": "2026-10-24T18:30:36.245308+00:00",
+      "completed_at": "2026-10-24T18:31:22.363475+00:00",
+      "elapsed_seconds": 46.118167,
+      "compute_seconds": 43.564,
+      "queue_seconds": 0.377,
+      "cost_usd": 0.0,
+      "value": -0.05391704083745798
+    },
+    {
+      "circuit_id": "Duke_G4_2",
+      "job_id": "0cfHjjUtbHO3z4Q2",
+      "requested_at": "2026-10-24T18:30:39.593169+00:00",
+      "completed_at": "2026-10-24T18:31:22.682391+00:00",
+      "elapsed_seconds": 43.089222,
+      "compute_seconds": 40.748,
+      "queue_seconds": 0.364,
+      "cost_usd": 0.0,
+      "value": -0.1275057744901126
+    }
+  ],
+  "launch_to_last_receipt_seconds": 46.437083,
+  "sum_individual_elapsed_seconds": 89.207389,
+  "total_cost_usd": 0.0,
+  "decision": "Complete the remaining G4 cohort using the same two-slot controller. Both jobs completed with known zero charges and overlapping execution; no quota error or ownership ambiguity.",
+  "limitation": "One two-job operational trial, not a matched serial benchmark or accuracy validation."
+}

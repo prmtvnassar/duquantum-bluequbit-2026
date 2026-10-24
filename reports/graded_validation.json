@@ -1,7 +1,9 @@
 {
-  "validated_at": "2026-10-24T18:11:41.712532+00:00",
-  "command": ".venv312/Scripts/python.exe -m unittest discover -s tests",
-  "tests": 49,
+  "validated_at": "2026-10-24T18:31:12.786215+00:00",
+  "command": ".venv312/Scripts/python.exe -m pytest -q",
+  "tests": 78,
+  "subtests": 9,
   "result": "PASS",
-  "scope": "Current repository suite, including coherent cohort exports, recovery isolation, discovery retention, quote reserves and prior numerical/ledger checks. Not evidence of hidden-circuit accuracy."
+  "smoke_test": "PASS: imports and offline Bell-state check",
+  "scope": "Repository suite including concurrent cohort admission, durable cost identity, stale reserve refresh, cancellation/read failures and Windows ledger ownership. Not evidence of hidden-circuit accuracy."
 }

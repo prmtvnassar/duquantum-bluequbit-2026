@@ -7,6 +7,7 @@ The lock serializes local and remote writers; no credentials or QASM are stored.
 from contextlib import contextmanager
 import csv
 from datetime import datetime, timezone
+import errno
 import hashlib
 import io
 import json
@@ -17,6 +18,11 @@ import time
 import uuid
 
 import psutil
+
+if os.name == "nt":
+    import msvcrt
+else:
+    import fcntl
 
 REPO = Path(__file__).resolve().parents[2]
 DEFAULT_ROOT = REPO / "runs"
@@ -67,31 +73,81 @@ def csv_bytes(fields, rows):
 
 
 @contextmanager
+def _writer_guard(path, deadline):
+    # Keep this inode/file identity permanently: unlinking an advisory lock lets
+    # waiters lock different files. The OS releases the guard after a crash.
+    with path.open("a+b") as stream:
+        stream.seek(0, os.SEEK_END)
+        if not stream.tell():
+            stream.write(b"\0")
+            stream.flush()
+        while True:
+            try:
+                stream.seek(0)
+                if os.name == "nt":
+                    msvcrt.locking(stream.fileno(), msvcrt.LK_NBLCK, 1)
+                else:
+                    fcntl.flock(stream.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+                break
+            except OSError as exc:
+                if exc.errno not in {errno.EACCES, errno.EAGAIN, errno.EDEADLK}:
+                    raise
+                if time.monotonic() >= deadline:
+                    raise RuntimeError("Run ledger is locked; execution must not proceed unrecorded") from None
+                time.sleep(.05)
+        try:
+            yield
+        finally:
+            stream.seek(0)
+            if os.name == "nt":
+                msvcrt.locking(stream.fileno(), msvcrt.LK_UNLCK, 1)
+            else:
+                fcntl.flock(stream.fileno(), fcntl.LOCK_UN)
+
+
+def _release_lock(path):
+    # Windows readers/indexers may briefly deny deletion. Keep ownership until
+    # release succeeds; a persistent denial raises and leaves the PID lock intact.
+    for retry in range(20):
+        try:
+            path.unlink(missing_ok=True)
+            return
+        except PermissionError:
+            if retry == 19:
+                raise
+            time.sleep(.05)
+
+
+@contextmanager
 def locked(root=DEFAULT_ROOT):
     root = Path(root)
     root.mkdir(parents=True, exist_ok=True)
     path = root / ".ledger.lock"
     deadline = time.monotonic() + 30
-    while True:
-        try:
-            fd = os.open(path, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
-            with os.fdopen(fd, "w") as stream:
-                json.dump({"pid": os.getpid()}, stream)
-            break
-        except FileExistsError:
+    # Serialize stale-PID inspection/removal as well as ownership. Without this
+    # guard a second reclaimer can delete a newly acquired PID lock after reading
+    # the same dead owner. The PID file also respects already-running old writers.
+    with _writer_guard(root / ".ledger.guard", deadline):
+        while True:
             try:
-                if not psutil.pid_exists(json.loads(path.read_text())["pid"]):
-                    path.unlink(missing_ok=True)
-                    continue
-            except (ValueError, OSError, KeyError):
-                pass
-            if time.monotonic() >= deadline:
-                raise RuntimeError("Run ledger is locked; execution must not proceed unrecorded")
-            time.sleep(.05)
-    try:
-        yield
-    finally:
-        path.unlink(missing_ok=True)
+                fd = os.open(path, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+                with os.fdopen(fd, "w") as stream:
+                    json.dump({"pid": os.getpid()}, stream)
+                break
+            except FileExistsError:
+                try:
+                    if not psutil.pid_exists(json.loads(path.read_text())["pid"]):
+                        _release_lock(path)
+                        continue
+                except (ValueError, OSError, KeyError):
+                    pass
+                if time.monotonic() >= deadline:
+                    raise RuntimeError("Run ledger is locked; execution must not proceed unrecorded")
+                time.sleep(.05)
+        try:
+            yield
+        finally:
+            _release_lock(path)
 
 
 def _event(root, kind, payload):

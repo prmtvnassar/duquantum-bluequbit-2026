@@ -6,4 +6,6 @@ The CSV index is [../runs/submissions.csv](../runs/submissions.csv). All three s
 
 Kevin's previously submitted G1 vector is imported under [teammates/kevin/G1/](teammates/kevin/G1/). Its 100% score is teammate-reported, its actual attempt number is unknown, and its explanation is reconstructed from reviewed code. The CSV matches every one of his 30 completed CPU results. These facts are explicit in its receipt; it is not relabelled as an upload made by the current account.
 
-Prepared candidate exports remain under ignored `results/workflow/submissions/` until their actual upload is verified and recorded. Use `scripts/record_submission.py`; do not copy candidates into this directory and imply they were submitted.
+Reviewed complete candidate exports are shared separately under [candidates/](candidates/README.md), with `submitted: false`, their method explanations and job manifests. They are not official attempts. Runtime exports also remain under ignored `results/workflow/submissions/`. Use `scripts/record_submission.py` only after an actual upload and its displayed score have been observed.
+
+The user separately confirmed submitting G1; that confirmation is retained in [G1/user-reported-submission.json](G1/user-reported-submission.json). The current account's attempt number and score remain unverified.

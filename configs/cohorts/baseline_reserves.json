@@ -1,0 +1,5 @@
+{
+  "G2": {"device": "mps.cpu", "options": {"mps_bond_dimension": 32}},
+  "G3": {"device": "pauli-path", "options": {"pauli_path_truncation_threshold": 0.001, "pauli_path_circuit_transpilation_level": 1}},
+  "G4": {"device": "mps.cpu", "options": {"mps_bond_dimension": 32}}
+}
