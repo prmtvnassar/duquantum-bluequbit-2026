@@ -85,7 +85,7 @@ corrects attribution; the time penalty does not explain or reconcile that confli
 A newer complete G2 CSV in main is user-confirmed as submitted. Its upload commit
 claimed a rowwise mix of 23 GPU MPS chi512 values and 13 chi64 values. A later
 [repository note](../submissions/candidates/G2/G2_23_512_and_13_64.score-report.txt)
-in commit `030518f` claims **579/600**, now the highest repository-reported G2 score.
+in commit `030518f` claims **579/600** for the earlier mixed-precision result.
 The decision to use a rowwise mix is recorded, but the specific row sources and
 their completion receipts are absent. No website feedback, submitting account,
 official attempt or time penalty accompanies the score note. The report supports
@@ -95,6 +95,8 @@ efficiently. Preserve the exact CSV and the claim's source without promoting it
 to an independently verified result. [Hybrid CSV](../submissions/candidates/G2/G2_23_512_and_13_64.csv),
 [feedback record](../submissions/candidates/G2/G2_23_512_and_13_64.feedback.json),
 [branch audit](results.md), upload commit `5807762`.
+
+Commit `e0ca909` later adds [G2_23_512_and_13_128.csv](../submissions/candidates/G2/G2_23_512_and_13_128.csv) with the message "G2 with 580/600". This is the highest repository-reported G2 score. Comparing saved vectors shows 23 values unchanged from the 579 file and 13 changed. The filename claims a chi512/chi128 mix; source jobs, submitting account, attempt, penalty and website verification remain unavailable. The [feedback record](../submissions/candidates/G2/G2_23_512_and_13_128.feedback.json) preserves these limits. The two reports do not establish a controlled one-point improvement.
 
 Later original-account analysis found that q0/q18/q35 gave an impressive
 chi16/32 correlation of 0.99999965 because saturated endpoints dominated the

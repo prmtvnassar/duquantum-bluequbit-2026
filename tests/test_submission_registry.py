@@ -1,4 +1,5 @@
 import csv
+import hashlib
 from contextlib import redirect_stdout
 import io
 import json
@@ -74,6 +75,48 @@ class SubmissionRegistryTests(TestCase):
         self.assertTrue(self.archive_path().exists())
         self.assertTrue(self.archive_path("teammate_reported").exists())
         self.assertEqual({row["owner"] for row in self.index()}, {"original_submitter", "teammate_reported"})
+
+    def test_cleanup_keeps_distinct_claims_without_recreating_duplicate_bytes(self):
+        self.record(score=342, evidence_source="user_report")
+        teammate = self.record(owner="teammate_reported", evidence_source="user_report")
+        receipt_path = self.archive_path("teammate_reported")
+        receipt_bytes = receipt_path.read_bytes()
+        retired = {}
+        for extension in ("csv", "txt"):
+            duplicate = receipt_path.with_suffix("." + extension)
+            canonical = self.archive_path().with_suffix("." + extension)
+            self.assertEqual(duplicate.read_bytes(), canonical.read_bytes())
+            retired[duplicate.relative_to(self.repo).as_posix()] = {
+                "retained_path":canonical.relative_to(self.repo).as_posix(),
+                "match":"byte_identical",
+                "sha256":hashlib.sha256(duplicate.read_bytes()).hexdigest()}
+            duplicate.unlink()
+        (self.repo / "submissions/retention.json").write_text(json.dumps({"retired_files":retired}))
+        old = json.loads(receipt_bytes)
+        archive_submission(old, repo=self.repo, ledger_root=self.ledger)
+        self.record(owner="teammate_reported", evidence_source="user_report")
+        self.assertEqual(receipt_path.read_bytes(), receipt_bytes)
+        self.assertFalse(receipt_path.with_suffix(".csv").exists())
+        self.assertFalse(receipt_path.with_suffix(".txt").exists())
+        rows = {row["owner"]:row for row in self.index()}
+        self.assertEqual(rows["original_submitter"]["displayed_score"], "342")
+        self.assertEqual(rows["teammate_reported"]["displayed_score"], "498")
+        self.assertEqual(rows["original_submitter"]["csv_path"], rows["teammate_reported"]["csv_path"])
+        canonical.write_text("changed explanation")
+        with self.assertRaisesRegex(ValueError, "no longer matches"):
+            archive_submission(old, repo=self.repo, ledger_root=self.ledger)
+
+    def test_cleanup_never_substitutes_numerically_equal_different_upload_bytes(self):
+        self.record(owner="teammate_reported", evidence_source="user_report")
+        receipt_path = self.archive_path("teammate_reported")
+        value = json.loads(receipt_path.read_text())
+        duplicate = receipt_path.with_suffix(".csv")
+        duplicate.unlink()
+        (self.repo / "submissions/retention.json").write_text(json.dumps({"retired_files":{
+            duplicate.relative_to(self.repo).as_posix():{"match":"numeric_equivalent",
+                "retained_path":"candidate.csv"}}}))
+        with self.assertRaises(FileNotFoundError):
+            archive_submission(value, repo=self.repo, ledger_root=self.ledger)
 
     def test_original_score_and_time_penalty_leave_teammate_receipt_unchanged(self):
         self.record(owner="teammate_reported", evidence_source="user_report")

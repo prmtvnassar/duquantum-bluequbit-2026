@@ -35,3 +35,5 @@ The corresponding JSON receipt records how the claim was obtained.
 Close a CSV in Excel if it holds an exclusive write lock. The workflow fails closed if it cannot update the ledger. Atomic replacement and a process lock serialize local and remote writers. Do not hand-edit the generated CSVs; make a correction through its source receipt and retain an explicit event explaining it.
 
 Unit tests and lightweight import/numerical smoke checks are validation, not challenge simulation jobs. Their outcomes are recorded in the repository validation report. Any challenge simulator invocation through `execute()` or the BlueQubit adapter is logged automatically, including local resource-cap failures.
+
+Submission payload consolidation is recorded in [submissions/retention.json](../submissions/retention.json). Original receipts keep their path strings and hashes. The derived submission index and archival retries resolve only byte-identical aliases, retaining distinct accounts and attempts without recreating duplicate CSVs. Numerically equal but differently serialized files are recoverable from their recorded Git blobs; they are not interchangeable upload bytes.

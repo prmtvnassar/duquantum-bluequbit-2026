@@ -1,18 +1,47 @@
-﻿# Submission archive
+# Retained submissions
 
-The [results audit](../docs/results.md) is the current score and attribution register. A score receipt says whether its evidence came from the browser, a collaborator, or the user. File names such as v1 and v3 do not establish official attempt numbers.
+This directory keeps **11 distinct numerical vectors**: the best/latest reported
+results and the milestones needed to explain the framework's evolution. Each
+vector has one retained CSV. The [results audit](../docs/results.md) gives score
+sources and account attribution; these scores cannot be added into one account's
+official total.
 
-## Original account
+## Best/latest reported results
 
-- [S1](S1/attempt-01.json), [S2](S2/attempt-01.json), and [S3](S3/attempt-01.json) each have the submitted CSV, mandatory explanation, browser-observed 100/100 result, and attempt-1 receipt.
-- [G2 attempt 1](G2/attempt-01.json) records the MPS bond-dimension-32 CSV at **342/600**, with a user-reported **3.48-hour** time penalty.
-- [G1 confirmation](G1/user-reported-submission.json) records that the user submitted G1. The original account's score, attempt number, and exact uploaded bytes remain unknown.
+| Problem | Retained CSV | Reported result and evidence |
+| --- | --- | --- |
+| S1 | [Exact](S1/attempt-01.csv) | 100/100, browser-observed; [receipt and explanation](S1/) |
+| S2 | [Exact](S2/attempt-01.csv) | 100/100, browser-observed; [receipt and explanation](S2/) |
+| S3 | [Local PPS](S3/attempt-01.csv) | 100/100, browser-observed; [receipt and explanation](S3/) |
+| G1 | [Exact CPU](teammates/kevin/G1/submitted-v1.csv) | Kevin reports 100%, equivalent to 300/300; [receipt](teammates/kevin/G1/submitted-v1.json) |
+| G2 | [Mixed chi512/chi128](candidates/G2/G2_23_512_and_13_128.csv) | 580/600 in commit `e0ca909`; account, attempt and source jobs unknown. [Feedback](candidates/G2/G2_23_512_and_13_128.feedback.json). |
+| G3 | [PPS epsilon 0.0003, level 1](teammates/kevin/G3/submitted-v3.csv) | Kevin reports 773/800; [receipt](teammates/kevin/G3/submitted-v3.json) |
 
-## Collaborator submissions and feedback
+G4 has no successful scored candidate in the saved evidence. Its accepted zero
+is retained below as an experimental failure, not a recommended upload.
 
-- Kevin's [G1 exact vector](teammates/kevin/G1/submitted-v1.json) is reported at 100%; his [G2 bond-dimension-128 vector](teammates/kevin/G2/submitted-v1.json) at **498/600**; and his [G3 Pauli-path vectors](teammates/kevin/README.md) at **534/800** and **773/800**. His completed row jobs were checked against these files. His G2 result is the highest with an account-attributed scored submission receipt.
-- An older [unnamed-teammate G2 receipt](teammates/teammate_reported/G2/attempt-01.json) also reports **498/600**, but attaches that score to the bond-dimension-32 CSV. That attribution conflicts with Kevin's distinct bond-dimension-128 receipt and is retained as disputed evidence.
-- The user confirmed that the newer [mixed-precision G2 CSV](candidates/G2/G2_23_512_and_13_64.csv) was submitted. A later [repository note](candidates/G2/G2_23_512_and_13_64.score-report.txt), introduced by commit `030518f`, claims **579/600**, the highest repository-reported G2 score. This is a text claim, not website feedback. The note describes 23 GPU MPS bond-dimension-512 rows and 13 bond-dimension-64 rows, but no per-row source mapping or completion receipts accompany it. The submitting account, official attempt number, time penalty, and exact uploaded bytes remain unverified in the [feedback record](candidates/G2/G2_23_512_and_13_64.feedback.json).
-- The user reported that the [G4 bond-dimension-32 candidate](candidates/G4/direct-930f7e5b7d14.feedback.json) was accepted and scored **0/1000**. Its account and attempt number remain unknown.
+## Framework evolution
 
-The [candidate directory](candidates/README.md) contains both prepared files and candidates that were later submitted. Location alone does not establish upload status. The [submission CSV index](../runs/submissions.csv) and the [run ledger](../runs/README.md) provide machine-readable records; unresolved claims are preserved in JSON feedback files. Keep repository-text claims distinct from website-observed scores and account-attributed receipts. A whole-problem score does not reveal any row's true expectation value.
+| Problem | Retained milestone | Why it matters |
+| --- | --- | --- |
+| G2 | [CPU MPS chi32](G2/attempt-01.csv), 342/600 | Original-account baseline; exposed transition sensitivity. [Receipt](G2/attempt-01.json). |
+| G2 | [CPU MPS chi128](teammates/kevin/G2/submitted-v1.csv), 498/600 | Kevin's attributed higher-precision milestone before the later mixed strategy. [Method](teammates/kevin/G2/submitted-v1.txt). |
+| G2 | [Mixed chi512/chi64](candidates/G2/G2_23_512_and_13_64.csv), 579/600 | Earlier mixed-precision report; 23 values are unchanged in the later 580 vector. [Feedback](candidates/G2/G2_23_512_and_13_64.feedback.json). |
+| G3 | [PPS epsilon 0.001, level 1](teammates/kevin/G3/submitted-v2.csv), 534/800 | Baseline for the fixed-representation refinement to 773/800. [Method](teammates/kevin/G3/submitted-v2.txt). |
+| G4 | [CPU MPS chi32](candidates/G4/direct-930f7e5b7d14.csv), 0/1000 | Failed candidate that motivated broader diagnostics and explicit uncertainty. [Feedback](candidates/G4/direct-930f7e5b7d14.feedback.json). |
+
+## Provenance without duplicate exports
+
+Distinct account receipts and decision manifests remain separate. In particular,
+the [disputed unnamed-account G2 receipt](teammates/teammate_reported/G2/attempt-01.json)
+still exists, but its duplicate CSV and explanation share the original G2 files.
+The unsubmitted original-account G3 candidate's [manifest](candidates/G3/direct-fb792001c3e7.json)
+and [hold decision](candidates/G3/direct-fb792001c3e7.review.json) remain; its CSV
+had the same 36 values as Kevin's epsilon-0.001 vector with different serialization.
+That equivalence does not transfer Kevin's score to the original account.
+
+[retention.json](retention.json) records why each vector stays, every removed
+path, its checksum, its retained equivalent, and the Git commit/blob needed to
+recover original bytes. Historical receipts retain their original path strings;
+the [submission index](../runs/submissions.csv) resolves byte-identical aliases.
+Numerical equivalence is never substituted for exact upload-byte identity.

@@ -5240,7 +5240,7 @@
       "score_related_lines": [
         {
           "line": 13,
-          "text": "## Result: MPS χ=128, scored 498/600 (corr² ≈ 0.83)"
+          "text": "## Result: MPS \u00cf\u2021=128, scored 498/600 (corr\u00c2\u00b2 \u00e2\u2030\u02c6 0.83)"
         }
       ]
     },
@@ -5594,5 +5594,16 @@
     "source_path": "submissions/candidates/G2_512_txt",
     "current_path": "submissions/candidates/G2/G2_23_512_and_13_64.score-report.txt",
     "bytes_unchanged": true
-  }
+  },
+  "post_audit_updates": [
+    {
+      "source_commit": "e0ca909c59f510cd75cbf4788ebc521e0d6618ed",
+      "evidence_source": "repo_commit_message",
+      "reported_score": 580,
+      "maximum_points": 600,
+      "csv_path": "submissions/candidates/G2/G2_23_512_and_13_128.csv",
+      "feedback_path": "submissions/candidates/G2/G2_23_512_and_13_128.feedback.json",
+      "note": "Latest reported G2 score; account, attempt and row jobs unknown. Original scan and its historical findings remain frozen."
+    }
+  ]
 }

@@ -19,6 +19,28 @@ NOTE_EVIDENCE = ("submitted_text", "prepared_explanation")
 DEFAULT_OWNER = "original_submitter"
 
 
+def _retained_file(path, repo):
+    """Resolve only verified byte-identical aliases from the cleanup manifest."""
+    repo = Path(repo).resolve()
+    path = Path(str(path).replace("\\", "/"))
+    absolute = path.resolve() if path.is_absolute() else (repo / path).resolve()
+    if not absolute.is_relative_to(repo):
+        return absolute
+    manifest = repo / "submissions/retention.json"
+    if not manifest.exists():
+        return absolute
+    retired = json.loads(manifest.read_text(encoding="utf-8"))["retired_files"]
+    entry = retired.get(absolute.relative_to(repo).as_posix())
+    if not entry or entry["match"] != "byte_identical":
+        return absolute
+    target = (repo / entry["retained_path"]).resolve()
+    if not target.is_relative_to(repo):
+        raise ValueError("Retained submission path escapes repository")
+    if hashlib.sha256(target.read_bytes()).hexdigest() != entry["sha256"]:
+        raise ValueError("Retained submission no longer matches the retired file's bytes")
+    return target
+
+
 def _owner(value):
     owner = value.get("owner", DEFAULT_OWNER)
     if (not isinstance(owner, str) or len(owner) > 64
@@ -88,7 +110,8 @@ def record_submission(problem, attempt, csv_path, note, score, root="results/wor
     penalty = _time_penalty({"time_penalty_hours":time_penalty_hours})
     prefix = "" if owner == DEFAULT_OWNER else owner + "-"
     path = Path(root) / "official_submissions" / f"{prefix}{problem}-{attempt:02d}.json"
-    content = Path(csv_path).read_bytes()
+    csv_path = _retained_file(csv_path, repo)
+    content = csv_path.read_bytes()
     value = {"problem":problem, "attempt":attempt, "owner":owner,
              "csv_path":str(Path(csv_path).resolve()), "sha256":hashlib.sha256(content).hexdigest(),
              "method_note":note, "displayed_score":score, "points":POINTS[problem], "observed_at":utc_now(),
@@ -116,7 +139,7 @@ def archive_submission(value, repo=REPO, ledger_root=DEFAULT_ROOT):
     owner, evidence, note_metadata = _owner(value), _evidence(value), _note_evidence(value)
     penalty = _time_penalty(value)
     problem, attempt = value["problem"], value["attempt"]
-    source = Path(value["csv_path"])
+    source = _retained_file(value["csv_path"], repo)
     payload = source.read_bytes()
     if hashlib.sha256(payload).hexdigest() != value["sha256"]:
         raise ValueError("The submitted file no longer matches its recorded checksum")
@@ -126,7 +149,10 @@ def archive_submission(value, repo=REPO, ledger_root=DEFAULT_ROOT):
     if owner != DEFAULT_OWNER:
         directory = directory / "teammates" / owner
     target = directory / problem / f"attempt-{attempt:02d}.csv"
+    receipt = target.with_suffix(".json")
     note_path = target.with_suffix(".txt")
+    target = _retained_file(target, repo)
+    note_path = _retained_file(note_path, repo)
     note = (value["method_note"].strip() + "\n").encode("utf-8")
     if target.exists() and target.read_bytes() != payload:
         raise ValueError("Cannot alter the bytes of a recorded submission")
@@ -147,7 +173,6 @@ def archive_submission(value, repo=REPO, ledger_root=DEFAULT_ROOT):
     archived = {**value, "owner":owner, **evidence, **note_metadata, "time_penalty_hours":penalty,
                 "csv_path":relative(target),
                 "method_note_path":relative(note_path), "row_provenance":provenance}
-    receipt = target.with_suffix(".json")
     if receipt.exists():
         _same_attempt(json.loads(receipt.read_text(encoding="utf-8")), archived)
     # All semantic validation precedes any new archive file or official receipt.
@@ -188,7 +213,10 @@ def rebuild_submission_index(repo=REPO, ledger_root=DEFAULT_ROOT):
         return path.relative_to(repo).as_posix()
 
     def portable(path):
-        return str(path).replace("\\", "/") if path else ""
+        if not path:
+            return ""
+        resolved = _retained_file(path, repo)
+        return resolved.relative_to(repo).as_posix() if resolved.is_relative_to(repo) else resolved.as_posix()
 
     def explicit_upload_verification(value):
         for key in ("exact_uploaded_bytes_verified", "uploaded_bytes_independently_verified",

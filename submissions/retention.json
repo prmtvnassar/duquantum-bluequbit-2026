@@ -1,0 +1,187 @@
+{
+  "schema_version": 1,
+  "basis_commit": "9a53b6993b480b14211421b7e69e5cdbd025b830",
+  "policy": "Retain best/latest reported results and distinct evidence of framework evolution. Keep receipt identities and original hashes; deduplicate payloads only. No simulations.",
+  "retained_vectors": [
+    {
+      "problem": "S1",
+      "csv_path": "submissions/S1/attempt-01.csv",
+      "role": "best_reported",
+      "reported_score": 100,
+      "maximum_points": 100,
+      "sha256": "482778c0611ee0c9f4f0d11e63b9ff6d636da99be9e8cc91f124bab0471bc320",
+      "why_retained": "Exact sample baseline."
+    },
+    {
+      "problem": "S2",
+      "csv_path": "submissions/S2/attempt-01.csv",
+      "role": "best_reported",
+      "reported_score": 100,
+      "maximum_points": 100,
+      "sha256": "dcb2666e0b37da0b1240edcd35a34398c6b3baa9c0e087875baf1a43d77ce82b",
+      "why_retained": "Exact chain sample baseline."
+    },
+    {
+      "problem": "S3",
+      "csv_path": "submissions/S3/attempt-01.csv",
+      "role": "best_reported",
+      "reported_score": 100,
+      "maximum_points": 100,
+      "sha256": "92d1cae4a7ebf436a367aee1f7403d72c7fcda06a0020011d59dba402a9950a2",
+      "why_retained": "PPS sample method-selection anchor."
+    },
+    {
+      "problem": "G1",
+      "csv_path": "submissions/teammates/kevin/G1/submitted-v1.csv",
+      "role": "best_reported",
+      "reported_score": 300,
+      "maximum_points": 300,
+      "sha256": "d6bbdea66362f95c58a6b4b06290f7b449636c9d4967fe9231c1fcacd003c6e2",
+      "why_retained": "Exact reuse avoided duplicate computations; score reported as 100%."
+    },
+    {
+      "problem": "G2",
+      "csv_path": "submissions/candidates/G2/G2_23_512_and_13_64.csv",
+      "role": "framework_evolution",
+      "reported_score": 579,
+      "maximum_points": 600,
+      "sha256": "ffb433747eb61b0710fec6e9e73eef6aab06eaaa9b8ed704f9895d43266e7dd0",
+      "why_retained": "First reported mixed-precision milestone (579/600): chi512 refinements over a chi64 baseline, preceding the chi128 remainder variant."
+    },
+    {
+      "problem": "G2",
+      "csv_path": "submissions/G2/attempt-01.csv",
+      "role": "framework_evolution",
+      "reported_score": 342,
+      "maximum_points": 600,
+      "sha256": "4cb0c3c141640461732583a3e719058f8b731699f55078631d55f3eb0a3c79ea",
+      "why_retained": "Original chi32 baseline and transition-sensitivity failure; disputed separate 498 claim shares these exact bytes."
+    },
+    {
+      "problem": "G2",
+      "csv_path": "submissions/teammates/kevin/G2/submitted-v1.csv",
+      "role": "framework_evolution",
+      "reported_score": 498,
+      "maximum_points": 600,
+      "sha256": "a92e6e44ef9d12d1272d8082b2b0fb5685dbaaa69bf76f00ae802d33bb893c13",
+      "why_retained": "Kevin chi128 milestone with attributed per-row provenance."
+    },
+    {
+      "problem": "G3",
+      "csv_path": "submissions/teammates/kevin/G3/submitted-v3.csv",
+      "role": "best_reported",
+      "reported_score": 773,
+      "maximum_points": 800,
+      "sha256": "44fdbe227f1fede6b7abe04934dd375420c86a9427c69b760bb70c00e338d691",
+      "why_retained": "Latest scored fixed-level PPS refinement epsilon .0003."
+    },
+    {
+      "problem": "G3",
+      "csv_path": "submissions/teammates/kevin/G3/submitted-v2.csv",
+      "role": "framework_evolution",
+      "reported_score": 534,
+      "maximum_points": 800,
+      "sha256": "33c9a6ac4d0e1b06ce9a79607c20a7ea4dd707e571061aeea7f031715075f7ef",
+      "why_retained": "Scored epsilon .001 baseline establishes threshold evolution."
+    },
+    {
+      "problem": "G4",
+      "csv_path": "submissions/candidates/G4/direct-930f7e5b7d14.csv",
+      "role": "framework_evolution",
+      "reported_score": 0,
+      "maximum_points": 1000,
+      "sha256": "73a5887922c63eb2aafe840fae8e9b26402256fdfc13accf9f689ad4329cbb20",
+      "why_retained": "Accepted failure motivated stricter diagnostics; not recommended for reuse."
+    },
+    {
+      "problem": "G2",
+      "csv_path": "submissions/candidates/G2/G2_23_512_and_13_128.csv",
+      "role": "best_reported",
+      "reported_score": 580,
+      "maximum_points": 600,
+      "sha256": "bd0c968b03684723187653becaa2615f5b453f36c7baf9ca01d210fa24ab0459",
+      "source_commit": "e0ca909c59f510cd75cbf4788ebc521e0d6618ed",
+      "why_retained": "Latest higher reported result; chi512/chi128 filename claim. Score is a commit-message report with unknown account and no per-row receipts."
+    }
+  ],
+  "retired_files": {
+    "submissions/candidates/G2/direct-3643218316ac.csv": {
+      "retained_path": "submissions/G2/attempt-01.csv",
+      "match": "byte_identical",
+      "sha256": "4cb0c3c141640461732583a3e719058f8b731699f55078631d55f3eb0a3c79ea",
+      "reason": "Repeated bytes add no framework milestone; distinct receipts remain.",
+      "restore_commit": "9a53b6993b480b14211421b7e69e5cdbd025b830",
+      "git_blob": "95eb8223d02220360697dc188c2c6cc035c4c1e1"
+    },
+    "submissions/teammates/teammate_reported/G2/attempt-01.csv": {
+      "retained_path": "submissions/G2/attempt-01.csv",
+      "match": "byte_identical",
+      "sha256": "4cb0c3c141640461732583a3e719058f8b731699f55078631d55f3eb0a3c79ea",
+      "reason": "Repeated bytes add no framework milestone; distinct receipts remain.",
+      "restore_commit": "9a53b6993b480b14211421b7e69e5cdbd025b830",
+      "git_blob": "95eb8223d02220360697dc188c2c6cc035c4c1e1"
+    },
+    "problems/04_graded_G1/exact_values.csv": {
+      "retained_path": "submissions/teammates/kevin/G1/submitted-v1.csv",
+      "match": "byte_identical",
+      "sha256": "d6bbdea66362f95c58a6b4b06290f7b449636c9d4967fe9231c1fcacd003c6e2",
+      "reason": "Repeated bytes add no framework milestone; distinct receipts remain.",
+      "restore_commit": "9a53b6993b480b14211421b7e69e5cdbd025b830",
+      "git_blob": "5a037f6546585c25145c424322a1faa85e50c4b6"
+    },
+    "submissions/candidates/G2/direct-3643218316ac.txt": {
+      "retained_path": "submissions/G2/attempt-01.txt",
+      "match": "byte_identical",
+      "sha256": "0462b53a221566cc23d69f13eea9e72c78d5096f5cc1bbb742abd5cd704f4936",
+      "reason": "Repeated bytes add no framework milestone; distinct receipts remain.",
+      "restore_commit": "9a53b6993b480b14211421b7e69e5cdbd025b830",
+      "git_blob": "8888b8344c78d1a1c83f0c534935696ab670734b"
+    },
+    "submissions/teammates/teammate_reported/G2/attempt-01.txt": {
+      "retained_path": "submissions/G2/attempt-01.txt",
+      "match": "byte_identical",
+      "sha256": "0462b53a221566cc23d69f13eea9e72c78d5096f5cc1bbb742abd5cd704f4936",
+      "reason": "Repeated bytes add no framework milestone; distinct receipts remain.",
+      "restore_commit": "9a53b6993b480b14211421b7e69e5cdbd025b830",
+      "git_blob": "8888b8344c78d1a1c83f0c534935696ab670734b"
+    },
+    "submissions/candidates/G3/direct-fb792001c3e7.csv": {
+      "retained_path": "submissions/teammates/kevin/G3/submitted-v2.csv",
+      "match": "numeric_equivalent",
+      "sha256": "7ce7b051d0fa7f124e7329c93f15247f46f5b36b3ccfb407910dfebe80c71d7e",
+      "retained_sha256": "33c9a6ac4d0e1b06ce9a79607c20a7ea4dd707e571061aeea7f031715075f7ef",
+      "reason": "Unsubmitted original-account export duplicates the scored epsilon .001 profile numerically. Its distinct serialization, job manifest and hold decision are preserved through Git and retained JSON; no score is transferred between accounts.",
+      "restore_commit": "9a53b6993b480b14211421b7e69e5cdbd025b830",
+      "git_blob": "eba48adcb8baf8e4830aac855b67782f7c921c79"
+    },
+    "submissions/candidates/G3/direct-fb792001c3e7.txt": {
+      "retained_path": "submissions/candidates/G3/direct-fb792001c3e7.json",
+      "match": "embedded_text",
+      "sha256": "26b91950f6687b511482c7d1e2418787ca1d54561ffc718d1cfa369062e0d6c4",
+      "reason": "The exact explanation text remains in method_note of the retained manifest.",
+      "restore_commit": "9a53b6993b480b14211421b7e69e5cdbd025b830",
+      "git_blob": "a378d934c84e84cd0dfd70a5f626be6ee3ddacdb",
+      "working_copy_sha256_before_removal": "96d7282c79ebfa433acce4a01d195ff614c3798a0feab010430c560ae428bba8"
+    },
+    "submissions/candidates/README.md": {
+      "retained_path": "submissions/README.md",
+      "match": "navigation_consolidated",
+      "sha256": "cb6c08bb386a778e3fd037da2cb7cd934d936418b6cd2956bd4bd30d6c99ef47",
+      "reason": "One curated best-results and evolution index replaces duplicated candidate navigation.",
+      "restore_commit": "9a53b6993b480b14211421b7e69e5cdbd025b830",
+      "git_blob": "e32f53c77257b0e9541b6b766a3b5a878cf90b36",
+      "working_copy_sha256_before_removal": "bf686dda8d5baeaf4c7ea06111b8d02bff2919c6dab4e742025a54180a4a2293"
+    }
+  },
+  "metadata_policy": "Distinct account receipts, candidate provenance/hold JSON, run records and dated research remain. Their historical paths resolve through this manifest; numeric equivalence never stands in for byte identity.",
+  "validation": {
+    "checked_at": "2026-10-24T20:22:26.762530+00:00",
+    "retained_vectors": 11,
+    "retired_paths_with_git_recovery": 8,
+    "indexed_claims": 13,
+    "previous_12_claims_preserved": true,
+    "existing_receipts_unchanged": true,
+    "retained_csv_bytes_unchanged": true,
+    "run_records_and_events_unchanged": true
+  }
+}

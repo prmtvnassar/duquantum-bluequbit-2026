@@ -14,6 +14,8 @@ appeared after the results. The account-specific outcomes
 are maintained in [results.md](results.md); the supporting causal history is in
 [optimization-decisions.md](optimization-decisions.md).
 
+Commit `e0ca909` later adds [G2_23_512_and_13_128.csv](../submissions/candidates/G2/G2_23_512_and_13_128.csv) with the message "G2 with 580/600". This is the highest repository-reported G2 score. Comparing saved vectors shows 23 values unchanged from the 579 file and 13 changed. The filename claims a chi512/chi128 mix; source jobs, submitting account, attempt, penalty and website verification remain unavailable. The [feedback record](../submissions/candidates/G2/G2_23_512_and_13_128.feedback.json) preserves these limits. The two reports do not establish a controlled one-point improvement.
+
 ## 1. Reuse evidence before proposing computation
 
 Start with complete vectors, per-row native options, job receipts, costs and
@@ -23,7 +25,7 @@ receipt. In particular, Kevin's G2 498/600 belongs to his MPS chi128 file; the
 older attribution of that score to the original chi32 file is disputed. A newer
 mixed-precision G2 CSV is user-confirmed as submitted. A later repository
 [score note](../submissions/candidates/G2/G2_23_512_and_13_64.score-report.txt)
-claims **579/600**, the highest repository-reported G2 score; its submitting account,
+claims **579/600**, an earlier mixed-precision result; its submitting account,
 official attempt and time penalty remain unknown, and no website receipt was
 preserved. The note describes 23 GPU MPS chi512 rows and 13 chi64 rows, but no
 row-to-job mapping or service receipts accompany it. Kevin's **498/600** remains
@@ -37,7 +39,7 @@ defines the local evidence fields.
 | Problem | Starting point for any resumed decision |
 | --- | --- |
 | G1 | Reuse the verified 30-row exact vector. Do not repeat its simulations. |
-| G2 | Preserve the original chi32 vector, Kevin's distinct chi128 vector and the newer submitted hybrid. Confirm the hybrid's reported 579/600 with the account and website receipt, and obtain its row provenance before treating it as a verified improvement. |
+| G2 | Preserve the original chi32 vector, Kevin's distinct chi128 vector and the newer submitted hybrid. Confirm the hybrids' reported 579/600 and 580/600 with the account and website receipt, and obtain its row provenance before treating it as a verified improvement. |
 | G3 | Reuse Kevin's complete level-1 PPS epsilon 0.0003 vector and its reported 773/800 outcome. The original-account epsilon 0.001 candidate and later 0.0005 work remain separate records; they do not justify duplicating an available finer vector. |
 | G4 | Preserve the zero-scoring chi32 artifact and the four chi64 diagnostics. Neither a full chi64 cohort nor another submission is presently justified by those diagnostics. |
 
@@ -197,7 +199,7 @@ options and one device per cohort and does not splice pilot rows. This is an
 implementation policy, not an asserted event rule. Its `submission_eligible`
 compatibility field means format and resolved signal only; approximate exports
 still require review. A highest-completed-precision selection is not proof of best
-accuracy. [Exporter](../src/otoc/graded.py), [candidate registry](../submissions/candidates/README.md).
+accuracy. [Exporter](../src/otoc/graded.py), [retained submissions](../submissions/README.md).
 
 Preserve direct estimates: the tested extrapolator failed held-out checks and
 fusion showed no held-out gain. Do not infer row values from whole-problem scores.

@@ -1,0 +1,43 @@
+{
+  "problem": "G2",
+  "candidate_csv": "submissions/candidates/G2/G2_23_512_and_13_128.csv",
+  "candidate_sha256": "bd0c968b03684723187653becaa2615f5b453f36c7baf9ca01d210fa24ab0459",
+  "source_commit": "e0ca909c59f510cd75cbf4788ebc521e0d6618ed",
+  "submission_status": "REPORTED_SUBMITTED",
+  "submission_evidence_source": "repo_commit_message",
+  "score": 580,
+  "maximum_points": 600,
+  "evidence_source": "repo_commit_message",
+  "score_evidence_source": "repo_commit_message",
+  "score_source_commit": "e0ca909c59f510cd75cbf4788ebc521e0d6618ed",
+  "score_source_message": "G2 with 580/600",
+  "account_owner": null,
+  "attempt": null,
+  "time_penalty_hours": null,
+  "exact_uploaded_bytes_verified": false,
+  "website_score_verified": false,
+  "website_explanation_verified": false,
+  "method_claim": "Filename indicates 23 MPS chi512 rows and 13 chi128 rows. Per-row source job mapping and hardware provenance were not included.",
+  "comparison_to_previous": {
+    "csv": "submissions/candidates/G2/G2_23_512_and_13_64.csv",
+    "unchanged_values": 23,
+    "changed_ids": [
+      "Duke_G2_1",
+      "Duke_G2_12",
+      "Duke_G2_13",
+      "Duke_G2_14",
+      "Duke_G2_15",
+      "Duke_G2_16",
+      "Duke_G2_17",
+      "Duke_G2_19",
+      "Duke_G2_20",
+      "Duke_G2_21",
+      "Duke_G2_22",
+      "Duke_G2_23",
+      "Duke_G2_24"
+    ],
+    "interpretation": "Value equality checks the saved vectors only; it does not verify which jobs or precision settings generated each value."
+  },
+  "recorded_at": "2026-10-24T20:18:21.461463+00:00",
+  "ranking_status": "HIGHEST_REPORTED_G2_COMMIT_CLAIM_ACCOUNT_UNKNOWN"
+}
