@@ -1,0 +1,137 @@
+{
+  "problem": "G1",
+  "owner": "kevin",
+  "source_commit": "9714dab3422134c77b7fc36f99e86f5f2dada921",
+  "csv_path": "submissions\\teammates\\kevin\\G1\\submitted-v1.csv",
+  "sha256": "d6bbdea66362f95c58a6b4b06290f7b449636c9d4967fe9231c1fcacd003c6e2",
+  "submission_status": "REPORTED_SUBMITTED",
+  "reported_score_fraction": 1.0,
+  "maximum_points": 300,
+  "observed_displayed_score": null,
+  "attempt": null,
+  "score_evidence": "User statement, source commit and main README report 100%; website not independently checked",
+  "method_note": "Ran all 30 stored Duke_G1_q programs separately on BlueQubit's exact CPU statevector backend, starting in |0...0>. Evaluated Z on each ID's target q; q0 is rightmost in the Pauli string. Used completed direct expectation values with no MPS/PPS truncation, fitting or fusion. The source ledger reports $0 cost for every successful G1 job.",
+  "method_note_origin": "Reconstructed from reviewed runner code/config; original website wording unavailable",
+  "row_provenance": [
+    {
+      "circuit_id": "Duke_G1_0",
+      "run_id": "kevin-W6RnxKDgZZKi19cV"
+    },
+    {
+      "circuit_id": "Duke_G1_1",
+      "run_id": "kevin-XwidDPx5kTlxGMZm"
+    },
+    {
+      "circuit_id": "Duke_G1_2",
+      "run_id": "kevin-ojyXDgQxjkg497PW"
+    },
+    {
+      "circuit_id": "Duke_G1_3",
+      "run_id": "kevin-GISWTrfrCQIgOrWq"
+    },
+    {
+      "circuit_id": "Duke_G1_4",
+      "run_id": "kevin-1Q9k8h8XiQYn2QkK"
+    },
+    {
+      "circuit_id": "Duke_G1_8",
+      "run_id": "kevin-OBHGogpwdgCQ5usD"
+    },
+    {
+      "circuit_id": "Duke_G1_9",
+      "run_id": "kevin-V64qARnJGCrudOL7"
+    },
+    {
+      "circuit_id": "Duke_G1_10",
+      "run_id": "kevin-oBn5grgusICRZNS5"
+    },
+    {
+      "circuit_id": "Duke_G1_11",
+      "run_id": "kevin-jAFkvoA6IniilhXb"
+    },
+    {
+      "circuit_id": "Duke_G1_13",
+      "run_id": "kevin-YiJe7ztq5vb6q0Mp"
+    },
+    {
+      "circuit_id": "Duke_G1_15",
+      "run_id": "kevin-6HcBXi5YMIFHmnIj"
+    },
+    {
+      "circuit_id": "Duke_G1_16",
+      "run_id": "kevin-jJYWbtlne4KKS1aI"
+    },
+    {
+      "circuit_id": "Duke_G1_17",
+      "run_id": "kevin-x7V4njirlt7QWJ3V"
+    },
+    {
+      "circuit_id": "Duke_G1_19",
+      "run_id": "kevin-Ofd8InoDWdzjMAMN"
+    },
+    {
+      "circuit_id": "Duke_G1_20",
+      "run_id": "kevin-vgtq0xUxYCbYlZQG"
+    },
+    {
+      "circuit_id": "Duke_G1_25",
+      "run_id": "kevin-ZvvpXGUQP7CiOkzm"
+    },
+    {
+      "circuit_id": "Duke_G1_26",
+      "run_id": "kevin-OjcRynZujj9bi1JL"
+    },
+    {
+      "circuit_id": "Duke_G1_27",
+      "run_id": "kevin-RI1QjtifW6witQm3"
+    },
+    {
+      "circuit_id": "Duke_G1_28",
+      "run_id": "kevin-ciyPRzUyqLzY4ZJk"
+    },
+    {
+      "circuit_id": "Duke_G1_29",
+      "run_id": "kevin-GpN8Ugmh47AblPIN"
+    },
+    {
+      "circuit_id": "Duke_G1_5",
+      "run_id": "kevin-M9Yh3iot7G1983MX"
+    },
+    {
+      "circuit_id": "Duke_G1_6",
+      "run_id": "kevin-9hP6o0yf8Qucz1G1"
+    },
+    {
+      "circuit_id": "Duke_G1_7",
+      "run_id": "kevin-BNx3CEpqYiyAvymm"
+    },
+    {
+      "circuit_id": "Duke_G1_12",
+      "run_id": "kevin-TWb5RbiHJyoju2pt"
+    },
+    {
+      "circuit_id": "Duke_G1_14",
+      "run_id": "kevin-EjyJwrEMlULvSVcO"
+    },
+    {
+      "circuit_id": "Duke_G1_18",
+      "run_id": "kevin-pUPV2rZIWoTpyOIX"
+    },
+    {
+      "circuit_id": "Duke_G1_21",
+      "run_id": "kevin-d8pQMdSejoYOvKgr"
+    },
+    {
+      "circuit_id": "Duke_G1_22",
+      "run_id": "kevin-NjeORq7QmY3Au5Nk"
+    },
+    {
+      "circuit_id": "Duke_G1_23",
+      "run_id": "kevin-7v0hu2m2PN3gGsYQ"
+    },
+    {
+      "circuit_id": "Duke_G1_24",
+      "run_id": "kevin-ER9Y1wOKkVu478uM"
+    }
+  ]
+}

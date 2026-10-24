@@ -24,6 +24,8 @@ def _configuration(args):
 
 
 def main(argv=None):
+    import matplotlib
+    matplotlib.use("Agg")
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8")
     parser = argparse.ArgumentParser(description="S1-S3 exact/MPS/Pauli-backpropagation experiments")

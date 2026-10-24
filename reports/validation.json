@@ -1,0 +1,28 @@
+{
+  "checked_at": "2026-10-24T16:43:59.102914+00:00",
+  "unittest": {
+    "tests": 27,
+    "result": "PASS",
+    "exit_code": 0,
+    "log": "reports/validation-tests.txt"
+  },
+  "pip_check": "No broken requirements found",
+  "smoke_test": "All 7 package imports and Bell-state numerical check passed; offline",
+  "official_input_validation": {
+    "status": "READY",
+    "ids": 50,
+    "issues": []
+  },
+  "sample_reproduction": {
+    "problem": "S1",
+    "ids": 4,
+    "max_difference_from_submitted_values": 0.0,
+    "cloud_cost_usd": 0.0
+  },
+  "kevin_G1_import": {
+    "rows": 30,
+    "csv_matches_main_and_source_ledger": true,
+    "jobs_imported": 60,
+    "source_commit": "9714dab3422134c77b7fc36f99e86f5f2dada921"
+  }
+}

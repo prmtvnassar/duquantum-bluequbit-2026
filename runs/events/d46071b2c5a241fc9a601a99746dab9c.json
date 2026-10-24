@@ -1,0 +1,23 @@
+{
+  "event_id": "d46071b2c5a241fc9a601a99746dab9c",
+  "recorded_at": "2026-10-24T16:48:06.542643+00:00",
+  "kind": "collaborator_job_event",
+  "source_commit": "9714dab3422134c77b7fc36f99e86f5f2dada921",
+  "original_event": {
+    "recorded_utc": "2026-10-24T16:02:58+00:00",
+    "mode": "cloud",
+    "circuit": "G1",
+    "qubit": "23",
+    "method": "exact",
+    "setting": "0",
+    "transpile": "",
+    "device": "cpu",
+    "job_key": "054ffd14aef8c18c24ca",
+    "job_id": "7v0hu2m2PN3gGsYQ",
+    "status": "succeeded",
+    "estimate": "0.4559366929310495",
+    "wall_s": "69.283",
+    "credits": "0.0",
+    "error": ""
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "key": "a0a560492c304904a38bf20efdcb823459f89e669fde45708896c56d1a05050b",
+  "action": {
+    "circuit_id": "Duke_S3_8",
+    "method": "mps",
+    "parameters": {
+      "chi": 16
+    },
+    "input_sha256": "414f55a4a22c67e2847438bb4c859349413343ee901ab7030ad7984ec77c9a99",
+    "engine_source": "5ff8f31181561a23dacab17c7c18eaa9bcac2d8e0aecb2af686a5107fe6efe83",
+    "origin": "local"
+  },
+  "record": {
+    "circuit_id": "Duke_S3_8",
+    "sample": "S3",
+    "qubit": 8,
+    "num_qubits": 30,
+    "qasm_sha256": "414f55a4a22c67e2847438bb4c859349413343ee901ab7030ad7984ec77c9a99",
+    "dataset_kind": "official",
+    "method": "mps",
+    "parameters": {
+      "chi": 16,
+      "svd_cutoff": 0.0
+    },
+    "status": "SUCCEEDED",
+    "estimate": 0.0,
+    "dtype": "complex128",
+    "backend": "quimb.CircuitMPS.numpy",
+    "wall_seconds": 6.971510500001386,
+    "compute_seconds": 6.227783500000442,
+    "peak_rss": 200994816,
+    "package_versions": {
+      "python": "3.12.14",
+      "qiskit": "2.6.1",
+      "qiskit-aer": "0.18.0",
+      "quimb": "1.15.0",
+      "qiskit-addon-obp": "0.3.0",
+      "qiskit-addon-utils": "0.4.0",
+      "numpy": "2.3.5",
+      "scipy": "1.18.1",
+      "pandas": "2.3.3",
+      "matplotlib": "3.11.2",
+      "psutil": "7.2.2"
+    },
+    "diagnostics": {
+      "max_bond_actual": 16,
+      "state_norm_squared": 8.137214913097208e-33,
+      "expectation_normalized": true,
+      "svd_cutoff": 0.0,
+      "target_site": 8,
+      "routing": "Explicit swap+split; original site order restored",
+      "worker_peak_rss": 196636672,
+      "memory_limit_bytes": 734003200,
+      "profile": "local",
+      "attempt_directory": "results\\workflow\\local\\attempts\\7ee6d5e5cc6e3452-eaa701c72a30",
+      "source_sha256": "5ff8f31181561a23dacab17c7c18eaa9bcac2d8e0aecb2af686a5107fe6efe83",
+      "recorded_at_utc": "2026-10-24T16:19:47.917359+00:00"
+    },
+    "error": null,
+    "cache_key": "7ee6d5e5cc6e345234d75e8012a5be07531835b8654f38027a9e9a03265cb937",
+    "cache_hit": false,
+    "cost_usd": 0.0
+  },
+  "saved_at": "2026-10-24T16:19:47.921973+00:00"
+}

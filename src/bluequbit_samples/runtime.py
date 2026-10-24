@@ -16,6 +16,7 @@ import psutil
 
 from .models import RunConfig, RunRecord
 from .provenance import atomic_json, package_versions, source_sha256
+from otoc.ledger import event, local_run_id, now, record_local, record_run, relative
 
 
 def _digest(value):
@@ -49,12 +50,13 @@ def _lock_busy(path):
 
 def execute(sample, method, parameters=None, config=None, output_dir="results/samples"):
     """Run one task. Only successful integrity-checked results are reused."""
-    if method not in {"exact", "mps", "pps"}:
-        raise ValueError("method must be exact, mps, or pps")
+    if method not in {"exact", "mps", "pps", "pps_threshold"}:
+        raise ValueError("Unknown local simulation method")
     parameters = parameters or {}
     if method == "exact" and parameters:
         raise ValueError("Exact execution does not accept approximation parameters")
-    if set(parameters) - ({"chi"} if method == "mps" else {"eta"} if method == "pps" else set()):
+    allowed = {"mps": {"chi"}, "pps": {"eta"}, "pps_threshold": {"epsilon", "level"}}
+    if set(parameters) - allowed.get(method, set()):
         raise ValueError("Unsupported method parameter")
     config = config or RunConfig()
     root = Path(output_dir)
@@ -73,6 +75,8 @@ def execute(sample, method, parameters=None, config=None, output_dir="results/sa
                 result = RunRecord(**saved["record"])
                 if result.succeeded:
                     result.cache_hit = True
+                    event("cache_reuse", {"circuit_id": sample.circuit_id, "cache_key": key,
+                                          "source_attempt": result.diagnostics.get("attempt_directory")})
                     return result
         except (OSError, ValueError, KeyError, TypeError):
             pass
@@ -87,6 +91,7 @@ def execute(sample, method, parameters=None, config=None, output_dir="results/sa
     except FileExistsError:
         record.status = "ALREADY_RUNNING"
         record.error = "Equivalent task has an active or unverified writer lock"
+        event("blocked_duplicate", {"circuit_id": sample.circuit_id, "cache_key": key})
         return record
     owner = {"hostname": platform.node(), "parent_pid": os.getpid(),
              "created_at": datetime.now(timezone.utc).isoformat()}
@@ -97,6 +102,11 @@ def execute(sample, method, parameters=None, config=None, output_dir="results/sa
     request_path, response_path = attempt / "request.json", attempt / "response.json"
     atomic_json(request_path, {"sample": asdict(sample), "method": method,
                               "parameters": parameters, "config": asdict(config)})
+    record_run(local_run_id(attempt), {"circuit_id": sample.circuit_id, "problem": sample.sample,
+               "qubit": sample.qubit, "origin": "local", "method": method, "parameters": parameters,
+               "status": "RUNNING", "started_at": now(), "cost_usd": 0.0,
+               "input_sha256": sample.qasm_sha256, "source_sha256": identity["source_sha256"],
+               "reason": "Sample calibration from public QASM", "request": relative(request_path)})
     process = None
     started = time.perf_counter()
     peak_rss = 0
@@ -150,6 +160,7 @@ def execute(sample, method, parameters=None, config=None, output_dir="results/sa
                               attempt_directory=str(attempt), source_sha256=identity["source_sha256"],
                               recorded_at_utc=datetime.now(timezone.utc).isoformat())
     atomic_json(attempt / "record.json", record.to_dict())
+    record_local(record.to_dict())
     if record.succeeded:
         payload = record.to_dict()
         atomic_json(cache_path, {"identity": identity, "record": payload, "record_sha256": _digest(payload)})

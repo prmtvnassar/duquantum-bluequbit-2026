@@ -1,0 +1,71 @@
+{
+  "key": "9b4e5433dbd9ff4ea9335947b90656e5eb7798e33e20db5985f8ff9e37a015b6",
+  "action": {
+    "circuit_id": "Duke_S3_3",
+    "method": "pps_threshold",
+    "parameters": {
+      "epsilon": 0.003,
+      "level": 1
+    },
+    "input_sha256": "70bcf231e2725c8480a0bf0947feaf78f1090a62a3c2b96d692adf4e28f8506e",
+    "engine_source": "5ff8f31181561a23dacab17c7c18eaa9bcac2d8e0aecb2af686a5107fe6efe83",
+    "origin": "local"
+  },
+  "record": {
+    "circuit_id": "Duke_S3_3",
+    "sample": "S3",
+    "qubit": 3,
+    "num_qubits": 30,
+    "qasm_sha256": "70bcf231e2725c8480a0bf0947feaf78f1090a62a3c2b96d692adf4e28f8506e",
+    "dataset_kind": "official",
+    "method": "pps_threshold",
+    "parameters": {
+      "epsilon": 0.003,
+      "level": 1
+    },
+    "status": "SUCCEEDED",
+    "estimate": -0.241469067964171,
+    "dtype": "complex128",
+    "backend": "local.numpy.coefficient_pauli",
+    "wall_seconds": 2.765707000000475,
+    "compute_seconds": 2.2403966000001674,
+    "peak_rss": 167641088,
+    "package_versions": {
+      "python": "3.12.14",
+      "qiskit": "2.6.1",
+      "qiskit-aer": "0.18.0",
+      "quimb": "1.15.0",
+      "qiskit-addon-obp": "0.3.0",
+      "qiskit-addon-utils": "0.4.0",
+      "numpy": "2.3.5",
+      "scipy": "1.18.1",
+      "pandas": "2.3.3",
+      "matplotlib": "3.11.2",
+      "psutil": "7.2.2"
+    },
+    "diagnostics": {
+      "epsilon_semantics": "coefficient magnitude cutoff after gate and duplicate merging",
+      "transpilation_semantics": "Qiskit u3/CZ optimization, not BlueQubit rotation transpilation",
+      "transpilation_level": 1,
+      "numerical_atol": 1e-12,
+      "total_gates": 3023,
+      "propagated_gates": 3023,
+      "peak_num_paulis": 2781,
+      "final_num_paulis": 1570,
+      "discarded_l1_sum": 22.66548674115945,
+      "max_paulis": 100000,
+      "complete": true,
+      "worker_peak_rss": 163274752,
+      "memory_limit_bytes": 734003200,
+      "profile": "local",
+      "attempt_directory": "results\\workflow\\local\\attempts\\cd08949f0d57686e-0444bc9bdfc5",
+      "source_sha256": "5ff8f31181561a23dacab17c7c18eaa9bcac2d8e0aecb2af686a5107fe6efe83",
+      "recorded_at_utc": "2026-10-24T16:15:02.259423+00:00"
+    },
+    "error": null,
+    "cache_key": "cd08949f0d57686eaaf1a1be157e67ffdbbe927205c51e7036219b0bdf3899e4",
+    "cache_hit": false,
+    "cost_usd": 0.0
+  },
+  "saved_at": "2026-10-24T16:15:02.269176+00:00"
+}

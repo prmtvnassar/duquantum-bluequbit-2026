@@ -116,8 +116,11 @@ def run_mps(sample: SampleCircuit, chi=32, config: RunConfig | None = None):
             mps.apply_gate_raw(matrix, tuple(sites))
         psi = mps.psi
         norm_squared = float(np.real(psi.norm() ** 2))
-        if not math.isfinite(norm_squared) or norm_squared <= 1e-24:
+        if not math.isfinite(norm_squared) or norm_squared <= np.finfo(float).tiny:
             raise ValueError(f"Degenerate MPS norm: {norm_squared}")
+        # Truncation can make a perfectly representable state very small.
+        # Global normalization preserves the normalized expectation value.
+        psi.normalize()
         z = np.diag(np.array([1.0, -1.0], dtype=np.complex128))
         # This API divides <psi|Z|psi> by <psi|psi>; a truncated state need not have unit norm.
         value = psi.local_expectation_canonical(z, (sample.qubit,), normalized=True)
@@ -138,6 +141,14 @@ def _single_gate_slices(circuit):
         piece.append(instruction.operation.copy(), sites)
         slices.append(piece)
     return slices
+
+
+def run_coefficient_pps(sample, epsilon=1e-2, level=1, config=None):
+    from .coefficient_pps import propagate
+    config = config or RunConfig()
+    record = _record(sample, "pps_threshold", {"epsilon": float(epsilon), "level": level},
+                     "local.numpy.coefficient_pauli")
+    return _finish(record, lambda: propagate(sample, epsilon, config.max_paulis, level))
 
 
 def run_pps(sample: SampleCircuit, eta=1e-3, config: RunConfig | None = None):

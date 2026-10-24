@@ -1,0 +1,71 @@
+{
+  "key": "a7555aff855db6f34eeddd78fd667f6200db3dcbd8ac23ca5ca0c811efb56fb2",
+  "action": {
+    "circuit_id": "Duke_S3_1",
+    "method": "pps_threshold",
+    "parameters": {
+      "epsilon": 0.0001,
+      "level": 1
+    },
+    "input_sha256": "ce1a5694cf4a39ea28eeaeb9d85a16e499c4640477a9e8ad35915f48cdc5a26f",
+    "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+    "origin": "local"
+  },
+  "record": {
+    "circuit_id": "Duke_S3_1",
+    "sample": "S3",
+    "qubit": 1,
+    "num_qubits": 30,
+    "qasm_sha256": "ce1a5694cf4a39ea28eeaeb9d85a16e499c4640477a9e8ad35915f48cdc5a26f",
+    "dataset_kind": "official",
+    "method": "pps_threshold",
+    "parameters": {
+      "epsilon": 0.0001,
+      "level": 1
+    },
+    "status": "SUCCEEDED",
+    "estimate": -0.5382428055826809,
+    "dtype": "complex128",
+    "backend": "local.numpy.coefficient_pauli",
+    "wall_seconds": 2.69329739999921,
+    "compute_seconds": 2.1869010999998864,
+    "peak_rss": 169472000,
+    "package_versions": {
+      "python": "3.12.14",
+      "qiskit": "2.6.1",
+      "qiskit-aer": "0.18.0",
+      "quimb": "1.15.0",
+      "qiskit-addon-obp": "0.3.0",
+      "qiskit-addon-utils": "0.4.0",
+      "numpy": "2.3.5",
+      "scipy": "1.18.1",
+      "pandas": "2.3.3",
+      "matplotlib": "3.11.2",
+      "psutil": "7.2.2"
+    },
+    "diagnostics": {
+      "epsilon_semantics": "coefficient magnitude cutoff after gate and duplicate merging",
+      "transpilation_semantics": "Qiskit u3/CZ optimization, not BlueQubit rotation transpilation",
+      "transpilation_level": 1,
+      "numerical_atol": 1e-12,
+      "total_gates": 2889,
+      "propagated_gates": 2889,
+      "peak_num_paulis": 16244,
+      "final_num_paulis": 16244,
+      "discarded_l1_sum": 0.9122178073505061,
+      "max_paulis": 100000,
+      "complete": true,
+      "worker_peak_rss": 165916672,
+      "memory_limit_bytes": 734003200,
+      "profile": "local",
+      "attempt_directory": "results\\workflow\\local\\attempts\\5cb6f3fbd6da5079-9129bda60ec3",
+      "source_sha256": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "recorded_at_utc": "2026-10-24T16:24:19.310202+00:00"
+    },
+    "error": null,
+    "cache_key": "5cb6f3fbd6da507962d1955013af65999f5135cff750cab8075c591de3fd370d",
+    "cache_hit": false,
+    "cost_usd": 0.0
+  },
+  "saved_at": "2026-10-24T16:24:19.441852+00:00"
+}

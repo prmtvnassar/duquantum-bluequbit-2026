@@ -1,0 +1,67 @@
+{
+  "circuit_id": "Duke_G4_4",
+  "problem": "G4",
+  "qubit": 4,
+  "origin": "bluequbit",
+  "method": "mps.cpu",
+  "backend": "mps.cpu",
+  "parameters": {
+    "mps_bond_dimension": 16
+  },
+  "status": "COMPLETED",
+  "estimate": -0.005732456237543289,
+  "job_id": "MS0yy70CXbc5UdNl",
+  "cost_usd": 0.0,
+  "started_at": "2026-10-24T17:52:03.002212+00:00",
+  "finished_at": "2026-10-24T17:52:20.952759+00:00",
+  "wall_seconds": 12.483,
+  "reason": "Missing baseline row; use an unattempted direct method. Flat primary pilot replaced by a complete nonconstant independent-method pilot; signal recovery only, accuracy uncertified",
+  "quote": {
+    "circuit_id": "Duke_G4_4",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 16
+    },
+    "quoted_at": "2026-10-24T17:52:02.984472+00:00",
+    "cost_usd": 0.2,
+    "runtime_seconds": 114.1,
+    "error": null,
+    "warning": "This is just an estimate; the actual runtime may be less or more.",
+    "binding_cost_cap": false
+  },
+  "error": null,
+  "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIII",
+  "remote_receipt": {
+    "action": {
+      "circuit_id": "Duke_G4_4",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 16
+      },
+      "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZIIII"
+    },
+    "status": "COMPLETED",
+    "requested_at": "2026-10-24T17:52:03.002212+00:00",
+    "quote": {
+      "circuit_id": "Duke_G4_4",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 16
+      },
+      "quoted_at": "2026-10-24T17:52:02.984472+00:00",
+      "cost_usd": 0.2,
+      "runtime_seconds": 114.1,
+      "error": null,
+      "warning": "This is just an estimate; the actual runtime may be less or more.",
+      "binding_cost_cap": false
+    },
+    "scheduler_justification": "Missing baseline row; use an unattempted direct method. Flat primary pilot replaced by a complete nonconstant independent-method pilot; signal recovery only, accuracy uncertified",
+    "job_id": "MS0yy70CXbc5UdNl",
+    "estimate": -0.005732456237543289,
+    "cost_usd": 0.0,
+    "compute_ms": 12091,
+    "queue_ms": 392,
+    "updated_at": "2026-10-24T17:52:20.952759+00:00"
+  },
+  "run_id": "remote-ada04a2f61bbab355e77dd946e1b06ef6cba62c9ee05b0bc2b3e8717b0e85348"
+}

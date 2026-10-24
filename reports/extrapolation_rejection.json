@@ -1,0 +1,2743 @@
+{
+  "generated_at": "2026-10-24T17:56:22.965234+00:00",
+  "scope": "Offline S2 MPS replay of saved local sample outputs; no new simulations or submissions",
+  "status": "THIS_CANDIDATE_REJECTED",
+  "model": {
+    "name": "Same-sign contracting geometric differences / Aitken limit",
+    "fit": "For a=F(chi), b=F(2chi), c=F(4chi): r=(c-b)/(b-a)",
+    "next_prediction": "F(8chi)=c+(c-b)*r",
+    "limit": "F(infinity)=c+(c-b)*r/(1-r)",
+    "eligibility": "abs(b-a)>1e-12 and 0<r<0.9",
+    "fallback": "Use c directly whenever eligibility fails; no clipping or fitted correction",
+    "selection": "Fixed illustrative candidate; no gate or coefficient optimization against labels",
+    "acceptance": "Both windows must improve held-out next-level MAE and avoid exact-score degradation"
+  },
+  "record_selection": {
+    "directory": "runs/experiments",
+    "files_read": 379,
+    "policy": "Latest saved successful finite estimate for each circuit/method/full parameter signature; S2 MPS cutoff=0",
+    "input_hashes_verified": true,
+    "script_path": "scripts/evaluate_extrapolation_rejection.py",
+    "script_sha256": "203883002c87e29f596ebf2b596b1bd8720e9dde6b4f8f87daffb4ac253849a3"
+  },
+  "precision_coverage": {
+    "S1": {
+      "mps": [
+        {
+          "parameter": 1,
+          "successful_rows": 4
+        },
+        {
+          "parameter": 2,
+          "successful_rows": 4
+        },
+        {
+          "parameter": 4,
+          "successful_rows": 4
+        },
+        {
+          "parameter": 8,
+          "successful_rows": 4
+        },
+        {
+          "parameter": 16,
+          "successful_rows": 4
+        }
+      ],
+      "pps_threshold": [
+        {
+          "parameter": 1e-05,
+          "successful_rows": 4
+        },
+        {
+          "parameter": 3e-05,
+          "successful_rows": 4
+        },
+        {
+          "parameter": 0.0001,
+          "successful_rows": 4
+        },
+        {
+          "parameter": 0.0003,
+          "successful_rows": 4
+        },
+        {
+          "parameter": 0.001,
+          "successful_rows": 4
+        },
+        {
+          "parameter": 0.003,
+          "successful_rows": 4
+        },
+        {
+          "parameter": 0.01,
+          "successful_rows": 4
+        }
+      ]
+    },
+    "S2": {
+      "mps": [
+        {
+          "parameter": 8,
+          "successful_rows": 16
+        },
+        {
+          "parameter": 16,
+          "successful_rows": 16
+        },
+        {
+          "parameter": 32,
+          "successful_rows": 16
+        },
+        {
+          "parameter": 64,
+          "successful_rows": 16
+        },
+        {
+          "parameter": 128,
+          "successful_rows": 16
+        }
+      ],
+      "pps_threshold": [
+        {
+          "parameter": 0.001,
+          "successful_rows": 16
+        },
+        {
+          "parameter": 0.003,
+          "successful_rows": 16
+        },
+        {
+          "parameter": 0.01,
+          "successful_rows": 16
+        }
+      ]
+    },
+    "S3": {
+      "mps": [
+        {
+          "parameter": 8,
+          "successful_rows": 30
+        },
+        {
+          "parameter": 16,
+          "successful_rows": 13
+        }
+      ],
+      "pps_threshold": [
+        {
+          "parameter": 0.0001,
+          "successful_rows": 17
+        },
+        {
+          "parameter": 0.001,
+          "successful_rows": 30
+        },
+        {
+          "parameter": 0.003,
+          "successful_rows": 30
+        },
+        {
+          "parameter": 0.01,
+          "successful_rows": 30
+        }
+      ]
+    }
+  },
+  "windows": [
+    {
+      "fit_chis": [
+        8,
+        16,
+        32
+      ],
+      "held_out_chi": 64,
+      "row_count": 16,
+      "extrapolated_rows": 8,
+      "fallback_counts": {
+        "NOT_SAME_SIGN_STRICT_CONTRACTION": 8
+      },
+      "forecast_better_rows": 4,
+      "forecast_worse_rows": 4,
+      "held_out_finer_level": {
+        "forecast": {
+          "mae": 0.046761140845309086,
+          "rmse": 0.08173527229128395,
+          "max_absolute_error": 0.23640711298107403
+        },
+        "direct": {
+          "mae": 0.04447408290995464,
+          "rmse": 0.08138836364161166,
+          "max_absolute_error": 0.23640711298107403
+        }
+      },
+      "against_exact": {
+        "direct": {
+          "local_score": 95.79620366023775,
+          "mae": 0.05456439362114348,
+          "rmse": 0.09882049058237431,
+          "max_absolute_error": 0.2807713195479647
+        },
+        "extrapolated_with_fallback": {
+          "local_score": 95.85286848865259,
+          "mae": 0.060523395312384945,
+          "rmse": 0.10056232104995119,
+          "max_absolute_error": 0.2807713195479647
+        },
+        "held_out_finer_direct": {
+          "local_score": 99.8626417967099,
+          "mae": 0.010266643571873815,
+          "rmse": 0.017733522050991248,
+          "max_absolute_error": 0.04436420656689065
+        },
+        "extrapolated_score_gain": 0.05666482841483855
+      },
+      "held_out_mae_improved": false,
+      "exact_score_not_degraded": true,
+      "rows": [
+        {
+          "circuit_id": "Duke_S2_0",
+          "precision_values": [
+            0.08575373963249527,
+            -0.0675837393489398,
+            -0.04850506263613452,
+            -0.044261085029267455
+          ],
+          "exact_reference": -0.043632055230053896,
+          "fit_record_keys": [
+            "49907900559b6cb6766c1947157eecc594dd74f67e7c2efdef6bc2dff4738d59",
+            "d5154f6391cead480dd9a26f561e626c8a93d6d54a7966fdc3a4435e027ae5a9",
+            "6747845cd8f7a5e342aaf3aecaff1c111a556e75b75b0b67a34c98978e248edc"
+          ],
+          "held_out_record_key": "bc8e13ed4b209fd277869bfeb2e5e40462bada03e85e69dd170287a420795274",
+          "reference_record_key": "d139fc6d3bf7678477487c4c766d60beed475e8952646b806f2b22a0b14b6954",
+          "consecutive_difference_ratio": -0.12442278847635924,
+          "eligible": false,
+          "fallback_reason": "NOT_SAME_SIGN_STRICT_CONTRACTION",
+          "predicted_next_value": -0.04850506263613452,
+          "extrapolated_limit_or_direct_fallback": -0.04850506263613452,
+          "held_out_forecast_abs_error": 0.0042439776068670665,
+          "held_out_direct_abs_error": 0.0042439776068670665,
+          "limit_exact_abs_error": 0.004873007406080626,
+          "direct_exact_abs_error": 0.004873007406080626
+        },
+        {
+          "circuit_id": "Duke_S2_1",
+          "precision_values": [
+            -0.124211092181914,
+            0.011254188281830002,
+            0.06574062556501259,
+            0.07346789113081253
+          ],
+          "exact_reference": 0.07517615297527865,
+          "fit_record_keys": [
+            "da798ec4a9f446d47eb89c5adf9f7eef732d20896ffdbcaaeaffa4e6be58b820",
+            "0fae990cc7fe910b71ffc37a74c8ff8777dbd04c561523897b604950debf24a0",
+            "7d26e6b1096c58e90468729a80f52afe7c5f97cb3285fa57b566bdfa3ea765f5"
+          ],
+          "held_out_record_key": "f63d55ef477f2a02beb8813c9a643248be3bae5f0f5303d692a44546546cc29c",
+          "reference_record_key": "5bf4c2bcce4df02b850ec87874382b3473a7bc0f04f702996c6afd3d941e28a3",
+          "consecutive_difference_ratio": 0.40221698945041023,
+          "eligible": true,
+          "fallback_reason": null,
+          "predicted_next_value": 0.08765599633493287,
+          "extrapolated_limit_or_direct_fallback": 0.10240170556086549,
+          "held_out_forecast_abs_error": 0.014188105204120338,
+          "held_out_direct_abs_error": 0.007727265565799946,
+          "limit_exact_abs_error": 0.027225552585586843,
+          "direct_exact_abs_error": 0.009435527410266056
+        },
+        {
+          "circuit_id": "Duke_S2_2",
+          "precision_values": [
+            -0.07694186387523294,
+            -0.06814667449303058,
+            -0.0220489363363372,
+            -0.014022033775377418
+          ],
+          "exact_reference": -0.0124787300429564,
+          "fit_record_keys": [
+            "da3104c451a37bb3e0664048d82293c9b36b53f7d992c939c0f64a0e64c74a18",
+            "f18e7ed558915c087bad57d28a5b353ad1354a0dc58583f83b0bfc70811503b9",
+            "1e5eae42782caf7735a52e3fad7aefab5a8d90470ac37ddb8dc79b6cf497111a"
+          ],
+          "held_out_record_key": "eb418b551bed8b8173e901cf42bbb4ccdf10d1f75c3bd3427958d1e83d25fe6e",
+          "reference_record_key": "eb130d4ccbf82899c44a1222b588031bbf040f27a5456ea683c6a024ac48092d",
+          "consecutive_difference_ratio": 5.2412445205529234,
+          "eligible": false,
+          "fallback_reason": "NOT_SAME_SIGN_STRICT_CONTRACTION",
+          "predicted_next_value": -0.0220489363363372,
+          "extrapolated_limit_or_direct_fallback": -0.0220489363363372,
+          "held_out_forecast_abs_error": 0.008026902560959781,
+          "held_out_direct_abs_error": 0.008026902560959781,
+          "limit_exact_abs_error": 0.0095702062933808,
+          "direct_exact_abs_error": 0.0095702062933808
+        },
+        {
+          "circuit_id": "Duke_S2_3",
+          "precision_values": [
+            -0.0459065631897323,
+            0.011926250501473001,
+            0.04869810666578589,
+            0.043425090955639845
+          ],
+          "exact_reference": 0.043994649985982105,
+          "fit_record_keys": [
+            "5c9bb82be3780ecb74a7dc04102e3a81bb5e39233154bf4a6447297089a88276",
+            "7c48620b098ff4c5cc23c61046ebe9eb9a340129c2e6e329199d595efb3dfe2a",
+            "63d7e35b297bcf33f2a743a66d26420c79c80219a005108575eb90bbd5ef1279"
+          ],
+          "held_out_record_key": "806d0e252175ffe88c97e54d7efcfec7e46ed649cf5f95f75a76c51d2178db7c",
+          "reference_record_key": "fb883e392ffbfc4f1ad5daea4de10fbb63743ec707d4b01705cf3afe51dbdcac",
+          "consecutive_difference_ratio": 0.6358303153060115,
+          "eligible": true,
+          "fallback_reason": null,
+          "predicted_next_value": 0.07207876756512827,
+          "extrapolated_limit_or_direct_fallback": 0.11290076241125005,
+          "held_out_forecast_abs_error": 0.02865367660948842,
+          "held_out_direct_abs_error": 0.005273015710146045,
+          "limit_exact_abs_error": 0.06890611242526795,
+          "direct_exact_abs_error": 0.004703456679803784
+        },
+        {
+          "circuit_id": "Duke_S2_4",
+          "precision_values": [
+            0.06475386567830177,
+            -0.04430974756207329,
+            -0.08451949984061258,
+            -0.0839277840040985
+          ],
+          "exact_reference": -0.0830515044567818,
+          "fit_record_keys": [
+            "b392b03a1eeb23905bed3cb6a8c2af1316f748f5ec23ad82b96767c134844c22",
+            "f4e2b845a5cfe2695693494387495b97cee0d95b792eabbaff989d200f72237b",
+            "2634acfe103a72a1177e26b3afb1efcec48661d4c95bc10e2659dc1bf9f675c1"
+          ],
+          "held_out_record_key": "4c4ce6cdf850eda91d6e411ff1319f7886b277011aae7eb16dc38d5ca3f53690",
+          "reference_record_key": "4ec33d8543dd935a3888c99f835eac070d199affc266a3df902a1ccf0b4217f4",
+          "consecutive_difference_ratio": 0.36868164444467305,
+          "eligible": true,
+          "fallback_reason": null,
+          "predicted_next_value": -0.09934409743337738,
+          "extrapolated_limit_or_direct_fallback": -0.10800146810957671,
+          "held_out_forecast_abs_error": 0.015416313429278877,
+          "held_out_direct_abs_error": 0.0005917158365140729,
+          "limit_exact_abs_error": 0.024949963652794907,
+          "direct_exact_abs_error": 0.0014679953838307724
+        },
+        {
+          "circuit_id": "Duke_S2_5",
+          "precision_values": [
+            -0.009056762335835578,
+            -0.0015838878491468145,
+            0.0506522547779526,
+            0.04716977355066593
+          ],
+          "exact_reference": 0.04745186216197257,
+          "fit_record_keys": [
+            "46dbac4de9c320d3c28e7d48c5b8ec92a418094be211e4b7e68e425dee0b35a7",
+            "885e3e833d0e945bbecacef534de9a1868345ac83986206152b803387c1c92d5",
+            "8b525fc03f9203aad36e5f0164a92b617e4f938bdc4836c13aa4568e75467d11"
+          ],
+          "held_out_record_key": "193ac2436aed87d9f6d7635ecaf7fafa956d364ac2539ed7ba9a089948e5a02d",
+          "reference_record_key": "fc854b29cb97735d7f115b868375b074689bfc7129c06dde84ff107c724ff693",
+          "consecutive_difference_ratio": 6.990100358322128,
+          "eligible": false,
+          "fallback_reason": "NOT_SAME_SIGN_STRICT_CONTRACTION",
+          "predicted_next_value": 0.0506522547779526,
+          "extrapolated_limit_or_direct_fallback": 0.0506522547779526,
+          "held_out_forecast_abs_error": 0.003482481227286671,
+          "held_out_direct_abs_error": 0.003482481227286671,
+          "limit_exact_abs_error": 0.0032003926159800272,
+          "direct_exact_abs_error": 0.0032003926159800272
+        },
+        {
+          "circuit_id": "Duke_S2_6",
+          "precision_values": [
+            0.14045200430171156,
+            -0.021473735240390757,
+            -0.046417344343539335,
+            -0.038640193516718935
+          ],
+          "exact_reference": -0.039199208760549796,
+          "fit_record_keys": [
+            "0862270c6aab2be5c84db1f56f26c9c7e703445329588b7e3e12b46473c4ca26",
+            "aab9ca4e57c6d3d06f7844783e432d77bcb61054b9b89838a49eb4291df91a1e",
+            "76ab4aaa911a1b755ecb98f353dbc737977d2d755aba0a8300491999422fb278"
+          ],
+          "held_out_record_key": "5eb4dac6735e78c68fee35e8e2e1488487ccca8b05ff69a98a9f48a0a8d75bdf",
+          "reference_record_key": "c6d3aac0b1c91f03f1f89d3ebb9ceefc0120e93557893ac48bbdcf6b77efc5a4",
+          "consecutive_difference_ratio": 0.1540435089176356,
+          "eligible": true,
+          "fallback_reason": null,
+          "predicted_next_value": -0.05025974541485822,
+          "extrapolated_limit_or_direct_fallback": -0.05095942317598934,
+          "held_out_forecast_abs_error": 0.011619551898139284,
+          "held_out_direct_abs_error": 0.0077771508268204,
+          "limit_exact_abs_error": 0.011760214415439542,
+          "direct_exact_abs_error": 0.007218135582989539
+        },
+        {
+          "circuit_id": "Duke_S2_7",
+          "precision_values": [
+            -0.12639582055051596,
+            -0.232994988343659,
+            -0.14594343700429202,
+            -0.14095250420042332
+          ],
+          "exact_reference": -0.13670932682616133,
+          "fit_record_keys": [
+            "e3340d73e82fb22267f68fc03c79edee45b70eb8819feb33b8a53bc3e6c6a635",
+            "a81090364ac71e78430c2ad8a4657e6ace6e3edb2086348a75c30a610e1bd2b8",
+            "ba17cbf86b9b45cc90abec6d05a3f4911945ab1ca72a0bc46cec5a7435226518"
+          ],
+          "held_out_record_key": "69170898581b9ff1f62eb2247cbd5dde4c3eaf38808b624fdb72ba3904d18f29",
+          "reference_record_key": "9ec32a392515eb1f1951468c4855dd912edee3bd11864c6d06a9615fb578cf2b",
+          "consecutive_difference_ratio": -0.8166250557254964,
+          "eligible": false,
+          "fallback_reason": "NOT_SAME_SIGN_STRICT_CONTRACTION",
+          "predicted_next_value": -0.14594343700429202,
+          "extrapolated_limit_or_direct_fallback": -0.14594343700429202,
+          "held_out_forecast_abs_error": 0.004990932803868697,
+          "held_out_direct_abs_error": 0.004990932803868697,
+          "limit_exact_abs_error": 0.009234110178130694,
+          "direct_exact_abs_error": 0.009234110178130694
+        },
+        {
+          "circuit_id": "Duke_S2_8",
+          "precision_values": [
+            0.5508977743428685,
+            0.5086478689848121,
+            0.29274665742788397,
+            0.136613521513742
+          ],
+          "exact_reference": 0.105195222718198,
+          "fit_record_keys": [
+            "fefe8d29faeb26170e0df9ec90ca06e9054f1c07d00df8c27a860fc7cf66ca32",
+            "995978f4ed073a086fcccc609b617a922682534ca57abd6b13b6e2bda297af40",
+            "1d917c94fb8444577949fed7f94220d95bbdce23f9a46fb1996837b85b8adde8"
+          ],
+          "held_out_record_key": "409c49ca21ac8d9a091b76f3a260ccf401fe8162cd2bcf675882f68d69b72c99",
+          "reference_record_key": "b9cc73d5e8affcb8b5e947b72bb0d0d04b02f9d4922e07dc450d75ca4f4a2a76",
+          "consecutive_difference_ratio": 5.110099294358753,
+          "eligible": false,
+          "fallback_reason": "NOT_SAME_SIGN_STRICT_CONTRACTION",
+          "predicted_next_value": 0.29274665742788397,
+          "extrapolated_limit_or_direct_fallback": 0.29274665742788397,
+          "held_out_forecast_abs_error": 0.15613313591414196,
+          "held_out_direct_abs_error": 0.15613313591414196,
+          "limit_exact_abs_error": 0.18755143470968597,
+          "direct_exact_abs_error": 0.18755143470968597
+        },
+        {
+          "circuit_id": "Duke_S2_9",
+          "precision_values": [
+            0.33426109139362936,
+            0.604435035987615,
+            0.34353873077833735,
+            0.10713161779726332
+          ],
+          "exact_reference": 0.06276741123037267,
+          "fit_record_keys": [
+            "9ff36473a30ec0e8cc1cc06e1b70b0274ecc569977fe0947b03fdfae1b80bd87",
+            "6e27b13e278aea349784e05dc290ed93c97292bf8ab1e1b2e59d033a57a82307",
+            "128b741a0968ccd98cdc7b4cc194d42421e0080aafca2dae50dfbd3bdb0acc75"
+          ],
+          "held_out_record_key": "d182a88f44a04c519d7ac42044ad593f29fe104acd9bd7595f63c9a553dcec74",
+          "reference_record_key": "3485d6d51be0aecdfbd52f73a777be5602fdc3a44a977182c2ed4ca6fe34b327",
+          "consecutive_difference_ratio": -0.9656604955054037,
+          "eligible": false,
+          "fallback_reason": "NOT_SAME_SIGN_STRICT_CONTRACTION",
+          "predicted_next_value": 0.34353873077833735,
+          "extrapolated_limit_or_direct_fallback": 0.34353873077833735,
+          "held_out_forecast_abs_error": 0.23640711298107403,
+          "held_out_direct_abs_error": 0.23640711298107403,
+          "limit_exact_abs_error": 0.2807713195479647,
+          "direct_exact_abs_error": 0.2807713195479647
+        },
+        {
+          "circuit_id": "Duke_S2_10",
+          "precision_values": [
+            0.4802080370029011,
+            0.8324717160948025,
+            0.7249710038216917,
+            0.6112367703890367
+          ],
+          "exact_reference": 0.5824809854862115,
+          "fit_record_keys": [
+            "357bc58815af84d332e576402b00573d60264c35bd0a788f4111eaba2d0f052b",
+            "5475bb2596606290370442b2d1d2446494bb50a986a23b15f1d91b627f66ed83",
+            "97f6149f0c7e2bdf18c07debdb6d5ca1e100abf9ed4208f42bacef92653e317e"
+          ],
+          "held_out_record_key": "72d9721ecaf2821a797df6286e876bd538e272da40f93df64b5abfe0cae6b702",
+          "reference_record_key": "9cc5a9ee8a999b9f626abbef6e2ab5c6b1255dcdadc00eed41c770cc151bbadf",
+          "consecutive_difference_ratio": -0.3051711506285188,
+          "eligible": false,
+          "fallback_reason": "NOT_SAME_SIGN_STRICT_CONTRACTION",
+          "predicted_next_value": 0.7249710038216917,
+          "extrapolated_limit_or_direct_fallback": 0.7249710038216917,
+          "held_out_forecast_abs_error": 0.11373423343265499,
+          "held_out_direct_abs_error": 0.11373423343265499,
+          "limit_exact_abs_error": 0.14249001833548014,
+          "direct_exact_abs_error": 0.14249001833548014
+        },
+        {
+          "circuit_id": "Duke_S2_11",
+          "precision_values": [
+            0.32802760162508104,
+            0.8266651985970515,
+            0.7504290827022944,
+            0.6425273929509294
+          ],
+          "exact_reference": 0.6084367166324411,
+          "fit_record_keys": [
+            "1aea8bb16cde5c2c4a601556cd4184052abf38051313f3056df826bb5b065f16",
+            "a614613906cb037d222139bce7756f57fa835adbe5343cf0b43c8030a6f691e9",
+            "073f35a03c7418df41c524467af53b32cc434d4a4bf77ff45a39c6267a7c58bf"
+          ],
+          "held_out_record_key": "cb7c5720ec5a1e73fd121904da418c592daa1fd1bd3e03bb7446dbfbaab0f980",
+          "reference_record_key": "00c5f98b6ef81aaf11f8b6157e0d2c0160ccf97a00733f3ceffb35fa7f1a3a7d",
+          "consecutive_difference_ratio": -0.1528888241835533,
+          "eligible": false,
+          "fallback_reason": "NOT_SAME_SIGN_STRICT_CONTRACTION",
+          "predicted_next_value": 0.7504290827022944,
+          "extrapolated_limit_or_direct_fallback": 0.7504290827022944,
+          "held_out_forecast_abs_error": 0.10790168975136494,
+          "held_out_direct_abs_error": 0.10790168975136494,
+          "limit_exact_abs_error": 0.14199236606985322,
+          "direct_exact_abs_error": 0.14199236606985322
+        },
+        {
+          "circuit_id": "Duke_S2_12",
+          "precision_values": [
+            0.8178208835938556,
+            0.9500293583611145,
+            0.9756671955982243,
+            0.99521583483904
+          ],
+          "exact_reference": 1.0000000000001097,
+          "fit_record_keys": [
+            "063f9d9fd503562af6eae9e35d74819e290e94693639462424249f1cf33b0d13",
+            "2d99969d3bb05242d3e9bb43697821241a33275167a1b91e260552764b72fd25",
+            "fb9b3d39e76d9742a48f2e48a969f92c01e33356d5b73b8a5db78ba28a53376c"
+          ],
+          "held_out_record_key": "ca5302fbc591d085c109c1054d6a0eb44758b58d8a8b1c9869d7eb4db8fd4cd6",
+          "reference_record_key": "a33e05f33b47eec0ce156dc0c075b1825c7f89057aa421f23ae957acdc658500",
+          "consecutive_difference_ratio": 0.19391977165036506,
+          "eligible": true,
+          "fallback_reason": null,
+          "predicted_next_value": 0.9806388791408539,
+          "extrapolated_limit_or_direct_fallback": 0.9818349235337036,
+          "held_out_forecast_abs_error": 0.014576955698186067,
+          "held_out_direct_abs_error": 0.019548639240815624,
+          "limit_exact_abs_error": 0.018165076466406083,
+          "direct_exact_abs_error": 0.024332804401885344
+        },
+        {
+          "circuit_id": "Duke_S2_13",
+          "precision_values": [
+            0.7855933467969524,
+            0.9521885162813222,
+            0.9766447883790527,
+            0.9951427949920387
+          ],
+          "exact_reference": 1.0000000000001097,
+          "fit_record_keys": [
+            "dfbceb00dad46fffa4610362875805622a760403f5db5bb121c27aafaff43bc5",
+            "bc1033e53b16745b9f5a58166aaf6923cd73966dfb71f203134309ff63c63995",
+            "d76d6bcf68cc54d1cfecf5a0642b5a7ced790848cc19976e1ded79c5be8e2f4f"
+          ],
+          "held_out_record_key": "3755c8ae907c76fcb5a90d3be0f45bf94ec9bf58a080c292462ad06833312a4f",
+          "reference_record_key": "705f8206c00e75daa75f43a417482ef74943dfd9f7da3c44cf0e039d0073032c",
+          "consecutive_difference_ratio": 0.1468006075651852,
+          "eligible": true,
+          "fallback_reason": null,
+          "predicted_next_value": 0.980234983981779,
+          "extrapolated_limit_or_direct_fallback": 0.9808527093346464,
+          "held_out_forecast_abs_error": 0.01490781101025973,
+          "held_out_direct_abs_error": 0.018498006612986062,
+          "limit_exact_abs_error": 0.01914729066546328,
+          "direct_exact_abs_error": 0.023355211621057026
+        },
+        {
+          "circuit_id": "Duke_S2_14",
+          "precision_values": [
+            0.9466017426222721,
+            0.9799832230273403,
+            0.9886504851498346,
+            0.9973086116136591
+          ],
+          "exact_reference": 1.0000000000001097,
+          "fit_record_keys": [
+            "7936fe8627473cad29077ff15eaeeb81e752e07085795dee5f5ec53a15f855cd",
+            "51c69e3514592d192f946565693cc234a8b5a20419370f21b050c38f97a5924d",
+            "108d024b53fdd743207eab4d18ae55beeea89360484aa9c9a3c6639dc29d74ee"
+          ],
+          "held_out_record_key": "c720dd3a7887cf10daa3972d32a6506dee68ee89f8e0184cf6758d6d6b5fefd5",
+          "reference_record_key": "eb26d23c2b7f1f8975332879e92c1ab3df07309a0de08b1914cea0fc42578ba6",
+          "consecutive_difference_ratio": 0.2596428324124994,
+          "eligible": true,
+          "fallback_reason": null,
+          "predicted_next_value": 0.9909008776365805,
+          "extrapolated_limit_or_direct_fallback": 0.9916900889860195,
+          "held_out_forecast_abs_error": 0.006407733977078611,
+          "held_out_direct_abs_error": 0.008658126463824578,
+          "limit_exact_abs_error": 0.008309911014090177,
+          "direct_exact_abs_error": 0.011349514850275133
+        },
+        {
+          "circuit_id": "Duke_S2_15",
+          "precision_values": [
+            0.9060974749153685,
+            0.9795151076732063,
+            0.9885152031484783,
+            0.9971061431726276
+          ],
+          "exact_reference": 1.0000000000001101,
+          "fit_record_keys": [
+            "21a7dfe65770048672cd5ab73b687e5701e981eec72a591e47e872a34eb44d37",
+            "56e1ea09903a440f5d4a7783963807a1c68926d8d3abed540021c460e97d5c28",
+            "9037d42bdd56fa0eac6e5a780586fab608797882eb757695456cdc499e24c2ff"
+          ],
+          "held_out_record_key": "589919f63a823a0c39961739b30cac52674266a41e5991e7d9adbf98c5b0961a",
+          "reference_record_key": "51e2099765daf5bc3c19a323a2f828493be64b1e85f2010e4975c277068112da",
+          "consecutive_difference_ratio": 0.12258765554261512,
+          "eligible": true,
+          "fallback_reason": null,
+          "predicted_next_value": 0.9896185037524516,
+          "extrapolated_limit_or_direct_fallback": 0.989772651383556,
+          "held_out_forecast_abs_error": 0.00748763942017594,
+          "held_out_direct_abs_error": 0.008590940024149285,
+          "limit_exact_abs_error": 0.010227348616554166,
+          "direct_exact_abs_error": 0.01148479685163184
+        }
+      ]
+    },
+    {
+      "fit_chis": [
+        16,
+        32,
+        64
+      ],
+      "held_out_chi": 128,
+      "row_count": 16,
+      "extrapolated_rows": 7,
+      "fallback_counts": {
+        "NOT_SAME_SIGN_STRICT_CONTRACTION": 9
+      },
+      "forecast_better_rows": 4,
+      "forecast_worse_rows": 3,
+      "held_out_finer_level": {
+        "forecast": {
+          "mae": 0.01343664854878832,
+          "rmse": 0.025792694648506212,
+          "max_absolute_error": 0.08362550662430389
+        },
+        "direct": {
+          "mae": 0.009550085851074724,
+          "rmse": 0.016504732030498067,
+          "max_absolute_error": 0.04107088368538786
+        }
+      },
+      "against_exact": {
+        "direct": {
+          "local_score": 99.8626417967099,
+          "mae": 0.010266643571873815,
+          "rmse": 0.017733522050991248,
+          "max_absolute_error": 0.04436420656689065
+        },
+        "extrapolated_with_fallback": {
+          "local_score": 95.99984331241748,
+          "mae": 0.03794905480152689,
+          "rmse": 0.09741358353130569,
+          "max_absolute_error": 0.37645088334243315
+        },
+        "held_out_finer_direct": {
+          "local_score": 99.99933879722512,
+          "mae": 0.0007196096272730575,
+          "rmse": 0.0012325501021894134,
+          "max_absolute_error": 0.0032933228815027887
+        },
+        "extrapolated_score_gain": -3.862798484292412
+      },
+      "held_out_mae_improved": false,
+      "exact_score_not_degraded": false,
+      "rows": [
+        {
+          "circuit_id": "Duke_S2_0",
+          "precision_values": [
+            -0.0675837393489398,
+            -0.04850506263613452,
+            -0.044261085029267455,
+            -0.043687495005271804
+          ],
+          "exact_reference": -0.043632055230053896,
+          "fit_record_keys": [
+            "d5154f6391cead480dd9a26f561e626c8a93d6d54a7966fdc3a4435e027ae5a9",
+            "6747845cd8f7a5e342aaf3aecaff1c111a556e75b75b0b67a34c98978e248edc",
+            "bc8e13ed4b209fd277869bfeb2e5e40462bada03e85e69dd170287a420795274"
+          ],
+          "held_out_record_key": "75c24525638ed40320c66deda4d774cb30ba5c5e7d96b348c69852fd8528da6b",
+          "reference_record_key": "d139fc6d3bf7678477487c4c766d60beed475e8952646b806f2b22a0b14b6954",
+          "consecutive_difference_ratio": 0.22244611986210672,
+          "eligible": true,
+          "fallback_reason": null,
+          "predicted_next_value": -0.04331702867783821,
+          "extrapolated_limit_or_direct_fallback": -0.0430469487802633,
+          "held_out_forecast_abs_error": 0.000370466327433594,
+          "held_out_direct_abs_error": 0.0005735900239956515,
+          "limit_exact_abs_error": 0.0005851064497905956,
+          "direct_exact_abs_error": 0.0006290297992135596
+        },
+        {
+          "circuit_id": "Duke_S2_1",
+          "precision_values": [
+            0.011254188281830002,
+            0.06574062556501259,
+            0.07346789113081253,
+            0.07504265470310872
+          ],
+          "exact_reference": 0.07517615297527865,
+          "fit_record_keys": [
+            "0fae990cc7fe910b71ffc37a74c8ff8777dbd04c561523897b604950debf24a0",
+            "7d26e6b1096c58e90468729a80f52afe7c5f97cb3285fa57b566bdfa3ea765f5",
+            "f63d55ef477f2a02beb8813c9a643248be3bae5f0f5303d692a44546546cc29c"
+          ],
+          "held_out_record_key": "29ae98e315ddfebf006c0562a5443387912f9a3a0e09483187bedbac91d2d104",
+          "reference_record_key": "5bf4c2bcce4df02b850ec87874382b3473a7bc0f04f702996c6afd3d941e28a3",
+          "consecutive_difference_ratio": 0.141819982202892,
+          "eligible": true,
+          "fallback_reason": null,
+          "predicted_next_value": 0.0745637717958313,
+          "extrapolated_limit_or_direct_fallback": 0.07474487339827644,
+          "held_out_forecast_abs_error": 0.0004788829072774198,
+          "held_out_direct_abs_error": 0.0015747635722961895,
+          "limit_exact_abs_error": 0.00043127957700220265,
+          "direct_exact_abs_error": 0.0017082618444661107
+        },
+        {
+          "circuit_id": "Duke_S2_2",
+          "precision_values": [
+            -0.06814667449303058,
+            -0.0220489363363372,
+            -0.014022033775377418,
+            -0.012542448109584936
+          ],
+          "exact_reference": -0.0124787300429564,
+          "fit_record_keys": [
+            "f18e7ed558915c087bad57d28a5b353ad1354a0dc58583f83b0bfc70811503b9",
+            "1e5eae42782caf7735a52e3fad7aefab5a8d90470ac37ddb8dc79b6cf497111a",
+            "eb418b551bed8b8173e901cf42bbb4ccdf10d1f75c3bd3427958d1e83d25fe6e"
+          ],
+          "held_out_record_key": "71a75e8de3530c8d86534eabd512d94d264ad75ae326b434c091e2922799b420",
+          "reference_record_key": "eb130d4ccbf82899c44a1222b588031bbf040f27a5456ea683c6a024ac48092d",
+          "consecutive_difference_ratio": 0.17412790479383372,
+          "eligible": true,
+          "fallback_reason": null,
+          "predicted_next_value": -0.012624326050453234,
+          "extrapolated_limit_or_direct_fallback": -0.012329631606764046,
+          "held_out_forecast_abs_error": 8.18779408682975e-05,
+          "held_out_direct_abs_error": 0.0014795856657924822,
+          "limit_exact_abs_error": 0.00014909843619235336,
+          "direct_exact_abs_error": 0.001543303732421019
+        },
+        {
+          "circuit_id": "Duke_S2_3",
+          "precision_values": [
+            0.011926250501473001,
+            0.04869810666578589,
+            0.043425090955639845,
+            0.04386938839936272
+          ],
+          "exact_reference": 0.043994649985982105,
+          "fit_record_keys": [
+            "7c48620b098ff4c5cc23c61046ebe9eb9a340129c2e6e329199d595efb3dfe2a",
+            "63d7e35b297bcf33f2a743a66d26420c79c80219a005108575eb90bbd5ef1279",
+            "806d0e252175ffe88c97e54d7efcfec7e46ed649cf5f95f75a76c51d2178db7c"
+          ],
+          "held_out_record_key": "b56ce6c0fd4cfe310bf1f30319d7838e408d940d76f9db096ee22adae5057075",
+          "reference_record_key": "fb883e392ffbfc4f1ad5daea4de10fbb63743ec707d4b01705cf3afe51dbdcac",
+          "consecutive_difference_ratio": -0.14339813814630087,
+          "eligible": false,
+          "fallback_reason": "NOT_SAME_SIGN_STRICT_CONTRACTION",
+          "predicted_next_value": 0.043425090955639845,
+          "extrapolated_limit_or_direct_fallback": 0.043425090955639845,
+          "held_out_forecast_abs_error": 0.00044429744372287416,
+          "held_out_direct_abs_error": 0.00044429744372287416,
+          "limit_exact_abs_error": 0.0005695590303422607,
+          "direct_exact_abs_error": 0.0005695590303422607
+        },
+        {
+          "circuit_id": "Duke_S2_4",
+          "precision_values": [
+            -0.04430974756207329,
+            -0.08451949984061258,
+            -0.0839277840040985,
+            -0.08308193408025416
+          ],
+          "exact_reference": -0.0830515044567818,
+          "fit_record_keys": [
+            "f4e2b845a5cfe2695693494387495b97cee0d95b792eabbaff989d200f72237b",
+            "2634acfe103a72a1177e26b3afb1efcec48661d4c95bc10e2659dc1bf9f675c1",
+            "4c4ce6cdf850eda91d6e411ff1319f7886b277011aae7eb16dc38d5ca3f53690"
+          ],
+          "held_out_record_key": "14899aae95412ee60b8ae51a23d8805669cc8f91c23cce0477b49b8c3d6b34b2",
+          "reference_record_key": "4ec33d8543dd935a3888c99f835eac070d199affc266a3df902a1ccf0b4217f4",
+          "consecutive_difference_ratio": -0.014715729468193786,
+          "eligible": false,
+          "fallback_reason": "NOT_SAME_SIGN_STRICT_CONTRACTION",
+          "predicted_next_value": -0.0839277840040985,
+          "extrapolated_limit_or_direct_fallback": -0.0839277840040985,
+          "held_out_forecast_abs_error": 0.000845849923844344,
+          "held_out_direct_abs_error": 0.000845849923844344,
+          "limit_exact_abs_error": 0.0008762795473166995,
+          "direct_exact_abs_error": 0.0008762795473166995
+        },
+        {
+          "circuit_id": "Duke_S2_5",
+          "precision_values": [
+            -0.0015838878491468145,
+            0.0506522547779526,
+            0.04716977355066593,
+            0.04747627741376431
+          ],
+          "exact_reference": 0.04745186216197257,
+          "fit_record_keys": [
+            "885e3e833d0e945bbecacef534de9a1868345ac83986206152b803387c1c92d5",
+            "8b525fc03f9203aad36e5f0164a92b617e4f938bdc4836c13aa4568e75467d11",
+            "193ac2436aed87d9f6d7635ecaf7fafa956d364ac2539ed7ba9a089948e5a02d"
+          ],
+          "held_out_record_key": "65dd28f3948fd7407a4e2f3f6bcd282cf62622c2a32bf66e8f8a9ec8f4d54ee7",
+          "reference_record_key": "fc854b29cb97735d7f115b868375b074689bfc7129c06dde84ff107c724ff693",
+          "consecutive_difference_ratio": -0.06666803963966525,
+          "eligible": false,
+          "fallback_reason": "NOT_SAME_SIGN_STRICT_CONTRACTION",
+          "predicted_next_value": 0.04716977355066593,
+          "extrapolated_limit_or_direct_fallback": 0.04716977355066593,
+          "held_out_forecast_abs_error": 0.00030650386309838407,
+          "held_out_direct_abs_error": 0.00030650386309838407,
+          "limit_exact_abs_error": 0.000282088611306644,
+          "direct_exact_abs_error": 0.000282088611306644
+        },
+        {
+          "circuit_id": "Duke_S2_6",
+          "precision_values": [
+            -0.021473735240390757,
+            -0.046417344343539335,
+            -0.038640193516718935,
+            -0.039081522057353435
+          ],
+          "exact_reference": -0.039199208760549796,
+          "fit_record_keys": [
+            "aab9ca4e57c6d3d06f7844783e432d77bcb61054b9b89838a49eb4291df91a1e",
+            "76ab4aaa911a1b755ecb98f353dbc737977d2d755aba0a8300491999422fb278",
+            "5eb4dac6735e78c68fee35e8e2e1488487ccca8b05ff69a98a9f48a0a8d75bdf"
+          ],
+          "held_out_record_key": "663854b80c56668b73cfc6152ec6d4f6918e59e2b0fcc0920bb3384a66d031b5",
+          "reference_record_key": "c6d3aac0b1c91f03f1f89d3ebb9ceefc0120e93557893ac48bbdcf6b77efc5a4",
+          "consecutive_difference_ratio": -0.3117893162396739,
+          "eligible": false,
+          "fallback_reason": "NOT_SAME_SIGN_STRICT_CONTRACTION",
+          "predicted_next_value": -0.038640193516718935,
+          "extrapolated_limit_or_direct_fallback": -0.038640193516718935,
+          "held_out_forecast_abs_error": 0.0004413285406345002,
+          "held_out_direct_abs_error": 0.0004413285406345002,
+          "limit_exact_abs_error": 0.0005590152438308613,
+          "direct_exact_abs_error": 0.0005590152438308613
+        },
+        {
+          "circuit_id": "Duke_S2_7",
+          "precision_values": [
+            -0.232994988343659,
+            -0.14594343700429202,
+            -0.14095250420042332,
+            -0.13700169129788503
+          ],
+          "exact_reference": -0.13670932682616133,
+          "fit_record_keys": [
+            "a81090364ac71e78430c2ad8a4657e6ace6e3edb2086348a75c30a610e1bd2b8",
+            "ba17cbf86b9b45cc90abec6d05a3f4911945ab1ca72a0bc46cec5a7435226518",
+            "69170898581b9ff1f62eb2247cbd5dde4c3eaf38808b624fdb72ba3904d18f29"
+          ],
+          "held_out_record_key": "202b3da3023cb6775c5738e1432f68c099e643ae90893deaac30f9f6b3433bc2",
+          "reference_record_key": "9ec32a392515eb1f1951468c4855dd912edee3bd11864c6d06a9615fb578cf2b",
+          "consecutive_difference_ratio": 0.057333071347709194,
+          "eligible": true,
+          "fallback_reason": null,
+          "predicted_next_value": -0.1406663586938875,
+          "extrapolated_limit_or_direct_fallback": -0.1406489553033119,
+          "held_out_forecast_abs_error": 0.0036646673960024634,
+          "held_out_direct_abs_error": 0.003950812902538292,
+          "limit_exact_abs_error": 0.00393962847715057,
+          "direct_exact_abs_error": 0.004243177374261997
+        },
+        {
+          "circuit_id": "Duke_S2_8",
+          "precision_values": [
+            0.5086478689848121,
+            0.29274665742788397,
+            0.136613521513742,
+            0.10732833183120216
+          ],
+          "exact_reference": 0.105195222718198,
+          "fit_record_keys": [
+            "995978f4ed073a086fcccc609b617a922682534ca57abd6b13b6e2bda297af40",
+            "1d917c94fb8444577949fed7f94220d95bbdce23f9a46fb1996837b85b8adde8",
+            "409c49ca21ac8d9a091b76f3a260ccf401fe8162cd2bcf675882f68d69b72c99"
+          ],
+          "held_out_record_key": "0d44451269131b56bac3677614e08ccb9bb13436a2b48ab5b479f6bbc2e50349",
+          "reference_record_key": "b9cc73d5e8affcb8b5e947b72bb0d0d04b02f9d4922e07dc450d75ca4f4a2a76",
+          "consecutive_difference_ratio": 0.7231693365137662,
+          "eligible": true,
+          "fallback_reason": null,
+          "predicted_next_value": 0.023702825206898273,
+          "extrapolated_limit_or_direct_fallback": -0.2712556606242351,
+          "held_out_forecast_abs_error": 0.08362550662430389,
+          "held_out_direct_abs_error": 0.029285189682539847,
+          "limit_exact_abs_error": 0.37645088334243315,
+          "direct_exact_abs_error": 0.031418298795544
+        },
+        {
+          "circuit_id": "Duke_S2_9",
+          "precision_values": [
+            0.604435035987615,
+            0.34353873077833735,
+            0.10713161779726332,
+            0.06606073411187546
+          ],
+          "exact_reference": 0.06276741123037267,
+          "fit_record_keys": [
+            "6e27b13e278aea349784e05dc290ed93c97292bf8ab1e1b2e59d033a57a82307",
+            "128b741a0968ccd98cdc7b4cc194d42421e0080aafca2dae50dfbd3bdb0acc75",
+            "d182a88f44a04c519d7ac42044ad593f29fe104acd9bd7595f63c9a553dcec74"
+          ],
+          "held_out_record_key": "bee6ebf345f820c12ad10dae1c706e1b12213c897c2b4a348c60490998e223b1",
+          "reference_record_key": "3485d6d51be0aecdfbd52f73a777be5602fdc3a44a977182c2ed4ca6fe34b327",
+          "consecutive_difference_ratio": 0.9061343846607575,
+          "eligible": false,
+          "fallback_reason": "NOT_SAME_SIGN_STRICT_CONTRACTION",
+          "predicted_next_value": 0.10713161779726332,
+          "extrapolated_limit_or_direct_fallback": 0.10713161779726332,
+          "held_out_forecast_abs_error": 0.04107088368538786,
+          "held_out_direct_abs_error": 0.04107088368538786,
+          "limit_exact_abs_error": 0.04436420656689065,
+          "direct_exact_abs_error": 0.04436420656689065
+        },
+        {
+          "circuit_id": "Duke_S2_10",
+          "precision_values": [
+            0.8324717160948025,
+            0.7249710038216917,
+            0.6112367703890367,
+            0.5844641676331414
+          ],
+          "exact_reference": 0.5824809854862115,
+          "fit_record_keys": [
+            "5475bb2596606290370442b2d1d2446494bb50a986a23b15f1d91b627f66ed83",
+            "97f6149f0c7e2bdf18c07debdb6d5ca1e100abf9ed4208f42bacef92653e317e",
+            "72d9721ecaf2821a797df6286e876bd538e272da40f93df64b5abfe0cae6b702"
+          ],
+          "held_out_record_key": "c1c75d8d630fcb86cb3e580eaf97b75ff141a285d72d7a190a57ea43f583b531",
+          "reference_record_key": "9cc5a9ee8a999b9f626abbef6e2ab5c6b1255dcdadc00eed41c770cc151bbadf",
+          "consecutive_difference_ratio": 1.057985859142101,
+          "eligible": false,
+          "fallback_reason": "NOT_SAME_SIGN_STRICT_CONTRACTION",
+          "predicted_next_value": 0.6112367703890367,
+          "extrapolated_limit_or_direct_fallback": 0.6112367703890367,
+          "held_out_forecast_abs_error": 0.026772602755895325,
+          "held_out_direct_abs_error": 0.026772602755895325,
+          "limit_exact_abs_error": 0.028755784902825154,
+          "direct_exact_abs_error": 0.028755784902825154
+        },
+        {
+          "circuit_id": "Duke_S2_11",
+          "precision_values": [
+            0.8266651985970515,
+            0.7504290827022944,
+            0.6425273929509294,
+            0.6105606719767752
+          ],
+          "exact_reference": 0.6084367166324411,
+          "fit_record_keys": [
+            "a614613906cb037d222139bce7756f57fa835adbe5343cf0b43c8030a6f691e9",
+            "073f35a03c7418df41c524467af53b32cc434d4a4bf77ff45a39c6267a7c58bf",
+            "cb7c5720ec5a1e73fd121904da418c592daa1fd1bd3e03bb7446dbfbaab0f980"
+          ],
+          "held_out_record_key": "39d72dfb7df64ab4a9a13e867c1d129f9a91a5fcfb1469950bece61367bcadcd",
+          "reference_record_key": "00c5f98b6ef81aaf11f8b6157e0d2c0160ccf97a00733f3ceffb35fa7f1a3a7d",
+          "consecutive_difference_ratio": 1.4153618463501174,
+          "eligible": false,
+          "fallback_reason": "NOT_SAME_SIGN_STRICT_CONTRACTION",
+          "predicted_next_value": 0.6425273929509294,
+          "extrapolated_limit_or_direct_fallback": 0.6425273929509294,
+          "held_out_forecast_abs_error": 0.031966720974154206,
+          "held_out_direct_abs_error": 0.031966720974154206,
+          "limit_exact_abs_error": 0.03409067631848828,
+          "direct_exact_abs_error": 0.03409067631848828
+        },
+        {
+          "circuit_id": "Duke_S2_12",
+          "precision_values": [
+            0.9500293583611145,
+            0.9756671955982243,
+            0.99521583483904,
+            0.9997049453631869
+          ],
+          "exact_reference": 1.0000000000001097,
+          "fit_record_keys": [
+            "2d99969d3bb05242d3e9bb43697821241a33275167a1b91e260552764b72fd25",
+            "fb9b3d39e76d9742a48f2e48a969f92c01e33356d5b73b8a5db78ba28a53376c",
+            "ca5302fbc591d085c109c1054d6a0eb44758b58d8a8b1c9869d7eb4db8fd4cd6"
+          ],
+          "held_out_record_key": "0f4b731a52f405afa608529cd9925f42fd404e0253432a9fc5fca9a0fbc6a313",
+          "reference_record_key": "a33e05f33b47eec0ce156dc0c075b1825c7f89057aa421f23ae957acdc658500",
+          "consecutive_difference_ratio": 0.7624917445267047,
+          "eligible": true,
+          "fallback_reason": null,
+          "predicted_next_value": 1.0101215108768926,
+          "extrapolated_limit_or_direct_fallback": 1.0579743945705717,
+          "held_out_forecast_abs_error": 0.010416565513705733,
+          "held_out_direct_abs_error": 0.004489110524146911,
+          "limit_exact_abs_error": 0.05797439457046205,
+          "direct_exact_abs_error": 0.00478416516106972
+        },
+        {
+          "circuit_id": "Duke_S2_13",
+          "precision_values": [
+            0.9521885162813222,
+            0.9766447883790527,
+            0.9951427949920387,
+            0.9996884252940533
+          ],
+          "exact_reference": 1.0000000000001097,
+          "fit_record_keys": [
+            "bc1033e53b16745b9f5a58166aaf6923cd73966dfb71f203134309ff63c63995",
+            "d76d6bcf68cc54d1cfecf5a0642b5a7ced790848cc19976e1ded79c5be8e2f4f",
+            "3755c8ae907c76fcb5a90d3be0f45bf94ec9bf58a080c292462ad06833312a4f"
+          ],
+          "held_out_record_key": "24b64b9e09a3197cf737cee79dee6f07ae252dd086bef8aa675c6d538d4bc700",
+          "reference_record_key": "705f8206c00e75daa75f43a417482ef74943dfd9f7da3c44cf0e039d0073032c",
+          "consecutive_difference_ratio": 0.7563706577627852,
+          "eligible": true,
+          "fallback_reason": null,
+          "predicted_next_value": 1.0091341444212034,
+          "extrapolated_limit_or_direct_fallback": 1.0525716305365753,
+          "held_out_forecast_abs_error": 0.009445719127150087,
+          "held_out_direct_abs_error": 0.004545630302014603,
+          "limit_exact_abs_error": 0.05257163053646563,
+          "direct_exact_abs_error": 0.004857205008070964
+        },
+        {
+          "circuit_id": "Duke_S2_14",
+          "precision_values": [
+            0.9799832230273403,
+            0.9886504851498346,
+            0.9973086116136591,
+            0.9997407095465418
+          ],
+          "exact_reference": 1.0000000000001097,
+          "fit_record_keys": [
+            "51c69e3514592d192f946565693cc234a8b5a20419370f21b050c38f97a5924d",
+            "108d024b53fdd743207eab4d18ae55beeea89360484aa9c9a3c6639dc29d74ee",
+            "c720dd3a7887cf10daa3972d32a6506dee68ee89f8e0184cf6758d6d6b5fefd5"
+          ],
+          "held_out_record_key": "bfcca8a5f526672e29d184ba00982be7288b4143c470e96701269317be5f907b",
+          "reference_record_key": "eb26d23c2b7f1f8975332879e92c1ab3df07309a0de08b1914cea0fc42578ba6",
+          "consecutive_difference_ratio": 0.9989459579575933,
+          "eligible": false,
+          "fallback_reason": "NOT_SAME_SIGN_STRICT_CONTRACTION",
+          "predicted_next_value": 0.9973086116136591,
+          "extrapolated_limit_or_direct_fallback": 0.9973086116136591,
+          "held_out_forecast_abs_error": 0.002432097932882682,
+          "held_out_direct_abs_error": 0.002432097932882682,
+          "limit_exact_abs_error": 0.002691388386450555,
+          "direct_exact_abs_error": 0.002691388386450555
+        },
+        {
+          "circuit_id": "Duke_S2_15",
+          "precision_values": [
+            0.9795151076732063,
+            0.9885152031484783,
+            0.9971061431726276,
+            0.999728548996879
+          ],
+          "exact_reference": 1.0000000000001101,
+          "fit_record_keys": [
+            "56e1ea09903a440f5d4a7783963807a1c68926d8d3abed540021c460e97d5c28",
+            "9037d42bdd56fa0eac6e5a780586fab608797882eb757695456cdc499e24c2ff",
+            "589919f63a823a0c39961739b30cac52674266a41e5991e7d9adbf98c5b0961a"
+          ],
+          "held_out_record_key": "9d981928cff6b32d4920c3bffab2fe57b28b6b4a1f4030871a9919d31585deaa",
+          "reference_record_key": "51e2099765daf5bc3c19a323a2f828493be64b1e85f2010e4975c277068112da",
+          "consecutive_difference_ratio": 0.9545387654778875,
+          "eligible": false,
+          "fallback_reason": "NOT_SAME_SIGN_STRICT_CONTRACTION",
+          "predicted_next_value": 0.9971061431726276,
+          "extrapolated_limit_or_direct_fallback": 0.9971061431726276,
+          "held_out_forecast_abs_error": 0.002622405824251439,
+          "held_out_direct_abs_error": 0.002622405824251439,
+          "limit_exact_abs_error": 0.002893856827482555,
+          "direct_exact_abs_error": 0.002893856827482555
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "49907900559b6cb6766c1947157eecc594dd74f67e7c2efdef6bc2dff4738d59": {
+      "key": "49907900559b6cb6766c1947157eecc594dd74f67e7c2efdef6bc2dff4738d59",
+      "saved_at": "2026-10-24T16:06:34.554459+00:00",
+      "path": "runs/experiments/49907900559b6cb6766c1947157eecc594dd74f67e7c2efdef6bc2dff4738d59.json",
+      "sha256": "60ff300ab019426465979d6e424552bbaf49c4481108d47c6874225e4af61adc",
+      "action_input_sha256": "469424807083c26dc45b097af082086086cff13530fb405517071fdb9c65608d",
+      "engine_source": "c51fe73b7c3ba6ba6069507531305046b4080f2ead56060e3d4beb875dbbe799",
+      "circuit_id": "Duke_S2_0",
+      "method": "mps",
+      "parameters": {
+        "chi": 8,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "469424807083c26dc45b097af082086086cff13530fb405517071fdb9c65608d",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.08575373963249527
+    },
+    "d5154f6391cead480dd9a26f561e626c8a93d6d54a7966fdc3a4435e027ae5a9": {
+      "key": "d5154f6391cead480dd9a26f561e626c8a93d6d54a7966fdc3a4435e027ae5a9",
+      "saved_at": "2026-10-24T16:16:35.169099+00:00",
+      "path": "runs/experiments/d5154f6391cead480dd9a26f561e626c8a93d6d54a7966fdc3a4435e027ae5a9.json",
+      "sha256": "a1854d9bff36024ee84bd411796802be5160226cae81a533dd4853e5d202e966",
+      "action_input_sha256": "469424807083c26dc45b097af082086086cff13530fb405517071fdb9c65608d",
+      "engine_source": "5ff8f31181561a23dacab17c7c18eaa9bcac2d8e0aecb2af686a5107fe6efe83",
+      "circuit_id": "Duke_S2_0",
+      "method": "mps",
+      "parameters": {
+        "chi": 16,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "469424807083c26dc45b097af082086086cff13530fb405517071fdb9c65608d",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": -0.0675837393489398
+    },
+    "6747845cd8f7a5e342aaf3aecaff1c111a556e75b75b0b67a34c98978e248edc": {
+      "key": "6747845cd8f7a5e342aaf3aecaff1c111a556e75b75b0b67a34c98978e248edc",
+      "saved_at": "2026-10-24T16:25:24.800704+00:00",
+      "path": "runs/experiments/6747845cd8f7a5e342aaf3aecaff1c111a556e75b75b0b67a34c98978e248edc.json",
+      "sha256": "8f4bddeb2a0d50c1b94d92ff2d46f6a1010df8948e678216349f320e043b8736",
+      "action_input_sha256": "469424807083c26dc45b097af082086086cff13530fb405517071fdb9c65608d",
+      "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "circuit_id": "Duke_S2_0",
+      "method": "mps",
+      "parameters": {
+        "chi": 32,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "469424807083c26dc45b097af082086086cff13530fb405517071fdb9c65608d",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": -0.04850506263613452
+    },
+    "bc8e13ed4b209fd277869bfeb2e5e40462bada03e85e69dd170287a420795274": {
+      "key": "bc8e13ed4b209fd277869bfeb2e5e40462bada03e85e69dd170287a420795274",
+      "saved_at": "2026-10-24T16:26:36.545045+00:00",
+      "path": "runs/experiments/bc8e13ed4b209fd277869bfeb2e5e40462bada03e85e69dd170287a420795274.json",
+      "sha256": "5ee502ca31c02a05b0503f809b5102660574c5dae7ebb25a57812e2d2e17a511",
+      "action_input_sha256": "469424807083c26dc45b097af082086086cff13530fb405517071fdb9c65608d",
+      "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "circuit_id": "Duke_S2_0",
+      "method": "mps",
+      "parameters": {
+        "chi": 64,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "469424807083c26dc45b097af082086086cff13530fb405517071fdb9c65608d",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": -0.044261085029267455
+    },
+    "d139fc6d3bf7678477487c4c766d60beed475e8952646b806f2b22a0b14b6954": {
+      "key": "d139fc6d3bf7678477487c4c766d60beed475e8952646b806f2b22a0b14b6954",
+      "saved_at": "2026-10-24T16:03:31.851522+00:00",
+      "path": "runs/experiments/d139fc6d3bf7678477487c4c766d60beed475e8952646b806f2b22a0b14b6954.json",
+      "sha256": "52e729792f4dc6a43bd25b84261dff8e51a62f3f7d8734dfb0b810e0e9537733",
+      "action_input_sha256": "469424807083c26dc45b097af082086086cff13530fb405517071fdb9c65608d",
+      "engine_source": "480ca0188fdfe459c874c3658a4fe658af55924f027319253b926aff994a3c0a",
+      "circuit_id": "Duke_S2_0",
+      "method": "exact",
+      "parameters": {
+        "precision": "double",
+        "shots": null,
+        "result_zero_threshold": 0.0
+      },
+      "input_sha256": "469424807083c26dc45b097af082086086cff13530fb405517071fdb9c65608d",
+      "backend": "qiskit_aer.statevector.cpu",
+      "estimate": -0.043632055230053896
+    },
+    "da798ec4a9f446d47eb89c5adf9f7eef732d20896ffdbcaaeaffa4e6be58b820": {
+      "key": "da798ec4a9f446d47eb89c5adf9f7eef732d20896ffdbcaaeaffa4e6be58b820",
+      "saved_at": "2026-10-24T16:06:38.526136+00:00",
+      "path": "runs/experiments/da798ec4a9f446d47eb89c5adf9f7eef732d20896ffdbcaaeaffa4e6be58b820.json",
+      "sha256": "db6bb1f1c99c125a62ea9c5267210a2a7422aee2be97072207b1100af41e4661",
+      "action_input_sha256": "b866373b88f9e87739617aa38f7f104f11b8d57553d803f4879b6638632e799e",
+      "engine_source": "c51fe73b7c3ba6ba6069507531305046b4080f2ead56060e3d4beb875dbbe799",
+      "circuit_id": "Duke_S2_1",
+      "method": "mps",
+      "parameters": {
+        "chi": 8,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "b866373b88f9e87739617aa38f7f104f11b8d57553d803f4879b6638632e799e",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": -0.124211092181914
+    },
+    "0fae990cc7fe910b71ffc37a74c8ff8777dbd04c561523897b604950debf24a0": {
+      "key": "0fae990cc7fe910b71ffc37a74c8ff8777dbd04c561523897b604950debf24a0",
+      "saved_at": "2026-10-24T16:16:39.180798+00:00",
+      "path": "runs/experiments/0fae990cc7fe910b71ffc37a74c8ff8777dbd04c561523897b604950debf24a0.json",
+      "sha256": "9956b3b66ad98ec18c2e45c6004cfdae1e7ac3895dddbd30947d9ee705cae9cb",
+      "action_input_sha256": "b866373b88f9e87739617aa38f7f104f11b8d57553d803f4879b6638632e799e",
+      "engine_source": "5ff8f31181561a23dacab17c7c18eaa9bcac2d8e0aecb2af686a5107fe6efe83",
+      "circuit_id": "Duke_S2_1",
+      "method": "mps",
+      "parameters": {
+        "chi": 16,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "b866373b88f9e87739617aa38f7f104f11b8d57553d803f4879b6638632e799e",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.011254188281830002
+    },
+    "7d26e6b1096c58e90468729a80f52afe7c5f97cb3285fa57b566bdfa3ea765f5": {
+      "key": "7d26e6b1096c58e90468729a80f52afe7c5f97cb3285fa57b566bdfa3ea765f5",
+      "saved_at": "2026-10-24T16:25:28.329590+00:00",
+      "path": "runs/experiments/7d26e6b1096c58e90468729a80f52afe7c5f97cb3285fa57b566bdfa3ea765f5.json",
+      "sha256": "baf2fcd4e4e851f49acc16b15ca54f9b2f0974bc4f9b96aaf96002587c1facf8",
+      "action_input_sha256": "b866373b88f9e87739617aa38f7f104f11b8d57553d803f4879b6638632e799e",
+      "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "circuit_id": "Duke_S2_1",
+      "method": "mps",
+      "parameters": {
+        "chi": 32,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "b866373b88f9e87739617aa38f7f104f11b8d57553d803f4879b6638632e799e",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.06574062556501259
+    },
+    "f63d55ef477f2a02beb8813c9a643248be3bae5f0f5303d692a44546546cc29c": {
+      "key": "f63d55ef477f2a02beb8813c9a643248be3bae5f0f5303d692a44546546cc29c",
+      "saved_at": "2026-10-24T16:26:42.121664+00:00",
+      "path": "runs/experiments/f63d55ef477f2a02beb8813c9a643248be3bae5f0f5303d692a44546546cc29c.json",
+      "sha256": "1353f851c9ee05bc607b14869309dac80a2948b6478e4bedb8a155b342539bcc",
+      "action_input_sha256": "b866373b88f9e87739617aa38f7f104f11b8d57553d803f4879b6638632e799e",
+      "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "circuit_id": "Duke_S2_1",
+      "method": "mps",
+      "parameters": {
+        "chi": 64,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "b866373b88f9e87739617aa38f7f104f11b8d57553d803f4879b6638632e799e",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.07346789113081253
+    },
+    "5bf4c2bcce4df02b850ec87874382b3473a7bc0f04f702996c6afd3d941e28a3": {
+      "key": "5bf4c2bcce4df02b850ec87874382b3473a7bc0f04f702996c6afd3d941e28a3",
+      "saved_at": "2026-10-24T16:03:31.852529+00:00",
+      "path": "runs/experiments/5bf4c2bcce4df02b850ec87874382b3473a7bc0f04f702996c6afd3d941e28a3.json",
+      "sha256": "aedc4e9172add0f1c7d25cceb9752dd2087b9671424ba92d4563217be5c45550",
+      "action_input_sha256": "b866373b88f9e87739617aa38f7f104f11b8d57553d803f4879b6638632e799e",
+      "engine_source": "480ca0188fdfe459c874c3658a4fe658af55924f027319253b926aff994a3c0a",
+      "circuit_id": "Duke_S2_1",
+      "method": "exact",
+      "parameters": {
+        "precision": "double",
+        "shots": null,
+        "result_zero_threshold": 0.0
+      },
+      "input_sha256": "b866373b88f9e87739617aa38f7f104f11b8d57553d803f4879b6638632e799e",
+      "backend": "qiskit_aer.statevector.cpu",
+      "estimate": 0.07517615297527865
+    },
+    "da3104c451a37bb3e0664048d82293c9b36b53f7d992c939c0f64a0e64c74a18": {
+      "key": "da3104c451a37bb3e0664048d82293c9b36b53f7d992c939c0f64a0e64c74a18",
+      "saved_at": "2026-10-24T16:06:42.559193+00:00",
+      "path": "runs/experiments/da3104c451a37bb3e0664048d82293c9b36b53f7d992c939c0f64a0e64c74a18.json",
+      "sha256": "f44a3385c5edf16d883ab33df1c9cf11e18ec1423c259e97b6f92df2f0ac194f",
+      "action_input_sha256": "921adac9217b7c560bb2bed90c71ded461a63f0337ce9a9a15d02eb651f1da28",
+      "engine_source": "c51fe73b7c3ba6ba6069507531305046b4080f2ead56060e3d4beb875dbbe799",
+      "circuit_id": "Duke_S2_2",
+      "method": "mps",
+      "parameters": {
+        "chi": 8,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "921adac9217b7c560bb2bed90c71ded461a63f0337ce9a9a15d02eb651f1da28",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": -0.07694186387523294
+    },
+    "f18e7ed558915c087bad57d28a5b353ad1354a0dc58583f83b0bfc70811503b9": {
+      "key": "f18e7ed558915c087bad57d28a5b353ad1354a0dc58583f83b0bfc70811503b9",
+      "saved_at": "2026-10-24T16:16:43.696824+00:00",
+      "path": "runs/experiments/f18e7ed558915c087bad57d28a5b353ad1354a0dc58583f83b0bfc70811503b9.json",
+      "sha256": "5c222a7aebdedd1cf80be7eef57f7139767eaed8b58baf4e09be2b5fec14411a",
+      "action_input_sha256": "921adac9217b7c560bb2bed90c71ded461a63f0337ce9a9a15d02eb651f1da28",
+      "engine_source": "5ff8f31181561a23dacab17c7c18eaa9bcac2d8e0aecb2af686a5107fe6efe83",
+      "circuit_id": "Duke_S2_2",
+      "method": "mps",
+      "parameters": {
+        "chi": 16,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "921adac9217b7c560bb2bed90c71ded461a63f0337ce9a9a15d02eb651f1da28",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": -0.06814667449303058
+    },
+    "1e5eae42782caf7735a52e3fad7aefab5a8d90470ac37ddb8dc79b6cf497111a": {
+      "key": "1e5eae42782caf7735a52e3fad7aefab5a8d90470ac37ddb8dc79b6cf497111a",
+      "saved_at": "2026-10-24T16:25:33.724851+00:00",
+      "path": "runs/experiments/1e5eae42782caf7735a52e3fad7aefab5a8d90470ac37ddb8dc79b6cf497111a.json",
+      "sha256": "8024f4291ba83754979f8cb6cf6fd35fc9d2e5088e98435d8693a27cfd1a9368",
+      "action_input_sha256": "921adac9217b7c560bb2bed90c71ded461a63f0337ce9a9a15d02eb651f1da28",
+      "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "circuit_id": "Duke_S2_2",
+      "method": "mps",
+      "parameters": {
+        "chi": 32,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "921adac9217b7c560bb2bed90c71ded461a63f0337ce9a9a15d02eb651f1da28",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": -0.0220489363363372
+    },
+    "eb418b551bed8b8173e901cf42bbb4ccdf10d1f75c3bd3427958d1e83d25fe6e": {
+      "key": "eb418b551bed8b8173e901cf42bbb4ccdf10d1f75c3bd3427958d1e83d25fe6e",
+      "saved_at": "2026-10-24T16:26:47.530153+00:00",
+      "path": "runs/experiments/eb418b551bed8b8173e901cf42bbb4ccdf10d1f75c3bd3427958d1e83d25fe6e.json",
+      "sha256": "ea4604dba3819267c5288b0efcafb619c30e1040fba8c2092e94a186a7274619",
+      "action_input_sha256": "921adac9217b7c560bb2bed90c71ded461a63f0337ce9a9a15d02eb651f1da28",
+      "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "circuit_id": "Duke_S2_2",
+      "method": "mps",
+      "parameters": {
+        "chi": 64,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "921adac9217b7c560bb2bed90c71ded461a63f0337ce9a9a15d02eb651f1da28",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": -0.014022033775377418
+    },
+    "eb130d4ccbf82899c44a1222b588031bbf040f27a5456ea683c6a024ac48092d": {
+      "key": "eb130d4ccbf82899c44a1222b588031bbf040f27a5456ea683c6a024ac48092d",
+      "saved_at": "2026-10-24T16:03:31.852529+00:00",
+      "path": "runs/experiments/eb130d4ccbf82899c44a1222b588031bbf040f27a5456ea683c6a024ac48092d.json",
+      "sha256": "0388db2fb118a0a024bd25dbd554b01b0743c6d4fddb2092935ccf47057501ca",
+      "action_input_sha256": "921adac9217b7c560bb2bed90c71ded461a63f0337ce9a9a15d02eb651f1da28",
+      "engine_source": "480ca0188fdfe459c874c3658a4fe658af55924f027319253b926aff994a3c0a",
+      "circuit_id": "Duke_S2_2",
+      "method": "exact",
+      "parameters": {
+        "precision": "double",
+        "shots": null,
+        "result_zero_threshold": 0.0
+      },
+      "input_sha256": "921adac9217b7c560bb2bed90c71ded461a63f0337ce9a9a15d02eb651f1da28",
+      "backend": "qiskit_aer.statevector.cpu",
+      "estimate": -0.0124787300429564
+    },
+    "5c9bb82be3780ecb74a7dc04102e3a81bb5e39233154bf4a6447297089a88276": {
+      "key": "5c9bb82be3780ecb74a7dc04102e3a81bb5e39233154bf4a6447297089a88276",
+      "saved_at": "2026-10-24T16:06:46.793926+00:00",
+      "path": "runs/experiments/5c9bb82be3780ecb74a7dc04102e3a81bb5e39233154bf4a6447297089a88276.json",
+      "sha256": "de366a969ae0c5e66cd9c7811f701d129ee83d3bfc6f4be885800ee4dc11c003",
+      "action_input_sha256": "5c61ea2891acd7c6f475a099b9e1f0688d59be9163b273ce9c488aab9261266c",
+      "engine_source": "c51fe73b7c3ba6ba6069507531305046b4080f2ead56060e3d4beb875dbbe799",
+      "circuit_id": "Duke_S2_3",
+      "method": "mps",
+      "parameters": {
+        "chi": 8,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "5c61ea2891acd7c6f475a099b9e1f0688d59be9163b273ce9c488aab9261266c",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": -0.0459065631897323
+    },
+    "7c48620b098ff4c5cc23c61046ebe9eb9a340129c2e6e329199d595efb3dfe2a": {
+      "key": "7c48620b098ff4c5cc23c61046ebe9eb9a340129c2e6e329199d595efb3dfe2a",
+      "saved_at": "2026-10-24T16:16:46.769877+00:00",
+      "path": "runs/experiments/7c48620b098ff4c5cc23c61046ebe9eb9a340129c2e6e329199d595efb3dfe2a.json",
+      "sha256": "6c3b13577db2c104b080fadfabeacf85b202123f65c9834bad0de9927c6145b5",
+      "action_input_sha256": "5c61ea2891acd7c6f475a099b9e1f0688d59be9163b273ce9c488aab9261266c",
+      "engine_source": "5ff8f31181561a23dacab17c7c18eaa9bcac2d8e0aecb2af686a5107fe6efe83",
+      "circuit_id": "Duke_S2_3",
+      "method": "mps",
+      "parameters": {
+        "chi": 16,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "5c61ea2891acd7c6f475a099b9e1f0688d59be9163b273ce9c488aab9261266c",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.011926250501473001
+    },
+    "63d7e35b297bcf33f2a743a66d26420c79c80219a005108575eb90bbd5ef1279": {
+      "key": "63d7e35b297bcf33f2a743a66d26420c79c80219a005108575eb90bbd5ef1279",
+      "saved_at": "2026-10-24T16:25:38.113412+00:00",
+      "path": "runs/experiments/63d7e35b297bcf33f2a743a66d26420c79c80219a005108575eb90bbd5ef1279.json",
+      "sha256": "95470502e3ab3ebeccbb7188b30307f39b8a0d3241f4a6e4ee7f396b9addc24c",
+      "action_input_sha256": "5c61ea2891acd7c6f475a099b9e1f0688d59be9163b273ce9c488aab9261266c",
+      "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "circuit_id": "Duke_S2_3",
+      "method": "mps",
+      "parameters": {
+        "chi": 32,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "5c61ea2891acd7c6f475a099b9e1f0688d59be9163b273ce9c488aab9261266c",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.04869810666578589
+    },
+    "806d0e252175ffe88c97e54d7efcfec7e46ed649cf5f95f75a76c51d2178db7c": {
+      "key": "806d0e252175ffe88c97e54d7efcfec7e46ed649cf5f95f75a76c51d2178db7c",
+      "saved_at": "2026-10-24T16:26:52.711565+00:00",
+      "path": "runs/experiments/806d0e252175ffe88c97e54d7efcfec7e46ed649cf5f95f75a76c51d2178db7c.json",
+      "sha256": "99b3788822670f77583dca9d1265a777e6990c2f37381d96529dd99a4407c541",
+      "action_input_sha256": "5c61ea2891acd7c6f475a099b9e1f0688d59be9163b273ce9c488aab9261266c",
+      "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "circuit_id": "Duke_S2_3",
+      "method": "mps",
+      "parameters": {
+        "chi": 64,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "5c61ea2891acd7c6f475a099b9e1f0688d59be9163b273ce9c488aab9261266c",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.043425090955639845
+    },
+    "fb883e392ffbfc4f1ad5daea4de10fbb63743ec707d4b01705cf3afe51dbdcac": {
+      "key": "fb883e392ffbfc4f1ad5daea4de10fbb63743ec707d4b01705cf3afe51dbdcac",
+      "saved_at": "2026-10-24T16:03:31.852529+00:00",
+      "path": "runs/experiments/fb883e392ffbfc4f1ad5daea4de10fbb63743ec707d4b01705cf3afe51dbdcac.json",
+      "sha256": "42d440ae9e14c5ef5ecf409ca3c28105b8d0aa17731b0977c243a2b68e1f00c1",
+      "action_input_sha256": "5c61ea2891acd7c6f475a099b9e1f0688d59be9163b273ce9c488aab9261266c",
+      "engine_source": "480ca0188fdfe459c874c3658a4fe658af55924f027319253b926aff994a3c0a",
+      "circuit_id": "Duke_S2_3",
+      "method": "exact",
+      "parameters": {
+        "precision": "double",
+        "shots": null,
+        "result_zero_threshold": 0.0
+      },
+      "input_sha256": "5c61ea2891acd7c6f475a099b9e1f0688d59be9163b273ce9c488aab9261266c",
+      "backend": "qiskit_aer.statevector.cpu",
+      "estimate": 0.043994649985982105
+    },
+    "b392b03a1eeb23905bed3cb6a8c2af1316f748f5ec23ad82b96767c134844c22": {
+      "key": "b392b03a1eeb23905bed3cb6a8c2af1316f748f5ec23ad82b96767c134844c22",
+      "saved_at": "2026-10-24T16:06:51.358020+00:00",
+      "path": "runs/experiments/b392b03a1eeb23905bed3cb6a8c2af1316f748f5ec23ad82b96767c134844c22.json",
+      "sha256": "c855a1fe7a491f76db6af3e52f70b40b56153c33d6de17345bdcf6deab443238",
+      "action_input_sha256": "4032ba9eca67fb5bb3e3112bd95a7d81b885a706a781fe8fc414381e180d33d0",
+      "engine_source": "c51fe73b7c3ba6ba6069507531305046b4080f2ead56060e3d4beb875dbbe799",
+      "circuit_id": "Duke_S2_4",
+      "method": "mps",
+      "parameters": {
+        "chi": 8,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "4032ba9eca67fb5bb3e3112bd95a7d81b885a706a781fe8fc414381e180d33d0",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.06475386567830177
+    },
+    "f4e2b845a5cfe2695693494387495b97cee0d95b792eabbaff989d200f72237b": {
+      "key": "f4e2b845a5cfe2695693494387495b97cee0d95b792eabbaff989d200f72237b",
+      "saved_at": "2026-10-24T16:16:50.072443+00:00",
+      "path": "runs/experiments/f4e2b845a5cfe2695693494387495b97cee0d95b792eabbaff989d200f72237b.json",
+      "sha256": "2c99ec136f8dfc49e27c6071c9ea2082d79d5626a8b708dcb55f7139b8a51955",
+      "action_input_sha256": "4032ba9eca67fb5bb3e3112bd95a7d81b885a706a781fe8fc414381e180d33d0",
+      "engine_source": "5ff8f31181561a23dacab17c7c18eaa9bcac2d8e0aecb2af686a5107fe6efe83",
+      "circuit_id": "Duke_S2_4",
+      "method": "mps",
+      "parameters": {
+        "chi": 16,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "4032ba9eca67fb5bb3e3112bd95a7d81b885a706a781fe8fc414381e180d33d0",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": -0.04430974756207329
+    },
+    "2634acfe103a72a1177e26b3afb1efcec48661d4c95bc10e2659dc1bf9f675c1": {
+      "key": "2634acfe103a72a1177e26b3afb1efcec48661d4c95bc10e2659dc1bf9f675c1",
+      "saved_at": "2026-10-24T16:25:43.619053+00:00",
+      "path": "runs/experiments/2634acfe103a72a1177e26b3afb1efcec48661d4c95bc10e2659dc1bf9f675c1.json",
+      "sha256": "8b7c901215554eebc2333f75a4b2c4fdf60a27851b7bca67be76b0ceac7b0450",
+      "action_input_sha256": "4032ba9eca67fb5bb3e3112bd95a7d81b885a706a781fe8fc414381e180d33d0",
+      "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "circuit_id": "Duke_S2_4",
+      "method": "mps",
+      "parameters": {
+        "chi": 32,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "4032ba9eca67fb5bb3e3112bd95a7d81b885a706a781fe8fc414381e180d33d0",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": -0.08451949984061258
+    },
+    "4c4ce6cdf850eda91d6e411ff1319f7886b277011aae7eb16dc38d5ca3f53690": {
+      "key": "4c4ce6cdf850eda91d6e411ff1319f7886b277011aae7eb16dc38d5ca3f53690",
+      "saved_at": "2026-10-24T16:26:58.061168+00:00",
+      "path": "runs/experiments/4c4ce6cdf850eda91d6e411ff1319f7886b277011aae7eb16dc38d5ca3f53690.json",
+      "sha256": "9cacc4cab15c2adcb9c92b0dc49562cf12d6d86ce6957c8b5d750a0ad3583665",
+      "action_input_sha256": "4032ba9eca67fb5bb3e3112bd95a7d81b885a706a781fe8fc414381e180d33d0",
+      "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "circuit_id": "Duke_S2_4",
+      "method": "mps",
+      "parameters": {
+        "chi": 64,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "4032ba9eca67fb5bb3e3112bd95a7d81b885a706a781fe8fc414381e180d33d0",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": -0.0839277840040985
+    },
+    "4ec33d8543dd935a3888c99f835eac070d199affc266a3df902a1ccf0b4217f4": {
+      "key": "4ec33d8543dd935a3888c99f835eac070d199affc266a3df902a1ccf0b4217f4",
+      "saved_at": "2026-10-24T16:03:31.854037+00:00",
+      "path": "runs/experiments/4ec33d8543dd935a3888c99f835eac070d199affc266a3df902a1ccf0b4217f4.json",
+      "sha256": "6aec2423c1520d78612b8310aa4c913c0a483864c360ff8b5edd1d0f1fceff38",
+      "action_input_sha256": "4032ba9eca67fb5bb3e3112bd95a7d81b885a706a781fe8fc414381e180d33d0",
+      "engine_source": "480ca0188fdfe459c874c3658a4fe658af55924f027319253b926aff994a3c0a",
+      "circuit_id": "Duke_S2_4",
+      "method": "exact",
+      "parameters": {
+        "precision": "double",
+        "shots": null,
+        "result_zero_threshold": 0.0
+      },
+      "input_sha256": "4032ba9eca67fb5bb3e3112bd95a7d81b885a706a781fe8fc414381e180d33d0",
+      "backend": "qiskit_aer.statevector.cpu",
+      "estimate": -0.0830515044567818
+    },
+    "46dbac4de9c320d3c28e7d48c5b8ec92a418094be211e4b7e68e425dee0b35a7": {
+      "key": "46dbac4de9c320d3c28e7d48c5b8ec92a418094be211e4b7e68e425dee0b35a7",
+      "saved_at": "2026-10-24T16:06:57.067310+00:00",
+      "path": "runs/experiments/46dbac4de9c320d3c28e7d48c5b8ec92a418094be211e4b7e68e425dee0b35a7.json",
+      "sha256": "5945946dfefa335235eb34055a38983d4c5c44590316686680c918bd8b6aaa08",
+      "action_input_sha256": "28eb68a4a5f80a62f1cd95ff4cf39228bf8399634c3a1601d99019fd0a4d55c4",
+      "engine_source": "c51fe73b7c3ba6ba6069507531305046b4080f2ead56060e3d4beb875dbbe799",
+      "circuit_id": "Duke_S2_5",
+      "method": "mps",
+      "parameters": {
+        "chi": 8,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "28eb68a4a5f80a62f1cd95ff4cf39228bf8399634c3a1601d99019fd0a4d55c4",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": -0.009056762335835578
+    },
+    "885e3e833d0e945bbecacef534de9a1868345ac83986206152b803387c1c92d5": {
+      "key": "885e3e833d0e945bbecacef534de9a1868345ac83986206152b803387c1c92d5",
+      "saved_at": "2026-10-24T16:16:53.526122+00:00",
+      "path": "runs/experiments/885e3e833d0e945bbecacef534de9a1868345ac83986206152b803387c1c92d5.json",
+      "sha256": "dc57b71d40e0b9c5bc4ba6f1b748785e788601e13b44f7518a3255b1758beb11",
+      "action_input_sha256": "28eb68a4a5f80a62f1cd95ff4cf39228bf8399634c3a1601d99019fd0a4d55c4",
+      "engine_source": "5ff8f31181561a23dacab17c7c18eaa9bcac2d8e0aecb2af686a5107fe6efe83",
+      "circuit_id": "Duke_S2_5",
+      "method": "mps",
+      "parameters": {
+        "chi": 16,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "28eb68a4a5f80a62f1cd95ff4cf39228bf8399634c3a1601d99019fd0a4d55c4",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": -0.0015838878491468145
+    },
+    "8b525fc03f9203aad36e5f0164a92b617e4f938bdc4836c13aa4568e75467d11": {
+      "key": "8b525fc03f9203aad36e5f0164a92b617e4f938bdc4836c13aa4568e75467d11",
+      "saved_at": "2026-10-24T16:25:47.770234+00:00",
+      "path": "runs/experiments/8b525fc03f9203aad36e5f0164a92b617e4f938bdc4836c13aa4568e75467d11.json",
+      "sha256": "d388353ed9557734b8739f4def8a9a373c07766d0b7d6bd02b6a954a12c3e559",
+      "action_input_sha256": "28eb68a4a5f80a62f1cd95ff4cf39228bf8399634c3a1601d99019fd0a4d55c4",
+      "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "circuit_id": "Duke_S2_5",
+      "method": "mps",
+      "parameters": {
+        "chi": 32,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "28eb68a4a5f80a62f1cd95ff4cf39228bf8399634c3a1601d99019fd0a4d55c4",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.0506522547779526
+    },
+    "193ac2436aed87d9f6d7635ecaf7fafa956d364ac2539ed7ba9a089948e5a02d": {
+      "key": "193ac2436aed87d9f6d7635ecaf7fafa956d364ac2539ed7ba9a089948e5a02d",
+      "saved_at": "2026-10-24T16:27:03.366420+00:00",
+      "path": "runs/experiments/193ac2436aed87d9f6d7635ecaf7fafa956d364ac2539ed7ba9a089948e5a02d.json",
+      "sha256": "e84f12bd9211f2b099375550362addcf617689ef764aec8c04bcb415137e88a6",
+      "action_input_sha256": "28eb68a4a5f80a62f1cd95ff4cf39228bf8399634c3a1601d99019fd0a4d55c4",
+      "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "circuit_id": "Duke_S2_5",
+      "method": "mps",
+      "parameters": {
+        "chi": 64,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "28eb68a4a5f80a62f1cd95ff4cf39228bf8399634c3a1601d99019fd0a4d55c4",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.04716977355066593
+    },
+    "fc854b29cb97735d7f115b868375b074689bfc7129c06dde84ff107c724ff693": {
+      "key": "fc854b29cb97735d7f115b868375b074689bfc7129c06dde84ff107c724ff693",
+      "saved_at": "2026-10-24T16:03:31.854655+00:00",
+      "path": "runs/experiments/fc854b29cb97735d7f115b868375b074689bfc7129c06dde84ff107c724ff693.json",
+      "sha256": "a6c619a19e64694e90dac5bf38fc27dd6649978924045db45c2a4fc6df2cc0b2",
+      "action_input_sha256": "28eb68a4a5f80a62f1cd95ff4cf39228bf8399634c3a1601d99019fd0a4d55c4",
+      "engine_source": "480ca0188fdfe459c874c3658a4fe658af55924f027319253b926aff994a3c0a",
+      "circuit_id": "Duke_S2_5",
+      "method": "exact",
+      "parameters": {
+        "precision": "double",
+        "shots": null,
+        "result_zero_threshold": 0.0
+      },
+      "input_sha256": "28eb68a4a5f80a62f1cd95ff4cf39228bf8399634c3a1601d99019fd0a4d55c4",
+      "backend": "qiskit_aer.statevector.cpu",
+      "estimate": 0.04745186216197257
+    },
+    "0862270c6aab2be5c84db1f56f26c9c7e703445329588b7e3e12b46473c4ca26": {
+      "key": "0862270c6aab2be5c84db1f56f26c9c7e703445329588b7e3e12b46473c4ca26",
+      "saved_at": "2026-10-24T16:07:02.972334+00:00",
+      "path": "runs/experiments/0862270c6aab2be5c84db1f56f26c9c7e703445329588b7e3e12b46473c4ca26.json",
+      "sha256": "20cede1978ae090bd47d6a51d2f6e666276d7d000ff6f0277a7fd44fc26e6d3f",
+      "action_input_sha256": "042ba3a26281483f0cc0fbf0e63167792809b588fe11d4b9eecb42dd143b1bb1",
+      "engine_source": "c51fe73b7c3ba6ba6069507531305046b4080f2ead56060e3d4beb875dbbe799",
+      "circuit_id": "Duke_S2_6",
+      "method": "mps",
+      "parameters": {
+        "chi": 8,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "042ba3a26281483f0cc0fbf0e63167792809b588fe11d4b9eecb42dd143b1bb1",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.14045200430171156
+    },
+    "aab9ca4e57c6d3d06f7844783e432d77bcb61054b9b89838a49eb4291df91a1e": {
+      "key": "aab9ca4e57c6d3d06f7844783e432d77bcb61054b9b89838a49eb4291df91a1e",
+      "saved_at": "2026-10-24T16:16:56.681985+00:00",
+      "path": "runs/experiments/aab9ca4e57c6d3d06f7844783e432d77bcb61054b9b89838a49eb4291df91a1e.json",
+      "sha256": "53a94f3ff535849f545f444f4f7430b924a53a6ad32f0c3d859b07a837bb8103",
+      "action_input_sha256": "042ba3a26281483f0cc0fbf0e63167792809b588fe11d4b9eecb42dd143b1bb1",
+      "engine_source": "5ff8f31181561a23dacab17c7c18eaa9bcac2d8e0aecb2af686a5107fe6efe83",
+      "circuit_id": "Duke_S2_6",
+      "method": "mps",
+      "parameters": {
+        "chi": 16,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "042ba3a26281483f0cc0fbf0e63167792809b588fe11d4b9eecb42dd143b1bb1",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": -0.021473735240390757
+    },
+    "76ab4aaa911a1b755ecb98f353dbc737977d2d755aba0a8300491999422fb278": {
+      "key": "76ab4aaa911a1b755ecb98f353dbc737977d2d755aba0a8300491999422fb278",
+      "saved_at": "2026-10-24T16:25:52.230321+00:00",
+      "path": "runs/experiments/76ab4aaa911a1b755ecb98f353dbc737977d2d755aba0a8300491999422fb278.json",
+      "sha256": "2338cc5015aa2f1d38794f5e38a772d56ffbdf256fb560c7fde9a017de9ad189",
+      "action_input_sha256": "042ba3a26281483f0cc0fbf0e63167792809b588fe11d4b9eecb42dd143b1bb1",
+      "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "circuit_id": "Duke_S2_6",
+      "method": "mps",
+      "parameters": {
+        "chi": 32,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "042ba3a26281483f0cc0fbf0e63167792809b588fe11d4b9eecb42dd143b1bb1",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": -0.046417344343539335
+    },
+    "5eb4dac6735e78c68fee35e8e2e1488487ccca8b05ff69a98a9f48a0a8d75bdf": {
+      "key": "5eb4dac6735e78c68fee35e8e2e1488487ccca8b05ff69a98a9f48a0a8d75bdf",
+      "saved_at": "2026-10-24T16:27:08.875856+00:00",
+      "path": "runs/experiments/5eb4dac6735e78c68fee35e8e2e1488487ccca8b05ff69a98a9f48a0a8d75bdf.json",
+      "sha256": "1d2040b7a7e44fdbdca53a3a02925ae84e5f89dc90d0b4608fb7dfe84813b34d",
+      "action_input_sha256": "042ba3a26281483f0cc0fbf0e63167792809b588fe11d4b9eecb42dd143b1bb1",
+      "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "circuit_id": "Duke_S2_6",
+      "method": "mps",
+      "parameters": {
+        "chi": 64,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "042ba3a26281483f0cc0fbf0e63167792809b588fe11d4b9eecb42dd143b1bb1",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": -0.038640193516718935
+    },
+    "c6d3aac0b1c91f03f1f89d3ebb9ceefc0120e93557893ac48bbdcf6b77efc5a4": {
+      "key": "c6d3aac0b1c91f03f1f89d3ebb9ceefc0120e93557893ac48bbdcf6b77efc5a4",
+      "saved_at": "2026-10-24T16:03:31.854655+00:00",
+      "path": "runs/experiments/c6d3aac0b1c91f03f1f89d3ebb9ceefc0120e93557893ac48bbdcf6b77efc5a4.json",
+      "sha256": "7b58ce626ede4b049ce966c6bff4c611ebfe1d052677bfe9f9b2b541106a9bea",
+      "action_input_sha256": "042ba3a26281483f0cc0fbf0e63167792809b588fe11d4b9eecb42dd143b1bb1",
+      "engine_source": "480ca0188fdfe459c874c3658a4fe658af55924f027319253b926aff994a3c0a",
+      "circuit_id": "Duke_S2_6",
+      "method": "exact",
+      "parameters": {
+        "precision": "double",
+        "shots": null,
+        "result_zero_threshold": 0.0
+      },
+      "input_sha256": "042ba3a26281483f0cc0fbf0e63167792809b588fe11d4b9eecb42dd143b1bb1",
+      "backend": "qiskit_aer.statevector.cpu",
+      "estimate": -0.039199208760549796
+    },
+    "e3340d73e82fb22267f68fc03c79edee45b70eb8819feb33b8a53bc3e6c6a635": {
+      "key": "e3340d73e82fb22267f68fc03c79edee45b70eb8819feb33b8a53bc3e6c6a635",
+      "saved_at": "2026-10-24T16:07:09.197399+00:00",
+      "path": "runs/experiments/e3340d73e82fb22267f68fc03c79edee45b70eb8819feb33b8a53bc3e6c6a635.json",
+      "sha256": "3b8d2449a4fa3c741557fc6d6d9d96665518fd0844875915459d46f3ae7d0239",
+      "action_input_sha256": "402d8c7452697f62b597c2ef2167f0f4c87e27959cf3bd21f304ff1b954606cc",
+      "engine_source": "c51fe73b7c3ba6ba6069507531305046b4080f2ead56060e3d4beb875dbbe799",
+      "circuit_id": "Duke_S2_7",
+      "method": "mps",
+      "parameters": {
+        "chi": 8,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "402d8c7452697f62b597c2ef2167f0f4c87e27959cf3bd21f304ff1b954606cc",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": -0.12639582055051596
+    },
+    "a81090364ac71e78430c2ad8a4657e6ace6e3edb2086348a75c30a610e1bd2b8": {
+      "key": "a81090364ac71e78430c2ad8a4657e6ace6e3edb2086348a75c30a610e1bd2b8",
+      "saved_at": "2026-10-24T16:17:00.151952+00:00",
+      "path": "runs/experiments/a81090364ac71e78430c2ad8a4657e6ace6e3edb2086348a75c30a610e1bd2b8.json",
+      "sha256": "8570ac5e2faee89c617cc5e2e6d2975eeca0815e4763c17a3adceab689eb277e",
+      "action_input_sha256": "402d8c7452697f62b597c2ef2167f0f4c87e27959cf3bd21f304ff1b954606cc",
+      "engine_source": "5ff8f31181561a23dacab17c7c18eaa9bcac2d8e0aecb2af686a5107fe6efe83",
+      "circuit_id": "Duke_S2_7",
+      "method": "mps",
+      "parameters": {
+        "chi": 16,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "402d8c7452697f62b597c2ef2167f0f4c87e27959cf3bd21f304ff1b954606cc",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": -0.232994988343659
+    },
+    "ba17cbf86b9b45cc90abec6d05a3f4911945ab1ca72a0bc46cec5a7435226518": {
+      "key": "ba17cbf86b9b45cc90abec6d05a3f4911945ab1ca72a0bc46cec5a7435226518",
+      "saved_at": "2026-10-24T16:25:57.394236+00:00",
+      "path": "runs/experiments/ba17cbf86b9b45cc90abec6d05a3f4911945ab1ca72a0bc46cec5a7435226518.json",
+      "sha256": "9b2180e46b6cfc10052c33ff0ff7dad4092dfea7a7fea747c5141c65f64ec48c",
+      "action_input_sha256": "402d8c7452697f62b597c2ef2167f0f4c87e27959cf3bd21f304ff1b954606cc",
+      "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "circuit_id": "Duke_S2_7",
+      "method": "mps",
+      "parameters": {
+        "chi": 32,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "402d8c7452697f62b597c2ef2167f0f4c87e27959cf3bd21f304ff1b954606cc",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": -0.14594343700429202
+    },
+    "69170898581b9ff1f62eb2247cbd5dde4c3eaf38808b624fdb72ba3904d18f29": {
+      "key": "69170898581b9ff1f62eb2247cbd5dde4c3eaf38808b624fdb72ba3904d18f29",
+      "saved_at": "2026-10-24T16:27:14.504774+00:00",
+      "path": "runs/experiments/69170898581b9ff1f62eb2247cbd5dde4c3eaf38808b624fdb72ba3904d18f29.json",
+      "sha256": "024ebbd5098dc188b6c91d8120e3854b6824c44932056696b799d01f3ef121ec",
+      "action_input_sha256": "402d8c7452697f62b597c2ef2167f0f4c87e27959cf3bd21f304ff1b954606cc",
+      "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "circuit_id": "Duke_S2_7",
+      "method": "mps",
+      "parameters": {
+        "chi": 64,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "402d8c7452697f62b597c2ef2167f0f4c87e27959cf3bd21f304ff1b954606cc",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": -0.14095250420042332
+    },
+    "9ec32a392515eb1f1951468c4855dd912edee3bd11864c6d06a9615fb578cf2b": {
+      "key": "9ec32a392515eb1f1951468c4855dd912edee3bd11864c6d06a9615fb578cf2b",
+      "saved_at": "2026-10-24T16:03:31.855664+00:00",
+      "path": "runs/experiments/9ec32a392515eb1f1951468c4855dd912edee3bd11864c6d06a9615fb578cf2b.json",
+      "sha256": "b13d2048b4b444decca6b46eb78595e7559ce26f190357457b0fa28ae208082d",
+      "action_input_sha256": "402d8c7452697f62b597c2ef2167f0f4c87e27959cf3bd21f304ff1b954606cc",
+      "engine_source": "480ca0188fdfe459c874c3658a4fe658af55924f027319253b926aff994a3c0a",
+      "circuit_id": "Duke_S2_7",
+      "method": "exact",
+      "parameters": {
+        "precision": "double",
+        "shots": null,
+        "result_zero_threshold": 0.0
+      },
+      "input_sha256": "402d8c7452697f62b597c2ef2167f0f4c87e27959cf3bd21f304ff1b954606cc",
+      "backend": "qiskit_aer.statevector.cpu",
+      "estimate": -0.13670932682616133
+    },
+    "fefe8d29faeb26170e0df9ec90ca06e9054f1c07d00df8c27a860fc7cf66ca32": {
+      "key": "fefe8d29faeb26170e0df9ec90ca06e9054f1c07d00df8c27a860fc7cf66ca32",
+      "saved_at": "2026-10-24T16:07:13.526059+00:00",
+      "path": "runs/experiments/fefe8d29faeb26170e0df9ec90ca06e9054f1c07d00df8c27a860fc7cf66ca32.json",
+      "sha256": "2f0556141aa01557c6b77b03081ed43ee89d8536df5d09e4402fdcf62e3c356f",
+      "action_input_sha256": "06ee34b77cec23ac37f72ef9bb101b22bee4d8846ba8b8b4fd2995ef94847d46",
+      "engine_source": "c51fe73b7c3ba6ba6069507531305046b4080f2ead56060e3d4beb875dbbe799",
+      "circuit_id": "Duke_S2_8",
+      "method": "mps",
+      "parameters": {
+        "chi": 8,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "06ee34b77cec23ac37f72ef9bb101b22bee4d8846ba8b8b4fd2995ef94847d46",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.5508977743428685
+    },
+    "995978f4ed073a086fcccc609b617a922682534ca57abd6b13b6e2bda297af40": {
+      "key": "995978f4ed073a086fcccc609b617a922682534ca57abd6b13b6e2bda297af40",
+      "saved_at": "2026-10-24T16:17:03.466618+00:00",
+      "path": "runs/experiments/995978f4ed073a086fcccc609b617a922682534ca57abd6b13b6e2bda297af40.json",
+      "sha256": "2e4f82bd690d7210842de6216fb9cf8f19c669422eafd716261e9b43fe31ef4f",
+      "action_input_sha256": "06ee34b77cec23ac37f72ef9bb101b22bee4d8846ba8b8b4fd2995ef94847d46",
+      "engine_source": "5ff8f31181561a23dacab17c7c18eaa9bcac2d8e0aecb2af686a5107fe6efe83",
+      "circuit_id": "Duke_S2_8",
+      "method": "mps",
+      "parameters": {
+        "chi": 16,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "06ee34b77cec23ac37f72ef9bb101b22bee4d8846ba8b8b4fd2995ef94847d46",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.5086478689848121
+    },
+    "1d917c94fb8444577949fed7f94220d95bbdce23f9a46fb1996837b85b8adde8": {
+      "key": "1d917c94fb8444577949fed7f94220d95bbdce23f9a46fb1996837b85b8adde8",
+      "saved_at": "2026-10-24T16:26:01.077966+00:00",
+      "path": "runs/experiments/1d917c94fb8444577949fed7f94220d95bbdce23f9a46fb1996837b85b8adde8.json",
+      "sha256": "27d901d8f18edc984bf7ebedd8df346b3419f89aec56a9d73a2c85140dad5fe9",
+      "action_input_sha256": "06ee34b77cec23ac37f72ef9bb101b22bee4d8846ba8b8b4fd2995ef94847d46",
+      "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "circuit_id": "Duke_S2_8",
+      "method": "mps",
+      "parameters": {
+        "chi": 32,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "06ee34b77cec23ac37f72ef9bb101b22bee4d8846ba8b8b4fd2995ef94847d46",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.29274665742788397
+    },
+    "409c49ca21ac8d9a091b76f3a260ccf401fe8162cd2bcf675882f68d69b72c99": {
+      "key": "409c49ca21ac8d9a091b76f3a260ccf401fe8162cd2bcf675882f68d69b72c99",
+      "saved_at": "2026-10-24T16:27:20.927632+00:00",
+      "path": "runs/experiments/409c49ca21ac8d9a091b76f3a260ccf401fe8162cd2bcf675882f68d69b72c99.json",
+      "sha256": "d817aff41ad879574f63ad1cee857d6ef9f880f4d5c9b326f49b12750b4a3746",
+      "action_input_sha256": "06ee34b77cec23ac37f72ef9bb101b22bee4d8846ba8b8b4fd2995ef94847d46",
+      "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "circuit_id": "Duke_S2_8",
+      "method": "mps",
+      "parameters": {
+        "chi": 64,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "06ee34b77cec23ac37f72ef9bb101b22bee4d8846ba8b8b4fd2995ef94847d46",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.136613521513742
+    },
+    "b9cc73d5e8affcb8b5e947b72bb0d0d04b02f9d4922e07dc450d75ca4f4a2a76": {
+      "key": "b9cc73d5e8affcb8b5e947b72bb0d0d04b02f9d4922e07dc450d75ca4f4a2a76",
+      "saved_at": "2026-10-24T16:03:31.855664+00:00",
+      "path": "runs/experiments/b9cc73d5e8affcb8b5e947b72bb0d0d04b02f9d4922e07dc450d75ca4f4a2a76.json",
+      "sha256": "ad279b4b4caf85a6146c7c37744edd1d6d8a730d71aa9bfd8614313fd9eaeefd",
+      "action_input_sha256": "06ee34b77cec23ac37f72ef9bb101b22bee4d8846ba8b8b4fd2995ef94847d46",
+      "engine_source": "480ca0188fdfe459c874c3658a4fe658af55924f027319253b926aff994a3c0a",
+      "circuit_id": "Duke_S2_8",
+      "method": "exact",
+      "parameters": {
+        "precision": "double",
+        "shots": null,
+        "result_zero_threshold": 0.0
+      },
+      "input_sha256": "06ee34b77cec23ac37f72ef9bb101b22bee4d8846ba8b8b4fd2995ef94847d46",
+      "backend": "qiskit_aer.statevector.cpu",
+      "estimate": 0.105195222718198
+    },
+    "9ff36473a30ec0e8cc1cc06e1b70b0274ecc569977fe0947b03fdfae1b80bd87": {
+      "key": "9ff36473a30ec0e8cc1cc06e1b70b0274ecc569977fe0947b03fdfae1b80bd87",
+      "saved_at": "2026-10-24T16:07:17.298119+00:00",
+      "path": "runs/experiments/9ff36473a30ec0e8cc1cc06e1b70b0274ecc569977fe0947b03fdfae1b80bd87.json",
+      "sha256": "b0fbf64860e9ea47b2c5a45cc783aaf455f2aa7255bece8bb5645ec7c46504e9",
+      "action_input_sha256": "9bc40be3bbef59a8d6b28e5c55ba878640abffc32381a3423cdfa1713982d55d",
+      "engine_source": "c51fe73b7c3ba6ba6069507531305046b4080f2ead56060e3d4beb875dbbe799",
+      "circuit_id": "Duke_S2_9",
+      "method": "mps",
+      "parameters": {
+        "chi": 8,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "9bc40be3bbef59a8d6b28e5c55ba878640abffc32381a3423cdfa1713982d55d",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.33426109139362936
+    },
+    "6e27b13e278aea349784e05dc290ed93c97292bf8ab1e1b2e59d033a57a82307": {
+      "key": "6e27b13e278aea349784e05dc290ed93c97292bf8ab1e1b2e59d033a57a82307",
+      "saved_at": "2026-10-24T16:17:06.703440+00:00",
+      "path": "runs/experiments/6e27b13e278aea349784e05dc290ed93c97292bf8ab1e1b2e59d033a57a82307.json",
+      "sha256": "f93467cb7a885a38ea6a29c65b08fc353b2d83ec41ce4728cd983439cb6b7c92",
+      "action_input_sha256": "9bc40be3bbef59a8d6b28e5c55ba878640abffc32381a3423cdfa1713982d55d",
+      "engine_source": "5ff8f31181561a23dacab17c7c18eaa9bcac2d8e0aecb2af686a5107fe6efe83",
+      "circuit_id": "Duke_S2_9",
+      "method": "mps",
+      "parameters": {
+        "chi": 16,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "9bc40be3bbef59a8d6b28e5c55ba878640abffc32381a3423cdfa1713982d55d",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.604435035987615
+    },
+    "128b741a0968ccd98cdc7b4cc194d42421e0080aafca2dae50dfbd3bdb0acc75": {
+      "key": "128b741a0968ccd98cdc7b4cc194d42421e0080aafca2dae50dfbd3bdb0acc75",
+      "saved_at": "2026-10-24T16:26:04.675899+00:00",
+      "path": "runs/experiments/128b741a0968ccd98cdc7b4cc194d42421e0080aafca2dae50dfbd3bdb0acc75.json",
+      "sha256": "6c25f7a438e9b2b1373ce7d5d27ec9f1f964d5638de788f7b01592f8f9214a18",
+      "action_input_sha256": "9bc40be3bbef59a8d6b28e5c55ba878640abffc32381a3423cdfa1713982d55d",
+      "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "circuit_id": "Duke_S2_9",
+      "method": "mps",
+      "parameters": {
+        "chi": 32,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "9bc40be3bbef59a8d6b28e5c55ba878640abffc32381a3423cdfa1713982d55d",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.34353873077833735
+    },
+    "d182a88f44a04c519d7ac42044ad593f29fe104acd9bd7595f63c9a553dcec74": {
+      "key": "d182a88f44a04c519d7ac42044ad593f29fe104acd9bd7595f63c9a553dcec74",
+      "saved_at": "2026-10-24T16:27:26.292836+00:00",
+      "path": "runs/experiments/d182a88f44a04c519d7ac42044ad593f29fe104acd9bd7595f63c9a553dcec74.json",
+      "sha256": "821e0d17edeb8278f6e27b3a6fafbadc7f4eaa4bde2d7c259344de18dc8f628c",
+      "action_input_sha256": "9bc40be3bbef59a8d6b28e5c55ba878640abffc32381a3423cdfa1713982d55d",
+      "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "circuit_id": "Duke_S2_9",
+      "method": "mps",
+      "parameters": {
+        "chi": 64,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "9bc40be3bbef59a8d6b28e5c55ba878640abffc32381a3423cdfa1713982d55d",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.10713161779726332
+    },
+    "3485d6d51be0aecdfbd52f73a777be5602fdc3a44a977182c2ed4ca6fe34b327": {
+      "key": "3485d6d51be0aecdfbd52f73a777be5602fdc3a44a977182c2ed4ca6fe34b327",
+      "saved_at": "2026-10-24T16:03:31.856663+00:00",
+      "path": "runs/experiments/3485d6d51be0aecdfbd52f73a777be5602fdc3a44a977182c2ed4ca6fe34b327.json",
+      "sha256": "84346ed9a386b30dab3eaad0f5f518ba0178338c04c5ed58f4fd9a973d516366",
+      "action_input_sha256": "9bc40be3bbef59a8d6b28e5c55ba878640abffc32381a3423cdfa1713982d55d",
+      "engine_source": "480ca0188fdfe459c874c3658a4fe658af55924f027319253b926aff994a3c0a",
+      "circuit_id": "Duke_S2_9",
+      "method": "exact",
+      "parameters": {
+        "precision": "double",
+        "shots": null,
+        "result_zero_threshold": 0.0
+      },
+      "input_sha256": "9bc40be3bbef59a8d6b28e5c55ba878640abffc32381a3423cdfa1713982d55d",
+      "backend": "qiskit_aer.statevector.cpu",
+      "estimate": 0.06276741123037267
+    },
+    "357bc58815af84d332e576402b00573d60264c35bd0a788f4111eaba2d0f052b": {
+      "key": "357bc58815af84d332e576402b00573d60264c35bd0a788f4111eaba2d0f052b",
+      "saved_at": "2026-10-24T16:07:21.136833+00:00",
+      "path": "runs/experiments/357bc58815af84d332e576402b00573d60264c35bd0a788f4111eaba2d0f052b.json",
+      "sha256": "00d1c05b1a1b8d04c1e6e39818c07230ba54a6d82538a6f7bbf5c6d7c2c9e296",
+      "action_input_sha256": "6e72ade3c36ad836330580bd61f7c656dd48be3b200a2cf65ad5ba2899b9a576",
+      "engine_source": "c51fe73b7c3ba6ba6069507531305046b4080f2ead56060e3d4beb875dbbe799",
+      "circuit_id": "Duke_S2_10",
+      "method": "mps",
+      "parameters": {
+        "chi": 8,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "6e72ade3c36ad836330580bd61f7c656dd48be3b200a2cf65ad5ba2899b9a576",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.4802080370029011
+    },
+    "5475bb2596606290370442b2d1d2446494bb50a986a23b15f1d91b627f66ed83": {
+      "key": "5475bb2596606290370442b2d1d2446494bb50a986a23b15f1d91b627f66ed83",
+      "saved_at": "2026-10-24T16:17:09.901577+00:00",
+      "path": "runs/experiments/5475bb2596606290370442b2d1d2446494bb50a986a23b15f1d91b627f66ed83.json",
+      "sha256": "dfaff13a4a994b19a551ec96bf355a886965e5f65b6f7a78865e8688411619e6",
+      "action_input_sha256": "6e72ade3c36ad836330580bd61f7c656dd48be3b200a2cf65ad5ba2899b9a576",
+      "engine_source": "5ff8f31181561a23dacab17c7c18eaa9bcac2d8e0aecb2af686a5107fe6efe83",
+      "circuit_id": "Duke_S2_10",
+      "method": "mps",
+      "parameters": {
+        "chi": 16,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "6e72ade3c36ad836330580bd61f7c656dd48be3b200a2cf65ad5ba2899b9a576",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.8324717160948025
+    },
+    "97f6149f0c7e2bdf18c07debdb6d5ca1e100abf9ed4208f42bacef92653e317e": {
+      "key": "97f6149f0c7e2bdf18c07debdb6d5ca1e100abf9ed4208f42bacef92653e317e",
+      "saved_at": "2026-10-24T16:26:08.326435+00:00",
+      "path": "runs/experiments/97f6149f0c7e2bdf18c07debdb6d5ca1e100abf9ed4208f42bacef92653e317e.json",
+      "sha256": "9d290e3c360e0a4bfc1837bbbc881a96c3aa2ac0f6200ff642af0256d6f842a9",
+      "action_input_sha256": "6e72ade3c36ad836330580bd61f7c656dd48be3b200a2cf65ad5ba2899b9a576",
+      "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "circuit_id": "Duke_S2_10",
+      "method": "mps",
+      "parameters": {
+        "chi": 32,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "6e72ade3c36ad836330580bd61f7c656dd48be3b200a2cf65ad5ba2899b9a576",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.7249710038216917
+    },
+    "72d9721ecaf2821a797df6286e876bd538e272da40f93df64b5abfe0cae6b702": {
+      "key": "72d9721ecaf2821a797df6286e876bd538e272da40f93df64b5abfe0cae6b702",
+      "saved_at": "2026-10-24T16:27:36.626010+00:00",
+      "path": "runs/experiments/72d9721ecaf2821a797df6286e876bd538e272da40f93df64b5abfe0cae6b702.json",
+      "sha256": "2553112b5024830222ec6533c92092b0ce0dc6efcc2e8a886a36ec7e5ca8db94",
+      "action_input_sha256": "6e72ade3c36ad836330580bd61f7c656dd48be3b200a2cf65ad5ba2899b9a576",
+      "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "circuit_id": "Duke_S2_10",
+      "method": "mps",
+      "parameters": {
+        "chi": 64,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "6e72ade3c36ad836330580bd61f7c656dd48be3b200a2cf65ad5ba2899b9a576",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.6112367703890367
+    },
+    "9cc5a9ee8a999b9f626abbef6e2ab5c6b1255dcdadc00eed41c770cc151bbadf": {
+      "key": "9cc5a9ee8a999b9f626abbef6e2ab5c6b1255dcdadc00eed41c770cc151bbadf",
+      "saved_at": "2026-10-24T16:03:31.856663+00:00",
+      "path": "runs/experiments/9cc5a9ee8a999b9f626abbef6e2ab5c6b1255dcdadc00eed41c770cc151bbadf.json",
+      "sha256": "04c135f55e8eeb26eb5f4381bb556b194c0c6479dd39d12f5304eb824768a78e",
+      "action_input_sha256": "6e72ade3c36ad836330580bd61f7c656dd48be3b200a2cf65ad5ba2899b9a576",
+      "engine_source": "480ca0188fdfe459c874c3658a4fe658af55924f027319253b926aff994a3c0a",
+      "circuit_id": "Duke_S2_10",
+      "method": "exact",
+      "parameters": {
+        "precision": "double",
+        "shots": null,
+        "result_zero_threshold": 0.0
+      },
+      "input_sha256": "6e72ade3c36ad836330580bd61f7c656dd48be3b200a2cf65ad5ba2899b9a576",
+      "backend": "qiskit_aer.statevector.cpu",
+      "estimate": 0.5824809854862115
+    },
+    "1aea8bb16cde5c2c4a601556cd4184052abf38051313f3056df826bb5b065f16": {
+      "key": "1aea8bb16cde5c2c4a601556cd4184052abf38051313f3056df826bb5b065f16",
+      "saved_at": "2026-10-24T16:07:24.709146+00:00",
+      "path": "runs/experiments/1aea8bb16cde5c2c4a601556cd4184052abf38051313f3056df826bb5b065f16.json",
+      "sha256": "d0d78c5c887cf2083e0bc49cc5a5b67e7c78fc7fdc048d3bd1ee372f3ac57441",
+      "action_input_sha256": "e41806c630480683597d01d3671f77b9a63c1ac0a3588aa1b3bdcd25b583e509",
+      "engine_source": "c51fe73b7c3ba6ba6069507531305046b4080f2ead56060e3d4beb875dbbe799",
+      "circuit_id": "Duke_S2_11",
+      "method": "mps",
+      "parameters": {
+        "chi": 8,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "e41806c630480683597d01d3671f77b9a63c1ac0a3588aa1b3bdcd25b583e509",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.32802760162508104
+    },
+    "a614613906cb037d222139bce7756f57fa835adbe5343cf0b43c8030a6f691e9": {
+      "key": "a614613906cb037d222139bce7756f57fa835adbe5343cf0b43c8030a6f691e9",
+      "saved_at": "2026-10-24T16:17:13.069944+00:00",
+      "path": "runs/experiments/a614613906cb037d222139bce7756f57fa835adbe5343cf0b43c8030a6f691e9.json",
+      "sha256": "cc839488c5c55f0d2aa5191224f2dd380e17a187d33e87e9479f89907610c6ec",
+      "action_input_sha256": "e41806c630480683597d01d3671f77b9a63c1ac0a3588aa1b3bdcd25b583e509",
+      "engine_source": "5ff8f31181561a23dacab17c7c18eaa9bcac2d8e0aecb2af686a5107fe6efe83",
+      "circuit_id": "Duke_S2_11",
+      "method": "mps",
+      "parameters": {
+        "chi": 16,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "e41806c630480683597d01d3671f77b9a63c1ac0a3588aa1b3bdcd25b583e509",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.8266651985970515
+    },
+    "073f35a03c7418df41c524467af53b32cc434d4a4bf77ff45a39c6267a7c58bf": {
+      "key": "073f35a03c7418df41c524467af53b32cc434d4a4bf77ff45a39c6267a7c58bf",
+      "saved_at": "2026-10-24T16:26:12.509788+00:00",
+      "path": "runs/experiments/073f35a03c7418df41c524467af53b32cc434d4a4bf77ff45a39c6267a7c58bf.json",
+      "sha256": "bedd6b0a209308d47afa9d1b2b8eae782fe4185683dfb79c3b9696afad582276",
+      "action_input_sha256": "e41806c630480683597d01d3671f77b9a63c1ac0a3588aa1b3bdcd25b583e509",
+      "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "circuit_id": "Duke_S2_11",
+      "method": "mps",
+      "parameters": {
+        "chi": 32,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "e41806c630480683597d01d3671f77b9a63c1ac0a3588aa1b3bdcd25b583e509",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.7504290827022944
+    },
+    "cb7c5720ec5a1e73fd121904da418c592daa1fd1bd3e03bb7446dbfbaab0f980": {
+      "key": "cb7c5720ec5a1e73fd121904da418c592daa1fd1bd3e03bb7446dbfbaab0f980",
+      "saved_at": "2026-10-24T16:27:42.615296+00:00",
+      "path": "runs/experiments/cb7c5720ec5a1e73fd121904da418c592daa1fd1bd3e03bb7446dbfbaab0f980.json",
+      "sha256": "4ae96c0e8f53c1a1fdc87a3bcd1787f4752575ef6b18dd28db659a4b34f1d018",
+      "action_input_sha256": "e41806c630480683597d01d3671f77b9a63c1ac0a3588aa1b3bdcd25b583e509",
+      "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "circuit_id": "Duke_S2_11",
+      "method": "mps",
+      "parameters": {
+        "chi": 64,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "e41806c630480683597d01d3671f77b9a63c1ac0a3588aa1b3bdcd25b583e509",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.6425273929509294
+    },
+    "00c5f98b6ef81aaf11f8b6157e0d2c0160ccf97a00733f3ceffb35fa7f1a3a7d": {
+      "key": "00c5f98b6ef81aaf11f8b6157e0d2c0160ccf97a00733f3ceffb35fa7f1a3a7d",
+      "saved_at": "2026-10-24T16:03:31.857662+00:00",
+      "path": "runs/experiments/00c5f98b6ef81aaf11f8b6157e0d2c0160ccf97a00733f3ceffb35fa7f1a3a7d.json",
+      "sha256": "1629810187ea6cf7d3574d8e5e2b5fb102d94995765c50c6f2b4703d5a161b7c",
+      "action_input_sha256": "e41806c630480683597d01d3671f77b9a63c1ac0a3588aa1b3bdcd25b583e509",
+      "engine_source": "480ca0188fdfe459c874c3658a4fe658af55924f027319253b926aff994a3c0a",
+      "circuit_id": "Duke_S2_11",
+      "method": "exact",
+      "parameters": {
+        "precision": "double",
+        "shots": null,
+        "result_zero_threshold": 0.0
+      },
+      "input_sha256": "e41806c630480683597d01d3671f77b9a63c1ac0a3588aa1b3bdcd25b583e509",
+      "backend": "qiskit_aer.statevector.cpu",
+      "estimate": 0.6084367166324411
+    },
+    "063f9d9fd503562af6eae9e35d74819e290e94693639462424249f1cf33b0d13": {
+      "key": "063f9d9fd503562af6eae9e35d74819e290e94693639462424249f1cf33b0d13",
+      "saved_at": "2026-10-24T16:07:28.536373+00:00",
+      "path": "runs/experiments/063f9d9fd503562af6eae9e35d74819e290e94693639462424249f1cf33b0d13.json",
+      "sha256": "883e6c10b8c2d6deed41757f54f462946e4a5df253f5858081924d77b484bee6",
+      "action_input_sha256": "9967cbb554fdf8ee958727fb8f1cf596220bbcb7d5fde8003e7778b551a5371a",
+      "engine_source": "c51fe73b7c3ba6ba6069507531305046b4080f2ead56060e3d4beb875dbbe799",
+      "circuit_id": "Duke_S2_12",
+      "method": "mps",
+      "parameters": {
+        "chi": 8,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "9967cbb554fdf8ee958727fb8f1cf596220bbcb7d5fde8003e7778b551a5371a",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.8178208835938556
+    },
+    "2d99969d3bb05242d3e9bb43697821241a33275167a1b91e260552764b72fd25": {
+      "key": "2d99969d3bb05242d3e9bb43697821241a33275167a1b91e260552764b72fd25",
+      "saved_at": "2026-10-24T16:17:16.434292+00:00",
+      "path": "runs/experiments/2d99969d3bb05242d3e9bb43697821241a33275167a1b91e260552764b72fd25.json",
+      "sha256": "756a4e452fb76623f2f86cceadde66d47726af3feb9783f34172926f844312b9",
+      "action_input_sha256": "9967cbb554fdf8ee958727fb8f1cf596220bbcb7d5fde8003e7778b551a5371a",
+      "engine_source": "5ff8f31181561a23dacab17c7c18eaa9bcac2d8e0aecb2af686a5107fe6efe83",
+      "circuit_id": "Duke_S2_12",
+      "method": "mps",
+      "parameters": {
+        "chi": 16,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "9967cbb554fdf8ee958727fb8f1cf596220bbcb7d5fde8003e7778b551a5371a",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.9500293583611145
+    },
+    "fb9b3d39e76d9742a48f2e48a969f92c01e33356d5b73b8a5db78ba28a53376c": {
+      "key": "fb9b3d39e76d9742a48f2e48a969f92c01e33356d5b73b8a5db78ba28a53376c",
+      "saved_at": "2026-10-24T16:26:16.630296+00:00",
+      "path": "runs/experiments/fb9b3d39e76d9742a48f2e48a969f92c01e33356d5b73b8a5db78ba28a53376c.json",
+      "sha256": "1b74c3ef81cbb258b08b37d1428254ab750c2513c69ac820b61eb023e4eddf78",
+      "action_input_sha256": "9967cbb554fdf8ee958727fb8f1cf596220bbcb7d5fde8003e7778b551a5371a",
+      "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "circuit_id": "Duke_S2_12",
+      "method": "mps",
+      "parameters": {
+        "chi": 32,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "9967cbb554fdf8ee958727fb8f1cf596220bbcb7d5fde8003e7778b551a5371a",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.9756671955982243
+    },
+    "ca5302fbc591d085c109c1054d6a0eb44758b58d8a8b1c9869d7eb4db8fd4cd6": {
+      "key": "ca5302fbc591d085c109c1054d6a0eb44758b58d8a8b1c9869d7eb4db8fd4cd6",
+      "saved_at": "2026-10-24T16:27:49.468558+00:00",
+      "path": "runs/experiments/ca5302fbc591d085c109c1054d6a0eb44758b58d8a8b1c9869d7eb4db8fd4cd6.json",
+      "sha256": "5ee03318d616e07215310bdcee845b9c37e642396ddddeb243da10c0527a13d9",
+      "action_input_sha256": "9967cbb554fdf8ee958727fb8f1cf596220bbcb7d5fde8003e7778b551a5371a",
+      "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "circuit_id": "Duke_S2_12",
+      "method": "mps",
+      "parameters": {
+        "chi": 64,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "9967cbb554fdf8ee958727fb8f1cf596220bbcb7d5fde8003e7778b551a5371a",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.99521583483904
+    },
+    "a33e05f33b47eec0ce156dc0c075b1825c7f89057aa421f23ae957acdc658500": {
+      "key": "a33e05f33b47eec0ce156dc0c075b1825c7f89057aa421f23ae957acdc658500",
+      "saved_at": "2026-10-24T16:03:31.857662+00:00",
+      "path": "runs/experiments/a33e05f33b47eec0ce156dc0c075b1825c7f89057aa421f23ae957acdc658500.json",
+      "sha256": "20c8e7efe211e890ddfd9f8adc861a5f4d3169ac7435964e9a2c8e4652869f0e",
+      "action_input_sha256": "9967cbb554fdf8ee958727fb8f1cf596220bbcb7d5fde8003e7778b551a5371a",
+      "engine_source": "480ca0188fdfe459c874c3658a4fe658af55924f027319253b926aff994a3c0a",
+      "circuit_id": "Duke_S2_12",
+      "method": "exact",
+      "parameters": {
+        "precision": "double",
+        "shots": null,
+        "result_zero_threshold": 0.0
+      },
+      "input_sha256": "9967cbb554fdf8ee958727fb8f1cf596220bbcb7d5fde8003e7778b551a5371a",
+      "backend": "qiskit_aer.statevector.cpu",
+      "estimate": 1.0000000000001097
+    },
+    "dfbceb00dad46fffa4610362875805622a760403f5db5bb121c27aafaff43bc5": {
+      "key": "dfbceb00dad46fffa4610362875805622a760403f5db5bb121c27aafaff43bc5",
+      "saved_at": "2026-10-24T16:07:32.325082+00:00",
+      "path": "runs/experiments/dfbceb00dad46fffa4610362875805622a760403f5db5bb121c27aafaff43bc5.json",
+      "sha256": "097d99e81cd8938467906f13ec587b875f34e5c8ceb2e68110bd083a303616e0",
+      "action_input_sha256": "533c41cefe417efe1f364301fa4a0cc07f330876827cb81889e4218981344b75",
+      "engine_source": "c51fe73b7c3ba6ba6069507531305046b4080f2ead56060e3d4beb875dbbe799",
+      "circuit_id": "Duke_S2_13",
+      "method": "mps",
+      "parameters": {
+        "chi": 8,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "533c41cefe417efe1f364301fa4a0cc07f330876827cb81889e4218981344b75",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.7855933467969524
+    },
+    "bc1033e53b16745b9f5a58166aaf6923cd73966dfb71f203134309ff63c63995": {
+      "key": "bc1033e53b16745b9f5a58166aaf6923cd73966dfb71f203134309ff63c63995",
+      "saved_at": "2026-10-24T16:17:20.546504+00:00",
+      "path": "runs/experiments/bc1033e53b16745b9f5a58166aaf6923cd73966dfb71f203134309ff63c63995.json",
+      "sha256": "1c401c232a04075774f6fda7773fb1c59a0627280264ca1e1176a95bd0c0eb0d",
+      "action_input_sha256": "533c41cefe417efe1f364301fa4a0cc07f330876827cb81889e4218981344b75",
+      "engine_source": "5ff8f31181561a23dacab17c7c18eaa9bcac2d8e0aecb2af686a5107fe6efe83",
+      "circuit_id": "Duke_S2_13",
+      "method": "mps",
+      "parameters": {
+        "chi": 16,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "533c41cefe417efe1f364301fa4a0cc07f330876827cb81889e4218981344b75",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.9521885162813222
+    },
+    "d76d6bcf68cc54d1cfecf5a0642b5a7ced790848cc19976e1ded79c5be8e2f4f": {
+      "key": "d76d6bcf68cc54d1cfecf5a0642b5a7ced790848cc19976e1ded79c5be8e2f4f",
+      "saved_at": "2026-10-24T16:26:20.833936+00:00",
+      "path": "runs/experiments/d76d6bcf68cc54d1cfecf5a0642b5a7ced790848cc19976e1ded79c5be8e2f4f.json",
+      "sha256": "c14a17120771ab75f55de70486e643c89ea152ffc963d88ebfbd3c940a8926f6",
+      "action_input_sha256": "533c41cefe417efe1f364301fa4a0cc07f330876827cb81889e4218981344b75",
+      "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "circuit_id": "Duke_S2_13",
+      "method": "mps",
+      "parameters": {
+        "chi": 32,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "533c41cefe417efe1f364301fa4a0cc07f330876827cb81889e4218981344b75",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.9766447883790527
+    },
+    "3755c8ae907c76fcb5a90d3be0f45bf94ec9bf58a080c292462ad06833312a4f": {
+      "key": "3755c8ae907c76fcb5a90d3be0f45bf94ec9bf58a080c292462ad06833312a4f",
+      "saved_at": "2026-10-24T16:27:55.978435+00:00",
+      "path": "runs/experiments/3755c8ae907c76fcb5a90d3be0f45bf94ec9bf58a080c292462ad06833312a4f.json",
+      "sha256": "98ddefd2f22ffc57f53266af8ef135e02ee4081969ad1f16cecb773770ff0152",
+      "action_input_sha256": "533c41cefe417efe1f364301fa4a0cc07f330876827cb81889e4218981344b75",
+      "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "circuit_id": "Duke_S2_13",
+      "method": "mps",
+      "parameters": {
+        "chi": 64,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "533c41cefe417efe1f364301fa4a0cc07f330876827cb81889e4218981344b75",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.9951427949920387
+    },
+    "705f8206c00e75daa75f43a417482ef74943dfd9f7da3c44cf0e039d0073032c": {
+      "key": "705f8206c00e75daa75f43a417482ef74943dfd9f7da3c44cf0e039d0073032c",
+      "saved_at": "2026-10-24T16:03:31.858662+00:00",
+      "path": "runs/experiments/705f8206c00e75daa75f43a417482ef74943dfd9f7da3c44cf0e039d0073032c.json",
+      "sha256": "0f2539fbec8206b7e015228bb8a4800a6d60d8ff8a9444078ca3caac3ab0356f",
+      "action_input_sha256": "533c41cefe417efe1f364301fa4a0cc07f330876827cb81889e4218981344b75",
+      "engine_source": "480ca0188fdfe459c874c3658a4fe658af55924f027319253b926aff994a3c0a",
+      "circuit_id": "Duke_S2_13",
+      "method": "exact",
+      "parameters": {
+        "precision": "double",
+        "shots": null,
+        "result_zero_threshold": 0.0
+      },
+      "input_sha256": "533c41cefe417efe1f364301fa4a0cc07f330876827cb81889e4218981344b75",
+      "backend": "qiskit_aer.statevector.cpu",
+      "estimate": 1.0000000000001097
+    },
+    "7936fe8627473cad29077ff15eaeeb81e752e07085795dee5f5ec53a15f855cd": {
+      "key": "7936fe8627473cad29077ff15eaeeb81e752e07085795dee5f5ec53a15f855cd",
+      "saved_at": "2026-10-24T16:07:36.306365+00:00",
+      "path": "runs/experiments/7936fe8627473cad29077ff15eaeeb81e752e07085795dee5f5ec53a15f855cd.json",
+      "sha256": "964dd5592face38b16916927c4b51a6ac41c0011ab37ffa4a69f1d7b67c2ab65",
+      "action_input_sha256": "c8a4b41e0d219d5e4d0277e3f95a208c22ce826b994e283627dc585b6fe63a6b",
+      "engine_source": "c51fe73b7c3ba6ba6069507531305046b4080f2ead56060e3d4beb875dbbe799",
+      "circuit_id": "Duke_S2_14",
+      "method": "mps",
+      "parameters": {
+        "chi": 8,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "c8a4b41e0d219d5e4d0277e3f95a208c22ce826b994e283627dc585b6fe63a6b",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.9466017426222721
+    },
+    "51c69e3514592d192f946565693cc234a8b5a20419370f21b050c38f97a5924d": {
+      "key": "51c69e3514592d192f946565693cc234a8b5a20419370f21b050c38f97a5924d",
+      "saved_at": "2026-10-24T16:17:23.753673+00:00",
+      "path": "runs/experiments/51c69e3514592d192f946565693cc234a8b5a20419370f21b050c38f97a5924d.json",
+      "sha256": "cd17672f0651201b70daa6f5c655f03790eb64dcc8dda5bcfdf21d1570ff6d2d",
+      "action_input_sha256": "c8a4b41e0d219d5e4d0277e3f95a208c22ce826b994e283627dc585b6fe63a6b",
+      "engine_source": "5ff8f31181561a23dacab17c7c18eaa9bcac2d8e0aecb2af686a5107fe6efe83",
+      "circuit_id": "Duke_S2_14",
+      "method": "mps",
+      "parameters": {
+        "chi": 16,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "c8a4b41e0d219d5e4d0277e3f95a208c22ce826b994e283627dc585b6fe63a6b",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.9799832230273403
+    },
+    "108d024b53fdd743207eab4d18ae55beeea89360484aa9c9a3c6639dc29d74ee": {
+      "key": "108d024b53fdd743207eab4d18ae55beeea89360484aa9c9a3c6639dc29d74ee",
+      "saved_at": "2026-10-24T16:26:25.826291+00:00",
+      "path": "runs/experiments/108d024b53fdd743207eab4d18ae55beeea89360484aa9c9a3c6639dc29d74ee.json",
+      "sha256": "ac6dd96df370d28a82f44264016af0b3f30b0efe39c8609f30617032729c02bc",
+      "action_input_sha256": "c8a4b41e0d219d5e4d0277e3f95a208c22ce826b994e283627dc585b6fe63a6b",
+      "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "circuit_id": "Duke_S2_14",
+      "method": "mps",
+      "parameters": {
+        "chi": 32,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "c8a4b41e0d219d5e4d0277e3f95a208c22ce826b994e283627dc585b6fe63a6b",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.9886504851498346
+    },
+    "c720dd3a7887cf10daa3972d32a6506dee68ee89f8e0184cf6758d6d6b5fefd5": {
+      "key": "c720dd3a7887cf10daa3972d32a6506dee68ee89f8e0184cf6758d6d6b5fefd5",
+      "saved_at": "2026-10-24T16:28:02.029065+00:00",
+      "path": "runs/experiments/c720dd3a7887cf10daa3972d32a6506dee68ee89f8e0184cf6758d6d6b5fefd5.json",
+      "sha256": "36338c4497eec68a7d0f48348e82a680917df51889aa053cf0d6222f648d52fb",
+      "action_input_sha256": "c8a4b41e0d219d5e4d0277e3f95a208c22ce826b994e283627dc585b6fe63a6b",
+      "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "circuit_id": "Duke_S2_14",
+      "method": "mps",
+      "parameters": {
+        "chi": 64,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "c8a4b41e0d219d5e4d0277e3f95a208c22ce826b994e283627dc585b6fe63a6b",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.9973086116136591
+    },
+    "eb26d23c2b7f1f8975332879e92c1ab3df07309a0de08b1914cea0fc42578ba6": {
+      "key": "eb26d23c2b7f1f8975332879e92c1ab3df07309a0de08b1914cea0fc42578ba6",
+      "saved_at": "2026-10-24T16:03:31.858662+00:00",
+      "path": "runs/experiments/eb26d23c2b7f1f8975332879e92c1ab3df07309a0de08b1914cea0fc42578ba6.json",
+      "sha256": "abd24287e2ec5aaea32367ca14f1ed2145e2eaf18dd55977082362d8e6b6a5ff",
+      "action_input_sha256": "c8a4b41e0d219d5e4d0277e3f95a208c22ce826b994e283627dc585b6fe63a6b",
+      "engine_source": "480ca0188fdfe459c874c3658a4fe658af55924f027319253b926aff994a3c0a",
+      "circuit_id": "Duke_S2_14",
+      "method": "exact",
+      "parameters": {
+        "precision": "double",
+        "shots": null,
+        "result_zero_threshold": 0.0
+      },
+      "input_sha256": "c8a4b41e0d219d5e4d0277e3f95a208c22ce826b994e283627dc585b6fe63a6b",
+      "backend": "qiskit_aer.statevector.cpu",
+      "estimate": 1.0000000000001097
+    },
+    "21a7dfe65770048672cd5ab73b687e5701e981eec72a591e47e872a34eb44d37": {
+      "key": "21a7dfe65770048672cd5ab73b687e5701e981eec72a591e47e872a34eb44d37",
+      "saved_at": "2026-10-24T16:07:40.025799+00:00",
+      "path": "runs/experiments/21a7dfe65770048672cd5ab73b687e5701e981eec72a591e47e872a34eb44d37.json",
+      "sha256": "9233e567717805d76cf0435d8c6a619014b43bca6bdfa7648b36a33495d24205",
+      "action_input_sha256": "ceab1c063fccb626713118b8d3a75b903e45bda4f2da4e1da77199adf3ced23b",
+      "engine_source": "c51fe73b7c3ba6ba6069507531305046b4080f2ead56060e3d4beb875dbbe799",
+      "circuit_id": "Duke_S2_15",
+      "method": "mps",
+      "parameters": {
+        "chi": 8,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "ceab1c063fccb626713118b8d3a75b903e45bda4f2da4e1da77199adf3ced23b",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.9060974749153685
+    },
+    "56e1ea09903a440f5d4a7783963807a1c68926d8d3abed540021c460e97d5c28": {
+      "key": "56e1ea09903a440f5d4a7783963807a1c68926d8d3abed540021c460e97d5c28",
+      "saved_at": "2026-10-24T16:17:27.117609+00:00",
+      "path": "runs/experiments/56e1ea09903a440f5d4a7783963807a1c68926d8d3abed540021c460e97d5c28.json",
+      "sha256": "12d8c1cc1443a5a20277de3de0ae8de4ad38bd5f06678c866e20ae1a691b62cd",
+      "action_input_sha256": "ceab1c063fccb626713118b8d3a75b903e45bda4f2da4e1da77199adf3ced23b",
+      "engine_source": "5ff8f31181561a23dacab17c7c18eaa9bcac2d8e0aecb2af686a5107fe6efe83",
+      "circuit_id": "Duke_S2_15",
+      "method": "mps",
+      "parameters": {
+        "chi": 16,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "ceab1c063fccb626713118b8d3a75b903e45bda4f2da4e1da77199adf3ced23b",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.9795151076732063
+    },
+    "9037d42bdd56fa0eac6e5a780586fab608797882eb757695456cdc499e24c2ff": {
+      "key": "9037d42bdd56fa0eac6e5a780586fab608797882eb757695456cdc499e24c2ff",
+      "saved_at": "2026-10-24T16:26:29.511186+00:00",
+      "path": "runs/experiments/9037d42bdd56fa0eac6e5a780586fab608797882eb757695456cdc499e24c2ff.json",
+      "sha256": "312b01638b9374faaea93667ad04114a945901217dc09848a10e4b81909100b3",
+      "action_input_sha256": "ceab1c063fccb626713118b8d3a75b903e45bda4f2da4e1da77199adf3ced23b",
+      "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "circuit_id": "Duke_S2_15",
+      "method": "mps",
+      "parameters": {
+        "chi": 32,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "ceab1c063fccb626713118b8d3a75b903e45bda4f2da4e1da77199adf3ced23b",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.9885152031484783
+    },
+    "589919f63a823a0c39961739b30cac52674266a41e5991e7d9adbf98c5b0961a": {
+      "key": "589919f63a823a0c39961739b30cac52674266a41e5991e7d9adbf98c5b0961a",
+      "saved_at": "2026-10-24T16:28:08.843567+00:00",
+      "path": "runs/experiments/589919f63a823a0c39961739b30cac52674266a41e5991e7d9adbf98c5b0961a.json",
+      "sha256": "24865ead790cb650814f4bc7dfbb01ffe64c7fa563a76df2d5604e8a6d1f7b36",
+      "action_input_sha256": "ceab1c063fccb626713118b8d3a75b903e45bda4f2da4e1da77199adf3ced23b",
+      "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "circuit_id": "Duke_S2_15",
+      "method": "mps",
+      "parameters": {
+        "chi": 64,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "ceab1c063fccb626713118b8d3a75b903e45bda4f2da4e1da77199adf3ced23b",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.9971061431726276
+    },
+    "51e2099765daf5bc3c19a323a2f828493be64b1e85f2010e4975c277068112da": {
+      "key": "51e2099765daf5bc3c19a323a2f828493be64b1e85f2010e4975c277068112da",
+      "saved_at": "2026-10-24T16:03:31.859661+00:00",
+      "path": "runs/experiments/51e2099765daf5bc3c19a323a2f828493be64b1e85f2010e4975c277068112da.json",
+      "sha256": "c10bba32e8cc9259b07b1b9054dbd6b989899d75d33cb1d318919cab13141451",
+      "action_input_sha256": "ceab1c063fccb626713118b8d3a75b903e45bda4f2da4e1da77199adf3ced23b",
+      "engine_source": "480ca0188fdfe459c874c3658a4fe658af55924f027319253b926aff994a3c0a",
+      "circuit_id": "Duke_S2_15",
+      "method": "exact",
+      "parameters": {
+        "precision": "double",
+        "shots": null,
+        "result_zero_threshold": 0.0
+      },
+      "input_sha256": "ceab1c063fccb626713118b8d3a75b903e45bda4f2da4e1da77199adf3ced23b",
+      "backend": "qiskit_aer.statevector.cpu",
+      "estimate": 1.0000000000001101
+    },
+    "75c24525638ed40320c66deda4d774cb30ba5c5e7d96b348c69852fd8528da6b": {
+      "key": "75c24525638ed40320c66deda4d774cb30ba5c5e7d96b348c69852fd8528da6b",
+      "saved_at": "2026-10-24T16:28:22.518847+00:00",
+      "path": "runs/experiments/75c24525638ed40320c66deda4d774cb30ba5c5e7d96b348c69852fd8528da6b.json",
+      "sha256": "1cb7e7df906668b1552de57138908df32da56252553aa39d58aa8d89503c0f4f",
+      "action_input_sha256": "469424807083c26dc45b097af082086086cff13530fb405517071fdb9c65608d",
+      "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "circuit_id": "Duke_S2_0",
+      "method": "mps",
+      "parameters": {
+        "chi": 128,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "469424807083c26dc45b097af082086086cff13530fb405517071fdb9c65608d",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": -0.043687495005271804
+    },
+    "29ae98e315ddfebf006c0562a5443387912f9a3a0e09483187bedbac91d2d104": {
+      "key": "29ae98e315ddfebf006c0562a5443387912f9a3a0e09483187bedbac91d2d104",
+      "saved_at": "2026-10-24T16:28:37.706026+00:00",
+      "path": "runs/experiments/29ae98e315ddfebf006c0562a5443387912f9a3a0e09483187bedbac91d2d104.json",
+      "sha256": "f5675292a881cb19dedce77b1d6999f0fb4b2dca3ca25fbc21b099a8e9eac68e",
+      "action_input_sha256": "b866373b88f9e87739617aa38f7f104f11b8d57553d803f4879b6638632e799e",
+      "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "circuit_id": "Duke_S2_1",
+      "method": "mps",
+      "parameters": {
+        "chi": 128,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "b866373b88f9e87739617aa38f7f104f11b8d57553d803f4879b6638632e799e",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.07504265470310872
+    },
+    "71a75e8de3530c8d86534eabd512d94d264ad75ae326b434c091e2922799b420": {
+      "key": "71a75e8de3530c8d86534eabd512d94d264ad75ae326b434c091e2922799b420",
+      "saved_at": "2026-10-24T16:28:46.583328+00:00",
+      "path": "runs/experiments/71a75e8de3530c8d86534eabd512d94d264ad75ae326b434c091e2922799b420.json",
+      "sha256": "cef48dda688a15ab8c1fcf33eb3ef478ae2226561c20c586d3821ee657d10a66",
+      "action_input_sha256": "921adac9217b7c560bb2bed90c71ded461a63f0337ce9a9a15d02eb651f1da28",
+      "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "circuit_id": "Duke_S2_2",
+      "method": "mps",
+      "parameters": {
+        "chi": 128,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "921adac9217b7c560bb2bed90c71ded461a63f0337ce9a9a15d02eb651f1da28",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": -0.012542448109584936
+    },
+    "b56ce6c0fd4cfe310bf1f30319d7838e408d940d76f9db096ee22adae5057075": {
+      "key": "b56ce6c0fd4cfe310bf1f30319d7838e408d940d76f9db096ee22adae5057075",
+      "saved_at": "2026-10-24T16:28:55.793776+00:00",
+      "path": "runs/experiments/b56ce6c0fd4cfe310bf1f30319d7838e408d940d76f9db096ee22adae5057075.json",
+      "sha256": "ad3b602e0f925f9379131c455e5e19897ba599f90850fe167f5a7e44b996297f",
+      "action_input_sha256": "5c61ea2891acd7c6f475a099b9e1f0688d59be9163b273ce9c488aab9261266c",
+      "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "circuit_id": "Duke_S2_3",
+      "method": "mps",
+      "parameters": {
+        "chi": 128,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "5c61ea2891acd7c6f475a099b9e1f0688d59be9163b273ce9c488aab9261266c",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.04386938839936272
+    },
+    "14899aae95412ee60b8ae51a23d8805669cc8f91c23cce0477b49b8c3d6b34b2": {
+      "key": "14899aae95412ee60b8ae51a23d8805669cc8f91c23cce0477b49b8c3d6b34b2",
+      "saved_at": "2026-10-24T16:29:04.894158+00:00",
+      "path": "runs/experiments/14899aae95412ee60b8ae51a23d8805669cc8f91c23cce0477b49b8c3d6b34b2.json",
+      "sha256": "43eacce478667e76fb8b2ac141c98f1343522dd6ebe49f82d745195f5a645d3c",
+      "action_input_sha256": "4032ba9eca67fb5bb3e3112bd95a7d81b885a706a781fe8fc414381e180d33d0",
+      "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "circuit_id": "Duke_S2_4",
+      "method": "mps",
+      "parameters": {
+        "chi": 128,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "4032ba9eca67fb5bb3e3112bd95a7d81b885a706a781fe8fc414381e180d33d0",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": -0.08308193408025416
+    },
+    "65dd28f3948fd7407a4e2f3f6bcd282cf62622c2a32bf66e8f8a9ec8f4d54ee7": {
+      "key": "65dd28f3948fd7407a4e2f3f6bcd282cf62622c2a32bf66e8f8a9ec8f4d54ee7",
+      "saved_at": "2026-10-24T16:29:15.279413+00:00",
+      "path": "runs/experiments/65dd28f3948fd7407a4e2f3f6bcd282cf62622c2a32bf66e8f8a9ec8f4d54ee7.json",
+      "sha256": "cf4fa2181e4fd12faad43020287822b9c393640896b60c7dabbdc5d0e846e2b7",
+      "action_input_sha256": "28eb68a4a5f80a62f1cd95ff4cf39228bf8399634c3a1601d99019fd0a4d55c4",
+      "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "circuit_id": "Duke_S2_5",
+      "method": "mps",
+      "parameters": {
+        "chi": 128,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "28eb68a4a5f80a62f1cd95ff4cf39228bf8399634c3a1601d99019fd0a4d55c4",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.04747627741376431
+    },
+    "663854b80c56668b73cfc6152ec6d4f6918e59e2b0fcc0920bb3384a66d031b5": {
+      "key": "663854b80c56668b73cfc6152ec6d4f6918e59e2b0fcc0920bb3384a66d031b5",
+      "saved_at": "2026-10-24T16:29:26.442647+00:00",
+      "path": "runs/experiments/663854b80c56668b73cfc6152ec6d4f6918e59e2b0fcc0920bb3384a66d031b5.json",
+      "sha256": "8b8c7aa9b2485c29608f4f38372a58c4cf821e669611b9058b1e5844085f5bfe",
+      "action_input_sha256": "042ba3a26281483f0cc0fbf0e63167792809b588fe11d4b9eecb42dd143b1bb1",
+      "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "circuit_id": "Duke_S2_6",
+      "method": "mps",
+      "parameters": {
+        "chi": 128,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "042ba3a26281483f0cc0fbf0e63167792809b588fe11d4b9eecb42dd143b1bb1",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": -0.039081522057353435
+    },
+    "202b3da3023cb6775c5738e1432f68c099e643ae90893deaac30f9f6b3433bc2": {
+      "key": "202b3da3023cb6775c5738e1432f68c099e643ae90893deaac30f9f6b3433bc2",
+      "saved_at": "2026-10-24T16:29:38.164434+00:00",
+      "path": "runs/experiments/202b3da3023cb6775c5738e1432f68c099e643ae90893deaac30f9f6b3433bc2.json",
+      "sha256": "6986d82f6738b5ef614ff6ebb850ac66f5a3e674ca491583d8912602946b9da1",
+      "action_input_sha256": "402d8c7452697f62b597c2ef2167f0f4c87e27959cf3bd21f304ff1b954606cc",
+      "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "circuit_id": "Duke_S2_7",
+      "method": "mps",
+      "parameters": {
+        "chi": 128,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "402d8c7452697f62b597c2ef2167f0f4c87e27959cf3bd21f304ff1b954606cc",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": -0.13700169129788503
+    },
+    "0d44451269131b56bac3677614e08ccb9bb13436a2b48ab5b479f6bbc2e50349": {
+      "key": "0d44451269131b56bac3677614e08ccb9bb13436a2b48ab5b479f6bbc2e50349",
+      "saved_at": "2026-10-24T16:29:51.075781+00:00",
+      "path": "runs/experiments/0d44451269131b56bac3677614e08ccb9bb13436a2b48ab5b479f6bbc2e50349.json",
+      "sha256": "3084c95c44a0479bccb23daec3d448eea101c1deee9ac440ca8689e6b9bb474a",
+      "action_input_sha256": "06ee34b77cec23ac37f72ef9bb101b22bee4d8846ba8b8b4fd2995ef94847d46",
+      "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "circuit_id": "Duke_S2_8",
+      "method": "mps",
+      "parameters": {
+        "chi": 128,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "06ee34b77cec23ac37f72ef9bb101b22bee4d8846ba8b8b4fd2995ef94847d46",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.10732833183120216
+    },
+    "bee6ebf345f820c12ad10dae1c706e1b12213c897c2b4a348c60490998e223b1": {
+      "key": "bee6ebf345f820c12ad10dae1c706e1b12213c897c2b4a348c60490998e223b1",
+      "saved_at": "2026-10-24T16:30:04.976932+00:00",
+      "path": "runs/experiments/bee6ebf345f820c12ad10dae1c706e1b12213c897c2b4a348c60490998e223b1.json",
+      "sha256": "5cbf244550f83e3bf188a1ba333f1a6893523a7463908175798126c3c14a6ec3",
+      "action_input_sha256": "9bc40be3bbef59a8d6b28e5c55ba878640abffc32381a3423cdfa1713982d55d",
+      "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "circuit_id": "Duke_S2_9",
+      "method": "mps",
+      "parameters": {
+        "chi": 128,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "9bc40be3bbef59a8d6b28e5c55ba878640abffc32381a3423cdfa1713982d55d",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.06606073411187546
+    },
+    "c1c75d8d630fcb86cb3e580eaf97b75ff141a285d72d7a190a57ea43f583b531": {
+      "key": "c1c75d8d630fcb86cb3e580eaf97b75ff141a285d72d7a190a57ea43f583b531",
+      "saved_at": "2026-10-24T16:30:19.745054+00:00",
+      "path": "runs/experiments/c1c75d8d630fcb86cb3e580eaf97b75ff141a285d72d7a190a57ea43f583b531.json",
+      "sha256": "e1adf823af44781c8b249854d499b5715b7cc9ec7a998de4bf1f66b8d7c33003",
+      "action_input_sha256": "6e72ade3c36ad836330580bd61f7c656dd48be3b200a2cf65ad5ba2899b9a576",
+      "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "circuit_id": "Duke_S2_10",
+      "method": "mps",
+      "parameters": {
+        "chi": 128,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "6e72ade3c36ad836330580bd61f7c656dd48be3b200a2cf65ad5ba2899b9a576",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.5844641676331414
+    },
+    "39d72dfb7df64ab4a9a13e867c1d129f9a91a5fcfb1469950bece61367bcadcd": {
+      "key": "39d72dfb7df64ab4a9a13e867c1d129f9a91a5fcfb1469950bece61367bcadcd",
+      "saved_at": "2026-10-24T16:30:31.442568+00:00",
+      "path": "runs/experiments/39d72dfb7df64ab4a9a13e867c1d129f9a91a5fcfb1469950bece61367bcadcd.json",
+      "sha256": "8cc8565a032b0d61f4b2f1b665a3a918e79d9013bf32cc0b0a503018bc96b46d",
+      "action_input_sha256": "e41806c630480683597d01d3671f77b9a63c1ac0a3588aa1b3bdcd25b583e509",
+      "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "circuit_id": "Duke_S2_11",
+      "method": "mps",
+      "parameters": {
+        "chi": 128,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "e41806c630480683597d01d3671f77b9a63c1ac0a3588aa1b3bdcd25b583e509",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.6105606719767752
+    },
+    "0f4b731a52f405afa608529cd9925f42fd404e0253432a9fc5fca9a0fbc6a313": {
+      "key": "0f4b731a52f405afa608529cd9925f42fd404e0253432a9fc5fca9a0fbc6a313",
+      "saved_at": "2026-10-24T16:30:46.193339+00:00",
+      "path": "runs/experiments/0f4b731a52f405afa608529cd9925f42fd404e0253432a9fc5fca9a0fbc6a313.json",
+      "sha256": "6a096b13e9b2ec55dc70b0a3b58bdfc965b649f60be678694dcaa99af419cf32",
+      "action_input_sha256": "9967cbb554fdf8ee958727fb8f1cf596220bbcb7d5fde8003e7778b551a5371a",
+      "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "circuit_id": "Duke_S2_12",
+      "method": "mps",
+      "parameters": {
+        "chi": 128,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "9967cbb554fdf8ee958727fb8f1cf596220bbcb7d5fde8003e7778b551a5371a",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.9997049453631869
+    },
+    "24b64b9e09a3197cf737cee79dee6f07ae252dd086bef8aa675c6d538d4bc700": {
+      "key": "24b64b9e09a3197cf737cee79dee6f07ae252dd086bef8aa675c6d538d4bc700",
+      "saved_at": "2026-10-24T16:30:59.565847+00:00",
+      "path": "runs/experiments/24b64b9e09a3197cf737cee79dee6f07ae252dd086bef8aa675c6d538d4bc700.json",
+      "sha256": "845b01ea3e4d158a74edd14e1a74712171b760f90503ce62db4ac8b8c423700c",
+      "action_input_sha256": "533c41cefe417efe1f364301fa4a0cc07f330876827cb81889e4218981344b75",
+      "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "circuit_id": "Duke_S2_13",
+      "method": "mps",
+      "parameters": {
+        "chi": 128,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "533c41cefe417efe1f364301fa4a0cc07f330876827cb81889e4218981344b75",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.9996884252940533
+    },
+    "bfcca8a5f526672e29d184ba00982be7288b4143c470e96701269317be5f907b": {
+      "key": "bfcca8a5f526672e29d184ba00982be7288b4143c470e96701269317be5f907b",
+      "saved_at": "2026-10-24T16:31:12.133146+00:00",
+      "path": "runs/experiments/bfcca8a5f526672e29d184ba00982be7288b4143c470e96701269317be5f907b.json",
+      "sha256": "07e7d443760246530904ed7f3d0d4e73b7536eae7ffa7509ac9f7bdd6fd13a3d",
+      "action_input_sha256": "c8a4b41e0d219d5e4d0277e3f95a208c22ce826b994e283627dc585b6fe63a6b",
+      "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "circuit_id": "Duke_S2_14",
+      "method": "mps",
+      "parameters": {
+        "chi": 128,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "c8a4b41e0d219d5e4d0277e3f95a208c22ce826b994e283627dc585b6fe63a6b",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.9997407095465418
+    },
+    "9d981928cff6b32d4920c3bffab2fe57b28b6b4a1f4030871a9919d31585deaa": {
+      "key": "9d981928cff6b32d4920c3bffab2fe57b28b6b4a1f4030871a9919d31585deaa",
+      "saved_at": "2026-10-24T16:31:23.512690+00:00",
+      "path": "runs/experiments/9d981928cff6b32d4920c3bffab2fe57b28b6b4a1f4030871a9919d31585deaa.json",
+      "sha256": "9f05180c498b8108ec1d9935a53f3627778fc62b6834365a4f51522debc1bce7",
+      "action_input_sha256": "ceab1c063fccb626713118b8d3a75b903e45bda4f2da4e1da77199adf3ced23b",
+      "engine_source": "dfadd9317f646e9efc542f9e26f8fd220473b07f521716b9f6d9a0b4e2716888",
+      "circuit_id": "Duke_S2_15",
+      "method": "mps",
+      "parameters": {
+        "chi": 128,
+        "svd_cutoff": 0.0
+      },
+      "input_sha256": "ceab1c063fccb626713118b8d3a75b903e45bda4f2da4e1da77199adf3ced23b",
+      "backend": "quimb.CircuitMPS.numpy",
+      "estimate": 0.999728548996879
+    }
+  },
+  "limitations": [
+    "This rejects the stated candidate on these windows, not all extrapolation models.",
+    "A held-out finer estimate is a trend target; only exact sample labels measure actual error.",
+    "The two windows overlap and the 16 observables come from one problem family; they are not independent circuit-level folds.",
+    "Local MPS and native BlueQubit kernels can behave differently; no native or graded convergence claim follows.",
+    "S1 is a small saturated sample; S3 lacks three complete MPS precision levels; neither supplies a comparable independent extrapolation test.",
+    "Scores use the local 100*max(0,Pearson rho)^2 replica, not an official scoring call."
+  ]
+}

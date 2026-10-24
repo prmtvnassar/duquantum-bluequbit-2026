@@ -1,23 +1,28 @@
-# Run records: quick start
+# Runs and decisions
 
-> Pre-release workbook workflow. The released Duke challenge uses one `circuit_id,value` CSV per problem. Use [the problem folders](../problems/README.md) and `scripts/export_problem_submission.py` for uploads. The workbook exporter below produces the earlier combined format.
+This directory is the canonical **tracked** audit trail. Open the CSVs in a spreadsheet or read them from an agent. The old blank XLSX templates and the old combined-submission schema have been retired.
 
-For scripts and agents, use the normalized [CSV records](csv/README.md). The six `.xlsx` files are optional human dashboards and remain unchanged; CSV and XLSX do not synchronize automatically. All six workbooks are blank templates, so no historical estimates need migration. Import the released template before recording target values.
+| File | Meaning |
+| --- | --- |
+| `jobs.csv` | One row per actual local or BlueQubit execution attempt, including unsuccessful and unfinished attempts. |
+| `estimates.csv` | Successful, finite estimates joined to the same run ID. No fabricated values for incomplete simulations. |
+| `decisions.csv` | Timestamped events: execution states, quotes, cost blocks, scheduling reasons, cache reuse and exports. `details_json` preserves structured evidence. |
+| `submissions.csv` | Actual website submissions, observed scores, timestamps, checksums and method-note paths. Prepared candidates are not counted as submissions. |
+| `records/*.json` | Detailed receipt for each attempt, including parameters, backend, input/source hashes, diagnostics, timings and actual cost when known. |
+| `events/*.json` | Durable events underlying the CSV view; an event ID identifies one observation. |
+| `experiments/*.json` | Immutable calibration index, restored into the local cache on a fresh checkout. Cloud receipts similarly restore submitted-job identities so a new checkout does not silently resubmit them. |
+| `reconciliation.json` | Last reconciliation against every persisted worker request and cloud-action receipt. |
 
-The workbook route below remains available if you prefer manual analysis and `scripts/export_submission.py`.
+An execution writes a RUNNING/SUBMITTING receipt **before** launching. Completion, resource limits, cancellation and errors update the same attempt. Separate attempts stay separate even if their input/precision match. Cache hits and quotations are events, not billable executions. A remote submission interrupted before its job ID is known remains uncertain and cannot be automatically resubmitted.
 
-Use `sample_1.xlsx` and `sample_2.xlsx` to test choices before running the four hidden circuits. Each workbook covers one circuit. Yellow cells are inputs; the initial precision settings are editable. Results are blank until you run jobs.
-
-1. **Set up:** In **Status**, enter the official circuit ID and required qubit count. In **Qubits**, paste the official qubit IDs into column A. For samples, put known exact values in column B.
-2. **Record runs:** Add one row per job in **Jobs** (including status, time, and credits). Add one row per qubit result in **Estimates**, with its method, precision setting, estimate, and job ID. Set **Accepted** to `1`; after a rerun, set the old row to `0` without deleting it.
-3. **Compare:** In **Qubits**, read the signed PPS/MPS changes and trend checks. In sample **Status** tabs, compare complete candidates against exact values and enter each official kit score in **Official score**. A small change or positive backtest gain does not prove accuracy.
-4. **Choose and move on:** Select the whole-circuit **CSV choice** in **Status**. For a theory or sample-based correction, fill **Calibrated estimate** in **Qubits** and name the model in **Status**. Use that choice on hidden circuits only after checking both samples. When **CSV export check** says *Ready for template check*, review the remaining credits and time, then set **Run decision** to *Move on* when another job is not worthwhile.
-
-After the official kit arrives, run from `D:\BluQubit`, replacing the template path with the kit's actual CSV file:
+Historical attempts were backfilled from `results/**/attempts/*/request.json` and their terminal receipts, plus `results/workflow/remote_actions/*.json`. A request without a terminal receipt is explicitly unresolved; it is never promoted to success. Initial historical start times come from request-file timestamps. Earlier quote files may contain only their last observation; they are not executions.
 
 ```powershell
-python .\scripts\export_submission.py --set sample --template "PATH_TO_SAMPLE_TEMPLATE.csv"
-python .\scripts\export_submission.py --template "PATH_TO_HIDDEN_TEMPLATE.csv"
+.venv312\Scripts\python.exe scripts/sync_runs.py
 ```
 
-The exporter checks circuit/qubit IDs, completeness, and the official row order before writing to `submissions/`.
+Use this after recovery and before committing. It is idempotent and rebuilds the CSV views without duplicating executions. Historical raw outputs remain in ignored `results/`; compact receipts and submitted bytes are tracked. No credentials or full environment dumps belong here.
+
+Close a CSV in Excel if it holds an exclusive write lock. The workflow fails closed if it cannot update the ledger. Atomic replacement and a process lock serialize local and remote writers. Do not hand-edit the generated CSVs; make a correction through its source receipt and retain an explicit event explaining it.
+
+Unit tests and lightweight import/numerical smoke checks are validation, not challenge simulation jobs. Their outcomes are recorded in the repository validation report. Any challenge simulator invocation through `execute()` or the BlueQubit adapter is logged automatically, including local resource-cap failures.

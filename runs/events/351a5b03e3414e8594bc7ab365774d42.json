@@ -1,0 +1,14 @@
+{
+  "event_id": "351a5b03e3414e8594bc7ab365774d42",
+  "recorded_at": "2026-10-24T18:38:37.591250+00:00",
+  "kind": "official_submission",
+  "problem": "G2",
+  "attempt": 1,
+  "owner": "teammate_reported",
+  "sha256": "4cb0c3c141640461732583a3e719058f8b731699f55078631d55f3eb0a3c79ea",
+  "displayed_score": 498.0,
+  "evidence_source": "user_report",
+  "status": "USER_REPORTED",
+  "note_evidence": "prepared_explanation",
+  "receipt": "submissions/teammates/teammate_reported/G2/attempt-01.json"
+}

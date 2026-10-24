@@ -1,0 +1,67 @@
+{
+  "circuit_id": "Duke_G2_11",
+  "problem": "G2",
+  "qubit": 11,
+  "origin": "bluequbit",
+  "method": "mps.cpu",
+  "backend": "mps.cpu",
+  "parameters": {
+    "mps_bond_dimension": 32
+  },
+  "status": "COMPLETED",
+  "estimate": 0.38846642884307553,
+  "job_id": "aopgRc80n61KSttt",
+  "cost_usd": 0.0,
+  "started_at": "2026-10-24T18:17:28.349506+00:00",
+  "finished_at": "2026-10-24T18:17:50.278014+00:00",
+  "wall_seconds": 15.719,
+  "reason": "Missing row in selected single-device, fixed-options baseline cohort. Selected a complete nonconstant pilot at one device and identical full options, preferring the original method family then precision; signal recovery only, accuracy uncertified",
+  "quote": {
+    "circuit_id": "Duke_G2_11",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 32
+    },
+    "quoted_at": "2026-10-24T18:17:28.327776+00:00",
+    "cost_usd": 0.3,
+    "runtime_seconds": 717.1,
+    "error": null,
+    "warning": "This is just an estimate; the actual runtime may be less or more.",
+    "binding_cost_cap": false
+  },
+  "error": null,
+  "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIII",
+  "remote_receipt": {
+    "action": {
+      "circuit_id": "Duke_G2_11",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIII"
+    },
+    "status": "COMPLETED",
+    "requested_at": "2026-10-24T18:17:28.349506+00:00",
+    "quote": {
+      "circuit_id": "Duke_G2_11",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "quoted_at": "2026-10-24T18:17:28.327776+00:00",
+      "cost_usd": 0.3,
+      "runtime_seconds": 717.1,
+      "error": null,
+      "warning": "This is just an estimate; the actual runtime may be less or more.",
+      "binding_cost_cap": false
+    },
+    "scheduler_justification": "Missing row in selected single-device, fixed-options baseline cohort. Selected a complete nonconstant pilot at one device and identical full options, preferring the original method family then precision; signal recovery only, accuracy uncertified",
+    "job_id": "aopgRc80n61KSttt",
+    "estimate": 0.38846642884307553,
+    "cost_usd": 0.0,
+    "compute_ms": 15255,
+    "queue_ms": 464,
+    "updated_at": "2026-10-24T18:17:50.278014+00:00"
+  },
+  "run_id": "remote-55fb7bf4896ddba7cdf524dcb5801bdace1dad5ce5f4de3811391644c5d67370"
+}

@@ -1,0 +1,127 @@
+{
+  "problem": "S2",
+  "attempt": 1,
+  "csv_path": "submissions/S2/attempt-01.csv",
+  "sha256": "dcb2666e0b37da0b1240edcd35a34398c6b3baa9c0e087875baf1a43d77ce82b",
+  "method_note": "Computed each of the sixteen official S2 QASM programs locally using Qiskit Aer double-precision, noiseless statevector simulation. Each program starts in |0...0>; the reported value is the expectation of Pauli Z on q[q], with q0 the rightmost Pauli character. No shot sampling, extrapolation, fitting, or score-derived labels. BlueQubit compute cost: $0.",
+  "displayed_score": 100.0,
+  "points": 100,
+  "observed_at": "2026-10-24T16:13:30.524453+00:00",
+  "source": "https://app.bluequbit.io/hackathons/2GMaAenu3iSsIC6Z?tab=submissions",
+  "precision_note": "UI display may round the official score; this is not a pointwise error bound",
+  "method_note_path": "submissions/S2/attempt-01.txt",
+  "row_provenance": [
+    {
+      "circuit_id": "Duke_S2_0",
+      "value": -0.043632055230053896,
+      "supporting_run_ids": [
+        "local-db5a42dfb87a7118-67655cdadb8c"
+      ]
+    },
+    {
+      "circuit_id": "Duke_S2_1",
+      "value": 0.07517615297527865,
+      "supporting_run_ids": [
+        "local-9a7184fd8849813a-483ef9dab14a"
+      ]
+    },
+    {
+      "circuit_id": "Duke_S2_2",
+      "value": -0.0124787300429564,
+      "supporting_run_ids": [
+        "local-7d319f586e23b031-1cc5c2c6fb43"
+      ]
+    },
+    {
+      "circuit_id": "Duke_S2_3",
+      "value": 0.043994649985982105,
+      "supporting_run_ids": [
+        "local-b385f57323edfdb9-b6dc1ab0fb72"
+      ]
+    },
+    {
+      "circuit_id": "Duke_S2_4",
+      "value": -0.0830515044567818,
+      "supporting_run_ids": [
+        "local-7aae40dc11462bf3-c917b70dfcea"
+      ]
+    },
+    {
+      "circuit_id": "Duke_S2_5",
+      "value": 0.04745186216197257,
+      "supporting_run_ids": [
+        "local-aa8a0538d4da7b69-05b670143f2c"
+      ]
+    },
+    {
+      "circuit_id": "Duke_S2_6",
+      "value": -0.039199208760549796,
+      "supporting_run_ids": [
+        "local-1d72dfbbd82848a8-fb795ebdbcc5"
+      ]
+    },
+    {
+      "circuit_id": "Duke_S2_7",
+      "value": -0.13670932682616133,
+      "supporting_run_ids": [
+        "local-4f1c1db006034a9d-209ac480dbed"
+      ]
+    },
+    {
+      "circuit_id": "Duke_S2_8",
+      "value": 0.105195222718198,
+      "supporting_run_ids": [
+        "local-94d002fa97eef0b0-b2b364953be2"
+      ]
+    },
+    {
+      "circuit_id": "Duke_S2_9",
+      "value": 0.06276741123037267,
+      "supporting_run_ids": [
+        "local-76ab45020c794d22-5ed6f7c2fad0"
+      ]
+    },
+    {
+      "circuit_id": "Duke_S2_10",
+      "value": 0.5824809854862115,
+      "supporting_run_ids": [
+        "local-496469494fdaaf3c-a6768c6867fe"
+      ]
+    },
+    {
+      "circuit_id": "Duke_S2_11",
+      "value": 0.6084367166324411,
+      "supporting_run_ids": [
+        "local-a3796a7dbb768c5a-1fff55ae6338"
+      ]
+    },
+    {
+      "circuit_id": "Duke_S2_12",
+      "value": 1.0000000000001097,
+      "supporting_run_ids": [
+        "local-a7ca7cb07e91d071-3a429305a4d3"
+      ]
+    },
+    {
+      "circuit_id": "Duke_S2_13",
+      "value": 1.0000000000001097,
+      "supporting_run_ids": [
+        "local-c2ead9a033ea1445-bd57c3a462c7"
+      ]
+    },
+    {
+      "circuit_id": "Duke_S2_14",
+      "value": 1.0000000000001097,
+      "supporting_run_ids": [
+        "local-b907fc9f33699c50-bda06c4f335e"
+      ]
+    },
+    {
+      "circuit_id": "Duke_S2_15",
+      "value": 1.0000000000001101,
+      "supporting_run_ids": [
+        "local-ba0bd2572446e7c3-95b363fe0ecc"
+      ]
+    }
+  ]
+}

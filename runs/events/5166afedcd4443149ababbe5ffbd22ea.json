@@ -1,0 +1,16 @@
+{
+  "event_id": "5166afedcd4443149ababbe5ffbd22ea",
+  "recorded_at": "2026-10-24T16:40:48.725921+00:00",
+  "kind": "sample_reproduction",
+  "problem": "S1",
+  "method": "exact",
+  "parameters": {},
+  "csv": "results\\reproduction\\S1.csv",
+  "max_difference_from_original_submission": 0.0,
+  "run_ids": [
+    "results\\reproduction\\execution\\attempts\\9fb8b1c9299d58d2-07133f92faf9",
+    "results\\reproduction\\execution\\attempts\\050bd8c682d593aa-8c0e58cf2245",
+    "results\\reproduction\\execution\\attempts\\f92fb2684023435a-89c843bed430",
+    "results\\reproduction\\execution\\attempts\\603075a8220dd0f8-a7e5f3c9ddee"
+  ]
+}

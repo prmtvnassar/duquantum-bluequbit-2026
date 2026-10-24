@@ -1,0 +1,279 @@
+{
+  "event_id": "0c955942059141d79cad1a686ece0404",
+  "recorded_at": "2026-10-24T18:20:31.498044+00:00",
+  "kind": "candidate_export",
+  "problem": "G1",
+  "csv_path": "results\\workflow\\submissions\\G1\\direct-f818a3c143b8.csv",
+  "selection": [
+    {
+      "circuit_id": "Duke_G1_0",
+      "value": -0.0002501840465460624,
+      "job_id": "W6RnxKDgZZKi19cV",
+      "device": "cpu",
+      "options": {},
+      "selection_reason": "Complete exact vector takes precedence",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G1_1",
+      "value": 0.0014240241043009729,
+      "job_id": "XwidDPx5kTlxGMZm",
+      "device": "cpu",
+      "options": {},
+      "selection_reason": "Complete exact vector takes precedence",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G1_2",
+      "value": -0.00044375747784213974,
+      "job_id": "ojyXDgQxjkg497PW",
+      "device": "cpu",
+      "options": {},
+      "selection_reason": "Complete exact vector takes precedence",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G1_3",
+      "value": -0.006020519256074278,
+      "job_id": "GISWTrfrCQIgOrWq",
+      "device": "cpu",
+      "options": {},
+      "selection_reason": "Complete exact vector takes precedence",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G1_4",
+      "value": -0.0002751088476296417,
+      "job_id": "1Q9k8h8XiQYn2QkK",
+      "device": "cpu",
+      "options": {},
+      "selection_reason": "Complete exact vector takes precedence",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G1_5",
+      "value": -0.0010382802978458026,
+      "job_id": "M9Yh3iot7G1983MX",
+      "device": "cpu",
+      "options": {},
+      "selection_reason": "Complete exact vector takes precedence",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G1_6",
+      "value": -5.815893185304763e-05,
+      "job_id": "9hP6o0yf8Qucz1G1",
+      "device": "cpu",
+      "options": {},
+      "selection_reason": "Complete exact vector takes precedence",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G1_7",
+      "value": 0.0002044213011354212,
+      "job_id": "BNx3CEpqYiyAvymm",
+      "device": "cpu",
+      "options": {},
+      "selection_reason": "Complete exact vector takes precedence",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G1_8",
+      "value": 0.00016644082205444978,
+      "job_id": "OBHGogpwdgCQ5usD",
+      "device": "cpu",
+      "options": {},
+      "selection_reason": "Complete exact vector takes precedence",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G1_9",
+      "value": -0.000373459593607635,
+      "job_id": "V64qARnJGCrudOL7",
+      "device": "cpu",
+      "options": {},
+      "selection_reason": "Complete exact vector takes precedence",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G1_10",
+      "value": 0.0008473618512345215,
+      "job_id": "oBn5grgusICRZNS5",
+      "device": "cpu",
+      "options": {},
+      "selection_reason": "Complete exact vector takes precedence",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G1_11",
+      "value": -8.081318254257477e-05,
+      "job_id": "jAFkvoA6IniilhXb",
+      "device": "cpu",
+      "options": {},
+      "selection_reason": "Complete exact vector takes precedence",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G1_12",
+      "value": -0.003098436594223144,
+      "job_id": "TWb5RbiHJyoju2pt",
+      "device": "cpu",
+      "options": {},
+      "selection_reason": "Complete exact vector takes precedence",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G1_13",
+      "value": -0.0035378557007047784,
+      "job_id": "YiJe7ztq5vb6q0Mp",
+      "device": "cpu",
+      "options": {},
+      "selection_reason": "Complete exact vector takes precedence",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G1_14",
+      "value": -0.045039793461481854,
+      "job_id": "EjyJwrEMlULvSVcO",
+      "device": "cpu",
+      "options": {},
+      "selection_reason": "Complete exact vector takes precedence",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G1_15",
+      "value": -0.020074852421475862,
+      "job_id": "6HcBXi5YMIFHmnIj",
+      "device": "cpu",
+      "options": {},
+      "selection_reason": "Complete exact vector takes precedence",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G1_16",
+      "value": -0.022219678173102678,
+      "job_id": "jJYWbtlne4KKS1aI",
+      "device": "cpu",
+      "options": {},
+      "selection_reason": "Complete exact vector takes precedence",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G1_17",
+      "value": -0.03485530573064188,
+      "job_id": "x7V4njirlt7QWJ3V",
+      "device": "cpu",
+      "options": {},
+      "selection_reason": "Complete exact vector takes precedence",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G1_18",
+      "value": -0.03542460693511112,
+      "job_id": "pUPV2rZIWoTpyOIX",
+      "device": "cpu",
+      "options": {},
+      "selection_reason": "Complete exact vector takes precedence",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G1_19",
+      "value": -0.019191333739257386,
+      "job_id": "Ofd8InoDWdzjMAMN",
+      "device": "cpu",
+      "options": {},
+      "selection_reason": "Complete exact vector takes precedence",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G1_20",
+      "value": 0.08375820732718607,
+      "job_id": "vgtq0xUxYCbYlZQG",
+      "device": "cpu",
+      "options": {},
+      "selection_reason": "Complete exact vector takes precedence",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G1_21",
+      "value": 0.043056811260367915,
+      "job_id": "d8pQMdSejoYOvKgr",
+      "device": "cpu",
+      "options": {},
+      "selection_reason": "Complete exact vector takes precedence",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G1_22",
+      "value": 0.34578834474200254,
+      "job_id": "NjeORq7QmY3Au5Nk",
+      "device": "cpu",
+      "options": {},
+      "selection_reason": "Complete exact vector takes precedence",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G1_23",
+      "value": 0.4559366929310495,
+      "job_id": "7v0hu2m2PN3gGsYQ",
+      "device": "cpu",
+      "options": {},
+      "selection_reason": "Complete exact vector takes precedence",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G1_24",
+      "value": 0.8332052108095281,
+      "job_id": "ER9Y1wOKkVu478uM",
+      "device": "cpu",
+      "options": {},
+      "selection_reason": "Complete exact vector takes precedence",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G1_25",
+      "value": 0.7762299006387924,
+      "job_id": "ZvvpXGUQP7CiOkzm",
+      "device": "cpu",
+      "options": {},
+      "selection_reason": "Complete exact vector takes precedence",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G1_26",
+      "value": 0.8984446072353612,
+      "job_id": "OjcRynZujj9bi1JL",
+      "device": "cpu",
+      "options": {},
+      "selection_reason": "Complete exact vector takes precedence",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G1_27",
+      "value": 0.8767869009276636,
+      "job_id": "RI1QjtifW6witQm3",
+      "device": "cpu",
+      "options": {},
+      "selection_reason": "Complete exact vector takes precedence",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G1_28",
+      "value": 0.9315943818989001,
+      "job_id": "ciyPRzUyqLzY4ZJk",
+      "device": "cpu",
+      "options": {},
+      "selection_reason": "Complete exact vector takes precedence",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G1_29",
+      "value": 0.9514353510985869,
+      "job_id": "GpN8Ugmh47AblPIN",
+      "device": "cpu",
+      "options": {},
+      "selection_reason": "Complete exact vector takes precedence",
+      "cost_usd": 0.0
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "circuit_id": "Duke_G3_0",
+  "problem": "G3",
+  "qubit": 0,
+  "origin": "bluequbit",
+  "method": "pauli-path",
+  "backend": "pauli-path",
+  "parameters": {
+    "pauli_path_truncation_threshold": 0.001,
+    "pauli_path_circuit_transpilation_level": 1
+  },
+  "status": "COMPLETED",
+  "estimate": -0.07229195955602603,
+  "job_id": "rOuJjcU3jjqtpb4e",
+  "cost_usd": 0.0,
+  "started_at": "2026-10-24T17:55:03.815330+00:00",
+  "finished_at": "2026-10-24T17:55:55.973771+00:00",
+  "wall_seconds": 27.012,
+  "reason": "Discriminate native representation-induced all-zero PPS plateau at fixed threshold; compare level1 with completed level2 on identical G3 pilot IDs before low-chi MPS rollout. No equivalence to local Qiskit level1 is assumed.",
+  "quote": {
+    "circuit_id": "Duke_G3_0",
+    "device": "pauli-path",
+    "options": {
+      "pauli_path_truncation_threshold": 0.001,
+      "pauli_path_circuit_transpilation_level": 1
+    },
+    "quoted_at": "2026-10-24T17:55:03.792749+00:00",
+    "cost_usd": 0.2,
+    "runtime_seconds": 0.1,
+    "error": null,
+    "warning": "This is just an estimate; the actual runtime may be less or more.",
+    "binding_cost_cap": false
+  },
+  "error": null,
+  "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZ",
+  "remote_receipt": {
+    "action": {
+      "circuit_id": "Duke_G3_0",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZ"
+    },
+    "status": "COMPLETED",
+    "requested_at": "2026-10-24T17:55:03.815330+00:00",
+    "quote": {
+      "circuit_id": "Duke_G3_0",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "quoted_at": "2026-10-24T17:55:03.792749+00:00",
+      "cost_usd": 0.2,
+      "runtime_seconds": 0.1,
+      "error": null,
+      "warning": "This is just an estimate; the actual runtime may be less or more.",
+      "binding_cost_cap": false
+    },
+    "scheduler_justification": "Discriminate native representation-induced all-zero PPS plateau at fixed threshold; compare level1 with completed level2 on identical G3 pilot IDs before low-chi MPS rollout. No equivalence to local Qiskit level1 is assumed.",
+    "job_id": "rOuJjcU3jjqtpb4e",
+    "estimate": -0.07229195955602603,
+    "cost_usd": 0.0,
+    "compute_ms": 26715,
+    "queue_ms": 297,
+    "updated_at": "2026-10-24T17:55:55.973771+00:00"
+  },
+  "run_id": "remote-edf8d8aafeeffd0e32f4ea5b32e53152dcbd845a4ef207c9ad54d539568ba124"
+}

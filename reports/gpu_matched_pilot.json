@@ -1,0 +1,25 @@
+{
+  "scope": "One matched pilot, not a statistical benchmark",
+  "circuit_id": "Duke_G4_0",
+  "chi": 32,
+  "routes": {
+    "mps.cpu": {
+      "job_id": "78aF6vkVPu0XZJaR",
+      "value": 0.27027187138182995,
+      "cost_usd": 0.0,
+      "compute_seconds": 48.593,
+      "queue_seconds": 1.421,
+      "elapsed_seconds": 55.055394
+    },
+    "mps.gpu": {
+      "job_id": "iuWprHrY7TQlwHYx",
+      "value": 0.2702718713884605,
+      "cost_usd": 0.2,
+      "compute_seconds": 24.189,
+      "queue_seconds": 19.149,
+      "elapsed_seconds": 44.803906
+    }
+  },
+  "absolute_value_difference": 6.630529458817591e-12,
+  "decision": "Retain CPU baseline: GPU roughly halves compute but saves about10 seconds elapsed in this trial and costs0.20 versus CPU0. GPU remains available for necessary time-sensitive refinements."
+}

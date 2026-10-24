@@ -1,0 +1,12 @@
+{
+  "problem": "G1",
+  "status": "SUBMITTED_USER_REPORTED",
+  "reported_date": "2026-10-24",
+  "source": "User confirmed in this chat: I already submitted G1; start G2-G4",
+  "expected_source_csv": "problems/04_graded_G1/exact_values.csv",
+  "uploaded_bytes_verified": false,
+  "attempt": null,
+  "score": null,
+  "website_verified": false,
+  "note": "Browser permission remains blocked. Do not infer a score, attempt number, upload timestamp, or exact uploaded bytes from this confirmation."
+}

@@ -1,0 +1,14 @@
+{
+  "event_id": "497df3e8d0b84a3784f6692e0c32c4e7",
+  "recorded_at": "2026-10-24T16:35:42.972101+00:00",
+  "kind": "quote",
+  "circuit_id": "Duke_G2_0",
+  "device": "cpu",
+  "options": {},
+  "quoted_at": "2026-10-24T16:35:42.970106+00:00",
+  "cost_usd": null,
+  "runtime_seconds": null,
+  "error": "Circuit contains more than 34 qubits, which is not supported for CPU backend. See https://app.bluequbit.io/docs for more details.",
+  "warning": null,
+  "binding_cost_cap": false
+}

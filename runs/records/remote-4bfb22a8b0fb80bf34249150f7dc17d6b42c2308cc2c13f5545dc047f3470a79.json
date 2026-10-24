@@ -1,0 +1,67 @@
+{
+  "circuit_id": "Duke_G4_19",
+  "problem": "G4",
+  "qubit": 19,
+  "origin": "bluequbit",
+  "method": "mps.cpu",
+  "backend": "mps.cpu",
+  "parameters": {
+    "mps_bond_dimension": 32
+  },
+  "status": "COMPLETED",
+  "estimate": 0.2881005630511742,
+  "job_id": "smDxT4giEnJIkVRP",
+  "cost_usd": 0.0,
+  "started_at": "2026-10-24T18:02:19.452635+00:00",
+  "finished_at": "2026-10-24T18:02:37.232658+00:00",
+  "wall_seconds": 14.517,
+  "reason": "Second Astra debate round: complete chi32 pilot cohorts for G2/G4; diagnose G3 representation and within-level threshold sensitivity after contradictory low-fidelity estimates. All values remain direct and uncertified.",
+  "quote": {
+    "circuit_id": "Duke_G4_19",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 32
+    },
+    "quoted_at": "2026-10-24T18:02:19.414456+00:00",
+    "cost_usd": 0.27,
+    "runtime_seconds": 632.0,
+    "error": null,
+    "warning": "This is just an estimate; the actual runtime may be less or more.",
+    "binding_cost_cap": false
+  },
+  "error": null,
+  "pauli": "IIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIII",
+  "remote_receipt": {
+    "action": {
+      "circuit_id": "Duke_G4_19",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "pauli": "IIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIII"
+    },
+    "status": "COMPLETED",
+    "requested_at": "2026-10-24T18:02:19.452635+00:00",
+    "quote": {
+      "circuit_id": "Duke_G4_19",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "quoted_at": "2026-10-24T18:02:19.414456+00:00",
+      "cost_usd": 0.27,
+      "runtime_seconds": 632.0,
+      "error": null,
+      "warning": "This is just an estimate; the actual runtime may be less or more.",
+      "binding_cost_cap": false
+    },
+    "scheduler_justification": "Second Astra debate round: complete chi32 pilot cohorts for G2/G4; diagnose G3 representation and within-level threshold sensitivity after contradictory low-fidelity estimates. All values remain direct and uncertified.",
+    "job_id": "smDxT4giEnJIkVRP",
+    "estimate": 0.2881005630511742,
+    "cost_usd": 0.0,
+    "compute_ms": 14169,
+    "queue_ms": 348,
+    "updated_at": "2026-10-24T18:02:37.232658+00:00"
+  },
+  "run_id": "remote-4bfb22a8b0fb80bf34249150f7dc17d6b42c2308cc2c13f5545dc047f3470a79"
+}
