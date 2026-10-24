@@ -21,6 +21,12 @@ The exact Qiskit, Aer, Quimb, and Qiskit add-on versions are in [pyproject.toml]
 
 Each problem has one circuit ID per qubit, `Duke_<problem>_<q>`. Each ID is a separate QASM program. For a result, take the expectation of Z on qubit `q`, where `q0` is the rightmost character of the SDK Pauli string. The three sample sets may be simulated locally from the downloaded QASM. The graded IDs must be run on BlueQubit. The preparation and export scripts do not submit jobs; `scripts/smoke_test.py` does when invoked.
 
+The sample analysis code is in `src/bluequbit_samples/`, with the companion notebook `bluequbit_samples_exact_mps_pps.ipynb`. To validate the downloaded sample inputs without starting simulations, run:
+
+```powershell
+python -m bluequbit_samples inspect --data-root problems
+```
+
 The released upload is **one `circuit_id,value` CSV per problem**, with every published ID and a finite value. Fill the gitignored `selected.csv` in that problem folder, then validate and export it:
 
 ```powershell

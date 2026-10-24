@@ -1,6 +1,6 @@
 """Read per-ID QASM without extracting untrusted ZIP members."""
 
-from collections import Counter
+from collections import defaultdict
 from dataclasses import dataclass, field
 import hashlib
 from pathlib import Path, PurePosixPath
@@ -77,7 +77,7 @@ def discover_samples(data_root, expected_total=50):
                 if path.stat().st_size > MAX_QASM_BYTES:
                     report.issues.append(f"QASM exceeds the size limit: {path}")
                     continue
-                entries.append((path.stem, path.read_bytes(), str(path)))
+                entries.append((path.stem, path.read_bytes(), str(path), False))
             elif path.suffix.lower() == ".zip":
                 try:
                     with ZipFile(path) as archive:
@@ -91,18 +91,28 @@ def discover_samples(data_root, expected_total=50):
                             total += item.file_size
                             if item.file_size > MAX_QASM_BYTES or total > MAX_ARCHIVE_QASM_BYTES:
                                 raise ValueError("ZIP QASM content exceeds the size limit")
-                            entries.append((member.stem, archive.read(item), f"{path}!{item.filename}"))
+                            entries.append((member.stem, archive.read(item), f"{path}!{item.filename}", True))
                 except Exception as exc:
                     report.issues.append(f"Cannot read {path}: {exc}")
-    counts = Counter(cid for cid, _, _ in entries)
-    duplicated = {cid for cid, count in counts.items() if count > 1}
-    for cid in sorted(duplicated):
-        report.issues.append(f"Duplicate ID, including ZIP/extracted copies: {cid}")
-    for cid, raw, source in entries:
-        if cid in duplicated:
+    by_id = defaultdict(list)
+    for cid, raw, source, from_archive in entries:
+        by_id[cid].append((raw, source, from_archive))
+    for cid, copies in sorted(by_id.items()):
+        decoded = []
+        for raw, source, from_archive in copies:
+            try:
+                text = raw.decode("utf-8-sig").replace("\r\n", "\n")
+                decoded.append((text, raw, source, from_archive))
+            except UnicodeDecodeError as exc:
+                report.issues.append(f"Invalid input {source}: {exc}")
+        if len(decoded) != len(copies):
             continue
+        if any(text != decoded[0][0] for text, _, _, _ in decoded[1:]):
+            report.issues.append(f"Conflicting QASM content for {cid}: " + ", ".join(source for _, _, source, _ in decoded))
+            continue
+        # The ZIP is the original download; extracted copies may have platform-specific newlines.
+        text, raw, source, _ = next((copy for copy in decoded if copy[3]), decoded[0])
         try:
-            text = raw.decode("utf-8-sig").replace("\r\n", "\n")
             report.samples.append(sample_from_text(cid, text, source, raw_sha256=hashlib.sha256(raw).hexdigest()))
         except Exception as exc:
             report.issues.append(f"Invalid input {source}: {exc}")
