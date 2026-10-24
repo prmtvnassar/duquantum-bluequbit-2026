@@ -11,6 +11,7 @@ from .duke_submission import build_submission, write_submission
 from .experiment_store import digest, utc_now
 from .ledger import event
 from .adaptive import trend_diagnostic
+from .campaign_reasoning import recover_flat_policy, empirical_seconds, complete_vector_trends
 
 POINTS = {"G1":300,"G2":600,"G3":800,"G4":1000}
 
@@ -148,6 +149,8 @@ def plan_next(adapter,settings,problems=("G1","G2","G3","G4"),quote_limit=8):
     if not 1<=quote_limit<=32 or any(p not in POINTS for p in problems):
         raise ValueError("Invalid graded planning scope")
     usage, records = adapter.usage(), action_history(adapter.root)
+    settings, recovery = recover_flat_policy(settings, records)
+    vector_trends=complete_vector_trends(records,SIZES,settings["stopping"]["signal_floor"])
     uncovered={p:sum(not any(valid(r) and r["action"]["circuit_id"]==f"Duke_{p}_{q}" for r in records)
                      for q in range(SIZES[p])) for p in POINTS}
     remaining=(datetime.fromisoformat(settings["deadline_utc"])-datetime.now(timezone.utc)).total_seconds()
@@ -198,19 +201,33 @@ def plan_next(adapter,settings,problems=("G1","G2","G3","G4"),quote_limit=8):
             allowed,gate=False,"protect_remaining_baseline_budget"
         if (adapter.root/"STOP").exists():
             allowed,gate=False,"stop_file"
-        denominator=(quote.get("cost_usd") or 0)+max(seconds or 1,1)/3600
+        runtime_model=empirical_seconds(item,records,seconds)
+        predicted_seconds=runtime_model["seconds"]
+        if remaining<settings["submission_buffer_seconds"]+predicted_seconds:
+            allowed,gate=False,"empirical_deadline_buffer"
+        denominator=(quote.get("cost_usd") or 0)+max(predicted_seconds,1)/3600
         multiplier={"coverage":1e6,"cross_pilot":1e6 if item["problem"]=="G4" else 10,"refine":1}[item["stage"]]
         progress=score_progress(item["problem"])
         score=multiplier*POINTS[item["problem"]]/SIZES[item["problem"]]*max(item["uncertainty"],.001)/denominator
         if item["stage"]=="refine": score*=progress["priority_room"]
+        shape_key=f"{item['problem']}/{item['device']}/{item['options'].get('pauli_path_circuit_transpilation_level')}"
+        shape=vector_trends.get(shape_key)
+        shape_multiplier=1.
+        if item["stage"]=="refine" and shape and shape.get("row_influence") is not None:
+            q=int(item["circuit_id"].split("_")[-1])
+            shape_multiplier+=SIZES[item["problem"]]*shape["row_influence"][q]
+            score*=shape_multiplier
         item.update(quote=quote,allowed=allowed,gate=gate,priority=score if allowed else 0,
-                    protected_baseline_usd=reserve,timeout_seconds=limit,route_quotes=alternatives,score_progress=progress)
+                    protected_baseline_usd=reserve,timeout_seconds=limit,route_quotes=alternatives,score_progress=progress,
+                    runtime_model=runtime_model,shape_priority_multiplier=shape_multiplier)
         if "gpu" in item["device"]:
             item["timeout_seconds"]=min(limit,settings.get("gpu_total_seconds",27000)-usage.get("gpu_seconds",0),
                                         settings.get("gpu_hour_seconds",2700)-usage.get("gpu_seconds_last_hour",0))
     shortlist.sort(key=lambda a:a["priority"],reverse=True)
     plan={"generated_at":utc_now(),"usage":usage,"missing_rows":uncovered,"actions":shortlist,
           "next":next((s for s in shortlist if s["allowed"]),None),"status":"PLAN_ONLY",
+          "policy_recovery":recovery,
+          "vector_trends":vector_trends,
           "warning":"Sample allocation is a prior. Budget/deadline stops do not certify numerical convergence. Flat pilot vectors block bulk coverage and require refinement/review."}
     atomic_json(adapter.root/"graded_plan.json",plan)
     event("graded_decision",plan)
@@ -219,6 +236,7 @@ def plan_next(adapter,settings,problems=("G1","G2","G3","G4"),quote_limit=8):
 
 def export_complete(settings,root="results/workflow"):
     records,exports=action_history(root),[]
+    settings,recovery=recover_flat_policy(settings,records)
     for problem in POINTS:
         chosen=[]
         for q in range(SIZES[problem]):
@@ -248,9 +266,12 @@ def export_complete(settings,root="results/workflow"):
               "precision. Methods: "+"; ".join(methods)+". No hidden-circuit reconstruction, score-derived labels, "
               "extrapolation or fusion. Per-ID job IDs and precision are in the manifest. "
               "Budget-limited approximations have no certified error bounds.")
+        if problem in recovery:
+            note += " The starting method produced a flat pilot vector; a complete, fixed-precision independent pilot resolved signal and supplied the replacement baseline. This does not certify accuracy."
         target.with_suffix(".txt").write_text(note+"\n",encoding="utf-8")
         resolved=max(r["value"] for r in chosen)-min(r["value"] for r in chosen)>settings["stopping"]["signal_floor"]
         atomic_json(target.with_suffix(".json"),{"selection":chosen,"method_note":note,"submitted":False,
+                    "policy_recovery":recovery.get(problem),
                     "submission_eligible":resolved,"quality":"DIRECT_UNCERTIFIED" if resolved else "UNRESOLVED_SIGNAL_REVIEW_REQUIRED"})
         event("candidate_export",{"problem":problem,"csv_path":str(target),"selection":chosen})
         exports.append(str(target.resolve()))

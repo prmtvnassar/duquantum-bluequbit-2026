@@ -1,0 +1,16 @@
+{
+  "event_id": "dd6b7a2b5a124af1a1fef7014a5707fe",
+  "recorded_at": "2026-10-24T17:38:04.308185+00:00",
+  "kind": "quote",
+  "circuit_id": "Duke_G3_0",
+  "device": "mps.gpu",
+  "options": {
+    "mps_bond_dimension": 16
+  },
+  "quoted_at": "2026-10-24T17:38:04.307179+00:00",
+  "cost_usd": 0.2,
+  "runtime_seconds": 141.3,
+  "error": null,
+  "warning": "This is just an estimate; the actual runtime may be less or more.",
+  "binding_cost_cap": false
+}

@@ -1,0 +1,62 @@
+{
+  "circuit_id": "Duke_G4_2",
+  "problem": "G4",
+  "qubit": 2,
+  "origin": "bluequbit",
+  "method": "mps.cpu",
+  "backend": "mps.cpu",
+  "parameters": {
+    "mps_bond_dimension": 16
+  },
+  "status": "RUNNING",
+  "estimate": null,
+  "job_id": "h88XrE4ylXWWeswj",
+  "cost_usd": null,
+  "started_at": "2026-10-24T17:51:03.842558+00:00",
+  "finished_at": null,
+  "wall_seconds": 0.0,
+  "reason": "Missing baseline row; use an unattempted direct method. Flat primary pilot replaced by a complete nonconstant independent-method pilot; signal recovery only, accuracy uncertified",
+  "quote": {
+    "circuit_id": "Duke_G4_2",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 16
+    },
+    "quoted_at": "2026-10-24T17:51:03.822866+00:00",
+    "cost_usd": 0.2,
+    "runtime_seconds": 114.1,
+    "error": null,
+    "warning": "This is just an estimate; the actual runtime may be less or more.",
+    "binding_cost_cap": false
+  },
+  "error": null,
+  "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZII",
+  "remote_receipt": {
+    "action": {
+      "circuit_id": "Duke_G4_2",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 16
+      },
+      "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZII"
+    },
+    "status": "RUNNING",
+    "requested_at": "2026-10-24T17:51:03.842558+00:00",
+    "quote": {
+      "circuit_id": "Duke_G4_2",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 16
+      },
+      "quoted_at": "2026-10-24T17:51:03.822866+00:00",
+      "cost_usd": 0.2,
+      "runtime_seconds": 114.1,
+      "error": null,
+      "warning": "This is just an estimate; the actual runtime may be less or more.",
+      "binding_cost_cap": false
+    },
+    "scheduler_justification": "Missing baseline row; use an unattempted direct method. Flat primary pilot replaced by a complete nonconstant independent-method pilot; signal recovery only, accuracy uncertified",
+    "job_id": "h88XrE4ylXWWeswj"
+  },
+  "run_id": "remote-2c7240c48cccd67bba6558798ef0f937e5e38f6d649e39a0500f4d1a5ca340ef"
+}

@@ -1,0 +1,7 @@
+{
+  "event_id": "ec783157c9034d37970463c107c3ed01",
+  "recorded_at": "2026-10-24T17:46:30.759419+00:00",
+  "kind": "operator_cancel",
+  "job_id": "qcP6XC7iOjUocvSJ",
+  "reason": "Prioritize complete baseline and missing independent pilots over expensive deep refinement of one point; threshold 1e-4 already revealed nonconvergence."
+}

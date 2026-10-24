@@ -1,0 +1,17 @@
+{
+  "event_id": "736d02594efa4afcbcc00540c73d9f73",
+  "recorded_at": "2026-10-24T17:36:41.427736+00:00",
+  "kind": "quote",
+  "circuit_id": "Duke_G3_35",
+  "device": "pauli-path.gpu",
+  "options": {
+    "pauli_path_truncation_threshold": 0.001,
+    "pauli_path_circuit_transpilation_level": 2
+  },
+  "quoted_at": "2026-10-24T17:36:41.425730+00:00",
+  "cost_usd": 0.67,
+  "runtime_seconds": 0.1,
+  "error": null,
+  "warning": "This is just an estimate; the actual runtime may be less or more.",
+  "binding_cost_cap": false
+}
