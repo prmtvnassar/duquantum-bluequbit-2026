@@ -8,13 +8,13 @@
   "parameters": {
     "mps_bond_dimension": 32
   },
-  "status": "RUNNING",
-  "estimate": null,
+  "status": "COMPLETED",
+  "estimate": 0.9994376796673349,
   "job_id": "flbW0WUTUwh0ugVi",
-  "cost_usd": null,
+  "cost_usd": 0.0,
   "started_at": "2026-10-24T18:11:05.886357+00:00",
-  "finished_at": "2026-10-24T18:11:22.577225+00:00",
-  "wall_seconds": 0.0,
+  "finished_at": "2026-10-24T18:11:53.553164+00:00",
+  "wall_seconds": 43.18,
   "reason": "Missing row in selected single-device, fixed-options baseline cohort. Selected a complete nonconstant pilot at one device and identical full options, preferring the original method family then precision; signal recovery only, accuracy uncertified",
   "quote": {
     "circuit_id": "Duke_G2_1",
@@ -40,7 +40,7 @@
       },
       "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZI"
     },
-    "status": "RUNNING",
+    "status": "COMPLETED",
     "requested_at": "2026-10-24T18:11:05.886357+00:00",
     "quote": {
       "circuit_id": "Duke_G2_1",
@@ -57,7 +57,11 @@
     },
     "scheduler_justification": "Missing row in selected single-device, fixed-options baseline cohort. Selected a complete nonconstant pilot at one device and identical full options, preferring the original method family then precision; signal recovery only, accuracy uncertified",
     "job_id": "flbW0WUTUwh0ugVi",
-    "updated_at": "2026-10-24T18:11:22.577225+00:00"
+    "updated_at": "2026-10-24T18:11:53.553164+00:00",
+    "estimate": 0.9994376796673349,
+    "cost_usd": 0.0,
+    "compute_ms": 30999,
+    "queue_ms": 12181
   },
   "run_id": "remote-00ecd316aaa229f8f78b41130d866bf7cc047fcbabae462458304afa8a6cff69"
 }

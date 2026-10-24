@@ -1,141 +1,244 @@
-# Final graded-submission workflow
+# Current graded-submission workflow
 
-The executable policy is [configs/workflow_final.json](configs/workflow_final.json). The measured evidence is in [reports/calibration_evidence.json](reports/calibration_evidence.json), [reports/sample_benchmarks.json](reports/sample_benchmarks.json), and [runs/](runs/README.md). This supersedes the proposals retained in [docs/history/](docs/history/).
+This is the active operational guide for October 24, 2026. The resource policy is
+[configs/workflow_final.json](configs/workflow_final.json); effective method choices
+also depend on the saved native receipts through
+[src/otoc/campaign_reasoning.py](src/otoc/campaign_reasoning.py) and
+[src/otoc/graded.py](src/otoc/graded.py). The JSON's original PPS/chi16 entries are
+starting priors, not a replacement for that evidence-based selection. The design
+in [docs/history/estimation_workflow_v0.md](docs/history/estimation_workflow_v0.md)
+is retained as history.
 
-**Version 3 supersedes the initial allocation below.** Two GPT-6 Astra Ultra
-reviews challenged the native transfer and scheduler. Their evidence and
-resolved objections are in [reports/GRADED_DEBATE_REVIEW.md](reports/GRADED_DEBATE_REVIEW.md).
-The active family priors are MPS for G2, PPS for G3, and incumbent MPS for G4;
-G2/G4's initial PPS choices reflected affordability rather than demonstrated
-accuracy. The completed native chi32 pilots now guide G2/G4 cohort selection.
-G3's native PPS level 1 resolves signal where level 2 returned zeros. These are
-provisional baseline choices, not certified convergence.
+## Current choices and evidence
 
-Exports require one complete device/full-options cohort. Partial precision
-upgrades stay in the evidence ledger and cannot replace selected baseline
-rows. Coverage and missing-row reserves use that same cohort definition.
-Bounded discovery checks can be enabled explicitly, but are disabled after
-the initial debate tranche to avoid indefinite exploration before coverage.
-The chi32 runtime cap is 900 seconds for both checks and cohort completion.
-
-The graded hard budget remains $30. Version 3 holds $3 in reserve (10%), so planned
-spending is limited to $27. Per-missing-row reserves are at least $0.30 for G2,
-$0.20 for G3 and $0.27 for G4, matching the selected configurations' observed
-quotes. Future jobs are freshly quoted and unknown charges block execution.
-Earlier 15%/$25.50 and uniform $0.20 figures below describe the initial policy.
-
-## What the sample work establishes
-
-**G1 is already solved by Kevin.** The 30 values in [problems/04_graded_G1/exact_values.csv](problems/04_graded_G1/exact_values.csv) match his submitted file and all 30 completed exact CPU jobs in `kevin/experiment` at commit `9714dab3422134c77b7fc36f99e86f5f2dada921`. The ledger reports $0 for each successful job, and Kevin reports a 100% score. The workflow imports this exact anchor and schedules no duplicate G1 work. Its reported score is distinguished from our independently observed sample scores; his historical job costs are not charges against our current API account.
-
-All three official sample submissions display **100/100**, with one attempt used per problem. S1 and S2 were submitted from local exact statevectors; S3 was submitted from the independent local coefficient-cutoff Pauli engine at epsilon 0.01. The exact uploaded bytes, explanations, scores and supporting execution IDs are in [submissions/](submissions/README.md).
-
-Official scores are correlation-based and the UI rounds them. A score of 100 does not establish small pointwise error. We separately compare every complete precision vector with numerical exact references: local Aer for S1/S2, and free BlueQubit CPU jobs for all S3 IDs. The calibration acceptance gate is **maximum absolute error <= 0.01 and offline correlation score >= 99/100**. These are chosen engineering targets, not organizer requirements or statistical confidence limits.
-
-The sample-informed allocation is:
-
-| Graded problem | Starting method | Rationale and limitation |
+| Problem | Selected direct cohort | Basis and remaining uncertainty |
 | --- | --- | --- |
-| G1, 30-qubit Haar chain | Reuse Kevin's completed exact CPU vector | All 30 values match the source ledger and main's retained CSV. No repeat runs. Free exact CPU remains the fallback only if this anchor is unavailable. |
-| G2, 36-qubit Haar chain | Affordable PPS epsilon 0.001 pilots; MPS chi 16 independent checks | S2 prefers MPS chi 128 for accuracy, but the native quote is $3.02 and 7,230 seconds per ID. The feasible PPS fallback is a deliberate quality compromise: its S2 max error is about 0.111. |
-| G3, 36-qubit mostly-Clifford grid | PPS at the S3-selected threshold | S3 favors Pauli propagation. Smaller thresholds can exceed the local term cap, so smaller is not automatically better operationally. |
-| G4, 38-qubit Haar grid | PPS epsilon 0.001 pilots and MPS chi 16 independent checks | No matching sample family exists. Native MPS chi 64 quotes exceed this allocation on both CPU and GPU. These affordable starting settings remain unvalidated for G4. |
+| G1, 30-qubit Haar chain | Reuse all 30 exact CPU values from Kevin | The retained CSV matches his completed source jobs at commit `9714dab3422134c77b7fc36f99e86f5f2dada921`. The user confirmed submission; the 100% score is teammate-reported. No repeat simulations are needed. |
+| G2, 36-qubit Haar chain | `mps.cpu`, `mps_bond_dimension: 32` | S2 favors MPS, and the complete native chi32 pilot cohort is available. The chi16-to-chi32 sign change at q18 shows unresolved precision sensitivity. Chi128's representative quote exceeds the current resource allocation. |
+| G3, 36-qubit mostly-Clifford grid | `pauli-path`, threshold `0.001`, native transpilation level `1` | The sample favors Pauli propagation. The complete level 1 pilot resolves signal where level 2 returned zeros. The tighter 0.0003 pilot cohort is incomplete; its q0 result must not replace one row of the coarse cohort. |
+| G4, 38-qubit Haar grid | `mps.cpu`, `mps_bond_dimension: 32` | Complete native chi32 pilots support this provisional route after flat PPS pilots. G4 has no matching sample family, and q0 changes substantially from chi16 to chi32. |
 
-Local Quimb MPS and our coefficient-cutoff Pauli implementation are **different implementations** from BlueQubit's native kernels. Native MPS/PPS sample quotes were $0.20, so they were not executed under the user's $0 sample limit. Local calibration provides starting choices, not native error guarantees. Native PPS transpilation level 2 is used; local Qiskit optimization level 1 is not an equivalent transformation. Thresholds below 1e-5 are never sent to the native PPS service.
+These choices are provisional baselines, not convergence certificates. See
+[reports/GRADED_CAMPAIGN.md](reports/GRADED_CAMPAIGN.md) for the measured comparisons
+and [reports/GRADED_DEBATE_REVIEW.md](reports/GRADED_DEBATE_REVIEW.md) for the
+adversarial review. Broad discovery is currently disabled so that actual complete
+vectors take priority over another round of sparse checks.
+
+G2 now has a complete 36-row chi32 candidate at $0 recorded cohort cost, preserved
+with its explanation and job manifest in [submissions/candidates/](submissions/candidates/README.md).
+It has not been recorded as an official upload. The next-check review in
+[reports/REFINEMENT_REVIEW.md](reports/REFINEMENT_REVIEW.md) distinguishes G2's
+nearly affine three-pilot change from G4's stronger shape change; neither sparse
+comparison certifies the full vector. The first two-job CPU controller trial
+completed successfully; [reports/cpu_concurrency_trial.json](reports/cpu_concurrency_trial.json)
+records timing, costs and its limitations.
+
+A **cohort** means one device and identical full native options for every ID in a
+problem's retained template. CPU and GPU are separate cohorts; different PPS
+transpilation levels are separate cohorts. Coverage counts rows in the selected
+cohort. A higher-precision result for one ID stays in the evidence ledger until
+its entire cohort is complete. It never replaces an isolated row in a complete
+older vector.
+
+All three official sample submissions display **100/100**, with one attempt used
+per problem. S1 and S2 used local exact statevectors; S3 used the independent local
+coefficient-cutoff Pauli engine at epsilon 0.01. The exact uploaded bytes and
+observed website receipts are in [submissions/](submissions/README.md). The display
+rounds a correlation-based score: it does not establish error-free values or a
+maximum absolute error bound.
+
+Separate local calibration used local Aer references for S1/S2 and free exact
+CPU service results for S3, with the engineering targets
+maximum absolute error <= 0.01 and offline correlation score >= 99/100. Its
+selected settings were S1 MPS chi8, S2 MPS chi128 and S3 local PPS 0.001 at local
+optimization level 1; the respective maximum errors were about 2.7e-15, 0.00329
+and 0.00653. These are measured local results, not native service guarantees.
+Local Quimb MPS and coefficient-cutoff PPS differ from the native kernels, and
+local optimization levels are not equivalent to native transpilation levels.
+Native MPS/PPS sample quotes were paid, so those native approximation pilots were
+not launched under the $0 sample-spend rule. See [reports/calibration_evidence.json](reports/calibration_evidence.json)
+and [reports/sample_benchmarks.json](reports/sample_benchmarks.json).
+
+## Budget, time and execution ownership
+
+| Control | Current policy |
+| --- | --- |
+| Sample spending | $0 |
+| Graded budget | $30 total, with a 10% ($3) cushion; planned exposure must fit $27 |
+| Selected baseline reserve rates | At least $0.30 per missing G2 row, $0.20 per G3 row and $0.27 per G4 row; matching quotes can increase them |
+| Ordinary remote job cap | 600 seconds |
+| MPS chi32 cap | 900 seconds for both diagnostic and cohort-completion jobs |
+| Submission buffer | 20 minutes before the configured deadline, October 25 at 15:30 UTC |
+| Job count | At most 800 account jobs under this policy |
+| Serial executor | `max_concurrent_jobs: 1`; one `remote_runner` owner |
+| Explicit CPU cohort controller | At most two owned jobs, under the same sole `remote_runner` lock; see [docs/COHORT_BATCH.md](docs/COHORT_BATCH.md) |
+
+The $27 ceiling is a planning constraint, not a service-enforced cost cap. Every
+launch requires a fresh quote for the exact ID, device and full options, plus
+fresh account reconciliation. Quotes remain commitments until terminal status
+and actual cost are known. Previous $0 bills never justify reducing a future
+quote. Unknown costs, foreign active jobs, ambiguous submission intents and
+inconsistent account state block new launches.
+
+For the bounded cohort controller, admission includes known charges, outstanding
+quoted commitments, the new quote and reserves for still-missing, unreserved
+selected baseline rows. A valid complete nonconstant older cohort preserves a
+usable baseline while a refinement is incomplete; only that problem's future
+coverage reserve is then exempted. Active and new refinement jobs still reserve
+their full quotes. Reserve evidence is tied to device and full options.
+Representative quotes for missing coverage are refreshed at startup and after
+five minutes, while known charges persist by job ID across restart and account
+index regressions. The controller's operational
+contract and release checks are in [docs/COHORT_BATCH.md](docs/COHORT_BATCH.md).
+
+## What the diagnostics decide
+
+Pointwise changes, within-method trends and full-vector shape answer different
+questions and are retained together.
+
+- **Pointwise sensitivity** measures changes in the actual observable values and
+  disagreement between methods. Large changes identify numerical instability
+  even if the correlation-based score would ignore a common offset or positive
+  rescaling. Agreement alone cannot exclude shared bias.
+- **Within-method trends** retain signed steps, slopes per logarithmic precision
+  increment, sign changes and contraction ratios. Oscillation or growth raises
+  refinement priority. A contracting sequence may provide a geometric tail
+  proxy for scheduling. A flat sequence is `FLAT_UNVERIFIED`: PPS may have dropped
+  every term, and low-chi MPS can plateau far from the exact reference. The tail
+  proxy is never an error bar or an extrapolated output.
+- **Shape sensitivity** compares two complete aligned precision vectors at the
+  same device and, for PPS, the same transpilation level. For centered vectors
+  `x` and `y`, set `a = (x dot y)/(x dot x)` and residual `r = y - a*x`. The row
+  influences `r_i^2/(y dot y)` identify where refinement changes shape after
+  removing offset and scale. Their sum is `1 - rho^2`; the separate signed shape
+  change is `1 - rho`. A negative slope is explicitly flagged, since a sign
+  reversal can have zero residual while changing correlation completely.
+
+The shape diagnostic is useful because positive affine changes preserve Pearson
+correlation, whereas local distortions can change the score. It measures
+sensitivity **between estimates**, not distance to unknown truth or expected
+score gain. Sparse pilots cannot establish full-vector shape stability. Nearly
+constant vectors below centered RMS 1e-4 cannot support the shape diagnostic;
+the pilot recovery gate separately uses a range greater than 1e-4.
+
+Pilot selection requires every configured pilot ID at one device and identical
+full options. It prefers a resolved cohort in the original method family, then
+precision; it does not rank candidates by how large their amplitudes look. A
+switch to the other family requires an available original-family pilot cohort
+and unresolved original-family signal. The selected exact device and options
+are preserved. Nonconstant output only permits a provisional baseline choice.
+
+The local stopping diagnostic requires at least three precision levels in each
+method, two consecutive small changes, small cross-method disagreement and
+resolved stable vector shape. Its pointwise tolerance is
+`min(0.001, 0.03 * max(signal_scale, 0.02))` and shape tolerance is 0.001.
+Calibration replays complete coarse-to-fine prefix pairs, including early
+plateaus; it does not only examine each method's best result. Available samples
+and incomplete histories do not validate a universal stopping rule or native
+transfer. **Automatic convergence stopping on graded IDs remains disabled.**
+Budget, deadline, timeout and job limits can stop work without certifying accuracy.
+
+No extrapolation, fusion, bias correction or hidden-label fitting is enabled.
+The tested extrapolation candidate failed held-out precision checks, and sample
+fusion did not demonstrate a consistent gain. Mixing zero PPS with a common
+positive multiple of MPS merely rescales the vector and cannot improve Pearson
+correlation. Raw direct simulator values remain the candidate outputs.
 
 ## Decision loop
 
-**Native campaign update (October 24):** The starting PPS 0.001 pilot vectors
-were zero for G2, G3 and G4. G2 q0 changed to 0.045096 at 0.0001, so a zero
-plateau is not evidence of convergence. The active planner now implements the
-original proposal's independent-pilot recovery, measured-runtime scheduling,
-and complete-vector shape sensitivity. See
-[reports/GRADED_CAMPAIGN.md](reports/GRADED_CAMPAIGN.md) for evidence and limits.
-It switches away from a flat primary only when every independent pilot is
-available at one identical configuration and that vector resolves a signal.
-This selects an uncertified direct baseline, not an exact answer.
+1. **Reconcile before launching.** Read saved receipts, account job identities,
+   costs, the stop flag and the deadline. Resolve ambiguity before any retry.
+2. **Complete the selected cohort.** Reuse completed matching rows, preserve the
+   G1 anchor and prioritize missing baseline IDs. Every ID is a separate program;
+   another ID's value is never reused as its answer. Required pilots and the G4
+   independent-method check remain part of the evidence gate.
+3. **Quote and admit the exact action.** Preserve baseline reserves, outstanding
+   commitments and the submission buffer. Reject unknown or excessive runtime.
+   The serial planner additionally uses observed upper-quartile wall time as a
+   floor on the quoted runtime for scheduling and deadline checks.
+4. **Record intent, then submit once.** Save `SUBMITTING` with its reservation
+   before calling the SDK. Poll the known job ID, persist transitions and actual
+   costs, then reconsider the next action. A request timeout is not permission
+   to submit again.
+5. **Export a complete direct candidate.** Exact complete cohorts take precedence;
+   otherwise select the highest completed precision in the eligible primary
+   family, then a complete fallback. PPS must retain the selected representation.
+   Higher precision is a deterministic selection policy, not a monotonic-error
+   claim. Validate against the retained template and save an immutable CSV,
+   method note and per-ID job/parameter manifest. Preserve the first complete
+   baseline and every complete alternative.
+6. **Submit through the official process and record evidence.** Exporting a CSV
+   does not upload it. Record the actual uploaded bytes, explanation, attempt
+   number and displayed score only when those facts have been observed. G1 is
+   user-confirmed; G2-G4 website scores remain unverified while browser access is
+   blocked. Candidate files and inferred scores must not be recorded as uploads.
 
-Scheduling time is at least the observed upper-quartile wall time for the
-problem/device, even when the quote is unrealistically short. For complete
-successive vectors at a fixed device and transpilation setting, squared
-residuals after affine alignment boost refinement priorities for rows that
-change vector shape. Neither diagnostic changes raw submission values or
-certifies error. Extrapolation and fusion still require held-out validation.
+After coverage, the serial scheduler ranks feasible refinement candidates using
+problem points per row, within-method and cross-method sensitivity, observed
+runtime and quoted cost. Complete-vector shape influence adjusts this ranking.
+The denominator `quoted_cost + predicted_seconds/3600` is a scheduling heuristic,
+not calibrated expected score gain. Verified official scores may reweight effort
+between entire problems by remaining headroom, with a rounding floor; they never
+determine individual submitted values. An earlier complete baseline remains
+available while further genuine simulator configurations are evaluated.
 
-1. **Reconcile before spending.** Read account jobs, known costs, unresolved jobs, the stop flag and the deadline. Unknown charges, active jobs or ambiguous submissions block a new cloud launch. Read each ID's existing receipts before proposing another action.
-2. **Pilot, then complete baseline coverage.** For approximate methods, first obtain the three configured pilot IDs. A nearly constant pilot vector blocks bulk coverage and directs effort to refinement/review; it does not prove that the method is wrong. G4 additionally requires one completed independent-method pilot before bulk coverage. Then obtain one genuine direct result for each required ID. Each ID is a separate program; no result is reused as another ID's answer. G1 tries free exact CPU first. Failed actions are retained and not blindly repeated; an unattempted method can supply a fallback.
-3. **Quote the exact proposed precision.** The SDK's estimate-only route receives the same device, Pauli and precision options as execution. The quote is recorded. A new quote and budget check occur immediately before submission. Quotes are estimates, not service-enforced dollar caps.
-4. **Protect the budget and time.** Sample spend remains $0. The graded budget is $30, with 15% ($4.50) held in reserve, so automated planned spending stops at $25.50. An additional $0.20 per still-missing G2-G4 row is protected for estimated baseline coverage. This is a planning allowance, not a guaranteed price; actual quotes can block a plan. A 600-second cloud job limit, one active cloud job, an 800-job cap and a 20-minute submission buffer apply. Unknown or excessive runtime is blocked.
-5. **Allocate remaining effort.** Missing rows dominate priority after the pilot gate; the required G4 independent pilot has coverage priority. Among comparable candidates, priority uses problem points per required row, observed precision/cross-method sensitivity, quoted cost, and quoted runtime. Cost plus runtime/3600 is a scheduling heuristic, not expected score gain. Candidates are quoted across problems so one instance cannot hide the alternatives. Further independent-method pilots on the first, butterfly/central and last qubits precede ordinary refinements. Increase MPS chi up to 512; decrease PPS along the configured grid, never below 1e-5.
-6. **Choose direct outputs.** Exact CPU wins when available. Otherwise take the highest completed precision in the family-selected method; use an available fallback only when the primary is unavailable, and record that reason. Do not assume higher precision improves every individual estimate. Fusion and extrapolation stay disabled: we have insufficient evidence for reliable native transfer or G4-family improvement.
-7. **Export only a complete vector.** Validate IDs, finite values and row count against the retained released template. Protect the first complete baseline atomically. Export a CSV, mandatory method explanation and per-ID job/parameter manifest. Exporting is not submitting.
-8. **Submit and record the actual outcome.** Upload the CSV and its method explanation; verify the website's attempt number and displayed score. Record those observed facts with `record_submission.py`. Preserve every submitted version. Never fit hidden labels or check the scorer.
+## CPU and GPU policy
 
-To minimize time penalties, export each problem immediately when it has a complete usable vector, and submit that genuine baseline before pursuing further refinements. G1 can be submitted from the retained exact file now. Later official scores reweight **whole-problem effort** by remaining score headroom, with a floor because the display rounds; they never determine individual output values. Preserve the best submitted result while testing new genuine simulator configurations. The scheduler's objective is a transparent heuristic, not a proven optimum for the leaderboard.
+The matched G4 q0 chi32 trial agreed between CPU and GPU within 6.7e-12. GPU
+compute took 24.189 seconds versus 48.593 seconds on CPU, but elapsed time was
+44.804 versus 55.055 seconds: only **10.25 seconds saved** after queue/request
+overhead. The GPU receipt billed **$0.20**, while this CPU receipt billed $0.
+This single trial supports retaining CPU for the selected baseline; it does not
+establish a general speedup or future prices. See
+[reports/gpu_matched_pilot.json](reports/gpu_matched_pilot.json).
 
-### CPU/GPU choice
-
-For native MPS and PPS candidates, the planner can compare CPU and GPU routes at the same precision. It chooses the lowest quoted cost among feasible routes, then the shorter runtime in a price tie. It checks the 7.5-hour total GPU allowance and 45-minute rolling-hour allowance from account job times, plus the per-job and dollar limits. Unknown GPU usage blocks GPU work. Planning may reuse a quote for at most five minutes to reduce overhead; execution always re-quotes. Current exact-GPU requests for G2/G3 (36 qubits) and G4 (38 qubits) were explicitly rejected for size, so GPU statevector is not an exact shortcut for these instances. GPU remains available when the requested mode and size are supported and its fresh quote passes the gates.
-
-Kevin's source ledger also records rejected attempts from exceeding the five-job account limit. We preserve those failures and keep this budgeted executor serial. Reusing G1 avoids the much larger time cost of repeating that solved problem; no claim is made that serial scheduling maximizes throughput.
-
-```mermaid
-flowchart TD
-  A[Reconcile jobs and costs] --> B{Safe to launch?}
-  B -- No --> Z[Record blocked reason and preserve current baseline]
-  B -- Yes --> C{Missing required IDs?}
-  C -- Yes --> D[Propose family-informed baseline]
-  C -- No --> E[Independent pilots then precision refinements]
-  D --> Q[Quote exact device and options]
-  E --> Q
-  Q --> G{Budget, coverage reserve and deadline pass?}
-  G -- No --> Z
-  G -- Yes --> R[Record intent then run one job]
-  R --> S[Record result, cost and diagnostics]
-  S --> T{Complete vector available?}
-  T -- Yes --> U[Validate CSV, method note and manifest]
-  T -- No --> A
-  U --> A
-```
-
-## Stopping: what is and is not established
-
-**Within-method trends matter independently of cross-method disagreement.** `trend_diagnostic` records signed changes, slopes per logarithmic precision increment, sign reversals, contraction ratios and flat segments. An oscillating or growing sequence raises refinement priority. A consistently contracting sequence can supply a geometric tail *proxy* for scheduling; it never changes the submitted estimate or becomes a certified error bar. A flat sequence is labelled `FLAT_UNVERIFIED`, since both algorithms can plateau at a biased value or PPS can drop every term. See [reports/trend_evidence.json](reports/trend_evidence.json) for the sample histories. Missing independent-method runs do not prevent useful within-method refinement.
-
-The engineering diagnostic requires at least three distinct precision levels in **each** branch, two consecutive small changes in each, small MPS/PPS disagreement, and resolved, stable vector shape. For a problem's robust signal scale `s`, the pointwise tolerance is `min(0.001, 0.03 * max(s, 0.02))`; shape change must be <= 0.001. Near-constant vectors below centered RMS 1e-4 cannot pass the shape check.
-
-Calibration replays **every complete coarse-to-fine prefix pair**, including early plateaus, and compares proposed stops with exact reference errors. It does not check only the final best estimates. The results are in the calibration evidence. The three samples do not establish a universal stopping guarantee, and native transfer has not been validated. Therefore **automatic convergence stopping on graded IDs is disabled**. These diagnostics inform priority and review; exact completion, configured resource bounds, deadline or budget decide when automated work stops. A budget-limited answer remains explicitly unverified.
-
-This avoids spending six or more runs per hidden observable merely to claim two-method convergence: even at $0.20 per run that would exceed the available budget. Baseline coverage and honest uncertainty take precedence over a claim the evidence cannot support.
+GPU remains enabled for supported time-sensitive refinements whose fresh quotes
+pass all gates. The serial planner compares feasible CPU/GPU routes outside
+baseline coverage, preferring lower quoted cost then shorter quoted runtime.
+It enforces 7.5 hours of total GPU time and 45 minutes per rolling hour; unknown
+GPU usage blocks that route. Baseline coverage keeps its selected device. The
+separate two-slot cohort controller is CPU-only. Exact GPU requests for the
+36- and 38-qubit graded instances were rejected for size, so they are not an
+available exact shortcut in the saved evidence.
 
 ## Operation and recovery
 
-Run from the repository root in Python 3.12:
+Review the saved state without network access:
 
 ```powershell
-.venv312\Scripts\python.exe scripts/smoke_test.py
-.venv312\Scripts\python.exe -m unittest discover -s tests
-.venv312\Scripts\python.exe scripts/sync_runs.py
-.venv312\Scripts\python.exe scripts/run_workflow.py tune
-.venv312\Scripts\python.exe scripts/graded_workflow.py
+.venv312\Scripts\python.exe scripts/graded_workflow.py --offline-plan
 ```
 
-The last command obtains quotes and writes a reviewable plan; it does not simulate. Once calibration has `release_status: READY`, execution is explicit and serial:
-
-For a network-free review using saved quotes and job receipts, use `scripts/graded_workflow.py --offline-plan`. Offline quotes can never authorize execution.
+The normal command obtains live quotes and writes a plan without simulating;
+`--execute` is required to launch. Offline quotes cannot authorize execution.
+After the existing runner has released the lock, a bounded serial invocation is:
 
 ```powershell
-.venv312\Scripts\python.exe scripts/graded_workflow.py --execute --max-jobs 1
+.venv312\Scripts\python.exe scripts/graded_workflow.py --execute --problems G2 G3 G4 --max-jobs 1
 ```
 
-Increase `--max-jobs` only for an intended bounded batch. Every action is re-evaluated after the preceding job. Never launch a second cloud runner. A `results/workflow/STOP` file blocks new launches and requests cancellation of an active polled job; cancellation does not prove zero cost. Reconcile its terminal job and actual cost before removing the flag. A saved SUBMITTING action without a job ID requires matching it to the service's job history before any retry; do not delete its receipt to force resubmission.
+The separate two-slot path must pass its independent review and offline tests
+before the executor hands over from the serial runner. Its explicit cohort
+commands and reconciliation rules are in [docs/COHORT_BATCH.md](docs/COHORT_BATCH.md).
+Never run a second controller alongside the current owner, including a second
+serial invocation. The serial configuration remains at one active job.
 
-If an exact quote changes to a paid or excessive-runtime plan, G1 falls back to a quoted MPS action, still subject to the same gates. Live representative G2-G4 CPU exact quotes reject circuits over 34 qubits. G2 MPS chi 128 was quoted at $3.02/7,230 seconds on CPU and $3.14/2,825 seconds on GPU; G4 MPS chi 64 at $0.79/1,878 seconds on CPU and $1.08/968 seconds on GPU. All exceed the selected 600-second job limit. PPS epsilon 0.001 and MPS chi 16 were quoted at $0.20 for their representative IDs. Those are dated, nonbinding quotes, preserved in [reports/native_quotes.json](reports/native_quotes.json), and may differ for other IDs. If prices exceed the coverage allowance, the planner blocks rather than spending the reserve. A network error, timeout or quota error is not permission to launch a duplicate.
+`results/workflow/STOP` blocks new launches and requests cancellation of owned
+polled jobs. Cancellation does not prove zero cost or release a commitment.
+Wait for terminal status and known actual cost; retain unresolved receipts for
+reconciliation. A `SUBMITTING` receipt with no job ID must be matched against
+service history before any retry. Do not delete a receipt or lock to force a
+launch. The cohort controller can restart with the same cohort to attach to
+known IDs, and records any unresolved state when its bounded reconciliation
+interval ends.
 
-To record a verified website submission:
+For an actual verified website submission, use:
 
 ```powershell
-.venv312\Scripts\python.exe scripts/record_submission.py --problem G1 --attempt 1 --csv PATH_TO_UPLOADED.csv --note-file PATH_TO_EXPLANATION.txt --score OBSERVED_SCORE
+.venv312\Scripts\python.exe scripts/record_submission.py --problem G2 --attempt ACTUAL_ATTEMPT --csv PATH_TO_UPLOADED.csv --note-file PATH_TO_EXPLANATION.txt --score OBSERVED_SCORE
 ```
 
-The description must name the actual method and precision used, qubit ordering and any approximation/fusion. The recorder requires a nonempty explanation and a supporting execution for every uploaded value. Scores are manually observed website facts, never invented by the exporter. The usage heartbeat and per-job account queries monitor spending; the ledger records the decisions independently of that monitor.
+The explanation must state the real device, precision, native representation,
+qubit ordering and approximation. The recorder requires supporting executions
+for every value. Saved quotes, action receipts, run records and decisions remain
+the audit trail; a monitoring heartbeat is not an execution authorization.

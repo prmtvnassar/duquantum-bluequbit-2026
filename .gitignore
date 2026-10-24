@@ -43,6 +43,7 @@ build/
 
 # Generated challenge records and checkpoints
 runs/.ledger.lock
+runs/.ledger.guard
 runs/csv/
 runs/**/*.tmp
 data/checkpoints/*.csv

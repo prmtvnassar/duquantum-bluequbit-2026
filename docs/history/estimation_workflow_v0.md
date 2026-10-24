@@ -1,3 +1,56 @@
+# Historical proposal: superseded operational guidance
+
+This file preserves the October 22 pre-competition design below. Its original
+claims, proposed algorithms, two-sample assumption, illustrative CSV schema and
+unconfirmed API/billing details are historical material, not the active runbook.
+The implementation and measured evidence now live in
+[the current workflow](../../workflow_final.md),
+[the campaign evidence](../../reports/GRADED_CAMPAIGN.md),
+[the adversarial review](../../reports/GRADED_DEBATE_REVIEW.md), and
+[the CPU cohort controller guide](../COHORT_BATCH.md).
+
+## Implementation addendum, October 24, 2026
+
+The released campaign has three sample problems and four graded problems. Every
+sample submission displays 100/100; this rounded correlation-based score is not
+an absolute-error guarantee. The retained released templates, rather than the
+illustrative schema below, govern each export. G1's exact 30-row vector is reused
+and its submission is user-confirmed. G2-G4 official scores remain unverified
+while browser site access is blocked; a candidate CSV is not a submitted answer.
+
+Current provisional cohorts are G2/G4 native CPU MPS chi32 and G3 native CPU PPS
+threshold 0.001 at transpilation level 1. Precision and representation checks
+show unresolved sensitivity. Local sample calibration is not validation of the
+native implementations, and G4 has no matching sample family. Full device/options
+cohorts are required: a partial refinement never replaces isolated baseline rows.
+
+The implemented diagnostics retain pointwise changes, within-method trends and
+complete-vector shape sensitivity. Affine residuals rank where shape changes;
+they do not estimate hidden-label error. Flatness, agreement and nonconstant
+pilots are not convergence proofs. Automatic native convergence stopping,
+extrapolation and fusion remain disabled because validation is insufficient or
+failed for the tested candidates. The proposed advanced methods below should
+therefore not be read as enabled production behavior.
+
+The current resource policy is $0 sample spending and a $30 graded budget, with
+10% ($3) reserved and a $27 planning ceiling. CPU chi32 jobs have a 900-second cap;
+ordinary remote jobs retain 600 seconds and a 20-minute submission buffer. Fresh
+quotes, outstanding commitments and missing selected-baseline reserves govern
+admission. Unknown/foreign/ambiguous account state blocks new launches. The
+serial configuration remains one job; the separate explicitly invoked CPU cohort
+controller permits at most two owned jobs under the same sole runner lock after
+review and testing. A usable complete older baseline exempts only future
+refinement coverage, never active or newly quoted commitments.
+
+The single matched G4 chi32 GPU trial agreed with CPU within 6.7e-12, saved about
+10.25 seconds elapsed and billed $0.20 versus $0 on that CPU receipt. CPU remains
+the baseline route. This measurement is not a universal speed or pricing result.
+
+The original proposal follows unchanged; use the linked current sources for
+execution decisions.
+
+---
+
 # BlueQubit OTOC Challenge: Multi-Fidelity Estimation and Adaptive Computation Algorithms
 
 > **Technical Design Document · Version 1.0 (Pre-Competition Design)**  

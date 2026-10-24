@@ -1,0 +1,654 @@
+{
+  "generated_at": "2026-10-24T18:31:06.112973+00:00",
+  "scope": "Offline analysis of retained receipts; no new API calls, simulations or submissions.",
+  "status": "PROPOSED_REFINEMENT_REVIEW",
+  "known_billed_usd_in_retained_remote_receipts": 0.2,
+  "pilot_shape": {
+    "G2": {
+      "qubits": [
+        0,
+        18,
+        35
+      ],
+      "device": "mps.cpu",
+      "precision_pair": [
+        16,
+        32
+      ],
+      "job_ids": [
+        [
+          "EGRvEgYDOUFR8SgB",
+          "eV35YkTqQE4xkAN9",
+          "JmVGz8yxU6PTAw9c"
+        ],
+        [
+          "e5W2dxQ1OLOkRRLi",
+          "bWm41clhLZ9NOIA8",
+          "gIhxrjeFBKeCtnHd"
+        ]
+      ],
+      "values_chi16": [
+        0.9996910502231614,
+        -0.06198394204852958,
+        0.9995225392390705
+      ],
+      "values_chi32": [
+        0.9996382065303814,
+        0.007423917457881662,
+        0.9985233505072324
+      ],
+      "signed_changes": [
+        -5.2843692780024654e-05,
+        0.06940785950641125,
+        -0.0009991887318381298
+      ],
+      "pilot_correlation": 0.9999996504280185,
+      "pilot_correlation_squared": 0.9999993008561593,
+      "affine_slope": 0.9341236134499903,
+      "relative_affine_residual_energy": 6.991438407780362e-07,
+      "pairwise_comparisons": 3,
+      "pairwise_order_reversals": [],
+      "interpretation": "Three matched pilots only: not full-vector shape validation, official score or correlation with hidden truth."
+    },
+    "G4": {
+      "qubits": [
+        0,
+        19,
+        37
+      ],
+      "device": "mps.cpu",
+      "precision_pair": [
+        16,
+        32
+      ],
+      "job_ids": [
+        [
+          "BsLvSnV91rVxH6Ts",
+          "cN47ifNQlQ7RsODe",
+          "y4FHoDVz8SMmcAE4"
+        ],
+        [
+          "78aF6vkVPu0XZJaR",
+          "smDxT4giEnJIkVRP",
+          "vGhKebHhF7A0UAOm"
+        ]
+      ],
+      "values_chi16": [
+        0.5589102913779098,
+        0.362228441320924,
+        0.9204563892683192
+      ],
+      "values_chi32": [
+        0.27027187138182995,
+        0.2881005630511742,
+        0.9570614225300893
+      ],
+      "signed_changes": [
+        -0.28863841999607986,
+        -0.07412787826974981,
+        0.036605033261770115
+      ],
+      "pilot_correlation": 0.9295947249903316,
+      "pilot_correlation_squared": 0.8641463527298502,
+      "affine_slope": 1.2852584351101182,
+      "relative_affine_residual_energy": 0.13585364727014956,
+      "pairwise_comparisons": 3,
+      "pairwise_order_reversals": [
+        {
+          "qubits": [
+            0,
+            19
+          ],
+          "difference_chi16": 0.1966818500569858,
+          "difference_chi32": -0.017828691669344254
+        }
+      ],
+      "interpretation": "Three matched pilots only: not full-vector shape validation, official score or correlation with hidden truth."
+    }
+  },
+  "g2_transition": {
+    "qubit": 9,
+    "chi": 32,
+    "estimate": 0.4944418435390271,
+    "job_id": "dAGHVu0ky3qVSoed",
+    "interpretation": "Observed approximate profile, not hidden truth."
+  },
+  "g3_sensitivity": {
+    "qubit": 0,
+    "mps_job_ids": [
+      "tUmLbvbMpdqPY6SV",
+      "BCPD1q8nKVQWiYqL"
+    ],
+    "mps_values": [
+      0.026913611554951797,
+      0.6475027770914542
+    ],
+    "pps_level1_job_ids": [
+      "rOuJjcU3jjqtpb4e",
+      "pUSAULIblgut0K0b"
+    ],
+    "pps_level1_values": [
+      -0.07229195955602603,
+      -0.1477495661062709
+    ],
+    "pps_level0_job_id": "4lzC9yZzqod0XIss",
+    "canceled_q35_job_id": "c59UMw17igr8TFNN",
+    "interpretation": "Single-row changes and a canceled run; no vector convergence or error bound."
+  },
+  "g4_matched_route_trial": {
+    "qubit": 0,
+    "chi": 32,
+    "cpu_job_id": "78aF6vkVPu0XZJaR",
+    "gpu_job_id": "iuWprHrY7TQlwHYx",
+    "absolute_value_difference": 6.630529458817591e-12,
+    "compute_seconds_saved": 24.404000000000003,
+    "elapsed_seconds_saved": 10.251488000000002,
+    "gpu_extra_billed_usd": 0.2,
+    "interpretation": "One matched route trial; no universal equality, speedup, or future-free-CPU claim."
+  },
+  "quote_evidence": [
+    {
+      "path": "results/workflow/quotes/0a4d5913c2de84617165d364d2e244cc07595b1c98452bd50c9cff4aba5bc51b.json",
+      "sha256": "e9b88d6a6f4d40d935df78221cfaec812d7b0eea89402c25ebf29cc4ec5af691",
+      "quote": {
+        "circuit_id": "Duke_G4_0",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 64
+        },
+        "quoted_at": "2026-10-24T18:03:54.244556+00:00",
+        "cost_usd": 0.79,
+        "runtime_seconds": 1877.8,
+        "error": null,
+        "warning": "This is just an estimate; the actual runtime may be less or more.",
+        "binding_cost_cap": false
+      }
+    },
+    {
+      "path": "results/workflow/quotes/ec442a1a9c2040d14903aca87b5ad3a387f477002d5871ca8285100e176b869e.json",
+      "sha256": "491dfd61249c378ca104c7e19703c1de998051e18a6635f1849004f2aeebca6c",
+      "quote": {
+        "circuit_id": "Duke_G4_0",
+        "device": "mps.gpu",
+        "options": {
+          "mps_bond_dimension": 64
+        },
+        "quoted_at": "2026-10-24T18:03:53.580834+00:00",
+        "cost_usd": 1.08,
+        "runtime_seconds": 968.2,
+        "error": null,
+        "warning": "This is just an estimate; the actual runtime may be less or more.",
+        "binding_cost_cap": false
+      }
+    }
+  ],
+  "tentative_probes": [
+    {
+      "circuit_id": "Duke_G4_0",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 64
+      },
+      "proposed_hard_timeout_seconds": 2100,
+      "rationale": "Third precision at a changing pilot; G4 pilot ordering changed.",
+      "status": "PROPOSED_NOT_EXECUTED"
+    },
+    {
+      "circuit_id": "Duke_G2_9",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 64
+      },
+      "proposed_hard_timeout_seconds": 2400,
+      "rationale": "Unsaturated transition row beyond the weak endpoint/center panel.",
+      "status": "PROPOSED_NOT_EXECUTED"
+    },
+    {
+      "circuit_id": "Duke_G3_35",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0005,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "proposed_hard_timeout_seconds": 300,
+      "rationale": "New intermediate threshold after the .0003 job was canceled.",
+      "status": "PROPOSED_NOT_EXECUTED"
+    }
+  ],
+  "timeout_policy": {
+    "current_adapter": "per_job_seconds controls both quoted-runtime admission and actual elapsed cancellation.",
+    "raised_probe_caps": "PROPOSED: 2100/2400-second CPU chi64 caps, subject to fresh quotes and the configured $27 spending ceiling.",
+    "separate_quote_and_execution_caps": {
+      "status": "PROPOSED_NOT_IMPLEMENTED",
+      "example_quote_admission_seconds": 2400,
+      "example_execution_timeout_seconds": 600,
+      "warning": "A 2100-second current-adapter setting is not a 600-second execution cap."
+    }
+  },
+  "receipts": {
+    "EGRvEgYDOUFR8SgB": {
+      "job_id": "EGRvEgYDOUFR8SgB",
+      "path": "results/workflow/remote_actions/8303e4cdb79f91b3a5755433c7ff7c4d3839dd92ed213c6ca509fcbf02941b2c.json",
+      "sha256": "478f1e9680f8c79b4c856c810bd6c95211bd80811c2b2291e09396fc4334d66b",
+      "configuration": {
+        "circuit_id": "Duke_G2_0",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 16
+        },
+        "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZ"
+      },
+      "status": "COMPLETED",
+      "estimate": 0.9996910502231614,
+      "cost_usd": 0.0,
+      "compute_seconds": 9.129,
+      "queue_seconds": 8.643,
+      "elapsed_seconds": 21.550378,
+      "quoted_cost_usd": 0.2,
+      "quoted_runtime_seconds": 131.6
+    },
+    "eV35YkTqQE4xkAN9": {
+      "job_id": "eV35YkTqQE4xkAN9",
+      "path": "results/workflow/remote_actions/39877662d6d0452284b9506e8e42c336de714a15e070e0e05ab7104cf7811fcf.json",
+      "sha256": "f5d68a383ac7ef3eb0614dbe51e43cc43eb2b0661950d57ab01d015be672432d",
+      "configuration": {
+        "circuit_id": "Duke_G2_18",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 16
+        },
+        "pauli": "IIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIII"
+      },
+      "status": "COMPLETED",
+      "estimate": -0.06198394204852958,
+      "cost_usd": 0.0,
+      "compute_seconds": 11.271,
+      "queue_seconds": 12.026,
+      "elapsed_seconds": 27.204408,
+      "quoted_cost_usd": 0.2,
+      "quoted_runtime_seconds": 131.6
+    },
+    "JmVGz8yxU6PTAw9c": {
+      "job_id": "JmVGz8yxU6PTAw9c",
+      "path": "results/workflow/remote_actions/21d7a54fdab24aef9c437ba51157e1ddc661d831856c438e31807abe1896292c.json",
+      "sha256": "f1523bff4df7e6dd98d07cf674efe35fb6fbd25a8bc70e228e0ac2fb28b7d41e",
+      "configuration": {
+        "circuit_id": "Duke_G2_35",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 16
+        },
+        "pauli": "ZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
+      },
+      "status": "COMPLETED",
+      "estimate": 0.9995225392390705,
+      "cost_usd": 0.0,
+      "compute_seconds": 5.744,
+      "queue_seconds": 3.506,
+      "elapsed_seconds": 12.545347,
+      "quoted_cost_usd": 0.2,
+      "quoted_runtime_seconds": 131.6
+    },
+    "e5W2dxQ1OLOkRRLi": {
+      "job_id": "e5W2dxQ1OLOkRRLi",
+      "path": "results/workflow/remote_actions/15c1ce707ae86b69dc0a25c1983ca77e6efc85b24393272d721fe0f1b5850eb7.json",
+      "sha256": "b6ba891d1fe500e5b3b455eb1cfba525769262d21cfd3db8a7fba755c172a9e0",
+      "configuration": {
+        "circuit_id": "Duke_G2_0",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 32
+        },
+        "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZ"
+      },
+      "status": "COMPLETED",
+      "estimate": 0.9996382065303814,
+      "cost_usd": 0.0,
+      "compute_seconds": 13.087,
+      "queue_seconds": 0.456,
+      "elapsed_seconds": 17.663343,
+      "quoted_cost_usd": 0.3,
+      "quoted_runtime_seconds": 717.1
+    },
+    "bWm41clhLZ9NOIA8": {
+      "job_id": "bWm41clhLZ9NOIA8",
+      "path": "results/workflow/remote_actions/6b9e0e7400b133648637a7240ef897c71b7cdfbb4c1b4c058edfb3584d23bc0b.json",
+      "sha256": "43477a76669fd7d276b7a724fcc8254e734a98cce2bbedcff9cc04a75aaddd0e",
+      "configuration": {
+        "circuit_id": "Duke_G2_18",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 32
+        },
+        "pauli": "IIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIII"
+      },
+      "status": "COMPLETED",
+      "estimate": 0.007423917457881662,
+      "cost_usd": 0.0,
+      "compute_seconds": 37.777,
+      "queue_seconds": 0.461,
+      "elapsed_seconds": 42.575621,
+      "quoted_cost_usd": 0.3,
+      "quoted_runtime_seconds": 717.1
+    },
+    "gIhxrjeFBKeCtnHd": {
+      "job_id": "gIhxrjeFBKeCtnHd",
+      "path": "results/workflow/remote_actions/59ffc8b77b66091068ca7f8c3e91ba4f45def6f67ab5e78e09a109f148fb7de5.json",
+      "sha256": "e7e9101dd44b6a03fd8eefddb88b0c01780d02f3c6cef58828c9b4263e328d45",
+      "configuration": {
+        "circuit_id": "Duke_G2_35",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 32
+        },
+        "pauli": "ZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
+      },
+      "status": "COMPLETED",
+      "estimate": 0.9985233505072324,
+      "cost_usd": 0.0,
+      "compute_seconds": 17.359,
+      "queue_seconds": 0.439,
+      "elapsed_seconds": 20.533087,
+      "quoted_cost_usd": 0.3,
+      "quoted_runtime_seconds": 717.1
+    },
+    "BsLvSnV91rVxH6Ts": {
+      "job_id": "BsLvSnV91rVxH6Ts",
+      "path": "results/workflow/remote_actions/ee3eb0b1a8c23f3a09d558f9f5001b2585d1fa3a8f7837ebd8529b3e3a65341d.json",
+      "sha256": "b0805271d838c3643d51cee26a1c3645848f6349c8791020814ba8da28cb9933",
+      "configuration": {
+        "circuit_id": "Duke_G4_0",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 16
+        },
+        "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZ"
+      },
+      "status": "COMPLETED",
+      "estimate": 0.5589102913779098,
+      "cost_usd": 0.0,
+      "compute_seconds": 4.518,
+      "queue_seconds": 0.43,
+      "elapsed_seconds": 8.128847,
+      "quoted_cost_usd": 0.2,
+      "quoted_runtime_seconds": 114.1
+    },
+    "cN47ifNQlQ7RsODe": {
+      "job_id": "cN47ifNQlQ7RsODe",
+      "path": "results/workflow/remote_actions/fd00ce91d8d9fde40ed486de99522824634906cf67a6ad615cbe02c417bbff68.json",
+      "sha256": "82cb59feba0655a415aade78b144e5a90ae025fc0013bb320739031343901ef1",
+      "configuration": {
+        "circuit_id": "Duke_G4_19",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 16
+        },
+        "pauli": "IIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIII"
+      },
+      "status": "COMPLETED",
+      "estimate": 0.362228441320924,
+      "cost_usd": 0.0,
+      "compute_seconds": 13.509,
+      "queue_seconds": 0.363,
+      "elapsed_seconds": 21.444651,
+      "quoted_cost_usd": 0.2,
+      "quoted_runtime_seconds": 114.1
+    },
+    "y4FHoDVz8SMmcAE4": {
+      "job_id": "y4FHoDVz8SMmcAE4",
+      "path": "results/workflow/remote_actions/aeced96a182d73e7826beddd56db65fc102886ab18f08d7ec8bf55fd23ee3b0a.json",
+      "sha256": "0e92ac49a6916a810a298f6c8e5adf37ec66d63197a671ba445f050eecd6e8bb",
+      "configuration": {
+        "circuit_id": "Duke_G4_37",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 16
+        },
+        "pauli": "ZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
+      },
+      "status": "COMPLETED",
+      "estimate": 0.9204563892683192,
+      "cost_usd": 0.0,
+      "compute_seconds": 12.515,
+      "queue_seconds": 0.366,
+      "elapsed_seconds": 17.596606,
+      "quoted_cost_usd": 0.2,
+      "quoted_runtime_seconds": 114.1
+    },
+    "78aF6vkVPu0XZJaR": {
+      "job_id": "78aF6vkVPu0XZJaR",
+      "path": "results/workflow/remote_actions/380cd5f409701afc9e1b8857222bba258410dcc8ca1013305c4cd917cf0405f5.json",
+      "sha256": "dc99ef8c1a3184b91a7d459972c75206d13089ef2edf8f1fb9caf5486fdfeafa",
+      "configuration": {
+        "circuit_id": "Duke_G4_0",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 32
+        },
+        "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZ"
+      },
+      "status": "COMPLETED",
+      "estimate": 0.27027187138182995,
+      "cost_usd": 0.0,
+      "compute_seconds": 48.593,
+      "queue_seconds": 1.421,
+      "elapsed_seconds": 55.055394,
+      "quoted_cost_usd": 0.27,
+      "quoted_runtime_seconds": 632.0
+    },
+    "smDxT4giEnJIkVRP": {
+      "job_id": "smDxT4giEnJIkVRP",
+      "path": "results/workflow/remote_actions/4bfb22a8b0fb80bf34249150f7dc17d6b42c2308cc2c13f5545dc047f3470a79.json",
+      "sha256": "cfea526886b081003890581c8e4b93f1e6bc64b91335a05b5a41490c68038138",
+      "configuration": {
+        "circuit_id": "Duke_G4_19",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 32
+        },
+        "pauli": "IIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIIIIII"
+      },
+      "status": "COMPLETED",
+      "estimate": 0.2881005630511742,
+      "cost_usd": 0.0,
+      "compute_seconds": 14.169,
+      "queue_seconds": 0.348,
+      "elapsed_seconds": 17.780023,
+      "quoted_cost_usd": 0.27,
+      "quoted_runtime_seconds": 632.0
+    },
+    "vGhKebHhF7A0UAOm": {
+      "job_id": "vGhKebHhF7A0UAOm",
+      "path": "results/workflow/remote_actions/52b77390c1d36c2753cfa36a53ecdc1f5df89e7d97af2ade58cf4a740efc912e.json",
+      "sha256": "d1af5a98da9beb0c786c25bb6ef492b104766208bcdee059f7edb78314a93f11",
+      "configuration": {
+        "circuit_id": "Duke_G4_37",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 32
+        },
+        "pauli": "ZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
+      },
+      "status": "COMPLETED",
+      "estimate": 0.9570614225300893,
+      "cost_usd": 0.0,
+      "compute_seconds": 39.375,
+      "queue_seconds": 0.429,
+      "elapsed_seconds": 42.751206,
+      "quoted_cost_usd": 0.27,
+      "quoted_runtime_seconds": 632.0
+    },
+    "dAGHVu0ky3qVSoed": {
+      "job_id": "dAGHVu0ky3qVSoed",
+      "path": "results/workflow/remote_actions/9fa5620c0cae96e310e94806a5c8b00551b80b5dd04904f14952dcc3efadd504.json",
+      "sha256": "f660745b17915d3ca661d20593ca83748b26f7e2960fb8cac7163cafedc146c1",
+      "configuration": {
+        "circuit_id": "Duke_G2_9",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 32
+        },
+        "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIZIIIIIIIII"
+      },
+      "status": "COMPLETED",
+      "estimate": 0.4944418435390271,
+      "cost_usd": 0.0,
+      "compute_seconds": 5.895,
+      "queue_seconds": 0.453,
+      "elapsed_seconds": 11.57493,
+      "quoted_cost_usd": 0.3,
+      "quoted_runtime_seconds": 717.1
+    },
+    "iuWprHrY7TQlwHYx": {
+      "job_id": "iuWprHrY7TQlwHYx",
+      "path": "results/workflow/remote_actions/de5367b4b2ce7a87e72e7089b522ae0e67b7f538c68ae6f1b5319b7e521a0fb2.json",
+      "sha256": "41d2740f94f350ee8d30ef47418cdbae75171dd813422399889bb02b9aeea87b",
+      "configuration": {
+        "circuit_id": "Duke_G4_0",
+        "device": "mps.gpu",
+        "options": {
+          "mps_bond_dimension": 32
+        },
+        "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZ"
+      },
+      "status": "COMPLETED",
+      "estimate": 0.2702718713884605,
+      "cost_usd": 0.2,
+      "compute_seconds": 24.189,
+      "queue_seconds": 19.149,
+      "elapsed_seconds": 44.803906,
+      "quoted_cost_usd": 0.52,
+      "quoted_runtime_seconds": 461.6
+    },
+    "tUmLbvbMpdqPY6SV": {
+      "job_id": "tUmLbvbMpdqPY6SV",
+      "path": "results/workflow/remote_actions/f73bfe3acc6bdf44651ca5cde70a0c8e35226c6541ffe18a99cea292f8f02184.json",
+      "sha256": "9eeed519179814ed3f038b50fe79158be985704502a7d6adb408676b0c963f72",
+      "configuration": {
+        "circuit_id": "Duke_G3_0",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 16
+        },
+        "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZ"
+      },
+      "status": "COMPLETED",
+      "estimate": 0.026913611554951797,
+      "cost_usd": 0.0,
+      "compute_seconds": 13.915,
+      "queue_seconds": 55.132,
+      "elapsed_seconds": 71.650153,
+      "quoted_cost_usd": 0.2,
+      "quoted_runtime_seconds": 104.6
+    },
+    "BCPD1q8nKVQWiYqL": {
+      "job_id": "BCPD1q8nKVQWiYqL",
+      "path": "results/workflow/remote_actions/66e5c871879940f3ca455e18312ee982480734d6843bcc62f394a36a8c3a3335.json",
+      "sha256": "ce32db808f4ac34863fc3b8b35b8ff585e182fc1995f432964a2087ac49ed03d",
+      "configuration": {
+        "circuit_id": "Duke_G3_0",
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 32
+        },
+        "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZ"
+      },
+      "status": "COMPLETED",
+      "estimate": 0.6475027770914542,
+      "cost_usd": 0.0,
+      "compute_seconds": 17.96,
+      "queue_seconds": 32.009,
+      "elapsed_seconds": 55.281641,
+      "quoted_cost_usd": 0.25,
+      "quoted_runtime_seconds": 584.5
+    },
+    "rOuJjcU3jjqtpb4e": {
+      "job_id": "rOuJjcU3jjqtpb4e",
+      "path": "results/workflow/remote_actions/edf8d8aafeeffd0e32f4ea5b32e53152dcbd845a4ef207c9ad54d539568ba124.json",
+      "sha256": "e114e4d3a784150d0231e3ce56f37c720e42720bc8f87231723baa81aafdbdf8",
+      "configuration": {
+        "circuit_id": "Duke_G3_0",
+        "device": "pauli-path",
+        "options": {
+          "pauli_path_truncation_threshold": 0.001,
+          "pauli_path_circuit_transpilation_level": 1
+        },
+        "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZ"
+      },
+      "status": "COMPLETED",
+      "estimate": -0.07229195955602603,
+      "cost_usd": 0.0,
+      "compute_seconds": 26.715,
+      "queue_seconds": 0.297,
+      "elapsed_seconds": 52.158441,
+      "quoted_cost_usd": 0.2,
+      "quoted_runtime_seconds": 0.1
+    },
+    "pUSAULIblgut0K0b": {
+      "job_id": "pUSAULIblgut0K0b",
+      "path": "results/workflow/remote_actions/fcb279233928a2e7148480b1c62e81bb73b356753f9a5aae6a35c77a5bd7ecab.json",
+      "sha256": "ff782ff2da7eae99dc0f1a5ff5a5714eaac227e4d652e06f8c645e2f202b3479",
+      "configuration": {
+        "circuit_id": "Duke_G3_0",
+        "device": "pauli-path",
+        "options": {
+          "pauli_path_truncation_threshold": 0.0003,
+          "pauli_path_circuit_transpilation_level": 1
+        },
+        "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZ"
+      },
+      "status": "COMPLETED",
+      "estimate": -0.1477495661062709,
+      "cost_usd": 0.0,
+      "compute_seconds": 106.031,
+      "queue_seconds": 0.323,
+      "elapsed_seconds": 109.13427,
+      "quoted_cost_usd": 0.2,
+      "quoted_runtime_seconds": 0.1
+    },
+    "4lzC9yZzqod0XIss": {
+      "job_id": "4lzC9yZzqod0XIss",
+      "path": "results/workflow/remote_actions/10ee83ed5327a2d387319fdada2805392acfc424f25f8ab7844611d34fa50e16.json",
+      "sha256": "50ff6d8e042bd553c94abf2238c764a28861e1114677df90966f6b88ddf22565",
+      "configuration": {
+        "circuit_id": "Duke_G3_0",
+        "device": "pauli-path",
+        "options": {
+          "pauli_path_truncation_threshold": 0.001,
+          "pauli_path_circuit_transpilation_level": 0
+        },
+        "pauli": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIZ"
+      },
+      "status": "COMPLETED",
+      "estimate": -0.05771247164299849,
+      "cost_usd": 0.0,
+      "compute_seconds": 79.556,
+      "queue_seconds": 0.305,
+      "elapsed_seconds": 81.997559,
+      "quoted_cost_usd": 0.2,
+      "quoted_runtime_seconds": 0.1
+    },
+    "c59UMw17igr8TFNN": {
+      "job_id": "c59UMw17igr8TFNN",
+      "path": "results/workflow/remote_actions/9d93039eefbb89181511c2f8ada3abff1cb3be9981e7c9f2275ef8e57c8f18e6.json",
+      "sha256": "c6480933bae33ea4224b7ce11bf5fac462ab48f37370a925306427f42ca91780",
+      "configuration": {
+        "circuit_id": "Duke_G3_35",
+        "device": "pauli-path",
+        "options": {
+          "pauli_path_truncation_threshold": 0.0003,
+          "pauli_path_circuit_transpilation_level": 1
+        },
+        "pauli": "ZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
+      },
+      "status": "CANCELED",
+      "estimate": null,
+      "cost_usd": 0.0,
+      "compute_seconds": 179.147,
+      "queue_seconds": 0.34,
+      "elapsed_seconds": 193.130306,
+      "quoted_cost_usd": 0.2,
+      "quoted_runtime_seconds": 0.1
+    }
+  }
+}
