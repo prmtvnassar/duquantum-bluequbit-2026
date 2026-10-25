@@ -19,7 +19,7 @@ def write(prefix, v, note, extra):
     (OUT / f"{tag}.csv").write_text(payload, encoding="utf-8", newline=""); (OUT / f"{tag}.txt").write_text(note + "\n", encoding="utf-8")
     (OUT / f"{tag}.json").write_text(json.dumps({"candidate": tag, "submitted": False, "values": [float(x) for x in v], **extra}, indent=2), encoding="utf-8")
     print("wrote", tag); return tag
-chi32 = load(REPO / "scratch/origin_g4/direct-930f7e5b7d14.csv"); chi64 = load(REPO / "submissions/candidates/G4/direct-8f66fe538349.csv")
+chi32 = load(REPO / "scratch/origin_g4/direct-930f7e5b7d14.csv"); chi64 = load(REPO / "submissions/candidates/G4/direct-8f66fe538349-score0.csv")
 geo = load(sorted(glob.glob(str(OUT / "geo-*.csv")))[-1]); pps = load(REPO / "scratch/origin_g4/kevin_pps_1e-4.csv"); v165 = load(REPO / "scratch/origin_g4/submitted-v1__3_.csv")
 X = np.column_stack([np.ones(38), chi32, chi64, geo])
 rho = lambda a, b: float(np.corrcoef(a, b)[0, 1])
