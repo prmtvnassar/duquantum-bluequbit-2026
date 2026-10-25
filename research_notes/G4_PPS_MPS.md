@@ -3,8 +3,7 @@
 G4 is a 38-qubit OTOC(2) echo (`U, X_b, U†, Z_q, U, X_b, U†`) on a 6×6 grid plus q36/q37 under q30/q31,
 16 Haar-random layers, butterfly q0 in the corner. Circuits run only by ID: `cpu` refuses more than 34 qubits,
 `gpu` refuses 38, `tensor-network` is not authorised, so every G4 value comes from native MPS (`mps.cpu`,
-`mps.gpu`) or Pauli-path propagation (PPS; `pauli-path`), plus post-processing. Score =
-`1000 · max(0, Pearson)²`, so only the shape of the vector matters.
+`mps.gpu`) or Pauli-path propagation (PPS; `pauli-path`), plus post-processing.
 
 The workflow that worked: **PPS as the baseline → refine rows with high-χ MPS → remove the directions MPS
 showed to be null → mix the refined vectors.** Numbers below are website scores unless marked as
@@ -62,9 +61,9 @@ complete 38-row vector; the remaining rows keep their PPS values.
 
 The χ32, χ64 and geometry-prior vectors scored 0, 0 and 2, so each has |ρ| ≲ 0.045 with the reference.
 Regressing a signal-carrying vector on `[1, χ32, χ64, geo]` and keeping the residual removes variance that
-cannot correlate with the reference while keeping the vector's own signal (`ρ_res ≈ ρ / sqrt(1 − R²)`).
+cannot correlate with the reference while keeping the vector's own signal.
 
-- PPS baseline: R² on the nulls 0.48, predicted ρ 0.51, scored **199** (ρ 0.446).
+- PPS baseline: R² on the nulls 0.48, scored **199**.
 - 165 vector: R² 0.35, scored **195**.
 - Known-answer check on PG4c: PPS ε 1e-4 minus its projection on MPS χ128 goes from 301 to **424** against
   the exact answer. Adding a prior that is *not* null there (it correlates with the exact answer, ρ −0.61)

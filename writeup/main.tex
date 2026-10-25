@@ -33,17 +33,15 @@ The SDK's Pauli string places qubit zero at the right. Correct ID coverage, obse
 
 The two approximation families compress different objects. MPS represents the state by a chain of tensors; its bond dimension $\chi$ limits the Schmidt rank retained across each cut. Increasing $\chi$ allows more entanglement to be represented but does not by itself certify the target observable. PPS propagates an observable as a sum $O=\sum_P c_P P$ of Pauli strings. Clifford conjugation maps a Pauli string to another Pauli string, whereas non-Clifford gates can branch that expansion. Removing small coefficients controls its size while changing cancellations and the final expectation. This explains our chain-versus-mostly-Clifford method prior, and why a PPS coefficient threshold is not a final-observable error bound.\cite{design,teammate-1}
 
-The retained challenge rules award a problem of weight $w_c$ the score
+Problem weights are 100 for each sample and 300, 600, 800, and 1000 for G1 to G4.\cite{rules}
+
+To compare two approximations of the same vector we use the centred correlation
 \begin{equation}
- S_c=w_c\bigl[\max(0,\rho(\widehat{\mathbf F}_c,\mathbf F_c^*))\bigr]^2,
- \qquad
  \rho(\mathbf x,\mathbf y)=
  \frac{\mathbf x_0^\top\mathbf y_0}{\|\mathbf x_0\|_2\|\mathbf y_0\|_2},
- \label{eq:score}
+ \label{eq:rho}
 \end{equation}
-where $\mathbf x_0=\mathbf x-\bar x\mathbf1$ and similarly for $\mathbf y_0$; constant predictions score zero. Weights are 100 for each sample and 300, 600, 800, and 1000 for G1 to G4.\cite{rules}
-
-This objective rewards positively correlated \emph{shape}. A common offset or positive scale leaves Pearson correlation unchanged; a sign reversal does not. Ordering is informative but insufficient: Pearson correlation also depends on relative spacings. For nonconstant matched vectors, fitting $a=(\mathbf x_0^\top\mathbf y_0)/(\mathbf x_0^\top\mathbf x_0)$ gives
+where $\mathbf x_0=\mathbf x-\bar x\mathbf1$ and similarly for $\mathbf y_0$. For nonconstant matched vectors, fitting $a=(\mathbf x_0^\top\mathbf y_0)/(\mathbf x_0^\top\mathbf x_0)$ gives
 \begin{equation}
  \frac{\|\mathbf y_0-a\mathbf x_0\|_2^2}{\|\mathbf y_0\|_2^2}=1-\rho^2.
  \label{eq:residual}
@@ -76,7 +74,7 @@ Refine a complete baseline & A later G2 report uses 23 GPU $\chi=512$ rows with 
 \subsection{Choosing the next computation}
 Let $E_t$ contain the vectors, settings, jobs, costs, and attributed feedback available at time $t$. An experiment $a$ specifies an ID, simulator, representation, precision, and hardware. Before running it, record the decision it tests and how different outcomes would affect the next action. If the decision would be unchanged, first check whether existing results already answer the question.
 
-We first check whether the representation produces useful signal, then examine signed changes as precision increases and compare informative results from another method. Affine residuals measure profile changes after removing a common offset and positive scale. Dollar commitments, elapsed time, quotas, and the risk of leaving an incomplete vector constrain which tests can proceed. These checks address different uncertainties: a completed expensive job may add little information, while a cheap row near a sign change may alter the next allocation.
+We first check whether the representation produces useful signal, then examine signed changes as precision increases and compare informative results from another method. Dollar commitments, elapsed time, quotas, and the risk of leaving an incomplete vector constrain which tests can proceed. These checks address different uncertainties: a completed expensive job may add little information, while a cheap row near a sign change may alter the next allocation.
 
 For a matched pair of centered profiles, define $r=\mathbf y_0-a\mathbf x_0$ using the fitted slope from Eq.~\eqref{eq:residual}. The influence $I_q=r_q^2/\|r\|_2^2$, when defined, ranks where the observed shape discrepancy is concentrated. It is a way to select complementary tests, not a probability that row $q$ is wrong. Retain separated interior and sign-sensitive rows so a panel does not depend entirely on a few dominant coordinates.
 

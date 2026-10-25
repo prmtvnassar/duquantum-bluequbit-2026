@@ -64,10 +64,8 @@ not inferred from this table.
 
 ## Why both trends and score shape are retained
 
-The scoring objective makes vector shape relevant, but shape stability and
-pointwise accuracy are different properties. A common offset or positive scale
-change preserves Pearson correlation even when absolute errors change; a local
-shape distortion can change correlation. A sign reversal is consequential.
+Shape stability and pointwise accuracy are different properties. A sign
+reversal is consequential.
 
 [src/otoc/campaign_reasoning.py](../src/otoc/campaign_reasoning.py) compares only
 complete precision vectors at a fixed device and PPS representation. After
@@ -114,9 +112,7 @@ submitted answers. Raw direct values are used throughout.
 Extrapolation and fusion remain disabled. The specific geometric/Aitken candidate
 in [extrapolation_rejection.json](extrapolation_rejection.json) failed held-out
 precision tests; one S2 window reduced the exact-reference score from 99.86264
-to 95.99984. The available sample LOCO fusion tests showed no gain. A fixed
-positive blend of MPS with zero PPS merely rescales MPS and cannot improve its
-Pearson correlation. These findings reject those proposed transformations under
+to 95.99984. The available sample LOCO fusion tests showed no gain. These findings reject those proposed transformations under
 the current evidence, not every possible future estimator.
 
 The unchanged total graded budget is $30. The current cushion is 10% ($3), so

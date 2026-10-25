@@ -142,7 +142,7 @@ def main():
         lines.append(f"| {q} | {r},{c} | {r + c} | {sg4[q]} | {pred_signed[q]:+.3f} | {pred_abs[q]:.3f} |")
     summary["g4_prediction"] = {"slack": sg4.tolist(), "pred_signed": pred_signed.tolist(), "pred_abs": pred_abs.tolist()}
     # ---- 2. method scores per group
-    lines.append("\n## Scores (1000 x Pearson^2 vs exact), mean over instances [min, max]\n")
+    lines.append("\n## Scores (agreement with the exact answer, 0-1000), mean over instances [min, max]\n")
     lines.append("Null baseline for an uncorrelated vector: E[score] = 1000/(n-1). 'LOO' = constants taken from all other instances (all groups).\n")
     for key in sorted(groups):
         R, C, depth = key
@@ -165,7 +165,7 @@ def main():
                 rows["MPS mean top-2 chi"][nm] = score(np.mean([m["mps"][str(c)] for c in avail[-2:]], axis=0), ex)
                 hi, lo = avail[-1], avail[-2]
                 rows[f"MPS chi{hi} sign-agreement with exact (frac x1000)"][nm] = 1000 * np.mean(np.sign(m["mps"][str(hi)]) == np.sign(ex))
-                rows[f"MPS chi{hi} vs chi{lo} self-consistency (Pearson^2 x1000)"][nm] = score(m["mps"][str(hi)], m["mps"][str(lo)])
+                rows[f"MPS chi{hi} vs chi{lo} self-consistency (agreement x1000)"][nm] = score(m["mps"][str(hi)], m["mps"][str(lo)])
                 rows[f"MPS chi{hi} mean abs error x1000"][nm] = 1000 * np.mean(np.abs(np.array(m["mps"][str(hi)]) - ex))
             for eps in EPSS:
                 if eps in m["pps"]:

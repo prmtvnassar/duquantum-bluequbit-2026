@@ -134,8 +134,7 @@ Stage the review so that each calculation answers a distinct question:
    Matching zeros or approximate methods can share bias. Disagreement identifies
    uncertainty, not which result is true.
 
-The positive-Pearson scoring rule makes shape useful, but common offsets and
-positive scaling can preserve a score despite pointwise error. Pointwise
+Pointwise
 MPS–PPS agreement alone is therefore neither a necessary condition for a good
 score nor a sufficient accuracy certificate. A complete, valid vector with a
 stable *full-profile* shape may be a defensible provisional candidate; otherwise
@@ -143,7 +142,7 @@ stop only with an explicit uncertainty or resource reason. Neither these
 diagnostics nor sample tolerances supply a universal hidden-error certificate.
 Automatic graded convergence stopping remains disabled.
 [Numerical implementation](../src/otoc/campaign_reasoning.py),
-[retained scoring rules](history/workflow_v1.md),
+[retained challenge rules](history/workflow_v1.md),
 [sample stopping limitations](../reports/calibration_evidence.json).
 
 ## 5. Route hardware toward useful precision

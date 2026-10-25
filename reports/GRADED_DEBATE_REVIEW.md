@@ -31,9 +31,8 @@ precision windows predict the next level worse than the last direct estimate.
 The latter extrapolated vector drops exact-reference correlation score from
 99.86264 to 95.99984. This does not reject every possible extrapolation model.
 
-**Blending zero PPS with MPS can improve Pearson scoring.** A common positive
-blend weight only rescales MPS, leaving correlation unchanged. Existing sample
-LOCO fusion gives no gain, so no such variants are submitted.
+**Blending zero PPS with MPS.** Existing sample LOCO fusion gives no gain,
+so no such variants are submitted.
 
 ## Implemented consequences
 

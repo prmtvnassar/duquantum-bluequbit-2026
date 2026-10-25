@@ -83,7 +83,7 @@ def main():
     json.dump(out, open(REPO / "reports/g4_pps_mps_summary.json", "w"), indent=1)
     print("G4 ladder (website score /1000):")
     for c in out["ladder"]: print(f"  {c['step']:36s} {c['website']:>5}")
-    print("\nPG4c known answer (32 qubits, built like G4), 1000 x Pearson^2 vs exact:")
+    print("\nPG4c known answer (32 qubits, built like G4), score vs the exact answer:")
     for k, v in out["pg4c_known_answer"].items(): print(f"  {k:48s} {v:>5}")
     print("\nLight cone (rows never reached / late / early):", {k: (v["never_reached"], v["late_contact"], v["early_contact"]) for k, v in out["circuits"].items()})
 

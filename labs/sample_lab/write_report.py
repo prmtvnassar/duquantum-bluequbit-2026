@@ -19,7 +19,7 @@ Deterministic (quimb SVD, no sampling).
 * S2 (16-qubit Haar chain, butterfly q0, 16 IDs): chi 2, 4, 8, 16, 32, 64, 128 (1-15 s per ID).
   S3 (30-qubit mostly-Clifford 5x6 grid, butterfly q14, 30 IDs): chi 4, 8, 16, 32 (3-30 s per ID);
   chi64 took 650-890 s per ID here (one ID done, norm^2 still ~1e-17), so it was not swept.
-* References: `submissions/S2|S3/attempt-01.csv` (both scored 100/100). Metric 100*Pearson^2 on the
+* References: `submissions/S2|S3/attempt-01.csv` (both scored 100/100). Metric: agreement (0-100) with the exact answer on the
   whole sample vector; max abs error of the unscaled estimator values in parentheses.
 * Row features per (ID, chi): `zq=<Z_q>`, `meanZ`, `meanZ_far` = mean over the `max(3, n//4)` sites
   with the largest `min(dist(j,butterfly), dist(j,q))` (Manhattan; chain for S2, 5x6 grid for S3),

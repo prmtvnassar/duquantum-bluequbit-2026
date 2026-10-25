@@ -40,7 +40,6 @@ The [official BlueQubit Overview](https://app.bluequbit.io/hackathons/2GMaAenu3i
 | Hidden circuits | **G1–G4**, executable only by ID through the platform/SDK; gate sequences are unavailable for download |
 | Target | Run the program `Duke_<circuit>_<q>` from the all-zero state and estimate Pauli Z on QASM qubit `q[q]`, with physical range $[-1,1]$ |
 | Points | **100** each for S1/S2/S3; **300/600/800/1000** for G1/G2/G3/G4; **3000** total |
-| Scoring | Squared positive Pearson correlation times problem points; negative correlation and constant predictions score **0**, as defined in §1.2 |
 | Submission | **One two-column CSV per problem**: `circuit_id,value`; optional header, arbitrary row order, case-sensitive IDs; include a short method note |
 | Attempts and ranking | At most **20 submissions per problem**, best score retained; missing/wrong IDs are rejected during upload prechecks without using an attempt; ties use the sum of time penalties for each problem's best submission, with lower totals preferred |
 | Schedule | 2026-10-24 11:30 AM ET to 2026-10-25 11:30 AM ET; **10:30 AM CDT** on both dates in America/Chicago |
@@ -67,32 +66,7 @@ $$
 
 Construct it in Python as `"I" * (n - 1 - q) + "Z" + "I" * q`. Pass `pauli_sum=[(z, 1.0)]` for that ID and read `job.expectation_value`; do not construct an additional echo or change qubit ordering.
 
-Define each problem's output vector and Pearson correlation as:
-
-$$
-\mathbf F_c^*=(F^*_{c,q})_{q\in\mathcal Q_c},\qquad
-\rho_c(\mathbf x,\mathbf y)=
-\frac{\langle\mathbf x-\bar x\mathbf 1,\mathbf y-\bar y\mathbf 1\rangle}
-{\|\mathbf x-\bar x\mathbf 1\|_2\,\|\mathbf y-\bar y\mathbf 1\|_2}.
-$$
-
-The currently published scoring rule is:
-
-$$
-s_c(\mathbf x,\mathbf y)=
-\begin{cases}
-0,&\mathbf x\text{ is constant},\\
-\big[\max(0,\rho_c(\mathbf x,\mathbf y))\big]^2,&\text{otherwise},
-\end{cases}
-\qquad
-S_{\rm official}=\sum_{c\in\mathcal C}w_c\,s_c(\hat{\mathbf F}_c,\mathbf F_c^*),
-$$
-
-$$
-(w_{S1},w_{S2},w_{S3},w_{G1},w_{G2},w_{G3},w_{G4})=(100,100,100,300,600,800,1000).
-$$
-
-Here, $w_c$ is the published point value and $s_c$ is the normalized score. Positive scaling and a common offset preserve correlation; **an overall sign flip changes its sign, and negative correlation scores 0**. This agrees with both the live Overview and Rules; prefer the live rules if a cached page says sign flips preserve the score. Protect nearly constant vectors using a numerical tolerance, without presenting that local tolerance as an official threshold. If a reference vector is constant and Pearson is undefined, flag the score as unavailable and check the official scorer rather than inventing its behavior.
+Problem weights: $(w_{S1},w_{S2},w_{S3},w_{G1},w_{G2},w_{G3},w_{G4})=(100,100,100,300,600,800,1000)$.
 
 Official sample answers are hidden too. Compute offline scores and MAE/RMSE only after independently producing and verifying exact references from public QASM; otherwise record official scores for genuine estimates and label-free diagnostics. Leaderboard feedback **must not** be used to recover labels, construct score-fitting submissions, or fit hidden answers.
 
@@ -598,7 +572,7 @@ $$
 \mathbf z_{\rm mix}=w\mathbf z_M+(1-w)\mathbf z_P.
 $$
 
-Positive scaling and a common offset do not affect the score, so **amplitude restoration is unnecessary for scoring**. Optionally restore the anchor's mean and norm to preserve the interpretation of physical estimates:
+Optionally restore the anchor's mean and norm to preserve the interpretation of physical estimates:
 
 $$
 \hat{\mathbf F}_{\rm mix,restored}
@@ -625,7 +599,7 @@ $$
 \hat F_{c,q}^{\rm corrected}=\hat F_{c,q}+\hat r_{c,q}.
 $$
 
-Consider low-complexity models only. Because positive scaling and a common offset leave the score unchanged, a constant bias correction alone cannot improve it; only validated corrections that change vector shape may justify inclusion. Training features must be computable for hidden circuits, without hidden errors or pseudo-labels extracted from score feedback.
+Consider low-complexity models only. Only validated corrections that change vector shape may justify inclusion. Training features must be computable for hidden circuits, without hidden errors or pseudo-labels extracted from score feedback.
 
 **Acceptance gate:** Complete verified references for S1–S3 support 3-fold LOCO, with no material degradation in any evaluable fold and plausible corrected outputs. Disable this module if references are insufficient. Even after validation, three samples make this a high-risk option with lower priority than the direct baseline.
 
@@ -661,7 +635,7 @@ Make final selections at the **circuit level** wherever possible to avoid incons
 | MPS $\chi$ sweep | Study convergence and suitability for extrapolation | precision curves + held-out prediction |
 | PPS $\epsilon$ sweep | Check threshold sensitivity | precision curves + plateau flags |
 | PPS transpilation comparison | Analyze representation dependence | inter-level disagreement + cost |
-| Vector-shape analysis | Align with correlation-based scoring | Pearson/Spearman vs. fidelity |
+| Vector-shape analysis | Compare approximations by shape | Pearson/Spearman vs. fidelity |
 | Ensemble grid | Determine whether fusion improves results | 3-fold LOCO table with verified references; otherwise mark unevaluable |
 | Adaptive vs. uniform budget | Validate scheduling gains | best score vs. credits/time |
 

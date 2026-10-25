@@ -88,7 +88,7 @@ Per group (mean v / mean abs v by slack):
 | 36 | 6,0 | 6 | 3 | -0.097 | 0.150 |
 | 37 | 6,1 | 7 | 3 | -0.097 | 0.150 |
 
-## Scores (1000 x Pearson^2 vs exact), mean over instances [min, max]
+## Scores (agreement with the exact answer, 0-1000), mean over instances [min, max]
 
 Null baseline for an uncorrelated vector: E[score] = 1000/(n-1). 'LOO' = constants taken from all other instances (all groups).
 
@@ -104,7 +104,7 @@ Null baseline for an uncorrelated vector: E[score] = 1000/(n-1). 'LOO' = constan
 | MPS mean over all chi | 691 | [492, 897] | 791 | 492 684 897 |
 | MPS mean top-2 chi | 838 | [729, 951] | 892 | 729 833 951 |
 | MPS chi64 sign-agreement with exact (frac x1000) | 792 | [750, 812] | 781 | 812 812 750 |
-| MPS chi64 vs chi32 self-consistency (Pearson^2 x1000) | 951 | [934, 978] | 960 | 934 943 978 |
+| MPS chi64 vs chi32 self-consistency (agreement x1000) | 951 | [934, 978] | 960 | 934 943 978 |
 | MPS chi64 mean abs error x1000 | 111 | [78, 133] | 128 | 78 133 122 |
 | PPS L3 eps 0.01 (None->0) | 771 | [646, 944] | 795 | 724 646 944 |
 | PPS L3 eps 0.01 max abs value x1000 | 521 | [351, 701] | 526 | 511 351 701 |
@@ -137,7 +137,7 @@ Null baseline for an uncorrelated vector: E[score] = 1000/(n-1). 'LOO' = constan
 | MPS mean over all chi | 68 | [9, 157] | 83 | 37 9 157 |
 | MPS mean top-2 chi | 17 | [1, 48] | 1 | 48 1 1 |
 | MPS chi64 sign-agreement with exact (frac x1000) | 521 | [312, 688] | 625 | 312 562 688 |
-| MPS chi64 vs chi32 self-consistency (Pearson^2 x1000) | 763 | [534, 878] | 706 | 878 877 534 |
+| MPS chi64 vs chi32 self-consistency (agreement x1000) | 763 | [534, 878] | 706 | 878 877 534 |
 | MPS chi64 mean abs error x1000 | 138 | [41, 275] | 70 | 275 99 41 |
 | PPS L3 eps 0.01 (None->0) | 0 | [0, 0] | 0 | 0 0 0 |
 | PPS L3 eps 0.01 max abs value x1000 | 0 | [0, 0] | 0 | 0 0 0 |
@@ -172,7 +172,7 @@ Null baseline for an uncorrelated vector: E[score] = 1000/(n-1). 'LOO' = constan
 | MPS mean over all chi | 46 | [4, 152] | 24 | 152 37 18 51 12 4 |
 | MPS mean top-2 chi | 57 | [2, 229] | 22 | 229 2 10 86 5 10 |
 | MPS chi128 sign-agreement with exact (frac x1000) | 552 | [375, 750] | 562 | 500 375 375 750 750 562 |
-| MPS chi128 vs chi64 self-consistency (Pearson^2 x1000) | 408 | [14, 831] | 408 | 406 675 14 448 73 831 |
+| MPS chi128 vs chi64 self-consistency (agreement x1000) | 408 | [14, 831] | 408 | 406 675 14 448 73 831 |
 | MPS chi128 mean abs error x1000 | 18 | [11, 25] | 16 | 25 18 19 18 11 14 |
 | PPS L3 eps 0.01 (None->0) | 0 | [0, 0] | 0 | 0 0 0 0 0 0 |
 | PPS L3 eps 0.01 max abs value x1000 | 0 | [0, 0] | 0 | 0 0 0 0 0 0 |
@@ -206,7 +206,7 @@ Null baseline for an uncorrelated vector: E[score] = 1000/(n-1). 'LOO' = constan
 | MPS mean over all chi | 969 | [965, 973] | 965 | 973 965 |
 | MPS mean top-2 chi | 991 | [988, 994] | 988 | 994 988 |
 | MPS chi32 sign-agreement with exact (frac x1000) | 1000 | [1000, 1000] | 1000 | 1000 1000 |
-| MPS chi32 vs chi16 self-consistency (Pearson^2 x1000) | 991 | [987, 995] | 987 | 995 987 |
+| MPS chi32 vs chi16 self-consistency (agreement x1000) | 991 | [987, 995] | 987 | 995 987 |
 | MPS chi32 mean abs error x1000 | 40 | [31, 49] | 31 | 49 31 |
 | PPS L3 eps 0.01 (None->0) | 1000 | [1000, 1000] | 1000 | 1000 1000 |
 | PPS L3 eps 0.01 max abs value x1000 | 1000 | [1000, 1000] | 1000 | 1000 1000 |
@@ -255,7 +255,7 @@ Null baseline for an uncorrelated vector: E[score] = 1000/(n-1). 'LOO' = constan
 | MPS mean over all chi | 306 | [17, 641] | 451 | 17 641 261 |
 | MPS mean top-2 chi | 319 | [1, 611] | 478 | 1 611 346 |
 | MPS chi64 sign-agreement with exact (frac x1000) | 425 | [350, 500] | 500 | 350 500 |
-| MPS chi64 vs chi32 self-consistency (Pearson^2 x1000) | 926 | [924, 928] | 928 | 924 928 |
+| MPS chi64 vs chi32 self-consistency (agreement x1000) | 926 | [924, 928] | 928 | 924 928 |
 | MPS chi64 mean abs error x1000 | 251 | [115, 388] | 115 | 388 115 |
 | PPS L3 eps 0.01 (None->0) | 274 | [4, 770] | 410 | 4 770 49 |
 | PPS L3 eps 0.01 max abs value x1000 | 122 | [41, 213] | 127 | 112 213 41 |
@@ -271,7 +271,7 @@ Null baseline for an uncorrelated vector: E[score] = 1000/(n-1). 'LOO' = constan
 | prior: abs slack-mean table, LOO | 189 | [16, 423] | 276 | 16 129 423 |
 | random Gaussian vector (null) | 50 | [49, 51] | 49 | 51 49 50 |
 | MPS chi32 sign-agreement with exact (frac x1000) | 100 | [100, 100] | 100 | 100 |
-| MPS chi32 vs chi16 self-consistency (Pearson^2 x1000) | 750 | [750, 750] | 750 | 750 |
+| MPS chi32 vs chi16 self-consistency (agreement x1000) | 750 | [750, 750] | 750 | 750 |
 | MPS chi32 mean abs error x1000 | 334 | [334, 334] | 334 | 334 |
 | prior: sigmoid front fitted on s1 (d0=8.5, w=0.25) | 213 | [14, 528] | 271 | 97 528 14 |
 | prior: sigmoid front, LOO within group | 145 | [15, 383] | 199 | 35 383 15 |
@@ -292,7 +292,7 @@ Null baseline for an uncorrelated vector: E[score] = 1000/(n-1). 'LOO' = constan
 | MPS mean over all chi | 155 | [13, 468] | 181 | 22 61 336 13 29 468 |
 | MPS mean top-2 chi | 185 | [4, 460] | 220 | 6 81 441 115 4 460 |
 | MPS chi64 sign-agreement with exact (frac x1000) | 500 | [400, 600] | 467 | 600 600 400 400 |
-| MPS chi64 vs chi32 self-consistency (Pearson^2 x1000) | 637 | [209, 844] | 780 | 209 844 808 689 |
+| MPS chi64 vs chi32 self-consistency (agreement x1000) | 637 | [209, 844] | 780 | 209 844 808 689 |
 | MPS chi64 mean abs error x1000 | 216 | [171, 249] | 205 | 249 171 202 243 |
 | PPS L3 eps 0.01 (None->0) | 0 | [0, 0] | 0 | 0 0 0 0 0 0 |
 | PPS L3 eps 0.01 max abs value x1000 | 0 | [0, 0] | 0 | 0 0 0 0 0 0 |
@@ -308,7 +308,7 @@ Null baseline for an uncorrelated vector: E[score] = 1000/(n-1). 'LOO' = constan
 | prior: abs slack-mean table, LOO | 381 | [216, 513] | 414 | 216 228 477 506 349 513 |
 | random Gaussian vector (null) | 50 | [47, 55] | 51 | 50 51 49 47 55 51 |
 | MPS chi32 sign-agreement with exact (frac x1000) | 350 | [300, 400] | 350 | 400 300 |
-| MPS chi32 vs chi16 self-consistency (Pearson^2 x1000) | 473 | [252, 694] | 473 | 252 694 |
+| MPS chi32 vs chi16 self-consistency (agreement x1000) | 473 | [252, 694] | 473 | 252 694 |
 | MPS chi32 mean abs error x1000 | 251 | [231, 272] | 251 | 231 272 |
 | prior: sigmoid front fitted on s1 (d0=1.0, w=0.5) | 49 | [12, 107] | 44 | 75 24 36 107 12 42 |
 | prior: sigmoid front, LOO within group | 110 | [5, 275] | 131 | 5 84 149 275 9 141 |
@@ -329,7 +329,7 @@ Null baseline for an uncorrelated vector: E[score] = 1000/(n-1). 'LOO' = constan
 | MPS mean over all chi | 102 | [38, 166] | 38 | 166 38 |
 | MPS mean top-2 chi | 189 | [8, 371] | 8 | 371 8 |
 | MPS chi64 sign-agreement with exact (frac x1000) | 240 | [240, 240] | nan | 240 |
-| MPS chi64 vs chi32 self-consistency (Pearson^2 x1000) | 631 | [631, 631] | nan | 631 |
+| MPS chi64 vs chi32 self-consistency (agreement x1000) | 631 | [631, 631] | nan | 631 |
 | MPS chi64 mean abs error x1000 | 246 | [246, 246] | nan | 246 |
 | PPS L3 eps 0.01 (None->0) | 0 | [0, 0] | 0 | 0 0 |
 | PPS L3 eps 0.01 max abs value x1000 | 0 | [0, 0] | 0 | 0 0 |
@@ -343,7 +343,7 @@ Null baseline for an uncorrelated vector: E[score] = 1000/(n-1). 'LOO' = constan
 | prior: abs slack-mean table, LOO | 220 | [9, 431] | 9 | 431 9 |
 | random Gaussian vector (null) | 42 | [41, 42] | 41 | 42 41 |
 | MPS chi32 sign-agreement with exact (frac x1000) | 560 | [560, 560] | 560 | 560 |
-| MPS chi32 vs chi16 self-consistency (Pearson^2 x1000) | 693 | [693, 693] | 693 | 693 |
+| MPS chi32 vs chi16 self-consistency (agreement x1000) | 693 | [693, 693] | 693 | 693 |
 | MPS chi32 mean abs error x1000 | 323 | [323, 323] | 323 | 323 |
 | prior: sigmoid front fitted on s1 (d0=5.5, w=1.0) | 359 | [42, 676] | 42 | 676 42 |
 | prior: sigmoid front, LOO within group | 307 | [42, 572] | 42 | 572 42 |

@@ -76,7 +76,7 @@ reviewed complete candidate. [Execution contract](../COHORT_BATCH.md).
 ## Implementation addendum, October 24, 2026
 
 The released campaign has three sample problems and four graded problems. Every
-sample submission displays 100/100; this rounded correlation-based score is not
+sample submission displays 100/100; this rounded score is not
 an absolute-error guarantee. The retained released templates, rather than the
 illustrative schema below, govern each export. G1's exact 30-row vector is reused
 and its submission is user-confirmed. G2-G4 official scores remain unverified
@@ -756,7 +756,7 @@ Make final selections at the **circuit level** wherever possible to avoid incons
 | MPS $\chi$ sweep | Study convergence and suitability for extrapolation | precision curves + held-out prediction |
 | PPS $\epsilon$ sweep | Check threshold sensitivity | precision curves + plateau flags |
 | PPS transpilation comparison | Analyze representation dependence | inter-level disagreement + cost |
-| Vector-shape analysis | Align with correlation-based scoring | Pearson/Spearman vs. fidelity |
+| Vector-shape analysis | Compare approximations by shape | Pearson/Spearman vs. fidelity |
 | Ensemble grid | Determine whether fusion improves results | two-way LOCO score table |
 | Adaptive vs. uniform budget | Validate scheduling gains | best score vs. credits/time |
 
@@ -788,7 +788,6 @@ For each ablation, report the sample score, lowest individual circuit score, com
 - Smaller thresholds / larger bond dimensions do not guarantee monotonic costs or errors; use actual run results.
 - Agreement between two numerical backends is useful evidence, but not proof of unbiasedness.
 - Small changes between adjacent precision levels indicate only **local stability**; shared bias or false plateaus may remain.
-- Optimizing Pearson alone may harm the actual signal-to-noise score; the official scoring implementation is always the final authority.
 
 ---
 

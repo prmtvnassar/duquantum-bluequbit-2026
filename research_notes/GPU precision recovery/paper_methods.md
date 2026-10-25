@@ -19,7 +19,7 @@ The measured benefit is a workload-dependent ability to run more expensive appro
 - Test higher chi separately from hardware: first obtain a controlled precision comparison, then assess whether a matched GPU route makes that precision affordable in elapsed time and dollars.
 - The chi128 crossover is a benchmark observation, not a universal rule. Our hidden-ID quote and actual elapsed measurements must govern route selection.
 - Coarse and fine PPS points can both be informative because error need not be monotonic; the paper does not identify the best threshold for our circuits.
-- Target-bit recovery does not transfer to OTOC Pearson scoring. Do not label its 100% overlap as state fidelity or expected graded score.
+- Target-bit recovery does not transfer to OTOC estimation. Do not label its 100% overlap as state fidelity or expected graded score.
 
 ### Gaps
 - No paper data covers this campaign's hidden Duke IDs, their entanglement, retained-Pauli counts, full OTOC vector error, or official Pearson score.

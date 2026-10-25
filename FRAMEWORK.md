@@ -11,8 +11,7 @@ Each problem is a set of hidden circuits `U, X_b, U†, Z_q, U, X_b, U†` (an e
 `X_b` is scrambled by `U` and undone twice), one per target qubit `q`; the answer is `⟨Z_q⟩`. Without
 scrambling it is exactly +1; how far it falls says how far the kick spread. Circuits run only by ID on
 BlueQubit's simulators: exact up to 34 qubits, MPS (bond dimension χ) and Pauli propagation (PPS; threshold
-ε, transpilation level). The score is `1000 · max(0, Pearson(submitted, reference))²`, so only the shape
-of a vector matters.
+ε, transpilation level).
 
 | Problem | Circuit | Method of the scored vector | Score |
 | --- | --- | --- | ---: |

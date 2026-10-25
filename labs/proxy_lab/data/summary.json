@@ -99,7 +99,7 @@
      "4x4_d8_s3": 750.0
     }
    },
-   "MPS chi64 vs chi32 self-consistency (Pearson^2 x1000)": {
+   "MPS chi64 vs chi32 self-consistency (agreement x1000)": {
     "mean": 951.4973592408647,
     "min": 933.6206116612617,
     "max": 977.6189135111706,
@@ -432,7 +432,7 @@
      "4x4_d12_s3": 687.5
     }
    },
-   "MPS chi64 vs chi32 self-consistency (Pearson^2 x1000)": {
+   "MPS chi64 vs chi32 self-consistency (agreement x1000)": {
     "mean": 763.021290007022,
     "min": 534.0410044419428,
     "max": 877.6637060277127,
@@ -817,7 +817,7 @@
      "4x4_d16_s6": 562.5
     }
    },
-   "MPS chi128 vs chi64 self-consistency (Pearson^2 x1000)": {
+   "MPS chi128 vs chi64 self-consistency (agreement x1000)": {
     "mean": 407.74163217386007,
     "min": 14.142093932002732,
     "max": 830.6442903049407,
@@ -1223,7 +1223,7 @@
      "4x5_d4_s2": 1000.0
     }
    },
-   "MPS chi32 vs chi16 self-consistency (Pearson^2 x1000)": {
+   "MPS chi32 vs chi16 self-consistency (agreement x1000)": {
     "mean": 990.9805359288716,
     "min": 987.4402717840456,
     "max": 994.5208000736976,
@@ -1681,7 +1681,7 @@
      "4x5_d12_s2": 500.0
     }
    },
-   "MPS chi64 vs chi32 self-consistency (Pearson^2 x1000)": {
+   "MPS chi64 vs chi32 self-consistency (agreement x1000)": {
     "mean": 926.2228135580091,
     "min": 924.329233792192,
     "max": 928.1163933238262,
@@ -1853,7 +1853,7 @@
      "4x5_d12_s3": 100.0
     }
    },
-   "MPS chi32 vs chi16 self-consistency (Pearson^2 x1000)": {
+   "MPS chi32 vs chi16 self-consistency (agreement x1000)": {
     "mean": 749.8308214677243,
     "min": 749.8308214677243,
     "max": 749.8308214677243,
@@ -2074,7 +2074,7 @@
      "4x5_d16_s4": 400.0
     }
    },
-   "MPS chi64 vs chi32 self-consistency (Pearson^2 x1000)": {
+   "MPS chi64 vs chi32 self-consistency (agreement x1000)": {
     "mean": 637.3182149382358,
     "min": 208.98643718124805,
     "max": 843.5678057946635,
@@ -2290,7 +2290,7 @@
      "4x5_d16_s6": 300.0
     }
    },
-   "MPS chi32 vs chi16 self-consistency (Pearson^2 x1000)": {
+   "MPS chi32 vs chi16 self-consistency (agreement x1000)": {
     "mean": 472.73524481524015,
     "min": 251.77297389492648,
     "max": 693.6975157355538,
@@ -2501,7 +2501,7 @@
      "5x5_d16_s1": 240.0
     }
    },
-   "MPS chi64 vs chi32 self-consistency (Pearson^2 x1000)": {
+   "MPS chi64 vs chi32 self-consistency (agreement x1000)": {
     "mean": 630.979978219052,
     "min": 630.979978219052,
     "max": 630.979978219052,
@@ -2638,7 +2638,7 @@
      "5x5_d16_s2": 560.0
     }
    },
-   "MPS chi32 vs chi16 self-consistency (Pearson^2 x1000)": {
+   "MPS chi32 vs chi16 self-consistency (agreement x1000)": {
     "mean": 692.732429424919,
     "min": 692.732429424919,
     "max": 692.732429424919,

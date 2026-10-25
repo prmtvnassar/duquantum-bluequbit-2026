@@ -5,7 +5,7 @@ geo-c9cd356165e4 = 2/1000, blend = 50/1000; earlier: mps.cpu chi32 = 0/1000, a t
 PPS + MPS256 on q0-q3, q6-q9 = 165. A vector scoring 0-2 over 38 rows has |rho| <= ~0.045 with the
 reference, so the MPS vectors and geo are null directions. Regressing a signal vector on
 [1, chi32, chi64, geo] and keeping the residual removes variance that cannot be correlated with
-the reference while keeping all of its signal: rho_res ~ rho / sqrt(1 - R^2).
+the reference while keeping all of its signal.
 """
 import csv, glob, hashlib, json
 from pathlib import Path
@@ -35,6 +35,6 @@ for name, base, score in [("pps", pps, "133/1000"), ("v165", v165, "165/1000")]:
                "the native level-3 Pauli-path delta 1e-4 vector with MPS chi256 values on q0-q3 and q6-q9 (scored 165/1000)")
             + ". Null directions: complete native MPS chi32 vector (0/1000), complete native MPS chi64 vector (0/1000), and a geometry prior (2/1000). "
               "The base was regressed on [1, chi32, chi64, prior] and the residual kept: this removes variance that the scores show cannot "
-              "be correlated with the reference while preserving the base's own signal (Pearson is affine-invariant). No hidden-circuit "
+              "be correlated with the reference while preserving the base's own signal. No hidden-circuit "
               "reconstruction; the only feedback used is that three whole vectors scored ~0. Values are not expectation values.")
     write(f"resid-{name}", r, note, {"base": name, "base_score": score, "null_directions": nulls, "R2_on_nulls": R2, "beta": beta.tolist(), "rho_base_vs_residual": rho(base, r)})

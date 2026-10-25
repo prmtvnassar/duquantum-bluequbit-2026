@@ -53,7 +53,7 @@ The ordering is a proposal based on available evidence, not calibrated expected 
 
 ## Scoring, resource and interpretation limits
 
-The campaign seeks graded Pearson-correlation improvement, whereas the paper mostly measures runtime and a single-observable error or a target-bit overlap. Positive affine transformations preserve Pearson correlation; therefore, increasing amplitude alone cannot establish a score improvement. Comparing two approximations measures their sensitivity, not their correlation with unknown truth. Near-constant vectors and shared bias are especially hazardous. Keep raw direct estimates; do not sign-flip, affine-correct, splice pilot values, extrapolate, or fit hidden labels from scores.
+The campaign seeks graded accuracy improvement, whereas the paper mostly measures runtime and a single-observable error or a target-bit overlap. Positive affine transformations preserve Pearson correlation; therefore, increasing amplitude alone cannot establish a score improvement. Comparing two approximations measures their sensitivity, not their correlation with unknown truth. Near-constant vectors and shared bias are especially hazardous. Keep raw direct estimates; do not sign-flip, affine-correct, splice pilot values, extrapolate, or fit hidden labels from scores.
 
 Retain the $30 total budget, $27 working exposure ceiling, $0 sample spending, fresh exact-action quotes, committed quotes until terminal known cost, deadline/submission buffer, sole execution owner, and known GPU rolling/total quotas (45 minutes per hour and 7.5 hours total). Prior $0 CPU charges never waive a new quote. Cancellation requests are not termination or zero charge. This review authorizes no launch.
 

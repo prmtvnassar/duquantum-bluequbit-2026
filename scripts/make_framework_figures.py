@@ -104,7 +104,7 @@ def flow_v3():
         ax.annotate("", xy=(x2, y2), xytext=(x1, y1), arrowprops=dict(arrowstyle="-|>", color=MUTE, lw=0.9))
         if lab: ax.text((x1 + x2) / 2 - 1.5, (y1 + y2) / 2 + 1.2, lab, fontsize=6.5, color=MUTE)
     box(4, 131, 92, 9, ["INPUT: OTOC(2) echo circuits  U, X_b, U†, Z_q, U, X_b, U†  (one per target qubit q)",
-                        "qubits n, depth d, geometry (chain / grid), gate family (Haar / mostly Clifford), scoring metric"], bold=True)
+                        "qubits n, depth d, geometry (chain / grid), gate family (Haar / mostly Clifford)"], bold=True)
     box(4, 118, 92, 10, ["ALWAYS: audited jobs (quote -> budget gate -> receipt -> ledger)",
                          "calibrate on known answers first (samples; exact proxies of the same generator, up to ~32 qubits)",
                          "predict each result before using it; document the method of every vector"], fc="#f5f7fa", ec=GREY)

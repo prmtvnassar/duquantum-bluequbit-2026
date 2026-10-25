@@ -57,7 +57,7 @@ any method. The 22 rim qubits (corrected from 16; q36, q37 at slack 3; col 5 at 
 probable negative sign; the score of any submission is decided by its shape on those 22 rows (corrected). This is consistent with native PPS giving
 ~0 everywhere and with MPS chi256 scoring 139 (a 2 % tail event under the null for 38 rows, so some rim structure is being tracked).
 
-## 3. What methods score on the proxies (step 3), 1000 x Pearson^2 vs exact, mean [min, max] over instances
+## 3. What methods score on the proxies (step 3), agreement with the exact answer, 0-1000, mean [min, max] over instances
 
 Null (uncorrelated vector) = 1000/(n-1): 67 / 53 / 42 for n = 16 / 20 / 25 (38 rows: 27; 95th percentile 103, 99th 170).
 
@@ -89,7 +89,7 @@ slack table 773. Reading of the depth-16 columns:
 
 - **MPS** values are O(0.2-0.6) and biased positive (chi64 mean +0.22 on 4x5 d16 where exact means are -0.02..0): the "far-row plateau"
   of the native G4 chi32 vector is this artefact. MPS tracks the rim **position** (score restricted to slack <= 6 qubits: 318 at chi32),
-  with the wrong sign (rho(chi64, exact) = -0.25 on 4x5 s1); Pearson^2 counts it anyway. Spread is huge: chi64 63-515 across seeds.
+  with the wrong sign (rho(chi64, exact) = -0.25 on 4x5 s1). Spread is huge: chi64 63-515 across seeds.
   Cross-chi averaging, shrinkage by chi-to-chi change and MPS/prior blends never beat the better of the two ingredients on held-out seeds.
 - **Local coefficient PPS** (the repo kernel `coefficient_pps.propagate`, level 3) reproduces the native G4 failure: eps 1e-2 gives
   exactly 0 on every depth-16 row; eps 1e-3 leaves a sparse vector (max abs 0.005) that is nonzero only on rim qubits, so its score is a
@@ -108,7 +108,7 @@ slack table 773. Reading of the depth-16 columns:
 - **Best cheap estimator found (geometry only, no simulation):** v_hat(q) = m(slack(q)) with the pooled signed table
   m(3) = -0.10, m(4) = -0.06, m(5) = -0.02, m(6) = -0.03, m(7) = -0.01, m(>= 8) = 0 (m(-1) = +1, m(0) = +0.04, m(1) = -0.16, m(2) = 0
   are unused in G4). For G4 rows: q36,q37 = -0.10; q5,11,17,23,29,35 = -0.06; q30-34 = -0.02; q4,10,16,22,28 = -0.03; q24-27 = -0.01;
-  the other 16 rows = 0 (corrected from 22; Pearson is scale-invariant, only the shape matters). Held-out evidence: 4x5 d16 six seeds 405 [232, 530],
+  the other 16 rows = 0 (corrected from 22). Held-out evidence: 4x5 d16 six seeds 405 [232, 530],
   5x5 d16 309 / 12, 4x5 d8 773, 4x5 d4 909. Expected G4 score if the real rim behaves like the proxies: 200-500; if the G4 instance is
   a flat one like 5x5 s2: null (~30). It cannot do worse than the PPS zeros and is, on the proxies, better on average than MPS chi64
   (227) and than every distance prior. `summary.json["g4_prediction"]` holds the per-row values (`analyze.py` regenerates them).

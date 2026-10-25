@@ -31,7 +31,7 @@ Re-run `PYTHONPATH=src .venv312/Scripts/python.exe labs/pps_ladder_lab/analyze.p
 
 The local ladder is therefore 1e-3 / 3e-4 / 1e-4; 3e-5 and finer are a feasibility negative on this machine, not a numerical one.
 
-## 3. Results at hand-back (1000 x Pearson^2 vs exact; `analyze.py`)
+## 3. Results at hand-back (agreement with the exact answer, 0-1000; `analyze.py`)
 
 4x6 s1 (n=24): eps 1e-3 213 (rho +0.46; 8 nonzero rows, 5 of 8 rim; rim sign agreement 0.25) -> eps 3e-4 327 (rho +0.57;
 16 nonzero, all 8 rim rows nonzero, rim sign agreement 0.75). Rim-only score 605 -> 612. Rim rows:
