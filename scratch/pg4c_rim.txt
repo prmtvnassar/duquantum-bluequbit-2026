@@ -1,0 +1,16 @@
+q 5 slack 4 exact -0.100 pps1e4 -0.0289 pps1e3 -0.0270 mps128 +0.18
+q11 slack 4 exact -0.001 pps1e4 +0.0082 pps1e3 +0.0079 mps128 +0.08
+q23 slack 4 exact -0.029 pps1e4 +0.0110 pps1e3 +0.0000 mps128 +0.47
+q17 slack 4 exact -0.031 pps1e4 -0.0062 pps1e3 -0.0012 mps128 +0.78
+q29 slack 4 exact -0.051 pps1e4 +0.0005 pps1e3 +0.0018 mps128 +0.75
+q30 slack 5 exact -0.102 pps1e4 -0.0018 pps1e3 +0.0000 mps128 +0.81
+q31 slack 5 exact -0.084 pps1e4 +0.0005 pps1e3 +0.0000 mps128 +0.87
+q10 slack 6 exact -0.079 pps1e4 -0.0266 pps1e3 -0.0149 mps128 +0.06
+q16 slack 6 exact -0.053 pps1e4 -0.0005 pps1e3 -0.0035 mps128 +0.34
+q22 slack 6 exact -0.005 pps1e4 +0.0105 pps1e3 -0.0021 mps128 +0.16
+q28 slack 6 exact -0.036 pps1e4 -0.0016 pps1e3 -0.0019 mps128 +0.75
+q 4 slack 6 exact -0.006 pps1e4 -0.0021 pps1e3 -0.0054 mps128 +0.15
+q24 slack 7 exact -0.052 pps1e4 -0.0006 pps1e3 +0.0000 mps128 +0.75
+q25 slack 7 exact -0.085 pps1e4 +0.0023 pps1e3 +0.0037 mps128 +0.77
+rows with |exact|>0.03: [np.int64(5), np.int64(10), np.int64(16), np.int64(17), np.int64(24), np.int64(25), np.int64(27), np.int64(28), np.int64(29), np.int64(30), np.int64(31)]  of which pps1e4 |v|>0.01: [np.int64(5), np.int64(10)]
+frac exact<0 on slack<=7: 1.00
