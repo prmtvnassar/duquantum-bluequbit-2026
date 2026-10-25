@@ -1,0 +1,17 @@
+{
+  "event_id": "4091c203274e4e1eb912e7e6211f09f0",
+  "recorded_at": "2026-10-24T19:09:29.155060+00:00",
+  "kind": "quote",
+  "circuit_id": "Duke_G4_4",
+  "device": "pauli-path.gpu",
+  "options": {
+    "pauli_path_truncation_threshold": 0.0001,
+    "pauli_path_circuit_transpilation_level": 1
+  },
+  "quoted_at": "2026-10-24T19:09:29.155060+00:00",
+  "cost_usd": 0.67,
+  "runtime_seconds": 0.1,
+  "error": null,
+  "warning": "This is just an estimate; the actual runtime may be less or more.",
+  "binding_cost_cap": false
+}

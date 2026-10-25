@@ -1,0 +1,17 @@
+{
+  "event_id": "1ae26495be4945ae802302b5ec37eff5",
+  "recorded_at": "2026-10-24T23:57:02.894373+00:00",
+  "kind": "quote",
+  "circuit_id": "Duke_G4_37",
+  "device": "pauli-path",
+  "options": {
+    "pauli_path_truncation_threshold": 2e-05,
+    "pauli_path_circuit_transpilation_level": 3
+  },
+  "quoted_at": "2026-10-24T23:57:02.894373+00:00",
+  "cost_usd": null,
+  "runtime_seconds": null,
+  "error": "Truncation threshold used is too small for the input circuit/observable. It could lead to memory overflow. Please try with a larger value of truncation threshold.",
+  "warning": null,
+  "binding_cost_cap": false
+}

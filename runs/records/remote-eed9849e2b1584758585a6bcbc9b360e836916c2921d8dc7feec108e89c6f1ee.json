@@ -1,0 +1,71 @@
+{
+  "circuit_id": "Duke_G4_37",
+  "problem": "G4",
+  "qubit": 37,
+  "origin": "bluequbit",
+  "method": "pauli-path",
+  "backend": "pauli-path",
+  "parameters": {
+    "pauli_path_truncation_threshold": 0.0001,
+    "pauli_path_circuit_transpilation_level": 3
+  },
+  "status": "COMPLETED",
+  "estimate": 0.09902395338179514,
+  "job_id": "weAbrA74wSc6VeIP",
+  "cost_usd": 0.0,
+  "started_at": "2026-10-24T23:47:46.085242+00:00",
+  "finished_at": "2026-10-24T23:52:14.346689+00:00",
+  "wall_seconds": 178.055,
+  "reason": "G4 alt-technique: delta convergence of level-3 PPS at q37 (1e-3 gave -0.0178)",
+  "quote": {
+    "circuit_id": "Duke_G4_37",
+    "device": "pauli-path",
+    "options": {
+      "pauli_path_truncation_threshold": 0.0001,
+      "pauli_path_circuit_transpilation_level": 3
+    },
+    "quoted_at": "2026-10-24T23:47:46.057254+00:00",
+    "cost_usd": 0.2,
+    "runtime_seconds": 0.1,
+    "error": null,
+    "warning": "This is just an estimate; the actual runtime may be less or more.",
+    "binding_cost_cap": false
+  },
+  "error": null,
+  "pauli": "ZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+  "remote_receipt": {
+    "action": {
+      "circuit_id": "Duke_G4_37",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0001,
+        "pauli_path_circuit_transpilation_level": 3
+      },
+      "pauli": "ZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
+    },
+    "status": "COMPLETED",
+    "requested_at": "2026-10-24T23:47:46.085242+00:00",
+    "quote": {
+      "circuit_id": "Duke_G4_37",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0001,
+        "pauli_path_circuit_transpilation_level": 3
+      },
+      "quoted_at": "2026-10-24T23:47:46.057254+00:00",
+      "cost_usd": 0.2,
+      "runtime_seconds": 0.1,
+      "error": null,
+      "warning": "This is just an estimate; the actual runtime may be less or more.",
+      "binding_cost_cap": false
+    },
+    "scheduler_justification": "G4 alt-technique: delta convergence of level-3 PPS at q37 (1e-3 gave -0.0178)",
+    "job_id": "weAbrA74wSc6VeIP",
+    "estimate": 0.09902395338179514,
+    "cost_usd": 0.0,
+    "compute_ms": 177689,
+    "queue_ms": 366,
+    "updated_at": "2026-10-24T23:52:14.346689+00:00"
+  },
+  "run_id": "remote-eed9849e2b1584758585a6bcbc9b360e836916c2921d8dc7feec108e89c6f1ee"
+}

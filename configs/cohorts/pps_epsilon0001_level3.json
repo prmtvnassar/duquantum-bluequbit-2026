@@ -1,0 +1,4 @@
+{
+  "pauli_path_truncation_threshold": 0.0001,
+  "pauli_path_circuit_transpilation_level": 3
+}

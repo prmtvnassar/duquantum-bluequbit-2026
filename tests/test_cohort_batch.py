@@ -363,6 +363,27 @@ class CohortBatchTests(TestCase):
             self.assertEqual(result["reason"], "unknown_account_cost_breakdown")
             self.assertEqual(adapter.client.run_calls, [])
 
+    def test_all_z_quotes_and_receipts_do_not_set_row_reserve_rates(self):
+        with TemporaryDirectory() as folder:
+            adapter, _, _, cohorts, controller = self.prepare(folder)
+            cohorts["G4"]["options"] = {"mps_bond_dimension": 64}
+            # An observable-list quote/receipt at the same device/options is a different job.
+            atomic_json(adapter.root / "quotes" / "all-z.json", {
+                "circuit_id": "Duke_G4_0", "device": "mps.cpu", "options": {"mps_bond_dimension": 64},
+                "observables": "all_z", "observable_count": 38, "cost_usd": 9., "runtime_seconds": 1,
+                "quoted_at": "2099-01-01T00:00:00+00:00"})
+            receipt = seed(adapter, "Duke_G4_1", options={"mps_bond_dimension": 64})
+            (adapter.root / "remote_actions" / f"{digest(receipt['action'])}.json").unlink()
+            receipt["action"]["observables"] = "all_z"
+            receipt["estimates_vector"] = [.1] * 38
+            receipt["quote"].update(observables="all_z", cost_usd=9.)
+            atomic_json(adapter.root / "remote_actions" / f"{digest(receipt['action'])}.json", receipt)
+            result = controller().run()
+            self.assertEqual(result["status"], "COMPLETE")
+            self.assertEqual(result["reserve_rates"]["G4"], 1.5)
+            # The all_z row counts as coverage for its ID under the same device/options.
+            self.assertEqual(result["budget"]["missing_unreserved_rows"]["G4"], 1)
+
     def test_stale_other_cohort_quote_is_refreshed_before_spending(self):
         with TemporaryDirectory() as folder:
             adapter, _, _, cohorts, controller = self.prepare(folder)
@@ -463,7 +484,7 @@ class CohortBatchTests(TestCase):
             cases = [{"target_ids": ids} for ids in (None, [], "Duke_G2_0", ["Duke_G2_0", "Duke_G2_0"],
                      ["Duke_G3_0"], ["Duke_G2_2"], ["Duke_G2_36"], [123])]
             cases += [{name: value} for name in ("execution_timeout_seconds", "quote_runtime_limit_seconds")
-                      for value in (None, True, 0, .5, -1, 3601, float("nan"), float("inf"), "600")]
+                      for value in (None, True, 0, .5, -1, 7201, float("nan"), float("inf"), "600")]
             for overrides in cases:
                 with self.subTest(overrides=overrides), self.assertRaises(ValueError):
                     controller(**{**DIAGNOSTIC, **overrides})

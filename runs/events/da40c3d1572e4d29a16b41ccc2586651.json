@@ -1,0 +1,17 @@
+{
+  "event_id": "da40c3d1572e4d29a16b41ccc2586651",
+  "recorded_at": "2026-10-25T00:00:22.895513+00:00",
+  "kind": "quote",
+  "circuit_id": "Duke_S3_17",
+  "device": "pauli-path",
+  "options": {
+    "pauli_path_truncation_threshold": 0.001,
+    "pauli_path_circuit_transpilation_level": 3
+  },
+  "quoted_at": "2026-10-25T00:00:22.895513+00:00",
+  "cost_usd": 0.2,
+  "runtime_seconds": 0.1,
+  "error": null,
+  "warning": "This is just an estimate; the actual runtime may be less or more.",
+  "binding_cost_cap": false
+}

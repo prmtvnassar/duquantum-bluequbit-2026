@@ -1,0 +1,16 @@
+{
+  "event_id": "fd54db5b427647109f450d2a81791c11",
+  "recorded_at": "2026-10-25T02:59:24.165775+00:00",
+  "kind": "reconciled_receipt",
+  "job_id": "7Gm9JLFRUKzTWjzY",
+  "status": "NOT_ENOUGH_FUNDS",
+  "action": {
+    "circuit_id": "Duke_G4_36",
+    "device": "pauli-path",
+    "options": {
+      "pauli_path_truncation_threshold": 0.0001,
+      "pauli_path_circuit_transpilation_level": 3
+    },
+    "pauli": "IZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
+  }
+}

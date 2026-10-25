@@ -1,0 +1,67 @@
+{
+  "circuit_id": "Duke_G4_16",
+  "problem": "G4",
+  "qubit": 16,
+  "origin": "bluequbit",
+  "method": "mps.gpu",
+  "backend": "mps.gpu",
+  "parameters": {
+    "mps_bond_dimension": 128
+  },
+  "status": "COMPLETED",
+  "estimate": 0.6951394877484143,
+  "job_id": "vWiz0b4Yon8zBy3k",
+  "cost_usd": 0.2,
+  "started_at": "2026-10-25T01:48:39.864939+00:00",
+  "finished_at": "2026-10-25T01:49:49.891195+00:00",
+  "wall_seconds": 63.614,
+  "reason": "User-authorized GPU refinement (<= $10 total): chi128 on the rows with the largest chi32->chi64 shape influence (q16); GPU bills ~2.5x below quote (chi32: quoted 0.52, billed 0.20)",
+  "quote": {
+    "circuit_id": "Duke_G4_16",
+    "device": "mps.gpu",
+    "options": {
+      "mps_bond_dimension": 128
+    },
+    "quoted_at": "2026-10-25T01:48:39.636853+00:00",
+    "cost_usd": 2.73,
+    "runtime_seconds": 2448.2,
+    "error": null,
+    "warning": "This is just an estimate; the actual runtime may be less or more.",
+    "binding_cost_cap": false
+  },
+  "error": null,
+  "pauli": "IIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIII",
+  "remote_receipt": {
+    "action": {
+      "circuit_id": "Duke_G4_16",
+      "device": "mps.gpu",
+      "options": {
+        "mps_bond_dimension": 128
+      },
+      "pauli": "IIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIIII"
+    },
+    "status": "COMPLETED",
+    "requested_at": "2026-10-25T01:48:39.864939+00:00",
+    "quote": {
+      "circuit_id": "Duke_G4_16",
+      "device": "mps.gpu",
+      "options": {
+        "mps_bond_dimension": 128
+      },
+      "quoted_at": "2026-10-25T01:48:39.636853+00:00",
+      "cost_usd": 2.73,
+      "runtime_seconds": 2448.2,
+      "error": null,
+      "warning": "This is just an estimate; the actual runtime may be less or more.",
+      "binding_cost_cap": false
+    },
+    "scheduler_justification": "User-authorized GPU refinement (<= $10 total): chi128 on the rows with the largest chi32->chi64 shape influence (q16); GPU bills ~2.5x below quote (chi32: quoted 0.52, billed 0.20)",
+    "job_id": "vWiz0b4Yon8zBy3k",
+    "estimate": 0.6951394877484143,
+    "cost_usd": 0.2,
+    "compute_ms": 63375,
+    "queue_ms": 239,
+    "updated_at": "2026-10-25T01:49:49.891195+00:00"
+  },
+  "run_id": "remote-bed33c1e8781e72e93b7666f8633fe4add4e72ec2b5f6e0cf092538ec9ccb5b4"
+}

@@ -6,6 +6,7 @@ method cannot include precision options. Unknown quotes fail closed.
 
 from datetime import datetime, timezone, timedelta
 import math
+import statistics
 from pathlib import Path
 import time
 import json
@@ -43,6 +44,56 @@ def validate_action(circuit_id, device, options):
     return parts[1], "I"*(n-1-q)+"Z"+"I"*q
 
 
+OBSERVABLE_SETS = {"all_z"}
+
+
+def observable_pauli_sums(circuit_id, device, options, observables=None):
+    """Return ``(problem, target_pauli, pauli_sum)`` for one job.
+
+    ``observables=None`` is the existing single-observable job: ``[(Z_q, 1.0)]``.
+    ``"all_z"`` is one MPS job measuring every single-site ``<Z_j>`` of the
+    problem as a *list* of n single-term Pauli sums, index j = qubit j, with
+    q0 the RIGHTMOST character exactly as ``validate_action`` builds ``Z_q``.
+
+    Verified offline against the installed SDK 0.19.0b1 (no calls made):
+    * ``BQClient.run`` and ``api.jobs.submit_jobs`` both normalize ``pauli_sum``
+      with ``tools.format_pauli_sum``: ``[(str, float), ...]`` stays one sum,
+      ``[[(str, float)], ...]`` stays a list of sums (shape preserved), and the
+      result is written to ``circuit["pauli_sum"]`` of the POST /jobs body for
+      ``estimate_only`` quotes and real runs alike, so the quote prices the
+      same observable list the job runs.
+    * ``BQClient._validate_pps_job`` rejects ``isinstance(pauli_sum[0], list)
+      and len(pauli_sum) > 1`` on ``pauli-path`` ("Only a single observable is
+      supported"); the ``run`` docstring says to pass a list of sums on cpu,
+      gpu and mps to measure several observables on one circuit.
+    * ``job_result.JobResult.expectation_value`` is the raw ``expectation_value``
+      field of the job record, annotated ``float | list[float]``; nothing in
+      the SDK reorders it, so the list is read in request order.  The actual
+      wire shape for a list of sums could not be exercised offline; ``run``
+      therefore validates ``len == n`` and finite entries before trusting it.
+    """
+    problem, z = validate_action(circuit_id, device, options)
+    if observables is None:
+        return problem, z, [(z, 1.0)]
+    if observables not in OBSERVABLE_SETS:
+        raise ValueError("Unknown observable set")
+    if device not in {"mps.cpu", "mps.gpu"}:
+        raise ValueError("Observable lists are supported on mps.cpu/mps.gpu only; pauli-path takes a single observable")
+    n = SIZES[problem]
+    return problem, z, [[("I"*(n-1-j)+"Z"+"I"*j, 1.0)] for j in range(n)]
+
+
+def _all_z_estimate(value, problem, circuit_id):
+    """Scalar target component and the stored vector for an all-Z job result."""
+    n, q = SIZES[problem], int(circuit_id.split("_")[2])
+    if (isinstance(value, (list, tuple)) and len(value) == n
+            and all(isinstance(v, (int, float)) and not isinstance(v, bool) and math.isfinite(v) for v in value)):
+        vector = [float(v) for v in value]
+        return vector[q], {"estimates_vector": vector, "observables_count": n}
+    return None, {"estimates_vector": value, "observables_count": n,
+                  "error": f"all_z result is not a list of {n} finite expectation values"}
+
+
 def cost_gate(problem, quote, usage, settings, justification=""):
     cost = quote.get("cost_usd")
     if quote.get("error") or cost is None or not math.isfinite(cost) or cost < 0:
@@ -54,14 +105,26 @@ def cost_gate(problem, quote, usage, settings, justification=""):
     if "gpu" in quote.get("device",""):
         if not usage.get("gpu_time_known",False):
             return False,"unreconciled_gpu_time"
-        seconds=quote.get("runtime_seconds")
+        # Rolling-hour quota uses the observed-runtime estimate when run() supplied one
+        # (2x median compute of >= 3 completed receipts at the same device/options);
+        # the service quote is the fallback and still bounds the per-job timeout.
+        seconds=quote.get("gpu_quota_runtime_seconds", quote.get("runtime_seconds"))
         if seconds is None or seconds+usage.get("gpu_seconds",0)>settings.get("gpu_total_seconds",27000):
             return False,"gpu_total_quota_reserve"
         if seconds+usage.get("gpu_seconds_last_hour",0)>settings.get("gpu_hour_seconds",2700):
             return False,"gpu_rolling_hour_quota"
     if usage.get("job_count",0) >= settings["max_remote_jobs"]:
         return False, "job_limit_reserve"
+    # Team rule (2026-10-25): lifetime spend on each teammate's account stays <= cap.
+    cap = settings.get("account_cap_usd")
+    if cap is not None and usage.get("account_total_usd", usage.get("known_cost_usd", 0)) + cost > cap:
+        return False, "account_cap_usd"
     if problem.startswith("S"):
+        # User-approved (2026-10-24) one-off native calibration of G4 techniques on
+        # labelled samples; requires an explicit per-invocation cap and justification.
+        cap = settings.get("sample_calibration_cap_usd", 0)
+        if cost > 0 and cap > 0 and justification.strip():
+            return (cost <= cap, "user_approved_sample_calibration" if cost <= cap else "sample_calibration_cap")
         return (cost == 0, "free_sample" if cost == 0 else "sample_budget_is_zero")
     if not justification.strip():
         return False, "graded_action_needs_scheduler_justification"
@@ -83,6 +146,21 @@ class BlueQubitAdapter:
                     if not path.exists():
                         atomic_json(path,saved)
 
+    def _completed_same(self, device, options):
+        """COMPLETED receipts at exactly this device and full options (any observable set)."""
+        want = json.dumps(options, sort_keys=True)
+        out = []
+        for path in (self.root / "remote_actions").glob("*.json"):
+            try:
+                saved = json.loads(path.read_text())
+            except (OSError, ValueError):
+                continue
+            action = saved.get("action") or {}
+            if saved.get("status") == "COMPLETED" and action.get("device") == device \
+                    and json.dumps(action.get("options"), sort_keys=True) == want:
+                out.append(saved)
+        return out
+
     def _save(self, path, saved):
         atomic_json(path, saved)
         record_remote(saved)
@@ -97,13 +175,20 @@ class BlueQubitAdapter:
             "source": "BlueQubit SDK job receipt",
         })
 
-    def usage(self):
+    def account_total_usd(self):
+        """Lifetime billed USD on this token's account (no START filter); not persisted."""
+        return self.usage(since=None,persist=False)["known_cost_usd"]
+
+    def usage(self,since=START,persist=True):
         # SDK 0.19's search raises TypeError on a valid empty data:null response.
         # Read the same endpoint, accepting null only when total_count is zero.
         jobs, offset = [], 0
         while True:
+            params={"limit":100,"offset":offset}
+            if since is not None:
+                params["created_later_than"]=since
             response = self.client._backend_connection.send_request(req_type="GET",path="/jobs",
-                       params={"limit":100,"offset":offset,"created_later_than":START}).json()
+                       params=params).json()
             data = response.get("data")
             if data is None and response.get("total_count") == 0:
                 data = []
@@ -148,15 +233,16 @@ class BlueQubitAdapter:
                  "active_job_ids":[j.get("job_id") for j in jobs if j.get("run_status") not in TERMINAL],
                  "gpu_time_known":gpu_known,"gpu_seconds":gpu_seconds,"gpu_seconds_last_hour":gpu_hour,
                  "unknown_terminal_costs":sum(j.get("run_status") in TERMINAL and j.get("cost") is None for j in jobs)}
-        atomic_json(self.root / "api_usage.json",value)
+        if persist:
+            atomic_json(self.root / "api_usage.json",value)
         return value
 
-    def quote(self,circuit_id,device,options):
+    def quote(self,circuit_id,device,options,observables=None):
         from bluequbit.api.jobs import submit_jobs
-        _, z = validate_action(circuit_id,device,options)
+        _, z, pauli_sum = observable_pauli_sums(circuit_id,device,options,observables)
         try:
             result = submit_jobs(self.client._backend_connection,circuit_id,device,
-                                 pauli_sum=[(z,1.0)],options=options,estimate_only=True,force_run=False)
+                                 pauli_sum=pauli_sum,options=options,estimate_only=True,force_run=False)
         except Exception as exc:
             result={"error_message":"Quote failed: "+type(exc).__name__}
         raw_cost = result.get("estimated_cost")
@@ -165,7 +251,13 @@ class BlueQubitAdapter:
                  "runtime_seconds":None if result.get("estimate_ms") is None else float(result["estimate_ms"])/1000,
                  "error":result.get("error_message"),"warning":result.get("warning_message"),
                  "binding_cost_cap":False}
-        atomic_json(self.root / "quotes" / f"{digest([circuit_id,device,options])}.json",quote)
+        quote_key = [circuit_id,device,options]
+        if observables is not None:
+            # Separate quote file and marker: an observable-list quote never replaces
+            # or prices a single-observable row (cohort reserve rates skip it).
+            quote.update(observables=observables,observable_count=len(pauli_sum))
+            quote_key = [circuit_id,device,options,{"observables":observables}]
+        atomic_json(self.root / "quotes" / f"{digest(quote_key)}.json",quote)
         event("quote", quote)
         return quote
 
@@ -178,9 +270,17 @@ class BlueQubitAdapter:
                 return saved  # Scheduling only; run() always obtains a fresh quote.
         return self.quote(circuit_id,device,options)
 
-    def run(self,circuit_id,device,options,settings,justification=""):
-        problem,z = validate_action(circuit_id,device,options)
+    def run(self,circuit_id,device,options,settings,justification="",attempt=None,observables=None):
+        problem,z,pauli_sum = observable_pauli_sums(circuit_id,device,options,observables)
         action = {"circuit_id":circuit_id,"device":device,"options":options,"pauli":z}
+        if observables is not None:
+            # Part of the receipt key: an all-Z job never collides with the
+            # single-<Z_q> receipt of the same ID, device and options.
+            action["observables"] = observables
+        if attempt is not None:
+            # Explicit relaunch of an identical action after a $0 CANCELED receipt; the
+            # earlier receipt keeps its own key and ledger row.
+            action["attempt"] = int(attempt)
         key = digest(action)
         path = self.root / "remote_actions" / f"{key}.json"
         if path.exists():
@@ -196,7 +296,14 @@ class BlueQubitAdapter:
             if (self.root / "STOP").exists():
                 event("blocked_action", {"action":action,"reason":"stop_file"})
                 return {"status":"BLOCKED_STOP"}
-            usage, quote = self.usage(), self.quote(circuit_id,device,options)
+            usage, quote = self.usage(), self.quote(circuit_id,device,options,observables=observables)
+            if settings.get("account_cap_usd") is not None:
+                usage["account_total_usd"] = self.account_total_usd()
+            if "gpu" in device and quote.get("runtime_seconds") is not None:
+                observed=[r["compute_ms"]/1000 for r in self._completed_same(device,options) if r.get("compute_ms")]
+                if len(observed)>=3:
+                    quote["gpu_quota_runtime_seconds"]=min(quote["runtime_seconds"],2*statistics.median(observed))
+                    quote["gpu_quota_runtime_basis"]=f"2x median of {len(observed)} observed compute times"
             allowed, reason = cost_gate(problem,quote,usage,settings,justification)
             if not allowed:
                 event("blocked_action", {"action":action,"reason":reason,"quote":quote})
@@ -213,11 +320,13 @@ class BlueQubitAdapter:
                      "scheduler_justification":justification}
             self._save(path,saved)
             # No automatic resubmission after a network exception: SUBMITTING stays on disk.
-            job = self.client.run(circuit_id,device=device,asynchronous=True,pauli_sum=[(z,1.0)],
+            job = self.client.run(circuit_id,device=device,asynchronous=True,pauli_sum=pauli_sum,
                                   options=options,tags={"workflow":settings["version"],"action_key":key},force_run=False)
             saved.update(job_id=job.job_id,status=job.run_status)
             self._save(path,saved)
         started = time.monotonic()
+        # Same user-approved sample calibration cap as cost_gate; 0 keeps the $0 rule.
+        sample_cap = settings.get("sample_calibration_cap_usd",0) if justification.strip() else 0
         while job.run_status not in TERMINAL:
             age=(datetime.now(timezone.utc)-datetime.fromisoformat(saved["requested_at"])).total_seconds()
             if (self.root / "STOP").exists() or max(age,time.monotonic()-started) > settings["per_job_seconds"]:
@@ -225,7 +334,7 @@ class BlueQubitAdapter:
                 saved.update(status="CANCEL_REQUESTED",updated_at=utc_now())
                 self._save(path,saved)
                 return saved
-            if problem.startswith("S") and job.estimated_cost not in (None,0):
+            if problem.startswith("S") and float(job.estimated_cost or 0)/100 > sample_cap:  # SDK reports cents
                 self.client.cancel(job.job_id)
                 atomic_json(self.root / "cost_alert.json",{"reason":"sample_quote_changed","job_id":job.job_id})
                 saved.update(status="CANCEL_REQUESTED",updated_at=utc_now())
@@ -236,16 +345,20 @@ class BlueQubitAdapter:
             if job.run_status != saved["status"] and job.run_status not in TERMINAL:
                 saved.update(status=job.run_status, updated_at=utc_now())
                 self._save(path, saved)
-        saved.update(status=job.run_status,estimate=job.expectation_value,cost_usd=job.cost,
-                     compute_ms=job.run_time_ms,queue_ms=job.queue_time_ms,updated_at=utc_now())
+        estimate, vector_fields = job.expectation_value, {}
+        if observables is not None and job.run_status == "COMPLETED":
+            # Scalar `estimate` stays the target <Z_q>; the full vector rides alongside.
+            estimate, vector_fields = _all_z_estimate(job.expectation_value, problem, circuit_id)
+        saved.update(status=job.run_status,estimate=estimate,cost_usd=job.cost,
+                     compute_ms=job.run_time_ms,queue_ms=job.queue_time_ms,updated_at=utc_now(),**vector_fields)
         self._save(path,saved)
-        if job.cost is None or (problem.startswith("S") and job.cost != 0):
+        if job.cost is None or (problem.startswith("S") and float(job.cost)/100 > sample_cap):
             (self.root / "STOP").write_text("Unreconciled or unexpected cloud cost",encoding="utf-8")
         usage = self.usage()
         if usage["known_cost_usd"] > settings["graded_budget_usd"]*(1-settings["graded_reserve_fraction"]):
             (self.root / "STOP").write_text("Campaign reserve reached; preserve budget",encoding="utf-8")
-        if job.run_status == "COMPLETED" and (job.expectation_value is None or
-                not math.isfinite(float(job.expectation_value)) or abs(float(job.expectation_value))>1+1e-8):
-            saved.update(status="INVALID_RESULT",error="Completed job has no valid bounded expectation")
+        if job.run_status == "COMPLETED" and (estimate is None or
+                not math.isfinite(float(estimate)) or abs(float(estimate))>1+1e-8):
+            saved.update(status="INVALID_RESULT",error=vector_fields.get("error") or "Completed job has no valid bounded expectation")
             self._save(path,saved)
         return saved

@@ -1,0 +1,16 @@
+4x5_d4_s1: n=20 chi todo [8, 16, 32] eps todo [0.01, 0.001]
+  chi8: mean 2.5s/q, score vs exact 840
+  chi16: mean 2.8s/q, score vs exact 987
+  chi32: mean 7.3s/q, score vs exact 998
+  MPS wall 101s
+  eps0.01: mean 2.5s/q, 0 incomplete, max|v|=1.0000, score vs exact 1000
+  eps0.001: mean 0.4s/q, 0 incomplete, max|v|=1.0000, score vs exact 1000
+  PPS wall 19s
+4x5_d4_s2: n=20 chi todo [8, 16, 32] eps todo [0.01, 0.001]
+  chi8: mean 2.8s/q, score vs exact 864
+  chi16: mean 3.0s/q, score vs exact 973
+  chi32: mean 8.2s/q, score vs exact 997
+  MPS wall 116s
+  eps0.01: mean 2.8s/q, 0 incomplete, max|v|=1.0000, score vs exact 1000
+  eps0.001: mean 0.4s/q, 0 incomplete, max|v|=1.0000, score vs exact 1000
+  PPS wall 21s

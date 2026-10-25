@@ -1,0 +1,27 @@
+4x4_d8_s1: n=16 chi todo [8, 16, 32, 64] eps todo [0.01, 0.001]
+  chi8: mean 3.8s/q, score vs exact 226
+  chi16: mean 7.2s/q, score vs exact 372
+  chi32: mean 9.6s/q, score vs exact 642
+  chi64: mean 26.2s/q, score vs exact 806
+  MPS wall 263s
+  eps0.01: mean 5.8s/q, 0 incomplete, max|v|=0.5114, score vs exact 724
+  eps0.001: mean 8.0s/q, 0 incomplete, max|v|=0.4773, score vs exact 985
+  PPS wall 75s
+4x4_d8_s2: n=16 chi todo [8, 16, 32, 64] eps todo [0.01, 0.001]
+  chi8: mean 6.4s/q, score vs exact 219
+  chi16: mean 6.6s/q, score vs exact 592
+  chi32: mean 12.3s/q, score vs exact 760
+  chi64: mean 37.4s/q, score vs exact 899
+  MPS wall 377s
+  eps0.01: mean 5.1s/q, 0 incomplete, max|v|=0.3514, score vs exact 646
+  eps0.001: mean 12.4s/q, 0 incomplete, max|v|=0.4231, score vs exact 992
+  PPS wall 99s
+4x4_d8_s3: n=16 chi todo [8, 16, 32, 64] eps todo [0.01, 0.001]
+  chi8: mean 3.8s/q, score vs exact 640
+  chi16: mean 4.3s/q, score vs exact 809
+  chi32: mean 8.2s/q, score vs exact 931
+  chi64: mean 26.7s/q, score vs exact 961
+  MPS wall 244s
+  eps0.01: mean 4.3s/q, 0 incomplete, max|v|=0.7014, score vs exact 944
+  eps0.001: mean 7.3s/q, 0 incomplete, max|v|=0.6355, score vs exact 991
+  PPS wall 63s

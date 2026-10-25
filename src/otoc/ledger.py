@@ -232,6 +232,13 @@ def record_remote(saved, root=DEFAULT_ROOT):
     action = saved["action"]
     key = hashlib.sha256(json.dumps(action, sort_keys=True, allow_nan=False).encode()).hexdigest()
     cid = action["circuit_id"]
+    reason = saved.get("scheduler_justification", "Free exact sample reference")
+    vector = {}
+    if action.get("observables"):
+        # Observable-list job (e.g. all_z): the CSV scalar `estimate` is the target
+        # <Z_q> component; the full vector is kept only in this JSON record.
+        vector = {"observables": action["observables"], "estimates_vector": saved.get("estimates_vector")}
+        reason = f"observables={action['observables']} job; estimate is the <Z_q> component of estimates_vector; {reason}"
     return record_run("remote-" + key, {
         "circuit_id": cid, "problem": cid.split("_")[1], "qubit": int(cid.split("_")[2]),
         "origin": "bluequbit", "method": "exact" if action["device"] in {"cpu","gpu"} else action["device"],
@@ -239,9 +246,9 @@ def record_remote(saved, root=DEFAULT_ROOT):
         "estimate": saved.get("estimate"), "job_id": saved.get("job_id"), "cost_usd": saved.get("cost_usd"),
         "started_at": saved.get("requested_at"), "finished_at": saved.get("updated_at"),
         "wall_seconds": ((saved.get("compute_ms") or 0) + (saved.get("queue_ms") or 0))/1000,
-        "reason": saved.get("scheduler_justification", "Free exact sample reference"),
+        "reason": reason,
         "quote": saved.get("quote"), "error": saved.get("error"), "pauli": action["pauli"],
-        "remote_receipt": saved,
+        "remote_receipt": saved, **vector,
     }, root)
 
 

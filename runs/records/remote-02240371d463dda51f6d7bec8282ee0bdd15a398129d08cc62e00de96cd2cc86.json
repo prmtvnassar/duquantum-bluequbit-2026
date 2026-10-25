@@ -1,0 +1,72 @@
+{
+  "circuit_id": "Duke_G4_36",
+  "problem": "G4",
+  "qubit": 36,
+  "origin": "bluequbit",
+  "method": "pauli-path",
+  "backend": "pauli-path",
+  "parameters": {
+    "pauli_path_truncation_threshold": 0.0001,
+    "pauli_path_circuit_transpilation_level": 3
+  },
+  "status": "NOT_ENOUGH_FUNDS",
+  "estimate": null,
+  "job_id": "7Gm9JLFRUKzTWjzY",
+  "cost_usd": 0.0,
+  "started_at": "2026-10-25T02:50:36.189340+00:00",
+  "finished_at": "2026-10-25T02:59:22.394301+00:00",
+  "wall_seconds": 0.0,
+  "reason": "On-circuit sign/magnitude check of the empirical-geometry prior on the 8 latest-contact rows (all-Z contact map); level-3 PPS at delta 0.0001; CPU PPS has billed $0",
+  "quote": {
+    "circuit_id": "Duke_G4_36",
+    "device": "pauli-path",
+    "options": {
+      "pauli_path_truncation_threshold": 0.0001,
+      "pauli_path_circuit_transpilation_level": 3
+    },
+    "quoted_at": "2026-10-25T02:50:35.363555+00:00",
+    "cost_usd": 0.2,
+    "runtime_seconds": 0.1,
+    "error": null,
+    "warning": "This is just an estimate; the actual runtime may be less or more.",
+    "binding_cost_cap": false
+  },
+  "error": "NOT_ENOUGH_FUNDS: account balance below the $0.20 quote; job never ran (service cost field None)",
+  "pauli": "IZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+  "remote_receipt": {
+    "action": {
+      "circuit_id": "Duke_G4_36",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0001,
+        "pauli_path_circuit_transpilation_level": 3
+      },
+      "pauli": "IZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
+    },
+    "status": "NOT_ENOUGH_FUNDS",
+    "requested_at": "2026-10-25T02:50:36.189340+00:00",
+    "quote": {
+      "circuit_id": "Duke_G4_36",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0001,
+        "pauli_path_circuit_transpilation_level": 3
+      },
+      "quoted_at": "2026-10-25T02:50:35.363555+00:00",
+      "cost_usd": 0.2,
+      "runtime_seconds": 0.1,
+      "error": null,
+      "warning": "This is just an estimate; the actual runtime may be less or more.",
+      "binding_cost_cap": false
+    },
+    "scheduler_justification": "On-circuit sign/magnitude check of the empirical-geometry prior on the 8 latest-contact rows (all-Z contact map); level-3 PPS at delta 0.0001; CPU PPS has billed $0",
+    "job_id": "7Gm9JLFRUKzTWjzY",
+    "estimate": null,
+    "cost_usd": 0.0,
+    "compute_ms": null,
+    "updated_at": "2026-10-25T02:59:22.394301+00:00",
+    "error": "NOT_ENOUGH_FUNDS: account balance below the $0.20 quote; job never ran (service cost field None)",
+    "reconciliation": "Matched 2026-10-25T03:00Z by action_key tag 02240371d4 in bq.search(created_later_than=02:40Z); SDK raised synchronously so no job_id was stored"
+  },
+  "run_id": "remote-02240371d463dda51f6d7bec8282ee0bdd15a398129d08cc62e00de96cd2cc86"
+}

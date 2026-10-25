@@ -1,0 +1,71 @@
+{
+  "circuit_id": "Duke_S2_10",
+  "problem": "S2",
+  "qubit": 10,
+  "origin": "bluequbit",
+  "method": "pauli-path",
+  "backend": "pauli-path",
+  "parameters": {
+    "pauli_path_truncation_threshold": 0.0001,
+    "pauli_path_circuit_transpilation_level": 3
+  },
+  "status": "COMPLETED",
+  "estimate": 0.6803897111727156,
+  "job_id": "PdDPoD8bdcf9O42O",
+  "cost_usd": 0.0,
+  "started_at": "2026-10-25T00:02:30.631515+00:00",
+  "finished_at": "2026-10-25T00:04:32.203978+00:00",
+  "wall_seconds": 74.083,
+  "reason": "User-approved native calibration: delta 1e-4 vs 1e-3 on Haar sample S2_10 (exact 0.582; 1e-3 gave 0.659)",
+  "quote": {
+    "circuit_id": "Duke_S2_10",
+    "device": "pauli-path",
+    "options": {
+      "pauli_path_truncation_threshold": 0.0001,
+      "pauli_path_circuit_transpilation_level": 3
+    },
+    "quoted_at": "2026-10-25T00:02:30.603271+00:00",
+    "cost_usd": 0.2,
+    "runtime_seconds": 0.1,
+    "error": null,
+    "warning": "This is just an estimate; the actual runtime may be less or more.",
+    "binding_cost_cap": false
+  },
+  "error": null,
+  "pauli": "IIIIIZIIIIIIIIII",
+  "remote_receipt": {
+    "action": {
+      "circuit_id": "Duke_S2_10",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0001,
+        "pauli_path_circuit_transpilation_level": 3
+      },
+      "pauli": "IIIIIZIIIIIIIIII"
+    },
+    "status": "COMPLETED",
+    "requested_at": "2026-10-25T00:02:30.631515+00:00",
+    "quote": {
+      "circuit_id": "Duke_S2_10",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0001,
+        "pauli_path_circuit_transpilation_level": 3
+      },
+      "quoted_at": "2026-10-25T00:02:30.603271+00:00",
+      "cost_usd": 0.2,
+      "runtime_seconds": 0.1,
+      "error": null,
+      "warning": "This is just an estimate; the actual runtime may be less or more.",
+      "binding_cost_cap": false
+    },
+    "scheduler_justification": "User-approved native calibration: delta 1e-4 vs 1e-3 on Haar sample S2_10 (exact 0.582; 1e-3 gave 0.659)",
+    "job_id": "PdDPoD8bdcf9O42O",
+    "estimate": 0.6803897111727156,
+    "cost_usd": 0.0,
+    "compute_ms": 73841,
+    "queue_ms": 242,
+    "updated_at": "2026-10-25T00:04:32.203978+00:00"
+  },
+  "run_id": "remote-fd8d031a5ab0a0ebc8086672e4d5077e72fbe3897ac7faa93fa7135ef5ad44e5"
+}

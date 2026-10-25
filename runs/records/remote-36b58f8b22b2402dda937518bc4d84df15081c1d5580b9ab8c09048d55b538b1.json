@@ -1,0 +1,71 @@
+{
+  "circuit_id": "Duke_G4_37",
+  "problem": "G4",
+  "qubit": 37,
+  "origin": "bluequbit",
+  "method": "pauli-path",
+  "backend": "pauli-path",
+  "parameters": {
+    "pauli_path_truncation_threshold": 0.001,
+    "pauli_path_circuit_transpilation_level": 3
+  },
+  "status": "COMPLETED",
+  "estimate": -0.017764871843194644,
+  "job_id": "vlRFnbEh0DXtxwCc",
+  "cost_usd": 0.0,
+  "started_at": "2026-10-24T23:42:49.133992+00:00",
+  "finished_at": "2026-10-24T23:43:49.470587+00:00",
+  "wall_seconds": 56.488,
+  "reason": "G4 alt-technique pilot: transpilation level 3 collapses U.U^dag echo outside light cone locally (S2/S3 test); far qubit q37 should be ~1 if native L3 collapses",
+  "quote": {
+    "circuit_id": "Duke_G4_37",
+    "device": "pauli-path",
+    "options": {
+      "pauli_path_truncation_threshold": 0.001,
+      "pauli_path_circuit_transpilation_level": 3
+    },
+    "quoted_at": "2026-10-24T23:42:49.104267+00:00",
+    "cost_usd": 0.2,
+    "runtime_seconds": 0.1,
+    "error": null,
+    "warning": "This is just an estimate; the actual runtime may be less or more.",
+    "binding_cost_cap": false
+  },
+  "error": null,
+  "pauli": "ZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+  "remote_receipt": {
+    "action": {
+      "circuit_id": "Duke_G4_37",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 3
+      },
+      "pauli": "ZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
+    },
+    "status": "COMPLETED",
+    "requested_at": "2026-10-24T23:42:49.133992+00:00",
+    "quote": {
+      "circuit_id": "Duke_G4_37",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 3
+      },
+      "quoted_at": "2026-10-24T23:42:49.104267+00:00",
+      "cost_usd": 0.2,
+      "runtime_seconds": 0.1,
+      "error": null,
+      "warning": "This is just an estimate; the actual runtime may be less or more.",
+      "binding_cost_cap": false
+    },
+    "scheduler_justification": "G4 alt-technique pilot: transpilation level 3 collapses U.U^dag echo outside light cone locally (S2/S3 test); far qubit q37 should be ~1 if native L3 collapses",
+    "job_id": "vlRFnbEh0DXtxwCc",
+    "estimate": -0.017764871843194644,
+    "cost_usd": 0.0,
+    "compute_ms": 56111,
+    "queue_ms": 377,
+    "updated_at": "2026-10-24T23:43:49.470587+00:00"
+  },
+  "run_id": "remote-36b58f8b22b2402dda937518bc4d84df15081c1d5580b9ab8c09048d55b538b1"
+}

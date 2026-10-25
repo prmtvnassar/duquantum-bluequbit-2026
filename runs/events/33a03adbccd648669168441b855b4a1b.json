@@ -1,0 +1,906 @@
+{
+  "event_id": "33a03adbccd648669168441b855b4a1b",
+  "recorded_at": "2026-10-25T01:48:13.275623+00:00",
+  "kind": "graded_decision",
+  "generated_at": "2026-10-25T01:48:13.270053+00:00",
+  "usage": {
+    "observed_at": "2026-10-25T01:47:45.572699+00:00",
+    "source": "BlueQubit job API",
+    "job_count": 245,
+    "known_cost_usd": 0.2,
+    "active_jobs": 0,
+    "known_job_costs_usd": {
+      "KwTRuOInNNbd3zzM": 0.0,
+      "m0FUhLB5Mo5L012x": 0.0,
+      "gWYlJVi5wihpf7L2": 0.0,
+      "GpiXd32tEe31uw8T": 0.0,
+      "VW6B2tkgAEZ584z9": 0.0,
+      "z3MRqygj6GmxWzYB": 0.0,
+      "yOa41iXS2kKvZWe8": 0.0,
+      "8Nu6jk3SIA2aD6gj": 0.0,
+      "VTH5HIa0QbftM814": 0.0,
+      "THruNbohvNXtWrb5": 0.0,
+      "pIOtl1dHREfwVjBs": 0.0,
+      "FypZTVk7SzryOJRk": 0.0,
+      "UZQMLE4dG183NeMt": 0.0,
+      "fKLj4In3mv98FXqi": 0.0,
+      "4H53uIwiv6RzpPp6": 0.0,
+      "vozL48Nqq5hXqM9j": 0.0,
+      "mgbzS8J6wlEegTyM": 0.0,
+      "mw5Q5GbkC0ZWo7K4": 0.0,
+      "nTkMiU07su0en9Wf": 0.0,
+      "V37tQPWuiVElUuqu": 0.0,
+      "41Cb6oXXeBed9hGR": 0.0,
+      "NN84LD6DODrguoK7": 0.0,
+      "wqsZ3633ALRTGNVY": 0.0,
+      "mUVO7h27o6P9zZck": 0.0,
+      "3OWNhui0SNZ1Bm2z": 0.0,
+      "bhnUQR1BlQtCEbA1": 0.0,
+      "9E46BpWw41KHPGd7": 0.0,
+      "ykuD1iJ7JPIpv5yG": 0.0,
+      "6ICbRAomfVX8aAOO": 0.0,
+      "juZZQzjbiAAA4x1v": 0.0,
+      "C1RMFb9j4uhV02J7": 0.0,
+      "di6P4sCrUPJhBQhO": 0.0,
+      "zeEfsVVFBeUQJ7Op": 0.0,
+      "hRQp5p6CpjDMP9cN": 0.0,
+      "AN4JtZrymhiOwfmz": 0.0,
+      "AVIEZG0XlC5ABGoq": 0.0,
+      "YCVm4ZThh97i2YSX": 0.0,
+      "Q9vbn2jzHINAEeG5": 0.0,
+      "zzxWUj7ZLUKO1SzA": 0.0,
+      "VmG1DYoLQ5ErBP1w": 0.0,
+      "MtV3tgTnSjtwmQBo": 0.0,
+      "Uh0LLH1a1h2rKdMa": 0.0,
+      "CMWGmBhNSxktkZhD": 0.0,
+      "iMLoRp7xBiBJ9ajS": 0.0,
+      "ZVksllLnMKAj7OsY": 0.0,
+      "s9IVOpjjHdOfI9W6": 0.0,
+      "5ZzJS5RrIepqxkvL": 0.0,
+      "PdDPoD8bdcf9O42O": 0.0,
+      "BkbxBvi7RaglI2BY": 0.0,
+      "yoyrv0fngRLyDaEs": 0.0,
+      "MYmQke5MWbOSn6ko": 0.0,
+      "qG6uNd2Sd4NP3P3V": 0.0,
+      "weAbrA74wSc6VeIP": 0.0,
+      "vlRFnbEh0DXtxwCc": 0.0,
+      "YNNrEYaMyKh5tuUL": 0.0,
+      "TxL8XgVqpcY7TbUi": 0.0,
+      "8fg8aRWXgfwUIRVY": 0.0,
+      "1hrs3zueIZimnLQt": 0.0,
+      "BQZ6vqufpRyCzawf": 0.0,
+      "BWB08UibEh9wqZx4": 0.0,
+      "7szlfAdtPuoEuby6": 0.0,
+      "vcy4w6GS7z3J73Tb": 0.0,
+      "qDNaA46x1O2kwXK9": 0.0,
+      "SsJ3VhBrfGbVkv0C": 0.0,
+      "UZgyPZpaQFpjrTpn": 0.0,
+      "p2qJNk8zPBHSSnwK": 0.0,
+      "AIG4IZYMCjeImLUq": 0.0,
+      "MRV8VpTerR9lhKyo": 0.0,
+      "9fLbu6CIjhHbZtkr": 0.0,
+      "onNMNzb84Wz82A0D": 0.0,
+      "Px3Hpygl0S6DT469": 0.0,
+      "bwUOEcirkZMkDU3b": 0.0,
+      "6m5pZ6dArY3Zxfvp": 0.0,
+      "LQ4PdMwLpFieidxt": 0.0,
+      "PQVfzMUjHWx6CG7d": 0.0,
+      "5Ol9PPkxRCSqqzwc": 0.0,
+      "M8uTWPXHs1gJ9WT7": 0.0,
+      "QId66iwguY5qaNTW": 0.0,
+      "ZB4TXCbJYWEFrszi": 0.0,
+      "2NArvyN8NVAxwcXo": 0.0,
+      "8puZsd2Of2wo258B": 0.0,
+      "HfWhHPvqKQYkEYAk": 0.0,
+      "6BPzFWNg9CgwQEUv": 0.0,
+      "gBvNH1ZBb8Hbjijk": 0.0,
+      "lNoBGJPl7omoylIs": 0.0,
+      "kiMkIGDzWaIGJUXl": 0.0,
+      "AtKZAeOJCElx0y82": 0.0,
+      "d9gHwzmrhulGNvBt": 0.0,
+      "Lb4IHZt50wl51B59": 0.0,
+      "Djm45r9NRU8omvzf": 0.0,
+      "yDXYV5Tg3CozTDb6": 0.0,
+      "BmBm2PRl6VfVb2hT": 0.0,
+      "hRGDjWjYNaJtofQN": 0.0,
+      "9IhF26U9EElF8uH7": 0.0,
+      "8F85YwJTJcFxZhHQ": 0.0,
+      "gGDeYTaBJsKKAWjS": 0.0,
+      "b9EKXtZFXxmZWNaq": 0.0,
+      "7VaZbG7IPCv5RujL": 0.0,
+      "tBw7CMHic0J5unGa": 0.0,
+      "z3Mhs4lrlW9djS2V": 0.0,
+      "P9NBeIMCjVhNJsPA": 0.0,
+      "fzQzCyOoGGFWqTZJ": 0.0,
+      "Iil6OpIHfHxgr7cF": 0.0,
+      "ea9vMuUYPfIvNK0E": 0.0,
+      "QNMc3MGZUTM8r4HC": 0.0,
+      "9Rua7hRGxRLdcQvO": 0.0,
+      "y9S7J3rgBoQ2o2VY": 0.0,
+      "XFonxtCv4CqRX9Rg": 0.0,
+      "DXhdsLqoxavp8P3h": 0.0,
+      "upJxVXhRnrbGePAE": 0.0,
+      "VKMY01hftkklFVCb": 0.0,
+      "9FWXbGIDqjfaOYY5": 0.0,
+      "WrjS6BxTXfSKniPM": 0.0,
+      "kxLjRoBQfI7ekOuo": 0.0,
+      "wQjb9D2ZFtNsg45U": 0.0,
+      "Z7wAJkxcAi0PvDCB": 0.0,
+      "y7zGCDGBGqceEBH1": 0.0,
+      "zseZsb88I2JNydq4": 0.0,
+      "eqy3xgGJ9SDp7vme": 0.0,
+      "jveFh3KrKdtOVZIR": 0.0,
+      "1XPzZ7FCi9Cuad2w": 0.0,
+      "nWHb1bXSy2daQqeh": 0.0,
+      "8ffB8rQvkWE4dRDq": 0.0,
+      "sIp7waZ3gpgCx5wL": 0.0,
+      "NhbO7kWnsG0K4orY": 0.0,
+      "p9TJELv8W9jGKhXM": 0.0,
+      "rohx5YGiGgrBzm9s": 0.0,
+      "s4oioJkxehZI9M8g": 0.0,
+      "9nqoonDvTfuUWzAP": 0.0,
+      "ksdT8d4KwaMzksRD": 0.0,
+      "SniEe9FznRnVBWfU": 0.0,
+      "HwQSH9aGuRNvRGx8": 0.0,
+      "kDPVXSwNrvpJ4xbS": 0.0,
+      "SBg2xDmmkogRYNjP": 0.0,
+      "T59bY4yuPjMrBUoZ": 0.0,
+      "nPAI6JihLrXUGsPh": 0.0,
+      "ykQWw7sUtvr6VfIa": 0.0,
+      "hvqh9jbt8GbqXSRP": 0.0,
+      "GTXBAMSNlgBI2eKc": 0.0,
+      "0cfHjjUtbHO3z4Q2": 0.0,
+      "JgcvRKxwUG2U9VHl": 0.0,
+      "Uq8gXbgv5d6dfJWl": 0.0,
+      "7HoyY2c4BH2IV4nv": 0.0,
+      "F20QBIPPGFelilzx": 0.0,
+      "9RmQMucEi62iX3a2": 0.0,
+      "DOWRlNQ3r4Cl6tWZ": 0.0,
+      "YsLqtFxpIZUKhWBy": 0.0,
+      "gHj807bS4sWLgiIe": 0.0,
+      "e1Qbkkkyd4Q7JjVP": 0.0,
+      "6pFmSE5T8twQZtbh": 0.0,
+      "XrWVIrRjrcrKb4v0": 0.0,
+      "eTryNkqxBGDSxWRT": 0.0,
+      "hLD1rix3fjQKUQYl": 0.0,
+      "vrlrwBmE4guDrfVp": 0.0,
+      "mwxR2R8s7CM4DSUU": 0.0,
+      "WasQ83jYL2NNRRhZ": 0.0,
+      "DAZAw6Grjb2i10cE": 0.0,
+      "hWyJR41mStSfV7q4": 0.0,
+      "GWgmRa61l1MJ7DVb": 0.0,
+      "1ZjlPUanRpif4A7P": 0.0,
+      "u2IvmvPL3fWl2Hni": 0.0,
+      "LXbZKhuCycdPY3W7": 0.0,
+      "7dMiLlvcVFNWVcT8": 0.0,
+      "aopgRc80n61KSttt": 0.0,
+      "NkJ4SdX1FirxzW8O": 0.0,
+      "dAGHVu0ky3qVSoed": 0.0,
+      "SucHwfnGVJ2CQKmM": 0.0,
+      "0aFBj5foDjvl11Tj": 0.0,
+      "kotELLnfFL3JCdfl": 0.0,
+      "ocp4OGcIk8ksar0E": 0.0,
+      "5fKBwzfyJ2hZEkTF": 0.0,
+      "lcjo3vKNnkBoDTKy": 0.0,
+      "4aUqOsbGqTnrNsyD": 0.0,
+      "flbW0WUTUwh0ugVi": 0.0,
+      "iuWprHrY7TQlwHYx": 0.2,
+      "c59UMw17igr8TFNN": 0.0,
+      "pUSAULIblgut0K0b": 0.0,
+      "4lzC9yZzqod0XIss": 0.0,
+      "vGhKebHhF7A0UAOm": 0.0,
+      "smDxT4giEnJIkVRP": 0.0,
+      "gIhxrjeFBKeCtnHd": 0.0,
+      "e5W2dxQ1OLOkRRLi": 0.0,
+      "BCPD1q8nKVQWiYqL": 0.0,
+      "78aF6vkVPu0XZJaR": 0.0,
+      "bWm41clhLZ9NOIA8": 0.0,
+      "3veLHAPbAcd7cuPm": 0.0,
+      "G1zxxs8zxn4vBAmI": 0.0,
+      "rOuJjcU3jjqtpb4e": 0.0,
+      "73H8STxMznAoXSZL": 0.0,
+      "Zbe59lAEJQNfPrDN": 0.0,
+      "KahKJiOxwuN1dDLT": 0.0,
+      "MS0yy70CXbc5UdNl": 0.0,
+      "2bRJ4CbAhzDF1Uyp": 0.0,
+      "h88XrE4ylXWWeswj": 0.0,
+      "aK8G5RrRHKcKRPp3": 0.0,
+      "y4FHoDVz8SMmcAE4": 0.0,
+      "cN47ifNQlQ7RsODe": 0.0,
+      "zTYGrn2XLOYS8SXF": 0.0,
+      "KJ1mxvnKtDlT3dXb": 0.0,
+      "tUmLbvbMpdqPY6SV": 0.0,
+      "JmVGz8yxU6PTAw9c": 0.0,
+      "eV35YkTqQE4xkAN9": 0.0,
+      "qcP6XC7iOjUocvSJ": 0.0,
+      "I0uYXEfRPI4pemdw": 0.0,
+      "EGRvEgYDOUFR8SgB": 0.0,
+      "5QQZfExUqmAJBPnO": 0.0,
+      "ZCeX62pXKdboveCj": 0.0,
+      "fEBXLMRyLVOIRlqV": 0.0,
+      "KzTYb7rpqmEwgLh2": 0.0,
+      "1RfihpudlXIhIRqc": 0.0,
+      "Xwd38DivQbLSLfMw": 0.0,
+      "BsLvSnV91rVxH6Ts": 0.0,
+      "EHFbywYKK8gP6ajQ": 0.0,
+      "8bYxcNGVrN6Zz9I3": 0.0,
+      "O32peB3tJOGvTWOX": 0.0,
+      "bM3pNwQuwAtUR0Pp": 0.0,
+      "h1Mox6qur7bYjqmC": 0.0,
+      "BfaULAWEBvcgvrw3": 0.0,
+      "kP9q6hpVrlUuo5z0": 0.0,
+      "elqDS9JrQIBeyxCa": 0.0,
+      "dk4vq97m2LLZ601u": 0.0,
+      "onX4aUfH3IFddv9b": 0.0,
+      "WkcSBU00x6TCcUII": 0.0,
+      "BmbBgdrJR0cu1Y0t": 0.0,
+      "WeKewtwsvgNHfX2g": 0.0,
+      "mxQJ6eKYmkj5UURa": 0.0,
+      "ltOfxzu6U55nNFzw": 0.0,
+      "vxOch2OB75cLEnpq": 0.0,
+      "qkvw6mJoGtUQ0hMp": 0.0,
+      "Rn06IVy0FDVHURlC": 0.0,
+      "HGe9XEu4GMZ5vtSd": 0.0,
+      "iNPTjijQHfavnizs": 0.0,
+      "xqzzE5Gr73z2CUiY": 0.0,
+      "pi7aXbfoXEBxvHbE": 0.0,
+      "Ia9wi10rFDPeZ9Mb": 0.0,
+      "V7jEMzEIqPzp3BBP": 0.0,
+      "mKRBzAwuEI8l1uSF": 0.0,
+      "V3bYYSs6yfV7K7p4": 0.0,
+      "WoEyDqjxqbsmeec1": 0.0,
+      "K1ySXGcvur7Stb8d": 0.0,
+      "riMDLH1ywg29VlaT": 0.0,
+      "bhNNqw4E8u2cxyFD": 0.0,
+      "IAn0xso7kBUg28Xy": 0.0,
+      "ObtqJAVVOphTBycF": 0.0,
+      "fTLItBwguE9c7FBs": 0.0
+    },
+    "active_job_ids": [],
+    "gpu_time_known": true,
+    "gpu_seconds": 24.189,
+    "gpu_seconds_last_hour": 0.0,
+    "unknown_terminal_costs": 0
+  },
+  "missing_rows": {
+    "G1": 0,
+    "G2": 0,
+    "G3": 0,
+    "G4": 0
+  },
+  "actions": [
+    {
+      "circuit_id": "Duke_G2_1",
+      "problem": "G2",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 64
+      },
+      "reason": "Refine based on within-method INSUFFICIENT_HISTORY trend and cross-method sensitivity; convergence is not certified",
+      "stage": "refine",
+      "uncertainty": 1.0,
+      "trend": {
+        "classification": "INSUFFICIENT_HISTORY",
+        "levels": 1,
+        "priority_uncertainty": 1.0
+      },
+      "quote": {
+        "cost_usd": null,
+        "runtime_seconds": null,
+        "error": "No saved quote; fresh quote required"
+      },
+      "allowed": false,
+      "gate": "invalid_or_excessive_runtime",
+      "priority": 0,
+      "protected_baseline_usd": 0.0,
+      "timeout_seconds": 600,
+      "route_quotes": [
+        {
+          "cost_usd": null,
+          "runtime_seconds": null,
+          "error": "No saved quote; fresh quote required"
+        },
+        {
+          "cost_usd": null,
+          "runtime_seconds": null,
+          "error": "No saved quote; fresh quote required"
+        }
+      ],
+      "score_progress": {
+        "observed_submissions": 0,
+        "best_displayed_score": null,
+        "recent_score_change": null,
+        "priority_room": 1.0,
+        "interpretation": "Whole-problem effort allocation only; never infer or fit individual hidden labels"
+      },
+      "runtime_model": {
+        "seconds": 40.390386,
+        "observed_upper_quartile_seconds": 40.390386,
+        "observations": 41,
+        "interpretation": "Empirical wall-time floor, not a runtime guarantee or a cost discount"
+      },
+      "shape_priority_multiplier": 1.0
+    },
+    {
+      "circuit_id": "Duke_G3_6",
+      "problem": "G3",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0003,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "reason": "Refine based on within-method INSUFFICIENT_HISTORY trend and cross-method sensitivity; convergence is not certified",
+      "stage": "refine",
+      "uncertainty": 1.0,
+      "trend": {
+        "classification": "INSUFFICIENT_HISTORY",
+        "levels": 1,
+        "priority_uncertainty": 1.0
+      },
+      "quote": {
+        "cost_usd": null,
+        "runtime_seconds": null,
+        "error": "No saved quote; fresh quote required"
+      },
+      "allowed": false,
+      "gate": "invalid_or_excessive_runtime",
+      "priority": 0,
+      "protected_baseline_usd": 0.0,
+      "timeout_seconds": 600,
+      "route_quotes": [
+        {
+          "cost_usd": null,
+          "runtime_seconds": null,
+          "error": "No saved quote; fresh quote required"
+        },
+        {
+          "cost_usd": null,
+          "runtime_seconds": null,
+          "error": "No saved quote; fresh quote required"
+        }
+      ],
+      "score_progress": {
+        "observed_submissions": 0,
+        "best_displayed_score": null,
+        "recent_score_change": null,
+        "priority_room": 1.0,
+        "interpretation": "Whole-problem effort allocation only; never infer or fit individual hidden labels"
+      },
+      "runtime_model": {
+        "seconds": 50.7221185,
+        "observed_upper_quartile_seconds": 50.7221185,
+        "observations": 50,
+        "interpretation": "Empirical wall-time floor, not a runtime guarantee or a cost discount"
+      },
+      "shape_priority_multiplier": 1.0
+    },
+    {
+      "circuit_id": "Duke_G4_37",
+      "problem": "G4",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 128
+      },
+      "reason": "Refine based on within-method UNRESOLVED trend and cross-method sensitivity; convergence is not certified",
+      "stage": "refine",
+      "uncertainty": 0.8758925335270542,
+      "trend": {
+        "classification": "UNRESOLVED",
+        "levels": 3,
+        "signed_steps": [
+          0.036605033261770115,
+          0.017855064378760055
+        ],
+        "slopes_per_log_precision": [
+          0.0528098999583313,
+          0.025759412833990324
+        ],
+        "last_contraction_ratio": 0.4877762096560555,
+        "sign_flips": 0,
+        "geometric_tail_proxy": null,
+        "priority_uncertainty": 0.036605033261770115,
+        "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+      },
+      "quote": {
+        "cost_usd": null,
+        "runtime_seconds": null,
+        "error": "No saved quote; fresh quote required"
+      },
+      "allowed": false,
+      "gate": "invalid_or_excessive_runtime",
+      "priority": 0,
+      "protected_baseline_usd": 0.0,
+      "timeout_seconds": 600,
+      "route_quotes": [
+        {
+          "cost_usd": null,
+          "runtime_seconds": null,
+          "error": "No saved quote; fresh quote required"
+        },
+        {
+          "cost_usd": null,
+          "runtime_seconds": null,
+          "error": "No saved quote; fresh quote required"
+        }
+      ],
+      "score_progress": {
+        "observed_submissions": 0,
+        "best_displayed_score": null,
+        "recent_score_change": null,
+        "priority_room": 1.0,
+        "interpretation": "Whole-problem effort allocation only; never infer or fit individual hidden labels"
+      },
+      "runtime_model": {
+        "seconds": 339.3996615,
+        "observed_upper_quartile_seconds": 339.3996615,
+        "observations": 87,
+        "interpretation": "Empirical wall-time floor, not a runtime guarantee or a cost discount"
+      },
+      "shape_priority_multiplier": 1.0014255960450937
+    },
+    {
+      "circuit_id": "Duke_G2_2",
+      "problem": "G2",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 64
+      },
+      "reason": "Refine based on within-method INSUFFICIENT_HISTORY trend and cross-method sensitivity; convergence is not certified",
+      "stage": "refine",
+      "uncertainty": 1.0,
+      "trend": {
+        "classification": "INSUFFICIENT_HISTORY",
+        "levels": 1,
+        "priority_uncertainty": 1.0
+      },
+      "quote": {
+        "cost_usd": null,
+        "runtime_seconds": null,
+        "error": "No saved quote; fresh quote required"
+      },
+      "allowed": false,
+      "gate": "invalid_or_excessive_runtime",
+      "priority": 0,
+      "protected_baseline_usd": 0.0,
+      "timeout_seconds": 600,
+      "route_quotes": [
+        {
+          "cost_usd": null,
+          "runtime_seconds": null,
+          "error": "No saved quote; fresh quote required"
+        },
+        {
+          "cost_usd": null,
+          "runtime_seconds": null,
+          "error": "No saved quote; fresh quote required"
+        }
+      ],
+      "score_progress": {
+        "observed_submissions": 0,
+        "best_displayed_score": null,
+        "recent_score_change": null,
+        "priority_room": 1.0,
+        "interpretation": "Whole-problem effort allocation only; never infer or fit individual hidden labels"
+      },
+      "runtime_model": {
+        "seconds": 40.390386,
+        "observed_upper_quartile_seconds": 40.390386,
+        "observations": 41,
+        "interpretation": "Empirical wall-time floor, not a runtime guarantee or a cost discount"
+      },
+      "shape_priority_multiplier": 1.0
+    },
+    {
+      "circuit_id": "Duke_G3_7",
+      "problem": "G3",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0003,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "reason": "Refine based on within-method INSUFFICIENT_HISTORY trend and cross-method sensitivity; convergence is not certified",
+      "stage": "refine",
+      "uncertainty": 1.0,
+      "trend": {
+        "classification": "INSUFFICIENT_HISTORY",
+        "levels": 1,
+        "priority_uncertainty": 1.0
+      },
+      "quote": {
+        "cost_usd": null,
+        "runtime_seconds": null,
+        "error": "No saved quote; fresh quote required"
+      },
+      "allowed": false,
+      "gate": "invalid_or_excessive_runtime",
+      "priority": 0,
+      "protected_baseline_usd": 0.0,
+      "timeout_seconds": 600,
+      "route_quotes": [
+        {
+          "cost_usd": null,
+          "runtime_seconds": null,
+          "error": "No saved quote; fresh quote required"
+        },
+        {
+          "cost_usd": null,
+          "runtime_seconds": null,
+          "error": "No saved quote; fresh quote required"
+        }
+      ],
+      "score_progress": {
+        "observed_submissions": 0,
+        "best_displayed_score": null,
+        "recent_score_change": null,
+        "priority_room": 1.0,
+        "interpretation": "Whole-problem effort allocation only; never infer or fit individual hidden labels"
+      },
+      "runtime_model": {
+        "seconds": 50.7221185,
+        "observed_upper_quartile_seconds": 50.7221185,
+        "observations": 50,
+        "interpretation": "Empirical wall-time floor, not a runtime guarantee or a cost discount"
+      },
+      "shape_priority_multiplier": 1.0
+    },
+    {
+      "circuit_id": "Duke_G4_4",
+      "problem": "G4",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 128
+      },
+      "reason": "Refine based on within-method UNRESOLVED trend and cross-method sensitivity; convergence is not certified",
+      "stage": "refine",
+      "uncertainty": 0.49681984627526354,
+      "trend": {
+        "classification": "UNRESOLVED",
+        "levels": 3,
+        "signed_steps": [
+          0.33772269888670375,
+          0.16105207045527137
+        ],
+        "slopes_per_log_precision": [
+          0.4872308628794841,
+          0.23234902337072005
+        ],
+        "last_contraction_ratio": 0.4768766534976075,
+        "sign_flips": 0,
+        "geometric_tail_proxy": null,
+        "priority_uncertainty": 0.33772269888670375,
+        "interpretation": "Used for scheduling, never an error certificate or extrapolated submission value"
+      },
+      "quote": {
+        "cost_usd": null,
+        "runtime_seconds": null,
+        "error": "No saved quote; fresh quote required"
+      },
+      "allowed": false,
+      "gate": "invalid_or_excessive_runtime",
+      "priority": 0,
+      "protected_baseline_usd": 0.0,
+      "timeout_seconds": 600,
+      "route_quotes": [
+        {
+          "cost_usd": null,
+          "runtime_seconds": null,
+          "error": "No saved quote; fresh quote required"
+        },
+        {
+          "cost_usd": null,
+          "runtime_seconds": null,
+          "error": "No saved quote; fresh quote required"
+        }
+      ],
+      "score_progress": {
+        "observed_submissions": 0,
+        "best_displayed_score": null,
+        "recent_score_change": null,
+        "priority_room": 1.0,
+        "interpretation": "Whole-problem effort allocation only; never infer or fit individual hidden labels"
+      },
+      "runtime_model": {
+        "seconds": 339.3996615,
+        "observed_upper_quartile_seconds": 339.3996615,
+        "observations": 87,
+        "interpretation": "Empirical wall-time floor, not a runtime guarantee or a cost discount"
+      },
+      "shape_priority_multiplier": 1.2044075922288746
+    },
+    {
+      "circuit_id": "Duke_G2_3",
+      "problem": "G2",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 64
+      },
+      "reason": "Refine based on within-method INSUFFICIENT_HISTORY trend and cross-method sensitivity; convergence is not certified",
+      "stage": "refine",
+      "uncertainty": 1.0,
+      "trend": {
+        "classification": "INSUFFICIENT_HISTORY",
+        "levels": 1,
+        "priority_uncertainty": 1.0
+      },
+      "quote": {
+        "cost_usd": null,
+        "runtime_seconds": null,
+        "error": "No saved quote; fresh quote required"
+      },
+      "allowed": false,
+      "gate": "invalid_or_excessive_runtime",
+      "priority": 0,
+      "protected_baseline_usd": 0.0,
+      "timeout_seconds": 600,
+      "route_quotes": [
+        {
+          "cost_usd": null,
+          "runtime_seconds": null,
+          "error": "No saved quote; fresh quote required"
+        },
+        {
+          "cost_usd": null,
+          "runtime_seconds": null,
+          "error": "No saved quote; fresh quote required"
+        }
+      ],
+      "score_progress": {
+        "observed_submissions": 0,
+        "best_displayed_score": null,
+        "recent_score_change": null,
+        "priority_room": 1.0,
+        "interpretation": "Whole-problem effort allocation only; never infer or fit individual hidden labels"
+      },
+      "runtime_model": {
+        "seconds": 40.390386,
+        "observed_upper_quartile_seconds": 40.390386,
+        "observations": 41,
+        "interpretation": "Empirical wall-time floor, not a runtime guarantee or a cost discount"
+      },
+      "shape_priority_multiplier": 1.0
+    },
+    {
+      "circuit_id": "Duke_G3_8",
+      "problem": "G3",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.0003,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "reason": "Refine based on within-method INSUFFICIENT_HISTORY trend and cross-method sensitivity; convergence is not certified",
+      "stage": "refine",
+      "uncertainty": 1.0,
+      "trend": {
+        "classification": "INSUFFICIENT_HISTORY",
+        "levels": 1,
+        "priority_uncertainty": 1.0
+      },
+      "quote": {
+        "cost_usd": null,
+        "runtime_seconds": null,
+        "error": "No saved quote; fresh quote required"
+      },
+      "allowed": false,
+      "gate": "invalid_or_excessive_runtime",
+      "priority": 0,
+      "protected_baseline_usd": 0.0,
+      "timeout_seconds": 600,
+      "route_quotes": [
+        {
+          "cost_usd": null,
+          "runtime_seconds": null,
+          "error": "No saved quote; fresh quote required"
+        },
+        {
+          "cost_usd": null,
+          "runtime_seconds": null,
+          "error": "No saved quote; fresh quote required"
+        }
+      ],
+      "score_progress": {
+        "observed_submissions": 0,
+        "best_displayed_score": null,
+        "recent_score_change": null,
+        "priority_room": 1.0,
+        "interpretation": "Whole-problem effort allocation only; never infer or fit individual hidden labels"
+      },
+      "runtime_model": {
+        "seconds": 50.7221185,
+        "observed_upper_quartile_seconds": 50.7221185,
+        "observations": 50,
+        "interpretation": "Empirical wall-time floor, not a runtime guarantee or a cost discount"
+      },
+      "shape_priority_multiplier": 1.0
+    }
+  ],
+  "next": null,
+  "status": "PLAN_ONLY",
+  "policy_recovery": {
+    "G2": {
+      "previous_primary": "pps",
+      "selected_primary": "mps",
+      "previous_device": "pauli-path",
+      "preferred_original_device": "mps.cpu",
+      "device": "mps.cpu",
+      "pilot_spread": 0.9922142890724998,
+      "options": {
+        "mps_bond_dimension": 32
+      },
+      "configuration": {
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 32
+        }
+      },
+      "pilot_ids": [
+        "Duke_G2_0",
+        "Duke_G2_18",
+        "Duke_G2_35"
+      ],
+      "job_ids": [
+        "e5W2dxQ1OLOkRRLi",
+        "bWm41clhLZ9NOIA8",
+        "gIhxrjeFBKeCtnHd"
+      ],
+      "interpretation": "Selected a complete nonconstant pilot at one device and identical full options, preferring the original method family then precision; signal recovery only, accuracy uncertified"
+    },
+    "G3": {
+      "previous_primary": "pps",
+      "selected_primary": "pps",
+      "previous_device": "pauli-path",
+      "preferred_original_device": "pauli-path",
+      "device": "pauli-path",
+      "pilot_spread": 0.07229195955602603,
+      "options": {
+        "pauli_path_circuit_transpilation_level": 1,
+        "pauli_path_truncation_threshold": 0.001
+      },
+      "configuration": {
+        "device": "pauli-path",
+        "options": {
+          "pauli_path_circuit_transpilation_level": 1,
+          "pauli_path_truncation_threshold": 0.001
+        }
+      },
+      "pilot_ids": [
+        "Duke_G3_0",
+        "Duke_G3_14",
+        "Duke_G3_35"
+      ],
+      "job_ids": [
+        "rOuJjcU3jjqtpb4e",
+        "G1zxxs8zxn4vBAmI",
+        "3veLHAPbAcd7cuPm"
+      ],
+      "interpretation": "Selected a complete nonconstant pilot at one device and identical full options, preferring the original method family then precision; signal recovery only, accuracy uncertified"
+    },
+    "G4": {
+      "previous_primary": "pps",
+      "selected_primary": "mps",
+      "previous_device": "pauli-path",
+      "preferred_original_device": "mps.cpu",
+      "device": "mps.cpu",
+      "pilot_spread": 0.8905155257311972,
+      "options": {
+        "mps_bond_dimension": 64
+      },
+      "configuration": {
+        "device": "mps.cpu",
+        "options": {
+          "mps_bond_dimension": 64
+        }
+      },
+      "pilot_ids": [
+        "Duke_G4_0",
+        "Duke_G4_19",
+        "Duke_G4_37"
+      ],
+      "job_ids": [
+        "6m5pZ6dArY3Zxfvp",
+        "MRV8VpTerR9lhKyo",
+        "m0FUhLB5Mo5L012x"
+      ],
+      "interpretation": "Selected a complete nonconstant pilot at one device and identical full options, preferring the original method family then precision; signal recovery only, accuracy uncertified"
+    }
+  },
+  "baseline_quote_rates": {
+    "G2": 0.3,
+    "G3": 0.2,
+    "G4": 0.79
+  },
+  "vector_trends": {
+    "G4/mps.cpu/None": {
+      "status": "RESOLVED",
+      "affine_slope": 0.9955385535655706,
+      "shape_change": 0.04129260006697977,
+      "row_influence": [
+        0.007475890559264628,
+        0.0006096868797047512,
+        0.00019819496372889273,
+        1.9503510830695606e-06,
+        0.005379147163917754,
+        0.0005346992215190141,
+        0.0002210969308350267,
+        2.6405983129232506e-05,
+        0.0018812561653087337,
+        0.015294884343559577,
+        7.947918130153293e-05,
+        0.0015731443464660805,
+        5.922282744621791e-06,
+        0.000142103836161314,
+        6.033880064612048e-05,
+        0.0002102382158840208,
+        0.031384874449421785,
+        0.001883401099433221,
+        0.00017224802030615908,
+        0.010275604488143634,
+        0.00014829446972801594,
+        0.0008173794183082651,
+        0.0002846173324296333,
+        2.6568288735287107e-05,
+        0.0013231779967064251,
+        0.0003122849866054139,
+        2.3166020281202504e-05,
+        8.037957169238565e-05,
+        2.5232615252191596e-05,
+        2.390066333666208e-06,
+        2.6720389800426057e-06,
+        2.3990708587689917e-07,
+        2.7138068396395677e-07,
+        0.00032387742697806307,
+        3.465604627178989e-05,
+        1.1890878515114476e-05,
+        1.4939901123897014e-05,
+        3.751568539720566e-05
+      ],
+      "relative_shape_residual": 0.08088012131366762,
+      "interpretation": "Precision-sensitivity ranking only; not expected score gain or an error bound",
+      "circuit_ids": [
+        "Duke_G4_0",
+        "Duke_G4_1",
+        "Duke_G4_2",
+        "Duke_G4_3",
+        "Duke_G4_4",
+        "Duke_G4_5",
+        "Duke_G4_6",
+        "Duke_G4_7",
+        "Duke_G4_8",
+        "Duke_G4_9",
+        "Duke_G4_10",
+        "Duke_G4_11",
+        "Duke_G4_12",
+        "Duke_G4_13",
+        "Duke_G4_14",
+        "Duke_G4_15",
+        "Duke_G4_16",
+        "Duke_G4_17",
+        "Duke_G4_18",
+        "Duke_G4_19",
+        "Duke_G4_20",
+        "Duke_G4_21",
+        "Duke_G4_22",
+        "Duke_G4_23",
+        "Duke_G4_24",
+        "Duke_G4_25",
+        "Duke_G4_26",
+        "Duke_G4_27",
+        "Duke_G4_28",
+        "Duke_G4_29",
+        "Duke_G4_30",
+        "Duke_G4_31",
+        "Duke_G4_32",
+        "Duke_G4_33",
+        "Duke_G4_34",
+        "Duke_G4_35",
+        "Duke_G4_36",
+        "Duke_G4_37"
+      ],
+      "precision_pair": [
+        32,
+        64
+      ],
+      "transpilation_level": null
+    }
+  },
+  "warning": "Sample allocation is a prior. Budget/deadline stops do not certify numerical convergence. Flat pilot vectors block bulk coverage and require refinement/review."
+}

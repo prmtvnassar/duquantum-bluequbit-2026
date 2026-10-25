@@ -1,0 +1,7 @@
+5x5_d16_s2: n=25 chi todo [8, 16, 32] eps todo [0.01]
+  chi8: mean 8.7s/q, score vs exact 128
+  chi16: mean 13.4s/q, score vs exact 5
+  chi32: mean 33.1s/q, score vs exact 10
+  MPS wall 498s
+  eps0.01: mean 2.7s/q, 0 incomplete, max|v|=0.0000, score vs exact 0
+  PPS wall 23s

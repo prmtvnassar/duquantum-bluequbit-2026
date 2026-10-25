@@ -1,0 +1,42 @@
+4x4_d16_s1: n=16 chi todo [] eps todo []
+4x4_d16_s2: n=16 chi todo [] eps todo []
+4x4_d16_s3: n=16 chi todo [8, 16, 32, 64] eps todo [0.01, 0.001, 0.0001]
+  chi8: mean 3.8s/q, score vs exact 2
+  chi16: mean 6.8s/q, score vs exact 16
+  chi32: mean 14.8s/q, score vs exact 157
+  chi64: mean 35.4s/q, score vs exact 8
+  MPS wall 345s
+  eps0.01: mean 5.0s/q, 0 incomplete, max|v|=0.0000, score vs exact 0
+  eps0.001: mean 12.7s/q, 0 incomplete, max|v|=0.0000, score vs exact 0
+  eps0.0001: mean 4.9s/q, 16 incomplete, max|v|=0.0000, score vs exact 0
+  PPS wall 123s
+4x4_d16_s4: n=16 chi todo [8, 16, 32, 64] eps todo [0.01, 0.001, 0.0001]
+  chi8: mean 4.7s/q, score vs exact 5
+  chi16: mean 7.0s/q, score vs exact 19
+  chi32: mean 23.2s/q, score vs exact 46
+  chi64: mean 41.4s/q, score vs exact 82
+  MPS wall 435s
+  eps0.01: mean 3.6s/q, 0 incomplete, max|v|=0.0000, score vs exact 0
+  eps0.001: mean 11.8s/q, 0 incomplete, max|v|=0.0000, score vs exact 0
+  eps0.0001: mean 4.0s/q, 16 incomplete, max|v|=0.0000, score vs exact 0
+  PPS wall 105s
+4x4_d16_s5: n=16 chi todo [8, 16, 32, 64] eps todo [0.01, 0.001, 0.0001]
+  chi8: mean 8.9s/q, score vs exact 5
+  chi16: mean 12.0s/q, score vs exact 6
+  chi32: mean 21.6s/q, score vs exact 56
+  chi64: mean 51.4s/q, score vs exact 5
+  MPS wall 522s
+  eps0.01: mean 4.2s/q, 0 incomplete, max|v|=0.0000, score vs exact 0
+  eps0.001: mean 13.6s/q, 0 incomplete, max|v|=0.0000, score vs exact 0
+  eps0.0001: mean 5.0s/q, 16 incomplete, max|v|=0.0000, score vs exact 0
+  PPS wall 124s
+4x4_d16_s6: n=16 chi todo [8, 16, 32, 64] eps todo [0.01, 0.001, 0.0001]
+  chi8: mean 4.6s/q, score vs exact 3
+  chi16: mean 6.2s/q, score vs exact 1
+  chi32: mean 12.5s/q, score vs exact 7
+  chi64: mean 43.4s/q, score vs exact 11
+  MPS wall 383s
+  eps0.01: mean 3.7s/q, 0 incomplete, max|v|=0.0000, score vs exact 0
+  eps0.001: mean 11.1s/q, 0 incomplete, max|v|=0.0000, score vs exact 0
+  eps0.0001: mean 3.2s/q, 16 incomplete, max|v|=0.0000, score vs exact 0
+  PPS wall 97s

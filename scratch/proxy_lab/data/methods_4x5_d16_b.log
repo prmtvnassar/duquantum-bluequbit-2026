@@ -1,0 +1,20 @@
+4x5_d16_s1: n=20 chi todo [] eps todo []
+4x5_d16_s2: n=20 chi todo [] eps todo []
+4x5_d16_s3: n=20 chi todo [] eps todo []
+4x5_d16_s4: n=20 chi todo [] eps todo []
+4x5_d16_s5: n=20 chi todo [8, 16, 32] eps todo [0.01, 0.001]
+  chi8: mean 15.2s/q, score vs exact 65
+  chi16: mean 19.2s/q, score vs exact 57
+  chi32: mean 45.2s/q, score vs exact 130
+  MPS wall 597s
+  eps0.01: mean 6.3s/q, 0 incomplete, max|v|=0.0000, score vs exact 0
+  eps0.001: mean 19.5s/q, 0 incomplete, max|v|=0.0024, score vs exact 184
+  PPS wall 179s
+4x5_d16_s6: n=20 chi todo [8, 16, 32] eps todo [0.01, 0.001]
+  chi8: mean 8.2s/q, score vs exact 419
+  chi16: mean 10.4s/q, score vs exact 391
+  chi32: mean 26.6s/q, score vs exact 459
+  MPS wall 329s
+  eps0.01: mean 3.9s/q, 0 incomplete, max|v|=0.0000, score vs exact 0
+  eps0.001: mean 11.9s/q, 0 incomplete, max|v|=0.0012, score vs exact 558
+  PPS wall 108s

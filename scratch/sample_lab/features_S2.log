@@ -1,0 +1,97 @@
+Duke_S2_0 chi=  4 Zq=-0.0347 meanZ=+0.1941 norm2=0.0000 maxS=1.804 t=1.6s
+Duke_S2_0 chi=  8 Zq=+0.0858 meanZ=+0.2779 norm2=0.0081 maxS=2.443 t=0.5s
+Duke_S2_0 chi= 16 Zq=-0.0676 meanZ=+0.4063 norm2=0.1609 maxS=2.936 t=0.7s
+Duke_S2_0 chi= 32 Zq=-0.0485 meanZ=+0.4432 norm2=0.5550 maxS=3.428 t=1.2s
+Duke_S2_0 chi= 64 Zq=-0.0443 meanZ=+0.4568 norm2=0.9219 maxS=3.640 t=3.9s
+Duke_S2_0 chi=128 Zq=-0.0437 meanZ=+0.4583 norm2=0.9956 maxS=3.678 t=14.1s
+Duke_S2_1 chi=  4 Zq=+0.0485 meanZ=+0.2033 norm2=0.0001 maxS=1.836 t=0.9s
+Duke_S2_1 chi=  8 Zq=-0.1242 meanZ=+0.2831 norm2=0.0088 maxS=2.542 t=0.8s
+Duke_S2_1 chi= 16 Zq=+0.0113 meanZ=+0.4150 norm2=0.1630 maxS=3.081 t=0.9s
+Duke_S2_1 chi= 32 Zq=+0.0657 meanZ=+0.4473 norm2=0.5607 maxS=3.578 t=1.4s
+Duke_S2_1 chi= 64 Zq=+0.0735 meanZ=+0.4626 norm2=0.9241 maxS=3.746 t=5.2s
+Duke_S2_1 chi=128 Zq=+0.0750 meanZ=+0.4649 norm2=0.9958 maxS=3.780 t=13.6s
+Duke_S2_2 chi=  4 Zq=-0.1388 meanZ=+0.2060 norm2=0.0000 maxS=1.781 t=0.9s
+Duke_S2_2 chi=  8 Zq=-0.0769 meanZ=+0.2728 norm2=0.0068 maxS=2.580 t=0.9s
+Duke_S2_2 chi= 16 Zq=-0.0681 meanZ=+0.3615 norm2=0.1382 maxS=3.126 t=1.5s
+Duke_S2_2 chi= 32 Zq=-0.0220 meanZ=+0.4029 norm2=0.5206 maxS=3.599 t=1.9s
+Duke_S2_2 chi= 64 Zq=-0.0140 meanZ=+0.4191 norm2=0.9127 maxS=3.800 t=6.1s
+Duke_S2_2 chi=128 Zq=-0.0125 meanZ=+0.4218 norm2=0.9949 maxS=3.844 t=15.2s
+Duke_S2_3 chi=  4 Zq=-0.0605 meanZ=+0.1918 norm2=0.0000 maxS=1.676 t=1.0s
+Duke_S2_3 chi=  8 Zq=-0.0459 meanZ=+0.2358 norm2=0.0073 maxS=2.483 t=1.1s
+Duke_S2_3 chi= 16 Zq=+0.0119 meanZ=+0.3538 norm2=0.1379 maxS=3.117 t=0.9s
+Duke_S2_3 chi= 32 Zq=+0.0487 meanZ=+0.3995 norm2=0.5213 maxS=3.660 t=1.3s
+Duke_S2_3 chi= 64 Zq=+0.0434 meanZ=+0.4198 norm2=0.9122 maxS=3.842 t=4.1s
+Duke_S2_3 chi=128 Zq=+0.0439 meanZ=+0.4223 norm2=0.9949 maxS=3.882 t=11.1s
+Duke_S2_4 chi=  4 Zq=-0.1785 meanZ=+0.1803 norm2=0.0000 maxS=1.739 t=0.6s
+Duke_S2_4 chi=  8 Zq=+0.0648 meanZ=+0.2712 norm2=0.0054 maxS=2.510 t=0.7s
+Duke_S2_4 chi= 16 Zq=-0.0443 meanZ=+0.3353 norm2=0.1119 maxS=3.284 t=0.7s
+Duke_S2_4 chi= 32 Zq=-0.0845 meanZ=+0.3934 norm2=0.4782 maxS=3.756 t=1.1s
+Duke_S2_4 chi= 64 Zq=-0.0839 meanZ=+0.4156 norm2=0.8997 maxS=3.943 t=4.8s
+Duke_S2_4 chi=128 Zq=-0.0831 meanZ=+0.4187 norm2=0.9941 maxS=3.984 t=12.7s
+Duke_S2_5 chi=  4 Zq=-0.0022 meanZ=+0.2153 norm2=0.0000 maxS=1.472 t=0.6s
+Duke_S2_5 chi=  8 Zq=-0.0091 meanZ=+0.2959 norm2=0.0044 maxS=2.415 t=0.7s
+Duke_S2_5 chi= 16 Zq=-0.0016 meanZ=+0.3518 norm2=0.1003 maxS=3.341 t=0.7s
+Duke_S2_5 chi= 32 Zq=+0.0507 meanZ=+0.4100 norm2=0.4636 maxS=3.841 t=1.1s
+Duke_S2_5 chi= 64 Zq=+0.0472 meanZ=+0.4378 norm2=0.8950 maxS=3.990 t=4.3s
+Duke_S2_5 chi=128 Zq=+0.0475 meanZ=+0.4412 norm2=0.9938 maxS=4.023 t=15.0s
+Duke_S2_6 chi=  4 Zq=+0.6389 meanZ=+0.2825 norm2=0.0000 maxS=1.525 t=1.7s
+Duke_S2_6 chi=  8 Zq=+0.1405 meanZ=+0.3212 norm2=0.0019 maxS=2.448 t=1.9s
+Duke_S2_6 chi= 16 Zq=-0.0215 meanZ=+0.3649 norm2=0.0747 maxS=3.266 t=2.3s
+Duke_S2_6 chi= 32 Zq=-0.0464 meanZ=+0.4083 norm2=0.4357 maxS=3.888 t=4.4s
+Duke_S2_6 chi= 64 Zq=-0.0386 meanZ=+0.4244 norm2=0.8897 maxS=4.042 t=11.6s
+Duke_S2_6 chi=128 Zq=-0.0391 meanZ=+0.4269 norm2=0.9934 maxS=4.078 t=36.8s
+Duke_S2_7 chi=  4 Zq=-0.3169 meanZ=+0.2763 norm2=0.0000 maxS=1.380 t=3.1s
+Duke_S2_7 chi=  8 Zq=-0.1264 meanZ=+0.3236 norm2=0.0017 maxS=2.349 t=2.9s
+Duke_S2_7 chi= 16 Zq=-0.2330 meanZ=+0.3866 norm2=0.0712 maxS=3.248 t=3.7s
+Duke_S2_7 chi= 32 Zq=-0.1459 meanZ=+0.4430 norm2=0.4372 maxS=3.780 t=6.8s
+Duke_S2_7 chi= 64 Zq=-0.1410 meanZ=+0.4677 norm2=0.8928 maxS=3.887 t=33.2s
+Duke_S2_7 chi=128 Zq=-0.1370 meanZ=+0.4700 norm2=0.9936 maxS=3.923 t=45.7s
+Duke_S2_8 chi=  4 Zq=+0.2455 meanZ=+0.3730 norm2=0.0000 maxS=1.602 t=2.1s
+Duke_S2_8 chi=  8 Zq=+0.5509 meanZ=+0.4621 norm2=0.0031 maxS=1.991 t=1.9s
+Duke_S2_8 chi= 16 Zq=+0.5086 meanZ=+0.6244 norm2=0.0872 maxS=2.363 t=2.7s
+Duke_S2_8 chi= 32 Zq=+0.2927 meanZ=+0.6183 norm2=0.4041 maxS=3.013 t=8.1s
+Duke_S2_8 chi= 64 Zq=+0.1366 meanZ=+0.5990 norm2=0.8672 maxS=3.280 t=28.4s
+Duke_S2_8 chi=128 Zq=+0.1073 meanZ=+0.5947 norm2=0.9913 maxS=3.344 t=44.8s
+Duke_S2_9 chi=  4 Zq=-0.0347 meanZ=+0.2825 norm2=0.0000 maxS=1.578 t=2.5s
+Duke_S2_9 chi=  8 Zq=+0.3343 meanZ=+0.4066 norm2=0.0029 maxS=2.173 t=2.6s
+Duke_S2_9 chi= 16 Zq=+0.6044 meanZ=+0.6622 norm2=0.0761 maxS=2.183 t=2.4s
+Duke_S2_9 chi= 32 Zq=+0.3435 meanZ=+0.6580 norm2=0.3781 maxS=2.743 t=12.6s
+Duke_S2_9 chi= 64 Zq=+0.1071 meanZ=+0.6287 norm2=0.8641 maxS=3.014 t=31.2s
+Duke_S2_9 chi=128 Zq=+0.0661 meanZ=+0.6241 norm2=0.9910 maxS=3.084 t=44.8s
+Duke_S2_10 chi=  4 Zq=+0.0323 meanZ=+0.3074 norm2=0.0000 maxS=1.674 t=1.5s
+Duke_S2_10 chi=  8 Zq=+0.4802 meanZ=+0.4525 norm2=0.0037 maxS=2.087 t=2.0s
+Duke_S2_10 chi= 16 Zq=+0.8325 meanZ=+0.7345 norm2=0.1161 maxS=1.832 t=2.0s
+Duke_S2_10 chi= 32 Zq=+0.7250 meanZ=+0.8030 norm2=0.4757 maxS=1.710 t=3.8s
+Duke_S2_10 chi= 64 Zq=+0.6112 meanZ=+0.8269 norm2=0.8944 maxS=1.446 t=15.5s
+Duke_S2_10 chi=128 Zq=+0.5845 meanZ=+0.8278 norm2=0.9939 maxS=1.444 t=24.4s
+Duke_S2_11 chi=  4 Zq=-0.0264 meanZ=+0.2873 norm2=0.0000 maxS=1.492 t=1.9s
+Duke_S2_11 chi=  8 Zq=+0.3280 meanZ=+0.4322 norm2=0.0034 maxS=2.158 t=2.1s
+Duke_S2_11 chi= 16 Zq=+0.8267 meanZ=+0.7294 norm2=0.1174 maxS=1.867 t=1.7s
+Duke_S2_11 chi= 32 Zq=+0.7504 meanZ=+0.8132 norm2=0.4780 maxS=1.663 t=3.7s
+Duke_S2_11 chi= 64 Zq=+0.6425 meanZ=+0.8370 norm2=0.8928 maxS=1.386 t=29.0s
+Duke_S2_11 chi=128 Zq=+0.6106 meanZ=+0.8354 norm2=0.9937 maxS=1.394 t=56.3s
+Duke_S2_12 chi=  4 Zq=+0.4703 meanZ=+0.3224 norm2=0.0001 maxS=1.712 t=2.3s
+Duke_S2_12 chi=  8 Zq=+0.8178 meanZ=+0.4613 norm2=0.0082 maxS=2.032 t=2.5s
+Duke_S2_12 chi= 16 Zq=+0.9500 meanZ=+0.7419 norm2=0.1603 maxS=1.827 t=2.5s
+Duke_S2_12 chi= 32 Zq=+0.9757 meanZ=+0.9023 norm2=0.5582 maxS=1.040 t=9.1s
+Duke_S2_12 chi= 64 Zq=+0.9952 meanZ=+0.9867 norm2=0.9214 maxS=0.201 t=24.8s
+Duke_S2_12 chi=128 Zq=+0.9997 meanZ=+0.9991 norm2=0.9960 maxS=0.017 t=37.5s
+Duke_S2_13 chi=  4 Zq=+0.4282 meanZ=+0.3095 norm2=0.0000 maxS=1.679 t=2.2s
+Duke_S2_13 chi=  8 Zq=+0.7856 meanZ=+0.4553 norm2=0.0083 maxS=2.012 t=2.5s
+Duke_S2_13 chi= 16 Zq=+0.9522 meanZ=+0.7445 norm2=0.1620 maxS=1.812 t=2.7s
+Duke_S2_13 chi= 32 Zq=+0.9766 meanZ=+0.9022 norm2=0.5588 maxS=1.037 t=18.7s
+Duke_S2_13 chi= 64 Zq=+0.9951 meanZ=+0.9868 norm2=0.9209 maxS=0.200 t=54.3s
+Duke_S2_13 chi=128 Zq=+0.9997 meanZ=+0.9991 norm2=0.9959 maxS=0.017 t=88.0s
+Duke_S2_14 chi=  4 Zq=+0.8291 meanZ=+0.3098 norm2=0.0001 maxS=1.563 t=2.5s
+Duke_S2_14 chi=  8 Zq=+0.9466 meanZ=+0.4601 norm2=0.0116 maxS=2.058 t=2.4s
+Duke_S2_14 chi= 16 Zq=+0.9800 meanZ=+0.7403 norm2=0.1855 maxS=1.788 t=2.9s
+Duke_S2_14 chi= 32 Zq=+0.9887 meanZ=+0.9002 norm2=0.5887 maxS=1.022 t=24.4s
+Duke_S2_14 chi= 64 Zq=+0.9973 meanZ=+0.9862 norm2=0.9296 maxS=0.200 t=63.2s
+Duke_S2_14 chi=128 Zq=+0.9997 meanZ=+0.9991 norm2=0.9961 maxS=0.017 t=71.4s
+Duke_S2_15 chi=  4 Zq=+0.7099 meanZ=+0.3423 norm2=0.0001 maxS=1.574 t=2.3s
+Duke_S2_15 chi=  8 Zq=+0.9061 meanZ=+0.4615 norm2=0.0110 maxS=2.078 t=2.2s
+Duke_S2_15 chi= 16 Zq=+0.9795 meanZ=+0.7411 norm2=0.1844 maxS=1.796 t=3.0s
+Duke_S2_15 chi= 32 Zq=+0.9885 meanZ=+0.9005 norm2=0.5857 maxS=1.023 t=26.8s
+Duke_S2_15 chi= 64 Zq=+0.9971 meanZ=+0.9861 norm2=0.9281 maxS=0.202 t=61.9s
+Duke_S2_15 chi=128 Zq=+0.9997 meanZ=+0.9991 norm2=0.9960 maxS=0.018 t=75.9s
+wrote D:\BluQubit\scratch\sample_lab\features_S2.json

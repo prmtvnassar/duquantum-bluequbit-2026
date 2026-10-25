@@ -18,6 +18,9 @@ def main():
     parser.add_argument("--justification",default="")
     parser.add_argument("--config",default="configs/workflow_v0.json")
     parser.add_argument("--timeout",type=float)
+    parser.add_argument("--sample-calibration-cap",type=float,help="User-approved per-job USD cap for native sample calibration")
+    parser.add_argument("--attempt",type=int,help="Relaunch an identical action under a new key after a $0 CANCELED receipt")
+    parser.add_argument("--observables",choices=["all_z"],help="mps.cpu/mps.gpu only: one job measuring every single-site <Z_j>; the receipt keeps estimates_vector and estimate=<Z_q>")
     args=parser.parse_args()
     logging.disable(logging.CRITICAL)
     try:
@@ -25,13 +28,16 @@ def main():
         if args.command=="usage":
             result=adapter.usage()
         elif args.command=="quote":
-            result=adapter.quote(args.id,args.device,json.loads(args.options))
+            result=adapter.quote(args.id,args.device,json.loads(args.options),observables=args.observables)
         else:
             settings=load_settings(args.config)
             if args.timeout is not None:
                 settings["per_job_seconds"]=args.timeout
+            if args.sample_calibration_cap is not None:
+                settings["sample_calibration_cap_usd"]=args.sample_calibration_cap
             with ExperimentStore().lock("remote_runner"):
-                result=adapter.run(args.id,args.device,json.loads(args.options),settings,args.justification)
+                result=adapter.run(args.id,args.device,json.loads(args.options),settings,args.justification,
+                                   attempt=args.attempt,observables=args.observables)
         print(json.dumps(result,indent=2))
     except Exception as exc:
         token=os.environ.get("BLUEQUBIT_API_TOKEN") or "unconfigured"

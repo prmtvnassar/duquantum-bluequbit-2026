@@ -1,0 +1,441 @@
+{
+  "event_id": "fff9ae30cf7c437eb4f2078844cd8fe7",
+  "recorded_at": "2026-10-25T01:49:45.634686+00:00",
+  "kind": "candidate_export",
+  "problem": "G3",
+  "csv_path": "results\\workflow\\submissions\\G3\\direct-fb792001c3e7.csv",
+  "selection": [
+    {
+      "circuit_id": "Duke_G3_0",
+      "value": -0.07229195955602603,
+      "job_id": "rOuJjcU3jjqtpb4e",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_1",
+      "value": 0.009595883983312898,
+      "job_id": "9Rua7hRGxRLdcQvO",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_2",
+      "value": 0.0,
+      "job_id": "QNMc3MGZUTM8r4HC",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_3",
+      "value": -0.04000233981544665,
+      "job_id": "ea9vMuUYPfIvNK0E",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_4",
+      "value": -0.01571540365033924,
+      "job_id": "Iil6OpIHfHxgr7cF",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_5",
+      "value": 0.00168191378938334,
+      "job_id": "fzQzCyOoGGFWqTZJ",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_6",
+      "value": 0.0,
+      "job_id": "P9NBeIMCjVhNJsPA",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_7",
+      "value": -0.03607776529546388,
+      "job_id": "z3Mhs4lrlW9djS2V",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_8",
+      "value": 0.04348408046300303,
+      "job_id": "tBw7CMHic0J5unGa",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_9",
+      "value": -0.009462324060440643,
+      "job_id": "7VaZbG7IPCv5RujL",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_10",
+      "value": 0.006326630804735615,
+      "job_id": "b9EKXtZFXxmZWNaq",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_11",
+      "value": 0.0,
+      "job_id": "gGDeYTaBJsKKAWjS",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_12",
+      "value": 0.0049138863208217426,
+      "job_id": "8F85YwJTJcFxZhHQ",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_13",
+      "value": 0.015452748238028724,
+      "job_id": "9IhF26U9EElF8uH7",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_14",
+      "value": 0.0,
+      "job_id": "G1zxxs8zxn4vBAmI",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_15",
+      "value": -0.0050381798300501565,
+      "job_id": "hRGDjWjYNaJtofQN",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_16",
+      "value": -0.031116192868522075,
+      "job_id": "BmBm2PRl6VfVb2hT",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_17",
+      "value": 0.0,
+      "job_id": "yDXYV5Tg3CozTDb6",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_18",
+      "value": 0.016110657686442494,
+      "job_id": "Djm45r9NRU8omvzf",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_19",
+      "value": -0.13462112177002544,
+      "job_id": "Lb4IHZt50wl51B59",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_20",
+      "value": 0.0,
+      "job_id": "d9gHwzmrhulGNvBt",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_21",
+      "value": -0.01428996393027554,
+      "job_id": "AtKZAeOJCElx0y82",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_22",
+      "value": -0.0014242683382372308,
+      "job_id": "kiMkIGDzWaIGJUXl",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_23",
+      "value": -0.007664271539504675,
+      "job_id": "lNoBGJPl7omoylIs",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_24",
+      "value": -0.04062759029013222,
+      "job_id": "gBvNH1ZBb8Hbjijk",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_25",
+      "value": 0.0,
+      "job_id": "6BPzFWNg9CgwQEUv",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_26",
+      "value": -0.02744199505252309,
+      "job_id": "HfWhHPvqKQYkEYAk",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_27",
+      "value": 0.0,
+      "job_id": "8puZsd2Of2wo258B",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_28",
+      "value": -0.0077258653410061185,
+      "job_id": "2NArvyN8NVAxwcXo",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_29",
+      "value": 0.0060577937171113145,
+      "job_id": "ZB4TXCbJYWEFrszi",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_30",
+      "value": -0.07270821827192533,
+      "job_id": "QId66iwguY5qaNTW",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_31",
+      "value": 0.029009245614353297,
+      "job_id": "M8uTWPXHs1gJ9WT7",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_32",
+      "value": 0.0,
+      "job_id": "5Ol9PPkxRCSqqzwc",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_33",
+      "value": -0.0023628022286292143,
+      "job_id": "PQVfzMUjHWx6CG7d",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_34",
+      "value": 0.06810824014251035,
+      "job_id": "LQ4PdMwLpFieidxt",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    },
+    {
+      "circuit_id": "Duke_G3_35",
+      "value": -0.03219780603650362,
+      "job_id": "3veLHAPbAcd7cuPm",
+      "device": "pauli-path",
+      "options": {
+        "pauli_path_truncation_threshold": 0.001,
+        "pauli_path_circuit_transpilation_level": 1
+      },
+      "selection_reason": "Highest completed precision in a coherent primary-method vector; accuracy unverified",
+      "cost_usd": 0.0
+    }
+  ]
+}

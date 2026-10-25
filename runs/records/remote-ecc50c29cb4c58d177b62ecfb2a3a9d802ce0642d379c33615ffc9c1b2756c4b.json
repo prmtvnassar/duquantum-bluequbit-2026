@@ -1,0 +1,125 @@
+{
+  "circuit_id": "Duke_G4_15",
+  "problem": "G4",
+  "qubit": 15,
+  "origin": "bluequbit",
+  "method": "mps.cpu",
+  "backend": "mps.cpu",
+  "parameters": {
+    "mps_bond_dimension": 64
+  },
+  "status": "COMPLETED",
+  "estimate": 0.5982466088052288,
+  "job_id": "wqsZ3633ALRTGNVY",
+  "cost_usd": 0.0,
+  "started_at": "2026-10-25T00:43:47.520669+00:00",
+  "finished_at": "2026-10-25T00:47:50.561067+00:00",
+  "wall_seconds": 237.618,
+  "reason": "Complete the CPU chi64 vector: chi16->32->64 still moves near-q0 rows by 0.1-0.2; quotes ~2400 s vs observed 58-337 s; /usr/bin/bash billed so far. Alternative-technique campaign, research_notes/g4_alternative_techniques.md",
+  "quote": {
+    "circuit_id": "Duke_G4_15",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 64
+    },
+    "quoted_at": "2026-10-25T00:43:47.178527+00:00",
+    "cost_usd": 0.79,
+    "runtime_seconds": 1877.8,
+    "error": null,
+    "warning": "This is just an estimate; the actual runtime may be less or more.",
+    "binding_cost_cap": false
+  },
+  "error": null,
+  "pauli": "IIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIII",
+  "remote_receipt": {
+    "action": {
+      "circuit_id": "Duke_G4_15",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 64
+      },
+      "pauli": "IIIIIIIIIIIIIIIIIIIIIIZIIIIIIIIIIIIIII"
+    },
+    "status": "COMPLETED",
+    "requested_at": "2026-10-25T00:43:47.520669+00:00",
+    "quote": {
+      "circuit_id": "Duke_G4_15",
+      "device": "mps.cpu",
+      "options": {
+        "mps_bond_dimension": 64
+      },
+      "quoted_at": "2026-10-25T00:43:47.178527+00:00",
+      "cost_usd": 0.79,
+      "runtime_seconds": 1877.8,
+      "error": null,
+      "warning": "This is just an estimate; the actual runtime may be less or more.",
+      "binding_cost_cap": false
+    },
+    "timeout_seconds": 900.0,
+    "scheduler_justification": "Complete the CPU chi64 vector: chi16->32->64 still moves near-q0 rows by 0.1-0.2; quotes ~2400 s vs observed 58-337 s; /usr/bin/bash billed so far. Alternative-technique campaign, research_notes/g4_alternative_techniques.md",
+    "cohort_batch": {
+      "cohort_key": "ae1f5683d7ab6468d6f7b44f350f760d6cd35326bc1c81d41633c1e2f60c5d73",
+      "slots": 2,
+      "mode": "TARGETED_DIAGNOSTICS",
+      "target_ids": [
+        "Duke_G4_2",
+        "Duke_G4_3",
+        "Duke_G4_5",
+        "Duke_G4_6",
+        "Duke_G4_7",
+        "Duke_G4_8",
+        "Duke_G4_9",
+        "Duke_G4_10",
+        "Duke_G4_11",
+        "Duke_G4_12",
+        "Duke_G4_13",
+        "Duke_G4_14",
+        "Duke_G4_15",
+        "Duke_G4_16",
+        "Duke_G4_17",
+        "Duke_G4_18",
+        "Duke_G4_20",
+        "Duke_G4_21",
+        "Duke_G4_22",
+        "Duke_G4_23",
+        "Duke_G4_24",
+        "Duke_G4_25",
+        "Duke_G4_26",
+        "Duke_G4_27",
+        "Duke_G4_28",
+        "Duke_G4_29",
+        "Duke_G4_30",
+        "Duke_G4_31",
+        "Duke_G4_32",
+        "Duke_G4_33",
+        "Duke_G4_34",
+        "Duke_G4_35",
+        "Duke_G4_36",
+        "Duke_G4_37"
+      ],
+      "execution_timeout_seconds": 900.0,
+      "quote_runtime_limit_seconds": 3600.0,
+      "diagnostic_reason": "Complete the CPU chi64 vector: chi16->32->64 still moves near-q0 rows by 0.1-0.2; quotes ~2400 s vs observed 58-337 s; /usr/bin/bash billed so far. Alternative-technique campaign, research_notes/g4_alternative_techniques.md",
+      "reserved_quote_usd": 0.79,
+      "budget_at_admission": {
+        "actual_spent_usd": 0.2,
+        "outstanding_quote_usd": 0.79,
+        "new_quote_usd": 0.79,
+        "missing_cohort_reserve_usd": 0.0,
+        "planned_exposure_usd": 1.78,
+        "missing_unreserved_rows": {
+          "G2": 0,
+          "G3": 0,
+          "G4": 0
+        }
+      }
+    },
+    "job_id": "wqsZ3633ALRTGNVY",
+    "estimate": 0.5982466088052288,
+    "cost_usd": 0.0,
+    "compute_ms": 237249,
+    "queue_ms": 369,
+    "updated_at": "2026-10-25T00:47:50.561067+00:00"
+  },
+  "run_id": "remote-ecc50c29cb4c58d177b62ecfb2a3a9d802ce0642d379c33615ffc9c1b2756c4b"
+}

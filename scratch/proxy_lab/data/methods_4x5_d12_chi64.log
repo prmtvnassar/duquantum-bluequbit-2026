@@ -1,0 +1,6 @@
+4x5_d12_s1: n=20 chi todo [64] eps todo []
+  chi64: mean 49.3s/q, score vs exact 0
+  MPS wall 360s
+4x5_d12_s2: n=20 chi todo [64] eps todo []
+  chi64: mean 26.8s/q, score vs exact 571
+  MPS wall 190s

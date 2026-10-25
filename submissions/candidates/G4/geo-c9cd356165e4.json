@@ -1,0 +1,416 @@
+{
+  "candidate": "geo-c9cd356165e4",
+  "submitted": false,
+  "values": [
+    0.026209568693892446,
+    0.00041034015682604356,
+    -0.002096249472808132,
+    0.00041034015682604356,
+    0.018783115054526563,
+    0.018783115054526563,
+    0.0031764021157220054,
+    0.00041034015682604356,
+    0.00041034015682604356,
+    0.00041034015682604356,
+    0.00041034015682604356,
+    0.026209568693892446,
+    0.0031764021157220054,
+    0.00041034015682604356,
+    0.018783115054526563,
+    0.026209568693892446,
+    0.018783115054526563,
+    0.026209568693892446,
+    -0.0015691795367139521,
+    0.00041034015682604356,
+    -0.0015691795367139521,
+    -0.001846789993402649,
+    0.026209568693892446,
+    0.058771324352482425,
+    0.0031764021157220054,
+    0.0031764021157220054,
+    0.026209568693892446,
+    0.058771324352482425,
+    0.058771324352482425,
+    0.058771324352482425,
+    0.026209568693892446,
+    0.026209568693892446,
+    0.026209568693892446,
+    0.058771324352482425,
+    0.058771324352482425,
+    0.026209568693892446,
+    0.09652240647909492,
+    0.09652240647909492
+  ],
+  "contact_map_m_j": [
+    0.4697751569305231,
+    0.2829898039193281,
+    0.16729716892341626,
+    0.23962410679064178,
+    0.4197009040483507,
+    0.38113387571738294,
+    0.3793649488735252,
+    0.280175597058175,
+    0.2743273672537075,
+    0.26329548025063476,
+    0.28115892533485687,
+    0.5439063445834771,
+    0.3253821710723338,
+    0.2822372563177882,
+    0.38722221516144933,
+    0.4500825361162495,
+    0.43906219853302914,
+    0.46349095084438413,
+    0.2156486203389122,
+    0.3074528331714617,
+    0.20331827966042626,
+    0.18092732082156662,
+    0.5283697152362659,
+    0.7865557383106067,
+    0.3754484652839697,
+    0.3524737179464189,
+    0.5462386525610324,
+    0.5856546080710069,
+    0.778969944321872,
+    0.8132186108512749,
+    0.5262193381541704,
+    0.580090469014638,
+    0.5501149684227989,
+    0.6177654275421776,
+    0.7170631384929066,
+    0.5669156600757166,
+    0.9031150738113504,
+    0.9109355952565877
+  ],
+  "contact_map_jobs": [
+    {
+      "circuit_id": "Duke_G4_34",
+      "job_id": "9oh2BszqUQKJYpOw",
+      "options": {
+        "mps_bond_dimension": 128
+      }
+    },
+    {
+      "circuit_id": "Duke_G4_6",
+      "job_id": "pYUFLaD22BYj5g0H",
+      "options": {
+        "mps_bond_dimension": 128
+      }
+    },
+    {
+      "circuit_id": "Duke_G4_36",
+      "job_id": "5M3oRlg8c3xJghCf",
+      "options": {
+        "mps_bond_dimension": 128
+      }
+    },
+    {
+      "circuit_id": "Duke_G4_4",
+      "job_id": "2QqRGpc9w5uvcYIY",
+      "options": {
+        "mps_bond_dimension": 128
+      }
+    },
+    {
+      "circuit_id": "Duke_G4_31",
+      "job_id": "uQGpBX9XjNL087or",
+      "options": {
+        "mps_bond_dimension": 128
+      }
+    },
+    {
+      "circuit_id": "Duke_G4_32",
+      "job_id": "XHgvZu4Fhuf9Elf9",
+      "options": {
+        "mps_bond_dimension": 128
+      }
+    },
+    {
+      "circuit_id": "Duke_G4_27",
+      "job_id": "02avDfq9dhMeklIv",
+      "options": {
+        "mps_bond_dimension": 128
+      }
+    },
+    {
+      "circuit_id": "Duke_G4_10",
+      "job_id": "NACk9T9HLUzW6V7Z",
+      "options": {
+        "mps_bond_dimension": 128
+      }
+    },
+    {
+      "circuit_id": "Duke_G4_7",
+      "job_id": "Jev00P3k9e9ihyax",
+      "options": {
+        "mps_bond_dimension": 128
+      }
+    },
+    {
+      "circuit_id": "Duke_G4_35",
+      "job_id": "STVpbYG0ny0yZbCK",
+      "options": {
+        "mps_bond_dimension": 128
+      }
+    },
+    {
+      "circuit_id": "Duke_G4_37",
+      "job_id": "KEfjBJQ5pvrHq43W",
+      "options": {
+        "mps_bond_dimension": 128
+      }
+    },
+    {
+      "circuit_id": "Duke_G4_18",
+      "job_id": "Ugwqsvu36wUS0vQX",
+      "options": {
+        "mps_bond_dimension": 128
+      }
+    },
+    {
+      "circuit_id": "Duke_G4_29",
+      "job_id": "MvoFqaEOEceUGwnB",
+      "options": {
+        "mps_bond_dimension": 128
+      }
+    },
+    {
+      "circuit_id": "Duke_G4_14",
+      "job_id": "C4TFFoleR7SxLVIZ",
+      "options": {
+        "mps_bond_dimension": 128
+      }
+    },
+    {
+      "circuit_id": "Duke_G4_2",
+      "job_id": "B7K6MZzGS1kQ1EJg",
+      "options": {
+        "mps_bond_dimension": 128
+      }
+    },
+    {
+      "circuit_id": "Duke_G4_17",
+      "job_id": "efO2G0OBOcP2PkSZ",
+      "options": {
+        "mps_bond_dimension": 128
+      }
+    },
+    {
+      "circuit_id": "Duke_G4_25",
+      "job_id": "5LxcjOTZFC1rBSph",
+      "options": {
+        "mps_bond_dimension": 128
+      }
+    },
+    {
+      "circuit_id": "Duke_G4_1",
+      "job_id": "xTzok3ZikvneFEwf",
+      "options": {
+        "mps_bond_dimension": 128
+      }
+    },
+    {
+      "circuit_id": "Duke_G4_22",
+      "job_id": "a5JMjhTZUXpFcMaS",
+      "options": {
+        "mps_bond_dimension": 128
+      }
+    },
+    {
+      "circuit_id": "Duke_G4_30",
+      "job_id": "YFO8aONyJfWSWEmy",
+      "options": {
+        "mps_bond_dimension": 128
+      }
+    },
+    {
+      "circuit_id": "Duke_G4_8",
+      "job_id": "duu3K9YhLw0KmRv7",
+      "options": {
+        "mps_bond_dimension": 128
+      }
+    },
+    {
+      "circuit_id": "Duke_G4_13",
+      "job_id": "doRPylqyXH7YeWvS",
+      "options": {
+        "mps_bond_dimension": 128
+      }
+    },
+    {
+      "circuit_id": "Duke_G4_3",
+      "job_id": "uEUL7lwFp8DZdSoC",
+      "options": {
+        "mps_bond_dimension": 128
+      }
+    },
+    {
+      "circuit_id": "Duke_G4_21",
+      "job_id": "PorU8AyRWoWEfZ3z",
+      "options": {
+        "mps_bond_dimension": 128
+      }
+    },
+    {
+      "circuit_id": "Duke_G4_23",
+      "job_id": "ig5dPFpR0LOi9STs",
+      "options": {
+        "mps_bond_dimension": 128
+      }
+    },
+    {
+      "circuit_id": "Duke_G4_33",
+      "job_id": "9ifsNr84Ae0YmuK8",
+      "options": {
+        "mps_bond_dimension": 128
+      }
+    },
+    {
+      "circuit_id": "Duke_G4_28",
+      "job_id": "863d3v60FrBWeiRE",
+      "options": {
+        "mps_bond_dimension": 128
+      }
+    },
+    {
+      "circuit_id": "Duke_G4_0",
+      "job_id": "duRVMMKDEbA8iZCb",
+      "options": {
+        "mps_bond_dimension": 128
+      }
+    },
+    {
+      "circuit_id": "Duke_G4_15",
+      "job_id": "xQjKMKeLIuvYWR54",
+      "options": {
+        "mps_bond_dimension": 128
+      }
+    },
+    {
+      "circuit_id": "Duke_G4_12",
+      "job_id": "9K1u9j4fNQhs7fDq",
+      "options": {
+        "mps_bond_dimension": 128
+      }
+    },
+    {
+      "circuit_id": "Duke_G4_5",
+      "job_id": "GoNwCffCvoixMPNm",
+      "options": {
+        "mps_bond_dimension": 128
+      }
+    },
+    {
+      "circuit_id": "Duke_G4_24",
+      "job_id": "DqQhl3OBM376paF5",
+      "options": {
+        "mps_bond_dimension": 128
+      }
+    },
+    {
+      "circuit_id": "Duke_G4_20",
+      "job_id": "JCMwDFhrStg2266G",
+      "options": {
+        "mps_bond_dimension": 128
+      }
+    },
+    {
+      "circuit_id": "Duke_G4_11",
+      "job_id": "Fo7i5ZVPbAPTKB75",
+      "options": {
+        "mps_bond_dimension": 128
+      }
+    },
+    {
+      "circuit_id": "Duke_G4_26",
+      "job_id": "XXG5L1nb7aQXyIWr",
+      "options": {
+        "mps_bond_dimension": 128
+      }
+    }
+  ],
+  "empirical_slack": [
+    6,
+    9,
+    16,
+    11,
+    7,
+    7,
+    8,
+    10,
+    10,
+    11,
+    10,
+    5,
+    8,
+    9,
+    7,
+    6,
+    7,
+    6,
+    12,
+    9,
+    12,
+    13,
+    6,
+    4,
+    8,
+    8,
+    5,
+    4,
+    4,
+    4,
+    6,
+    5,
+    5,
+    4,
+    4,
+    5,
+    3,
+    3
+  ],
+  "class_means_isotonic": {
+    "3": -0.09652240647909492,
+    "4": -0.058771324352482425,
+    "5": -0.026209568693892446,
+    "6": -0.026209568693892446,
+    "7": -0.018783115054526563,
+    "8": -0.0031764021157220054,
+    "9": -0.00041034015682604356,
+    "10": -0.00041034015682604356,
+    "11": -0.00041034015682604356,
+    "12": 0.0015691795367139521,
+    "13": 0.001846789993402649,
+    "16": 0.002096249472808132
+  },
+  "proxy_files": [
+    "exact_4x4_d12_s1.json",
+    "exact_4x4_d12_s2.json",
+    "exact_4x4_d12_s3.json",
+    "exact_4x4_d16_s1.json",
+    "exact_4x4_d16_s2.json",
+    "exact_4x4_d16_s3.json",
+    "exact_4x4_d16_s4.json",
+    "exact_4x4_d16_s5.json",
+    "exact_4x4_d16_s6.json",
+    "exact_4x4_d8_s1.json",
+    "exact_4x4_d8_s2.json",
+    "exact_4x4_d8_s3.json",
+    "exact_4x5_d12_s1.json",
+    "exact_4x5_d12_s2.json",
+    "exact_4x5_d12_s3.json",
+    "exact_4x5_d16_s1.json",
+    "exact_4x5_d16_s2.json",
+    "exact_4x5_d16_s3.json",
+    "exact_4x5_d16_s4.json",
+    "exact_4x5_d16_s5.json",
+    "exact_4x5_d16_s6.json",
+    "exact_4x5_d4_s1.json",
+    "exact_4x5_d4_s2.json",
+    "exact_4x5_d8_s1.json",
+    "exact_4x5_d8_s2.json",
+    "exact_4x5_d8_s3.json",
+    "exact_5x5_d16_s1.json"
+  ],
+  "rho_with_native_pps_1e-4": 0.689969460112554,
+  "kind": "EMPIRICAL_GEOMETRY_PRIOR"
+}
