@@ -1,0 +1,10 @@
+{
+  "branch": "sandbox",
+  "problem": "G4",
+  "template": "problems/07_graded_G4/circuit_ids.csv",
+  "cap_usd_per_teammate": 20.0,
+  "claim_hours_default": 4,
+  "max_score": 1000,
+  "paid_cutoff_utc": "2026-10-25T13:00:00+00:00",
+  "deadline_utc": "2026-10-25T15:30:00+00:00"
+}

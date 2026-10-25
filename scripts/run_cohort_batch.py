@@ -25,8 +25,8 @@ def main():
     parser.add_argument("--reserve-cohorts-file", type=Path, help="Optional complete G2/G3/G4 device/options mapping")
     parser.add_argument("--targeted-diagnostics", action="store_true", help="Explicitly run selected diagnostic IDs without exporting a cohort")
     parser.add_argument("--target-ids", nargs="+", help="Diagnostic IDs from the selected problem's full retained template")
-    parser.add_argument("--execution-timeout", type=float, help="Diagnostic cancellation-request cap in seconds, within 1..3600")
-    parser.add_argument("--quote-runtime-limit", type=float, help="Diagnostic maximum quoted runtime in seconds, within 1..3600")
+    parser.add_argument("--execution-timeout", type=float, help="Diagnostic cancellation-request cap in seconds, within 1..7200")
+    parser.add_argument("--quote-runtime-limit", type=float, help="Diagnostic maximum quoted runtime in seconds, within 1..7200")
     parser.add_argument("--diagnostic-reason", help="Optional rationale recorded with every diagnostic receipt")
     parser.add_argument("--execute", action="store_true", help="Required; no network calls without this flag")
     args = parser.parse_args()
@@ -41,9 +41,9 @@ def main():
     if args.targeted_diagnostics:
         if not args.target_ids or args.execution_timeout is None or args.quote_runtime_limit is None:
             parser.error("--targeted-diagnostics requires --target-ids, --execution-timeout and --quote-runtime-limit")
-        if any(not math.isfinite(value) or not 1 <= value <= 3600
+        if any(not math.isfinite(value) or not 1 <= value <= 7200
                for value in (args.execution_timeout, args.quote_runtime_limit)):
-            parser.error("Both diagnostic runtime limits must be within 1..3600 seconds")
+            parser.error("Both diagnostic runtime limits must be within 1..7200 seconds")
     settings = load_settings(args.config)  # Existing serial configuration remains unchanged.
     if gpu and settings.get("gpu_enabled") is not True:
         parser.error("GPU diagnostics require gpu_enabled in the selected configuration")

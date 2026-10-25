@@ -113,8 +113,8 @@ class CohortBatchController:
                     or len(target_ids) != len(set(target_ids))):
                 raise ValueError("Targeted diagnostics require distinct explicit target IDs")
             for value in (execution_timeout_seconds, quote_runtime_limit_seconds):
-                if not _money(value) or not 1 <= value <= 3600:
-                    raise ValueError("Both diagnostic runtime limits must be finite and within 1..3600 seconds")
+                if not _money(value) or not 1 <= value <= 7200:
+                    raise ValueError("Both diagnostic runtime limits must be finite and within 1..7200 seconds")
             if diagnostic_reason is not None and (not isinstance(diagnostic_reason, str) or not diagnostic_reason.strip()):
                 raise ValueError("A supplied diagnostic reason must be nonempty text")
         self.adapter, self.settings = adapter, deepcopy(settings)
@@ -299,9 +299,11 @@ class CohortBatchController:
         for path in (self.root / "quotes").glob("*.json"):
             quotes.append(json.loads(path.read_text(encoding="utf-8")))
         # A rate is tied to the actual selected options, never a uniform row allowance.
+        # Observable-list (all_z) quotes price a different job and are not row rates.
         for problem, cohort in self.cohorts.items():
             matching = [q["cost_usd"] for q in quotes if q.get("circuit_id") in self.manifests[problem]
                         and q.get("device") == cohort["device"] and q.get("options") == cohort["options"]
+                        and not q.get("observables")
                         and not q.get("error") and _money(q.get("cost_usd"))]
             self.rates[problem] = max(matching) if matching else None
 

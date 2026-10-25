@@ -53,3 +53,6 @@ submissions/*.csv
 tutorials/study/submissions/
 tutorials/study/mock_truth_*.json
 scratch/
+
+# Sandbox (local identity)
+.sandbox_handle

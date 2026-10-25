@@ -6,6 +6,7 @@ import csv
 import hashlib
 import io
 import json
+import os
 from pathlib import Path
 import statistics
 import time
@@ -30,6 +31,8 @@ def load_settings(path="configs/workflow_v0.json"):
         raise ValueError("This runner requires known costs and serial execution")
     if min(value["pps_thresholds"]) < 1e-5:
         raise ValueError("Workflow PPS thresholds must be at least 1e-5")
+    # Team rule: lifetime account spend <= $20 per teammate (override via BQ_ACCOUNT_CAP_USD).
+    value.setdefault("account_cap_usd", float(os.environ.get("BQ_ACCOUNT_CAP_USD", "20")))
     return value
 
 

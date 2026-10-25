@@ -1,0 +1,306 @@
+{
+  "Duke_G4_0": {
+    "value": 0.09778715370060109,
+    "job_id": "6m5pZ6dArY3Zxfvp",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 64
+    }
+  },
+  "Duke_G4_1": {
+    "value": 0.007231963674696249,
+    "job_id": "9fLbu6CIjhHbZtkr",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 64
+    }
+  },
+  "Duke_G4_2": {
+    "value": -0.08819891709609358,
+    "job_id": "AN4JtZrymhiOwfmz",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 64
+    }
+  },
+  "Duke_G4_3": {
+    "value": 0.027981561469837855,
+    "job_id": "hRQp5p6CpjDMP9cN",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 64
+    }
+  },
+  "Duke_G4_4": {
+    "value": 0.4930423131044318,
+    "job_id": "bwUOEcirkZMkDU3b",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 64
+    }
+  },
+  "Duke_G4_5": {
+    "value": 0.2633812999139847,
+    "job_id": "zeEfsVVFBeUQJ7Op",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 64
+    }
+  },
+  "Duke_G4_6": {
+    "value": 0.018419083645127593,
+    "job_id": "di6P4sCrUPJhBQhO",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 64
+    }
+  },
+  "Duke_G4_7": {
+    "value": 0.04979817216958828,
+    "job_id": "C1RMFb9j4uhV02J7",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 64
+    }
+  },
+  "Duke_G4_8": {
+    "value": 0.15193898574181014,
+    "job_id": "juZZQzjbiAAA4x1v",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 64
+    }
+  },
+  "Duke_G4_9": {
+    "value": 0.11945923054723631,
+    "job_id": "6ICbRAomfVX8aAOO",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 64
+    }
+  },
+  "Duke_G4_10": {
+    "value": 0.5582407476978349,
+    "job_id": "ykuD1iJ7JPIpv5yG",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 64
+    }
+  },
+  "Duke_G4_11": {
+    "value": 0.6491034039865856,
+    "job_id": "9E46BpWw41KHPGd7",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 64
+    }
+  },
+  "Duke_G4_12": {
+    "value": 0.47868977761640263,
+    "job_id": "bhnUQR1BlQtCEbA1",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 64
+    }
+  },
+  "Duke_G4_13": {
+    "value": 0.3557376811258579,
+    "job_id": "3OWNhui0SNZ1Bm2z",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 64
+    }
+  },
+  "Duke_G4_14": {
+    "value": 0.46799905259245883,
+    "job_id": "mUVO7h27o6P9zZck",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 64
+    }
+  },
+  "Duke_G4_15": {
+    "value": 0.5982466088052288,
+    "job_id": "wqsZ3633ALRTGNVY",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 64
+    }
+  },
+  "Duke_G4_16": {
+    "value": 0.6465566611126359,
+    "job_id": "NN84LD6DODrguoK7",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 64
+    }
+  },
+  "Duke_G4_17": {
+    "value": 0.7686904395795299,
+    "job_id": "41Cb6oXXeBed9hGR",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 64
+    }
+  },
+  "Duke_G4_18": {
+    "value": 0.16858690433125284,
+    "job_id": "V37tQPWuiVElUuqu",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 64
+    }
+  },
+  "Duke_G4_19": {
+    "value": 0.0844009611776522,
+    "job_id": "MRV8VpTerR9lhKyo",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 64
+    }
+  },
+  "Duke_G4_20": {
+    "value": -0.05896766604411833,
+    "job_id": "nTkMiU07su0en9Wf",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 64
+    }
+  },
+  "Duke_G4_21": {
+    "value": -0.0041775443429174905,
+    "job_id": "mw5Q5GbkC0ZWo7K4",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 64
+    }
+  },
+  "Duke_G4_22": {
+    "value": 0.8652082349701365,
+    "job_id": "mgbzS8J6wlEegTyM",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 64
+    }
+  },
+  "Duke_G4_23": {
+    "value": 0.8510197019864323,
+    "job_id": "vozL48Nqq5hXqM9j",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 64
+    }
+  },
+  "Duke_G4_24": {
+    "value": 0.5482547953468382,
+    "job_id": "4H53uIwiv6RzpPp6",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 64
+    }
+  },
+  "Duke_G4_25": {
+    "value": 0.5369401467195875,
+    "job_id": "fKLj4In3mv98FXqi",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 64
+    }
+  },
+  "Duke_G4_26": {
+    "value": 0.767289573590737,
+    "job_id": "UZQMLE4dG183NeMt",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 64
+    }
+  },
+  "Duke_G4_27": {
+    "value": 0.7936406922201563,
+    "job_id": "FypZTVk7SzryOJRk",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 64
+    }
+  },
+  "Duke_G4_28": {
+    "value": 0.9018683048476598,
+    "job_id": "pIOtl1dHREfwVjBs",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 64
+    }
+  },
+  "Duke_G4_29": {
+    "value": 0.9266213148181501,
+    "job_id": "THruNbohvNXtWrb5",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 64
+    }
+  },
+  "Duke_G4_30": {
+    "value": 0.7546877159297052,
+    "job_id": "VTH5HIa0QbftM814",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 64
+    }
+  },
+  "Duke_G4_31": {
+    "value": 0.8038966761660628,
+    "job_id": "8Nu6jk3SIA2aD6gj",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 64
+    }
+  },
+  "Duke_G4_32": {
+    "value": 0.6753650008642128,
+    "job_id": "yOa41iXS2kKvZWe8",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 64
+    }
+  },
+  "Duke_G4_33": {
+    "value": 0.6865267735657986,
+    "job_id": "z3MRqygj6GmxWzYB",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 64
+    }
+  },
+  "Duke_G4_34": {
+    "value": 0.8494950443289928,
+    "job_id": "VW6B2tkgAEZ584z9",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 64
+    }
+  },
+  "Duke_G4_35": {
+    "value": 0.7873093812212117,
+    "job_id": "GpiXd32tEe31uw8T",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 64
+    }
+  },
+  "Duke_G4_36": {
+    "value": 0.9730695565673422,
+    "job_id": "gWYlJVi5wihpf7L2",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 64
+    }
+  },
+  "Duke_G4_37": {
+    "value": 0.9749164869088494,
+    "job_id": "m0FUhLB5Mo5L012x",
+    "device": "mps.cpu",
+    "options": {
+      "mps_bond_dimension": 64
+    }
+  }
+}
