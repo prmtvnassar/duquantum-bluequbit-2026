@@ -1,8 +1,8 @@
 # Proxy lab: what approximate methods can score on exact G4-like OTOC(2) proxies
 
-2026-10-24 21:00-23:30 local, $0, no BlueQubit calls. Code `scratch/proxy_lab/{common,make_proxies,run_methods,analyze,plot}.py`
+2026-10-24 21:00-23:30 local, $0, no BlueQubit calls. Code `labs/proxy_lab/{common,make_proxies,run_methods,analyze,plot}.py`
 (seeded, re-runnable: `make_proxies.py R C depth seeds...`, `run_methods.py <pattern> --chi=.. --eps=..`, `analyze.py`, `plot.py`).
-Data `scratch/proxy_lab/data/exact_*.json` (U-block QASM + exact vector), `methods_*.json`, `summary.json`, `tables.md` (every table,
+Data `labs/proxy_lab/data/exact_*.json` (U-block QASM + exact vector), `methods_*.json`, `summary.json`, `tables.md` (every table,
 all methods, per instance). Figures in this directory: `fig_exact_profile.png`, `fig_method_scores.png`.
 
 ## 1. Geometry and echo (step 1), verified on the public samples

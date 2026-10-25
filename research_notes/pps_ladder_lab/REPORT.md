@@ -1,9 +1,9 @@
 # PPS delta-ladder lab: local known-answer testbed (INTERIM, background jobs still running)
 
-2026-10-25, $0, no BlueQubit calls. Code `scratch/pps_ladder_lab/{make_proxies,run_ladder,run_mps,pg4c_reconstruct,analyze,check}.py`
-(seeded, incremental, re-runnable); data `scratch/pps_ladder_lab/data/` (exact_*.json, ladder_*.json, mps_*.json, *.log, summary.json).
+2026-10-25, $0, no BlueQubit calls. Code `labs/pps_ladder_lab/{make_proxies,run_ladder,run_mps,pg4c_reconstruct,analyze}.py`
+(seeded, incremental, re-runnable); data `labs/pps_ladder_lab/data/` (exact_*.json, ladder_*.json, mps_*.json, *.log, summary.json).
 Handed back early: the eps 1e-4 levels, seed 3 and chi64 were still computing when this was written.
-Re-run `PYTHONPATH=src .venv312/Scripts/python.exe scratch/pps_ladder_lab/analyze.py` once the logs stop to refresh every table.
+Re-run `PYTHONPATH=src .venv312/Scripts/python.exe labs/pps_ladder_lab/analyze.py` once the logs stop to refresh every table.
 
 ## 1. Testbed
 
@@ -11,7 +11,7 @@ Re-run `PYTHONPATH=src .venv312/Scripts/python.exe scratch/pps_ladder_lab/analyz
   statevector, 48 s/row at 12 threads, 20 min/instance; seed 3 running). 4x7 (28 q) rejected: 4.3 GB state, x16 per gate and
   1.2x gates => ~12 h for 28 rows. Slack map: col 5 = 4, col 4 = 6, rest >= 8, so the rim (slack 3-7) is
   q4,q5,q10,q11,q16,q17,q22,q23 (8 of 24). Exact rims are 100 % negative, |v| 0.015-0.069 (s1) / 0.001-0.049 (s2); bulk |v| <= 0.009.
-- PG4c (32 q, a teammate's 5x6+2 G4-construction proxy; native exact, native PPS 1e-4/1e-3 L3, MPS128 in `scratch/pg4c.csv`)
+- PG4c (32 q, a teammate's 5x6+2 G4-construction proxy; native exact, native PPS 1e-4/1e-3 L3, MPS128 in `labs/pg4c/pg4c.csv`)
   reconstructed locally from the historical `scripts/make_proxy.py` (commit e6707fa; colour order H0,H1,V0,V1; qiskit
   `random_unitary(4, seed)` from `default_rng(5)`; `--extra 2` guessed as the 6x6 colour lists filtered to q<30 or q in {30,31}).
   Validation: local coefficient PPS L3 eps 1e-3 gives q5 -0.0267 / q10 -0.0192 / q11 +0.0060 vs native 1e-3 -0.0270 / -0.0149 /

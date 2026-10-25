@@ -116,8 +116,8 @@ def candidates_for(problem,records,settings):
                          "pauli_path_circuit_transpilation_level":discovery.get("pps_transpilation_level",1)}
                 suggestions.append(_candidate(cid,"pauli-path",options,
                     "Bounded alternate-transpilation pilot at fixed threshold; test representation sensitivity without assuming accuracy or abandoning PPS after MPS recovery","discovery"))
-            probe_q=discovery.get("mps_probe_qubits",{}).get(problem,settings["pilot_qubits"][problem][1])
-            if q==probe_q and any(family(r["action"]["device"])=="mps" for r in matching):
+            check_q=discovery.get("mps_check_qubits",{}).get(problem,settings["pilot_qubits"][problem][1])
+            if q==check_q and any(family(r["action"]["device"])=="mps" for r in matching):
                 suggestions.append(_candidate(cid,"mps.cpu",{"mps_bond_dimension":discovery.get("mps_chi",32)},
                     "Bounded central-pilot bond sensitivity check before bulk low-chi coverage; a nonconstant pilot is not accuracy evidence","discovery"))
     pilot_values=[]

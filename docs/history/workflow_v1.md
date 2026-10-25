@@ -94,13 +94,13 @@ $$
 
 Here, $w_c$ is the published point value and $s_c$ is the normalized score. Positive scaling and a common offset preserve correlation; **an overall sign flip changes its sign, and negative correlation scores 0**. This agrees with both the live Overview and Rules; prefer the live rules if a cached page says sign flips preserve the score. Protect nearly constant vectors using a numerical tolerance, without presenting that local tolerance as an official threshold. If a reference vector is constant and Pearson is undefined, flag the score as unavailable and check the official scorer rather than inventing its behavior.
 
-Official sample answers are hidden too. Compute offline scores and MAE/RMSE only after independently producing and verifying exact references from public QASM; otherwise record official scores for genuine estimates and label-free diagnostics. Leaderboard feedback **must not** be used to recover labels, construct testing submissions, or fit hidden answers.
+Official sample answers are hidden too. Compute offline scores and MAE/RMSE only after independently producing and verifying exact references from public QASM; otherwise record official scores for genuine estimates and label-free diagnostics. Leaderboard feedback **must not** be used to recover labels, construct score-fitting submissions, or fit hidden answers.
 
 ### 1.3 Optimization objectives & constraints
 
 - **Primary:** Maximize the total over all seven problems within the \$30 event allowance and deadline; the samples' 300 points are part of the objective.
 - **Secondary:** Reduce errors against verifiable references, improve cross-method consistency, and reduce failed jobs, duplicate charges, and invalid submissions.
-- **Hard constraints:** Execute G1–G4 only through BlueQubit IDs. Use one participant/team account for all platform use and submissions; do not expand the event budget using external credits, other accounts, or other teams' resources. Submissions must be genuine estimates produced during the event; testing answers through scoring feedback is prohibited.
+- **Hard constraints:** Execute G1–G4 only through BlueQubit IDs. Use one participant/team account for all platform use and submissions; do not expand the event budget using external credits, other accounts, or other teams' resources. Submissions must be genuine estimates produced during the event; recovering answers through scoring feedback is prohibited.
 - **Tools:** Public QASM may be studied with other standard tools. Under Rules §6, organizers may decline to credit solutions relying on resources such as private clusters or unreleased internal code. Commercial AI assistants and standard simulators are allowed.
 - **Operational constraints:** Measure API limits, queues, job costs, and available machine hours; include Hybrid machine time and paid jobs in spending. Official scoring and final rules take precedence.
 
@@ -194,7 +194,7 @@ At startup, proceed in this order:
 3. Choose an affordable S1 ID and smoke-test *all-zero state → run that ID → measure the corresponding Z → store result → two-column CSV*. SDK Pauli strings put q0 on the right; do not construct another echo.
 4. Independently compute references from public QASM using an affordable standard local exact simulator or platform exact backend. Verify initial state, qubit order, operator, numerical tolerance, and provenance before assigning `EXACT_VERIFIED`; partial references do not constitute a complete problem reference.
 5. Complete a first end-to-end submission using genuine S1 estimates and record the score and receipt; samples also count toward ranking. Without exact references, use convergence/cross-method diagnostics rather than claiming MAE/RMSE against ground truth.
-6. Start small MPS/PPS precision sweeps, comparing candidates against local references first. Do not upload every candidate or construct submissions to check scoring behavior.
+6. Start small MPS/PPS precision sweeps, comparing candidates against local references first. Do not upload every candidate or construct submissions to test scoring behavior.
 
 ### 3.2 Initial parameter grids
 
@@ -236,7 +236,7 @@ Also record:
 - When all three samples have complete, verified exact references, perform **3-fold leave-one-circuit-out (LOCO)**: select on two circuits and validate on the third, rotating through all three. Report each fold and the worst problem result.
 - With references for only some samples, report only feasible validation. Unlabeled samples cannot serve as supervised test sets. If references are insufficient, do not claim LOCO passed; retain the direct baseline and disable learned calibration.
 - Avoid repeatedly fitting many parameters on a few samples. Retain a direct simulation baseline **without extrapolation or fusion** for every candidate strategy.
-- Use immediate platform scores to record the performance of genuine solutions only. Respect the 20-attempt limit and anti-testing rules; the leaderboard is not a label oracle or a training signal for hidden answers.
+- Use immediate platform scores to record the performance of genuine solutions only. Respect the 20-attempt limit and rules against score fitting; the leaderboard is not a label oracle or a training signal for hidden answers.
 
 ### 3.5 Benchmark acceptance gate
 
@@ -686,7 +686,7 @@ For each ablation, report the sample score, lowest individual circuit score, com
 3. Validate separately on S1–S3 and report reference coverage; do not pool them into one large vector and report only one correlation.
 4. Use separate failure diagnostics for nearly constant vectors, pronounced outliers, and strong conflicts between branches.
 5. If backend results are not strictly deterministic, repeat the same job configuration to assess numerical reproducibility; stop unhelpful repetitions if determinism is adequate.
-6. Check the local score formula, constant/negative-correlation handling, ID alignment, and two-column header parsing offline. These are local checks, not one-hot/constant-vector checks submitted to the platform.
+6. Check the local score formula, constant/negative-correlation handling, ID alignment, and two-column header parsing offline. These are local checks, not one-hot/constant-vector test uploads submitted to the platform.
 
 ### 8.4 Scientific cautions
 
@@ -920,7 +920,7 @@ Before submission:
 
 1. Require an ID set **identical** to the corresponding official problem manifest: one row per ID, with no missing, duplicate, foreign-problem, misspelled, or wrong-case IDs. Row order is not a validity condition.
 2. If present, the header is exactly `circuit_id,value`; otherwise parse data from the first row. Values must be finite real numbers, without `NaN`, `inf`, empty fields, or placeholders.
-3. Uploads accept any finite value; diagnose the physical range $[-1,1]$ separately. Constant vectors may pass format checks but score 0. Preserve physical sign and do not submit sign-flipped or one-hot testing files.
+3. Uploads accept any finite value; diagnose the physical range $[-1,1]$ separately. Constant vectors may pass format checks but score 0. Preserve physical sign and do not submit sign-flipped or one-hot test files.
 4. Include a truthful method note describing backend, precision, reference provenance, and any fusion/extrapolation actually used. Save the file hash and associated job provenance.
 5. Check that attempts used for the problem are **<20**. Upload prechecks reject missing/wrong IDs without using an attempt; do not assume all other errors are free. After acceptance, submit and retain the returned timestamp, score, submission ID, and receipt.
 6. Each problem contributes its best score; later worse submissions do not erase it. Retain the best version. Its submission-time penalty contributes to tie-breaking, so submit trustworthy complete results early and reserve time for the final submission process.
@@ -961,7 +961,7 @@ Before submission:
 | 21–23 h | Verify IDs/values/method notes and select submissions with real improvements | Final CSVs, method notes, hashes, and remaining-attempt checks |
 | 23–24 h | Submission buffer and incident handling; read final receipts | Best scores, submission times, and confirmation records per problem |
 
-This is an execution draft. Do not delay trustworthy completed-problem submissions for long-running jobs. Each problem allows 20 attempts and retains its best score; earlier best submissions carry lower time penalties. Never use repeated submissions to check hidden answers or exhaust attempts without practical value.
+This is an execution draft. Do not delay trustworthy completed-problem submissions for long-running jobs. Each problem allows 20 attempts and retains its best score; earlier best submissions carry lower time penalties. Never use repeated submissions to recover hidden answers or exhaust attempts without practical value.
 
 ### 10.4 Priority / fallback policy
 
@@ -1068,8 +1068,8 @@ When MPS/PPS disagree substantially while each appears internally converged:
 | Cost/machine-time anomalies | Falling balance or exhausted LARGE/GPU quotas | Account for machine and job charges, reserve a buffer, and do not add external credits |
 | Duplicate charges after timeout retries | Lost job IDs and repeated calls | Query existing jobs first; use idempotent records and caching |
 | ID/CSV errors | Upload precheck rejection | Two columns per problem, exact case-sensitive ID sets; arbitrary row order |
-| Negative correlation or constant predictions | Valid format but zero score | Preserve physical sign and diagnose variance locally; do not check with sign-flipped uploads |
-| Attempts exhausted or anti-testing rule violated | Further submissions unavailable or results disallowed | Submit genuine estimates only; retain method notes and per-problem attempt ledgers |
+| Negative correlation or constant predictions | Valid format but zero score | Preserve physical sign and diagnose variance locally; do not test with sign-flipped uploads |
+| Attempts exhausted or score-fitting rule violated | Further submissions unavailable or results disallowed | Submit genuine estimates only; retain method notes and per-problem attempt ledgers |
 | Missing results or deadline missed | Incomplete problems and unfinished jobs | Per-problem coverage first, checkpoints, early submissions, and a final buffer |
 
 ---
@@ -1077,7 +1077,7 @@ When MPS/PPS disagree substantially while each appears internally converged:
 ## Appendix C. Sources & Verification Notes
 
 1. [BlueQubit — Duke Quantum Hackathon: Overview](https://app.bluequbit.io/hackathons/2GMaAenu3iSsIC6Z): Checked in a live browser on 2026-10-24 for problem/value counts, per-ID Z targets, SDK calls, points, attempt limits, schedule, coupon, and devices.
-2. [Official Rules](https://app.bluequbit.io/hackathons/2GMaAenu3iSsIC6Z?tab=rules): Sections 3–6 checked the same day for account/budget boundaries, zero for negative correlation, anti-testing requirements, genuine event-period estimates, and resource constraints.
+2. [Official Rules](https://app.bluequbit.io/hackathons/2GMaAenu3iSsIC6Z?tab=rules): Sections 3–6 checked the same day for account/budget boundaries, zero for negative correlation, rules against score fitting, genuine event-period estimates, and resource constraints.
 3. [Problems](https://app.bluequbit.io/hackathons/2GMaAenu3iSsIC6Z?tab=problems): Still displayed a pre-start notice during this review. Actual QASM contents, ZIP hashes, per-problem $n_c$, and complete ID lists have therefore not been verified.
 4. [BlueQubit Python SDK — API Reference](https://app.bluequbit.io/sdk-docs/bluequbit.sdk.html): MPS/PPS parameters and general job APIs. The page identifies version 0.18.12b1, older than the required >=0.19.0b1; verify behavior in the installed version.
 5. [BlueQubit usage](https://app.bluequbit.io/usage) and [platform documentation](https://app.bluequbit.io/docs): Actual balances, machine hours, quotas, and general platform guidance; no authenticated account state was read during this revision.
@@ -1096,6 +1096,6 @@ When MPS/PPS disagree substantially while each appears internally converged:
 - [ ] **Diagnostics:** Pointwise changes, vector shape, ranks, and cross-method disagreement; positive-correlation-squared scores when complete references exist.
 - [ ] **Scheduler:** Published points, \$30 event budget, machine/job quotas, per-ID costs, failure fallback, and a time buffer.
 - [ ] **Submission:** Per-problem `circuit_id,value`, optional header, arbitrary order, complete case-sensitive IDs, finite values, and truthful method notes.
-- [ ] **Ledger:** At most 20 attempts per problem, best scores/times, CSV hashes, and official receipts; no testing submissions.
+- [ ] **Ledger:** At most 20 attempts per problem, best scores/times, CSV hashes, and official receipts; no score-fitting submissions.
 
 **Final algorithmic decision principle:** Within the available budget, maximize *verified score improvement per additional simulation cost*, rather than maximizing the simulation precision parameters themselves.

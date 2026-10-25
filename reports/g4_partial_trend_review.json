@@ -363,7 +363,7 @@
     "status": "PROPOSED_NOT_EXECUTED",
     "rationale": "q4 has the largest affine-residual influence; q0 is second and retains continuity with earlier pilots. Add one independent PPS level1 representation check on q4 instead of a third MPS point. Their direct raw values guide further resource allocation, not hidden-label inference.",
     "pair_fraction_of_total_affine_residual": 0.6049223598296247,
-    "limits": "Heuristic sensitivity ranking only. Preserve the complete chi32 candidate for audit, but do not label it accurate. Require a complete single-device, identical-options 38-row cohort before exporting a new coherent candidate. Never splice pilot values, fit an affine correction, flip signs, reorder rows, or check the scorer with artificial outputs.",
+    "limits": "Heuristic sensitivity ranking only. Preserve the complete chi32 candidate for audit, but do not label it accurate. Require a complete single-device, identical-options 38-row cohort before exporting a new coherent candidate. Never splice pilot values, fit an affine correction, flip signs, reorder rows, or game the scorer with artificial outputs.",
     "third_job": {
       "circuit_id": "Duke_G4_4",
       "device": "pauli-path",

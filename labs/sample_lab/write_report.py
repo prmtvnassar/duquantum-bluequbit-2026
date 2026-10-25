@@ -6,9 +6,9 @@ ROOT = Path(__file__).resolve().parents[2]
 TEXT = r"""# sample-lab: can MPS-feature post-processing beat raw <Z_q> in the unconverged regime?
 
 Session 2026-10-24/25, $0: no BlueQubit calls, no writes to `runs/`, `results/workflow/`,
-`submissions/` or `problems/*/selected.csv`. Code `scratch/sample_lab/{mps_features.py,
+`submissions/` or `problems/*/selected.csv`. Code `labs/sample_lab/{mps_features.py,
 exact_features.py, estimators.py, write_report.py}`; data `features_S2.json`, `features_S3.json`
-(+`_part2`), `exact_features_S2.json`; full tables `scratch/sample_lab/results.md` / `results.json`.
+(+`_part2`), `exact_features_S2.json`; full tables `labs/sample_lab/results.md` / `results.json`.
 Deterministic (quimb SVD, no sampling).
 
 ## 1. Setup
@@ -130,11 +130,11 @@ help; keep raw. The chi32 G4 pilots (0.64-0.96 at distance >= 5) point to exactl
 
 ## 7. Reproduce
 
-    PYTHONPATH=src .venv312/Scripts/python.exe scratch/sample_lab/mps_features.py --sample S2 --chis 2 4 8 16 32 64 128
-    PYTHONPATH=src .venv312/Scripts/python.exe scratch/sample_lab/mps_features.py --sample S3 --chis 4 8 16 32
-    PYTHONPATH=src .venv312/Scripts/python.exe scratch/sample_lab/exact_features.py
-    PYTHONPATH=src .venv312/Scripts/python.exe scratch/sample_lab/estimators.py   # writes results.md / results.json
-    .venv312/Scripts/python.exe scratch/sample_lab/write_report.py
+    PYTHONPATH=src .venv312/Scripts/python.exe labs/sample_lab/mps_features.py --sample S2 --chis 2 4 8 16 32 64 128
+    PYTHONPATH=src .venv312/Scripts/python.exe labs/sample_lab/mps_features.py --sample S3 --chis 4 8 16 32
+    PYTHONPATH=src .venv312/Scripts/python.exe labs/sample_lab/exact_features.py
+    PYTHONPATH=src .venv312/Scripts/python.exe labs/sample_lab/estimators.py   # writes results.md / results.json
+    .venv312/Scripts/python.exe labs/sample_lab/write_report.py
 """
 
 if __name__ == "__main__":

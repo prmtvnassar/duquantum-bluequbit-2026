@@ -3,7 +3,7 @@
 Reference for what the MPS features *should* look like; S3 (30 qubits) is too large
 for a dense statevector here and is not attempted.
 
-    .venv312/Scripts/python.exe scratch/sample_lab/exact_features.py
+    .venv312/Scripts/python.exe labs/sample_lab/exact_features.py
 """
 
 import json

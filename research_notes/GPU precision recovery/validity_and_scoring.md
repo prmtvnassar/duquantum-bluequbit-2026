@@ -1,6 +1,6 @@
 # Validity and scoring: GPU precision recovery
 
-Scope: adversarial review of the supplied 14-page paper and saved campaign evidence, October 24, 2026. No simulations, API calls, private-site access or score testing were performed. Only this research note was written. Paper page numbers refer to the supplied PDF, not a separately verified web version.
+Scope: adversarial review of the supplied 14-page paper and saved campaign evidence, October 24, 2026. No simulations, API calls, private-site access or score fitting were performed. Only this research note was written. Paper page numbers refer to the supplied PDF, not a separately verified web version.
 
 ## 1. Which accuracy claims transfer to hidden-ID OTOC and Pearson scoring?
 

@@ -28,7 +28,7 @@ def main():
     lines=["# Sample calibration and final allocation", "", f"Generated: {evidence['generated_at']}","",
            f"Release status: **{final['release_status']}**. Numerical exact references: **{report['reference_count']}/50**.","",
            "Official submitted scores: S1 100/100, S2 100/100, S3 100/100 (displayed values; may round). "
-           "The official S1/S2 submissions used exact local values; S3 used PPS epsilon 0.01. No extra score-testing submissions were made.","",
+           "The official S1/S2 submissions used exact local values; S3 used PPS epsilon 0.01. No extra score-fitting submissions were made.","",
            "## Selected local settings", "", "| Sample | Method | Parameters | Max absolute error | Offline score / 100 | Vector wall seconds |",
            "| --- | --- | --- | ---: | ---: | ---: |"]
     for p,r in evidence["recommendations"].items():

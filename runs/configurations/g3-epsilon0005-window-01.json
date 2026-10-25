@@ -198,7 +198,7 @@
     "pps_threshold": 0.001,
     "pps_transpilation_level": 1,
     "mps_chi": 32,
-    "mps_probe_qubits": {
+    "mps_check_qubits": {
       "G2": 18,
       "G3": 0,
       "G4": 0

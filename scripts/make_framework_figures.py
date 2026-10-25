@@ -1,6 +1,6 @@
 """Figures for FRAMEWORK.md and the talk (offline, no API calls).
 
-    python scripts/g4_simulation_only.py        # first: writes reports/g4_simulation_only.json
+    python scripts/g4_pps_mps_summary.py        # first: writes reports/g4_pps_mps_summary.json
     python scripts/make_framework_figures.py    # writes reports/figures/framework/ and reports/figures/circuits/
 
 Circuit drawings need qiskit's matplotlib drawer (`pip install pylatexenc`); they are skipped if it is missing.
@@ -78,19 +78,19 @@ def flowcharts():
                         "Raising precision did not change this."]),
               ("io", ["Export the complete direct vector with its method note and per-row job manifest"])])
     pipeline("flow_v2.png", "v2  G4 investigation (24-25 Oct night): find out what each simulator can see",
-             "research_notes/g4_alternative_techniques.md, proxy_lab, sample_lab, debate. No new physics assumed; every step measured.",
+             "research_notes/G4_PPS_MPS.md and labs/ (proxy_lab, sample_lab, pps_ladder_lab). Every step measured.",
              [("new", ["Check the circuit structure on the samples: blocks U, X_b, U†, Z_q, U, X_b, U† are exact inverses -> an echo"]),
               ("new", ["Test transpilation as a simplifier: level 3 cancels U·U† pairs outside the light cone",
                        "(locally on samples; natively it was the only level with signal on G4)"]),
               ("new", ["Build exact proxies of the same generator (16-32 qubits) and score every method against them"]),
               ("new", ["Learn what each method sees: early-contact rows ~ 0 (noise floor), signal on late-contact rows;",
-                       "MPS = arrival-geometry map at every chi; PPS = front detector, about half the signs"]),
-              ("new", ["Measure the geometry on the circuit itself: all-Z MPS jobs give a contact map for the price of one row"]),
+                       "MPS = arrival-geometry map at every chi; PPS = front detector"]),
+              ("new", ["PPS baseline: finest admissible threshold at level 3 (G4: 133); refine rows with high-chi MPS (chi256: 139 -> 145 -> 165)"]),
               ("fail", ["Priors from proxies (class means by arrival time): 400-700 on held-out proxies, 2 on G4;",
                         "averaging / extrapolating in chi or threshold: never beat the best single input"]),
-              ("new", ["Validated post-processing: subtract PPS's projection on the MPS vector",
-                       "(known-answer proxy 301 -> 424; G4 133 -> ~190 with no score feedback)"]),
-              ("warn", ["Ceiling of simulation + understanding with the tools we had: about 190-200.",
+              ("new", ["Validated post-processing: subtract the projection on MPS vectors that scored 0",
+                       "(known-answer proxy 301 -> 424; G4 133 -> 199, 165 -> 195)"]),
+              ("warn", ["Ceiling of PPS + MPS + post-processing with the tools we had: about 200.",
                         "Finer PPS on late-contact rows is the only simulator lever left (refused below 2e-5 at 38 qubits)."])])
     flow_v3()
 
@@ -107,7 +107,7 @@ def flow_v3():
                         "qubits n, depth d, geometry (chain / grid), gate family (Haar / mostly Clifford), scoring metric"], bold=True)
     box(4, 118, 92, 10, ["ALWAYS: audited jobs (quote -> budget gate -> receipt -> ledger)",
                          "calibrate on known answers first (samples; exact proxies of the same generator, up to ~32 qubits)",
-                         "predict each result before using it; disclose the method"], fc="#f5f7fa", ec=GREY)
+                         "predict each result before using it; document the method of every vector"], fc="#f5f7fa", ec=GREY)
     qx, qw, mx, mw, bh = 4, 33, 43, 53, 11
     rows = [(103, ["Q1. n <= ~34?", "(exact simulation allowed)"], ["EXACT STATEVECTOR", "S1, S2, G1 -> 100, 100, 300/300"]),
             (87, ["Q2. 1-D chain, or otherwise", "low entanglement?"],
@@ -123,13 +123,12 @@ def flow_v3():
     arrow(qx + qw / 2, 86.4, qx + qw / 2, 71 + bh + 0.6, "no"); arrow(qx + qw / 2, 70.4, qx + qw / 2, 69.6, "no")
     box(4, 56, 92, 13, ["SCRAMBLING REGIME (G4): 2-D Haar gates, depth comparable to or larger than the grid diameter.",
                         "Expect: rows the disturbance reaches early ~ 0 (noise floor); signal only on late-contact rows,",
-                        "with instance-specific signs.  MPS reads arrival geometry only; PPS finds the front, about half the signs."], fc="#fff4ec", ec=ORANGE)
+                        "with instance-specific signs.  MPS reads arrival geometry only; PPS finds the front."], fc="#fff4ec", ec=ORANGE)
     steps = [["a. Exact proxies of the same generator: measure what each method scores before trusting it"],
-             ["b. Contact map on the circuit: one MPS all-Z job per row (observable list at no extra cost)", "    -> which rows the disturbance reaches late"],
-             ["c. PPS at the finest admissible threshold, transpilation level 3;", "    check sign stability across a threshold ladder on the late-contact rows"],
-             ["d. Validated post-processing only: subtract PPS's projection on the MPS vector", "    (known-answer proxy 301 -> 424; G4 133 -> ~190 without any website score)"],
-             ["e. Only if repeated, disclosed scoring is allowed: treat scores as measurements ->", "    remove measured-null vectors -> fit within their span (leave-one-out check) ->",
-              "    check unmeasured directions  (G4: 199 -> 282 -> 998)"]]
+             ["b. BASELINE: PPS at the finest admissible threshold, transpilation level 3", "    (G4: eps 1e-4 -> 133; eps >= 1e-3 returned ~0)"],
+             ["c. REFINE WITH MPS: high-chi MPS (chi256) on the rows near the butterfly", "    (G4: q0 -> 139, q0-q1 -> 145, eight rows -> 165)"],
+             ["d. Remove null directions: subtract the projection on MPS vectors that scored 0", "    (known-answer proxy 301 -> 424; G4 133 -> 199, 165 -> 195)"],
+             ["e. MIX the refined vectors into one ensemble  (G4 final: 284; one ingredient was", "    fitted to earlier whole-vector scores, stated in the method note)"]]
     top, prev = 52, 56
     for st in steps:
         h = 4.2 + 3.0 * (len(st) - 1); arrow(50, prev - 0.5, 50, top + 0.6)
@@ -158,29 +157,17 @@ def data_figures(R):
         cb = fig.colorbar(im, ax=ax, fraction=0.045, pad=0.03); cb.ax.tick_params(labelsize=5.5)
     heat(fig.add_subplot(gs[0:4, 1]), V["S3"], 5, 6, "S3: 5x6 mostly-Clifford, 16 layers", mark=(2, 2))
     heat(fig.add_subplot(gs[4:8, 1]), V["G3"], 6, 6, "G3: 6x6 mostly-Clifford, 24 layers", mark=(2, 2))
-    heat(fig.add_subplot(gs[8:12, 1]), V["G4"] - np.median(V["G4"]), 6, 6, "G4: 6x6+2 Haar, 16 layers (shape only)", extra={36: (6, 0), 37: (6, 1)}, mark=(0, 0))
-    fig.suptitle("The answer vectors of all seven circuits (grids: red > 0 > blue, x = butterfly)", x=0.02, ha="left", fontsize=9.2, color=INK)
+    heat(fig.add_subplot(gs[8:12, 1]), V["G4"] - np.median(V["G4"]), 6, 6, "G4: 6x6+2 Haar, 16 layers (our final estimate, shape only)", extra={36: (6, 0), 37: (6, 1)}, mark=(0, 0))
+    fig.suptitle("The submitted vectors of all seven circuits (grids: red > 0 > blue, x = butterfly)", x=0.02, ha="left", fontsize=9.2, color=INK)
     fig.savefig(FW / "seven_circuits.png"); plt.close(fig)
 
-    ch = R["chronology"]; fig, ax = plt.subplots(figsize=(7.4, 3.6), dpi=200); x = np.arange(len(ch))
-    ax.plot(x, [c["implied_by_final"] for c in ch], color=BLUE, lw=1.8, marker="o", ms=3.5, label="score implied by the final vector")
-    ax.plot([i for i, c in enumerate(ch) if c["website"] is not None], [c["website"] for c in ch if c["website"] is not None], ls="none", marker="s", mfc="none", mec=ORANGE, ms=6, label="website score")
-    ax.set_xticks(x); ax.set_xticklabels([c["step"] for c in ch], rotation=60, ha="right", fontsize=6.3); ax.set_ylabel("score /1000", fontsize=8)
-    ax.legend(frameon=False, fontsize=7, loc="upper left"); [ax.spines[s].set_visible(False) for s in ("top", "right")]
-    ax.grid(axis="y", color="#e4e7eb", lw=0.8); ax.set_axisbelow(True)
-    ax.set_title("How our estimate of the G4 answer evolved, upload by upload", fontsize=9, loc="left", color=INK)
-    fig.tight_layout(); fig.savefig(FW / "g4_chronology.png"); plt.close(fig)
-
-    steps = [("MPS chi32\n(all rows)", 0), ("PPS 1e-4", 133), ("PPS +\nMPS256 rows", 165), ("MPS chi64", 0), ("geometry\nprior", 2),
-             ("PPS minus\nMPS proj.\n(no scores)", 194), ("residual\n(PPS minus\nnull dirs)", 199), ("span\nfit", 234), ("refit 2", 282),
-             ("15 checks\n(model floor)", 721), ("all 28\nprobes", 998)]
-    cols = [GREY, BLUE, BLUE, GREY, GREY, AQUA, BLUE, BLUE, BLUE, "#a9c7ee", ORANGE]
+    L = R["ladder"]; col = {"null": GREY, "pps": BLUE, "refine": AQUA, "final": ORANGE}
     fig, ax = plt.subplots(figsize=(7.4, 3.3), dpi=200); [ax.spines[s].set_visible(False) for s in ("top", "right")]
     ax.grid(axis="y", color="#e4e7eb", lw=0.8); ax.set_axisbelow(True)
-    ax.bar(range(len(steps)), [s for _, s in steps], color=cols, width=0.7)
-    for i, (_, s) in enumerate(steps): ax.text(i, s + 18, str(s), ha="center", fontsize=8, color=INK)
-    ax.set_xticks(range(len(steps))); ax.set_xticklabels([n for n, _ in steps], fontsize=6.2); ax.set_ylabel("G4 score /1000"); ax.set_ylim(0, 1100)
-    ax.set_title("G4 score ladder (grey = null, green = simulation only, not uploaded; light blue = model floor; orange = final)", loc="left", fontsize=8.4, color=INK)
+    ax.bar(range(len(L)), [c["website"] for c in L], color=[col[c["kind"]] for c in L], width=0.7)
+    for i, c in enumerate(L): ax.text(i, c["website"] + 5, str(c["website"]), ha="center", fontsize=8, color=INK)
+    ax.set_xticks(range(len(L))); ax.set_xticklabels([textwrap.fill(c["step"], 14) for c in L], fontsize=5.6); ax.set_ylabel("G4 score /1000"); ax.set_ylim(0, 330)
+    ax.set_title("G4 website scores of the PPS and MPS vectors (grey = null, blue = PPS baseline, green = MPS refinement, orange = final ensemble)", loc="left", fontsize=7.6, color=INK)
     fig.tight_layout(); fig.savefig(FW / "g4_ladder.png"); plt.close(fig)
 
 # ------------------------------------------------------------------ circuit drawings (qiskit)
@@ -222,5 +209,5 @@ def circuits():
 
 if __name__ == "__main__":
     FW.mkdir(parents=True, exist_ok=True); CI.mkdir(parents=True, exist_ok=True)
-    R = json.load(open(REPO / "reports/g4_simulation_only.json"))
+    R = json.load(open(REPO / "reports/g4_pps_mps_summary.json"))
     flowcharts(); data_figures(R); circuits(); print("figures written to", FW, "and", CI)

@@ -194,7 +194,7 @@
     "pps_threshold": 0.001,
     "pps_transpilation_level": 1,
     "mps_chi": 32,
-    "mps_probe_qubits": {"G2": 18, "G3": 0, "G4": 0},
+    "mps_check_qubits": {"G2": 18, "G3": 0, "G4": 0},
     "pps_timeout_seconds": 180,
     "mps_timeout_seconds": 900,
     "reason": "Bounded representation and bond-sensitivity checks precede low-chi bulk coverage; sample transfer is unverified."

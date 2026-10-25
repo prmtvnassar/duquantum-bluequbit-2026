@@ -4,7 +4,7 @@ Generated: 2026-10-24T16:53:12.211876+00:00
 
 Release status: **READY**. Numerical exact references: **50/50**.
 
-Official submitted scores: S1 100/100, S2 100/100, S3 100/100 (displayed values; may round). The official S1/S2 submissions used exact local values; S3 used PPS epsilon 0.01. No extra score-testing submissions were made.
+Official submitted scores: S1 100/100, S2 100/100, S3 100/100 (displayed values; may round). The official S1/S2 submissions used exact local values; S3 used PPS epsilon 0.01. No extra score-fitting submissions were made.
 
 ## Selected local settings
 

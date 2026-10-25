@@ -9,11 +9,11 @@ complex128) and records, from the final state:
 * the bipartite entanglement entropy at every cut and the actual max bond,
 * wall time per (ID, chi).
 
-Output: one JSON per sample under scratch/sample_lab/features_<sample>.json.
+Output: one JSON per sample under labs/sample_lab/features_<sample>.json.
 
 Usage (from repo root, PYTHONPATH=src):
-    .venv312/Scripts/python.exe scratch/sample_lab/mps_features.py --sample S2 --chis 4 8 16 32 64
-    .venv312/Scripts/python.exe scratch/sample_lab/mps_features.py --sample S3 --chis 8 16 32 64 --ids 14 0
+    .venv312/Scripts/python.exe labs/sample_lab/mps_features.py --sample S2 --chis 4 8 16 32 64
+    .venv312/Scripts/python.exe labs/sample_lab/mps_features.py --sample S3 --chis 8 16 32 64 --ids 14 0
 """
 
 import argparse

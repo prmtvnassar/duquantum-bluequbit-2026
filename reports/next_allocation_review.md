@@ -32,7 +32,7 @@ Predeclare a **shape-change flag** when the fitted slope is nonpositive, an orde
 2. **Shape change appears and the finer route is tractable:** allocate one bounded continuation to a complete epsilon 0.0005 vector, reusing its finished rows. Use an explicit approximately 60-minute completion allocation after this decision, with fresh quote protection; treat pilot runtime projections as estimates. Review the full vector once and recommend the genuine complete finer candidate if provenance, signal and validity checks pass. No automatic third threshold or growing pilot list.
 3. **The panel or continuation becomes impractical/incomplete:** recommend the existing complete epsilon 0.001 vector as fallback, with numerical uncertainty stated. Keep completed finer rows as evidence. Indefinite hold does not establish accuracy or earn points, and G3 has no reported failed submission comparable to G4.
 
-These branches recommend an actual complete candidate, not an artificial scoring check. The early fallback supplies insurance; it does not lower the time penalty of a later improved submission. No hidden labels, fitted output corrections or predicted scores are used.
+These branches recommend an actual complete candidate, not an artificial scoring upload. The early fallback supplies insurance; it does not lower the time penalty of a later improved submission. No hidden labels, fitted output corrections or predicted scores are used.
 
 Sources: `submissions/candidates/G2/direct-3643218316ac.csv`, `submissions/candidates/G3/direct-fb792001c3e7.csv`, and original-account receipts under `D:/BluQubit/results/workflow/remote_actions`. G2 chi32 jobs: q9 `dAGHVu0ky3qVSoed`, q31 `9RmQMucEi62iX3a2`, q18 `bWm41clhLZ9NOIA8`; q18 chi16 `eV35YkTqQE4xkAN9`.
 

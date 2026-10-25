@@ -1,11 +1,11 @@
 """Post-processing estimators built from local MPS features, scored against the exact
 sample references. $0, no BlueQubit client, deterministic.
 
-Inputs : scratch/sample_lab/features_S2.json, features_S3.json (from mps_features.py)
+Inputs : labs/sample_lab/features_S2.json, features_S3.json (from mps_features.py)
          submissions/S2/attempt-01.csv, submissions/S3/attempt-01.csv (exact references)
-Outputs: scratch/sample_lab/results.json and results.md (tables consumed by the report)
+Outputs: labs/sample_lab/results.json and results.md (tables consumed by the report)
 
-    .venv312/Scripts/python.exe scratch/sample_lab/estimators.py
+    .venv312/Scripts/python.exe labs/sample_lab/estimators.py
 
 Metric: score = 100 * Pearson(est, exact)^2 over the full vector of one sample; also
 max abs error of the estimator values themselves (not affine-rescaled).

@@ -14,7 +14,7 @@ MPS and PPS discard different information: finite-bond MPS compresses the evolvi
 
 ### Inferences
 - For an OTOC echo, increased state entanglement may make the MPS branch hard, while spreading of the measured operator into many small Pauli coefficients may make PPS hard. These are related to scrambling but are not identical diagnostics; a Clifford-rich, highly entangling circuit can be easy for PPS and hard for low-bond MPS, while a low-entanglement, strongly non-Clifford circuit can show the opposite.
-- Divergence can be strongly nonuniform over qubits because each requested observable checks a different operator trajectory. “Converged qubit count” should therefore be evaluated with per-qubit gaps and a circuit-vector diagnostic, rather than a single circuit average.
+- Divergence can be strongly nonuniform over qubits because each requested observable follows a different operator trajectory. “Converged qubit count” should therefore be evaluated with per-qubit gaps and a circuit-vector diagnostic, rather than a single circuit average.
 
 ### Gaps
 - I found no original source that gives a universal, or BlueQubit OTOC-specific, distribution of paired MPS–PPS pointwise differences. It must be measured at matched target rows on the two exact sample circuits and updated on hidden-circuit sweeps.

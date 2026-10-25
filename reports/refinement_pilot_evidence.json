@@ -182,7 +182,7 @@
       }
     }
   ],
-  "tentative_probes": [
+  "tentative_checks": [
     {
       "priority": 1,
       "circuit_id": "Duke_G2_9",
@@ -730,7 +730,7 @@
       "uploaded_bytes_independently_verified": false,
       "current_account_submission_established": false,
       "current_account_score_established": false,
-      "allowed_use": "Documented whole-problem refinement allocation only; do not infer per-ID hidden labels, fit outputs, or check the scorer."
+      "allowed_use": "Documented whole-problem refinement allocation only; do not infer per-ID hidden labels, fit outputs, or game the scorer."
     }
   ],
   "allocation_update": {
@@ -742,7 +742,7 @@
     "no_label_inference": true,
     "outputs_remain_direct": true
   },
-  "superseded_probe_timeout_proposals": {
+  "superseded_check_timeout_proposals": {
     "reason": "Released targeted CPU diagnostics now separate quote admission from elapsed cancellation requests.",
     "previous_hard_execution_caps_seconds": {
       "G4_q0_chi64": 2100,
