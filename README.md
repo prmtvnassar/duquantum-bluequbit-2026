@@ -1,5 +1,7 @@
 ﻿# BlueQubit Duke OTOC challenge
 
+*Our team account is Kevin Zhu* on [Leaderboards](https://app.bluequbit.io/hackathons/2GMaAenu3iSsIC6Z?page=1&tab=leaderboard&viewUniversity=true)
+
 Estimating `⟨Z_q⟩` for hidden OTOC(2) echo circuits (U, X_b, U†, Z_q, U, X_b, U†) that can only be run
 by ID on BlueQubit's simulators: exact statevector (up to 34 qubits), MPS (bond dimension χ) and Pauli-path
 propagation (PPS, threshold ε). Start with [FRAMEWORK.md](FRAMEWORK.md): how we chose between MPS and PPS,
