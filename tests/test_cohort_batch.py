@@ -344,7 +344,7 @@ class CohortBatchTests(TestCase):
         with TemporaryDirectory() as folder:
             adapter, _, _, _, controller = self.prepare(folder)
             imported = seed(adapter, "Duke_G3_0", cost=100)
-            imported.update(origin="collaborator_kevin", account_scope="collaborator; not current API account")
+            imported.update(origin="collaborator_teammate-1", account_scope="collaborator; not current API account")
             atomic_json(adapter.root / "remote_actions" / f"{digest(imported['action'])}.json", imported)
             result = controller().run()
             self.assertEqual(result["status"], "COMPLETE")

@@ -7,7 +7,7 @@ The original submitted files are already in Git. All three displayed 100/100 on 
 | S1 | [attempt-01.csv](../submissions/S1/attempt-01.csv) | [attempt-01.txt](../submissions/S1/attempt-01.txt) | Local Qiskit Aer exact statevector, independent Statevector cross-check. |
 | S2 | [attempt-01.csv](../submissions/S2/attempt-01.csv) | [attempt-01.txt](../submissions/S2/attempt-01.txt) | Local Qiskit Aer exact statevector. |
 | S3 | [attempt-01.csv](../submissions/S3/attempt-01.csv) | [attempt-01.txt](../submissions/S3/attempt-01.txt) | Independent local coefficient-cutoff PPS, epsilon 0.01, Qiskit optimization level 1, 100,000-term cap. |
-| G1 | [exact submitted vector](../submissions/teammates/kevin/G1/submitted-v1.csv) | [method explanation](../submissions/teammates/kevin/G1/submitted-v1.txt) | Kevin's exact BlueQubit CPU vector, matched against all 30 completed jobs; reported 100% score. The explanation was reconstructed from his code, not recovered verbatim from the website. |
+| G1 | [exact submitted vector](../submissions/teammates/teammate-1/G1/submitted-v1.csv) | [method explanation](../submissions/teammates/teammate-1/G1/submitted-v1.txt) | A teammate's exact BlueQubit CPU vector, matched against all 30 completed jobs; reported 100% score. The explanation was reconstructed from his code, not recovered verbatim from the website. |
 
 In the BlueQubit challenge's Submissions tab, upload the CSV for the matching sample problem, paste its entire explanation into **Briefly explain how you arrived at your answer**, submit once, and verify the displayed score and attempt number. A generated candidate does not count as a recorded website submission until that verification.
 
@@ -24,6 +24,6 @@ Linux/macOS equivalents use `python3.12 -m venv .venv312` and `.venv312/bin/pyth
 
 Each ID names a different program. Evaluate Z on the qubit named in the ID, with qubit zero at the rightmost Pauli position. Do not use one sample statevector to answer other IDs.
 
-The original S3 submission is an approximation: 100 is the displayed correlation score, not proof of zero absolute error. The tighter settings selected in [the final workflow](../workflow_final.md) are distinct from the method actually used in the original S3 upload. Use the matching explanation for whichever file you submit.
+The original S3 submission is an approximation: 100 is the displayed correlation score, not proof of zero absolute error. The tighter settings selected in [the final workflow](history/workflow_final_graded.md) are distinct from the method actually used in the original S3 upload. Use the matching explanation for whichever file you submit.
 
 Submission receipts in this repository describe the original submitter's observed attempts. Do not overwrite those with another account's attempt-1 history; retain a separate account-specific receipt when reporting a teammate's result. Never commit a BlueQubit token or copy one from someone else's environment.

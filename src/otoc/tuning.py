@@ -149,7 +149,7 @@ def tune(store, settings):
         "G4":{"primary":"pauli-path","chi":16,"epsilon":.001,"quality":"UNMATCHED_FAMILY",
               "reason":"Native MPS chi64 CPU/GPU quotes exceed the runtime/budget allocation. Use cheap PPS pilots and independent MPS chi16; neither has a matched G4 sample"}}
     calibrated["pilot_signal_gate"]=True
-    imported=Path("runs/imports/kevin/g1_exact_actions.json")
+    imported=Path("runs/imports/teammate-1/g1_exact_actions.json")
     if imported.exists():
         source=json.loads(imported.read_text())
         calibrated["completed_anchors"]={"G1":{"status":"EXACT_REUSED","rows":len(source["records"]),

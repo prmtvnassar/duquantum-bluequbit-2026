@@ -1,7 +1,7 @@
 """G4 'resid' candidates: project known-null directions out of the signal-carrying PPS vectors.
 
 Website feedback (2026-10-25 ~03:20 UTC, lexicographic display order): raw mps.cpu chi64 = 0/1000,
-geo-c9cd356165e4 = 2/1000, blend = 50/1000; earlier: mps.cpu chi32 = 0/1000, Kevin PPS 1e-4 = 133,
+geo-c9cd356165e4 = 2/1000, blend = 50/1000; earlier: mps.cpu chi32 = 0/1000, a teammate PPS 1e-4 = 133,
 PPS + MPS256 on q0-q9 = 165. A vector scoring 0-2 over 38 rows has |rho| <= ~0.045 with the
 reference, so the MPS vectors and geo are null directions. Regressing a signal vector on
 [1, chi32, chi64, geo] and keeping the residual removes variance that cannot be correlated with
@@ -20,7 +20,7 @@ def write(prefix, v, note, extra):
     (OUT / f"{tag}.json").write_text(json.dumps({"candidate": tag, "submitted": False, "values": [float(x) for x in v], **extra}, indent=2), encoding="utf-8")
     print("wrote", tag); return tag
 chi32 = load(REPO / "scratch/origin_g4/direct-930f7e5b7d14.csv"); chi64 = load(REPO / "submissions/candidates/G4/direct-8f66fe538349-score0.csv")
-geo = load(sorted(glob.glob(str(OUT / "geo-*.csv")))[-1]); pps = load(REPO / "scratch/origin_g4/kevin_pps_1e-4.csv"); v165 = load(REPO / "scratch/origin_g4/submitted-v1__3_.csv")
+geo = load(sorted(glob.glob(str(OUT / "geo-*.csv")))[-1]); pps = load(REPO / "scratch/origin_g4/teammate-1_pps_1e-4.csv"); v165 = load(REPO / "scratch/origin_g4/submitted-v1__3_.csv")
 X = np.column_stack([np.ones(38), chi32, chi64, geo])
 rho = lambda a, b: float(np.corrcoef(a, b)[0, 1])
 def residual(y):

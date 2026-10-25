@@ -5,14 +5,14 @@
   "scope": {
     "git_refs_at_observation": {
       "origin/main": "580776259bf3752bc55e152e1d4a73214960ba1c",
-      "origin/kevin/experiment": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
+      "origin/teammate-1/experiment": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
       "codex/graded-main_at_audit_start": "681828c7d176b49b0eac85b6341d71a654d35d6a",
       "main": "c37c361079ae7f7aa781da25fd611ba0fcb3f79a",
       "origin/backup/main-before-practice-2026-10-24_at_audit_start": "9cf240bff643e1892b779cd3d7617b71053507b5"
     },
     "latest_remote_heads_observed": {
       "main": "030518fc3d7a6256d9cdd276dfdf208eb655fe83",
-      "kevin/experiment": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa"
+      "teammate-1/experiment": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa"
     },
     "post_audit_score_claim": {
       "commit": "030518fc3d7a6256d9cdd276dfdf208eb655fe83",
@@ -128,8 +128,8 @@
     },
     {
       "problem": "G1",
-      "score_record": "kevin_G1_v1",
-      "owner": "kevin",
+      "score_record": "teammate-1_G1_v1",
+      "owner": "teammate-1",
       "score": 300,
       "maximum_points": 300,
       "percentage": 100.0
@@ -142,13 +142,13 @@
       "maximum_points": 600,
       "percentage": 96.5,
       "evidence_source": "repo_text_claim",
-      "higher_confidence_scored_receipt": "kevin_G2_v1",
-      "provenance_note": "579/600 is a repository text claim with unknown account and no website verification; Kevin's attributed chi128 498/600 has a scored receipt."
+      "higher_confidence_scored_receipt": "teammate-1_G2_v1",
+      "provenance_note": "579/600 is a repository text claim with unknown account and no website verification; a teammate's attributed chi128 498/600 has a scored receipt."
     },
     {
       "problem": "G3",
-      "score_record": "kevin_G3_v3",
-      "owner": "kevin",
+      "score_record": "teammate-1_G3_v3",
+      "owner": "teammate-1",
       "score": 773,
       "maximum_points": 800,
       "percentage": 96.625
@@ -172,10 +172,10 @@
       "G3": "No submitted-score evidence",
       "G4": "No account-attributed score evidence"
     },
-    "kevin": {
-      "G1": "kevin_G1_v1",
-      "G2": "kevin_G2_v1",
-      "G3": "kevin_G3_v3",
+    "teammate-1": {
+      "G1": "teammate-1_G1_v1",
+      "G2": "teammate-1_G2_v1",
+      "G3": "teammate-1_G3_v3",
       "S1": "Export exists; official score unknown",
       "S2": "Export exists; official score unknown",
       "S3": "No account-attributed official score evidence",
@@ -333,7 +333,7 @@
       },
       "method_note_origin": "prepared_explanation; website wording unconfirmed",
       "disputed": true,
-      "dispute": "Kevin explicitly attributes 498 to his different chi128 vector; historical unnamed-account report preserved without asserting the accounts are identical.",
+      "dispute": "A teammate explicitly attributes 498 to his different chi128 vector; historical unnamed-account report preserved without asserting the accounts are identical.",
       "sources": [
         {
           "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
@@ -343,9 +343,9 @@
       ]
     },
     {
-      "id": "kevin_G1_v1",
+      "id": "teammate-1_G1_v1",
       "problem": "G1",
-      "owner": "kevin",
+      "owner": "teammate-1",
       "score": 300,
       "maximum_points": 300,
       "percentage": 100.0,
@@ -357,7 +357,7 @@
       "upload_timestamp": null,
       "provenance_level": "teammate_branch_assertion",
       "independently_rechecked_this_audit": false,
-      "csv_path": "submissions/teammates/kevin/G1/submitted-v1.csv",
+      "csv_path": "submissions/teammates/teammate-1/G1/submitted-v1.csv",
       "sha256": "d6bbdea66362f95c58a6b4b06290f7b449636c9d4967fe9231c1fcacd003c6e2",
       "method": {
         "device": "cpu",
@@ -368,7 +368,7 @@
       "sources": [
         {
           "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
-          "path": "submissions/teammates/kevin/G1/submitted-v1.json",
+          "path": "submissions/teammates/teammate-1/G1/submitted-v1.json",
           "line": 8
         },
         {
@@ -377,12 +377,12 @@
           "line": 13
         }
       ],
-      "row_verification_key": "submissions/teammates/kevin/G1/submitted-v1.json"
+      "row_verification_key": "submissions/teammates/teammate-1/G1/submitted-v1.json"
     },
     {
-      "id": "kevin_G2_v1",
+      "id": "teammate-1_G2_v1",
       "problem": "G2",
-      "owner": "kevin",
+      "owner": "teammate-1",
       "score": 498,
       "maximum_points": 600,
       "percentage": 83.0,
@@ -394,7 +394,7 @@
       "upload_timestamp": null,
       "provenance_level": "teammate_branch_assertion",
       "independently_rechecked_this_audit": false,
-      "csv_path": "submissions/teammates/kevin/G2/submitted-v1.csv",
+      "csv_path": "submissions/teammates/teammate-1/G2/submitted-v1.csv",
       "sha256": "a92e6e44ef9d12d1272d8082b2b0fb5685dbaaa69bf76f00ae802d33bb893c13",
       "method": {
         "device": "mps.cpu",
@@ -405,7 +405,7 @@
       "sources": [
         {
           "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
-          "path": "submissions/teammates/kevin/G2/submitted-v1.json",
+          "path": "submissions/teammates/teammate-1/G2/submitted-v1.json",
           "line": 9
         },
         {
@@ -414,12 +414,12 @@
           "line": 13
         }
       ],
-      "row_verification_key": "submissions/teammates/kevin/G2/submitted-v1.json"
+      "row_verification_key": "submissions/teammates/teammate-1/G2/submitted-v1.json"
     },
     {
-      "id": "kevin_G3_v2",
+      "id": "teammate-1_G3_v2",
       "problem": "G3",
-      "owner": "kevin",
+      "owner": "teammate-1",
       "score": 534,
       "maximum_points": 800,
       "percentage": 66.75,
@@ -431,7 +431,7 @@
       "upload_timestamp": null,
       "provenance_level": "teammate_branch_assertion",
       "independently_rechecked_this_audit": false,
-      "csv_path": "submissions/teammates/kevin/G3/submitted-v2.csv",
+      "csv_path": "submissions/teammates/teammate-1/G3/submitted-v2.csv",
       "sha256": "33c9a6ac4d0e1b06ce9a79607c20a7ea4dd707e571061aeea7f031715075f7ef",
       "method": {
         "device": "pauli-path",
@@ -443,7 +443,7 @@
       "sources": [
         {
           "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
-          "path": "submissions/teammates/kevin/G3/submitted-v2.json",
+          "path": "submissions/teammates/teammate-1/G3/submitted-v2.json",
           "line": 9
         },
         {
@@ -452,12 +452,12 @@
           "line": 13
         }
       ],
-      "row_verification_key": "submissions/teammates/kevin/G3/submitted-v2.json"
+      "row_verification_key": "submissions/teammates/teammate-1/G3/submitted-v2.json"
     },
     {
-      "id": "kevin_G3_v3",
+      "id": "teammate-1_G3_v3",
       "problem": "G3",
-      "owner": "kevin",
+      "owner": "teammate-1",
       "score": 773,
       "maximum_points": 800,
       "percentage": 96.625,
@@ -469,7 +469,7 @@
       "upload_timestamp": null,
       "provenance_level": "teammate_branch_assertion",
       "independently_rechecked_this_audit": false,
-      "csv_path": "submissions/teammates/kevin/G3/submitted-v3.csv",
+      "csv_path": "submissions/teammates/teammate-1/G3/submitted-v3.csv",
       "sha256": "44fdbe227f1fede6b7abe04934dd375420c86a9427c69b760bb70c00e338d691",
       "method": {
         "device": "pauli-path",
@@ -481,7 +481,7 @@
       "sources": [
         {
           "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
-          "path": "submissions/teammates/kevin/G3/submitted-v3.json",
+          "path": "submissions/teammates/teammate-1/G3/submitted-v3.json",
           "line": 9
         },
         {
@@ -490,7 +490,7 @@
           "line": 22
         }
       ],
-      "row_verification_key": "submissions/teammates/kevin/G3/submitted-v3.json"
+      "row_verification_key": "submissions/teammates/teammate-1/G3/submitted-v3.json"
     },
     {
       "id": "original_G1_report",
@@ -583,14 +583,14 @@
       "upload_timestamp": null,
       "uploaded_bytes_independently_verified": false,
       "submission_confirmation_source": "User confirmed during the 2026-10-24 audit that the newest main G2 mixed-precision CSV was submitted; uploading account remains unknown.",
-      "rank_status": "Highest numerically reported G2 score; weaker repository text claim than Kevin's account-attributed chi128 498/600 scored receipt."
+      "rank_status": "Highest numerically reported G2 score; weaker repository text claim than a teammate's account-attributed chi128 498/600 scored receipt."
     }
   ],
-  "kevin_row_verification": {
-    "submissions/teammates/kevin/G1/submitted-v1.json": {
+  "teammate-1_row_verification": {
+    "submissions/teammates/teammate-1/G1/submitted-v1.json": {
       "receipt": {
         "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
-        "path": "submissions/teammates/kevin/G1/submitted-v1.json"
+        "path": "submissions/teammates/teammate-1/G1/submitted-v1.json"
       },
       "rows_verified": 30,
       "rows": [
@@ -1018,10 +1018,10 @@
       "total_recorded_credits": 0.0,
       "max_absolute_value_difference": 0.0
     },
-    "submissions/teammates/kevin/G2/submitted-v1.json": {
+    "submissions/teammates/teammate-1/G2/submitted-v1.json": {
       "receipt": {
         "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
-        "path": "submissions/teammates/kevin/G2/submitted-v1.json"
+        "path": "submissions/teammates/teammate-1/G2/submitted-v1.json"
       },
       "rows_verified": 36,
       "rows": [
@@ -1533,10 +1533,10 @@
       "total_recorded_credits": 0.0,
       "max_absolute_value_difference": 0.0
     },
-    "submissions/teammates/kevin/G3/submitted-v2.json": {
+    "submissions/teammates/teammate-1/G3/submitted-v2.json": {
       "receipt": {
         "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
-        "path": "submissions/teammates/kevin/G3/submitted-v2.json"
+        "path": "submissions/teammates/teammate-1/G3/submitted-v2.json"
       },
       "rows_verified": 36,
       "rows": [
@@ -2048,10 +2048,10 @@
       "total_recorded_credits": 0.0,
       "max_absolute_value_difference": 0.0
     },
-    "submissions/teammates/kevin/G3/submitted-v3.json": {
+    "submissions/teammates/teammate-1/G3/submitted-v3.json": {
       "receipt": {
         "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
-        "path": "submissions/teammates/kevin/G3/submitted-v3.json"
+        "path": "submissions/teammates/teammate-1/G3/submitted-v3.json"
       },
       "rows_verified": 36,
       "rows": [
@@ -4306,7 +4306,7 @@
     },
     {
       "problem": "G3",
-      "owner": "kevin",
+      "owner": "teammate-1",
       "label": "G3_v1",
       "submitted": false,
       "score": null,
@@ -4326,11 +4326,11 @@
   "contradictions_and_limits": [
     {
       "issue": "G2 498 attribution",
-      "finding": "Original chi32 receipt reports342/600. Older unnamed-teammate receipt assigns498/600 to identical chi32 bytes. Kevin explicitly says his498/600 belongs to different chi128 bytes. Prefer Kevin chi128 as highest specifically attributed G2 result; retain older report as disputed. Neither penalty nor account effects are established as an explanation.",
+      "finding": "Original chi32 receipt reports342/600. Older unnamed-teammate receipt assigns498/600 to identical chi32 bytes. A teammate explicitly says his498/600 belongs to different chi128 bytes. Prefer a teammate chi128 as highest specifically attributed G2 result; retain older report as disputed. Neither penalty nor account effects are established as an explanation.",
       "sources": [
         {
           "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
-          "path": "submissions/teammates/kevin/G2/submitted-v1.json",
+          "path": "submissions/teammates/teammate-1/G2/submitted-v1.json",
           "line": 343
         },
         {
@@ -4347,9 +4347,9 @@
     },
     {
       "issue": "Same numerical G3 vector, separate accounts",
-      "finding": "Original baseline and Kevin v2 have36 identical parsed values, but different SHA256 hashes/serialization and distinct job IDs. Only Kevin has a reported534/800 submission; do not transfer that score to the original account.",
+      "finding": "Original baseline and a teammate v2 have36 identical parsed values, but different SHA256 hashes/serialization and distinct job IDs. Only a teammate has a reported534/800 submission; do not transfer that score to the original account.",
       "original_sha256": "7ce7b051d0fa7f124e7329c93f15247f46f5b36b3ccfb407910dfebe80c71d7e",
-      "kevin_sha256": "33c9a6ac4d0e1b06ce9a79607c20a7ea4dd707e571061aeea7f031715075f7ef",
+      "teammate-1_sha256": "33c9a6ac4d0e1b06ce9a79607c20a7ea4dd707e571061aeea7f031715075f7ef",
       "max_absolute_value_difference": 0.0
     },
     {
@@ -4361,11 +4361,11 @@
         "line": 1,
         "evidence_source": "repo_text_claim"
       },
-      "higher_confidence_scored_receipt": "kevin_G2_v1"
+      "higher_confidence_scored_receipt": "teammate-1_G2_v1"
     },
     {
       "issue": "Score/index staleness",
-      "finding": "runs/submissions.csv at audited main does not index Kevin new G2/G3 receipt files; README and workflow descriptions may predate them. Individual immutable receipts and this ledger govern this audit."
+      "finding": "runs/submissions.csv at audited main does not index a teammate new G2/G3 receipt files; README and workflow descriptions may predate them. Individual immutable receipts and this ledger govern this audit."
     },
     {
       "issue": "Score is not numerical error",
@@ -4390,7 +4390,7 @@
       },
       "present_in_tips": [
         "origin/main",
-        "origin/kevin/experiment",
+        "origin/teammate-1/experiment",
         "codex/graded-main_at_audit_start",
         "main"
       ],
@@ -4449,7 +4449,7 @@
       },
       "present_in_tips": [
         "origin/main",
-        "origin/kevin/experiment",
+        "origin/teammate-1/experiment",
         "codex/graded-main_at_audit_start",
         "main"
       ],
@@ -4481,7 +4481,7 @@
       },
       "present_in_tips": [
         "origin/main",
-        "origin/kevin/experiment",
+        "origin/teammate-1/experiment",
         "codex/graded-main_at_audit_start",
         "main"
       ],
@@ -4513,7 +4513,7 @@
       },
       "present_in_tips": [
         "origin/main",
-        "origin/kevin/experiment",
+        "origin/teammate-1/experiment",
         "codex/graded-main_at_audit_start",
         "main"
       ],
@@ -4563,7 +4563,7 @@
       },
       "present_in_tips": [
         "origin/main",
-        "origin/kevin/experiment",
+        "origin/teammate-1/experiment",
         "codex/graded-main_at_audit_start",
         "main"
       ],
@@ -4613,7 +4613,7 @@
       },
       "present_in_tips": [
         "origin/main",
-        "origin/kevin/experiment",
+        "origin/teammate-1/experiment",
         "codex/graded-main_at_audit_start"
       ],
       "history_commits": [
@@ -4627,7 +4627,7 @@
       ]
     },
     {
-      "path": "submissions/teammates/kevin/G1/submitted-v1.csv",
+      "path": "submissions/teammates/teammate-1/G1/submitted-v1.csv",
       "git_blob": "5a037f6546585c25145c424322a1faa85e50c4b6",
       "sha256": "d6bbdea66362f95c58a6b4b06290f7b449636c9d4967fe9231c1fcacd003c6e2",
       "row_count": 30,
@@ -4635,11 +4635,11 @@
       "finite_values": true,
       "first_audited_source": {
         "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
-        "path": "submissions/teammates/kevin/G1/submitted-v1.csv"
+        "path": "submissions/teammates/teammate-1/G1/submitted-v1.csv"
       },
       "present_in_tips": [
         "origin/main",
-        "origin/kevin/experiment",
+        "origin/teammate-1/experiment",
         "codex/graded-main_at_audit_start",
         "main"
       ],
@@ -4659,7 +4659,7 @@
       ]
     },
     {
-      "path": "submissions/teammates/kevin/G2/submitted-v1.csv",
+      "path": "submissions/teammates/teammate-1/G2/submitted-v1.csv",
       "git_blob": "b460a74e3f15f92525a772f078beec1bad4d74e5",
       "sha256": "a92e6e44ef9d12d1272d8082b2b0fb5685dbaaa69bf76f00ae802d33bb893c13",
       "row_count": 36,
@@ -4667,7 +4667,7 @@
       "finite_values": true,
       "first_audited_source": {
         "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
-        "path": "submissions/teammates/kevin/G2/submitted-v1.csv"
+        "path": "submissions/teammates/teammate-1/G2/submitted-v1.csv"
       },
       "present_in_tips": [
         "origin/main"
@@ -4678,7 +4678,7 @@
       ]
     },
     {
-      "path": "submissions/teammates/kevin/G3/submitted-v2.csv",
+      "path": "submissions/teammates/teammate-1/G3/submitted-v2.csv",
       "git_blob": "a87936303fc65e990b0bf434f390bf7d8557a5e4",
       "sha256": "33c9a6ac4d0e1b06ce9a79607c20a7ea4dd707e571061aeea7f031715075f7ef",
       "row_count": 36,
@@ -4686,7 +4686,7 @@
       "finite_values": true,
       "first_audited_source": {
         "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
-        "path": "submissions/teammates/kevin/G3/submitted-v2.csv"
+        "path": "submissions/teammates/teammate-1/G3/submitted-v2.csv"
       },
       "present_in_tips": [
         "origin/main"
@@ -4697,7 +4697,7 @@
       ]
     },
     {
-      "path": "submissions/teammates/kevin/G3/submitted-v3.csv",
+      "path": "submissions/teammates/teammate-1/G3/submitted-v3.csv",
       "git_blob": "0ea344a52f5dba75da096c14effb9bc8ff830ae5",
       "sha256": "44fdbe227f1fede6b7abe04934dd375420c86a9427c69b760bb70c00e338d691",
       "row_count": 36,
@@ -4705,7 +4705,7 @@
       "finite_values": true,
       "first_audited_source": {
         "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
-        "path": "submissions/teammates/kevin/G3/submitted-v3.csv"
+        "path": "submissions/teammates/teammate-1/G3/submitted-v3.csv"
       },
       "present_in_tips": [
         "origin/main"
@@ -4728,7 +4728,7 @@
       },
       "present_in_tips": [
         "origin/main",
-        "origin/kevin/experiment",
+        "origin/teammate-1/experiment",
         "codex/graded-main_at_audit_start"
       ],
       "history_commits": [
@@ -4754,7 +4754,7 @@
         "path": "problems/05_graded_G2/mps_chi128_values.csv"
       },
       "present_in_tips": [
-        "origin/kevin/experiment"
+        "origin/teammate-1/experiment"
       ],
       "history_commits": [
         "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
@@ -4778,7 +4778,7 @@
         "path": "problems/06_graded_G3/pps_eps0.0003_level1_values.csv"
       },
       "present_in_tips": [
-        "origin/kevin/experiment"
+        "origin/teammate-1/experiment"
       ],
       "history_commits": [
         "ea163ebbd72db274f9dad56b48e3b45f48bf36fa"
@@ -4796,7 +4796,7 @@
         "path": "problems/06_graded_G3/pps_eps0.001_level1_values.csv"
       },
       "present_in_tips": [
-        "origin/kevin/experiment"
+        "origin/teammate-1/experiment"
       ],
       "history_commits": [
         "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
@@ -4819,7 +4819,7 @@
         "path": "submissions/G1_v1.csv"
       },
       "present_in_tips": [
-        "origin/kevin/experiment"
+        "origin/teammate-1/experiment"
       ],
       "history_commits": [
         "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
@@ -4845,7 +4845,7 @@
         "path": "submissions/S1_v1.csv"
       },
       "present_in_tips": [
-        "origin/kevin/experiment"
+        "origin/teammate-1/experiment"
       ],
       "history_commits": [
         "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
@@ -4872,7 +4872,7 @@
         "path": "submissions/S2_v1.csv"
       },
       "present_in_tips": [
-        "origin/kevin/experiment"
+        "origin/teammate-1/experiment"
       ],
       "history_commits": [
         "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
@@ -5016,12 +5016,12 @@
     {
       "source": {
         "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
-        "path": "submissions/teammates/kevin/G1/submitted-v1.json"
+        "path": "submissions/teammates/teammate-1/G1/submitted-v1.json"
       },
       "blob": "c9e2203dc671c8d2e56a261aff2fbfdfcd7718ea",
       "score_fields": {
         "problem": "G1",
-        "owner": "kevin",
+        "owner": "teammate-1",
         "submission_status": "REPORTED_SUBMITTED",
         "reported_score_fraction": 1.0,
         "maximum_points": 300,
@@ -5031,12 +5031,12 @@
     {
       "source": {
         "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
-        "path": "submissions/teammates/kevin/G2/submitted-v1.json"
+        "path": "submissions/teammates/teammate-1/G2/submitted-v1.json"
       },
       "blob": "40463bd626f760fa2f801e4801f3106fdd359022",
       "score_fields": {
         "problem": "G2",
-        "owner": "kevin",
+        "owner": "teammate-1",
         "submission_status": "REPORTED_SUBMITTED",
         "reported_displayed_score": 498,
         "maximum_points": 600,
@@ -5047,12 +5047,12 @@
     {
       "source": {
         "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
-        "path": "submissions/teammates/kevin/G3/submitted-v2.json"
+        "path": "submissions/teammates/teammate-1/G3/submitted-v2.json"
       },
       "blob": "dd29a0e25dc0b90584557c64958138398844a357",
       "score_fields": {
         "problem": "G3",
-        "owner": "kevin",
+        "owner": "teammate-1",
         "submission_status": "REPORTED_SUBMITTED",
         "reported_displayed_score": 534,
         "maximum_points": 800,
@@ -5063,12 +5063,12 @@
     {
       "source": {
         "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
-        "path": "submissions/teammates/kevin/G3/submitted-v3.json"
+        "path": "submissions/teammates/teammate-1/G3/submitted-v3.json"
       },
       "blob": "510a78126fb7cd3509afa6c0df86ec5af11400c8",
       "score_fields": {
         "problem": "G3",
-        "owner": "kevin",
+        "owner": "teammate-1",
         "submission_status": "REPORTED_SUBMITTED",
         "reported_displayed_score": 773,
         "maximum_points": 800,
@@ -5176,7 +5176,7 @@
     {
       "source": {
         "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
-        "path": "submissions/teammates/kevin/G2/submitted-v1.json"
+        "path": "submissions/teammates/teammate-1/G2/submitted-v1.json"
       },
       "blob": "40463bd626f760fa2f801e4801f3106fdd359022",
       "score_related_lines": [
@@ -5190,7 +5190,7 @@
         },
         {
           "line": 13,
-          "text": "  \"score_evidence\": \"Reported by Kevin from the website; not browser-verified by this tool\","
+          "text": "  \"score_evidence\": \"Reported by a teammate from the website; not browser-verified by this tool\","
         },
         {
           "line": 343,
@@ -5201,7 +5201,7 @@
     {
       "source": {
         "commit": "580776259bf3752bc55e152e1d4a73214960ba1c",
-        "path": "submissions/teammates/kevin/G2/submitted-v1.txt"
+        "path": "submissions/teammates/teammate-1/G2/submitted-v1.txt"
       },
       "blob": "2756ba70653f7f8bd7fa11788d8c81f24b9a5cb6",
       "score_related_lines": []
@@ -5309,7 +5309,7 @@
       "account_identity_inferred": false
     },
     {
-      "path": "D:/BluQubit/submissions/teammates/kevin/G1/submitted-v1.csv",
+      "path": "D:/BluQubit/submissions/teammates/teammate-1/G1/submitted-v1.csv",
       "sha256": "d6bbdea66362f95c58a6b4b06290f7b449636c9d4967fe9231c1fcacd003c6e2",
       "row_count": 30,
       "matches_tracked_sha256": true,
@@ -5619,9 +5619,9 @@
       "evidence_source": "teammate_report",
       "reported_score": 133,
       "maximum_points": 1000,
-      "csv_path": "submissions/teammates/kevin/G4/submitted-v1.csv",
-      "receipt_path": "submissions/teammates/kevin/G4/submitted-v1.json",
-      "note": "Kevin-reported G4 PPS epsilon 0.0001 level 3 score; all 38 row job IDs retained, website score not independently verified."
+      "csv_path": "submissions/teammates/teammate-1/G4/submitted-v1.csv",
+      "receipt_path": "submissions/teammates/teammate-1/G4/submitted-v1.json",
+      "note": "teammate-reported G4 PPS epsilon 0.0001 level 3 score; all 38 row job IDs retained, website score not independently verified."
     }
   ]
 }

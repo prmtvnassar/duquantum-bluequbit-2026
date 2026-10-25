@@ -36,7 +36,7 @@ def score_progress(problem):
 def action_history(root):
     records=[json.loads(p.read_text()) for p in (Path(root)/"remote_actions").glob("*.json")]
     if Path(root).resolve()==Path("results/workflow").resolve():
-        imported=Path("runs/imports/kevin/g1_exact_actions.json")
+        imported=Path("runs/imports/teammate-1/g1_exact_actions.json")
         if imported.exists():
             records.extend(json.loads(imported.read_text())["records"])
     return sorted(records,key=lambda r:r.get("updated_at") or r.get("requested_at") or "")

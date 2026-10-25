@@ -14,12 +14,12 @@
   "series": [
     {
       "version": "v2",
-      "csv_path": "submissions/teammates/kevin/G3/submitted-v2.csv",
+      "csv_path": "submissions/teammates/teammate-1/G3/submitted-v2.csv",
       "csv_sha256": "33c9a6ac4d0e1b06ce9a79607c20a7ea4dd707e571061aeea7f031715075f7ef",
-      "receipt_path": "submissions/teammates/kevin/G3/submitted-v2.json",
+      "receipt_path": "submissions/teammates/teammate-1/G3/submitted-v2.json",
       "receipt_sha256": "f38334f09b5233dede990e18da9fb6dd33b4ed3dfdf9cad6bb8ac16e9ea9a7ca",
       "receipt_csv_hash_matches": true,
-      "source_branch": "kevin/experiment",
+      "source_branch": "teammate-1/experiment",
       "source_commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
       "circuit_ids": [
         "Duke_G3_0",
@@ -152,19 +152,19 @@
       "epsilon": 0.001,
       "transpilation_level": 1,
       "device": "pauli-path",
-      "owner": "kevin",
+      "owner": "teammate-1",
       "reported_displayed_score": 534,
       "maximum_points": 800,
-      "score_evidence": "Reported by Kevin from the website; not browser-verified by this tool"
+      "score_evidence": "Reported by a teammate from the website; not browser-verified by this tool"
     },
     {
       "version": "v3",
-      "csv_path": "submissions/teammates/kevin/G3/submitted-v3.csv",
+      "csv_path": "submissions/teammates/teammate-1/G3/submitted-v3.csv",
       "csv_sha256": "44fdbe227f1fede6b7abe04934dd375420c86a9427c69b760bb70c00e338d691",
-      "receipt_path": "submissions/teammates/kevin/G3/submitted-v3.json",
+      "receipt_path": "submissions/teammates/teammate-1/G3/submitted-v3.json",
       "receipt_sha256": "46845248c15a3e541fbf1421c8c80a053c4a7ab96f6369b42e34c2763fbd8936",
       "receipt_csv_hash_matches": true,
-      "source_branch": "kevin/experiment",
+      "source_branch": "teammate-1/experiment",
       "source_commit": "ea163ebbd72db274f9dad56b48e3b45f48bf36fa",
       "circuit_ids": [
         "Duke_G3_0",
@@ -291,10 +291,10 @@
       "epsilon": 0.0003,
       "transpilation_level": 1,
       "device": "pauli-path",
-      "owner": "kevin",
+      "owner": "teammate-1",
       "reported_displayed_score": 773,
       "maximum_points": 800,
-      "score_evidence": "Reported by Kevin from the website; not browser-verified by this tool"
+      "score_evidence": "Reported by a teammate from the website; not browser-verified by this tool"
     }
   ],
   "normalization": "u = (v - mean(v)) / norm(v - mean(v), 2)",
@@ -338,10 +338,10 @@
   "hidden_reference_used": false,
   "predicted_score_calculated": false,
   "interpretation_limits": [
-    "Scores are reported by Kevin, not independently website-verified.",
+    "Scores are reported by a teammate, not independently website-verified.",
     "The comparison describes differences between two submitted profiles and does not establish a causal explanation for the score change.",
     "The fitted line uses only the two submitted profiles; it is not a hidden-reference accuracy estimate.",
     "Exact zero means a value exactly equal to 0.0 in the submitted CSV."
   ],
-  "suggested_caption": "G3 profiles submitted by Kevin using native Pauli path at transpilation level 1, with truncation thresholds 10^-3 (v2) and 3x10^-4 (v3). (a) Submitted Z-expectation values across 36 qubits; hollow markers denote exact CSV zeros. (b) Each vector is mean-centered and divided by its Euclidean norm. The dashed line marks identical normalized shape; the blue line is the positive-affine least-squares relation after normalization. Pearson r = 0.8917 and exact zeros decrease from nine to three. Kevin reported scores of 534/800 and 773/800, respectively. No hidden reference was used, and this comparison alone does not establish score causality."
+  "suggested_caption": "G3 profiles submitted by a teammate using native Pauli path at transpilation level 1, with truncation thresholds 10^-3 (v2) and 3x10^-4 (v3). (a) Submitted Z-expectation values across 36 qubits; hollow markers denote exact CSV zeros. (b) Each vector is mean-centered and divided by its Euclidean norm. The dashed line marks identical normalized shape; the blue line is the positive-affine least-squares relation after normalization. Pearson r = 0.8917 and exact zeros decrease from nine to three. A teammate reported scores of 534/800 and 773/800, respectively. No hidden reference was used, and this comparison alone does not establish score causality."
 }

@@ -7,10 +7,10 @@ Start with a problem. Each graded-problem guide links the result file, its expla
 | [S1](S1/) | 100/100, observed on the submission page | Exact sample: [CSV](S1/attempt-01.csv), [explanation](S1/attempt-01.txt), [receipt](S1/attempt-01.json) |
 | [S2](S2/) | 100/100, observed on the submission page | Exact sample: [CSV](S2/attempt-01.csv), [explanation](S2/attempt-01.txt), [receipt](S2/attempt-01.json) |
 | [S3](S3/) | 100/100, observed on the submission page | Local PPS sample: [CSV](S3/attempt-01.csv), [explanation](S3/attempt-01.txt), [receipt](S3/attempt-01.json) |
-| [G1](G1/README.md) | Kevin reports 300/300 | Exact CPU result; the original account also confirmed an upload, without a recorded score |
+| [G1](G1/README.md) | A teammate reports 300/300 | Exact CPU result; the original account also confirmed an upload, without a recorded score |
 | [G2](G2/README.md) | 581/600 in a repository commit message | MPS precision changes and three mixed vectors; account and job provenance for the 581 report remain unknown |
-| [G3](G3/README.md) | Kevin reports 773/800 | PPS threshold change from a scored 534/800 baseline |
-| [G4](G4/README.md) | Kevin reports 133/1000 | Pauli-path ε = 0.0001 vector, after an MPS candidate accepted at 0/1000 |
+| [G3](G3/README.md) | A teammate reports 773/800 | PPS threshold change from a scored 534/800 baseline |
+| [G4](G4/README.md) | 998/1000, website score | Score-feedback reconstruction of the reference direction from 44 uploaded vectors: [CSV](candidates/G4/final-1ef66acd204b-score998.csv), [method note](candidates/G4/final-1ef66acd204b-score998.txt), [campaign log](candidates/G4/CAMPAIGN_README.md); earlier a teammate's PPS vector at 133/1000 and an MPS candidate accepted at 0/1000 |
 
 The scores come from different accounts or from reports without an identified account. They cannot be combined into one official total. [Results and evidence](../docs/results.md) explains the source of each score and the remaining uncertainty. The [submission index](../runs/submissions.csv) lists each claim; its rows are not all website-verified attempts.
 

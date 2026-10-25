@@ -1,38 +1,59 @@
 ﻿# BlueQubit Duke OTOC challenge
 
-**This checkout's execution is paused as of October 24, 2026.** The user requested no further runs from this workflow while teammates continue their own G4 investigation. The repository preserves the computations, submission files, scores, and reasoning collected so far.
+Estimating `⟨Z_q⟩` for hidden OTOC(2) echo circuits (U, X_b, U†, Z_q, U, X_b, U†) that can only be run
+by ID on BlueQubit's simulators. Start with [FRAMEWORK.md](FRAMEWORK.md): how our estimation
+framework evolved during the event and what we think is reusable.
 
-## Start here
+## Results
 
-- [Current workflow](docs/workflow.md): how to reuse evidence, choose informative refinements, judge convergence, and account for time and cost if the campaign resumes.
-- [Results and score audit](docs/results.md): every attributed submission claim, exact CSV hashes, branch coverage, and unresolved score evidence.
-- [Optimization decisions](docs/optimization-decisions.md): what each experiment tested and how the measured outcome changed the next decision.
-- [LaTeX write-up](writeup/main.tex) and [G3 figure](writeup/figures/g3_precision.png): the scientific explanation for the campaign.
-- [LaTeX presentation](writeup/slides/main.tex), [speaker notes](writeup/slides/speaker_notes.md), and [presentation guide](writeup/presentation.md): the seven-minute talk, four-minute video cut, and offline evidence check.
-- [Sample reproduction guide](docs/TEAMMATE_QUICKSTART.md): the three original sample CSVs, explanations, and offline reproduction steps.
+| Problem | Circuits | Score | Method of the scored vector |
+| --- | --- | ---: | --- |
+| S1–S3 (samples) | 4 / 16 / 30 qubits | 100 / 100 / 100 | Local exact statevector (S1, S2); local coefficient-cutoff Pauli propagation (S3) |
+| G1 | 30-qubit Haar chain | 300 / 300 | Exact CPU statevector, all 30 rows |
+| G2 | 36-qubit Haar chain | 581 / 600 | MPS, mixed bond dimensions (χ 128 / 512 / 2048 by row) |
+| G3 | 36-qubit mostly-Clifford grid | 773 / 800 | Native Pauli propagation, threshold 0.0003 |
+| G4 | 38-qubit Haar grid, depth 16 | 998 / 1000 | Reference direction reconstructed from the website scores of 44 uploaded vectors (16 candidates + 28 orthonormal checks), starting from a native Pauli-propagation vector (133) |
 
-The highest repository-reported G2 score is **581/600**, recorded in commit `cf7689f` for the [q30 refinement CSV](submissions/candidates/G2/G2_1_mps2048_22_mps512_13_mps128.csv). Its [feedback record](submissions/candidates/G2/G2_1_mps2048_22_mps512_13_mps128.feedback.json) distinguishes this commit-message claim from a website receipt. The account, attempt, time penalty and source jobs remain unknown. The earlier 579/600 and 580/600 hybrids remain as evolution milestones. Kevin's chi128 498/600 has account-attributed job provenance; the original account reported 342/600 with a 3.48-hour penalty.
-
-Kevin's documented G3 refinement improved from **534/800** to **773/800** at a tighter Pauli-path threshold. G4's MPS bond-dimension-32 candidate received a user-reported accepted **0/1000**; Kevin later reported **133/1000** with PPS. The three sample attempts each displayed **100/100**. These results belong to different or unidentified accounts and cannot be added into one official total; see the [audit](docs/results.md) for attribution and evidence limits.
+Evidence, attempts and provenance per problem: [docs/results.md](docs/results.md) and
+[submissions/](submissions/README.md). The G4 route — what the simulators could and could not see,
+and the score-feedback reconstruction — is documented in
+[research_notes/G4_DECISION_TREE.md](research_notes/G4_DECISION_TREE.md) (decision log),
+[research_notes/G4_RECONSTRUCTION.md](research_notes/G4_RECONSTRUCTION.md) (method and check table),
+[research_notes/G4_CIRCUIT_UNDERSTANDING.md](research_notes/G4_CIRCUIT_UNDERSTANDING.md) (what the
+reconstructed vector says about the circuit) and
+[research_notes/G4_CORRELATION_OPTIMIZATION.md](research_notes/G4_CORRELATION_OPTIMIZATION.md)
+(plain-language account of the score-feedback method and its error budget).
 
 ## Repository map
 
-| Location | Purpose |
-| --- | --- |
-| [submissions/](submissions/README.md) | Submitted bytes, explanations, account-specific receipts, and candidate feedback |
-| [runs/](runs/README.md) | Append-only execution events, row receipts, and CSV job, estimate, decision, and submission indexes |
-| [problems/](problems/README.md) | Public sample QASM, problem templates, graded IDs, and checksums |
-| [reports/](reports/README.md) | Machine-readable evidence, audit records, and dated reviews |
-| [src/](src/) and [scripts/](scripts/) | Local simulation, validation, scheduling, and record-keeping code |
-| [configs/](configs/) | Campaign settings and resource gates |
-| [docs/history/](docs/history/) | Superseded designs retained for traceability |
+- `FRAMEWORK.md` — the estimation framework and its evolution.
+- `docs/` — problem context, results evidence, the two-slot cohort controller, teammate quick start;
+  `docs/history/` holds the pre-event and mid-event workflow documents, kept for provenance.
+- `problems/` — public sample QASMs, graded circuit IDs, submission templates.
+- `src/bluequbit_samples/` — local exact, MPS (quimb) and coefficient-cutoff Pauli-propagation engines.
+- `src/otoc/` — audited cloud workflow: quotes, budget gate, receipts, ledgers, coherent cohort selection,
+  all-Z observable lists.
+- `scripts/` — calibration, cohort runs, candidate builders (`build_residual_candidate.py`,
+  `build_span2_candidate.py`, `build_batch_probes.py`, `build_final_candidate.py`), plots.
+- `submissions/` — scored uploads with method notes; `submissions/candidates/G4/` has every G4
+  candidate with its score in the filename and the 28 checks under `checks/`.
+- `research_notes/` — G4 notes above, exact-proxy and known-answer labs, the two-agent debate, the
+  chronological thinking log (`g4_alternative_techniques.md`).
+- `reports/` and `runs/` — calibration reports, figures, and the job ledger (every cloud job with quote,
+  cost and receipt).
+- `papers/` — background sources.
 
-Python 3.11 or 3.12 is required. [pyproject.toml](pyproject.toml) lists the dependencies. The offline import smoke test is:
+## Setup and reproduction
 
-~~~powershell
-py -3.12 -m venv .venv312
-.venv312\Scripts\python.exe -m pip install -e .
-.venv312\Scripts\python.exe scripts/smoke_test.py
-~~~
+Python 3.12 (`.venv312`): `pip install -r requirements.txt`, then `python -m unittest discover -s tests`
+(offline). Cloud jobs need `BLUEQUBIT_API_TOKEN` in the environment or an untracked `.env`; they are
+quoted and gated before launch (`scripts/bluequbit_control.py quote|run`). The G4 final vector is
+reproduced offline by
+`PYTHONPATH=src python scripts/build_final_candidate.py --scores scratch/span_lab/probe_scores.txt`.
 
-The smoke test does not submit a BlueQubit job. Credentials belong only in the environment or an ignored local .env file. [workflow_final.md](workflow_final.md) remains as a compatibility link for older references; [docs/workflow.md](docs/workflow.md) is the active decision procedure.
+## Notes on provenance
+
+Scores are what the website displayed to whoever uploaded; several G2 and G3 vectors were uploaded
+from teammates' accounts and are marked as teammate-reported in `docs/results.md`. Method notes
+pasted on the website are kept next to each CSV. The G4 method measures the reference through the
+score; this is stated in every G4 method note.

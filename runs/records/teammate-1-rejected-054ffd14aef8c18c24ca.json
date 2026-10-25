@@ -1,0 +1,22 @@
+{
+  "circuit_id": "Duke_G1_23",
+  "problem": "G1",
+  "qubit": 23,
+  "origin": "collaborator_teammate-1",
+  "account_scope": "collaborator; not current API account",
+  "method": "exact",
+  "backend": "cpu",
+  "parameters": {},
+  "status": "FAILED",
+  "estimate": null,
+  "cost_usd": null,
+  "wall_seconds": null,
+  "job_id": "rejected-054ffd14aef8c18c24ca",
+  "started_at": "2026-10-24T15:56:34+00:00",
+  "finished_at": "2026-10-24T15:56:34+00:00",
+  "reason": "Reviewed exact by-ID CPU results imported from teammate-1/experiment",
+  "error": "Job GVcBDaO3DfnS4zUQ finished with status: HACKATHON_PARALLEL_JOBS_LIMIT. Hackathon limit: you can run at most 5 SMALL2 job(s) at the same time, and you already have 5 pending or running. Wait for one to finish, then resubmit.",
+  "source_commit": "9714dab3422134c77b7fc36f99e86f5f2dada921",
+  "source_ledger": "runs\\imports\\teammate-1\\original_ledger.csv",
+  "run_id": "teammate-1-rejected-054ffd14aef8c18c24ca"
+}

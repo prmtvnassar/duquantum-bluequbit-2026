@@ -19,7 +19,7 @@
     "max_difference_from_submitted_values": 0.0,
     "cloud_cost_usd": 0.0
   },
-  "kevin_G1_import": {
+  "teammate-1_G1_import": {
     "rows": 30,
     "csv_matches_main_and_source_ledger": true,
     "jobs_imported": 60,

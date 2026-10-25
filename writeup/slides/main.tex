@@ -117,7 +117,7 @@ The geometric/Aitken forecast missed both held-out precision levels. We disabled
 Saved vector & Score & Source \\
 \midrule
 CPU MPS $\chi=32$ & 342/600 & Original account, first attempt; 3.48 h penalty \\
-CPU MPS $\chi=128$ & 498/600 & Kevin's reported score; all 36 rows linked to jobs \\
+CPU MPS $\chi=128$ & 498/600 & a teammate's reported score; all 36 rows linked to jobs \\
 23 rows $\chi=512$, 13 rows $\chi=64$ & 579/600 & Repository text; user confirmed submission \\
 Later 23/13 mixed file & 580/600 & Commit-message claim; 23 values unchanged, 13 changed \\
 Claimed q30 $\chi=2048$ refinement & 581/600 & Commit-message claim; only q30 changed from the 580 file \\
@@ -134,7 +134,7 @@ Claimed q30 $\chi=2048$ refinement & 581/600 & Commit-message claim; only q30 ch
 \end{frame}
 
 \begin{frame}{G3: fix representation, then tighten the threshold}
-\eyebrow{Two complete scored vectors from Kevin at native PPS level 1}
+\eyebrow{Two complete scored vectors from a teammate at native PPS level 1}
 \begin{columns}[T,onlytextwidth]
 \column{.72\textwidth}
 \includegraphics[width=\linewidth]{g3_values.png}
@@ -147,11 +147,11 @@ Claimed q30 $\chi=2048$ refinement & 581/600 & Commit-message claim; only q30 ch
 {\small\bfseries +239 reported points}\par\vspace{.18cm}
 {\scriptsize The two saved vectors have $\rho=0.89169$; this compares approximations, not either one with the hidden answer.}
 \end{columns}
-\source{Hash-checked CSVs and receipts in \texttt{submissions/teammates/kevin/G3/}; figure from \texttt{render\_figures.py}.}
+\source{Hash-checked CSVs and receipts in \texttt{submissions/teammates/teammate-1/G3/}; figure from \texttt{render\_figures.py}.}
 \end{frame}
 
 \begin{frame}{G4: a zero score and a later PPS result}
-\eyebrow{MPS $\chi=32$: accepted, user-reported 0/1000; Kevin's PPS: reported 133/1000}
+\eyebrow{MPS $\chi=32$: accepted, user-reported 0/1000; a teammate's PPS: reported 133/1000}
 \begin{columns}[T,onlytextwidth]
 \column{.70\textwidth}
 \includegraphics[width=\linewidth]{g4_trends.png}
@@ -161,8 +161,8 @@ Four targeted CPU rows at $\chi=16,32,64$ changed differently. q1 reverses direc
 On ten matched $\chi=16/32$ rows, the affine residual retains 26.19\% of centered energy; 12 of 45 pairs reverse order.
 \end{columns}
 \vspace{.12cm}
-\caveat{Level-1 PPS q4 stayed zero as compute grew 33.4-fold. Kevin's later level-3 PPS vector had four zeros and a reported 133/1000, but q37 still moved at finer precision. These are different accounts and settings.}
-\source{\texttt{submissions/G4/README.md}; \texttt{reports/g4\_partial\_trend\_review.json}; Kevin's G4 receipt.}
+\caveat{Level-1 PPS q4 stayed zero as compute grew 33.4-fold. A teammate's later level-3 PPS vector had four zeros and a reported 133/1000, but q37 still moved at finer precision. These are different accounts and settings.}
+\source{\texttt{submissions/G4/README.md}; \texttt{reports/g4\_partial\_trend\_review.json}; a teammate's G4 receipt.}
 \end{frame}
 
 \begin{frame}{A decision is useful if its outcome changes the next step}
@@ -171,7 +171,7 @@ On ten matched $\chi=16/32$ rows, the affine residual retains 26.19\% of centere
 \column{.53\textwidth}
 \small
 \begin{enumerate}
-\item Reuse complete evidence. Kevin's exact G1 vector avoided 30 repeated runs.
+\item Reuse complete evidence. A teammate's exact G1 vector avoided 30 repeated runs.
 \item Test representation and informative rows before increasing precision everywhere.
 \item Compare signed changes, shape residuals, job cost, and elapsed time. Record why work stops.
 \end{enumerate}
@@ -199,13 +199,13 @@ Pre-challenge design & \texttt{8fac5d9:estimation\_workflow\_v0.md} \\
 Scoring and attribution & \texttt{docs/results.md}; \texttt{submissions/README.md} \\
 S2 extrapolation test & \texttt{reports/extrapolation\_rejection.json} \\
 G2 progression & \texttt{submissions/G2/README.md}; linked CSVs and feedback \\
-G3 threshold comparison & Kevin's v2/v3 CSVs and receipts; \texttt{render\_figures.py} \\
+G3 threshold comparison & a teammate's v2/v3 CSVs and receipts; \texttt{render\_figures.py} \\
 G4 failure and diagnostics & \texttt{submissions/G4/README.md}; \texttt{runs/jobs.csv} \\
 Resource tradeoff & \texttt{reports/gpu\_matched\_pilot.json}; \texttt{docs/workflow.md} \\
 \bottomrule
 \end{tabular}
 \vspace{.25cm}
-\caveat{The highest G2 reports lack a saved website receipt and row provenance. G4's zero is user-reported. Kevin's G3 results are teammate-reported with retained row records.}
+\caveat{The highest G2 reports lack a saved website receipt and row provenance. G4's zero is user-reported. A teammate's G3 results are teammate-reported with retained row records.}
 \end{frame}
 
 \end{document}

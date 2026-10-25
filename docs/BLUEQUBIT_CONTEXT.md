@@ -1,6 +1,6 @@
 # BlueQubit / DuQuantum context
 
-The current operational policy is [workflow_final.md](../workflow_final.md). This page explains the physical task; superseded interface assumptions are retained only in docs/history.
+The current operational policy is [docs/history/workflow_final_graded.md](history/workflow_final_graded.md). This page explains the physical task; superseded interface assumptions are retained only in docs/history.
 
 The released challenge has three public samples (50 independent programs) and four graded problems (140 ID-only programs). Each target is the expectation of Z on the qubit named in its ID after running that program from the all-zero state. The downloaded circuit already contains the intended echo; do not add another OTOC construction.
 

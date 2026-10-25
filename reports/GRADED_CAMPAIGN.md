@@ -5,10 +5,10 @@ cohorts for G2/G4, and complete native CPU Pauli-path threshold 0.001 at
 transpilation level 1 for G3. These are provisional direct estimates. Native
 precision sensitivity is unresolved, and no hidden-circuit accuracy guarantee
 follows from the current pilots. The operational policy is
-[../workflow_final.md](../workflow_final.md).
+[../docs/history/workflow_final_graded.md](../docs/history/workflow_final_graded.md).
 
 The user confirmed G1 submission, recorded separately in
-`submissions/G1/user-reported-submission.json`. Kevin's reported G1 score is not
+`submissions/G1/user-reported-submission.json`. A teammate's reported G1 score is not
 an independently observed score from this campaign. Browser site access remains
 blocked. G2-G4 generated CSVs are candidates, with official upload status and
 scores unverified. Compute continues through the previously authorized SDK;

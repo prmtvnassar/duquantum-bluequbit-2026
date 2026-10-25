@@ -262,5 +262,5 @@ are retained without exception bodies or raw SDK responses.
 A `COMPLETE` status means that a fixed direct cohort is complete. It does not mean
 convergence, a confirmed upload or a verified official score. Scientific selection
 and submission evidence remain governed by
-[../workflow_final.md](../workflow_final.md) and
+[history/workflow_final_graded.md](history/workflow_final_graded.md) and
 [../reports/GRADED_CAMPAIGN.md](../reports/GRADED_CAMPAIGN.md).

@@ -35,7 +35,7 @@ Use native bond dimension and PPS options on matched IDs, with the existing cost
 - G4's matched chi16/chi32 subset has rho .8591218413, residual energy .26190966 and 12/45 order reversals. The q4/q0 rows account for 60.49% of its residual energy. - [Saved numerical review](<C:/Users/youss/.codex/worktrees/graded-main/BluQubit/reports/G4_PARTIAL_TREND_REVIEW.md>)
 - The saved G4 q0 chi32 CPU/GPU values differ by 6.63e-12. Compute times are 48.593/24.189 seconds, elapsed times 55.055394/44.803906 seconds, and charges $0/$0.20. - [Matched pilot](<C:/Users/youss/.codex/worktrees/graded-main/BluQubit/reports/gpu_matched_pilot.json>)
 - The retained G2 review identifies q9 as an unsaturated transition row at chi32 .49444184, more informative than another saturated endpoint. Its older 498/600 outcome is explicitly teammate-attributed. - [Saved refinement review](<C:/Users/youss/.codex/worktrees/graded-main/BluQubit/reports/REFINEMENT_REVIEW.md>)
-- The current operating guide requires coherent single-device, identical-options cohorts, $27 exposure protection, fresh quotes and terminal cost reconciliation; GPU and CPU routes are separate cohorts. It documents exact GPU rejection for 36/38-qubit IDs. - [Operating guide](<C:/Users/youss/.codex/worktrees/graded-main/BluQubit/workflow_final.md>)
+- The current operating guide requires coherent single-device, identical-options cohorts, $27 exposure protection, fresh quotes and terminal cost reconciliation; GPU and CPU routes are separate cohorts. It documents exact GPU rejection for 36/38-qubit IDs. - [Operating guide](../../docs/history/workflow_final_graded.md)
 
 ### Inferences
 - Rank offline review of complete G3 first; then the bounded G4 three-job window; conditional matched GPU chi64 feasibility; broader G4 panel; G2 q9 chi64 and transition panel; G3 .001/.0005 at fixed level1. Adapt to actual quote and pilot outcomes rather than a precommitted full sweep.
@@ -57,7 +57,7 @@ Treat the paper as a useful set of hypotheses and experimental controls. Neither
 - The protocol uses five runs per configuration and plotted means; native MPS CPU/GPU holds implementation fixed, while cross-vendor comparisons also change hardware/software. Pages 3-5. - [Supplied primary source](<D:/BluQubit/papers/alternative approaches.pdf>)
 - The paper uses two-core native MPS/PPS CPU, a 16 GB laptop for local PPS, A100 for MPS GPU, and H100/H200/MI300X for PPS GPU comparisons. Pages 3-4 and 12. - [Supplied primary source](<D:/BluQubit/papers/alternative approaches.pdf>)
 - All authors are BlueQubit-affiliated; symmetric cost accounting and compile/transpile time are omitted. cuPauliProp points are inferred from external speedup ratios rather than directly measured, with unspecified comparison accelerator. Pages 10-13. - [Supplied primary source](<D:/BluQubit/papers/alternative approaches.pdf>)
-- The campaign's shape diagnostic deliberately removes common offset/positive scale and treats correlation between approximations as sensitivity, not score prediction. - [Operating guide](<C:/Users/youss/.codex/worktrees/graded-main/BluQubit/workflow_final.md>)
+- The campaign's shape diagnostic deliberately removes common offset/positive scale and treats correlation between approximations as sensitivity, not score prediction. - [Operating guide](../../docs/history/workflow_final_graded.md)
 
 ### Inferences
 - GPU agreement at fixed chi supports implementation consistency, not closeness to exact values. Higher chi can move signs or order without guaranteeing a better grade.

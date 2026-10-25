@@ -2,7 +2,7 @@
   "event_id": "62da88fd4f0f4b079197668d20effd72",
   "recorded_at": "2026-10-24T16:47:59.207982+00:00",
   "kind": "run_state",
-  "run_id": "kevin-rejected-4b3dfb7513979bc37afa",
+  "run_id": "teammate-1-rejected-4b3dfb7513979bc37afa",
   "status": "FAILED",
   "previous_status": null
 }

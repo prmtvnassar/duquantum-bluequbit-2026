@@ -21,7 +21,7 @@
 \maketitle
 \vspace{-1em}
 \begin{abstract}
-Before the challenge, we designed a framework for allocating computation across matrix product state and Pauli-path approximations. Sample calibration and graded submissions then changed how we selected representations, tested precision, and decided whether further computation was useful. Reusing exact results supplied G1's reported 300/300. Kevin's G3 threshold refinement raised his reported score from 534/800 to 773/800. Repository reports place three mixed-precision G2 files at 579/600, 580/600 and 581/600, although their accounts and source jobs remain unresolved. An accepted G4 MPS candidate scored zero; Kevin later reported 133/1000 with PPS. Held-out tests gave no support for extrapolation or fusion. We use these outcomes to document the framework's development. Its performance against other allocation policies under equal budgets remains unmeasured.
+Before the challenge, we designed a framework for allocating computation across matrix product state and Pauli-path approximations. Sample calibration and graded submissions then changed how we selected representations, tested precision, and decided whether further computation was useful. Reusing exact results supplied G1's reported 300/300. A teammate's G3 threshold refinement raised his reported score from 534/800 to 773/800. Repository reports place three mixed-precision G2 files at 579/600, 580/600 and 581/600, although their accounts and source jobs remain unresolved. An accepted G4 MPS candidate scored zero; a teammate later reported 133/1000 with PPS. Held-out tests gave no support for extrapolation or fusion. We use these outcomes to document the framework's development. Its performance against other allocation policies under equal budgets remains unmeasured.
 \end{abstract}
 
 \section{Observable and scoring objective}
@@ -31,7 +31,7 @@ Each published identifier \file{Duke_<problem>_<q>} denotes a separate program, 
 \end{equation}
 The SDK's Pauli string places qubit zero at the right. Correct ID coverage, observable construction, and ordering were prerequisites to every numerical comparison. The public samples contain 4, 16, and 30 IDs; G1 to G4 contain 30, 36, 36, and 38. Only the samples expose circuit QASM.\cite{challenge}
 
-The two approximation families compress different objects. MPS represents the state by a chain of tensors; its bond dimension $\chi$ limits the Schmidt rank retained across each cut. Increasing $\chi$ allows more entanglement to be represented but does not by itself certify the target observable. PPS propagates an observable as a sum $O=\sum_P c_P P$ of Pauli strings. Clifford conjugation maps a Pauli string to another Pauli string, whereas non-Clifford gates can branch that expansion. Removing small coefficients controls its size while changing cancellations and the final expectation. This explains our chain-versus-mostly-Clifford method prior, and why a PPS coefficient threshold is not a final-observable error bound.\cite{design,kevin}
+The two approximation families compress different objects. MPS represents the state by a chain of tensors; its bond dimension $\chi$ limits the Schmidt rank retained across each cut. Increasing $\chi$ allows more entanglement to be represented but does not by itself certify the target observable. PPS propagates an observable as a sum $O=\sum_P c_P P$ of Pauli strings. Clifford conjugation maps a Pauli string to another Pauli string, whereas non-Clifford gates can branch that expansion. Removing small coefficients controls its size while changing cancellations and the final expectation. This explains our chain-versus-mostly-Clifford method prior, and why a PPS coefficient threshold is not a final-observable error bound.\cite{design,teammate-1}
 
 The retained challenge rules award a problem of weight $w_c$ the score
 \begin{equation}
@@ -84,7 +84,7 @@ The framework combines established MPS, PPS, residual analysis, and adaptive all
 
 \newpage
 \section{Results and the evidence supporting them}
-Table~\ref{tab:results} lists recorded submission outcomes and their sources. ``Original'' denotes the original submitting account; ``Kevin'' denotes his imported record. The ledger retains file hashes and available row provenance.\cite{ledger,kevin}
+Table~\ref{tab:results} lists recorded submission outcomes and their sources. ``Original'' denotes the original submitting account; ``a teammate'' denotes his imported record. The ledger retains file hashes and available row provenance.\cite{ledger,teammate-1}
 
 \begin{table}[h!]
 \centering
@@ -94,45 +94,45 @@ Table~\ref{tab:results} lists recorded submission outcomes and their sources. ``
 Problem & Retained method or artifact & Score & Evidence and status \\
 \midrule
 S1 to S3 & S1/S2 local exact; S3 local PPS, $\eps=0.01$ & 100/100 each & Original; browser-observed submissions. \\
-G1 & Exact CPU, 30 rows & 300/300 & Kevin; teammate-reported. Original account separately confirmed submission; its score is unknown. \\
+G1 & Exact CPU, 30 rows & 300/300 & a teammate; teammate-reported. Original account separately confirmed submission; its score is unknown. \\
 G2 & CPU MPS, $\chi=32$ & 342/600 & Original; user-reported first attempt, 3.48-hour time penalty. \\
-G2 & CPU MPS, $\chi=128$ & 498/600 & Kevin; teammate-reported, with distinct verified CSV and job provenance. \\
-G3 & Native PPS, level 1, $\eps=0.001$ & 534/800 & Kevin; teammate-reported submitted v2. \\
-G3 & Native PPS, level 1, $\eps=0.0003$ & \textbf{773/800} & Kevin; teammate-reported submitted v3. \\
+G2 & CPU MPS, $\chi=128$ & 498/600 & a teammate; teammate-reported, with distinct verified CSV and job provenance. \\
+G3 & Native PPS, level 1, $\eps=0.001$ & 534/800 & a teammate; teammate-reported submitted v2. \\
+G3 & Native PPS, level 1, $\eps=0.0003$ & \textbf{773/800} & a teammate; teammate-reported submitted v3. \\
 G4 & CPU MPS, $\chi=32$ & 0/1000 & User-reported accepted result; account and attempt unknown. \\
 G2 & Mixed $\chi=512/64$ vector & 579/600 & Repository text claim; user confirmed submission. Account, attempt, penalty, and row provenance unresolved. \\
 G2 & Mixed $\chi=512/128$ filename claim & 580/600 & Commit-message report; account, attempt, penalty, and source jobs unknown. \\
 G2 & Mixed file with q30 $\chi=2048$ claim & 581/600 & Commit-message report; 35 values unchanged from the 580 file; source job and account unknown. \\
-G4 & PPS level 3, $\eps=0.0001$ & 133/1000 & Kevin-reported, with 38 job references; website score not independently checked. \\
+G4 & PPS level 3, $\eps=0.0001$ & 133/1000 & teammate-reported, with 38 job references; website score not independently checked. \\
 \bottomrule
 \end{tabularx}
-\caption{Recorded outcomes as of the evidence snapshot. Displayed scores may be rounded. The three mixed G2 score claims have weaker provenance than Kevin's attributed receipts; rows from different accounts do not establish one account's total.}
+\caption{Recorded outcomes as of the evidence snapshot. Displayed scores may be rounded. The three mixed G2 score claims have weaker provenance than a teammate's attributed receipts; rows from different accounts do not establish one account's total.}
 \label{tab:results}
 \end{table}
 
-An older receipt attributed G2's 498/600 to the original $\chi=32$ bytes. Kevin's later record assigns it to his distinct $\chi=128$ file. That older attribution remains disputed; a time penalty cannot reconcile different score/file claims. The 342-to-498 comparison is consequently not a controlled same-account precision experiment. The original G3 $\eps=0.001$ candidate contains the same 36 numerical values as Kevin's v2, with different CSV serialization, but has no original-account submission score.\cite{ledger}
+An older receipt attributed G2's 498/600 to the original $\chi=32$ bytes. A teammate's later record assigns it to his distinct $\chi=128$ file. That older attribution remains disputed; a time penalty cannot reconcile different score/file claims. The 342-to-498 comparison is consequently not a controlled same-account precision experiment. The original G3 $\eps=0.001$ candidate contains the same 36 numerical values as a teammate's v2, with different CSV serialization, but has no original-account submission score.\cite{ledger}
 
 \subsection*{Sample calibration}
 Public circuits permitted comparison with independently computed exact values. A stricter local calibration selected S1 MPS $\chi=8$, S2 MPS $\chi=128$, and S3 PPS $\eps=0.001$, with maximum errors approximately $2.7\times10^{-15}$, $0.00329$, and $0.00653$. Those settings differ from the actual sample uploads in Table~\ref{tab:results}; a rounded 100/100 did not certify pointwise exactness.\cite{calibration}
 
-For G2's one-dimensional Haar chain, Kevin additionally built a 24-qubit proxy at the graded chain's depth. Its MPS squared correlation rose from about 0.997 at $\chi=64$ to 1.000 at $\chi=128$; PPS at $\eps=0.001$ reached about 0.974. For G3's mostly-Clifford grid, the structurally related S3 favored PPS over MPS. These tests supported \emph{which family to refine}. They did not forecast the graded scores, and no equally matched public family established a reliable prior for G4.\cite{kevin}
+For G2's one-dimensional Haar chain, a teammate additionally built a 24-qubit proxy at the graded chain's depth. Its MPS squared correlation rose from about 0.997 at $\chi=64$ to 1.000 at $\chi=128$; PPS at $\eps=0.001$ reached about 0.974. For G3's mostly-Clifford grid, the structurally related S3 favored PPS over MPS. These tests supported \emph{which family to refine}. They did not forecast the graded scores, and no equally matched public family established a reliable prior for G4.\cite{teammate-1}
 
 \newpage
 \section{Decisions behind the highest documented scores}
 \subsection{G1: reuse of exact results}
-G1's 30-qubit programs fitted the available exact CPU route. Kevin's complete vector had per-job evidence and a reported score of 300/300. Importing it avoided 30 duplicate simulations. The original account separately confirmed submission, but its score remains unknown.\cite{kevin,ledger}
+G1's 30-qubit programs fitted the available exact CPU route. A teammate's complete vector had per-job evidence and a reported score of 300/300. Importing it avoided 30 duplicate simulations. The original account separately confirmed submission, but its score remains unknown.\cite{teammate-1,ledger}
 
 \subsection{G2: precision and resource limits}
-Both the sample chain and depth-matched proxy favored MPS for G2. Kevin's submitted $\chi=128$ vector scored a reported 498/600 with account-attributed row receipts. A partial $\chi=256$ follow-up still moved q2 from approximately 0.916 to 0.854. Quotes near \$10.88 and seven hours for an interior job, and roughly \$360 for the full run, led him to stop. Those estimates were not incurred charges, and the stop left numerical convergence unresolved.\cite{kevin,ledger}
+Both the sample chain and depth-matched proxy favored MPS for G2. A teammate's submitted $\chi=128$ vector scored a reported 498/600 with account-attributed row receipts. A partial $\chi=256$ follow-up still moved q2 from approximately 0.916 to 0.854. Quotes near \$10.88 and seven hours for an interior job, and roughly \$360 for the full run, led him to stop. Those estimates were not incurred charges, and the stop left numerical convergence unresolved.\cite{teammate-1,ledger}
 
-Later analysis on the original account found that q0/q18/q35 gave $\rho\approx0.99999965$ between $\chi=16$ and 32 because saturated endpoints dominated the panel. Subsequent $\chi=64$ checks moved q9 from 0.494442 to 0.301455 and q31 from 0.551690 to 0.416197. The transition rows revealed sensitivity missed by the endpoints, motivating broader diagnostic selection. This analysis followed Kevin's 498/600 result.\cite{decisions,ledger}
+Later analysis on the original account found that q0/q18/q35 gave $\rho\approx0.99999965$ between $\chi=16$ and 32 because saturated endpoints dominated the panel. Subsequent $\chi=64$ checks moved q9 from 0.494442 to 0.301455 and q31 from 0.551690 to 0.416197. The transition rows revealed sensitivity missed by the endpoints, motivating broader diagnostic selection. This analysis followed a teammate's 498/600 result.\cite{decisions,ledger}
 
 Repository note \file{030518f} reports 579/600 for a complete $\chi=64$ baseline with 23 values replaced by completed GPU $\chi=512$ results. The user confirmed that CSV was submitted. Commit \file{e0ca909} adds \file{G2_23_512_and_13_128.csv} with a 580/600 message; 23 values remain unchanged while 13 change. Commit \file{cf7689f} then adds a third mixed CSV with a 581/600 message and a claimed $\chi=2048$ refinement at q30. That file differs from the 580 vector only at q30, which moves from 0.085805 to $-0.022471$. It is the highest repository-reported G2 result. The later variants lack the submitting account, attempt, penalty, website receipt, and row-to-job mapping. The records also leave the choice of the 23 rows unexplained. They motivate testing selective precision, but cannot establish its efficiency or a controlled score gain.\cite{ledger}
 
 \subsection{G3: resolve representation failure before tightening precision}
-PPS performance depended on a native transpilation option, not only its truncation threshold. At $\eps=0.01$, the known sample \file{Duke_S3_1} returned approximately $-0.595$ and $-0.580$ at native levels 0 and 1, versus an exact value near $-0.538$; levels 2 and 3 returned zero. Stored-ID and uploaded-QASM tests did not remove the behavior. Native default level 2 also yielded constant-zero G3 results in the recorded tests.\cite{kevin}
+PPS performance depended on a native transpilation option, not only its truncation threshold. At $\eps=0.01$, the known sample \file{Duke_S3_1} returned approximately $-0.595$ and $-0.580$ at native levels 0 and 1, versus an exact value near $-0.538$; levels 2 and 3 returned zero. Stored-ID and uploaded-QASM tests did not remove the behavior. Native default level 2 also yielded constant-zero G3 results in the recorded tests.\cite{teammate-1}
 
-We selected level 1 before tightening the threshold. Kevin suggested that lighter transpilation preserves useful Clifford structure, although the service's internal mechanism was not independently established. The measurements support this setting for the tested circuits.
+We selected level 1 before tightening the threshold. A teammate suggested that lighter transpilation preserves useful Clifford structure, although the service's internal mechanism was not independently established. The measurements support this setting for the tested circuits.
 
 \newpage
 \subsection{G3: refine the threshold while holding representation fixed}
@@ -149,12 +149,12 @@ $0.0003$ & 3/36 & 773/800 & $\rho^2\approx0.80$ \\
 \end{tabular}
 \end{center}
 
-This 239-point increase is the strongest retained graded improvement under a controlled threshold change on Kevin's submission path. Fewer exact zeros and stronger agreement between thresholds were consistent with resolving G3's small, shape-sensitive values. Those diagnostics supported refinement, but did not predict 773 or certify convergence. The submitted values came directly from the simulator.\cite{kevin,ledger}
+This 239-point increase is the strongest retained graded improvement under a controlled threshold change on a teammate's submission path. Fewer exact zeros and stronger agreement between thresholds were consistent with resolving G3's small, shape-sensitive values. Those diagnostics supported refinement, but did not predict 773 or certify convergence. The submitted values came directly from the simulator.\cite{teammate-1,ledger}
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=\textwidth,height=3.8in,keepaspectratio]{figures/g3_precision.png}
-\caption{Kevin's two submitted G3 vectors: raw expectations and centered, normalized profiles. Normalization means $(\mathbf v-\bar v\mathbf1)/\|\mathbf v-\bar v\mathbf1\|_2$ and is used only for display. The vectors have $\rho=0.89169$ and $\rho^2=0.79511$; exact zeros fall from nine to three. Scores 534/800 and 773/800 are Kevin-reported. No hidden reference is used in either plot, so this comparison describes shape evolution without establishing hidden error or score causality.}
+\caption{A teammate's two submitted G3 vectors: raw expectations and centered, normalized profiles. Normalization means $(\mathbf v-\bar v\mathbf1)/\|\mathbf v-\bar v\mathbf1\|_2$ and is used only for display. The vectors have $\rho=0.89169$ and $\rho^2=0.79511$; exact zeros fall from nine to three. Scores 534/800 and 773/800 are teammate-reported. No hidden reference is used in either plot, so this comparison describes shape evolution without establishing hidden error or score causality.}
 \label{fig:g3}
 \end{figure}
 
@@ -181,10 +181,10 @@ q19 & 0.362228 & 0.288101 & 0.084401 & Latest increment grows about 2.75-fold. \
 
 All four $\chi=64$ jobs completed within their diagnostic elapsed thresholds and recorded zero charge. Their feasibility left the cost and value of a full 38-row MPS run unresolved. A q4 check using native level-1 PPS returned zero at both $\eps=0.001$ and 0.0001, while compute time rose from 5.350 to 178.913 seconds, a factor of 33.4. That fixed-representation check gave little reason to tighten the threshold again at level 1.\cite{decisions,gpu}
 
-Kevin later submitted a complete PPS vector at $\eps=0.0001$ and native transpilation level 3, reporting 133/1000 with all 38 job references retained and four exact-zero entries. This was a different representation setting from the uninformative level-1 q4 check and the MPS vector that scored zero. Its account-specific report does not provide a controlled comparison with the earlier zero, nor establish convergence: Kevin's q37 test moved from about 0.020 at $\eps=0.0003$ to 0.099 at 0.0001. G4 remains a substantial numerical challenge.\cite{ledger,kevin}
+A teammate later submitted a complete PPS vector at $\eps=0.0001$ and native transpilation level 3, reporting 133/1000 with all 38 job references retained and four exact-zero entries. This was a different representation setting from the uninformative level-1 q4 check and the MPS vector that scored zero. Its account-specific report does not provide a controlled comparison with the earlier zero, nor establish convergence: a teammate's q37 test moved from about 0.020 at $\eps=0.0003$ to 0.099 at 0.0001. G4 remains a substantial numerical challenge.\cite{ledger,teammate-1}
 
 \subsection{Partial G3 work did not produce the best documented result}
-The original-account $\eps=0.0005$ G3 panel motivated a bounded continuation in an earlier review. That later cohort was stopped when the user changed direction, with 9 of 36 rows completed and two jobs canceled. The retained stop snapshot records no owned running jobs and known terminal costs; it does not represent a complete candidate or submission.\cite{stop} This work did not cause Kevin's 773/800: that finer, complete $\eps=0.0003$ vector was already available in his separate records. Reusing it supersedes the rationale for duplicating a coarser full cohort.\cite{ledger,decisions}
+The original-account $\eps=0.0005$ G3 panel motivated a bounded continuation in an earlier review. That later cohort was stopped when the user changed direction, with 9 of 36 rows completed and two jobs canceled. The retained stop snapshot records no owned running jobs and known terminal costs; it does not represent a complete candidate or submission.\cite{stop} This work did not cause a teammate's 773/800: that finer, complete $\eps=0.0003$ vector was already available in his separate records. Reusing it supersedes the rationale for duplicating a coarser full cohort.\cite{ledger,decisions}
 
 \subsection{Held-out tests of extrapolation and fusion}
 Offline geometric/Aitken extrapolation on saved S2 precision histories worsened held-out next-level MAE in both evaluated windows: 0.04676 versus 0.04447, and 0.01344 versus 0.00955 for the direct estimate. The second window also lost about 3.86 points against exact values. Leave-one-circuit-family-out fusion showed no held-out gain. Both remained disabled.\cite{rejections,calibration}
@@ -201,7 +201,7 @@ The supplied paper motivates testing GPU routes when they make finer approximati
 The campaign obtained dated GPU quotes, including PPS estimates of 0.1 seconds; measured runtime was still needed to assess them. No high-$\chi$ GPU or GPU-PPS score improvement was verified. Qiskit, Quantum Rings, Julia, and related local alternatives require gates or QASM, which the hidden circuits do not expose.\cite{gpu,decisions}
 
 \subsection{Cost evidence and stopping conditions remain separate}
-The operating budget was \$30, with a \$27 planning ceiling. Admission considered recorded charges and outstanding/new quoted commitments, not only settled spend. Samples recorded zero cloud charges; Kevin's submitted results report zero total credits; the original-account stop snapshot records \$0.20 in known charges, consistent with the matched GPU trial. These account-specific records are not a complete final billing statement or a promise that future CPU work is free. Quotes, elapsed cancellation thresholds, quota use, terminal status, and billed cost answer different questions.\cite{ledger,gpu,workflow,stop}
+The operating budget was \$30, with a \$27 planning ceiling. Admission considered recorded charges and outstanding/new quoted commitments, not only settled spend. Samples recorded zero cloud charges; a teammate's submitted results report zero total credits; the original-account stop snapshot records \$0.20 in known charges, consistent with the matched GPU trial. These account-specific records are not a complete final billing statement or a promise that future CPU work is free. Quotes, elapsed cancellation thresholds, quota use, terminal status, and billed cost answer different questions.\cite{ledger,gpu,workflow,stop}
 
 The saved workflow has status \file{PAUSED_NO_NEW_RUNS}. The following procedure incorporates the observations above; earlier experiments used earlier versions. If the user resumes execution:
 \begin{enumerate}
@@ -216,7 +216,7 @@ The saved workflow has status \file{PAUSED_NO_NEW_RUNS}. The following procedure
 The automated exporter currently requires a complete cohort with one device and identical options. Supporting the separately submitted G2 hybrids would require a row manifest and reproducible assembly. Their reported 579/600, 580/600 and 581/600 scores justify investigating that extension, while the missing source records prevent attribution of gains to a specific allocation rule. Format checks alone cannot establish numerical readiness. An early fallback also does not reduce the time penalty attached to a later best-scoring result.\cite{ledger,workflow,rules}
 
 \subsection{Limitations and further evaluation}
-The pre-challenge design, saved experiments, and successive revisions document how the team developed the procedure. Kevin's fixed-representation G3 refinement provides the clearest within-path graded improvement. The higher G2 reports have weaker attribution, and G4 remains unresolved.
+The pre-challenge design, saved experiments, and successive revisions document how the team developed the procedure. A teammate's fixed-representation G3 refinement provides the clearest within-path graded improvement. The higher G2 reports have weaker attribution, and G4 remains unresolved.
 
 We have not compared this framework with exhaustive precision sweeps, fixed allocation, or another adaptive policy under equal budgets. A prospective evaluation would fix public circuit families and resource budgets, hold out larger instances, and compare score, elapsed time, and cost. Removing representation tests, row selection, and shape diagnostics in separate experiments would help identify which decisions improve performance. These experiments remain proposed work.
 
@@ -225,9 +225,9 @@ We have not compared this framework with exhaustive precision sweeps, fixed allo
 \section{Reproducibility and evidence boundaries}
 All conclusions above use retained files; no simulation, quotation, submission, or authenticated account inspection was performed for this report. The result ledger is the current authority for account attribution. Older dated reviews preserve the reasoning available at the time, including proposals later superseded by terminal receipts, teammate imports, or the user-directed pause.
 
-To reproduce the audit offline, align each CSV to its published ID manifest, verify finite direct values and the intended observable, check its SHA256 against the receipt, and join rows to the recorded device/options/job IDs. Recompute comparisons only after aligning IDs. Byte equality and numerical equality are distinct: Kevin's G2 $\chi=128$ CSV begins with hash \file{a92e6e44}, the original $\chi=32$ CSV with \file{4cb0c3c1}, and Kevin's G3 v3 with \file{44fdbe22}. These prefixes are identifiers; complete hashes remain in the receipts. The script \file{writeup/figures/render_g3.py} checks source hashes and regenerates Fig.~\ref{fig:g3} from saved CSVs without simulation. Hidden circuit jobs require the organizer service for computational reproduction; their retained outputs permit independent audit of the reported comparisons.
+To reproduce the audit offline, align each CSV to its published ID manifest, verify finite direct values and the intended observable, check its SHA256 against the receipt, and join rows to the recorded device/options/job IDs. Recompute comparisons only after aligning IDs. Byte equality and numerical equality are distinct: a teammate's G2 $\chi=128$ CSV begins with hash \file{a92e6e44}, the original $\chi=32$ CSV with \file{4cb0c3c1}, and a teammate's G3 v3 with \file{44fdbe22}. These prefixes are identifiers; complete hashes remain in the receipts. The script \file{writeup/figures/render_g3.py} checks source hashes and regenerates Fig.~\ref{fig:g3} from saved CSVs without simulation. Hidden circuit jobs require the organizer service for computational reproduction; their retained outputs permit independent audit of the reported comparisons.
 
-Kevin's provenance records identify \file{kevin/experiment}; imported results were consolidated by commit \file{2a3eb2b}. The audit should preserve both original and teammate evidence rather than using one account's results to settle another's runtime state. The supplied paper's recorded SHA256 begins \file{97f009b8783e1695}; its retained reading notes identify arXiv:2607.09882v4, September 2, 2026, and report full-text reading with visual checks of pages 6 to 10. No external re-verification is implied.\cite{ledger,kevin,paper}
+A teammate's provenance records identify \file{teammate-1/experiment}; imported results were consolidated by commit \file{2a3eb2b}. The audit should preserve both original and teammate evidence rather than using one account's results to settle another's runtime state. The supplied paper's recorded SHA256 begins \file{97f009b8783e1695}; its retained reading notes identify arXiv:2607.09882v4, September 2, 2026, and report full-text reading with visual checks of pages 6 to 10. No external re-verification is implied.\cite{ledger,teammate-1,paper}
 
 \vspace{-0.3em}
 \begin{thebibliography}{13}
@@ -235,11 +235,11 @@ Kevin's provenance records identify \file{kevin/experiment}; imported results we
 \setlength{\itemsep}{3pt}
 \bibitem{challenge} BlueQubit, \emph{Duke Quantum Hackathon: released problems}, October 24, 2026. Retained inventory: \file{problems/README.md}. Official page: \url{https://app.bluequbit.io/hackathons/2GMaAenu3iSsIC6Z?tab=problems}.
 \bibitem{rules} BlueQubit, \emph{Overview and Rules}, retained October 24, 2026. Scoring and attempt rules transcribed in \file{docs/history/workflow_v1.md}, Sections 1 and 9. \url{https://app.bluequbit.io/hackathons/2GMaAenu3iSsIC6Z?tab=rules}.
-\bibitem{ledger} Team result audit, \file{docs/results.md}; immutable receipts under \file{submissions/}, \file{submissions/teammates/kevin/}, and \file{submissions/candidates/}.
-\bibitem{kevin} Kevin, \emph{Submissions: methods and reasoning}, \file{submissions/teammates/kevin/README.md}; G1/G2 \file{submitted-v1.json}, G2 \file{submitted-v1.txt}, and G3 \file{submitted-v2.json}, \file{submitted-v3.json}, and \file{submitted-v3.txt} in the corresponding problem directories.
+\bibitem{ledger} Team result audit, \file{docs/results.md}; immutable receipts under \file{submissions/}, \file{submissions/teammates/teammate-1/}, and \file{submissions/candidates/}.
+\bibitem{teammate-1} A teammate, \emph{Submissions: methods and reasoning}, \file{submissions/teammates/teammate-1/README.md}; G1/G2 \file{submitted-v1.json}, G2 \file{submitted-v1.txt}, and G3 \file{submitted-v2.json}, \file{submitted-v3.json}, and \file{submitted-v3.txt} in the corresponding problem directories.
 \bibitem{calibration} Sample calibration and held-out fusion evidence, \file{reports/calibration_evidence.json}; sample upload receipts, \file{submissions/S1/}, \file{submissions/S2/}, and \file{submissions/S3/}.
 \bibitem{decisions} \emph{Optimization decisions and their evidence}, \file{docs/optimization-decisions.md}; G2 selection detail, \file{reports/REFINEMENT_REVIEW.md}; dated allocation rationale, \file{reports/next_allocation_review.md}.
-\bibitem{g4} G4 subset analysis, \file{reports/G4_PARTIAL_TREND_REVIEW.md} and \file{reports/g4_partial_trend_review.json}; zero-score feedback, \file{submissions/candidates/G4/direct-930f7e5b7d14.feedback.json}; Kevin's PPS receipt, \file{submissions/teammates/kevin/G4/submitted-v1.json}.
+\bibitem{g4} G4 subset analysis, \file{reports/G4_PARTIAL_TREND_REVIEW.md} and \file{reports/g4_partial_trend_review.json}; zero-score feedback, \file{submissions/candidates/G4/direct-930f7e5b7d14.feedback.json}; a teammate's PPS receipt, \file{submissions/teammates/teammate-1/G4/submitted-v1.json}.
 \bibitem{rejections} Extrapolation evaluation, \file{reports/extrapolation_rejection.json}.
 \bibitem{gpu} Matched hardware evidence, \file{reports/gpu_matched_pilot.json}; dated quotes, \file{reports/alternative_gpu_quotes.json}; interpretive report, \file{reports/GPU precision recovery.md}. Later diagnostic updates are in Ref.~\cite{decisions}.
 \bibitem{paper} Mazumder et al., \emph{Benchmarking Zero-Setup Quantum Circuit Simulators}, supplied arXiv:2607.09882v4, September 2, 2026, especially pp.~6 to 11. \url{https://arxiv.org/abs/2607.09882}; retained reading notes: \file{research_notes/GPU precision recovery/paper_methods.md}.

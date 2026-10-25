@@ -1,0 +1,22 @@
+{
+  "circuit_id": "Duke_G1_28",
+  "problem": "G1",
+  "qubit": 28,
+  "origin": "collaborator_teammate-1",
+  "account_scope": "collaborator; not current API account",
+  "method": "exact",
+  "backend": "cpu",
+  "parameters": {},
+  "status": "COMPLETED",
+  "estimate": 0.9315943818989001,
+  "cost_usd": 0.0,
+  "wall_seconds": 57.087,
+  "job_id": "ciyPRzUyqLzY4ZJk",
+  "started_at": "2026-10-24T15:57:20+00:00",
+  "finished_at": "2026-10-24T15:58:21+00:00",
+  "reason": "Reviewed exact by-ID CPU results imported from teammate-1/experiment",
+  "error": "",
+  "source_commit": "9714dab3422134c77b7fc36f99e86f5f2dada921",
+  "source_ledger": "runs\\imports\\teammate-1\\original_ledger.csv",
+  "run_id": "teammate-1-ciyPRzUyqLzY4ZJk"
+}

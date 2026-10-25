@@ -43,7 +43,7 @@ def _complete(record):
 def _current_account(record):
     # Reviewed teammate imports are reusable estimates, not charges to this API
     # account. Unmarked local receipts remain current-account obligations.
-    return (record.get("origin") != "collaborator_kevin"
+    return (record.get("origin") != "collaborator_teammate-1"
             and record.get("account_scope") != "collaborator; not current API account")
 
 

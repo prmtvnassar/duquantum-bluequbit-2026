@@ -11,7 +11,7 @@ Re-run `PYTHONPATH=src .venv312/Scripts/python.exe scratch/pps_ladder_lab/analyz
   statevector, 48 s/row at 12 threads, 20 min/instance; seed 3 running). 4x7 (28 q) rejected: 4.3 GB state, x16 per gate and
   1.2x gates => ~12 h for 28 rows. Slack map: col 5 = 4, col 4 = 6, rest >= 8, so the rim (slack 3-7) is
   q4,q5,q10,q11,q16,q17,q22,q23 (8 of 24). Exact rims are 100 % negative, |v| 0.015-0.069 (s1) / 0.001-0.049 (s2); bulk |v| <= 0.009.
-- PG4c (32 q, Kevin's 5x6+2 G4-construction proxy; native exact, native PPS 1e-4/1e-3 L3, MPS128 in `scratch/pg4c.csv`)
+- PG4c (32 q, a teammate's 5x6+2 G4-construction proxy; native exact, native PPS 1e-4/1e-3 L3, MPS128 in `scratch/pg4c.csv`)
   reconstructed locally from the historical `scripts/make_proxy.py` (commit e6707fa; colour order H0,H1,V0,V1; qiskit
   `random_unitary(4, seed)` from `default_rng(5)`; `--extra 2` guessed as the 6x6 colour lists filtered to q<30 or q in {30,31}).
   Validation: local coefficient PPS L3 eps 1e-3 gives q5 -0.0267 / q10 -0.0192 / q11 +0.0060 vs native 1e-3 -0.0270 / -0.0149 /
@@ -63,7 +63,7 @@ PG4c (n=32): local 1e-3 314 (rho +0.56; 15 nonzero rows, 11/16 rim; rim sign agr
 only q5/q10 (-0.029/-0.027 vs exact -0.100/-0.079) and gives ~0 or the wrong sign on the other 9 rim rows with |exact| > 0.03
 (q16, q17, q23-q31); local 1e-3 shows exactly the same pattern. Local 3e-4 / 1e-4 rows pending.
 
-## 4. Verdict on native eps 3e-5 on G4's 16 rim rows
+## 4. Verdict on native eps 3e-5 on G4's rim rows (reported as 16 rows; the rim is 22 rows under the corrected count)
 
 1. The local kernel is a credible proxy for native (PG4c: same non-zero rows, signs and magnitudes at 1e-3).
 2. Each 3.3x step in eps raised the proxy score (213 -> 327 on s1; native 224 -> 301 on PG4c) by turning more rim rows non-zero

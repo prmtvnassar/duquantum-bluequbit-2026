@@ -1,6 +1,6 @@
 ﻿# Evidence and dated reviews
 
-The [current workflow](../docs/workflow.md), [decision history](../docs/optimization-decisions.md), and [results audit](../docs/results.md) are the starting points for interpreting results. Reports in this directory were written at different campaign stages. Older narrative reviews can describe then-pending jobs or superseded score attributions; their dated findings remain available for provenance.
+The [current workflow](../docs/history/evidence_driven_workflow.md), [decision history](../docs/history/optimization_decisions.md), and [results audit](../docs/results.md) are the starting points for interpreting results. Reports in this directory were written at different campaign stages. Older narrative reviews can describe then-pending jobs or superseded score attributions; their dated findings remain available for provenance.
 
 ## Machine-readable evidence
 

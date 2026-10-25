@@ -12,10 +12,10 @@ import numpy as np
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[1]
 G3_FILES = (
-    ("submissions/teammates/kevin/G3/submitted-v2.csv",
+    ("submissions/teammates/teammate-1/G3/submitted-v2.csv",
      "33c9a6ac4d0e1b06ce9a79607c20a7ea4dd707e571061aeea7f031715075f7ef",
      534, 0.001),
-    ("submissions/teammates/kevin/G3/submitted-v3.csv",
+    ("submissions/teammates/teammate-1/G3/submitted-v3.csv",
      "44fdbe227f1fede6b7abe04934dd375420c86a9427c69b760bb70c00e338d691",
      773, 0.0003),
 )
@@ -76,7 +76,7 @@ def g4_values():
                            "direct-930f7e5b7d14.feedback.json").read_text())
     if feedback["reported_displayed_score"] != 0 or not feedback["accepted_grading"]:
         raise ValueError("Saved G4 score report changed")
-    pps_path = REPO / "submissions/teammates/kevin/G4/submitted-v1.csv"
+    pps_path = REPO / "submissions/teammates/teammate-1/G4/submitted-v1.csv"
     pps_receipt = json.loads(pps_path.with_suffix(".json").read_text())
     if (hashlib.sha256(pps_path.read_bytes()).hexdigest() != pps_receipt["sha256"]
             or pps_receipt["reported_displayed_score"] != 133
@@ -138,7 +138,7 @@ def verify():
     print("G4 chi16/32/64: " + "; ".join(
         f"q{q} " + "/".join(f"{value:.3f}" for value in values)
         for q, values in trends.items()))
-    print("G4: saved MPS feedback reports 0/1000; Kevin's complete PPS receipt reports 133/1000 with four zero rows.")
+    print("G4: saved MPS feedback reports 0/1000; a teammate's complete PPS receipt reports 133/1000 with four zero rows.")
     return first, second, trends
 
 

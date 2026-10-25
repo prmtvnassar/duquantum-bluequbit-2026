@@ -36,7 +36,7 @@ def main():
     fig, axes = plt.subplots(2, 1, figsize=(7.15, 5.65), layout="constrained")
     colors = ["#D57828", "#166A91"]
     for v, series, color in zip(vectors, source["series"], colors):
-        label = f"epsilon {series['epsilon']:g}; Kevin-reported {series['reported_displayed_score']}/800"
+        label = f"epsilon {series['epsilon']:g}; teammate-reported {series['reported_displayed_score']}/800"
         axes[0].plot(np.arange(len(v)), v, marker="o", markersize=3, lw=1.1, color=color, label=label)
         zero = np.flatnonzero(v == 0)
         axes[0].scatter(zero, v[zero], facecolors="white", edgecolors=color, s=22, zorder=4)

@@ -20,7 +20,7 @@ Acceptance requires maximum absolute error <= 0.01 and offline score >= 99. Timi
 
 - S2: chi 64 missed the absolute-error target; chi 128 reduced worst error to about 0.0033. However, native G2 chi128 quotes exceed the budget/runtime allocation. The graded baseline uses affordable PPS .001 pilots (S2 max error about 0.111), with chi16 independent checks. This quality compromise is explicit.
 - S3: the officially submitted coarse vector displayed 100/100 but had material pointwise error. The complete epsilon sweep is checked against all exact CPU references. Tighter epsilon 0.0001 hit the 100,000-term cap on two IDs; those incomplete runs were never accepted as values.
-- G1: reuse Kevin's 30 exact CPU outputs, matched against his submitted CSV and source job ledger. No repeat simulation is scheduled. Larger G2-G4 CPU and exact-GPU requests were rejected for size.
+- G1: reuse a teammate's 30 exact CPU outputs, matched against his submitted CSV and source job ledger. No repeat simulation is scheduled. Larger G2-G4 CPU and exact-GPU requests were rejected for size.
 - G4: no sample matches its Haar-grid family. Chi64 native CPU/GPU quotes were too costly/slow. Use PPS .001 pilots plus MPS chi16, requiring a resolved pilot signal and an independent result before bulk coverage. These are engineering priors, not validated G4 settings.
 - Fusion and extrapolation are disabled. Within-method signed trends, contraction and oscillation affect refinement priority alongside cross-method differences. Official scores reweight whole-problem effort only. No diagnostic certifies an error bound.
 - The original MPS norm guard incorrectly rejected a small finite norm. Explicit rescaling repaired the operational issue; its failed attempt is preserved and excluded from calibration retries.
@@ -71,6 +71,6 @@ Recorded execution attempts: **443**; states: `{'COMPLETED': 80, 'FAILED': 11, '
 
 Every observed sample cloud job cost $0. Independent native MPS/PPS sample quotes of $0.20 were blocked. Graded quotation is not simulation or spending. The $30 balance is reserved for graded work; automatic planned spend is limited to $25.50, plus protection for remaining baseline coverage.
 
-See [runs/jobs.csv](../runs/jobs.csv), [runs/decisions.csv](../runs/decisions.csv), [runs/submissions.csv](../runs/submissions.csv), and [workflow_final.md](../workflow_final.md). The cleanup inventory records the recovery commit for removed obsolete files.
+See [runs/jobs.csv](../runs/jobs.csv), [runs/decisions.csv](../runs/decisions.csv), [runs/submissions.csv](../runs/submissions.csv), and [docs/history/workflow_final_graded.md](../docs/history/workflow_final_graded.md). The cleanup inventory records the recovery commit for removed obsolete files.
 
 ![Maximum pointwise error across complete precision vectors](sample_precision_errors.png)

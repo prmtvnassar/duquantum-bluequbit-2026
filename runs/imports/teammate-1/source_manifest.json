@@ -1,0 +1,13 @@
+{
+  "source_branch": "origin/teammate-1/experiment",
+  "commit": "9714dab3422134c77b7fc36f99e86f5f2dada921",
+  "source_files": {
+    "scripts/runner/backends.py": "35c9257c6656b4b5b8b46dbcd8494379ecf7e97c7aa1c42e7d3a560d57c7ffda",
+    "scripts/runner/targets.py": "72b575c21f9ddc7baeb7303e803b4b439967f2f35f40e20d2a260573cf1ea801",
+    "scripts/runner.toml": "0accfc9455a01674797203fa394f88a89400d365ab87a6c2400a40963894cf24",
+    "runs/ledger.csv": "c9ec9a3a33d94ef78cb76bfb8ee9e20d61c6888d403cacfc9f0b956eea6f6f3d",
+    "submissions/G1_v1.csv": "d6bbdea66362f95c58a6b4b06290f7b449636c9d4967fe9231c1fcacd003c6e2"
+  },
+  "jobs": 60,
+  "g1_successes": 30
+}

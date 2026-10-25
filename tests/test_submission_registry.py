@@ -247,14 +247,14 @@ class SubmissionRegistryTests(TestCase):
         self.assertFalse((self.workflow / "official_submissions").exists())
 
     def test_existing_teammate_special_schema_remains_in_index(self):
-        legacy = self.repo / "submissions/teammates/kevin/G1/submitted-v1.json"
+        legacy = self.repo / "submissions/teammates/teammate-1/G1/submitted-v1.json"
         legacy.parent.mkdir(parents=True)
-        legacy.write_text(json.dumps({"owner":"kevin", "problem":"G1", "maximum_points":300,
+        legacy.write_text(json.dumps({"owner":"teammate-1", "problem":"G1", "maximum_points":300,
                                      "source_commit":"abc123", "reported_score_fraction":1}), encoding="utf-8")
         self.record(owner="teammate_reported", evidence_source="user_report")
         indexed = {row["owner"]:row for row in self.index()}
-        self.assertEqual(indexed["kevin"]["status"], "REPORTED_BY_TEAMMATE")
-        self.assertEqual(indexed["kevin"]["displayed_score"], "")
+        self.assertEqual(indexed["teammate-1"]["status"], "REPORTED_BY_TEAMMATE")
+        self.assertEqual(indexed["teammate-1"]["displayed_score"], "")
         self.assertEqual(indexed["teammate_reported"]["status"], "USER_REPORTED")
 
     def test_index_retains_scored_and_pending_submission_claims_without_inference(self):
@@ -267,8 +267,8 @@ class SubmissionRegistryTests(TestCase):
             "problem":"G1", "status":"SUBMITTED_USER_REPORTED", "attempt":None,
             "score":None, "expected_source_csv":"problems/04_graded_G1/exact_values.csv",
             "uploaded_bytes_verified":False})
-        receipt("teammates/kevin/G3/submitted-v3.json", {
-            "problem":"G3", "owner":"kevin", "submission_status":"REPORTED_SUBMITTED",
+        receipt("teammates/teammate-1/G3/submitted-v3.json", {
+            "problem":"G3", "owner":"teammate-1", "submission_status":"REPORTED_SUBMITTED",
             "reported_displayed_score":773, "reported_score_fraction":0.9663,
             "maximum_points":800, "attempt":None, "source_commit":"abc123"})
         receipt("candidates/G2/mixed.feedback.json", {
@@ -309,7 +309,7 @@ class SubmissionRegistryTests(TestCase):
                          ("", "", "579", "USER_CONFIRMED_SUBMITTED", "False",
                           "user_report", "repo_text_claim",
                           "submissions/candidates/G2/mixed.score-report.txt", "030518f"))
-        g3 = rows["submissions/teammates/kevin/G3/submitted-v3.json"]
+        g3 = rows["submissions/teammates/teammate-1/G3/submitted-v3.json"]
         self.assertEqual((g3["displayed_score"], g3["attempt"], g3["status"]),
                          ("773", "", "REPORTED_SUBMITTED"))
         g4 = rows["submissions/candidates/G4/direct.feedback.json"]

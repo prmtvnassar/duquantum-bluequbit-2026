@@ -32,7 +32,7 @@
     },
     {
       "problem": "G1",
-      "csv_path": "submissions/teammates/kevin/G1/submitted-v1.csv",
+      "csv_path": "submissions/teammates/teammate-1/G1/submitted-v1.csv",
       "role": "best_reported",
       "reported_score": 300,
       "maximum_points": 300,
@@ -59,16 +59,16 @@
     },
     {
       "problem": "G2",
-      "csv_path": "submissions/teammates/kevin/G2/submitted-v1.csv",
+      "csv_path": "submissions/teammates/teammate-1/G2/submitted-v1.csv",
       "role": "framework_evolution",
       "reported_score": 498,
       "maximum_points": 600,
       "sha256": "a92e6e44ef9d12d1272d8082b2b0fb5685dbaaa69bf76f00ae802d33bb893c13",
-      "why_retained": "Kevin chi128 milestone with attributed per-row provenance."
+      "why_retained": "A teammate chi128 milestone with attributed per-row provenance."
     },
     {
       "problem": "G3",
-      "csv_path": "submissions/teammates/kevin/G3/submitted-v3.csv",
+      "csv_path": "submissions/teammates/teammate-1/G3/submitted-v3.csv",
       "role": "best_reported",
       "reported_score": 773,
       "maximum_points": 800,
@@ -77,7 +77,7 @@
     },
     {
       "problem": "G3",
-      "csv_path": "submissions/teammates/kevin/G3/submitted-v2.csv",
+      "csv_path": "submissions/teammates/teammate-1/G3/submitted-v2.csv",
       "role": "framework_evolution",
       "reported_score": 534,
       "maximum_points": 800,
@@ -115,13 +115,13 @@
     },
     {
       "problem": "G4",
-      "csv_path": "submissions/teammates/kevin/G4/submitted-v1.csv",
+      "csv_path": "submissions/teammates/teammate-1/G4/submitted-v1.csv",
       "role": "best_reported",
       "reported_score": 133,
       "maximum_points": 1000,
       "sha256": "10972ca9856bf3af6fedc17a3db78c28344c106aa90ccec7adf2d9c92c0a5265",
       "source_commit": "962f78be1b228983a65300d21523db9ff866c564",
-      "why_retained": "Kevin-reported complete PPS vector with 38 row job references; later than the zero-scoring MPS candidate."
+      "why_retained": "teammate-reported complete PPS vector with 38 row job references; later than the zero-scoring MPS candidate."
     }
   ],
   "retired_files": {
@@ -142,7 +142,7 @@
       "git_blob": "95eb8223d02220360697dc188c2c6cc035c4c1e1"
     },
     "problems/04_graded_G1/exact_values.csv": {
-      "retained_path": "submissions/teammates/kevin/G1/submitted-v1.csv",
+      "retained_path": "submissions/teammates/teammate-1/G1/submitted-v1.csv",
       "match": "byte_identical",
       "sha256": "d6bbdea66362f95c58a6b4b06290f7b449636c9d4967fe9231c1fcacd003c6e2",
       "reason": "Repeated bytes add no framework milestone; distinct receipts remain.",
@@ -166,7 +166,7 @@
       "git_blob": "8888b8344c78d1a1c83f0c534935696ab670734b"
     },
     "submissions/candidates/G3/direct-fb792001c3e7.csv": {
-      "retained_path": "submissions/teammates/kevin/G3/submitted-v2.csv",
+      "retained_path": "submissions/teammates/teammate-1/G3/submitted-v2.csv",
       "match": "numeric_equivalent",
       "sha256": "7ce7b051d0fa7f124e7329c93f15247f46f5b36b3ccfb407910dfebe80c71d7e",
       "retained_sha256": "33c9a6ac4d0e1b06ce9a79607c20a7ea4dd707e571061aeea7f031715075f7ef",

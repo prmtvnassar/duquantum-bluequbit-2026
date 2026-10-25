@@ -16,7 +16,7 @@ all methods, per instance). Figures in this directory: `fig_exact_profile.png`, 
 - Consequence used throughout: W is grown by conjugating X_b with the layers of U in **reverse** order, so the contact layer of a qubit is
   counted from the last layer of U. Define **slack = depth - contact layer** (layers a qubit has spent inside the support of W; -1 = never
   reached, value exactly +1). G4 slack map (6x6 + q36/q37): q36,q37 = 3; col 5 (q5,11,17,23,29,35) = 4; row 5 (q30-34) = 5; col 4
-  (q4,10,16,22,28) = 6; row 4 (q24-27) = 7; the other 22 qubits >= 8 (q0 = 16). Nothing in G4 is outside the geometric cone.
+  (q4,10,16,22,28) = 6; row 4 (q24-27) = 7; the other 16 qubits >= 8 (q0 = 16) (corrected; an earlier version of this report said 22). Nothing in G4 is outside the geometric cone.
 
 ## 2. Exact proxies (step 2): 28 instances, Aer statevector, corner butterfly q0
 
@@ -52,9 +52,9 @@ the whole 4x5 grid inside with a rim of 0.04-0.24; d16 leaves a rim of 0.02-0.09
 slack >= 8), 4x5 has one column at slack 6, 5x5 has a row at 7 and a column at 6. The rim strength varies strongly between Haar
 instances: 5x5 s1 has a clean negative rim (-0.04..-0.11, rho(v,d) = -0.78) while 5x5 s2 is nearly flat (|v| <= 0.027, mixed signs).
 
-**Extrapolation to 6x6+2 (G4).** The 22 bulk qubits (slack >= 8) are noise at ~2^(-19) ~ 2e-6: effectively zero and unreproducible by
-any method. The 16 rim qubits (q36, q37 at slack 3; col 5 at 4; row 5 at 5; col 4 at 6; row 4 at 7) carry |v| ~ 0.02-0.15 with a
-probable negative sign; the score of any submission is decided by its shape on those 16 rows. This is consistent with native PPS giving
+**Extrapolation to 6x6+2 (G4).** The 16 bulk qubits (slack >= 8; corrected from 22) are noise at ~2^(-19) ~ 2e-6: effectively zero and unreproducible by
+any method. The 22 rim qubits (corrected from 16; q36, q37 at slack 3; col 5 at 4; row 5 at 5; col 4 at 6; row 4 at 7) carry |v| ~ 0.02-0.15 with a
+probable negative sign; the score of any submission is decided by its shape on those 22 rows (corrected). This is consistent with native PPS giving
 ~0 everywhere and with MPS chi256 scoring 139 (a 2 % tail event under the null for 38 rows, so some rim structure is being tracked).
 
 ## 3. What methods score on the proxies (step 3), 1000 x Pearson^2 vs exact, mean [min, max] over instances
@@ -104,11 +104,11 @@ slack table 773. Reading of the depth-16 columns:
   6-row cut), so its per-row values are artefacts; its score comes only from tracking the rim position. Proxy analogue: chi32-64 on
   4x5/5x5 gives 170-230 on average, 1-100 on weak-rim seeds, 430-515 on strong-rim seeds. Band for G4: **chi64 30-200, chi128 50-250,
   chi256 80-300** (139 observed), chi mostly changing the per-seed luck rather than the mean. A ceiling of ~400-500 applies to any
-  method that only reproduces the rim shape; the per-row values of the 22 bulk rows (~2e-6) are out of reach for MPS or PPS.
+  method that only reproduces the rim shape; the per-row values of the 16 bulk rows (corrected from 22; ~2e-6) are out of reach for MPS or PPS.
 - **Best cheap estimator found (geometry only, no simulation):** v_hat(q) = m(slack(q)) with the pooled signed table
   m(3) = -0.10, m(4) = -0.06, m(5) = -0.02, m(6) = -0.03, m(7) = -0.01, m(>= 8) = 0 (m(-1) = +1, m(0) = +0.04, m(1) = -0.16, m(2) = 0
   are unused in G4). For G4 rows: q36,q37 = -0.10; q5,11,17,23,29,35 = -0.06; q30-34 = -0.02; q4,10,16,22,28 = -0.03; q24-27 = -0.01;
-  the other 22 rows = 0 (Pearson is scale-invariant, only the shape matters). Held-out evidence: 4x5 d16 six seeds 405 [232, 530],
+  the other 16 rows = 0 (corrected from 22; Pearson is scale-invariant, only the shape matters). Held-out evidence: 4x5 d16 six seeds 405 [232, 530],
   5x5 d16 309 / 12, 4x5 d8 773, 4x5 d4 909. Expected G4 score if the real rim behaves like the proxies: 200-500; if the G4 instance is
   a flat one like 5x5 s2: null (~30). It cannot do worse than the PPS zeros and is, on the proxies, better on average than MPS chi64
   (227) and than every distance prior. `summary.json["g4_prediction"]` holds the per-row values (`analyze.py` regenerates them).
